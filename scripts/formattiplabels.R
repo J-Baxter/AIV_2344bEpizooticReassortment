@@ -71,13 +71,22 @@ MyFunc4 <- function(x){
                     'subtype' = subtype,
                     'segment' = segment,
                     'date' = date,
-                    'isolate.name' = isolate.name)
+                    'isolate.name' = isolate.name) %>%
+    as_tibble()
   
   
   return(out)
 }
 
-df <- lapply(data_from_tipnames, MyFunc4) %>% bind_rows()
+df <- lapply(data_from_tipnames, MyFunc4) %>%
+  bind_rows() %>%
+  mutate(subtype = str_extract(subtype, 'H[[:digit:]]{1,}N[[:digit:]]*')) %>%
+  mutate(date = parsedate::parse_date(date) %>% as.Date()) %>%
+  mutate(decimal.date = decimal_date(date)) %>%
+  separate_wider_delim(isolate.name, delim = '/', names = c('virus_species', 'source', 'location', 'id_unsure', 'year'),cols_remove = F, too_few = 'align_end', too_many = 'merge') %>%
+  # Bird names/order
+  
+  # Location (iso name and subdivision)
 
 data.frame('isolate.id' = data_from_tipnames[[4]][grep('EPI_ISL_*' ,data_from_tipnames[[4]])],
            'subtype' = data_from_tipnames[[4]][grep('H[[:digit:]]N[[:digit:]]|H[[:digit:]][[:digit:]]N[[:digit:]][[:digit:]]' ,data_from_tipnames[[4]])],
