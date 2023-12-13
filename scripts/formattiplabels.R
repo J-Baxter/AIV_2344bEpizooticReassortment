@@ -32,7 +32,6 @@ data_from_tipnames <- tip_labels %>%
   sapply(., str_split_1, pattern = '\\|') %>%
   sapply(., function(x) ifelse(!grepl('\\.', tail(x, n = 4)), return(x), NA)) %>%
   .[!is.na(.)] %>%
-  
   do.call(rbind.data.frame,. )
 
 
@@ -41,6 +40,23 @@ data_from_tipnames <- tip_labels %>%
 #isolate name = 
 #segment
 #date
+countries <- ISOcodes::ISO_3166_2 %>% 
+  separate_wider_delim(Code, delim = '-', names = c('Alpha_2', 'subdivision')) %>%
+  #left_join(cbind.data.frame(ISOcodes::ISO_3166_1, Type = 'nationsate'), by = join_by(Alpha_2, Type)) %>%
+  left_join(ISOcodes::ISO_3166_1, by = join_by(Alpha_2)) %>%
+  as_tibble() %>%
+  rename_with( .fn = ~tolower(.x)) %>%
+  dplyr::select(c(contains('name.'), type, parent)) %>%
+  rename(country = name.y, location = name.x) %>%
+  mutate(across(everything(), .fn = ~tolower(.x))) %>%
+  rbind.data.frame(data.frame(country = unique(.$country), 
+                              type = 'nationstate', 
+                              parent = NA,
+                              location = unique(.$country))) %>%
+  mutate(location = case_when(country == 'united states' & location == 'georgia' ~ 'state of georgia', 
+                               .default = location))
+
+
 birds <- read_csv('ebird_taxonomy_v2023.csv') %>% 
   rename_with( .fn = ~tolower(.x)) %>%
   dplyr::select(-c(contains('taxon'), species_code, report_as)) %>%
@@ -166,16 +182,12 @@ df <- lapply(data_from_tipnames, MyFunc4) %>%
                                       grepl('\\bpigeon\\b', source) ~ 'pigeon/dove sp.',
                                       grepl('\\bteal\\b', source) ~ 'teal sp.',
                                       
-                                      
-                                      
-                                      
-                                      
-
-                                      
+ 
                                       .default = source)) %>%
   #rename(primary_com_name = source) %>%
   #mutate(sci_name = primary_com_name) %>%
   left_join(birds, join_by(primary_com_name)) %>%
+  dplyr::select(-c(virus_species, category, id_unsure)) %>%
 
 # family
   mutate(family = case_when(
@@ -202,9 +214,99 @@ df <- lapply(data_from_tipnames, MyFunc4) %>%
     primary_com_name %in% c('aquatic bird', 'avian', 'bird', 'wild bird', 'wild bird ') ~ 'Unknown bird',
     .default = species_group)) %>%
   
-  
   # Location (iso name and subdivision)
+  mutate(location = tolower(location)) %>%
+  mutate(location = case_when(
+    # Korea
+    grepl('korea',  location) ~ 'korea, republic of',
+    
+    # PRC
+    grepl('beijing$|shanghai$|chongqing$|tianjin$', location) ~ paste0(location, ' shi'),
+    grepl('anhui|fujian|guangdong|gansu|guizhou|henan|hubei|hebei|hainan|heilongjiang|hunan|jilin|jiangsu|jiangxi|liaoning|qinghai|sichuan|shandong|shaanxi|shanxi|taiwan|zhejiang', location) ~ paste0(location, ' sheng'),
+    grepl('yunnan.*', location) ~ 'yunnan sheng',
+    grepl('inner_mongolia',  location) ~ 'nei mongol zizhiqu',
+    grepl('hong_kong',  location) ~ 'hong kong sar',
+    grepl('xizang$',  location) ~ paste0(location, ' zizhiqu'),
+    grepl('ningxia$',  location) ~ paste0(location, ' huizi zizhiqu'),
+    grepl('xinjiang$',  location) ~ paste0(location, ' uygur zizhiqu'),
+    grepl('guangxi$|guilin',  location) ~ 'guangxi zhuangzu zizhiqu',
+    grepl('tibet', location) ~ 'xizang zizhiqu',
+    grepl('hangzhou', location) ~ 'zhejiang sheng',
+    grepl('sanmenxia', location) ~ 'henan sheng',
+    grepl('wuhan', location) ~ 'hebei sheng',
+    grepl('changsha', location) ~ 'hunan sheng',
+    grepl('northern_china', location) ~ 'beijing shi', # Interpretation from paper - check with Lu
+    grepl('southwestern_china', location) ~ 'shanxi sheng', # Interpretation from paper - check with Lu
+    
 
+
+    # Canada
+    grepl('ab',  location) ~ 'alberta',
+    grepl('bc',  location) ~ 'british columbia',
+    
+    # Russian Federation
+    grepl('astrakhan', location) ~ "astrahanskaja oblast'",
+    grepl('novosibirsk_region|chany_lake', location) ~ "novosibirskaja oblast'",
+    grepl('omsk.*', location) ~ "omskaja oblast'",
+    grepl('rostov-on-don', location) ~ "rostovskaja oblast'",
+    grepl('russia_primorje', location) ~ "primorskij kraj",
+    grepl('sakhalin', location) ~ "sahalinskaja oblast'",
+    grepl('yakutia', location) ~ "saha, respublika",
+    grepl('kostroma', location) ~ "kostromskaja oblast'",
+    grepl('amur_region', location) ~ "amurskaja oblast'",
+    grepl('buryatia', location)~ "burjatija, respublika",
+    
+    #USA
+    grepl('north_dakota', location) ~ 'north dakota',
+    
+    # Japan
+    grepl('tsukuba', location) ~ 'ibaraki',
+    
+    # Spain
+    grepl('castillalamancha', location) ~ 'castilla-la mancha',
+    
+    # Indonesia
+    grepl('hulu_sungai_utara', location) ~ 'kalimantan selatan',
+    
+    grepl('republic_of_georgia', location) ~ 'georgia',
+    grepl('czech_republic', location) ~ 'czechia',
+    grepl('laos', location) ~ "lao people's democratic republic",
+    grepl('vietnam', location) ~ "viet nam",
+    .default = location)) %>%
+  left_join(countries, by = join_by(location)) %>%
+  mutate(location = case_when(country == location ~ NA, .default = location)) %>%
+  unite('loc_temp', location, country) %>%
+  separate_wider_delim(loc_temp, delim = '_', names = c('subdivision','country'), too_few = 'align_end') %>%
+  
+  # Format columna names
+  rename(virus.subtype = subtype,
+         collection.date = date,
+         collection.datedecimal = decimal.date,
+         collection.country = country,
+         collection.subdivision = subdivision,
+         host.order = order,
+         host.family = family,
+         host.sciname = sci_name,
+         host.commonname = primary_com_name, 
+         host.group = species_group)%>%
+  relocate(virus.subtype,
+           isolate.id,
+           isolate.name,
+           collection.date,
+           collection.datedecimal,
+           collection.country,
+           collection.subdivision,
+           host.order,
+           host.family,
+           host.sciname,
+           host.commonname, 
+           host.group) %>%
+  dplyr::select(-c(type, parent)) 
+  
+  # Select columns
+  
+  
+  # Creat tip names
   
 
   
