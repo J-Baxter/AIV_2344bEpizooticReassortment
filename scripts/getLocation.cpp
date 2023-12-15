@@ -6,6 +6,7 @@ struct Atlas {
   std::string continent;
   std::string country;
   std::string subdivision;
+  //latlong
 };
 
 // Function to create a hash table of countries
@@ -36,9 +37,9 @@ Rcpp::List getAtlas(std::unordered_map<std::string, Atlas>& atlasTable, const st
     
     // Create a list with atlas information
     Rcpp::DataFrame result = 
-      Rcpp::DataFrame::create(Rcpp::Named("Order") = queryInfo.order,
-                              Rcpp::Named("Family") = queryInfo.family,
-                              Rcpp::Named("Sci Name") = queryInfo.sciname);
+      Rcpp::DataFrame::create(Rcpp::Named("continent") = queryInfo.continent,
+                              Rcpp::Named("country") = queryInfo.country,
+                              Rcpp::Named("subdivision") = queryInfo.subdivision);//latlonh
     return result;
   } else {
     Rcpp::stop("Location not found in the hash table.");
