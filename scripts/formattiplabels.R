@@ -85,7 +85,8 @@ df <- tip_labels %>%
   mutate(date = parsedate::parse_date(date) %>%
     as.Date()) %>%
   mutate(decimal.date = format(round(decimal_date(date), 2), 
-                               nsmall = 2)) %>%
+                               nsmall = 2) ) %>%
+  mutate(decimal.date = suppressWarnings(as.double(decimal.date))) %>%
   mutate(week.date = format(date, "%Y-%V")) %>%
   
   # Format isolate name
@@ -319,10 +320,17 @@ df <- tip_labels %>%
   #H5N1_Avian_AB188824_A/chicken/Kyoto/3/2004|2004.500
   unite(tipnames, 
     virus.subtype,
-    isolate.name,
+    isolate.id,
     host.order,
     collection.country.name,
     cluster.genome,
     collection.datedecimal,
     sep = '|',
     remove = FALSE)
+
+
+tip_labels <- TipLabels(pb2_tree)
+pb2_tree$tip.label <- df$tipnames
+
+  #scale_x_date(limits = c(ymd('1950-01-01'), ymd('2024-01-10'))) + 
+  

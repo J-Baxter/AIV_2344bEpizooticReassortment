@@ -28,8 +28,7 @@ test_df <-  cbind.data.frame('dist' = rttdist, 'tipnames' = names(rttdist)) %>%
 
 my_model <- lm(dist ~ collection.datedecimal, data =test_df)
 rate = coef(my_model)[2]
-x_intercept <- -coef(my_model)[1] / coef(my_model)[2]
-
+x_intercept <- -coef(my_model)[1] / coef(my_model)[2] #y = mx+c to y = m(x-d) i.e d = (c\times-1)/m
 
 ggplot(test_df, aes(x = collection.datedecimal, y = dist)) +
   geom_point(aes(colour = host.order)) + 
