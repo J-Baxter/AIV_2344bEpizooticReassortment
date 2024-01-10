@@ -1447,6 +1447,7 @@ std::unordered_map<std::string, Atlas> createAtlasHashTable() {
   atlasTable["northern ireland"]= {"northern europe", "GB", "united kingdom", "55.378051", "-3.43597299999999", "GB NIR", "northern ireland", "54.7877149", "-6.49231450000002", "NA", "NA", "NA", "NA" };
   atlasTable["wales"]= {"northern europe", "GB", "united kingdom", "55.378051", "-3.43597299999999", "GB WLS", "wales", "51.5120869", "-3.28094409999994", "NA", "NA", "NA", "NA" };
   atlasTable["england and wales"]= {"northern europe", "GB", "united kingdom", "55.378051", "-3.43597299999999", "GB EAW", "england and wales", "52.0190289", "-0.770427400000017", "NA", "NA", "NA", "NA" };
+  atlasTable["scotland"]= {"northern europe", "GB", "united kingdom", "55.378051", "-3.43597299999999", "GB-PKN", "perth and kinross", "56.3953367", "-3.43466100000001", "NA", "NA", "NA", "NA" };
   atlasTable["great britain"]= {"northern europe", "GB", "united kingdom", "55.378051", "-3.43597299999999", "GB GBN", "great britain", "51.650714", "-0.110817999999995", "NA", "NA", "NA", "NA" };
   atlasTable["united kingdom"]= {"northern europe", "GB", "united kingdom", "55.378051", "-3.43597299999999", "GB UKM", "united kingdom", "NA", "NA", "NA", "NA", "NA", "NA" };
   atlasTable["buckinghamshire"]= {"northern europe", "GB", "united kingdom", "55.378051", "-3.43597299999999", "GB-BKM", "buckinghamshire", "51.6337949", "-0.54232920000004", "NA", "NA", "NA", "NA" };
@@ -4909,6 +4910,8 @@ std::unordered_map<std::string, Atlas> createAtlasHashTable() {
   atlasTable["matabeleland north"]= {"eastern africa", "ZW", "zimbabwe", "-19.015438", "29.154857", "ZW-MN", "matabeleland north", "46.729553", "-94.6858998", "NA", "NA", "NA", "NA" };
   atlasTable["matabeleland south"]= {"eastern africa", "ZW", "zimbabwe", "-19.015438", "29.154857", "ZW-MS", "matabeleland south", "NA", "NA", "NA", "NA", "NA", "NA" };
   atlasTable["midlands"]= {"eastern africa", "ZW", "zimbabwe", "-19.015438", "29.154857", "ZW-MI", "midlands", "44.3148443", "-85.6023643", "NA", "NA", "NA", "NA" };
+  atlasTable["NA"]= {"NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA" };
+  
   return atlasTable;
 }
 

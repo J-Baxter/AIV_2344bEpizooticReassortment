@@ -12660,9 +12660,16 @@ std::unordered_map<std::string, Taxonomy> createTaxonomyHashTable() {
   //Mammals
   taxonomyTable["skunk"]= {"Carnivora", "Mephitidae", "NA"};
   taxonomyTable["red fox"]= {"Carnivora", "Canidae", "Vulpes vulpes"};
+  taxonomyTable["harbour seal"]= {"Carnivora", "Pinnipedia", "Phoca vitulina"};
+  taxonomyTable["seal sp."]= {"Carnivora", "Pinnipedia", "NA"};
+  taxonomyTable["mink sp."]= {"Carnivora", "Mustelidae", "NA"};
+  taxonomyTable["otter sp."]= {"Carnivora", "Mustelidae", "NA"};
+  taxonomyTable["eurasian otter"]= {"Carnivora", "Mustelidae", "Lutra lutra"};
+  taxonomyTable["european badger"]= {"Carnivora", "Mustelidae", "Meles meles"};
   taxonomyTable["tanuki"]= {"Carnivora", "Canidae", "nyctereutes viverrinus)"};
   taxonomyTable["brown rat"]= {"Rodentia", "Muridae", "rattus norvegicus"};
-  taxonomyTable["feline"]= {"Carnivora", "felidae", "NA"};
+  taxonomyTable["canine"]= {"Carnivora", "Canidae", "NA"};
+  taxonomyTable["feline"]= {"Carnivora", "Felidae", "NA"};
   taxonomyTable["environment"]= {"environment", "environment", "environment"}; 
   taxonomyTable["NA"]= {"NA", "NA", "NA"}; 
 
