@@ -1,36 +1,23 @@
+####################################################################################################
 # Basic filtering of maximum likelihood phylogenies
-# A function to create an initial subsample of nodes based on the following broad criteria:
-# 1. Genetic distance - select a single example of trait/location/date from a clade in which 
-#     all descending branches are less than 0
-# 2. Remove outliers (>2sd from the root-to-tip regression)
 
+# Requires a phylogeny (branch lengths inferred from genetic distance only) and accompanying 
+# alignment
 
-# Filter phylogenetic tree according to branch length
-FilterBL <- function(phylo,  bl_threshold = 0){
-  require(ape)
-  
-  return(tiplist)
-}
-
-# filter phylogenetic tree accoding to root-to-tip regression
-FilterR2T <- function(phylo,  sd_threshold = 0){
-  require(ape)
-  
-  return(tiplist)
-}
-
-# root to tip regression plots
+####################################################################################################
+# Package dependencies
 library(ape)
 library(tidyverse)
 library(treeio)
 library(TreeTools)
 library(Rcpp)
+library(igraph)
 
+source('./scripts/FindIdenticalSeqs.R')
 sourceCpp("./scripts/getTaxonomyForName.cpp") # ~8mins
 sourceCpp('./scripts/getLocation.cpp') #~3mins
 
-
-
+# Functions
 FormatTipData <- function(x) {
   isolate.id <- x[grep("EPI_ISL_*", x)]
   
@@ -69,7 +56,8 @@ FormatTipData <- function(x) {
   return(out)
 }
 
-Main <- function(tiplabels){
+
+ExtractMetadata <- function(tiplabels){
   out <- tiplabels %>%
     gsub("\\|$", "", .) %>%
     sapply(., str_split_1, pattern = "\\|") %>%
@@ -361,7 +349,7 @@ Main <- function(tiplabels){
     as_tibble() %>%
     unnest(loc) %>%
     
-    # Format columna names
+    # Format column names
     dplyr::select(-c(virus_species, id_unsure)) %>%
     dplyr::rename(
       virus.subtype = subtype,
@@ -416,23 +404,40 @@ Main <- function(tiplabels){
       collection.subdiv2.long
     ) %>%
     # Select columns
-    select(-c(source, location)) %>%
-    
-    # Get reassortant data from metadata
-    left_join(reassortants,
+    select(-c(source, location)) 
+  
+  
+  return(out)
+}
+
+
+MergeReassortantData <- function(data, newdata = newdata){
+  
+  stopifnot(any('isolate_id' %in% colnames(newdata)))
+  
+  newdata <- newdata %>% 
+    select(c(isolate_id, contains('cluster'), date_year_month)) %>%
+    rename_with(.fn = ~gsub('_', '.', .x))
+  
+  # Get reassortant data from metadata
+  out <- left_join(data, 
+              newdata,
               by = join_by(isolate.id)) %>%
     
-    # Get missing dates from metadata csv 
-    left_join(metadata %>% 
-                select(isolate_id, date_year_month), 
-              join_by(isolate.id == isolate_id)) %>%
-    mutate(collection.dateweek = coalesce(collection.dateweek, date_year_month)) %>%
+    # Get missing dates from metadata csv
+    mutate(collection.dateweek = dplyr::coalesce(collection.dateweek, 
+                                          date.year.month)) %>%
+    
     mutate(collection.tipdate = case_when(is.na(collection.date) ~ collection.dateweek,
                                           .default = as.character(collection.date))) %>%
-    
-    # Create tipnames
-    # subtype|isolatename|hostorder|country|reassortant|decimaldate
-    #H5N1_Avian_AB188824_A/chicken/Kyoto/3/2004|2004.500
+    select(-c(date.month.year, month.date))
+  
+  return(out)
+}
+
+
+MakeTipNames <- function(data){
+  out <- data %>%
     unite(tipnames, 
           virus.subtype,
           isolate.id,
@@ -441,305 +446,21 @@ Main <- function(tiplabels){
           cluster.genome,
           collection.tipdate,
           sep = '|',
-          remove = FALSE)%>%
+          remove = FALSE) %>%
     mutate(tipnames = gsub(' ', '_', tipnames))
   
   return(out)
 }
 
-# Load data
-treefiles <- list.files(path = './data/phylo_ml/',
-                        recursive = FALSE,
-                        include.dirs = FALSE, 
-                        full.names = TRUE)
 
-segnames <- str_split(treefiles,  '_') %>% 
-  lapply(., tail, n = 1) %>% 
-  unlist() %>%
-  toupper()
-
-trees <- lapply(treefiles, read.newick) %>% 
-  setNames(segnames)
-
-tipnames <- lapply(trees, TipLabels) %>% 
-  setNames(segnames)
-
-formatted_metadata <- lapply(tipnames, Main)%>% 
-  setNames(segnames)
-
-
-
-Myfunc <- function(trees, metadatalist, x){
+ReNamePhylo <- function(trees, metadata, x){
   
-  trees[[x]][['tip.label']] <- metadatalist[[x]][['tipnames']]
+  trees[[x]][['tip.label']] <- metadata[[x]][['tipnames']]
   
   return(trees[[x]])
 }
 
-renamed_phylos <- lapply(segnames, Myfunc, trees = trees, metadatalist = formatted_metadata)
-
-cleaned_phylos <- lapply(renamed_phylos, CleanPhylo)
-mapply(write.tree, cleaned_phylos, paste0(segnames, '.tree'))
-
-#test_main <- Main(tipnames$HA)
-
-
-metadata <- read_csv('./data/metadata/h5_metadata.csv')
-reassortants <- metadata %>% 
-  select(c(isolate_id, contains('cluster'))) %>%
-  rename_with(.fn = ~gsub('_', '.', .x))
-
-# Filter out sequences with no date
-CleanPhylo <- function(phylo){
-  out <- drop.tip(phylo,
-                  TipLabels(phylo)[grep('NA$', TipLabels(phylo))])
   
-  return(out)
-}
-
-#rooted_phylos <- lapply(renamed_phylos, 
-                       # CleanPhylo) %>%
- # mapply(rtt, .,
-       #  tipdates,
-       #  SIMPLIFY = F) %>%
- # mapply(function(x,y) ggtree(x) + geom_tiplab(is.na(y$cluster.genome)),
-        # ., 
-        # formatted_metadata, 
-        # SIMPLIFY = F)
-  
-###################
-CleanandRoot <- function(phylo, metadata){
-  require(ape)
-  require(TreeTools)
-  require(adephylo)
-  
-  stopifnot(Ntip.phylo(phylo) == nrow(metadata))
-  
-  phylo_dropped <- CleanPhylo(phylo = phylo)
-  
-  r2t <- rtt(phylo_dropped,
-             objective = 'rms', 
-             tip.dates = metadata$collection.datedecimal[!is.na(metadata$collection.datedecimal)])
-  
-  rttdist <- adephylo::distRoot(r2t)
-  
-  df <-  cbind.data.frame('dist' = rttdist, 'tipnames' = names(rttdist)) %>% 
-    left_join(metadata)
-  
-  return(df)
-  
-}
-
-
-# Infer best-fitting root and get rtt distances (returns list of dataframes)
-rtt_dist <- mapply(CleanandRoot,
-                   phylo = renamed_phylos,
-                   metadata = formatted_metadata,
-                   SIMPLIFY = FALSE) %>%
-  setNames(segnames) #%>%
-  #bind_rows(.id = 'segment')
-
-#pb2_tree_dropped <- drop.tip(pb2_tree, TipLabels(pb2_tree)[grep('NA$', TipLabels(pb2_tree))])
-#r2t <- rtt(pb2_tree_dropped )
-#rttdist <- adephylo::distRoot(r2t)
-
-#test_df <-  cbind.data.frame('dist' = rttdist, 'tipnames' = names(rttdist)) %>% 
-#left_join(df )
-
-
-rtt_reg <- function(x){
-  my_model <- lm(dist ~ collection.datedecimal, data = x)
-  rate = coef(my_model)[2]
-  x_intercept <- -coef(my_model)[1] / coef(my_model)[2] 
-  
-  out <- cbind.data.frame(rate, x_intercept) %>% as_tibble()
-  return(out)
-}
-
-
-t <- rtt_dist %>% bind_rows(., .id = 'segment') %>%
-  left_join(ratesandintercept)
-
-# Calculate gradient (evolutionary rate) and intercept (tmrca)
-ratesandintercept <- lapply(rtt_dist, rtt_reg) %>%
-  bind_rows(.id = 'segment') %>%
-  left_join(ratesandintercept)
-
-# Plot
-ggplot(t, aes(x = collection.datedecimal, y = dist)) +
-  geom_point(aes(colour = !is.na(cluster.profile))) + 
-  scale_y_continuous('Genetic Distance', 
-                     expand = expansion(mult = c(0,0.05))) + 
-  scale_x_continuous('Time') +
-  scale_colour_brewer(
-    'Reassortment',
-    palette = 'Paired', 
-    labels = c('FALSE' = 'Non Reassortment',
-               'TRUE' = 'Reassortment'))+
-  geom_point(aes(x = x_intercept, y = 0)) + 
-  geom_smooth(method = 'lm', 
-              fullrange = T,
-              colour = 'black') +
-  coord_cartesian(ylim = c(0, NA)) +
-  geom_text(aes(x = x_intercept,
-                y = Inf,
-                label = paste('x intercept =', round(x_intercept, 2))),
-            size = 3,
-            vjust= +3, 
-            hjust = -0.2, 
-            data = ratesandintercept) +
-  geom_text(aes(x = x_intercept,
-                y = Inf,
-                label = paste('rate =', formatC(rate, format = "e", digits = 2))), 
-            size = 3,
-            vjust= +5,
-            hjust = -0.27,
-            data = ratesandintercept) + 
-  facet_wrap(.~segment, scales = 'free') +
-  my_theme + 
-  theme(legend.position = 'bottom')
-
-
-###################
-#t <- rooted_phylos %>%
- # lapply(., as_tibble) %>%
- # {lapply(seq_along(along.with = .), 
-  #        function(i)  left_join( x = .[[i]], 
-  #                                y = formatted_metadata[[i]], 
-  #                                join_by(label == tipnames)))} %>% 
-  #lapply(., as.treedata) %>%
- # lapply(., function(x) ggtree(x) + geom_tippoint(aes(colour = is.na(cluster.genome))) +
-  #         scale_colour_brewer(
-  #           'Reassortment',
-  #           palette = 'Paired', 
-  #           direction = -1,
- #           labels = c('TRUE' = 'Non Reassortment',
-  #                      'FALSE' = 'Reassortment')) + theme(legend.position = 'none')) %>%
- # cowplot::plot_grid(plotlist = ., align = 'hv', labels = segnames, ncol = 3)
-
-
-#t_mat <- rooted_phylos %>%
-#  lapply(., as_tibble) %>%
-#  {lapply(seq_along(along.with = .), 
-#          function(i)  left_join( x = .[[i]], 
- #                                 y = formatted_metadata[[i]], 
- #                                 join_by(label == tipnames)))} %>% 
-#  lapply(., as.treedata) %>%
-#  lapply(., function(x) ggtree(x) + 
- #          theme(legend.position = 'none') %>%
-#           gheatmap(., is.na(x@data$cluster.genome),
- #                   offset=8, 
-#                    width=0.6, 
-#                    colnames=FALSE) ) %>%
-#  cowplot::plot_grid(plotlist = ., align = 'hv', labels = segnames, ncol = 3)
-###################
-# Remove tip names identified as problems
-
-
-
-
-
-
-
-seqstoremove <- list('HA' = 'H5N8|EPI_ISL_4061715|Falconiformes|japan|10|2021-01-28',
-                     'MP' = c('NA|EPI_ISL_13157449|Anseriformes|bangladesh|NA|2022-02-25',
-                              'H9N2|EPI_ISL_6785027|Anseriformes|south_korea|NA|2020-10-07',
-                              'H10N3|EPI_ISL_1096144|environment|china|NA|2019-06-18',
-                              'H3N8|EPI_ISL_16166669|Anseriformes|china|NA|2019-10-08',
-                              'H3N6|EPI_ISL_16212299|Anseriformes|mongolia|NA|2021-08-01',
-                              'H4N6|EPI_ISL_6784656|Anseriformes|south_korea|NA|2020-10-13',
-                              'H5N2|EPI_ISL_1760455|Anseriformes|china|286|2020-11-10',
-                              'H5N8|EPI_ISL_7381026|Galliformes|china|1|2021-03',
-                              'H5N6|EPI_ISL_6758007|Anseriformes|china|61|2021-04',
-                              'H5N6|EPI_ISL_6772739|Galliformes|china|127|2021-08',
-                              'H5N8|EPI_ISL_7380623|Anseriformes|china|1|2021-03',
-                              'H5N6|EPI_ISL_6757631|Anseriformes|china|61|2021-04',
-                              'H5N6|EPI_ISL_6772736|Galliformes|china|127|2021-08'),
-                     'NA1' = NULL,
-                     'NA2' = c('H10N2|EPI_ISL_18414927|Anseriformes|mongolia|NA|2022-05-01',
-                               'H10N2|EPI_ISL_18414926|Anseriformes|mongolia|NA|2022-05-01',
-                               'H3N2|EPI_ISL_337398|Anseriformes|russia|NA|2018-09-15',
-                               'H4N2|EPI_ISL_503356|Anseriformes|mongolia|NA|2019-09-20'),
-                     
-                     'NA3' = 'NA|EPI_ISL_328982|Charadriiformes|netherlands|NA|2016-07-15',
-                     
-                     'NA6' = c('H5N6|EPI_ISL_6914131|Galliformes|china|61|2021-06-10',
-                               'H5N6|EPI_ISL_17261964|environment|china|NA|2022-03-01',
-                               'H5N6|EPI_ISL_17262043|environment|china|NA|2022-03-01',
-                               'H5N6|EPI_ISL_17262174|environment|china|NA|2023-03-01' ),
-                     'NA8' = 'H5N8|EPI_ISL_7380813|Anseriformes|china|1|2021-03',
-
-                     'NP'= c(
-                       'H5N1|EPI_ISL_18132572|Anseriformes|united_states|NA|2022-04-27',
-                       'H5N1|EPI_ISL_17051418|Falconiformes|canada|NA|2022-10-28',
-                       'H5N1|EPI_ISL_17051394|Pelecaniformes|canada|9|2022-08-12',
-                       'H5N1|EPI_ISL_16023374|Carnivora|canada|9|2022-07-19',
-                       'H5N1|EPI_ISL_18132829|Galliformes|united_states|NA|2022-04-19',
-                       'H5N1|EPI_ISL_17051393|Pelecaniformes|canada|9|2022-08-12',
-                       'H5N1|EPI_ISL_17964876|Charadriiformes|united_states|9|2023-02-14',
-                       'H5N6|EPI_ISL_6772898|Anseriformes|china|209|2021-08',
-                       'H5N1|EPI_ISL_17964946|Galliformes|united_states|9|2023-04-19',
-                       'H5N1|EPI_ISL_17051423|Anseriformes|canada|9|2022-11-09',
-                       'H5N1|EPI_ISL_17051343|Pelecaniformes|canada|NA|2022-06-02',
-                       'H5N1|EPI_ISL_16023375|Carnivora|canada|9|2022-07-19',
-                       'H5N1|EPI_ISL_16183504|Galliformes|canada|9|2022-05-16',
-                       'H5N1|EPI_ISL_15647835|Anseriformes|south_korea|9|2022-10-19',
-                       'H5N1|EPI_ISL_17051342|Pelecaniformes|canada|NA|2022-06-02',
-                       'H5N1|EPI_ISL_17964894|Anseriformes|united_states|NA|2023-02-27',
-                       'H5N1|EPI_ISL_17051473|Passeriformes|canada|NA|2022-12-30',
-                       'H5N1|EPI_ISL_16271855|Anseriformes|united_states|9|2022-11-09',
-                       'H5N1|EPI_ISL_17051341|Pelecaniformes|canada|9|2022-06-02',
-                       'H5N1|EPI_ISL_18132418|Anseriformes|united_states|NA|2022-04-14',
-                       'H5N1|EPI_ISL_17964944|Accipitriformes|united_states|9|2023-03-31',
-                       'H5N1|EPI_ISL_17051458|Anseriformes|canada|NA|2022-12-12',
-                       'H5N1|EPI_ISL_17690225|Anseriformes|united_states|9|2022-09-23',
-                       'H5N1|EPI_ISL_17260681|Carnivora|united_states|9|2022-06-15',
-                       'H5N1|EPI_ISL_18132826|Galliformes|united_states|NA|2022-04-19',
-                       'H5N1|EPI_ISL_16023376|Carnivora|canada|9|2022-05-31',
-                       'H5N1|EPI_ISL_17051490|Strigiformes|canada|NA|2023-01-16',
-                       'H5N1|EPI_ISL_17051351|Anseriformes|canada|NA|2022-05-31',
-                       'H5N1|EPI_ISL_17964858|Accipitriformes|united_states|9|2023-02-14',
-                       'H5N8|EPI_ISL_7381183|Anseriformes|china|279|2021-04',
-                       'H5N1|EPI_ISL_17424649|Anseriformes|united_states|9|2022-09-01',
-                       'H5N1|EPI_ISL_17051485|Anseriformes|canada|NA|2023-01-16'),
-                     'NS'= NULL,
-                     'PA'= NULL,
-                     'PB1' = NULL,
-                     'PB2' = NULL) 
-
-
-dropped_phylos <- mapply(drop.tip,
-                             renamed_phylos,
-                             seqstoremove,
-                             SIMPLIFY = F)
-
-dropped_metadata <- mapply(function(data,y) data %>% filter(!tipnames %in% y), 
-                           formatted_metadata, 
-                           seqstoremove, 
-                           SIMPLIFY = F)
-MyFunc5 <- function(data, n){
-  out <- data %>%
-    mutate(collection.subdiv1.code = gsub('^NA$', '', collection.subdiv1.code)) %>% 
-    mutate(best_location_code = coalesce(collection.subdiv1.code, collection.country.code)) %>%
-    group_by(best_location_code, host.family, cluster.genome, collection.tipdate) %>%
-    slice_sample(n = n)
-  
-  return(out)
-}
-
-
-subset_metadata <- formatted_metadata %>% 
-  lapply(., MyFunc5 , n = 1)
-
-
-# Subset alignments
-init_filenames <- list.files('./data/alignments/init_alignments', full.names = T,  pattern="\\.")
-init_alignments <- lapply(init_filenames, read.dna, format = 'fasta', as.matrix = T)
-
-# change alignment seqnames
-
-subset_alignment <- init_alignments[[1]][rownames(init_alignments[[1]]) %in% subset_metadata[[1]]$tipnames,]
-
 ReNameAlignment <- function(alignment, data){
   isolates <- str_extract(rownames(alignment), "([^|]*)\\|")%>%
     str_replace_all("\\|", "")
@@ -748,35 +469,162 @@ ReNameAlignment <- function(alignment, data){
     as.vector() 
 
   rownames(alignment) <-  new_seqnames
-
+  
   return(alignment)
 }
+  
 
-
-
-SubsetAlignment <- function(alignment, data){
+SubsampleAlignment <- function(alignment, data, removepipe = TRUE){
   out <- alignment[rownames(alignment) %in% data$tipnames,]
+  
+  if(removepipe == TRUE){
+    rownames(out) <- gsub('\\|', '.', rownames(out)) 
+  }else{
+    rownames(out) <- rownames(out)
+  }
+  
   return(out)
 }
 
 
-subsetted_alignments <- init_alignments %>%
+####################################################################################################
+# Import tree data
+treefiles <- list.files(path = './data/phylo_ml/original_mlphylos',
+                        recursive = FALSE,
+                        include.dirs = FALSE, 
+                        full.names = TRUE)
+
+trees <- lapply(treefiles, read.newick) 
+
+
+# Subset alignments
+alignmentfiles <- list.files('./data/alignments/init_alignments',
+                             full.names = T, 
+                             pattern="\\.")
+
+alignments <- lapply(init_filenames,
+                     read.dna, 
+                     format = 'fasta',
+                     as.matrix = T)
+
+
+# Segment names
+segnames <- str_split(treefiles,  '_') %>% 
+  lapply(., tail, n = 1) %>% 
+  unlist() %>%
+  toupper()
+
+names(alignments) <- segnames
+names(trees) <- segnames
+
+
+# Import existing metadata
+reassortant_metadata <- read_csv('./data/metadata/h5_metadata.csv')
+
+
+# Import list of sequences to remove due to lack of temporal signal
+seqstoremove <- read_csv('./data/erroneous_seqs.csv')
+
+
+####################################################################################################
+# Extract metadata and format tipnames
+tipnames <- lapply(trees, TipLabels) %>% 
+  setNames(segnames) # Only required because we are working backwards from tipnames
+
+
+# Extract metadata from tipnames
+metadata <- lapply(tipnames, ExtractMetadata) %>% 
+  lapply(., MergeReassortantData, 
+         newdata = reassortant_metadata) %>%
+  lapply(., MakeTipNames) %>%
+  setNames(segnames) 
+
+
+# Rename phylogenies and alignments with new-format tipnames
+renamed_phylos <- lapply(segnames,
+                         ReNamePhylo, 
+                         trees = trees, 
+                         metadata = metadata)
+
+
+renamed_alignments <- alignments %>%
   mapply(ReNameAlignment, 
          .,
-         formatted_metadata, 
-         SIMPLIFY = FALSE) %>%
-  mapply(SubsetAlignment,
-         .,
-         subset_metadata,
-         SIMPLIFY = FALSE) 
+         metadata, 
+         SIMPLIFY = FALSE)
+
+
+####################################################################################################
+# Identify duplicate sequences from alignment
+
+identical_seqs <- lapply(alignments,
+                         FindIdenticalSeqs) %>%
+  bind_rows(., .id = 'virus.segment')
+
+
+####################################################################################################
+# Subsample 
+
+metadata_subsampled <- metadata %>%
+  bind_rows(., .id = 'virus.segment')%>%
   
-cleaned_filenames <- init_filenames %>%
-  gsub('.trim.fasta', '.trim_subsampled.fasta',. ) %>%
+  # join identical sequence groupings
+  left_join(identical_seqs, 
+            by = join_by(virus.segment, 
+                         tipnames)) %>%
+  # create groupings
+  mutate(across(contains('collection'), .fns = ~ gsub('^NA$', NA, .x))) %>% 
+  mutate(best_location_code = coalesce(collection.subdiv1.code,
+                                       collection.country.code)) %>%
+  
+  # Sample one virus in each segment that has unique combination of location, host family, 
+  # reasssortment, and sequence identity (viruses in the same group are identical)
+  group_by(virus.segment,
+           best_location_code,
+           host.family, 
+           cluster.genome, 
+           group) %>%
+  slice_sample(n = 1) %>%
+  ungroup() %>%
+  
+  # as list
+  group_split(virus.segment, .keep = FALSE) %>%
+  setNames(segnames)
+
+
+####################################################################################################
+# Subsample alignments
+
+alignments_subsampled <- renamed_alignments %>%
+  mapply(SubsampleAlignment,
+         .,
+         metadata_subsampled,
+         SIMPLIFY = FALSE)
+
+
+####################################################################################################
+# Write alignments and metadata to file
+alignmentfiles_subsampled <- alignmentfiles  %>%
+  gsub('Re_H5_', '',. ) %>%
+  gsub('_Asia_blast_', '_asia_',. ) %>%
+  gsub('.trim.fasta$', '_subsampled.fasta',. ) %>%
   gsub('/init_alignments/', '/subsampled_alignments/',. )
 
-
 mapply(write.dna, 
-       subsetted_alignments , 
-       cleaned_filenames,
+       alignments_subsampled, 
+       alignmentfiles_subsampled ,
        format = 'fasta')
+
+
+metadatafiles_subsampled <- paste('./data/metadata/clade2344b_asia', 
+                                  segnames, 
+                                  'subsampled.csv',  
+                                  sep = '_')
+mapply(write.csv, 
+       metadata_subsampled, 
+       metadatafiles_subsampled)
+
   
+####################################################################################################
+# END #
+####################################################################################################
