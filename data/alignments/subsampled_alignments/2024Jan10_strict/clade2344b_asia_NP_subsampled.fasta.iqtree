@@ -1,0 +1,1002 @@
+IQ-TREE 1.6.12 built Aug 15 2019
+
+Input file name: clade2344b_asia_NP_subsampled.fasta
+Type of analysis: tree reconstruction + ultrafast bootstrap (1000 replicates)
+Random seed number: 218710
+
+REFERENCES
+----------
+
+To cite IQ-TREE please use:
+
+Lam-Tung Nguyen, Heiko A. Schmidt, Arndt von Haeseler, and Bui Quang Minh
+(2015) IQ-TREE: A fast and effective stochastic algorithm for estimating
+maximum likelihood phylogenies. Mol Biol Evol, 32:268-274.
+https://doi.org/10.1093/molbev/msu300
+
+Since you used ultrafast bootstrap (UFBoot) please also cite: 
+
+Diep Thi Hoang, Olga Chernomor, Arndt von Haeseler, Bui Quang Minh,
+and Le Sy Vinh (2017) UFBoot2: Improving the ultrafast bootstrap
+approximation. Mol Biol Evol, in press.
+https://doi.org/10.1093/molbev/msx281
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 231 sequences with 1497 nucleotide sites
+Number of constant sites: 1014 (= 67.7355% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 1014 (= 67.7355% of all sites)
+Number of parsimony informative sites: 432
+Number of distinct site patterns: 460
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: HKY+F+G4
+
+Rate parameter R:
+
+  A-C: 1.0000
+  A-G: 12.0495
+  A-T: 1.0000
+  C-G: 1.0000
+  C-T: 12.0495
+  G-T: 1.0000
+
+State frequencies: (empirical counts from alignment)
+
+  pi(A) = 0.3139
+  pi(C) = 0.2016
+  pi(G) = 0.2752
+  pi(T) = 0.2093
+
+Rate matrix Q:
+
+  A     -1.04   0.05627    0.9254   0.05843
+  C   0.08762   -0.8685    0.0768     0.704
+  G     1.056   0.05627     -1.17   0.05843
+  T   0.08762     0.678    0.0768   -0.8424
+
+Model of rate heterogeneity: Gamma with 4 categories
+Gamma shape alpha: 0.2212
+
+ Category  Relative_rate  Proportion
+  1         0.00103        0.25
+  2         0.04684        0.25
+  3         0.4367         0.25
+  4         3.515          0.25
+Relative rates are computed as MEAN of the portion of the Gamma distribution falling in the category.
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -8537.6035 (s.e. 263.5658)
+Unconstrained log-likelihood (without tree): -5403.1000
+Number of free parameters (#branches + #model parameters): 426
+Akaike information criterion (AIC) score: 17927.2069
+Corrected Akaike information criterion (AICc) score: 18267.2106
+Bayesian information criterion (BIC) score: 20189.7859
+
+Total tree length (sum of branch lengths): 0.8512
+Sum of internal branch lengths: 0.6293 (73.9286% of tree length)
+
+WARNING: 99 near-zero internal branches (<0.0007) should be treated with caution
+         Such branches are denoted by '**' in the figure below
+
+NOTE: Tree is UNROOTED although outgroup taxon 'H5N8.EPI_ISL_682297.environment.japan.10.2020-11-09' is drawn at root
+Numbers in parentheses are  ultrafast bootstrap support (%)
+
++--H5N8.EPI_ISL_682297.environment.japan.10.2020-11-09
+|
+|                                                                          +--H5N8.EPI_ISL_718106.Galliformes.japan.16.2020-12-07
+|                                                                       +**| (7)
+|                                                                       |  +--H5N8.EPI_ISL_1009703.Anseriformes.south_korea.16.2020-12-01
+|                                                                    +**| (4)
+|                                                                    |  +**H5N8.EPI_ISL_1009697.NA.south_korea.16.2020-11-23
+|                                                                 +**| (6)
+|                                                                 |  +**H5N8.EPI_ISL_1009700.Anseriformes.south_korea.16.2020-11-26
+|                                                              +**| (6)
+|                                                              |  |  +--H5N8.EPI_ISL_759856.Galliformes.japan.16.2020-12-22
+|                                                              |  +**| (18)
+|                                                              |     +--H5N8.EPI_ISL_17086333.environment.japan.NA.2020-12-12
+|                                                           +--| (99)
+|                                                           |  |     +**H5N8.EPI_ISL_1184517.Accipitriformes.japan.16.2021-02-24
+|                                                           |  |  +**| (72)
+|                                                           |  |  |  +**H5N8.EPI_ISL_17086354.Anseriformes.japan.NA.2021-01-29
+|                                                           |  +--| (100)
+|                                                           |     +--H5N8.EPI_ISL_1184518.Accipitriformes.japan.16.2021-02-24
+|                                                        +--| (100)
+|                                                        |  |     +**H5N8.EPI_ISL_738055.Galliformes.japan.16.2020-12-18
+|                                                        |  |  +**| (42)
+|                                                        |  |  |  +**H5N8.EPI_ISL_17086229.environment.japan.NA.2020-12-02
+|                                                        |  +**| (13)
+|                                                        |     |        +**H5N8.EPI_ISL_710434.Galliformes.japan.16.2020-12-06
+|                                                        |     |     +--| (100)
+|                                                        |     |     |  +**H5N8.EPI_ISL_17086334.Galliformes.japan.NA.2020-12-12
+|                                                        |     |  +**| (32)
+|                                                        |     |  |  +--H5N8.EPI_ISL_4062112.Anseriformes.japan.16.2020-12-22
+|                                                        |     +**| (9)
+|                                                        |        +--H5N8.EPI_ISL_17086303.environment.japan.NA.2020-12-10
+|                                                     +**| (62)
+|                                                     |  +--H5N8.EPI_ISL_1184508.Galliformes.japan.16.2021-02-24
+|                                                  +--| (100)
+|                                                  |  +**H6N2.EPI_ISL_1184535.Anseriformes.russia.NA.2020-09-06
+|                                               +**| (29)
+|                                               |  |  +**H5N8.EPI_ISL_17805901.NA.japan.10.2020-12-18
+|                                               |  +--| (100)
+|                                               |     +**H5N8.EPI_ISL_16718466.Anseriformes.japan.10.2020-12-18
+|                                            +**| (33)
+|                                            |  |     +**H5N8.EPI_ISL_985182.Galliformes.south_korea.79.2020-12-06
+|                                            |  |  +--| (100)
+|                                            |  |  |  +--H5N8.EPI_ISL_985200.Anseriformes.south_korea.79.2020-12-22
+|                                            |  +**| (20)
+|                                            |     +--H5N8.EPI_ISL_985195.Galliformes.south_korea.79.2020-12-16
+|                                         +--| (90)
+|                                         |  |              +--H5N8.EPI_ISL_1041178.Falconiformes.japan.10.2021-02-15
+|                                         |  |           +--| (100)
+|                                         |  |           |  +--H5N8.EPI_ISL_1273441.Accipitriformes.japan.10.2021-03-03
+|                                         |  |        +**| (16)
+|                                         |  |        |  |  +--H5N8.EPI_ISL_985232.Anseriformes.japan.10.2021-02-08
+|                                         |  |        |  +--| (99)
+|                                         |  |        |     +**H5N8.EPI_ISL_4061713.Anseriformes.japan.10.2021-02-08
+|                                         |  |     +**| (11)
+|                                         |  |     |  |        +**H5N8.EPI_ISL_978898.Galliformes.japan.10.2021-02-01
+|                                         |  |     |  |     +--| (100)
+|                                         |  |     |  |     |  +**H5N8.EPI_ISL_17086340.Galliformes.japan.NA.2021-02-02
+|                                         |  |     |  |  +**| (7)
+|                                         |  |     |  |  |  +**H5N8.EPI_ISL_16405678.environment.japan.10.2020-12-21
+|                                         |  |     |  +**| (4)
+|                                         |  |     |     +**H5N8.EPI_ISL_17086342.environment.japan.NA.2020-11-16
+|                                         |  |  +**| (8)
+|                                         |  |  |  +--H5N8.EPI_ISL_854596.Galliformes.japan.10.2021-01-10
+|                                         |  +--| (88)
+|                                         |     |  +**H5N8.EPI_ISL_17805886.NA.japan.10.2021-02-05
+|                                         |     +--| (100)
+|                                         |        +**H5N8.EPI_ISL_16718461.Gruiformes.japan.10.2021-02-03
+|                                      +--| (100)
+|                                      |  |     +**H5N1.EPI_ISL_12572653.Galliformes.china.110.2021-12-07
+|                                      |  |  +**| (76)
+|                                      |  |  |  +**H5N1.EPI_ISL_12572657.Anseriformes.china.110.2021-11-27
+|                                      |  +--| (100)
+|                                      |     +--H5N1.EPI_ISL_12572660.Anseriformes.china.110.2021-12-08
+|                                   +**| (71)
+|                                   |  |                                  +**H5N8.EPI_ISL_5260465.Pelecaniformes.china.1.2021-01-26
+|                                   |  |                               +**| (4)
+|                                   |  |                               |  |        +--H5N8.EPI_ISL_6829497.Gruiformes.japan.1.2021-11-19
+|                                   |  |                               |  |     +**| (40)
+|                                   |  |                               |  |     |  +--H9N2.EPI_ISL_14223937.Galliformes.china.NA.2021-11-12
+|                                   |  |                               |  |  +**| (11)
+|                                   |  |                               |  |  |  |  +--H5N8.EPI_ISL_14835974.Anseriformes.china.1.2020-11-13
+|                                   |  |                               |  |  |  +**| (12)
+|                                   |  |                               |  |  |     +--H5N8.EPI_ISL_14770162.Gruiformes.china.1.2020-12-31
+|                                   |  |                               |  +**| (2)
+|                                   |  |                               |     +**H5N8.EPI_ISL_1009680.Galliformes.south_korea.1.2020-12-28
+|                                   |  |                            +**| (9)
+|                                   |  |                            |  |  +--H5N8.EPI_ISL_17086352.Galliformes.japan.NA.2021-02-15
+|                                   |  |                            |  +**| (7)
+|                                   |  |                            |     |  +--H5N8.EPI_ISL_14778363.NA.china.NA.2020-11-25
+|                                   |  |                            |     +**| (53)
+|                                   |  |                            |        +--H5N8.EPI_ISL_16208969.Anseriformes.china.NA.2020-11-16
+|                                   |  |                         +--| (100)
+|                                   |  |                         |  +--H5N8.EPI_ISL_17086346.Anseriformes.japan.NA.2021-01-24
+|                                   |  |                      +**| (26)
+|                                   |  |                      |  |  +**H5N8.EPI_ISL_1139015.NA.netherlands.1.2020-10-26
+|                                   |  |                      |  +--| (100)
+|                                   |  |                      |     +**H5N8.EPI_ISL_1139014.Anseriformes.netherlands.1.2020-10-27
+|                                   |  |                   +--| (98)
+|                                   |  |                   |  |           +--H5N8.EPI_ISL_7381026.Galliformes.china.1.2021-03
+|                                   |  |                   |  |        +**| (7)
+|                                   |  |                   |  |        |  +--H5N8.EPI_ISL_14836426.Anseriformes.china.NA.2020-12-01
+|                                   |  |                   |  |     +**| (24)
+|                                   |  |                   |  |     |  |           +**H5N8.EPI_ISL_2555536.Charadriiformes.china.1.2020-11-16
+|                                   |  |                   |  |     |  |        +--| (100)
+|                                   |  |                   |  |     |  |        |  +--H5N8.EPI_ISL_14822451.Anseriformes.china.NA.2021-03-12
+|                                   |  |                   |  |     |  |     +**| (8)
+|                                   |  |                   |  |     |  |     |  |  +**H5N8.EPI_ISL_14822549.Anseriformes.china.1.2021-05-18
+|                                   |  |                   |  |     |  |     |  +--| (100)
+|                                   |  |                   |  |     |  |     |     +**H5N8.EPI_ISL_8215657.Anseriformes.china.NA.2021-05-15
+|                                   |  |                   |  |     |  |  +**| (2)
+|                                   |  |                   |  |     |  |  |  +--H5N6.EPI_ISL_18058053.Anseriformes.china.NA.2021-03-12
+|                                   |  |                   |  |     |  +**| (3)
+|                                   |  |                   |  |     |     +**H5N8.EPI_ISL_16215736.Galliformes.china.1.2020-12
+|                                   |  |                   |  |  +--| (100)
+|                                   |  |                   |  |  |  |  +--H5N8.EPI_ISL_985220.Galliformes.japan.1.2021-02-06
+|                                   |  |                   |  |  |  +--| (98)
+|                                   |  |                   |  |  |     +**H5N8.EPI_ISL_17086355.environment.japan.NA.2021-02-14
+|                                   |  |                   |  +**| (24)
+|                                   |  |                   |     +--H5N8.EPI_ISL_15435500.Anseriformes.china.1.2021-01-21
+|                                   |  |                +--| (98)
+|                                   |  |                |  |  +**H5N8.EPI_ISL_1114741.Galliformes.russia.1.2020-10-17
+|                                   |  |                |  +--| (99)
+|                                   |  |                |     +--H5N8.EPI_ISL_1080579.Anseriformes.czech_republic.1.2021-02-14
+|                                   |  |             +--| (79)
+|                                   |  |             |  |  +--H5N3.EPI_ISL_5863749.Anseriformes.united_states.289.2020-10-20
+|                                   |  |             |  +**| (67)
+|                                   |  |             |     +**H5N8.EPI_ISL_644127.Anseriformes.russia.1.2020-08-17
+|                                   |  |          +**| (36)
+|                                   |  |          |  +--H5N8.EPI_ISL_2932600.Anseriformes.kazakhstan.1.2020-09-01
+|                                   |  |       +--| (100)
+|                                   |  |       |  +--H5N8.EPI_ISL_2932617.Passeriformes.kazakhstan.1.2020-09-15
+|                                   |  +-------| (100)
+|                                   |          +--H5N8.EPI_ISL_13632084.Galliformes.kazakhstan.1.2020-08-01
+|                                +--| (97)
+|                                |  |                                                              +--H5N6.EPI_ISL_7983813.NA.china.73.2021-12-22
+|                                |  |                                                           +--| (99)
+|                                |  |                                                           |  |  +**H5N6.EPI_ISL_8517996.environment.china.73.2021-12-23
+|                                |  |                                                           |  +**| (80)
+|                                |  |                                                           |     +**H5N6.EPI_ISL_8518268.Galliformes.china.73.2021-12-23
+|                                |  |                                                        +--| (100)
+|                                |  |                                                        |  +--H5N6.EPI_ISL_8517999.environment.china.73.2021-12-23
+|                                |  |                                                     +--| (100)
+|                                |  |                                                     |  +--H5N6.EPI_ISL_8517997.environment.china.73.2021-12-23
+|                                |  |                                                  +**| (48)
+|                                |  |                                                  |  |      +--H5N6.EPI_ISL_6760430.Anseriformes.china.61.2021-07
+|                                |  |                                                  |  |   +--| (100)
+|                                |  |                                                  |  |   |  |  +**H5N6.EPI_ISL_6760682.Galliformes.china.61.2021-07
+|                                |  |                                                  |  |   |  +--| (99)
+|                                |  |                                                  |  |   |     +**H5N6.EPI_ISL_6760683.Anseriformes.china.61.2021-07
+|                                |  |                                                  |  +---| (100)
+|                                |  |                                                  |      |  +**H5N6.EPI_ISL_11208198.Anseriformes.china.61.2021-11-02
+|                                |  |                                                  |      +**| (75)
+|                                |  |                                                  |         |  +**H5N6.EPI_ISL_18231293.Anseriformes.laos.NA.2022-01-18
+|                                |  |                                                  |         +--| (100)
+|                                |  |                                                  |            +--H5N6.EPI_ISL_18231287.Galliformes.laos.NA.2022-07-13
+|                                |  |                                               +**| (40)
+|                                |  |                                               |  +**H5N6.EPI_ISL_697077.Galliformes.china.NA.2017-08-28
+|                                |  |                                            +--| (53)
+|                                |  |                                            |  +--H9N2.EPI_ISL_697892.Galliformes.china.NA.2018-09-29
+|                                |  |                                         +**| (38)
+|                                |  |                                         |  +**H5N6.EPI_ISL_707491.Anseriformes.china.NA.2018-01-12
+|                                |  |                                      +--| (62)
+|                                |  |                                      |  |  +**NA.EPI_ISL_698056.Anseriformes.china.NA.2018-05-29
+|                                |  |                                      |  +--| (91)
+|                                |  |                                      |     +**NA.EPI_ISL_699430.Galliformes.china.NA.2018-04-26
+|                                |  |                                   +--| (61)
+|                                |  |                                   |  |  +**H5N6.EPI_ISL_502208.Carnivora.china.NA.2018-06-13
+|                                |  |                                   |  +**| (80)
+|                                |  |                                   |     +**H5N6.EPI_ISL_315237.Galliformes.china.NA.2017-12-20
+|                                |  |                     +-------------| (100)
+|                                |  |                     |             |  +----H5N6.EPI_ISL_6772739.Galliformes.china.127.2021-08
+|                                |  |                     |             +--| (99)
+|                                |  |                     |                +**NA.EPI_ISL_16868590.environment.china.NA.2020-06-22
+|                                |  |        +------------| (100)
+|                                |  |        |            |                +--H5N2.EPI_ISL_china_9.Anseriformes.china.101.2022-01-26
+|                                |  |        |            |             +--| (100)
+|                                |  |        |            |             |  +**H5N2.EPI_ISL_china_11.Anseriformes.china.101.2022-01-26
+|                                |  |        |            |     +-------| (100)
+|                                |  |        |            |     |       |  +**H5N6.EPI_ISL_696600.environment.china.NA.2018-11-29
+|                                |  |        |            |     |       +--| (100)
+|                                |  |        |            |     |          +**H5N6.EPI_ISL_696602.Galliformes.china.NA.2018-11-29
+|                                |  |        |            +-----| (99)
+|                                |  |        |                  |             +--H7N9.EPI_ISL_1374063.Galliformes.china.NA.2018-11-01
+|                                |  |        |                  |          +--| (100)
+|                                |  |        |                  |          |  +--H7N9.EPI_ISL_1495971.Galliformes.china.NA.2021-02-23
+|                                |  |        |                  +----------| (100)
+|                                |  |        |                             +--H7N9.EPI_ISL_379666.Galliformes.china.NA.2017-05-07
+|                                |  |  +-----| (99)
+|                                |  |  |     |                        +**H5N2.EPI_ISL_1760455.Anseriformes.china.286.2020-11-10
+|                                |  |  |     |                     +--| (100)
+|                                |  |  |     |                     |  +**H9N2.EPI_ISL_1760456.Anseriformes.china.NA.2020-11-10
+|                                |  |  |     |                  +**| (73)
+|                                |  |  |     |                  |  |           +**H5N1.EPI_ISL_17606828.Anseriformes.south_korea.22.2021-12-13
+|                                |  |  |     |                  |  |        +**| (100)
+|                                |  |  |     |                  |  |        |  +**H5N1.EPI_ISL_17606834.Galliformes.south_korea.22.2021-12-20
+|                                |  |  |     |                  |  |     +--| (100)
+|                                |  |  |     |                  |  |     |  |  +**H5N1.EPI_ISL_17606844.Anseriformes.south_korea.22.2022-01-25
+|                                |  |  |     |                  |  |     |  +--| (100)
+|                                |  |  |     |                  |  |     |     +**H5N1.EPI_ISL_17606850.Galliformes.south_korea.22.2022-02-04
+|                                |  |  |     |                  |  |  +--| (92)
+|                                |  |  |     |                  |  |  |  +--H8N4.EPI_ISL_17989853.Gruiformes.china.NA.2022-01-16
+|                                |  |  |     |                  |  +--| (99)
+|                                |  |  |     |                  |     |  +**H3N2.EPI_ISL_17805856.environment.japan.NA.2020-11-23
+|                                |  |  |     |                  |     +--| (99)
+|                                |  |  |     |                  |        +--H3N6.EPI_ISL_17805930.environment.japan.NA.2020-11-30
+|                                |  |  |     |               +**| (61)
+|                                |  |  |     |               |  |  +**H10N9.EPI_ISL_13985210.Charadriiformes.china.NA.2020-09-27
+|                                |  |  |     |               |  +--| (100)
+|                                |  |  |     |               |     +**H10N9.EPI_ISL_13985211.Pelecaniformes.china.NA.2020-09-27
+|                                |  |  |     |            +**| (41)
+|                                |  |  |     |            |  |           +**H5N1.EPI_ISL_15943015.NA.south_korea.128.2022-11-07
+|                                |  |  |     |            |  |        +--| (100)
+|                                |  |  |     |            |  |        |  +**H5N1.EPI_ISL_15944665.Anseriformes.south_korea.128.2022-11-17
+|                                |  |  |     |            |  |     +--| (100)
+|                                |  |  |     |            |  |     |  +--H5N1.EPI_ISL_17949987.Anseriformes.japan.80.2022-11-26
+|                                |  |  |     |            |  |  +**| (66)
+|                                |  |  |     |            |  |  |  |        +--H5N1.EPI_ISL_17638143.Galliformes.japan.80.2023-04-02
+|                                |  |  |     |            |  |  |  |     +**| (31)
+|                                |  |  |     |            |  |  |  |     |  +--H5N1.EPI_ISL_18102701.Carnivora.south_korea.NA.2023-07-04
+|                                |  |  |     |            |  |  |  |  +**| (41)
+|                                |  |  |     |            |  |  |  |  |  |     +**H5N1.EPI_ISL_17949986.Passeriformes.japan.80.2023-02-07
+|                                |  |  |     |            |  |  |  |  |  |  +**| (28)
+|                                |  |  |     |            |  |  |  |  |  |  |  +**H5N1.EPI_ISL_18284468.Galliformes.japan.NA.2022-12-05
+|                                |  |  |     |            |  |  |  |  |  +**| (47)
+|                                |  |  |     |            |  |  |  |  |     +**H5N1.EPI_ISL_china_18.NA.china.80.2023-01-01
+|                                |  |  |     |            |  |  |  +--| (100)
+|                                |  |  |     |            |  |  |     +--H5N1.EPI_ISL_18241793.Anseriformes.viet_nam.NA.2023-06-05
+|                                |  |  |     |            |  +**| (50)
+|                                |  |  |     |            |     +--H4N6.EPI_ISL_16405648.environment.japan.NA.2020-11-09
+|                                |  |  |     |         +--| (84)
+|                                |  |  |     |         |  |     +--H5N8.EPI_ISL_16209048.Anseriformes.canada.81.2021-09-16
+|                                |  |  |     |         |  |  +**| (65)
+|                                |  |  |     |         |  |  |  +--H5N8.EPI_ISL_13295139.Anseriformes.canada.81.2021-09-16
+|                                |  |  |     |         |  +--| (100)
+|                                |  |  |     |         |     +--H5N8.EPI_ISL_17760582.Anseriformes.canada.81.2021-10-15
+|                                |  |  |     |     +---| (99)
+|                                |  |  |     |     |   +--H6N1.EPI_ISL_16886957.NA.south_korea.NA.2019-02-01
+|                                |  |  |     |  +--| (47)
+|                                |  |  |     |  |  |                                                    +**H5N1.EPI_ISL_17051458.Anseriformes.canada.NA.2022-12-12
+|                                |  |  |     |  |  |                                                 +**| (65)
+|                                |  |  |     |  |  |                                                 |  +**H5N1.EPI_ISL_17051423.Anseriformes.canada.9.2022-11-09
+|                                |  |  |     |  |  |                                              +**| (53)
+|                                |  |  |     |  |  |                                              |  +--H5N1.EPI_ISL_17964944.Accipitriformes.united_states.9.2023-03-31
+|                                |  |  |     |  |  |                                           +--| (100)
+|                                |  |  |     |  |  |                                           |  |     +**H5N1.EPI_ISL_17964946.Galliformes.united_states.9.2023-04-19
+|                                |  |  |     |  |  |                                           |  |  +**| (62)
+|                                |  |  |     |  |  |                                           |  |  |  +--H5N1.EPI_ISL_17964858.Accipitriformes.united_states.9.2023-02-14
+|                                |  |  |     |  |  |                                           |  +--| (100)
+|                                |  |  |     |  |  |                                           |     +--H5N1.EPI_ISL_17964876.Charadriiformes.united_states.9.2023-02-14
+|                                |  |  |     |  |  |                                        +--| (98)
+|                                |  |  |     |  |  |                                        |  |  +**H5N1.EPI_ISL_17424649.Anseriformes.united_states.9.2022-09-01
+|                                |  |  |     |  |  |                                        |  +**| (72)
+|                                |  |  |     |  |  |                                        |     +**H5N1.EPI_ISL_17260681.Carnivora.united_states.9.2022-06-15
+|                                |  |  |     |  |  +----------------------------------------| (100)
+|                                |  |  |     |  |                                           +**H5N1.EPI_ISL_17051418.Falconiformes.canada.NA.2022-10-28
+|                                |  |  |     +--| (70)
+|                                |  |  |        |    +**H5N2.EPI_ISL_369328.Anseriformes.south_korea.NA.2017-11-15
+|                                |  |  |        +----| (100)
+|                                |  |  |             +--H4N6.EPI_ISL_381467.Anseriformes.south_korea.NA.2017-11-22
+|                                |  +--| (89)
+|                                |     +----H2N9.EPI_ISL_17805909.NA.japan.NA.2020-11-15
+|                             +--| (100)
+|                             |  |                       +**H5N1.EPI_ISL_6829533.Galliformes.japan.22.2021-11-12
+|                             |  |                    +**| (84)
+|                             |  |                    |  +**H5N1.EPI_ISL_15063429.Galliformes.japan.NA.2021-11-13
+|                             |  |                 +--| (81)
+|                             |  |                 |  +--H5N1.EPI_ISL_18373259.Pelecaniformes.south_korea.NA.2022-03-14
+|                             |  |              +**| (65)
+|                             |  |              |  |  +**H5N1.EPI_ISL_17606838.Anseriformes.south_korea.22.2022-01-06
+|                             |  |              |  +--| (99)
+|                             |  |              |     +**H5N1.EPI_ISL_18373226.Anseriformes.south_korea.NA.2022-01-18
+|                             |  |           +--| (100)
+|                             |  |           |  |  +--H5N1.EPI_ISL_15923322.Falconiformes.japan.22.2022-09-25
+|                             |  |           |  +--| (82)
+|                             |  |           |     |     +**H5N1.EPI_ISL_17606817.Anseriformes.south_korea.22.2022-01-13
+|                             |  |           |     |  +**| (73)
+|                             |  |           |     |  |  +**H5N1.EPI_ISL_17606842.Galliformes.south_korea.22.2022-01-21
+|                             |  |           |     +**| (68)
+|                             |  |           |        |  +--H5N1.EPI_ISL_17606840.Anseriformes.south_korea.22.2022-01-21
+|                             |  |           |        +**| (43)
+|                             |  |           |           +--H5N1.EPI_ISL_17606856.Galliformes.south_korea.22.2022-02-08
+|                             |  |        +**| (14)
+|                             |  |        |  |     +**H5N1.EPI_ISL_17606823.Galliformes.south_korea.22.2021-11-21
+|                             |  |        |  |  +**| (85)
+|                             |  |        |  |  |  +**H5N1.EPI_ISL_17606865.Anseriformes.south_korea.22.2021-11-14
+|                             |  |        |  +--| (99)
+|                             |  |        |     +--H5N1.EPI_ISL_18373223.Anseriformes.south_korea.NA.2021-12-07
+|                             |  |     +--| (81)
+|                             |  |     |  |     +**H5N1.EPI_ISL_6959593.Galliformes.south_korea.22.2021-11-08
+|                             |  |     |  |  +--| (100)
+|                             |  |     |  |  |  +--H5N1.EPI_ISL_15063426.Galliformes.japan.NA.2021-12-12
+|                             |  |     |  +**| (25)
+|                             |  |     |     +--H5N1.EPI_ISL_china_20230833.Anseriformes.china.22.2021-10-15
+|                             |  |  +--| (100)
+|                             |  |  |  |  +**H5N1.EPI_ISL_17606833.Galliformes.south_korea.22.2021-12-17
+|                             |  |  |  +**| (82)
+|                             |  |  |     +--H5N1.EPI_ISL_15063425.Galliformes.japan.NA.2021-12-07
+|                             |  +--| (99)
+|                             |     |              +**H5N2.EPI_ISL_15732741.Passeriformes.japan.297.2022-10-28
+|                             |     |           +--| (100)
+|                             |     |           |  +--H5N2.EPI_ISL_18284476.Galliformes.japan.NA.2023-01-17
+|                             |     |        +**| (9)
+|                             |     |        |  +--H5N1.EPI_ISL_17950087.Passeriformes.japan.2.2023-03-30
+|                             |     |     +--| (98)
+|                             |     |     |  |              +--H5N1.EPI_ISL_12174842.Carnivora.japan.2.2022-03-31
+|                             |     |     |  |           +**| (9)
+|                             |     |     |  |           |  |     +**H5N1.EPI_ISL_16698060.Galliformes.japan.15.2022-11-07
+|                             |     |     |  |           |  |  +--| (99)
+|                             |     |     |  |           |  |  |  +**H5N1.EPI_ISL_18284461.Galliformes.japan.NA.2022-10-28
+|                             |     |     |  |           |  +--| (99)
+|                             |     |     |  |           |     |  +--H5N1.EPI_ISL_17267427.Passeriformes.japan.15.2022-12-12
+|                             |     |     |  |           |     +--| (99)
+|                             |     |     |  |           |        |  +**H5N1.EPI_ISL_17316075.Passeriformes.japan.15.2023-02-04
+|                             |     |     |  |           |        +**| (86)
+|                             |     |     |  |           |           +**H5N1.EPI_ISL_17766057.Carnivora.japan.15.2023-04-12
+|                             |     |     |  |        +**| (6)
+|                             |     |     |  |        |  |     +**H5N1.EPI_ISL_china_20230820.Anseriformes.china.2.2021-11-16
+|                             |     |     |  |        |  |  +--| (100)
+|                             |     |     |  |        |  |  |  +--H5N1.EPI_ISL_china_20230832.Anseriformes.china.2.2021-10-20
+|                             |     |     |  |        |  +**| (9)
+|                             |     |     |  |        |     |  +**H5N1.EPI_ISL_16831310.Galliformes.japan.NA.2022-02-12
+|                             |     |     |  |        |     +--| (100)
+|                             |     |     |  |        |        +**H5N1.EPI_ISL_16831114.Passeriformes.japan.NA.2022-04-06
+|                             |     |     |  |     +**| (5)
+|                             |     |     |  |     |  +**H5N1.EPI_ISL_14064698.Passeriformes.japan.2.2022-02-03
+|                             |     |     |  |  +**| (2)
+|                             |     |     |  |  |  |  +**H5N1.EPI_ISL_16698576.Gruiformes.japan.2.2022-11-20
+|                             |     |     |  |  |  +**| (4)
+|                             |     |     |  |  |     +**H5N1.EPI_ISL_16831229.Passeriformes.japan.NA.2022-04-19
+|                             |     |     |  +**| (4)
+|                             |     |     |     |  +--H5N1.EPI_ISL_15072539.Casuariiformes.japan.2.2022-04-16
+|                             |     |     |     +**| (15)
+|                             |     |     |        |  +**H5N1.EPI_ISL_16698477.Galliformes.japan.2.2023-01-11
+|                             |     |     |        +--| (100)
+|                             |     |     |           +**H5N1.EPI_ISL_18284462.Galliformes.japan.NA.2022-11-07
+|                             |     |  +**| (97)
+|                             |     |  |  +--H5N1.EPI_ISL_17075759.NA.china.19.2023-02-10
+|                             |     +--| (100)
+|                             |        |           +--H5N1.EPI_ISL_14886367.Anseriformes.bangladesh.19.2021-12-19
+|                             |        |        +**| (80)
+|                             |        |        |  |  +**H5N1.EPI_ISL_13369775.Galliformes.united_kingdom.2.2021-11-23
+|                             |        |        |  +--| (100)
+|                             |        |        |     +**H5N1.EPI_ISL_9029959.Anseriformes.united_kingdom.2.2021-11-18
+|                             |        |     +--| (61)
+|                             |        |     |  |  +**H5N1.EPI_ISL_14864642.Carnivora.united_kingdom.2.2022-01-01
+|                             |        |     |  +--| (100)
+|                             |        |     |     +**H5N1.EPI_ISL_13370894.Gruiformes.united_kingdom.2.2022-01-28
+|                             |        |  +--| (65)
+|                             |        |  |  |              +--H5N1.EPI_ISL_15647837.Anseriformes.south_korea.19.2022-02-05
+|                             |        |  |  |           +--| (100)
+|                             |        |  |  |           |  +**H5N1.EPI_ISL_18373240.Anseriformes.south_korea.NA.2022-02-10
+|                             |        |  |  |        +**| (14)
+|                             |        |  |  |        |  |  +**H5N1.EPI_ISL_china_20230851.Anseriformes.china.19.2021-12-02
+|                             |        |  |  |        |  +--| (100)
+|                             |        |  |  |        |     +--H5N1.EPI_ISL_13352719.Anseriformes.china.NA.2021-12-17
+|                             |        |  |  |     +**| (21)
+|                             |        |  |  |     |  |           +**H5N1.EPI_ISL_china_26.Podicipediformes.china.19.2022-07-15
+|                             |        |  |  |     |  |        +--| (100)
+|                             |        |  |  |     |  |        |  +**H5N1.EPI_ISL_china_45.Charadriiformes.china.19.2022-07-22
+|                             |        |  |  |     |  |     +--| (99)
+|                             |        |  |  |     |  |     |  |  +**H5N1.EPI_ISL_china_31.Charadriiformes.china.19.2022-06-20
+|                             |        |  |  |     |  |     |  +**| (82)
+|                             |        |  |  |     |  |     |     +--H5N1.EPI_ISL_china_40.Podicipediformes.china.19.2022-07-21
+|                             |        |  |  |     |  |  +--| (100)
+|                             |        |  |  |     |  |  |  +--H5N1.EPI_ISL_china_39.Anseriformes.china.19.2022-06-18
+|                             |        |  |  |     |  +**| (20)
+|                             |        |  |  |     |     +--H5N1.EPI_ISL_china_20230842.Anseriformes.china.19.2021-11-25
+|                             |        |  |  |  +--| (100)
+|                             |        |  |  |  |  +--H5N1.EPI_ISL_china_20230811.Anseriformes.china.19.2021-11-18
+|                             |        |  |  +**| (53)
+|                             |        |  |     |  +--H5N1.EPI_ISL_china_20230828.Anseriformes.china.19.2021-11-22
+|                             |        |  |     +**| (57)
+|                             |        |  |        |  +**H5N1.EPI_ISL_14760739.Galliformes.italy.2.2021-12-13
+|                             |        |  |        +--| (100)
+|                             |        |  |           +**H5N1.EPI_ISL_14760638.Galliformes.italy.2.2021-11-26
+|                             |        +**| (53)
+|                             |           |  +**H5N1.EPI_ISL_16838580.Pelecaniformes.russia.2.2021-06-29
+|                             |           +**| (20)
+|                             |              |  +--H5N1.EPI_ISL_7892492.Pelecaniformes.croatia.NA.2021-12-08
+|                             |              +**| (31)
+|                             |                 +--H5N1.EPI_ISL_16838578.Anseriformes.canada.2.2021-08-08
+|                          +**| (96)
+|                          |  +--H5N8.EPI_ISL_525454.Anseriformes.poland.10.2020-02-22
+|                       +**| (19)
+|                       |  +--H5N8.EPI_ISL_525445.Galliformes.poland.10.2020-01-25
+|                    +**| (6)
+|                    |  |  +--H5N8.EPI_ISL_419314.Galliformes.germany.10.2020-03-27
+|                    |  +**| (31)
+|                    |     |  +**H5N8.EPI_ISL_419312.Anseriformes.germany.10.2020-03-26
+|                    |     +--| (100)
+|                    |        +**H5N8.EPI_ISL_417414.Accipitriformes.germany.10.2020-03-20
+|                 +**| (13)
+|                 |  +**H5N8.EPI_ISL_503364.Galliformes.slovakia.NA.2020-01-03
+|              +--| (100)
+|              |  |     +**H5N8.EPI_ISL_833583.Anseriformes.hungary.10.2020-04-22
+|              |  |  +**| (81)
+|              |  |  |  +**H5N8.EPI_ISL_811134.Galliformes.hungary.10.2020-04-21
+|              |  +--| (100)
+|              |     |  +**H5N8.EPI_ISL_833482.Anseriformes.hungary.10.2020-04-10
+|              |     +--| (100)
+|              |        +**H5N8.EPI_ISL_813971.Galliformes.hungary.10.2020-05-05
+|           +--| (100)
+|           |  |  +**H5N8.EPI_ISL_525440.Galliformes.poland.10.2020-01-02
+|           |  +**| (79)
+|           |     +**H5N8.EPI_ISL_405813.Accipitriformes.poland.10.2020-01-06
+|        +**| (39)
+|        |  |  +--H5N8.EPI_ISL_2820504.Anseriformes.china.10.2020-10-16
+|        |  +--| (100)
+|        |     +**H5N8.EPI_ISL_14819896.Anseriformes.china.NA.2020-10-16
+|     +**| (36)
+|     |  +**H5N8.EPI_ISL_2820259.Anseriformes.china.10.2020-10-15
+|  +--| (99)
+|  |  |     +--H5N8.EPI_ISL_681288.Galliformes.japan.10.2020-11-07
+|  |  |  +--| (95)
+|  |  |  |  |  +--H5N8.EPI_ISL_681292.Galliformes.japan.10.2020-11-10
+|  |  |  |  +**| (66)
+|  |  |  |     +--H5N8.EPI_ISL_17086224.environment.japan.NA.2020-11-05
+|  |  +--| (96)
+|  |     +**H5N8.EPI_ISL_1009702.Anseriformes.south_korea.10.2020-12-01
++--| (99)
+|  +--H5N8.EPI_ISL_16405655.environment.japan.10.2020-11-16
+|
++**H5N8.EPI_ISL_16405654.environment.japan.10.2020-11-09
+
+Tree in newick format:
+
+(H5N8.EPI_ISL_682297.environment.japan.10.2020-11-09:0.0006746444,(((((((((((((((((((((((((H5N8.EPI_ISL_718106.Galliformes.japan.16.2020-12-07:0.0006747779,H5N8.EPI_ISL_1009703.Anseriformes.south_korea.16.2020-12-01:0.0006748171)7:0.0000022300,H5N8.EPI_ISL_1009697.NA.south_korea.16.2020-11-23:0.0000027856)4:0.0000022321,H5N8.EPI_ISL_1009700.Anseriformes.south_korea.16.2020-11-26:0.0000023033)6:0.0000023033,(H5N8.EPI_ISL_759856.Galliformes.japan.16.2020-12-22:0.0020311227,H5N8.EPI_ISL_17086333.environment.japan.NA.2020-12-12:0.0027178460)18:0.0000022421)6:0.0000022317,((H5N8.EPI_ISL_1184517.Accipitriformes.japan.16.2021-02-24:0.0000023033,H5N8.EPI_ISL_17086354.Anseriformes.japan.NA.2021-01-29:0.0000023033)72:0.0000023033,H5N8.EPI_ISL_1184518.Accipitriformes.japan.16.2021-02-24:0.0006749515)100:0.0006748350)99:0.0006747012,((H5N8.EPI_ISL_738055.Galliformes.japan.16.2020-12-18:0.0000023033,H5N8.EPI_ISL_17086229.environment.japan.NA.2020-12-02:0.0000023033)42:0.0000024259,(((H5N8.EPI_ISL_710434.Galliformes.japan.16.2020-12-06:0.0000023033,H5N8.EPI_ISL_17086334.Galliformes.japan.NA.2020-12-12:0.0000023033)100:0.0013520369,H5N8.EPI_ISL_4062112.Anseriformes.japan.16.2020-12-22:0.0049368916)32:0.0000022665,H5N8.EPI_ISL_17086303.environment.japan.NA.2020-12-10:0.0006746181)9:0.0000024436)13:0.0000024067)100:0.0020301838,H5N8.EPI_ISL_1184508.Galliformes.japan.16.2021-02-24:0.0020339265)62:0.0000022445,H6N2.EPI_ISL_1184535.Anseriformes.russia.NA.2020-09-06:0.0000020246)100:0.0006746721,(H5N8.EPI_ISL_17805901.NA.japan.10.2020-12-18:0.0000020522,H5N8.EPI_ISL_16718466.Anseriformes.japan.10.2020-12-18:0.0000020629)100:0.0047790457)29:0.0000024086,((H5N8.EPI_ISL_985182.Galliformes.south_korea.79.2020-12-06:0.0000025026,H5N8.EPI_ISL_985200.Anseriformes.south_korea.79.2020-12-22:0.0006746757)100:0.0013518304,H5N8.EPI_ISL_985195.Galliformes.south_korea.79.2020-12-16:0.0013518092)20:0.0000023911)33:0.0000020613,(((((H5N8.EPI_ISL_1041178.Falconiformes.japan.10.2021-02-15:0.0006733393,H5N8.EPI_ISL_1273441.Accipitriformes.japan.10.2021-03-03:0.0006811477)100:0.0020336711,(H5N8.EPI_ISL_985232.Anseriformes.japan.10.2021-02-08:0.0013512280,H5N8.EPI_ISL_4061713.Anseriformes.japan.10.2021-02-08:0.0000021096)99:0.0013518593)16:0.0000022488,(((H5N8.EPI_ISL_978898.Galliformes.japan.10.2021-02-01:0.0000023033,H5N8.EPI_ISL_17086340.Galliformes.japan.NA.2021-02-02:0.0000023033)100:0.0006765328,H5N8.EPI_ISL_16405678.environment.japan.10.2020-12-21:0.0000023033)7:0.0000023033,H5N8.EPI_ISL_17086342.environment.japan.NA.2020-11-16:0.0000023033)4:0.0000021316)11:0.0000022284,H5N8.EPI_ISL_854596.Galliformes.japan.10.2021-01-10:0.0006747210)8:0.0000023435,(H5N8.EPI_ISL_17805886.NA.japan.10.2021-02-05:0.0000025785,H5N8.EPI_ISL_16718461.Gruiformes.japan.10.2021-02-03:0.0000024564)100:0.0020298381)88:0.0006743441)90:0.0027284606,((H5N1.EPI_ISL_12572653.Galliformes.china.110.2021-12-07:0.0000023033,H5N1.EPI_ISL_12572657.Anseriformes.china.110.2021-11-27:0.0000021543)76:0.0000021607,H5N1.EPI_ISL_12572660.Anseriformes.china.110.2021-12-08:0.0006749704)100:0.0062335755)100:0.0128073900,((((((((((H5N8.EPI_ISL_5260465.Pelecaniformes.china.1.2021-01-26:0.0000023033,(((H5N8.EPI_ISL_6829497.Gruiformes.japan.1.2021-11-19:0.0027137911,H9N2.EPI_ISL_14223937.Galliformes.china.NA.2021-11-12:0.0027190014)40:0.0000023033,(H5N8.EPI_ISL_14835974.Anseriformes.china.1.2020-11-13:0.0006757977,H5N8.EPI_ISL_14770162.Gruiformes.china.1.2020-12-31:0.0006752170)12:0.0000023033)11:0.0000023033,H5N8.EPI_ISL_1009680.Galliformes.south_korea.1.2020-12-28:0.0000023033)2:0.0000020307)4:0.0000023033,(H5N8.EPI_ISL_17086352.Galliformes.japan.NA.2021-02-15:0.0006768371,(H5N8.EPI_ISL_14778363.NA.china.NA.2020-11-25:0.0012366781,H5N8.EPI_ISL_16208969.Anseriformes.china.NA.2020-11-16:0.0006841409)53:0.0001167439)7:0.0000023033)9:0.0000023033,H5N8.EPI_ISL_17086346.Anseriformes.japan.NA.2021-01-24:0.0006751676)100:0.0006751561,(H5N8.EPI_ISL_1139015.NA.netherlands.1.2020-10-26:0.0000020277,H5N8.EPI_ISL_1139014.Anseriformes.netherlands.1.2020-10-27:0.0000020277)100:0.0020368078)26:0.0000026721,((((H5N8.EPI_ISL_7381026.Galliformes.china.1.2021-03:0.0040919635,H5N8.EPI_ISL_14836426.Anseriformes.china.NA.2020-12-01:0.0013564756)7:0.0000020898,((((H5N8.EPI_ISL_2555536.Charadriiformes.china.1.2020-11-16:0.0000021397,H5N8.EPI_ISL_14822451.Anseriformes.china.NA.2021-03-12:0.0006764590)100:0.0006751808,(H5N8.EPI_ISL_14822549.Anseriformes.china.1.2021-05-18:0.0000021722,H5N8.EPI_ISL_8215657.Anseriformes.china.NA.2021-05-15:0.0000023033)100:0.0020343957)8:0.0000028733,H5N6.EPI_ISL_18058053.Anseriformes.china.NA.2021-03-12:0.0013556965)2:0.0000023382,H5N8.EPI_ISL_16215736.Galliformes.china.1.2020-12:0.0000021564)3:0.0000024013)24:0.0000023753,(H5N8.EPI_ISL_985220.Galliformes.japan.1.2021-02-06:0.0020308485,H5N8.EPI_ISL_17086355.environment.japan.NA.2021-02-14:0.0000023033)98:0.0006761505)100:0.0006751319,H5N8.EPI_ISL_15435500.Anseriformes.china.1.2021-01-21:0.0006750451)24:0.0000020310)98:0.0006754226,(H5N8.EPI_ISL_1114741.Galliformes.russia.1.2020-10-17:0.0000025501,H5N8.EPI_ISL_1080579.Anseriformes.czech_republic.1.2021-02-14:0.0006790665)99:0.0013554118)98:0.0013609218,(H5N3.EPI_ISL_5863749.Anseriformes.united_states.289.2020-10-20:0.0006753771,H5N8.EPI_ISL_644127.Anseriformes.russia.1.2020-08-17:0.0000021210)67:0.0000021683)79:0.0006752552,H5N8.EPI_ISL_2932600.Anseriformes.kazakhstan.1.2020-09-01:0.0020395316)36:0.0000024413,H5N8.EPI_ISL_2932617.Passeriformes.kazakhstan.1.2020-09-15:0.0006752363)100:0.0052832718,H5N8.EPI_ISL_13632084.Galliformes.kazakhstan.1.2020-08-01:0.0050915618)100:0.0272308605)71:0.0002185271,(((((((((((((H5N6.EPI_ISL_7983813.NA.china.73.2021-12-22:0.0006724257,(H5N6.EPI_ISL_8517996.environment.china.73.2021-12-23:0.0000023033,H5N6.EPI_ISL_8518268.Galliformes.china.73.2021-12-23:0.0000023033)80:0.0000023033)99:0.0015518903,H5N6.EPI_ISL_8517999.environment.china.73.2021-12-23:0.0018304615)100:0.0069603129,H5N6.EPI_ISL_8517997.environment.china.73.2021-12-23:0.0057531452)100:0.0103487641,((H5N6.EPI_ISL_6760430.Anseriformes.china.61.2021-07:0.0034810428,(H5N6.EPI_ISL_6760682.Galliformes.china.61.2021-07:0.0000023033,H5N6.EPI_ISL_6760683.Anseriformes.china.61.2021-07:0.0000023033)99:0.0012828613)100:0.0105679345,(H5N6.EPI_ISL_11208198.Anseriformes.china.61.2021-11-02:0.0000024736,(H5N6.EPI_ISL_18231293.Anseriformes.laos.NA.2022-01-18:0.0000025385,H5N6.EPI_ISL_18231287.Galliformes.laos.NA.2022-07-13:0.0013498561)100:0.0033950049)75:0.0000022559)100:0.0154269712)48:0.0000024368,H5N6.EPI_ISL_697077.Galliformes.china.NA.2017-08-28:0.0000023367)40:0.0000023219,H9N2.EPI_ISL_697892.Galliformes.china.NA.2018-09-29:0.0006755038)53:0.0006736883,H5N6.EPI_ISL_707491.Anseriformes.china.NA.2018-01-12:0.0000023033)38:0.0000021821,(NA.EPI_ISL_698056.Anseriformes.china.NA.2018-05-29:0.0000023365,NA.EPI_ISL_699430.Galliformes.china.NA.2018-04-26:0.0000023370)91:0.0006736889)62:0.0013481718,(H5N6.EPI_ISL_502208.Carnivora.china.NA.2018-06-13:0.0000023033,H5N6.EPI_ISL_315237.Galliformes.china.NA.2017-12-20:0.0000023033)80:0.0000022953)61:0.0026223853,(H5N6.EPI_ISL_6772739.Galliformes.china.127.2021-08:0.0180555219,NA.EPI_ISL_16868590.environment.china.NA.2020-06-22:0.0003839766)99:0.0038526468)100:0.0466958490,(((H5N2.EPI_ISL_china_9.Anseriformes.china.101.2022-01-26:0.0006731133,H5N2.EPI_ISL_china_11.Anseriformes.china.101.2022-01-26:0.0000023033)100:0.0108691359,(H5N6.EPI_ISL_696600.environment.china.NA.2018-11-29:0.0000023033,H5N6.EPI_ISL_696602.Galliformes.china.NA.2018-11-29:0.0000023033)100:0.0016202646)100:0.0279928359,((H7N9.EPI_ISL_1374063.Galliformes.china.NA.2018-11-01:0.0006843005,H7N9.EPI_ISL_1495971.Galliformes.china.NA.2021-02-23:0.0068664476)100:0.0078915166,H7N9.EPI_ISL_379666.Galliformes.china.NA.2017-05-07:0.0010837939)100:0.0364661883)99:0.0223449888)100:0.0430585477,((((((((H5N2.EPI_ISL_1760455.Anseriformes.china.286.2020-11-10:0.0000027443,H9N2.EPI_ISL_1760456.Anseriformes.china.NA.2020-11-10:0.0000020086)100:0.0048252056,((((H5N1.EPI_ISL_17606828.Anseriformes.south_korea.22.2021-12-13:0.0000023033,H5N1.EPI_ISL_17606834.Galliformes.south_korea.22.2021-12-20:0.0000023033)100:0.0006631834,(H5N1.EPI_ISL_17606844.Anseriformes.south_korea.22.2022-01-25:0.0000027227,H5N1.EPI_ISL_17606850.Galliformes.south_korea.22.2022-02-04:0.0000023033)100:0.0013644001)100:0.0047639942,H8N4.EPI_ISL_17989853.Gruiformes.china.NA.2022-01-16:0.0028286575)92:0.0013499003,(H3N2.EPI_ISL_17805856.environment.japan.NA.2020-11-23:0.0000023033,H3N6.EPI_ISL_17805930.environment.japan.NA.2020-11-30:0.0006752145)99:0.0007583510)99:0.0026798925)73:0.0006412568,(H10N9.EPI_ISL_13985210.Charadriiformes.china.NA.2020-09-27:0.0000021027,H10N9.EPI_ISL_13985211.Pelecaniformes.china.NA.2020-09-27:0.0000020436)100:0.0047726076)61:0.0000022481,((((H5N1.EPI_ISL_15943015.NA.south_korea.128.2022-11-07:0.0000026543,H5N1.EPI_ISL_15944665.Anseriformes.south_korea.128.2022-11-17:0.0000023033)100:0.0006739333,H5N1.EPI_ISL_17949987.Anseriformes.japan.80.2022-11-26:0.0013594132)100:0.0034402381,(((H5N1.EPI_ISL_17638143.Galliformes.japan.80.2023-04-02:0.0006744975,H5N1.EPI_ISL_18102701.Carnivora.south_korea.NA.2023-07-04:0.0034008601)31:0.0000023033,((H5N1.EPI_ISL_17949986.Passeriformes.japan.80.2023-02-07:0.0000023033,H5N1.EPI_ISL_18284468.Galliformes.japan.NA.2022-12-05:0.0000023033)28:0.0000023033,H5N1.EPI_ISL_china_18.NA.china.80.2023-01-01:0.0000023033)47:0.0000023033)41:0.0000021877,H5N1.EPI_ISL_18241793.Anseriformes.viet_nam.NA.2023-06-05:0.0040811102)100:0.0096997042)66:0.0006550466,H4N6.EPI_ISL_16405648.environment.japan.NA.2020-11-09:0.0040811409)50:0.0000020212)41:0.0000024170,((H5N8.EPI_ISL_16209048.Anseriformes.canada.81.2021-09-16:0.0006739251,H5N8.EPI_ISL_13295139.Anseriformes.canada.81.2021-09-16:0.0013508859)65:0.0000021681,H5N8.EPI_ISL_17760582.Anseriformes.canada.81.2021-10-15:0.0013493087)100:0.0096596803)84:0.0011596689,H6N1.EPI_ISL_16886957.NA.south_korea.NA.2019-02-01:0.0022387172)99:0.0140827900,(((((H5N1.EPI_ISL_17051458.Anseriformes.canada.NA.2022-12-12:0.0000023033,H5N1.EPI_ISL_17051423.Anseriformes.canada.9.2022-11-09:0.0000023033)65:0.0000027586,H5N1.EPI_ISL_17964944.Accipitriformes.united_states.9.2023-03-31:0.0006782557)53:0.0000020480,((H5N1.EPI_ISL_17964946.Galliformes.united_states.9.2023-04-19:0.0000023033,H5N1.EPI_ISL_17964858.Accipitriformes.united_states.9.2023-02-14:0.0006783081)62:0.0000026631,H5N1.EPI_ISL_17964876.Charadriiformes.united_states.9.2023-02-14:0.0006781798)100:0.0006781668)100:0.0020415750,(H5N1.EPI_ISL_17424649.Anseriformes.united_states.9.2022-09-01:0.0000023033,H5N1.EPI_ISL_17260681.Carnivora.united_states.9.2022-06-15:0.0000022372)72:0.0000024891)98:0.0013576398,H5N1.EPI_ISL_17051418.Falconiformes.canada.NA.2022-10-28:0.0000023198)100:0.1343428097)47:0.0043249198,(H5N2.EPI_ISL_369328.Anseriformes.south_korea.NA.2017-11-15:0.0000029879,H4N6.EPI_ISL_381467.Anseriformes.south_korea.NA.2017-11-22:0.0027062283)100:0.0170289113)70:0.0037603771)99:0.0216291639,H2N9.EPI_ISL_17805909.NA.japan.NA.2020-11-15:0.0164228715)89:0.0037780279)97:0.0025320908,((((((((H5N1.EPI_ISL_6829533.Galliformes.japan.22.2021-11-12:0.0000023033,H5N1.EPI_ISL_15063429.Galliformes.japan.NA.2021-11-13:0.0000023033)84:0.0000028443,H5N1.EPI_ISL_18373259.Pelecaniformes.south_korea.NA.2022-03-14:0.0013524746)81:0.0006751155,(H5N1.EPI_ISL_17606838.Anseriformes.south_korea.22.2022-01-06:0.0000023033,H5N1.EPI_ISL_18373226.Anseriformes.south_korea.NA.2022-01-18:0.0000024884)99:0.0020327308)65:0.0000022551,(H5N1.EPI_ISL_15923322.Falconiformes.japan.22.2022-09-25:0.0040938160,((H5N1.EPI_ISL_17606817.Anseriformes.south_korea.22.2022-01-13:0.0000023033,H5N1.EPI_ISL_17606842.Galliformes.south_korea.22.2022-01-21:0.0000023033)73:0.0000023033,(H5N1.EPI_ISL_17606840.Anseriformes.south_korea.22.2022-01-21:0.0006764255,H5N1.EPI_ISL_17606856.Galliformes.south_korea.22.2022-02-08:0.0013557010)43:0.0000022638)68:0.0000022147)82:0.0006751701)100:0.0027189893,((H5N1.EPI_ISL_17606823.Galliformes.south_korea.22.2021-11-21:0.0000023460,H5N1.EPI_ISL_17606865.Anseriformes.south_korea.22.2021-11-14:0.0000023033)85:0.0000022511,H5N1.EPI_ISL_18373223.Anseriformes.south_korea.NA.2021-12-07:0.0006754139)99:0.0013533872)14:0.0000021937,((H5N1.EPI_ISL_6959593.Galliformes.south_korea.22.2021-11-08:0.0000021486,H5N1.EPI_ISL_15063426.Galliformes.japan.NA.2021-12-12:0.0006760472)100:0.0027148557,H5N1.EPI_ISL_china_20230833.Anseriformes.china.22.2021-10-15:0.0027148556)25:0.0000023499)81:0.0006753393,(H5N1.EPI_ISL_17606833.Galliformes.south_korea.22.2021-12-17:0.0000023033,H5N1.EPI_ISL_15063425.Galliformes.japan.NA.2021-12-07:0.0020350419)82:0.0000023594)100:0.0096760291,(((((H5N2.EPI_ISL_15732741.Passeriformes.japan.297.2022-10-28:0.0000020258,H5N2.EPI_ISL_18284476.Galliformes.japan.NA.2023-01-17:0.0006733309)100:0.0013486469,H5N1.EPI_ISL_17950087.Passeriformes.japan.2.2023-03-30:0.0020267895)9:0.0000022561,(((((H5N1.EPI_ISL_12174842.Carnivora.japan.2.2022-03-31:0.0006731759,((H5N1.EPI_ISL_16698060.Galliformes.japan.15.2022-11-07:0.0000023033,H5N1.EPI_ISL_18284461.Galliformes.japan.NA.2022-10-28:0.0000023033)99:0.0013518892,(H5N1.EPI_ISL_17267427.Passeriformes.japan.15.2022-12-12:0.0013519265,(H5N1.EPI_ISL_17316075.Passeriformes.japan.15.2023-02-04:0.0000023033,H5N1.EPI_ISL_17766057.Carnivora.japan.15.2023-04-12:0.0000023033)86:0.0000023033)99:0.0006713248)99:0.0006768162)9:0.0000022086,((H5N1.EPI_ISL_china_20230820.Anseriformes.china.2.2021-11-16:0.0000023033,H5N1.EPI_ISL_china_20230832.Anseriformes.china.2.2021-10-20:0.0027068839)100:0.0006732403,(H5N1.EPI_ISL_16831310.Galliformes.japan.NA.2022-02-12:0.0000023033,H5N1.EPI_ISL_16831114.Passeriformes.japan.NA.2022-04-06:0.0000023033)100:0.0006732501)9:0.0000022296)6:0.0000022290,H5N1.EPI_ISL_14064698.Passeriformes.japan.2.2022-02-03:0.0000023033)5:0.0000020543,(H5N1.EPI_ISL_16698576.Gruiformes.japan.2.2022-11-20:0.0000023033,H5N1.EPI_ISL_16831229.Passeriformes.japan.NA.2022-04-19:0.0000023033)4:0.0000023033)2:0.0000023426,(H5N1.EPI_ISL_15072539.Casuariiformes.japan.2.2022-04-16:0.0013482409,(H5N1.EPI_ISL_16698477.Galliformes.japan.2.2023-01-11:0.0000023033,H5N1.EPI_ISL_18284462.Galliformes.japan.NA.2022-11-07:0.0000023033)100:0.0006732537)15:0.0000023033)4:0.0000023418)98:0.0013765204,H5N1.EPI_ISL_17075759.NA.china.19.2023-02-10:0.0041016948)97:0.0006553271,((((H5N1.EPI_ISL_14886367.Anseriformes.bangladesh.19.2021-12-19:0.0013509714,(H5N1.EPI_ISL_13369775.Galliformes.united_kingdom.2.2021-11-23:0.0000023033,H5N1.EPI_ISL_9029959.Anseriformes.united_kingdom.2.2021-11-18:0.0000023033)100:0.0006737601)80:0.0000023497,(H5N1.EPI_ISL_14864642.Carnivora.united_kingdom.2.2022-01-01:0.0000023033,H5N1.EPI_ISL_13370894.Gruiformes.united_kingdom.2.2022-01-28:0.0000022688)100:0.0013493153)61:0.0006749690,(((((H5N1.EPI_ISL_15647837.Anseriformes.south_korea.19.2022-02-05:0.0006734740,H5N1.EPI_ISL_18373240.Anseriformes.south_korea.NA.2022-02-10:0.0000023694)100:0.0013522903,(H5N1.EPI_ISL_china_20230851.Anseriformes.china.19.2021-12-02:0.0000023033,H5N1.EPI_ISL_13352719.Anseriformes.china.NA.2021-12-17:0.0006738296)100:0.0013522702)14:0.0000020404,((((H5N1.EPI_ISL_china_26.Podicipediformes.china.19.2022-07-15:0.0000023033,H5N1.EPI_ISL_china_45.Charadriiformes.china.19.2022-07-22:0.0000023033)100:0.0006732008,(H5N1.EPI_ISL_china_31.Charadriiformes.china.19.2022-06-20:0.0000023033,H5N1.EPI_ISL_china_40.Podicipediformes.china.19.2022-07-21:0.0006730741)82:0.0000020540)99:0.0013534282,H5N1.EPI_ISL_china_39.Anseriformes.china.19.2022-06-18:0.0006707908)100:0.0027292201,H5N1.EPI_ISL_china_20230842.Anseriformes.china.19.2021-11-25:0.0020299310)20:0.0000020096)21:0.0000022597,H5N1.EPI_ISL_china_20230811.Anseriformes.china.19.2021-11-18:0.0013524750)100:0.0006739242,(H5N1.EPI_ISL_china_20230828.Anseriformes.china.19.2021-11-22:0.0013500333,(H5N1.EPI_ISL_14760739.Galliformes.italy.2.2021-12-13:0.0000023033,H5N1.EPI_ISL_14760638.Galliformes.italy.2.2021-11-26:0.0000023033)100:0.0013499939)57:0.0000023048)53:0.0000023173)65:0.0006738816,(H5N1.EPI_ISL_16838580.Pelecaniformes.russia.2.2021-06-29:0.0000023033,(H5N1.EPI_ISL_7892492.Pelecaniformes.croatia.NA.2021-12-08:0.0006739525,H5N1.EPI_ISL_16838578.Anseriformes.canada.2.2021-08-08:0.0006739686)31:0.0000022595)20:0.0000029670)53:0.0000022789)100:0.0117192158)99:0.0007521558)100:0.0105489045,H5N8.EPI_ISL_525454.Anseriformes.poland.10.2020-02-22:0.0020606458)96:0.0006541439,H5N8.EPI_ISL_525445.Galliformes.poland.10.2020-01-25:0.0013504594)19:0.0000021150,(H5N8.EPI_ISL_419314.Galliformes.germany.10.2020-03-27:0.0013502415,(H5N8.EPI_ISL_419312.Anseriformes.germany.10.2020-03-26:0.0000023033,H5N8.EPI_ISL_417414.Accipitriformes.germany.10.2020-03-20:0.0000023033)100:0.0013503097)31:0.0000022389)6:0.0000026288,H5N8.EPI_ISL_503364.Galliformes.slovakia.NA.2020-01-03:0.0000023033)13:0.0000022363,((H5N8.EPI_ISL_833583.Anseriformes.hungary.10.2020-04-22:0.0000023033,H5N8.EPI_ISL_811134.Galliformes.hungary.10.2020-04-21:0.0000023033)81:0.0000020937,(H5N8.EPI_ISL_833482.Anseriformes.hungary.10.2020-04-10:0.0000024129,H5N8.EPI_ISL_813971.Galliformes.hungary.10.2020-05-05:0.0000023033)100:0.0006741454)100:0.0006740276)100:0.0006739694,(H5N8.EPI_ISL_525440.Galliformes.poland.10.2020-01-02:0.0000024248,H5N8.EPI_ISL_405813.Accipitriformes.poland.10.2020-01-06:0.0000023033)79:0.0000023326)100:0.0040769397,(H5N8.EPI_ISL_2820504.Anseriformes.china.10.2020-10-16:0.0006747491,H5N8.EPI_ISL_14819896.Anseriformes.china.NA.2020-10-16:0.0000023633)100:0.0013512782)39:0.0000022606,H5N8.EPI_ISL_2820259.Anseriformes.china.10.2020-10-15:0.0000023033)36:0.0000022348,((H5N8.EPI_ISL_681288.Galliformes.japan.10.2020-11-07:0.0013509219,(H5N8.EPI_ISL_681292.Galliformes.japan.10.2020-11-10:0.0013506465,H5N8.EPI_ISL_17086224.environment.japan.NA.2020-11-05:0.0006740403)66:0.0000022892)95:0.0006740428,H5N8.EPI_ISL_1009702.Anseriformes.south_korea.10.2020-12-01:0.0000022459)96:0.0006756000)99:0.0006739674,H5N8.EPI_ISL_16405655.environment.japan.10.2020-11-16:0.0006753454)99:0.0006779574,H5N8.EPI_ISL_16405654.environment.japan.10.2020-11-09:0.0000021719);
+
+CONSENSUS TREE
+--------------
+
+Consensus tree is constructed from 1000bootstrap trees
+Log-likelihood of consensus tree: -8537.604538
+Robinson-Foulds distance between ML tree and consensus tree: 86
+
+Branches with support >0.000000% are kept (extended consensus)
+Branch lengths are optimized by maximum likelihood on original alignment
+Numbers in parentheses are bootstrap supports (%)
+
++--H5N8.EPI_ISL_682297.environment.japan.10.2020-11-09
+|
+|                                                                             +--H5N8.EPI_ISL_718106.Galliformes.japan.16.2020-12-07
+|                                                                          +--| (17)
+|                                                                          |  |     +--H5N8.EPI_ISL_1184517.Accipitriformes.japan.16.2021-02-24
+|                                                                          |  |  +--| (72)
+|                                                                          |  |  |  +--H5N8.EPI_ISL_17086354.Anseriformes.japan.NA.2021-01-29
+|                                                                          |  +--| (100)
+|                                                                          |     +--H5N8.EPI_ISL_1184518.Accipitriformes.japan.16.2021-02-24
+|                                                                       +--| (7)
+|                                                                       |  |  +--H5N8.EPI_ISL_759856.Galliformes.japan.16.2020-12-22
+|                                                                       |  +--| (14)
+|                                                                       |     +--H5N8.EPI_ISL_1009703.Anseriformes.south_korea.16.2020-12-01
+|                                                                    +--| (20)
+|                                                                    |  |     +**H5N8.EPI_ISL_1009697.NA.south_korea.16.2020-11-23
+|                                                                    |  |  +--|
+|                                                                    |  |  |  +**H5N8.EPI_ISL_17086343.Anseriformes.japan.NA.2020-12-03
+|                                                                    |  +--| (9)
+|                                                                    |     +--H5N8.EPI_ISL_1009700.Anseriformes.south_korea.16.2020-11-26
+|                                                                 +--| (99)
+|                                                                 |  +--H5N8.EPI_ISL_17086333.environment.japan.NA.2020-12-12
+|                                                              +--| (21)
+|                                                              |  |  +--H5N8.EPI_ISL_710434.Galliformes.japan.16.2020-12-06
+|                                                              |  +--| (100)
+|                                                              |     +--H5N8.EPI_ISL_17086334.Galliformes.japan.NA.2020-12-12
+|                                                           +--| (16)
+|                                                           |  |  +--H5N8.EPI_ISL_738055.Galliformes.japan.16.2020-12-18
+|                                                           |  +--| (42)
+|                                                           |     +--H5N8.EPI_ISL_17086229.environment.japan.NA.2020-12-02
+|                                                        +--| (40)
+|                                                        |  +--H5N8.EPI_ISL_17086303.environment.japan.NA.2020-12-10
+|                                                     +--| (100)
+|                                                     |  +--H5N8.EPI_ISL_4062112.Anseriformes.japan.16.2020-12-22
+|                                                  +--| (62)
+|                                                  |  +--H5N8.EPI_ISL_1184508.Galliformes.japan.16.2021-02-24
+|                                               +--| (100)
+|                                               |  +--H6N2.EPI_ISL_1184535.Anseriformes.russia.NA.2020-09-06
+|                                            +--| (29)
+|                                            |  |  +--H5N8.EPI_ISL_17805901.NA.japan.10.2020-12-18
+|                                            |  +--| (100)
+|                                            |     +--H5N8.EPI_ISL_16718466.Anseriformes.japan.10.2020-12-18
+|                                         +--| (33)
+|                                         |  |     +--H5N8.EPI_ISL_985182.Galliformes.south_korea.79.2020-12-06
+|                                         |  |  +--| (100)
+|                                         |  |  |  +--H5N8.EPI_ISL_985200.Anseriformes.south_korea.79.2020-12-22
+|                                         |  +--| (20)
+|                                         |     +--H5N8.EPI_ISL_985195.Galliformes.south_korea.79.2020-12-16
+|                                      +--| (90)
+|                                      |  |           +--H5N8.EPI_ISL_1041178.Falconiformes.japan.10.2021-02-15
+|                                      |  |        +--| (100)
+|                                      |  |        |  +--H5N8.EPI_ISL_1273441.Accipitriformes.japan.10.2021-03-03
+|                                      |  |     +--| (29)
+|                                      |  |     |  |  +--H5N8.EPI_ISL_17805886.NA.japan.10.2021-02-05
+|                                      |  |     |  +--| (100)
+|                                      |  |     |     +--H5N8.EPI_ISL_16718461.Gruiformes.japan.10.2021-02-03
+|                                      |  |  +--| (14)
+|                                      |  |  |  |        +--H5N8.EPI_ISL_985232.Anseriformes.japan.10.2021-02-08
+|                                      |  |  |  |     +--| (99)
+|                                      |  |  |  |     |  +--H5N8.EPI_ISL_4061713.Anseriformes.japan.10.2021-02-08
+|                                      |  |  |  |  +--| (20)
+|                                      |  |  |  |  |  |  +--H5N8.EPI_ISL_978898.Galliformes.japan.10.2021-02-01
+|                                      |  |  |  |  |  +--| (100)
+|                                      |  |  |  |  |     +--H5N8.EPI_ISL_17086340.Galliformes.japan.NA.2021-02-02
+|                                      |  |  |  +--| (11)
+|                                      |  |  |     |  +--H5N8.EPI_ISL_16405678.environment.japan.10.2020-12-21
+|                                      |  |  |     +--| (30)
+|                                      |  |  |        +--H5N8.EPI_ISL_17086342.environment.japan.NA.2020-11-16
+|                                      |  +--| (88)
+|                                      |     +--H5N8.EPI_ISL_854596.Galliformes.japan.10.2021-01-10
+|                                   +--| (100)
+|                                   |  |        +**H5N1.EPI_ISL_12572653.Galliformes.china.110.2021-12-07
+|                                   |  |     +--|
+|                                   |  |     |  +**H5N1.EPI_ISL_12572663.Columbiformes.china.110.2021-12-08
+|                                   |  |  +--| (76)
+|                                   |  |  |  +--H5N1.EPI_ISL_12572657.Anseriformes.china.110.2021-11-27
+|                                   |  +--| (100)
+|                                   |     +--H5N1.EPI_ISL_12572660.Anseriformes.china.110.2021-12-08
+|                                +--| (71)
+|                                |  |                                        +**H5N8.EPI_ISL_5260465.Pelecaniformes.china.1.2021-01-26
+|                                |  |                                     +**|
+|                                |  |                                     |  +**H5N8.EPI_ISL_14770164.Gruiformes.china.1.2020-12-31
+|                                |  |                                  +--|
+|                                |  |                                  |  +**H5N8.EPI_ISL_16718465.Gruiformes.japan.1.2021-01-16
+|                                |  |                               +--| (15)
+|                                |  |                               |  +--H5N8.EPI_ISL_1009680.Galliformes.south_korea.1.2020-12-28
+|                                |  |                            +--| (10)
+|                                |  |                            |  |        +--H5N8.EPI_ISL_6829497.Gruiformes.japan.1.2021-11-19
+|                                |  |                            |  |     +--| (40)
+|                                |  |                            |  |     |  +--H9N2.EPI_ISL_14223937.Galliformes.china.NA.2021-11-12
+|                                |  |                            |  |  +--| (16)
+|                                |  |                            |  |  |  +--H5N8.EPI_ISL_14835974.Anseriformes.china.1.2020-11-13
+|                                |  |                            |  +--| (14)
+|                                |  |                            |     |  +--H5N8.EPI_ISL_17086352.Galliformes.japan.NA.2021-02-15
+|                                |  |                            |     +--| (17)
+|                                |  |                            |        +--H5N8.EPI_ISL_17086346.Anseriformes.japan.NA.2021-01-24
+|                                |  |                         +--| (12)
+|                                |  |                         |  |  +--H5N8.EPI_ISL_14778363.NA.china.NA.2020-11-25
+|                                |  |                         |  +--| (53)
+|                                |  |                         |     +--H5N8.EPI_ISL_16208969.Anseriformes.china.NA.2020-11-16
+|                                |  |                      +--| (100)
+|                                |  |                      |  +--H5N8.EPI_ISL_14770162.Gruiformes.china.1.2020-12-31
+|                                |  |                   +--| (35)
+|                                |  |                   |  |        +--H5N8.EPI_ISL_7381026.Galliformes.china.1.2021-03
+|                                |  |                   |  |     +--| (42)
+|                                |  |                   |  |     |  |  +--H5N8.EPI_ISL_14822549.Anseriformes.china.1.2021-05-18
+|                                |  |                   |  |     |  +--| (100)
+|                                |  |                   |  |     |     +--H5N8.EPI_ISL_8215657.Anseriformes.china.NA.2021-05-15
+|                                |  |                   |  |  +--| (24)
+|                                |  |                   |  |  |  |           +--H5N8.EPI_ISL_2555536.Charadriiformes.china.1.2020-11-16
+|                                |  |                   |  |  |  |        +--| (100)
+|                                |  |                   |  |  |  |        |  +--H5N8.EPI_ISL_14822451.Anseriformes.china.NA.2021-03-12
+|                                |  |                   |  |  |  |     +--| (27)
+|                                |  |                   |  |  |  |     |  +--H5N8.EPI_ISL_14836426.Anseriformes.china.NA.2020-12-01
+|                                |  |                   |  |  |  |  +--| (12)
+|                                |  |                   |  |  |  |  |  +--H5N8.EPI_ISL_16215736.Galliformes.china.1.2020-12
+|                                |  |                   |  |  |  +--| (15)
+|                                |  |                   |  |  |     +--H5N6.EPI_ISL_18058053.Anseriformes.china.NA.2021-03-12
+|                                |  |                   |  +--| (100)
+|                                |  |                   |     |  +--H5N8.EPI_ISL_985220.Galliformes.japan.1.2021-02-06
+|                                |  |                   |     +--| (98)
+|                                |  |                   |        +--H5N8.EPI_ISL_17086355.environment.japan.NA.2021-02-14
+|                                |  |                +--| (98)
+|                                |  |                |  |  +--H5N8.EPI_ISL_15435500.Anseriformes.china.1.2021-01-21
+|                                |  |                |  +--| (37)
+|                                |  |                |     |  +--H5N8.EPI_ISL_1139015.NA.netherlands.1.2020-10-26
+|                                |  |                |     +--| (100)
+|                                |  |                |        +--H5N8.EPI_ISL_1139014.Anseriformes.netherlands.1.2020-10-27
+|                                |  |             +--| (98)
+|                                |  |             |  |  +--H5N8.EPI_ISL_1114741.Galliformes.russia.1.2020-10-17
+|                                |  |             |  +--| (99)
+|                                |  |             |     +--H5N8.EPI_ISL_1080579.Anseriformes.czech_republic.1.2021-02-14
+|                                |  |          +--| (79)
+|                                |  |          |  |  +--H5N3.EPI_ISL_5863749.Anseriformes.united_states.289.2020-10-20
+|                                |  |          |  +--| (67)
+|                                |  |          |     +--H5N8.EPI_ISL_644127.Anseriformes.russia.1.2020-08-17
+|                                |  |       +--| (100)
+|                                |  |       |  |  +--H5N8.EPI_ISL_2932600.Anseriformes.kazakhstan.1.2020-09-01
+|                                |  |       |  +--| (60)
+|                                |  |       |     +--H5N8.EPI_ISL_2932617.Passeriformes.kazakhstan.1.2020-09-15
+|                                |  +-------| (100)
+|                                |          +--H5N8.EPI_ISL_13632084.Galliformes.kazakhstan.1.2020-08-01
+|                             +--| (97)
+|                             |  |                                                           +--H5N6.EPI_ISL_7983813.NA.china.73.2021-12-22
+|                             |  |                                                        +--| (99)
+|                             |  |                                                        |  |  +--H5N6.EPI_ISL_8517996.environment.china.73.2021-12-23
+|                             |  |                                                        |  +--| (80)
+|                             |  |                                                        |     +--H5N6.EPI_ISL_8518268.Galliformes.china.73.2021-12-23
+|                             |  |                                                     +--| (100)
+|                             |  |                                                     |  +--H5N6.EPI_ISL_8517999.environment.china.73.2021-12-23
+|                             |  |                                                  +--| (100)
+|                             |  |                                                  |  +--H5N6.EPI_ISL_8517997.environment.china.73.2021-12-23
+|                             |  |                                               +--| (48)
+|                             |  |                                               |  |      +--H5N6.EPI_ISL_6760430.Anseriformes.china.61.2021-07
+|                             |  |                                               |  |   +--| (100)
+|                             |  |                                               |  |   |  |  +--H5N6.EPI_ISL_6760682.Galliformes.china.61.2021-07
+|                             |  |                                               |  |   |  +--| (99)
+|                             |  |                                               |  |   |     +--H5N6.EPI_ISL_6760683.Anseriformes.china.61.2021-07
+|                             |  |                                               |  +---| (100)
+|                             |  |                                               |      |  +--H5N6.EPI_ISL_11208198.Anseriformes.china.61.2021-11-02
+|                             |  |                                               |      +--| (75)
+|                             |  |                                               |         |  +--H5N6.EPI_ISL_18231293.Anseriformes.laos.NA.2022-01-18
+|                             |  |                                               |         +--| (100)
+|                             |  |                                               |            +--H5N6.EPI_ISL_18231287.Galliformes.laos.NA.2022-07-13
+|                             |  |                                            +--| (53)
+|                             |  |                                            |  |  +--H5N6.EPI_ISL_697077.Galliformes.china.NA.2017-08-28
+|                             |  |                                            |  +--| (40)
+|                             |  |                                            |     +--H9N2.EPI_ISL_697892.Galliformes.china.NA.2018-09-29
+|                             |  |                                         +--| (38)
+|                             |  |                                         |  +--H5N6.EPI_ISL_707491.Anseriformes.china.NA.2018-01-12
+|                             |  |                                      +--| (62)
+|                             |  |                                      |  |  +--NA.EPI_ISL_698056.Anseriformes.china.NA.2018-05-29
+|                             |  |                                      |  +--| (91)
+|                             |  |                                      |     +--NA.EPI_ISL_699430.Galliformes.china.NA.2018-04-26
+|                             |  |                                   +--| (61)
+|                             |  |                                   |  |  +--H5N6.EPI_ISL_502208.Carnivora.china.NA.2018-06-13
+|                             |  |                                   |  +--| (80)
+|                             |  |                                   |     +--H5N6.EPI_ISL_315237.Galliformes.china.NA.2017-12-20
+|                             |  |                     +-------------| (100)
+|                             |  |                     |             |  +----H5N6.EPI_ISL_6772739.Galliformes.china.127.2021-08
+|                             |  |                     |             +--| (99)
+|                             |  |                     |                +--NA.EPI_ISL_16868590.environment.china.NA.2020-06-22
+|                             |  |        +------------| (100)
+|                             |  |        |            |                +--H5N2.EPI_ISL_china_9.Anseriformes.china.101.2022-01-26
+|                             |  |        |            |             +--| (100)
+|                             |  |        |            |             |  +--H5N2.EPI_ISL_china_11.Anseriformes.china.101.2022-01-26
+|                             |  |        |            |     +-------| (100)
+|                             |  |        |            |     |       |  +--H5N6.EPI_ISL_696600.environment.china.NA.2018-11-29
+|                             |  |        |            |     |       +--| (100)
+|                             |  |        |            |     |          +--H5N6.EPI_ISL_696602.Galliformes.china.NA.2018-11-29
+|                             |  |        |            +-----| (99)
+|                             |  |        |                  |             +--H7N9.EPI_ISL_1374063.Galliformes.china.NA.2018-11-01
+|                             |  |        |                  |          +--| (100)
+|                             |  |        |                  |          |  +--H7N9.EPI_ISL_1495971.Galliformes.china.NA.2021-02-23
+|                             |  |        |                  +----------| (100)
+|                             |  |        |                             +--H7N9.EPI_ISL_379666.Galliformes.china.NA.2017-05-07
+|                             |  |  +-----| (99)
+|                             |  |  |     |                        +--H5N2.EPI_ISL_1760455.Anseriformes.china.286.2020-11-10
+|                             |  |  |     |                     +--| (100)
+|                             |  |  |     |                     |  +--H9N2.EPI_ISL_1760456.Anseriformes.china.NA.2020-11-10
+|                             |  |  |     |                  +--| (73)
+|                             |  |  |     |                  |  |           +--H5N1.EPI_ISL_17606828.Anseriformes.south_korea.22.2021-12-13
+|                             |  |  |     |                  |  |        +--| (100)
+|                             |  |  |     |                  |  |        |  +--H5N1.EPI_ISL_17606834.Galliformes.south_korea.22.2021-12-20
+|                             |  |  |     |                  |  |     +--| (100)
+|                             |  |  |     |                  |  |     |  |  +--H5N1.EPI_ISL_17606844.Anseriformes.south_korea.22.2022-01-25
+|                             |  |  |     |                  |  |     |  +--| (100)
+|                             |  |  |     |                  |  |     |     +--H5N1.EPI_ISL_17606850.Galliformes.south_korea.22.2022-02-04
+|                             |  |  |     |                  |  |  +--| (92)
+|                             |  |  |     |                  |  |  |  +--H8N4.EPI_ISL_17989853.Gruiformes.china.NA.2022-01-16
+|                             |  |  |     |                  |  +--| (99)
+|                             |  |  |     |                  |     |  +--H3N2.EPI_ISL_17805856.environment.japan.NA.2020-11-23
+|                             |  |  |     |                  |     +--| (99)
+|                             |  |  |     |                  |        +--H3N6.EPI_ISL_17805930.environment.japan.NA.2020-11-30
+|                             |  |  |     |               +--| (61)
+|                             |  |  |     |               |  |  +--H10N9.EPI_ISL_13985210.Charadriiformes.china.NA.2020-09-27
+|                             |  |  |     |               |  +--| (100)
+|                             |  |  |     |               |     +--H10N9.EPI_ISL_13985211.Pelecaniformes.china.NA.2020-09-27
+|                             |  |  |     |            +--| (41)
+|                             |  |  |     |            |  |           +--H5N1.EPI_ISL_15943015.NA.south_korea.128.2022-11-07
+|                             |  |  |     |            |  |        +--| (100)
+|                             |  |  |     |            |  |        |  +--H5N1.EPI_ISL_15944665.Anseriformes.south_korea.128.2022-11-17
+|                             |  |  |     |            |  |     +--| (100)
+|                             |  |  |     |            |  |     |  +--H5N1.EPI_ISL_17949987.Anseriformes.japan.80.2022-11-26
+|                             |  |  |     |            |  |  +--| (66)
+|                             |  |  |     |            |  |  |  |        +--H5N1.EPI_ISL_17638143.Galliformes.japan.80.2023-04-02
+|                             |  |  |     |            |  |  |  |     +--| (31)
+|                             |  |  |     |            |  |  |  |     |  +--H5N1.EPI_ISL_18102701.Carnivora.south_korea.NA.2023-07-04
+|                             |  |  |     |            |  |  |  |  +--| (41)
+|                             |  |  |     |            |  |  |  |  |  |           +**H5N1.EPI_ISL_17949986.Passeriformes.japan.80.2023-02-07
+|                             |  |  |     |            |  |  |  |  |  |        +**|
+|                             |  |  |     |            |  |  |  |  |  |        |  +**H5N1.EPI_ISL_18066455.Accipitriformes.japan.NA.2023-01-07
+|                             |  |  |     |            |  |  |  |  |  |     +--|
+|                             |  |  |     |            |  |  |  |  |  |     |  +**H5N1.EPI_ISL_17527088.Passeriformes.japan.NA.2022-12-26
+|                             |  |  |     |            |  |  |  |  |  |  +--| (28)
+|                             |  |  |     |            |  |  |  |  |  |  |  +--H5N1.EPI_ISL_18284468.Galliformes.japan.NA.2022-12-05
+|                             |  |  |     |            |  |  |  |  |  +--| (47)
+|                             |  |  |     |            |  |  |  |  |     +--H5N1.EPI_ISL_china_18.NA.china.80.2023-01-01
+|                             |  |  |     |            |  |  |  +--| (100)
+|                             |  |  |     |            |  |  |     +--H5N1.EPI_ISL_18241793.Anseriformes.viet_nam.NA.2023-06-05
+|                             |  |  |     |            |  +--| (50)
+|                             |  |  |     |            |     +--H4N6.EPI_ISL_16405648.environment.japan.NA.2020-11-09
+|                             |  |  |     |         +--| (84)
+|                             |  |  |     |         |  |     +--H5N8.EPI_ISL_16209048.Anseriformes.canada.81.2021-09-16
+|                             |  |  |     |         |  |  +--| (65)
+|                             |  |  |     |         |  |  |  +--H5N8.EPI_ISL_13295139.Anseriformes.canada.81.2021-09-16
+|                             |  |  |     |         |  +--| (100)
+|                             |  |  |     |         |     +--H5N8.EPI_ISL_17760582.Anseriformes.canada.81.2021-10-15
+|                             |  |  |     |     +---| (99)
+|                             |  |  |     |     |   +--H6N1.EPI_ISL_16886957.NA.south_korea.NA.2019-02-01
+|                             |  |  |     |  +--| (47)
+|                             |  |  |     |  |  |                                                    +--H5N1.EPI_ISL_17051458.Anseriformes.canada.NA.2022-12-12
+|                             |  |  |     |  |  |                                                 +--| (65)
+|                             |  |  |     |  |  |                                                 |  +--H5N1.EPI_ISL_17051423.Anseriformes.canada.9.2022-11-09
+|                             |  |  |     |  |  |                                              +--| (53)
+|                             |  |  |     |  |  |                                              |  +--H5N1.EPI_ISL_17964944.Accipitriformes.united_states.9.2023-03-31
+|                             |  |  |     |  |  |                                           +--| (100)
+|                             |  |  |     |  |  |                                           |  |     +--H5N1.EPI_ISL_17964946.Galliformes.united_states.9.2023-04-19
+|                             |  |  |     |  |  |                                           |  |  +--| (62)
+|                             |  |  |     |  |  |                                           |  |  |  +--H5N1.EPI_ISL_17964858.Accipitriformes.united_states.9.2023-02-14
+|                             |  |  |     |  |  |                                           |  +--| (100)
+|                             |  |  |     |  |  |                                           |     +--H5N1.EPI_ISL_17964876.Charadriiformes.united_states.9.2023-02-14
+|                             |  |  |     |  |  |                                        +--| (98)
+|                             |  |  |     |  |  |                                        |  |              +**H5N1.EPI_ISL_17424649.Anseriformes.united_states.9.2022-09-01
+|                             |  |  |     |  |  |                                        |  |           +**|
+|                             |  |  |     |  |  |                                        |  |           |  +**H5N1.EPI_ISL_16183504.Galliformes.canada.9.2022-05-16
+|                             |  |  |     |  |  |                                        |  |        +**|
+|                             |  |  |     |  |  |                                        |  |        |  +**H5N1.EPI_ISL_17051343.Pelecaniformes.canada.NA.2022-06-02
+|                             |  |  |     |  |  |                                        |  |     +**|
+|                             |  |  |     |  |  |                                        |  |     |  +**H5N1.EPI_ISL_17051393.Pelecaniformes.canada.9.2022-08-12
+|                             |  |  |     |  |  |                                        |  |  +--|
+|                             |  |  |     |  |  |                                        |  |  |  +**H5N1.EPI_ISL_16023374.Carnivora.canada.9.2022-07-19
+|                             |  |  |     |  |  |                                        |  +--| (72)
+|                             |  |  |     |  |  |                                        |     +--H5N1.EPI_ISL_17260681.Carnivora.united_states.9.2022-06-15
+|                             |  |  |     |  |  +----------------------------------------| (100)
+|                             |  |  |     |  |                                           +--H5N1.EPI_ISL_17051418.Falconiformes.canada.NA.2022-10-28
+|                             |  |  |     +--| (70)
+|                             |  |  |        |    +--H5N2.EPI_ISL_369328.Anseriformes.south_korea.NA.2017-11-15
+|                             |  |  |        +----| (100)
+|                             |  |  |             +--H4N6.EPI_ISL_381467.Anseriformes.south_korea.NA.2017-11-22
+|                             |  +--| (89)
+|                             |     +----H2N9.EPI_ISL_17805909.NA.japan.NA.2020-11-15
+|                          +--| (100)
+|                          |  |                       +--H5N1.EPI_ISL_6829533.Galliformes.japan.22.2021-11-12
+|                          |  |                    +--| (84)
+|                          |  |                    |  +--H5N1.EPI_ISL_15063429.Galliformes.japan.NA.2021-11-13
+|                          |  |                 +--| (81)
+|                          |  |                 |  +--H5N1.EPI_ISL_18373259.Pelecaniformes.south_korea.NA.2022-03-14
+|                          |  |              +--| (65)
+|                          |  |              |  |  +--H5N1.EPI_ISL_17606838.Anseriformes.south_korea.22.2022-01-06
+|                          |  |              |  +--| (99)
+|                          |  |              |     +--H5N1.EPI_ISL_18373226.Anseriformes.south_korea.NA.2022-01-18
+|                          |  |           +--| (100)
+|                          |  |           |  |  +--H5N1.EPI_ISL_15923322.Falconiformes.japan.22.2022-09-25
+|                          |  |           |  +--| (82)
+|                          |  |           |     |           +**H5N1.EPI_ISL_17606817.Anseriformes.south_korea.22.2022-01-13
+|                          |  |           |     |        +**|
+|                          |  |           |     |        |  +**H5N1.EPI_ISL_18373246.Pelecaniformes.south_korea.NA.2022-02-15
+|                          |  |           |     |     +--|
+|                          |  |           |     |     |  +**H5N1.EPI_ISL_18373236.Anseriformes.south_korea.NA.2022-01-25
+|                          |  |           |     |  +--| (73)
+|                          |  |           |     |  |  +--H5N1.EPI_ISL_17606842.Galliformes.south_korea.22.2022-01-21
+|                          |  |           |     +--| (68)
+|                          |  |           |        |  +--H5N1.EPI_ISL_17606840.Anseriformes.south_korea.22.2022-01-21
+|                          |  |           |        +--| (43)
+|                          |  |           |           +--H5N1.EPI_ISL_17606856.Galliformes.south_korea.22.2022-02-08
+|                          |  |        +--| (44)
+|                          |  |        |  |  +--H5N1.EPI_ISL_6959593.Galliformes.south_korea.22.2021-11-08
+|                          |  |        |  +--| (100)
+|                          |  |        |     +--H5N1.EPI_ISL_15063426.Galliformes.japan.NA.2021-12-12
+|                          |  |     +--| (81)
+|                          |  |     |  |           +**H5N1.EPI_ISL_17606823.Galliformes.south_korea.22.2021-11-21
+|                          |  |     |  |        +--|
+|                          |  |     |  |        |  +**H5N1.EPI_ISL_18373264.environment.south_korea.NA.2021-12-22
+|                          |  |     |  |     +--| (85)
+|                          |  |     |  |     |  +--H5N1.EPI_ISL_17606865.Anseriformes.south_korea.22.2021-11-14
+|                          |  |     |  |  +--| (99)
+|                          |  |     |  |  |  +--H5N1.EPI_ISL_18373223.Anseriformes.south_korea.NA.2021-12-07
+|                          |  |     |  +--| (32)
+|                          |  |     |     +--H5N1.EPI_ISL_china_20230833.Anseriformes.china.22.2021-10-15
+|                          |  |  +--| (100)
+|                          |  |  |  |  +--H5N1.EPI_ISL_17606833.Galliformes.south_korea.22.2021-12-17
+|                          |  |  |  +--| (82)
+|                          |  |  |     +--H5N1.EPI_ISL_15063425.Galliformes.japan.NA.2021-12-07
+|                          |  +--| (99)
+|                          |     |                    +--H5N2.EPI_ISL_15732741.Passeriformes.japan.297.2022-10-28
+|                          |     |                 +--| (100)
+|                          |     |                 |  +--H5N2.EPI_ISL_18284476.Galliformes.japan.NA.2023-01-17
+|                          |     |              +--| (25)
+|                          |     |              |  +--H5N1.EPI_ISL_15072539.Casuariiformes.japan.2.2022-04-16
+|                          |     |           +--| (7)
+|                          |     |           |  |        +--H5N1.EPI_ISL_17950087.Passeriformes.japan.2.2023-03-30
+|                          |     |           |  |     +--| (36)
+|                          |     |           |  |     |  |  +--H5N1.EPI_ISL_16698477.Galliformes.japan.2.2023-01-11
+|                          |     |           |  |     |  +--| (100)
+|                          |     |           |  |     |     +--H5N1.EPI_ISL_18284462.Galliformes.japan.NA.2022-11-07
+|                          |     |           |  |  +--| (10)
+|                          |     |           |  |  |  |  +--H5N1.EPI_ISL_china_20230820.Anseriformes.china.2.2021-11-16
+|                          |     |           |  |  |  +--| (100)
+|                          |     |           |  |  |     +--H5N1.EPI_ISL_china_20230832.Anseriformes.china.2.2021-10-20
+|                          |     |           |  +--| (1)
+|                          |     |           |     |     +--H5N1.EPI_ISL_16698060.Galliformes.japan.15.2022-11-07
+|                          |     |           |     |  +--| (99)
+|                          |     |           |     |  |  +--H5N1.EPI_ISL_18284461.Galliformes.japan.NA.2022-10-28
+|                          |     |           |     +--| (99)
+|                          |     |           |        |  +--H5N1.EPI_ISL_17267427.Passeriformes.japan.15.2022-12-12
+|                          |     |           |        +--| (99)
+|                          |     |           |           |     +**H5N1.EPI_ISL_17316075.Passeriformes.japan.15.2023-02-04
+|                          |     |           |           |  +--|
+|                          |     |           |           |  |  +**H5N1.EPI_ISL_17857959.Carnivora.japan.NA.2023-02-20
+|                          |     |           |           +--| (86)
+|                          |     |           |              +--H5N1.EPI_ISL_17766057.Carnivora.japan.15.2023-04-12
+|                          |     |        +--| (12)
+|                          |     |        |  |     +**H5N1.EPI_ISL_14064698.Passeriformes.japan.2.2022-02-03
+|                          |     |        |  |  +--|
+|                          |     |        |  |  |  +**H5N1.EPI_ISL_15843373.Accipitriformes.canada.2.2022-02-03
+|                          |     |        |  +--| (5)
+|                          |     |        |     |  +--H5N1.EPI_ISL_16698576.Gruiformes.japan.2.2022-11-20
+|                          |     |        |     +--| (8)
+|                          |     |        |        |  +--H5N1.EPI_ISL_16831229.Passeriformes.japan.NA.2022-04-19
+|                          |     |        |        +--| (9)
+|                          |     |        |           |  +--H5N1.EPI_ISL_16831310.Galliformes.japan.NA.2022-02-12
+|                          |     |        |           +--| (100)
+|                          |     |        |              +--H5N1.EPI_ISL_16831114.Passeriformes.japan.NA.2022-04-06
+|                          |     |     +--| (98)
+|                          |     |     |  +--H5N1.EPI_ISL_12174842.Carnivora.japan.2.2022-03-31
+|                          |     |  +--| (97)
+|                          |     |  |  +--H5N1.EPI_ISL_17075759.NA.china.19.2023-02-10
+|                          |     +--| (100)
+|                          |        |           +--H5N1.EPI_ISL_14886367.Anseriformes.bangladesh.19.2021-12-19
+|                          |        |        +--| (80)
+|                          |        |        |  |  +--H5N1.EPI_ISL_13369775.Galliformes.united_kingdom.2.2021-11-23
+|                          |        |        |  +--| (100)
+|                          |        |        |     +--H5N1.EPI_ISL_9029959.Anseriformes.united_kingdom.2.2021-11-18
+|                          |        |     +--| (61)
+|                          |        |     |  |           +**H5N1.EPI_ISL_14864642.Carnivora.united_kingdom.2.2022-01-01
+|                          |        |     |  |        +**|
+|                          |        |     |  |        |  +**H5N1.EPI_ISL_13370700.Galliformes.united_kingdom.2.2022-01-27
+|                          |        |     |  |     +**|
+|                          |        |     |  |     |  +**H5N1.EPI_ISL_13370630.Accipitriformes.united_kingdom.2.2021-12-31
+|                          |        |     |  |  +--|
+|                          |        |     |  |  |  +**H5N1.EPI_ISL_13369778.Anseriformes.united_kingdom.2.2021-11-25
+|                          |        |     |  +--| (100)
+|                          |        |     |     +--H5N1.EPI_ISL_13370894.Gruiformes.united_kingdom.2.2022-01-28
+|                          |        |  +--| (65)
+|                          |        |  |  |              +--H5N1.EPI_ISL_15647837.Anseriformes.south_korea.19.2022-02-05
+|                          |        |  |  |           +--| (100)
+|                          |        |  |  |           |  +--H5N1.EPI_ISL_18373240.Anseriformes.south_korea.NA.2022-02-10
+|                          |        |  |  |        +--| (26)
+|                          |        |  |  |        |  +--H5N1.EPI_ISL_china_20230842.Anseriformes.china.19.2021-11-25
+|                          |        |  |  |     +--| (21)
+|                          |        |  |  |     |  |           +--H5N1.EPI_ISL_china_26.Podicipediformes.china.19.2022-07-15
+|                          |        |  |  |     |  |        +--| (100)
+|                          |        |  |  |     |  |        |  +--H5N1.EPI_ISL_china_45.Charadriiformes.china.19.2022-07-22
+|                          |        |  |  |     |  |     +--| (99)
+|                          |        |  |  |     |  |     |  |  +--H5N1.EPI_ISL_china_31.Charadriiformes.china.19.2022-06-20
+|                          |        |  |  |     |  |     |  +--| (82)
+|                          |        |  |  |     |  |     |     +--H5N1.EPI_ISL_china_40.Podicipediformes.china.19.2022-07-21
+|                          |        |  |  |     |  |  +--| (100)
+|                          |        |  |  |     |  |  |  +--H5N1.EPI_ISL_china_39.Anseriformes.china.19.2022-06-18
+|                          |        |  |  |     |  +--| (32)
+|                          |        |  |  |     |     |  +--H5N1.EPI_ISL_china_20230851.Anseriformes.china.19.2021-12-02
+|                          |        |  |  |     |     +--| (100)
+|                          |        |  |  |     |        +--H5N1.EPI_ISL_13352719.Anseriformes.china.NA.2021-12-17
+|                          |        |  |  |  +--| (100)
+|                          |        |  |  |  |  +--H5N1.EPI_ISL_china_20230811.Anseriformes.china.19.2021-11-18
+|                          |        |  |  +--| (53)
+|                          |        |  |     |  +--H5N1.EPI_ISL_china_20230828.Anseriformes.china.19.2021-11-22
+|                          |        |  |     +--| (57)
+|                          |        |  |        |  +--H5N1.EPI_ISL_14760739.Galliformes.italy.2.2021-12-13
+|                          |        |  |        +--| (100)
+|                          |        |  |           +--H5N1.EPI_ISL_14760638.Galliformes.italy.2.2021-11-26
+|                          |        +--| (53)
+|                          |           |  +--H5N1.EPI_ISL_16838580.Pelecaniformes.russia.2.2021-06-29
+|                          |           +--| (20)
+|                          |              |  +--H5N1.EPI_ISL_7892492.Pelecaniformes.croatia.NA.2021-12-08
+|                          |              +--| (31)
+|                          |                 +--H5N1.EPI_ISL_16838578.Anseriformes.canada.2.2021-08-08
+|                       +--| (96)
+|                       |  +--H5N8.EPI_ISL_525454.Anseriformes.poland.10.2020-02-22
+|                    +--| (14)
+|                    |  |        +--H5N8.EPI_ISL_833583.Anseriformes.hungary.10.2020-04-22
+|                    |  |     +--| (81)
+|                    |  |     |  +--H5N8.EPI_ISL_811134.Galliformes.hungary.10.2020-04-21
+|                    |  |  +--| (100)
+|                    |  |  |  |  +--H5N8.EPI_ISL_833482.Anseriformes.hungary.10.2020-04-10
+|                    |  |  |  +--| (100)
+|                    |  |  |     +--H5N8.EPI_ISL_813971.Galliformes.hungary.10.2020-05-05
+|                    |  +--| (26)
+|                    |     +--H5N8.EPI_ISL_525445.Galliformes.poland.10.2020-01-25
+|                 +--| (16)
+|                 |  +--H5N8.EPI_ISL_503364.Galliformes.slovakia.NA.2020-01-03
+|              +--| (100)
+|              |  |  +--H5N8.EPI_ISL_419314.Galliformes.germany.10.2020-03-27
+|              |  +--| (31)
+|              |     |     +**H5N8.EPI_ISL_419312.Anseriformes.germany.10.2020-03-26
+|              |     |  +--|
+|              |     |  |  +**H5N8.EPI_ISL_415197.Galliformes.germany.10.2020-03-12
+|              |     +--| (100)
+|              |        +--H5N8.EPI_ISL_417414.Accipitriformes.germany.10.2020-03-20
+|           +--| (100)
+|           |  |  +--H5N8.EPI_ISL_525440.Galliformes.poland.10.2020-01-02
+|           |  +--| (79)
+|           |     +--H5N8.EPI_ISL_405813.Accipitriformes.poland.10.2020-01-06
+|        +--| (39)
+|        |  |  +--H5N8.EPI_ISL_2820504.Anseriformes.china.10.2020-10-16
+|        |  +--| (100)
+|        |     +--H5N8.EPI_ISL_14819896.Anseriformes.china.NA.2020-10-16
+|     +--| (36)
+|     |  +--H5N8.EPI_ISL_2820259.Anseriformes.china.10.2020-10-15
+|  +--| (99)
+|  |  |     +--H5N8.EPI_ISL_681288.Galliformes.japan.10.2020-11-07
+|  |  |  +--| (95)
+|  |  |  |  |  +--H5N8.EPI_ISL_681292.Galliformes.japan.10.2020-11-10
+|  |  |  |  +--| (66)
+|  |  |  |     +--H5N8.EPI_ISL_17086224.environment.japan.NA.2020-11-05
+|  |  +--| (96)
+|  |     +--H5N8.EPI_ISL_1009702.Anseriformes.south_korea.10.2020-12-01
++--| (99)
+|  +--H5N8.EPI_ISL_16405655.environment.japan.10.2020-11-16
+|
++--H5N8.EPI_ISL_16405654.environment.japan.10.2020-11-09
+
+
+Consensus tree in newick format: 
+
+(H5N8.EPI_ISL_682297.environment.japan.10.2020-11-09:0.0006744036,((((((((((((((((((((((((((H5N8.EPI_ISL_718106.Galliformes.japan.16.2020-12-07:0.0006751518,((H5N8.EPI_ISL_1184517.Accipitriformes.japan.16.2021-02-24:0.0000023033,H5N8.EPI_ISL_17086354.Anseriformes.japan.NA.2021-01-29:0.0000023033)72:0.0000023033,H5N8.EPI_ISL_1184518.Accipitriformes.japan.16.2021-02-24:0.0006753272)100:0.0006752089)17:0.0000023033,(H5N8.EPI_ISL_759856.Galliformes.japan.16.2020-12-22:0.0020313088,H5N8.EPI_ISL_1009703.Anseriformes.south_korea.16.2020-12-01:0.0006751829)14:0.0000023033)7:0.0000023033,((H5N8.EPI_ISL_1009697.NA.south_korea.16.2020-11-23:0.0000000000,H5N8.EPI_ISL_17086343.Anseriformes.japan.NA.2020-12-03:0.0000000000):0.0000023033,H5N8.EPI_ISL_1009700.Anseriformes.south_korea.16.2020-11-26:0.0000023033)9:0.0000023033)20:0.0000023033,H5N8.EPI_ISL_17086333.environment.japan.NA.2020-12-12:0.0027178868)99:0.0006750598,(H5N8.EPI_ISL_710434.Galliformes.japan.16.2020-12-06:0.0000023033,H5N8.EPI_ISL_17086334.Galliformes.japan.NA.2020-12-12:0.0000023033)100:0.0013522278)21:0.0000023033,(H5N8.EPI_ISL_738055.Galliformes.japan.16.2020-12-18:0.0000023033,H5N8.EPI_ISL_17086229.environment.japan.NA.2020-12-02:0.0000023033)42:0.0000023033)16:0.0000023033,H5N8.EPI_ISL_17086303.environment.japan.NA.2020-12-10:0.0006749838)40:0.0000023033,H5N8.EPI_ISL_4062112.Anseriformes.japan.16.2020-12-22:0.0049369255)100:0.0020301522,H5N8.EPI_ISL_1184508.Galliformes.japan.16.2021-02-24:0.0020339322)62:0.0000023033,H6N2.EPI_ISL_1184535.Anseriformes.russia.NA.2020-09-06:0.0000023033)100:0.0006747399,(H5N8.EPI_ISL_17805901.NA.japan.10.2020-12-18:0.0000023033,H5N8.EPI_ISL_16718466.Anseriformes.japan.10.2020-12-18:0.0000023033)100:0.0047790461)29:0.0000023033,((H5N8.EPI_ISL_985182.Galliformes.south_korea.79.2020-12-06:0.0000023033,H5N8.EPI_ISL_985200.Anseriformes.south_korea.79.2020-12-22:0.0006750249)100:0.0013519457,H5N8.EPI_ISL_985195.Galliformes.south_korea.79.2020-12-16:0.0013519255)20:0.0000023033)33:0.0000023033,((((H5N8.EPI_ISL_1041178.Falconiformes.japan.10.2021-02-15:0.0006736824,H5N8.EPI_ISL_1273441.Accipitriformes.japan.10.2021-03-03:0.0006814950)100:0.0020336601,(H5N8.EPI_ISL_17805886.NA.japan.10.2021-02-05:0.0000023033,H5N8.EPI_ISL_16718461.Gruiformes.japan.10.2021-02-03:0.0000023033)100:0.0020299867)29:0.0000023033,(((H5N8.EPI_ISL_985232.Anseriformes.japan.10.2021-02-08:0.0013513240,H5N8.EPI_ISL_4061713.Anseriformes.japan.10.2021-02-08:0.0000023033)99:0.0013516791,(H5N8.EPI_ISL_978898.Galliformes.japan.10.2021-02-01:0.0000023033,H5N8.EPI_ISL_17086340.Galliformes.japan.NA.2021-02-02:0.0000023033)100:0.0006765855)20:0.0000023033,(H5N8.EPI_ISL_16405678.environment.japan.10.2020-12-21:0.0000023033,H5N8.EPI_ISL_17086342.environment.japan.NA.2020-11-16:0.0000023033)30:0.0000023033)11:0.0000023033)14:0.0000023033,H5N8.EPI_ISL_854596.Galliformes.japan.10.2021-01-10:0.0006750422)88:0.0006746879)90:0.0027289926,(((H5N1.EPI_ISL_12572653.Galliformes.china.110.2021-12-07:0.0000000000,H5N1.EPI_ISL_12572663.Columbiformes.china.110.2021-12-08:0.0000000000):0.0000023033,H5N1.EPI_ISL_12572657.Anseriformes.china.110.2021-11-27:0.0000023033)76:0.0000023033,H5N1.EPI_ISL_12572660.Anseriformes.china.110.2021-12-08:0.0006753008)100:0.0062335595)100:0.0128086891,((((((((((((H5N8.EPI_ISL_5260465.Pelecaniformes.china.1.2021-01-26:0.0000000000,H5N8.EPI_ISL_14770164.Gruiformes.china.1.2020-12-31:0.0000000000):0.0000000000,H5N8.EPI_ISL_16718465.Gruiformes.japan.1.2021-01-16:0.0000000000):0.0000023033,H5N8.EPI_ISL_1009680.Galliformes.south_korea.1.2020-12-28:0.0000023033)15:0.0000023033,(((H5N8.EPI_ISL_6829497.Gruiformes.japan.1.2021-11-19:0.0027136451,H9N2.EPI_ISL_14223937.Galliformes.china.NA.2021-11-12:0.0027188559)40:0.0000023033,H5N8.EPI_ISL_14835974.Anseriformes.china.1.2020-11-13:0.0006760175)16:0.0000023033,(H5N8.EPI_ISL_17086352.Galliformes.japan.NA.2021-02-15:0.0006770617,H5N8.EPI_ISL_17086346.Anseriformes.japan.NA.2021-01-24:0.0006753946)17:0.0000023033)14:0.0000023033)10:0.0000023033,(H5N8.EPI_ISL_14778363.NA.china.NA.2020-11-25:0.0013371967,H5N8.EPI_ISL_16208969.Anseriformes.china.NA.2020-11-16:0.0006846730)53:0.0000169083)12:0.0000023033,H5N8.EPI_ISL_14770162.Gruiformes.china.1.2020-12-31:0.0006754403)100:0.0006753988,(((H5N8.EPI_ISL_7381026.Galliformes.china.1.2021-03:0.0040917553,(H5N8.EPI_ISL_14822549.Anseriformes.china.1.2021-05-18:0.0000023033,H5N8.EPI_ISL_8215657.Anseriformes.china.NA.2021-05-15:0.0000023033)100:0.0020350395)42:0.0000023033,((((H5N8.EPI_ISL_2555536.Charadriiformes.china.1.2020-11-16:0.0000023033,H5N8.EPI_ISL_14822451.Anseriformes.china.NA.2021-03-12:0.0006766808)100:0.0006754103,H5N8.EPI_ISL_14836426.Anseriformes.china.NA.2020-12-01:0.0013561643)27:0.0000023033,H5N8.EPI_ISL_16215736.Galliformes.china.1.2020-12:0.0000023033)12:0.0000023033,H5N6.EPI_ISL_18058053.Anseriformes.china.NA.2021-03-12:0.0013553089)15:0.0000023033)24:0.0000023033,(H5N8.EPI_ISL_985220.Galliformes.japan.1.2021-02-06:0.0020315219,H5N8.EPI_ISL_17086355.environment.japan.NA.2021-02-14:0.0000023033)98:0.0006763774)100:0.0006753465)35:0.0000023033,(H5N8.EPI_ISL_15435500.Anseriformes.china.1.2021-01-21:0.0006752588,(H5N8.EPI_ISL_1139015.NA.netherlands.1.2020-10-26:0.0000023033,H5N8.EPI_ISL_1139014.Anseriformes.netherlands.1.2020-10-27:0.0000023033)100:0.0020375158)37:0.0000023033)98:0.0006756533,(H5N8.EPI_ISL_1114741.Galliformes.russia.1.2020-10-17:0.0000023033,H5N8.EPI_ISL_1080579.Anseriformes.czech_republic.1.2021-02-14:0.0006793089)99:0.0013551161)98:0.0013606299,(H5N3.EPI_ISL_5863749.Anseriformes.united_states.289.2020-10-20:0.0006756200,H5N8.EPI_ISL_644127.Anseriformes.russia.1.2020-08-17:0.0000023033)67:0.0000023033)79:0.0006754587,(H5N8.EPI_ISL_2932600.Anseriformes.kazakhstan.1.2020-09-01:0.0020402217,H5N8.EPI_ISL_2932617.Passeriformes.kazakhstan.1.2020-09-15:0.0006754943)60:0.0000023033)100:0.0052827605,H5N8.EPI_ISL_13632084.Galliformes.kazakhstan.1.2020-08-01:0.0050901658)100:0.0272327952)71:0.0002187860,((((((((((((H5N6.EPI_ISL_7983813.NA.china.73.2021-12-22:0.0006726024,(H5N6.EPI_ISL_8517996.environment.china.73.2021-12-23:0.0000023033,H5N6.EPI_ISL_8518268.Galliformes.china.73.2021-12-23:0.0000023033)80:0.0000023033)99:0.0015519230,H5N6.EPI_ISL_8517999.environment.china.73.2021-12-23:0.0018309334)100:0.0069605237,H5N6.EPI_ISL_8517997.environment.china.73.2021-12-23:0.0057534167)100:0.0103489309,((H5N6.EPI_ISL_6760430.Anseriformes.china.61.2021-07:0.0034812043,(H5N6.EPI_ISL_6760682.Galliformes.china.61.2021-07:0.0000023033,H5N6.EPI_ISL_6760683.Anseriformes.china.61.2021-07:0.0000023033)99:0.0012821335)100:0.0105681219,(H5N6.EPI_ISL_11208198.Anseriformes.china.61.2021-11-02:0.0000023033,(H5N6.EPI_ISL_18231293.Anseriformes.laos.NA.2022-01-18:0.0000023033,H5N6.EPI_ISL_18231287.Galliformes.laos.NA.2022-07-13:0.0013501059)100:0.0033952075)75:0.0000023033)100:0.0154271154)48:0.0000029587,(H5N6.EPI_ISL_697077.Galliformes.china.NA.2017-08-28:0.0000023033,H9N2.EPI_ISL_697892.Galliformes.china.NA.2018-09-29:0.0006756792)40:0.0000023033)53:0.0006738618,H5N6.EPI_ISL_707491.Anseriformes.china.NA.2018-01-12:0.0000023033)38:0.0000023033,(NA.EPI_ISL_698056.Anseriformes.china.NA.2018-05-29:0.0000023033,NA.EPI_ISL_699430.Galliformes.china.NA.2018-04-26:0.0000023033)91:0.0006738655)62:0.0013484307,(H5N6.EPI_ISL_502208.Carnivora.china.NA.2018-06-13:0.0000023033,H5N6.EPI_ISL_315237.Galliformes.china.NA.2017-12-20:0.0000023033)80:0.0000023033)61:0.0026224397,(H5N6.EPI_ISL_6772739.Galliformes.china.127.2021-08:0.0180558869,NA.EPI_ISL_16868590.environment.china.NA.2020-06-22:0.0003837152)99:0.0038523506)100:0.0466992640,(((H5N2.EPI_ISL_china_9.Anseriformes.china.101.2022-01-26:0.0006733428,H5N2.EPI_ISL_china_11.Anseriformes.china.101.2022-01-26:0.0000023033)100:0.0108691781,(H5N6.EPI_ISL_696600.environment.china.NA.2018-11-29:0.0000023033,H5N6.EPI_ISL_696602.Galliformes.china.NA.2018-11-29:0.0000023033)100:0.0016206343)100:0.0279906073,((H7N9.EPI_ISL_1374063.Galliformes.china.NA.2018-11-01:0.0006844931,H7N9.EPI_ISL_1495971.Galliformes.china.NA.2021-02-23:0.0068665562)100:0.0078916357,H7N9.EPI_ISL_379666.Galliformes.china.NA.2017-05-07:0.0010837810)100:0.0364707641)99:0.0223445860)100:0.0430546271,((((((((H5N2.EPI_ISL_1760455.Anseriformes.china.286.2020-11-10:0.0000023033,H9N2.EPI_ISL_1760456.Anseriformes.china.NA.2020-11-10:0.0000023033)100:0.0048255916,((((H5N1.EPI_ISL_17606828.Anseriformes.south_korea.22.2021-12-13:0.0000023033,H5N1.EPI_ISL_17606834.Galliformes.south_korea.22.2021-12-20:0.0000023033)100:0.0006626949,(H5N1.EPI_ISL_17606844.Anseriformes.south_korea.22.2022-01-25:0.0000023033,H5N1.EPI_ISL_17606850.Galliformes.south_korea.22.2022-02-04:0.0000023033)100:0.0013650168)100:0.0047644574,H8N4.EPI_ISL_17989853.Gruiformes.china.NA.2022-01-16:0.0028282166)92:0.0013504343,(H3N2.EPI_ISL_17805856.environment.japan.NA.2020-11-23:0.0000023033,H3N6.EPI_ISL_17805930.environment.japan.NA.2020-11-30:0.0006746971)99:0.0007588183)99:0.0026795648)73:0.0006409553,(H10N9.EPI_ISL_13985210.Charadriiformes.china.NA.2020-09-27:0.0000023033,H10N9.EPI_ISL_13985211.Pelecaniformes.china.NA.2020-09-27:0.0000023033)100:0.0047729587)61:0.0000023033,((((H5N1.EPI_ISL_15943015.NA.south_korea.128.2022-11-07:0.0000023033,H5N1.EPI_ISL_15944665.Anseriformes.south_korea.128.2022-11-17:0.0000023033)100:0.0006743657,H5N1.EPI_ISL_17949987.Anseriformes.japan.80.2022-11-26:0.0013599376)100:0.0034396713,(((H5N1.EPI_ISL_17638143.Galliformes.japan.80.2023-04-02:0.0006749304,H5N1.EPI_ISL_18102701.Carnivora.south_korea.NA.2023-07-04:0.0034002990)31:0.0000023033,((((H5N1.EPI_ISL_17949986.Passeriformes.japan.80.2023-02-07:0.0000000000,H5N1.EPI_ISL_18066455.Accipitriformes.japan.NA.2023-01-07:0.0000000000):0.0000000000,H5N1.EPI_ISL_17527088.Passeriformes.japan.NA.2022-12-26:0.0000000000):0.0000023033,H5N1.EPI_ISL_18284468.Galliformes.japan.NA.2022-12-05:0.0000023033)28:0.0000023033,H5N1.EPI_ISL_china_18.NA.china.80.2023-01-01:0.0000023033)47:0.0000023033)41:0.0000023033,H5N1.EPI_ISL_18241793.Anseriformes.viet_nam.NA.2023-06-05:0.0040815016)100:0.0097003197)66:0.0006547363,H4N6.EPI_ISL_16405648.environment.japan.NA.2020-11-09:0.0040815415)50:0.0000023033)41:0.0000023033,((H5N8.EPI_ISL_16209048.Anseriformes.canada.81.2021-09-16:0.0006742743,H5N8.EPI_ISL_13295139.Anseriformes.canada.81.2021-09-16:0.0013508748)65:0.0000023033,H5N8.EPI_ISL_17760582.Anseriformes.canada.81.2021-10-15:0.0013502566)100:0.0096607326)84:0.0011592207,H6N1.EPI_ISL_16886957.NA.south_korea.NA.2019-02-01:0.0022383564)99:0.0140903765,(((((H5N1.EPI_ISL_17051458.Anseriformes.canada.NA.2022-12-12:0.0000023033,H5N1.EPI_ISL_17051423.Anseriformes.canada.9.2022-11-09:0.0000023033)65:0.0000023033,H5N1.EPI_ISL_17964944.Accipitriformes.united_states.9.2023-03-31:0.0006786185)53:0.0000023033,((H5N1.EPI_ISL_17964946.Galliformes.united_states.9.2023-04-19:0.0000023033,H5N1.EPI_ISL_17964858.Accipitriformes.united_states.9.2023-02-14:0.0006788422)62:0.0000023033,H5N1.EPI_ISL_17964876.Charadriiformes.united_states.9.2023-02-14:0.0006787141)100:0.0006786999)100:0.0020412661,(((((H5N1.EPI_ISL_17424649.Anseriformes.united_states.9.2022-09-01:0.0000000000,H5N1.EPI_ISL_16183504.Galliformes.canada.9.2022-05-16:0.0000000000):0.0000000000,H5N1.EPI_ISL_17051343.Pelecaniformes.canada.NA.2022-06-02:0.0000000000):0.0000000000,H5N1.EPI_ISL_17051393.Pelecaniformes.canada.9.2022-08-12:0.0000000000):0.0000000000,H5N1.EPI_ISL_16023374.Carnivora.canada.9.2022-07-19:0.0000000000):0.0000023033,H5N1.EPI_ISL_17260681.Carnivora.united_states.9.2022-06-15:0.0000023033)72:0.0000023033)98:0.0013572759,H5N1.EPI_ISL_17051418.Falconiformes.canada.NA.2022-10-28:0.0000023033)100:0.1343517259)47:0.0043135501,(H5N2.EPI_ISL_369328.Anseriformes.south_korea.NA.2017-11-15:0.0000023033,H4N6.EPI_ISL_381467.Anseriformes.south_korea.NA.2017-11-22:0.0027067973)100:0.0170320353)70:0.0037611483)99:0.0216307637,H2N9.EPI_ISL_17805909.NA.japan.NA.2020-11-15:0.0164225997)89:0.0037792222)97:0.0025319400,((((((((H5N1.EPI_ISL_6829533.Galliformes.japan.22.2021-11-12:0.0000023033,H5N1.EPI_ISL_15063429.Galliformes.japan.NA.2021-11-13:0.0000023033)84:0.0000023033,H5N1.EPI_ISL_18373259.Pelecaniformes.south_korea.NA.2022-03-14:0.0013523728)81:0.0006753441,(H5N1.EPI_ISL_17606838.Anseriformes.south_korea.22.2022-01-06:0.0000023033,H5N1.EPI_ISL_18373226.Anseriformes.south_korea.NA.2022-01-18:0.0000023033)99:0.0020325793)65:0.0000023033,(H5N1.EPI_ISL_15923322.Falconiformes.japan.22.2022-09-25:0.0040937698,((((H5N1.EPI_ISL_17606817.Anseriformes.south_korea.22.2022-01-13:0.0000000000,H5N1.EPI_ISL_18373246.Pelecaniformes.south_korea.NA.2022-02-15:0.0000000000):0.0000000000,H5N1.EPI_ISL_18373236.Anseriformes.south_korea.NA.2022-01-25:0.0000000000):0.0000023033,H5N1.EPI_ISL_17606842.Galliformes.south_korea.22.2022-01-21:0.0000023033)73:0.0000023033,(H5N1.EPI_ISL_17606840.Anseriformes.south_korea.22.2022-01-21:0.0006766588,H5N1.EPI_ISL_17606856.Galliformes.south_korea.22.2022-02-08:0.0013556089)43:0.0000023033)68:0.0000023033)82:0.0006754017)100:0.0027199157,(H5N1.EPI_ISL_6959593.Galliformes.south_korea.22.2021-11-08:0.0000023033,H5N1.EPI_ISL_15063426.Galliformes.japan.NA.2021-12-12:0.0006762823)100:0.0027157933)44:0.0000023033,((((H5N1.EPI_ISL_17606823.Galliformes.south_korea.22.2021-11-21:0.0000000000,H5N1.EPI_ISL_18373264.environment.south_korea.NA.2021-12-22:0.0000000000):0.0000023033,H5N1.EPI_ISL_17606865.Anseriformes.south_korea.22.2021-11-14:0.0000023033)85:0.0000023033,H5N1.EPI_ISL_18373223.Anseriformes.south_korea.NA.2021-12-07:0.0006756513)99:0.0013532999,H5N1.EPI_ISL_china_20230833.Anseriformes.china.22.2021-10-15:0.0027158160)32:0.0000023033)81:0.0006755799,(H5N1.EPI_ISL_17606833.Galliformes.south_korea.22.2021-12-17:0.0000023033,H5N1.EPI_ISL_15063425.Galliformes.japan.NA.2021-12-07:0.0020359250)82:0.0000023033)100:0.0096757307,(((((((H5N2.EPI_ISL_15732741.Passeriformes.japan.297.2022-10-28:0.0000023033,H5N2.EPI_ISL_18284476.Galliformes.japan.NA.2023-01-17:0.0006732971)100:0.0013485904,H5N1.EPI_ISL_15072539.Casuariiformes.japan.2.2022-04-16:0.0013481685)25:0.0000023033,(((H5N1.EPI_ISL_17950087.Passeriformes.japan.2.2023-03-30:0.0020266670,(H5N1.EPI_ISL_16698477.Galliformes.japan.2.2023-01-11:0.0000023033,H5N1.EPI_ISL_18284462.Galliformes.japan.NA.2022-11-07:0.0000023033)100:0.0006732059)36:0.0000023033,(H5N1.EPI_ISL_china_20230820.Anseriformes.china.2.2021-11-16:0.0000023033,H5N1.EPI_ISL_china_20230832.Anseriformes.china.2.2021-10-20:0.0027078950)100:0.0006732045)10:0.0000023033,((H5N1.EPI_ISL_16698060.Galliformes.japan.15.2022-11-07:0.0000023033,H5N1.EPI_ISL_18284461.Galliformes.japan.NA.2022-10-28:0.0000023033)99:0.0013518280,(H5N1.EPI_ISL_17267427.Passeriformes.japan.15.2022-12-12:0.0013518655,((H5N1.EPI_ISL_17316075.Passeriformes.japan.15.2023-02-04:0.0000000000,H5N1.EPI_ISL_17857959.Carnivora.japan.NA.2023-02-20:0.0000000000):0.0000023033,H5N1.EPI_ISL_17766057.Carnivora.japan.15.2023-04-12:0.0000023033)86:0.0000023033)99:0.0006712947)99:0.0006767835)1:0.0000023033)7:0.0000023033,((H5N1.EPI_ISL_14064698.Passeriformes.japan.2.2022-02-03:0.0000000000,H5N1.EPI_ISL_15843373.Accipitriformes.canada.2.2022-02-03:0.0000000000):0.0000023033,(H5N1.EPI_ISL_16698576.Gruiformes.japan.2.2022-11-20:0.0000023033,(H5N1.EPI_ISL_16831229.Passeriformes.japan.NA.2022-04-19:0.0000023033,(H5N1.EPI_ISL_16831310.Galliformes.japan.NA.2022-02-12:0.0000023033,H5N1.EPI_ISL_16831114.Passeriformes.japan.NA.2022-04-06:0.0000023033)100:0.0006732213)9:0.0000023033)8:0.0000023033)5:0.0000023033)12:0.0000023033,H5N1.EPI_ISL_12174842.Carnivora.japan.2.2022-03-31:0.0006731456)98:0.0013770463,H5N1.EPI_ISL_17075759.NA.china.19.2023-02-10:0.0041016530)97:0.0006551041,((((H5N1.EPI_ISL_14886367.Anseriformes.bangladesh.19.2021-12-19:0.0013508519,(H5N1.EPI_ISL_13369775.Galliformes.united_kingdom.2.2021-11-23:0.0000023033,H5N1.EPI_ISL_9029959.Anseriformes.united_kingdom.2.2021-11-18:0.0000023033)100:0.0006736998)80:0.0000024702,((((H5N1.EPI_ISL_14864642.Carnivora.united_kingdom.2.2022-01-01:0.0000000000,H5N1.EPI_ISL_13370700.Galliformes.united_kingdom.2.2022-01-27:0.0000000000):0.0000000000,H5N1.EPI_ISL_13370630.Accipitriformes.united_kingdom.2.2021-12-31:0.0000000000):0.0000000000,H5N1.EPI_ISL_13369778.Anseriformes.united_kingdom.2.2021-11-25:0.0000000000):0.0000023033,H5N1.EPI_ISL_13370894.Gruiformes.united_kingdom.2.2022-01-28:0.0000023033)100:0.0013491950)61:0.0006749093,(((((H5N1.EPI_ISL_15647837.Anseriformes.south_korea.19.2022-02-05:0.0006734134,H5N1.EPI_ISL_18373240.Anseriformes.south_korea.NA.2022-02-10:0.0000023033)100:0.0013521679,H5N1.EPI_ISL_china_20230842.Anseriformes.china.19.2021-11-25:0.0020297612)26:0.0000023033,((((H5N1.EPI_ISL_china_26.Podicipediformes.china.19.2022-07-15:0.0000023033,H5N1.EPI_ISL_china_45.Charadriiformes.china.19.2022-07-22:0.0000023033)100:0.0006731412,(H5N1.EPI_ISL_china_31.Charadriiformes.china.19.2022-06-20:0.0000023033,H5N1.EPI_ISL_china_40.Podicipediformes.china.19.2022-07-21:0.0006730150)82:0.0000023033)99:0.0013532907,H5N1.EPI_ISL_china_39.Anseriformes.china.19.2022-06-18:0.0006705439)100:0.0027300195,(H5N1.EPI_ISL_china_20230851.Anseriformes.china.19.2021-12-02:0.0000023033,H5N1.EPI_ISL_13352719.Anseriformes.china.NA.2021-12-17:0.0006737686)100:0.0013521447)32:0.0000023033)21:0.0000023033,H5N1.EPI_ISL_china_20230811.Anseriformes.china.19.2021-11-18:0.0013523547)100:0.0006738643,(H5N1.EPI_ISL_china_20230828.Anseriformes.china.19.2021-11-22:0.0013499133,(H5N1.EPI_ISL_14760739.Galliformes.italy.2.2021-12-13:0.0000023033,H5N1.EPI_ISL_14760638.Galliformes.italy.2.2021-11-26:0.0000023033)100:0.0013498740)57:0.0000023033)53:0.0000023033)65:0.0006738214,(H5N1.EPI_ISL_16838580.Pelecaniformes.russia.2.2021-06-29:0.0000023033,(H5N1.EPI_ISL_7892492.Pelecaniformes.croatia.NA.2021-12-08:0.0006738926,H5N1.EPI_ISL_16838578.Anseriformes.canada.2.2021-08-08:0.0006739086)31:0.0000023033)20:0.0000023033)53:0.0000023033)100:0.0117190564)99:0.0007521000)100:0.0105489686,H5N8.EPI_ISL_525454.Anseriformes.poland.10.2020-02-22:0.0020605071)96:0.0006540896,(((H5N8.EPI_ISL_833583.Anseriformes.hungary.10.2020-04-22:0.0000023033,H5N8.EPI_ISL_811134.Galliformes.hungary.10.2020-04-21:0.0000023033)81:0.0000023033,(H5N8.EPI_ISL_833482.Anseriformes.hungary.10.2020-04-10:0.0000023033,H5N8.EPI_ISL_813971.Galliformes.hungary.10.2020-05-05:0.0000023033)100:0.0006740984)100:0.0006739780,H5N8.EPI_ISL_525445.Galliformes.poland.10.2020-01-25:0.0013503654)26:0.0000023033)14:0.0000023033,H5N8.EPI_ISL_503364.Galliformes.slovakia.NA.2020-01-03:0.0000023033)16:0.0000023033,(H5N8.EPI_ISL_419314.Galliformes.germany.10.2020-03-27:0.0013501428,((H5N8.EPI_ISL_419312.Anseriformes.germany.10.2020-03-26:0.0000000000,H5N8.EPI_ISL_415197.Galliformes.germany.10.2020-03-12:0.0000000000):0.0000023033,H5N8.EPI_ISL_417414.Accipitriformes.germany.10.2020-03-20:0.0000023033)100:0.0013502109)31:0.0000023033)100:0.0006739210,(H5N8.EPI_ISL_525440.Galliformes.poland.10.2020-01-02:0.0000023033,H5N8.EPI_ISL_405813.Accipitriformes.poland.10.2020-01-06:0.0000023033)79:0.0000023033)100:0.0040768941,(H5N8.EPI_ISL_2820504.Anseriformes.china.10.2020-10-16:0.0006747010,H5N8.EPI_ISL_14819896.Anseriformes.china.NA.2020-10-16:0.0000023033)100:0.0013511810)39:0.0000023033,H5N8.EPI_ISL_2820259.Anseriformes.china.10.2020-10-15:0.0000023033)36:0.0000023033,((H5N8.EPI_ISL_681288.Galliformes.japan.10.2020-11-07:0.0013504019,(H5N8.EPI_ISL_681292.Galliformes.japan.10.2020-11-10:0.0013501209,H5N8.EPI_ISL_17086224.environment.japan.NA.2020-11-05:0.0006737977)66:0.0000023033)95:0.0006738057,H5N8.EPI_ISL_1009702.Anseriformes.south_korea.10.2020-12-01:0.0000023033)96:0.0006755527)99:0.0006737308,H5N8.EPI_ISL_16405655.environment.japan.10.2020-11-16:0.0006752935)99:0.0006779086,H5N8.EPI_ISL_16405654.environment.japan.10.2020-11-09:0.0000023033);
+
+TIME STAMP
+----------
+
+Date and time: Wed Jan 10 23:07:14 2024
+Total CPU time used: 633.178611 seconds (0h:10m:33s)
+Total wall-clock time used: 223.1203041 seconds (0h:3m:43s)
+

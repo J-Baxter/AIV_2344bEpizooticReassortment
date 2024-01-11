@@ -1,0 +1,200 @@
+IQ-TREE multicore version 1.6.12 for Mac OS X 64-bit built Aug 15 2019
+Developed by Bui Quang Minh, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
+
+Host:    sce-bio-c05393 (AVX2, FMA3, 16 GB RAM)
+Command: iqtree -s Re_H5_clade2344b_Asia_blast_N2.trim_subsampled.fasta -nt AUTO -m HKY -bb 1000
+Seed:    924706 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Mon Jan  8 19:24:06 2024
+Kernel:  AVX+FMA - auto-detect threads (6 CPU cores detected)
+
+Reading alignment file Re_H5_clade2344b_Asia_blast_N2.trim_subsampled.fasta ... Fasta format detected
+Alignment most likely contains DNA/RNA sequences
+Alignment has 52 sequences with 1389 columns, 215 distinct patterns
+141 parsimony-informative, 104 singleton sites, 1144 constant sites
+                                                               Gap/Ambiguity  Composition  p-value
+   1  H5N2.EPI_ISL_1760455.Anseriformes.china.286.2020-11-10           0.00%    passed     99.89%
+   2  H5N2.EPI_ISL_15732741.Passeriformes.japan.297.2022-10-28         0.00%    passed     94.04%
+   3  H5N2.EPI_ISL_china_8.Anseriformes.china.101.2021-12-29           0.07%    passed     97.04%
+   4  H5N2.EPI_ISL_china_11.Anseriformes.china.101.2022-01-26          0.00%    passed     96.83%
+   5  H5N2.EPI_ISL_18284476.Galliformes.japan.NA.2023-01-17            0.00%    passed     95.84%
+   6  H11N2.EPI_ISL_9572815.Anseriformes.viet_nam.NA.2019-12-30        0.00%    passed     98.92%
+   7  H3N2.EPI_ISL_9572777.Anseriformes.viet_nam.NA.2020-07-29         0.00%    passed     93.41%
+   8  H9N2.EPI_ISL_14867047.Anseriformes.japan.NA.2021-09-01           0.00%    passed     97.75%
+   9  H3N2.EPI_ISL_9572810.Anseriformes.viet_nam.NA.2020-09-25         0.00%    passed     94.57%
+  10  H3N2.EPI_ISL_13374950.environment.japan.NA.2019-12-02            0.00%    passed     96.70%
+  11  H11N2.EPI_ISL_6795226.Anseriformes.south_korea.NA.2020-02-25     0.00%    passed     95.93%
+  12  H11N2.EPI_ISL_13439051.environment.japan.NA.2019-12-16           0.00%    passed     98.32%
+  13  H9N2.EPI_ISL_4072076.Anseriformes.south_korea.NA.2020-02-19      0.00%    passed     97.23%
+  14  H11N2.EPI_ISL_707690.Anseriformes.south_korea.NA.2019-11-20      0.00%    passed     95.84%
+  15  H5N2.EPI_ISL_369331.Anseriformes.south_korea.NA.2017-12-27       0.00%    passed     98.95%
+  16  H5N2.EPI_ISL_3204257.Anseriformes.china.NA.2018-12-20            0.00%    passed     99.07%
+  17  H5N2.EPI_ISL_3161847.Anseriformes.china.NA.2019-01-15            0.00%    passed     99.07%
+  18  H5N2.EPI_ISL_3229453.Anseriformes.china.NA.2018-12-10            0.07%    passed     99.02%
+  19  H5N2.EPI_ISL_3228310.Anseriformes.china.NA.2018-12-25            0.00%    passed     98.87%
+  20  H5N2.EPI_ISL_369330.Anseriformes.south_korea.NA.2017-12-11       0.00%    passed     99.72%
+  21  H9N2.EPI_ISL_1760456.Anseriformes.china.NA.2020-11-10            0.00%    passed     99.82%
+  22  H6N2.EPI_ISL_1636527.environment.japan.NA.2018-11-12             0.00%    passed     96.35%
+  23  H11N2.EPI_ISL_16886943.Anseriformes.south_korea.NA.2019-12-03    0.00%    passed     99.91%
+  24  H6N2.EPI_ISL_4071038.Anseriformes.south_korea.NA.2019-11-06      0.00%    passed     99.58%
+  25  H6N2.EPI_ISL_16886944.Anseriformes.south_korea.NA.2019-11-27     0.00%    passed     99.58%
+  26  H4N2.EPI_ISL_700932.NA.china.NA.2019-10-31                       0.00%    passed     98.59%
+  27  H6N2.EPI_ISL_462613.Anseriformes.china.NA.2019-11-19             0.00%    passed     97.17%
+  28  H9N2.EPI_ISL_15213974.Anseriformes.south_korea.NA.2021-02-15     0.00%    passed    100.00%
+  29  H9N2.EPI_ISL_4071034.Anseriformes.south_korea.NA.2019-02-28      0.00%    passed     99.69%
+  30  H9N2.EPI_ISL_13156685.Anseriformes.china.NA.2021-11-23           3.10%    passed     99.06%
+  31  H9N2.EPI_ISL_13156588.Charadriiformes.china.NA.2020-09-10        3.53%    passed     98.98%
+  32  H4N2.EPI_ISL_17811770.Anseriformes.china.NA.2019-10-31           1.08%    passed     99.38%
+  33  H4N2.EPI_ISL_17811772.Anseriformes.china.NA.2019-11-09           0.22%    passed     99.78%
+  34  H5N2.EPI_ISL_6780573.Anseriformes.japan.NA.2020-12-15            0.00%    passed     92.06%
+  35  H4N2.EPI_ISL_503345.Anseriformes.mongolia.NA.2019-09-12          0.00%    passed     99.45%
+  36  H9N2.EPI_ISL_14835568.Anseriformes.south_korea.NA.2021-03-02     0.00%    passed     95.40%
+  37  H3N2.EPI_ISL_14776042.Anseriformes.bangladesh.NA.2020-10-22      0.00%    passed     98.87%
+  38  H6N2.EPI_ISL_16886900.Anseriformes.south_korea.NA.2022-03-02     0.00%    passed     92.58%
+  39  H5N2.EPI_ISL_16839585.NA.south_korea.NA.2018-01-05               0.00%    passed     99.00%
+  40  H5N2.EPI_ISL_369324.Anseriformes.south_korea.NA.2017-10-26       0.00%    passed     98.35%
+  41  H5N2.EPI_ISL_14867043.Anseriformes.japan.NA.2020-09-01           0.22%    passed     86.66%
+  42  H5N2.EPI_ISL_369328.Anseriformes.south_korea.NA.2017-11-15       0.00%    passed     97.90%
+  43  H9N2.EPI_ISL_14835569.Anseriformes.south_korea.NA.2021-03-08     0.00%    passed     97.54%
+  44  H6N2.EPI_ISL_243648.Anseriformes.netherlands.NA.2011-01-11       0.00%    passed     99.47%
+  45  H5N2.EPI_ISL_369335.environment.south_korea.NA.2017-12-06        0.00%    passed     95.76%
+  46  H5N2.EPI_ISL_369326.Anseriformes.south_korea.NA.2017-11-13       0.00%    passed     98.41%
+  47  H5N2.EPI_ISL_369325.Anseriformes.south_korea.NA.2017-11-06       0.00%    passed     98.74%
+  48  H6N2.EPI_ISL_243406.Anseriformes.netherlands.NA.2011-11-04       0.00%    passed     99.95%
+  49  H9N2.EPI_ISL_9593366.Anseriformes.iran.NA.2019-10-01             0.00%    passed     99.37%
+  50  H10N2.EPI_ISL_207031.Anseriformes.mongolia.NA.2015-08-30         0.00%    passed     97.78%
+  51  H4N2.EPI_ISL_18287397.Anseriformes.thailand.NA.2018-11-01        0.00%    passed     96.33%
+  52  H6N2.EPI_ISL_244552.Anseriformes.china.NA.2014-12-22             0.00%    passed     99.70%
+****  TOTAL                                                            0.16%  0 sequences failed composition chi2 test (p-value<5%; df=3)
+NOTE: H5N2.EPI_ISL_3161847.Anseriformes.china.NA.2019-01-15 is identical to H5N2.EPI_ISL_3204257.Anseriformes.china.NA.2018-12-20 but kept for subsequent analysis
+NOTE: H6N2.EPI_ISL_16886944.Anseriformes.south_korea.NA.2019-11-27 is identical to H6N2.EPI_ISL_4071038.Anseriformes.south_korea.NA.2019-11-06 but kept for subsequent analysis
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.002 seconds
+Generating 1000 samples for ultrafast bootstrap (seed: 924706)...
+
+NOTE: 1 MB RAM (0 GB) is required!
+Measuring multi-threading efficiency up to 6 CPU cores
+Increase to 10 rounds for branch lengths
+1431 trees examined
+Threads: 1 / Time: 6.001 sec / Speedup: 1.000 / Efficiency: 100% / LogL: -9497
+Threads: 2 / Time: 5.603 sec / Speedup: 1.071 / Efficiency: 54% / LogL: -9497
+Threads: 3 / Time: 5.384 sec / Speedup: 1.114 / Efficiency: 37% / LogL: -9497
+BEST NUMBER OF THREADS: 2
+
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -4390.255
+2. Current log-likelihood: -4162.606
+Optimal log-likelihood: -4162.538
+Rate parameters:  A-C: 1.00000  A-G: 13.47650  A-T: 1.00000  C-G: 1.00000  C-T: 13.47650  G-T: 1.00000
+Base frequencies:  A: 0.312  C: 0.187  G: 0.239  T: 0.262
+Parameters optimization took 2 rounds (0.007 sec)
+Computing ML distances based on estimated model parameters... 0.012 sec
+Computing BIONJ tree...
+0.006 seconds
+Log-likelihood of BIONJ tree: -4166.843
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 0.147 second
+Computing log-likelihood of 98 initial trees ... 0.171 seconds
+Current best score: -4160.010
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 1: -4160.009
+BETTER TREE FOUND at iteration 2: -4160.009
+BETTER TREE FOUND at iteration 5: -4160.009
+BETTER TREE FOUND at iteration 6: -4160.009
+Iteration 10 / LogL: -4160.009 / Time: 0h:0m:17s
+BETTER TREE FOUND at iteration 15: -4160.009
+UPDATE BEST LOG-LIKELIHOOD: -4160.009
+Iteration 20 / LogL: -4160.009 / Time: 0h:0m:17s
+Finish initializing candidate tree set (15)
+Current best tree score: -4160.009 / CPU time: 0.666
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+UPDATE BEST LOG-LIKELIHOOD: -4160.007
+UPDATE BEST LOG-LIKELIHOOD: -4160.007
+Iteration 30 / LogL: -4160.007 / Time: 0h:0m:17s (0h:0m:52s left)
+UPDATE BEST LOG-LIKELIHOOD: -4160.006
+Iteration 40 / LogL: -4160.009 / Time: 0h:0m:18s (0h:0m:34s left)
+Iteration 50 / LogL: -4169.832 / Time: 0h:0m:18s (0h:0m:24s left)
+Log-likelihood cutoff on original alignment: -4194.801
+Iteration 60 / LogL: -4160.008 / Time: 0h:0m:18s (0h:0m:17s left)
+Iteration 70 / LogL: -4160.009 / Time: 0h:0m:19s (0h:0m:12s left)
+BETTER TREE FOUND at iteration 72: -4160.006
+UPDATE BEST LOG-LIKELIHOOD: -4160.005
+Iteration 80 / LogL: -4160.008 / Time: 0h:0m:19s (0h:0m:22s left)
+Iteration 90 / LogL: -4161.659 / Time: 0h:0m:19s (0h:0m:18s left)
+Iteration 100 / LogL: -4160.009 / Time: 0h:0m:19s (0h:0m:14s left)
+Log-likelihood cutoff on original alignment: -4194.801
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.990
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+Iteration 110 / LogL: -4160.009 / Time: 0h:0m:20s (0h:0m:16s left)
+BETTER TREE FOUND at iteration 114: -4160.005
+UPDATE BEST LOG-LIKELIHOOD: -4160.005
+Iteration 120 / LogL: -4160.008 / Time: 0h:0m:20s (0h:0m:16s left)
+Iteration 130 / LogL: -4160.007 / Time: 0h:0m:20s (0h:0m:13s left)
+BETTER TREE FOUND at iteration 135: -4160.005
+Iteration 140 / LogL: -4160.006 / Time: 0h:0m:20s (0h:0m:14s left)
+BETTER TREE FOUND at iteration 142: -4160.005
+Iteration 150 / LogL: -4160.005 / Time: 0h:0m:21s (0h:0m:13s left)
+Log-likelihood cutoff on original alignment: -4194.801
+BETTER TREE FOUND at iteration 158: -4160.005
+Iteration 160 / LogL: -4160.007 / Time: 0h:0m:21s (0h:0m:13s left)
+Iteration 170 / LogL: -4160.006 / Time: 0h:0m:21s (0h:0m:11s left)
+UPDATE BEST LOG-LIKELIHOOD: -4160.004
+Iteration 180 / LogL: -4161.659 / Time: 0h:0m:22s (0h:0m:9s left)
+Iteration 190 / LogL: -4160.005 / Time: 0h:0m:22s (0h:0m:8s left)
+Iteration 200 / LogL: -4160.007 / Time: 0h:0m:22s (0h:0m:6s left)
+Log-likelihood cutoff on original alignment: -4194.801
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.991
+Iteration 210 / LogL: -4160.006 / Time: 0h:0m:22s (0h:0m:9s left)
+Iteration 220 / LogL: -4160.007 / Time: 0h:0m:23s (0h:0m:8s left)
+Iteration 230 / LogL: -4160.005 / Time: 0h:0m:23s (0h:0m:7s left)
+Iteration 240 / LogL: -4160.005 / Time: 0h:0m:23s (0h:0m:5s left)
+Iteration 250 / LogL: -4160.006 / Time: 0h:0m:24s (0h:0m:4s left)
+Log-likelihood cutoff on original alignment: -4193.823
+TREE SEARCH COMPLETED AFTER 259 ITERATIONS / Time: 0h:0m:24s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -4160.004
+Optimal log-likelihood: -4160.004
+Rate parameters:  A-C: 1.00000  A-G: 13.47783  A-T: 1.00000  C-G: 1.00000  C-T: 13.47783  G-T: 1.00000
+Base frequencies:  A: 0.312  C: 0.187  G: 0.239  T: 0.262
+Parameters optimization took 1 rounds (0.002 sec)
+BEST SCORE FOUND : -4160.004
+Creating bootstrap support values...
+Split supports printed to NEXUS file Re_H5_clade2344b_Asia_blast_N2.trim_subsampled.fasta.splits.nex
+Total tree length: 0.240
+
+Total number of iterations: 259
+CPU time used for tree search: 14.720 sec (0h:0m:14s)
+Wall-clock time used for tree search: 7.332 sec (0h:0m:7s)
+Total CPU time used: 49.282 sec (0h:0m:49s)
+Total wall-clock time used: 24.473 sec (0h:0m:24s)
+
+Computing bootstrap consensus tree...
+Reading input file Re_H5_clade2344b_Asia_blast_N2.trim_subsampled.fasta.splits.nex...
+52 taxa and 332 splits.
+Consensus tree written to Re_H5_clade2344b_Asia_blast_N2.trim_subsampled.fasta.contree
+Reading input trees file Re_H5_clade2344b_Asia_blast_N2.trim_subsampled.fasta.contree
+Log-likelihood of consensus tree: -4160.009
+
+Analysis results written to: 
+  IQ-TREE report:                Re_H5_clade2344b_Asia_blast_N2.trim_subsampled.fasta.iqtree
+  Maximum-likelihood tree:       Re_H5_clade2344b_Asia_blast_N2.trim_subsampled.fasta.treefile
+  Likelihood distances:          Re_H5_clade2344b_Asia_blast_N2.trim_subsampled.fasta.mldist
+
+Ultrafast bootstrap approximation results written to:
+  Split support values:          Re_H5_clade2344b_Asia_blast_N2.trim_subsampled.fasta.splits.nex
+  Consensus tree:                Re_H5_clade2344b_Asia_blast_N2.trim_subsampled.fasta.contree
+  Screen log file:               Re_H5_clade2344b_Asia_blast_N2.trim_subsampled.fasta.log
+
+Date and Time: Mon Jan  8 19:24:31 2024

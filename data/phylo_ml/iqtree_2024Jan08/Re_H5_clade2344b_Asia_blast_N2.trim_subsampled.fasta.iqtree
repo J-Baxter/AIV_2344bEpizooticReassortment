@@ -1,0 +1,316 @@
+IQ-TREE 1.6.12 built Aug 15 2019
+
+Input file name: Re_H5_clade2344b_Asia_blast_N2.trim_subsampled.fasta
+Type of analysis: tree reconstruction + ultrafast bootstrap (1000 replicates)
+Random seed number: 924706
+
+REFERENCES
+----------
+
+To cite IQ-TREE please use:
+
+Lam-Tung Nguyen, Heiko A. Schmidt, Arndt von Haeseler, and Bui Quang Minh
+(2015) IQ-TREE: A fast and effective stochastic algorithm for estimating
+maximum likelihood phylogenies. Mol Biol Evol, 32:268-274.
+https://doi.org/10.1093/molbev/msu300
+
+Since you used ultrafast bootstrap (UFBoot) please also cite: 
+
+Diep Thi Hoang, Olga Chernomor, Arndt von Haeseler, Bui Quang Minh,
+and Le Sy Vinh (2017) UFBoot2: Improving the ultrafast bootstrap
+approximation. Mol Biol Evol, in press.
+https://doi.org/10.1093/molbev/msx281
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 52 sequences with 1389 nucleotide sites
+Number of constant sites: 1144 (= 82.3614% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 1144 (= 82.3614% of all sites)
+Number of parsimony informative sites: 141
+Number of distinct site patterns: 215
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: HKY+F
+
+Rate parameter R:
+
+  A-C: 1.0000
+  A-G: 13.4778
+  A-T: 1.0000
+  C-G: 1.0000
+  C-T: 13.4778
+  G-T: 1.0000
+
+State frequencies: (empirical counts from alignment)
+
+  pi(A) = 0.312
+  pi(C) = 0.1868
+  pi(G) = 0.2388
+  pi(T) = 0.2624
+
+Rate matrix Q:
+
+  A   -0.9589   0.04884    0.8415   0.06861
+  C   0.08159    -1.069   0.06243    0.9248
+  G       1.1   0.04884    -1.217   0.06861
+  T   0.08159    0.6583   0.06243   -0.8023
+
+Model of rate heterogeneity: Uniform
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -4160.0042 (s.e. 129.9453)
+Unconstrained log-likelihood (without tree): -3715.0914
+Number of free parameters (#branches + #model parameters): 105
+Akaike information criterion (AIC) score: 8530.0084
+Corrected Akaike information criterion (AICc) score: 8547.3584
+Bayesian information criterion (BIC) score: 9079.8240
+
+Total tree length (sum of branch lengths): 0.2401
+Sum of internal branch lengths: 0.1120 (46.6398% of tree length)
+
+WARNING: 21 near-zero internal branches (<0.0007) should be treated with caution
+         Such branches are denoted by '**' in the figure below
+
+NOTE: Tree is UNROOTED although outgroup taxon 'H5N2.EPI_ISL_1760455.Anseriformes.china.286.2020-11-10' is drawn at root
+Numbers in parentheses are  ultrafast bootstrap support (%)
+
++**H5N2.EPI_ISL_1760455.Anseriformes.china.286.2020-11-10
+|
+|                                             +**H5N2.EPI_ISL_15732741.Passeriformes.japan.297.2022-10-28
+|                                         +---| (100)
+|                                         |   +--H5N2.EPI_ISL_18284476.Galliformes.japan.NA.2023-01-17
+|                                      +--| (95)
+|                                      |  +--H9N2.EPI_ISL_14867047.Anseriformes.japan.NA.2021-09-01
+|                                   +**| (56)
+|                                   |  |  +**H3N2.EPI_ISL_9572777.Anseriformes.viet_nam.NA.2020-07-29
+|                                   |  +--| (100)
+|                                   |     +--H3N2.EPI_ISL_9572810.Anseriformes.viet_nam.NA.2020-09-25
+|                                +--| (98)
+|                                |  |  +--H3N2.EPI_ISL_13374950.environment.japan.NA.2019-12-02
+|                                |  +--| (89)
+|                                |     +--H11N2.EPI_ISL_6795226.Anseriformes.south_korea.NA.2020-02-25
+|                             +**| (13)
+|                             |  +--H11N2.EPI_ISL_13439051.environment.japan.NA.2019-12-16
+|                          +**| (13)
+|                          |  +--H11N2.EPI_ISL_9572815.Anseriformes.viet_nam.NA.2019-12-30
+|                     +----| (100)
+|                     |    |  +--H9N2.EPI_ISL_4072076.Anseriformes.south_korea.NA.2020-02-19
+|                     |    +**| (91)
+|                     |       +--H11N2.EPI_ISL_707690.Anseriformes.south_korea.NA.2019-11-20
+|                  +--| (99)
+|                  |  +**H5N2.EPI_ISL_369331.Anseriformes.south_korea.NA.2017-12-27
+|               +--| (100)
+|               |  |                                                                +**H5N2.EPI_ISL_china_8.Anseriformes.china.101.2021-12-29
+|               |  |                                                         +------| (100)
+|               |  |                                                         |      +**H5N2.EPI_ISL_china_11.Anseriformes.china.101.2022-01-26
+|               |  |                                                      +--| (84)
+|               |  |                                                      |  +------H6N2.EPI_ISL_16886900.Anseriformes.south_korea.NA.2022-03-02
+|               |  |                                                 +----| (100)
+|               |  |                                                 |    |    +**H5N2.EPI_ISL_6780573.Anseriformes.japan.NA.2020-12-15
+|               |  |                                                 |    +----| (100)
+|               |  |                                                 |         +--H5N2.EPI_ISL_14867043.Anseriformes.japan.NA.2020-09-01
+|               |  |                                              +**| (78)
+|               |  |                                              |  +-----H3N2.EPI_ISL_14776042.Anseriformes.bangladesh.NA.2020-10-22
+|               |  |                                           +--| (81)
+|               |  |                                           |  |   +**H9N2.EPI_ISL_14835568.Anseriformes.south_korea.NA.2021-03-02
+|               |  |                                           |  +---| (100)
+|               |  |                                           |      +--H9N2.EPI_ISL_14835569.Anseriformes.south_korea.NA.2021-03-08
+|               |  |                                        +**| (69)
+|               |  |                                        |  +--H4N2.EPI_ISL_503345.Anseriformes.mongolia.NA.2019-09-12
+|               |  |                                     +**| (46)
+|               |  |                                     |  +--H5N2.EPI_ISL_369324.Anseriformes.south_korea.NA.2017-10-26
+|               |  |                                  +**| (56)
+|               |  |                                  |  |  +--H5N2.EPI_ISL_16839585.NA.south_korea.NA.2018-01-05
+|               |  |                                  |  +--| (88)
+|               |  |                                  |     |        +--H5N2.EPI_ISL_369328.Anseriformes.south_korea.NA.2017-11-15
+|               |  |                                  |     |     +**| (42)
+|               |  |                                  |     |     |  +--H5N2.EPI_ISL_369326.Anseriformes.south_korea.NA.2017-11-13
+|               |  |                                  |     |  +**| (47)
+|               |  |                                  |     |  |  +--H5N2.EPI_ISL_369335.environment.south_korea.NA.2017-12-06
+|               |  |                                  |     +--| (95)
+|               |  |                                  |        +--H5N2.EPI_ISL_369325.Anseriformes.south_korea.NA.2017-11-06
+|               |  |                            +-----| (100)
+|               |  |                            |     |  +-----H9N2.EPI_ISL_9593366.Anseriformes.iran.NA.2019-10-01
+|               |  |                            |     +**| (80)
+|               |  |                            |        +---H4N2.EPI_ISL_18287397.Anseriformes.thailand.NA.2018-11-01
+|               |  |                         +**| (92)
+|               |  |                         |  +--H6N2.EPI_ISL_244552.Anseriformes.china.NA.2014-12-22
+|               |  |                      +--| (96)
+|               |  |                      |  +-----H10N2.EPI_ISL_207031.Anseriformes.mongolia.NA.2015-08-30
+|               |  |  +-------------------| (100)
+|               |  |  |                   |  +--H6N2.EPI_ISL_243648.Anseriformes.netherlands.NA.2011-01-11
+|               |  |  |                   +--| (64)
+|               |  |  |                      +--H6N2.EPI_ISL_243406.Anseriformes.netherlands.NA.2011-11-04
+|               |  +**| (78)
+|               |     |        +**H5N2.EPI_ISL_3204257.Anseriformes.china.NA.2018-12-20
+|               |     |     +**| (73)
+|               |     |     |  +**H5N2.EPI_ISL_3161847.Anseriformes.china.NA.2019-01-15
+|               |     |  +--| (96)
+|               |     |  |  |  +**H5N2.EPI_ISL_3229453.Anseriformes.china.NA.2018-12-10
+|               |     |  |  +**| (87)
+|               |     |  |     +**H5N2.EPI_ISL_3228310.Anseriformes.china.NA.2018-12-25
+|               |     +**| (76)
+|               |        +--H5N2.EPI_ISL_369330.Anseriformes.south_korea.NA.2017-12-11
+|            +**| (91)
+|            |  +---H9N2.EPI_ISL_4071034.Anseriformes.south_korea.NA.2019-02-28
+|         +**| (67)
+|         |  |     +--H11N2.EPI_ISL_16886943.Anseriformes.south_korea.NA.2019-12-03
+|         |  |  +--| (92)
+|         |  |  |  +--H9N2.EPI_ISL_15213974.Anseriformes.south_korea.NA.2021-02-15
+|         |  +--| (100)
+|         |     |  +**H6N2.EPI_ISL_4071038.Anseriformes.south_korea.NA.2019-11-06
+|         |     +--| (97)
+|         |        +**H6N2.EPI_ISL_16886944.Anseriformes.south_korea.NA.2019-11-27
+|  +------| (100)
+|  |      |     +--H6N2.EPI_ISL_1636527.environment.japan.NA.2018-11-12
+|  |      |  +**| (78)
+|  |      |  |  +--H6N2.EPI_ISL_462613.Anseriformes.china.NA.2019-11-19
+|  |      +--| (64)
+|  |         |  +--H4N2.EPI_ISL_700932.NA.china.NA.2019-10-31
+|  |         +--| (99)
+|  |            |  +--H4N2.EPI_ISL_17811770.Anseriformes.china.NA.2019-10-31
+|  |            +**| (92)
+|  |               +---H4N2.EPI_ISL_17811772.Anseriformes.china.NA.2019-11-09
++--| (99)
+|  |  +----H9N2.EPI_ISL_13156685.Anseriformes.china.NA.2021-11-23
+|  +**| (93)
+|     +--H9N2.EPI_ISL_13156588.Charadriiformes.china.NA.2020-09-10
+|
++--H9N2.EPI_ISL_1760456.Anseriformes.china.NA.2020-11-10
+
+Tree in newick format:
+
+(H5N2.EPI_ISL_1760455.Anseriformes.china.286.2020-11-10:0.0007135342,(((((((((((((H5N2.EPI_ISL_15732741.Passeriformes.japan.297.2022-10-28:0.0007096546,H5N2.EPI_ISL_18284476.Galliformes.japan.NA.2023-01-17:0.0029049185)100:0.0058216477,H9N2.EPI_ISL_14867047.Anseriformes.japan.NA.2021-09-01:0.0021699569)95:0.0014390433,(H3N2.EPI_ISL_9572777.Anseriformes.viet_nam.NA.2020-07-29:0.0000024049,H3N2.EPI_ISL_9572810.Anseriformes.viet_nam.NA.2020-09-25:0.0007202882)100:0.0036099112)56:0.0000020125,(H3N2.EPI_ISL_13374950.environment.japan.NA.2019-12-02:0.0007204350,H11N2.EPI_ISL_6795226.Anseriformes.south_korea.NA.2020-02-25:0.0014426159)89:0.0007208860)98:0.0014415517,H11N2.EPI_ISL_13439051.environment.japan.NA.2019-12-16:0.0014419803)13:0.0000024017,H11N2.EPI_ISL_9572815.Anseriformes.viet_nam.NA.2019-12-30:0.0014431391)13:0.0000024017,(H9N2.EPI_ISL_4072076.Anseriformes.south_korea.NA.2020-02-19:0.0014444072,H11N2.EPI_ISL_707690.Anseriformes.south_korea.NA.2019-11-20:0.0021700184)91:0.0007186657)100:0.0065174533,H5N2.EPI_ISL_369331.Anseriformes.south_korea.NA.2017-12-27:0.0000020537)99:0.0021646701,(((((((((((((H5N2.EPI_ISL_china_8.Anseriformes.china.101.2021-12-29:0.0000020097,H5N2.EPI_ISL_china_11.Anseriformes.china.101.2022-01-26:0.0000020429)100:0.0082943031,H6N2.EPI_ISL_16886900.Anseriformes.south_korea.NA.2022-03-02:0.0092659480)84:0.0013749686,(H5N2.EPI_ISL_6780573.Anseriformes.japan.NA.2020-12-15:0.0000022744,H5N2.EPI_ISL_14867043.Anseriformes.japan.NA.2020-09-01:0.0043583804)100:0.0070541716)100:0.0061725097,H3N2.EPI_ISL_14776042.Anseriformes.bangladesh.NA.2020-10-22:0.0079959339)78:0.0006735177,(H9N2.EPI_ISL_14835568.Anseriformes.south_korea.NA.2021-03-02:0.0007139527,H9N2.EPI_ISL_14835569.Anseriformes.south_korea.NA.2021-03-08:0.0029006102)100:0.0058513100)81:0.0014501896,H4N2.EPI_ISL_503345.Anseriformes.mongolia.NA.2019-09-12:0.0022089065)69:0.0006804042,H5N2.EPI_ISL_369324.Anseriformes.south_korea.NA.2017-10-26:0.0021647311)46:0.0000020562,(H5N2.EPI_ISL_16839585.NA.south_korea.NA.2018-01-05:0.0021654458,(((H5N2.EPI_ISL_369328.Anseriformes.south_korea.NA.2017-11-15:0.0007202882,H5N2.EPI_ISL_369326.Anseriformes.south_korea.NA.2017-11-13:0.0014423324)42:0.0000020490,H5N2.EPI_ISL_369335.environment.south_korea.NA.2017-12-06:0.0014430805)47:0.0000024049,H5N2.EPI_ISL_369325.Anseriformes.south_korea.NA.2017-11-06:0.0021645675)95:0.0014414891)88:0.0007247684)56:0.0000020861,(H9N2.EPI_ISL_9593366.Anseriformes.iran.NA.2019-10-01:0.0080342265,H4N2.EPI_ISL_18287397.Anseriformes.thailand.NA.2018-11-01:0.0058440002)80:0.0006777665)100:0.0072752481,H6N2.EPI_ISL_244552.Anseriformes.china.NA.2014-12-22:0.0043630828)92:0.0006923686,H10N2.EPI_ISL_207031.Anseriformes.mongolia.NA.2015-08-30:0.0079899166)96:0.0022100157,(H6N2.EPI_ISL_243648.Anseriformes.netherlands.NA.2011-01-11:0.0007320385,H6N2.EPI_ISL_243406.Anseriformes.netherlands.NA.2011-11-04:0.0028798231)64:0.0007201684)100:0.0242860584,(((H5N2.EPI_ISL_3204257.Anseriformes.china.NA.2018-12-20:0.0000024049,H5N2.EPI_ISL_3161847.Anseriformes.china.NA.2019-01-15:0.0000024049)73:0.0000024049,(H5N2.EPI_ISL_3229453.Anseriformes.china.NA.2018-12-10:0.0000024049,H5N2.EPI_ISL_3228310.Anseriformes.china.NA.2018-12-25:0.0007171268)87:0.0000024049)96:0.0028866360,H5N2.EPI_ISL_369330.Anseriformes.south_korea.NA.2017-12-11:0.0014449188)76:0.0007175992)78:0.0000020613)100:0.0036254153,H9N2.EPI_ISL_4071034.Anseriformes.south_korea.NA.2019-02-28:0.0050874205)91:0.0007035188,((H11N2.EPI_ISL_16886943.Anseriformes.south_korea.NA.2019-12-03:0.0007200813,H9N2.EPI_ISL_15213974.Anseriformes.south_korea.NA.2021-02-15:0.0021674235)92:0.0007202413,(H6N2.EPI_ISL_4071038.Anseriformes.south_korea.NA.2019-11-06:0.0000024049,H6N2.EPI_ISL_16886944.Anseriformes.south_korea.NA.2019-11-27:0.0000024049)97:0.0014422818)100:0.0028880382)67:0.0000020271,((H6N2.EPI_ISL_1636527.environment.japan.NA.2018-11-12:0.0021641271,H6N2.EPI_ISL_462613.Anseriformes.china.NA.2019-11-19:0.0036102105)78:0.0007178218,(H4N2.EPI_ISL_700932.NA.china.NA.2019-10-31:0.0028865638,(H4N2.EPI_ISL_17811770.Anseriformes.china.NA.2019-10-31:0.0007273956,H4N2.EPI_ISL_17811772.Anseriformes.china.NA.2019-11-09:0.0050722153)92:0.0000021641)99:0.0028868935)64:0.0007207231)100:0.0087357028,(H9N2.EPI_ISL_13156685.Anseriformes.china.NA.2021-11-23:0.0059806568,H9N2.EPI_ISL_13156588.Charadriiformes.china.NA.2020-09-10:0.0037610278)93:0.0007131281)99:0.0029114314,H9N2.EPI_ISL_1760456.Anseriformes.china.NA.2020-11-10:0.0007295769);
+
+CONSENSUS TREE
+--------------
+
+Consensus tree is constructed from 1000bootstrap trees
+Log-likelihood of consensus tree: -4160.009068
+Robinson-Foulds distance between ML tree and consensus tree: 4
+
+Branches with support >0.000000% are kept (extended consensus)
+Branch lengths are optimized by maximum likelihood on original alignment
+Numbers in parentheses are bootstrap supports (%)
+
++--H5N2.EPI_ISL_1760455.Anseriformes.china.286.2020-11-10
+|
+|                                       +--H5N2.EPI_ISL_15732741.Passeriformes.japan.297.2022-10-28
+|                                   +---| (100)
+|                                   |   +--H5N2.EPI_ISL_18284476.Galliformes.japan.NA.2023-01-17
+|                                +--| (95)
+|                                |  +--H9N2.EPI_ISL_14867047.Anseriformes.japan.NA.2021-09-01
+|                             +--| (56)
+|                             |  |  +--H3N2.EPI_ISL_9572777.Anseriformes.viet_nam.NA.2020-07-29
+|                             |  +--| (100)
+|                             |     +--H3N2.EPI_ISL_9572810.Anseriformes.viet_nam.NA.2020-09-25
+|                          +--| (98)
+|                          |  |  +--H3N2.EPI_ISL_13374950.environment.japan.NA.2019-12-02
+|                          |  +--| (89)
+|                          |     +--H11N2.EPI_ISL_6795226.Anseriformes.south_korea.NA.2020-02-25
+|                     +----| (100)
+|                     |    |  +--H11N2.EPI_ISL_9572815.Anseriformes.viet_nam.NA.2019-12-30
+|                     |    +--| (44)
+|                     |       |  +--H11N2.EPI_ISL_13439051.environment.japan.NA.2019-12-16
+|                     |       +--| (24)
+|                     |          |  +--H9N2.EPI_ISL_4072076.Anseriformes.south_korea.NA.2020-02-19
+|                     |          +--| (91)
+|                     |             +--H11N2.EPI_ISL_707690.Anseriformes.south_korea.NA.2019-11-20
+|                  +--| (99)
+|                  |  +--H5N2.EPI_ISL_369331.Anseriformes.south_korea.NA.2017-12-27
+|               +--| (100)
+|               |  |                                                                +--H5N2.EPI_ISL_china_8.Anseriformes.china.101.2021-12-29
+|               |  |                                                         +------| (100)
+|               |  |                                                         |      +--H5N2.EPI_ISL_china_11.Anseriformes.china.101.2022-01-26
+|               |  |                                                      +--| (84)
+|               |  |                                                      |  +------H6N2.EPI_ISL_16886900.Anseriformes.south_korea.NA.2022-03-02
+|               |  |                                                 +----| (100)
+|               |  |                                                 |    |    +--H5N2.EPI_ISL_6780573.Anseriformes.japan.NA.2020-12-15
+|               |  |                                                 |    +----| (100)
+|               |  |                                                 |         +--H5N2.EPI_ISL_14867043.Anseriformes.japan.NA.2020-09-01
+|               |  |                                              +--| (78)
+|               |  |                                              |  +-----H3N2.EPI_ISL_14776042.Anseriformes.bangladesh.NA.2020-10-22
+|               |  |                                           +--| (81)
+|               |  |                                           |  |   +--H9N2.EPI_ISL_14835568.Anseriformes.south_korea.NA.2021-03-02
+|               |  |                                           |  +---| (100)
+|               |  |                                           |      +--H9N2.EPI_ISL_14835569.Anseriformes.south_korea.NA.2021-03-08
+|               |  |                                        +--| (69)
+|               |  |                                        |  +--H4N2.EPI_ISL_503345.Anseriformes.mongolia.NA.2019-09-12
+|               |  |                                     +--| (46)
+|               |  |                                     |  +--H5N2.EPI_ISL_369324.Anseriformes.south_korea.NA.2017-10-26
+|               |  |                                  +--| (56)
+|               |  |                                  |  |  +--H5N2.EPI_ISL_16839585.NA.south_korea.NA.2018-01-05
+|               |  |                                  |  +--| (88)
+|               |  |                                  |     |        +--H5N2.EPI_ISL_369328.Anseriformes.south_korea.NA.2017-11-15
+|               |  |                                  |     |     +--| (42)
+|               |  |                                  |     |     |  +--H5N2.EPI_ISL_369326.Anseriformes.south_korea.NA.2017-11-13
+|               |  |                                  |     |  +--| (47)
+|               |  |                                  |     |  |  +--H5N2.EPI_ISL_369335.environment.south_korea.NA.2017-12-06
+|               |  |                                  |     +--| (95)
+|               |  |                                  |        +--H5N2.EPI_ISL_369325.Anseriformes.south_korea.NA.2017-11-06
+|               |  |                            +-----| (100)
+|               |  |                            |     |  +-----H9N2.EPI_ISL_9593366.Anseriformes.iran.NA.2019-10-01
+|               |  |                            |     +--| (80)
+|               |  |                            |        +---H4N2.EPI_ISL_18287397.Anseriformes.thailand.NA.2018-11-01
+|               |  |                         +--| (92)
+|               |  |                         |  +--H6N2.EPI_ISL_244552.Anseriformes.china.NA.2014-12-22
+|               |  |                      +--| (96)
+|               |  |                      |  +-----H10N2.EPI_ISL_207031.Anseriformes.mongolia.NA.2015-08-30
+|               |  |  +-------------------| (100)
+|               |  |  |                   |  +--H6N2.EPI_ISL_243648.Anseriformes.netherlands.NA.2011-01-11
+|               |  |  |                   +--| (64)
+|               |  |  |                      +--H6N2.EPI_ISL_243406.Anseriformes.netherlands.NA.2011-11-04
+|               |  +--| (78)
+|               |     |        +--H5N2.EPI_ISL_3204257.Anseriformes.china.NA.2018-12-20
+|               |     |     +--| (73)
+|               |     |     |  +--H5N2.EPI_ISL_3161847.Anseriformes.china.NA.2019-01-15
+|               |     |  +--| (96)
+|               |     |  |  |  +--H5N2.EPI_ISL_3229453.Anseriformes.china.NA.2018-12-10
+|               |     |  |  +--| (87)
+|               |     |  |     +--H5N2.EPI_ISL_3228310.Anseriformes.china.NA.2018-12-25
+|               |     +--| (76)
+|               |        +--H5N2.EPI_ISL_369330.Anseriformes.south_korea.NA.2017-12-11
+|            +--| (91)
+|            |  +---H9N2.EPI_ISL_4071034.Anseriformes.south_korea.NA.2019-02-28
+|         +--| (67)
+|         |  |     +--H11N2.EPI_ISL_16886943.Anseriformes.south_korea.NA.2019-12-03
+|         |  |  +--| (92)
+|         |  |  |  +--H9N2.EPI_ISL_15213974.Anseriformes.south_korea.NA.2021-02-15
+|         |  +--| (100)
+|         |     |  +--H6N2.EPI_ISL_4071038.Anseriformes.south_korea.NA.2019-11-06
+|         |     +--| (97)
+|         |        +--H6N2.EPI_ISL_16886944.Anseriformes.south_korea.NA.2019-11-27
+|  +------| (100)
+|  |      |     +--H6N2.EPI_ISL_1636527.environment.japan.NA.2018-11-12
+|  |      |  +--| (78)
+|  |      |  |  +--H6N2.EPI_ISL_462613.Anseriformes.china.NA.2019-11-19
+|  |      +--| (64)
+|  |         |  +--H4N2.EPI_ISL_700932.NA.china.NA.2019-10-31
+|  |         +--| (99)
+|  |            |  +--H4N2.EPI_ISL_17811770.Anseriformes.china.NA.2019-10-31
+|  |            +--| (92)
+|  |               +---H4N2.EPI_ISL_17811772.Anseriformes.china.NA.2019-11-09
++--| (99)
+|  |  +----H9N2.EPI_ISL_13156685.Anseriformes.china.NA.2021-11-23
+|  +--| (93)
+|     +--H9N2.EPI_ISL_13156588.Charadriiformes.china.NA.2020-09-10
+|
++--H9N2.EPI_ISL_1760456.Anseriformes.china.NA.2020-11-10
+
+
+Consensus tree in newick format: 
+
+(H5N2.EPI_ISL_1760455.Anseriformes.china.286.2020-11-10:0.0007133072,(((((((((((H5N2.EPI_ISL_15732741.Passeriformes.japan.297.2022-10-28:0.0007095950,H5N2.EPI_ISL_18284476.Galliformes.japan.NA.2023-01-17:0.0029047962)100:0.0058211217,H9N2.EPI_ISL_14867047.Anseriformes.japan.NA.2021-09-01:0.0021701027)95:0.0014390242,(H3N2.EPI_ISL_9572777.Anseriformes.viet_nam.NA.2020-07-29:0.0000024049,H3N2.EPI_ISL_9572810.Anseriformes.viet_nam.NA.2020-09-25:0.0007202882)100:0.0036099120)56:0.0000024049,(H3N2.EPI_ISL_13374950.environment.japan.NA.2019-12-02:0.0007202882,H11N2.EPI_ISL_6795226.Anseriformes.south_korea.NA.2020-02-25:0.0014426926)89:0.0007202882)98:0.0014412688,(H11N2.EPI_ISL_9572815.Anseriformes.viet_nam.NA.2019-12-30:0.0014431762,(H11N2.EPI_ISL_13439051.environment.japan.NA.2019-12-16:0.0014412688,(H9N2.EPI_ISL_4072076.Anseriformes.south_korea.NA.2020-02-19:0.0014447810,H11N2.EPI_ISL_707690.Anseriformes.south_korea.NA.2019-11-20:0.0021693157)91:0.0007186992)24:0.0000024049)44:0.0000024049)100:0.0065174515,H5N2.EPI_ISL_369331.Anseriformes.south_korea.NA.2017-12-27:0.0000024049)99:0.0021646278,(((((((((((((H5N2.EPI_ISL_china_8.Anseriformes.china.101.2021-12-29:0.0000024049,H5N2.EPI_ISL_china_11.Anseriformes.china.101.2022-01-26:0.0000024049)100:0.0082944775,H6N2.EPI_ISL_16886900.Anseriformes.south_korea.NA.2022-03-02:0.0092657221)84:0.0013760083,(H5N2.EPI_ISL_6780573.Anseriformes.japan.NA.2020-12-15:0.0000024049,H5N2.EPI_ISL_14867043.Anseriformes.japan.NA.2020-09-01:0.0043582016)100:0.0070540019)100:0.0061714882,H3N2.EPI_ISL_14776042.Anseriformes.bangladesh.NA.2020-10-22:0.0079956225)78:0.0006743507,(H9N2.EPI_ISL_14835568.Anseriformes.south_korea.NA.2021-03-02:0.0007146239,H9N2.EPI_ISL_14835569.Anseriformes.south_korea.NA.2021-03-08:0.0028999515)100:0.0058518245)81:0.0014498905,H4N2.EPI_ISL_503345.Anseriformes.mongolia.NA.2019-09-12:0.0022079386)69:0.0006801944,H5N2.EPI_ISL_369324.Anseriformes.south_korea.NA.2017-10-26:0.0021656625)46:0.0000024049,(H5N2.EPI_ISL_16839585.NA.south_korea.NA.2018-01-05:0.0021654439,(((H5N2.EPI_ISL_369328.Anseriformes.south_korea.NA.2017-11-15:0.0007202882,H5N2.EPI_ISL_369326.Anseriformes.south_korea.NA.2017-11-13:0.0014412688)42:0.0000024049,H5N2.EPI_ISL_369335.environment.south_korea.NA.2017-12-06:0.0014430804)47:0.0000024049,H5N2.EPI_ISL_369325.Anseriformes.south_korea.NA.2017-11-06:0.0021650094)95:0.0014412688)88:0.0007237991)56:0.0000024049,(H9N2.EPI_ISL_9593366.Anseriformes.iran.NA.2019-10-01:0.0080344127,H4N2.EPI_ISL_18287397.Anseriformes.thailand.NA.2018-11-01:0.0058433707)80:0.0006784375)100:0.0072754617,H6N2.EPI_ISL_244552.Anseriformes.china.NA.2014-12-22:0.0043633634)92:0.0006925464,H10N2.EPI_ISL_207031.Anseriformes.mongolia.NA.2015-08-30:0.0079898187)96:0.0022095714,(H6N2.EPI_ISL_243648.Anseriformes.netherlands.NA.2011-01-11:0.0007318749,H6N2.EPI_ISL_243406.Anseriformes.netherlands.NA.2011-11-04:0.0028792443)64:0.0007199926)100:0.0242862206,(((H5N2.EPI_ISL_3204257.Anseriformes.china.NA.2018-12-20:0.0000024049,H5N2.EPI_ISL_3161847.Anseriformes.china.NA.2019-01-15:0.0000024049)73:0.0000024049,(H5N2.EPI_ISL_3229453.Anseriformes.china.NA.2018-12-10:0.0000024049,H5N2.EPI_ISL_3228310.Anseriformes.china.NA.2018-12-25:0.0007148105)87:0.0000043083)96:0.0028865134,H5N2.EPI_ISL_369330.Anseriformes.south_korea.NA.2017-12-11:0.0014449957)76:0.0007170529)78:0.0000024049)100:0.0036247121,H9N2.EPI_ISL_4071034.Anseriformes.south_korea.NA.2019-02-28:0.0050866028)91:0.0007036079,((H11N2.EPI_ISL_16886943.Anseriformes.south_korea.NA.2019-12-03:0.0007202882,H9N2.EPI_ISL_15213974.Anseriformes.south_korea.NA.2021-02-15:0.0021675519)92:0.0007202882,(H6N2.EPI_ISL_4071038.Anseriformes.south_korea.NA.2019-11-06:0.0000024049,H6N2.EPI_ISL_16886944.Anseriformes.south_korea.NA.2019-11-27:0.0000024049)97:0.0014424694)100:0.0028876456)67:0.0000024049,((H6N2.EPI_ISL_1636527.environment.japan.NA.2018-11-12:0.0021629431,H6N2.EPI_ISL_462613.Anseriformes.china.NA.2019-11-19:0.0036101952)78:0.0007179467,(H4N2.EPI_ISL_700932.NA.china.NA.2019-10-31:0.0028874068,(H4N2.EPI_ISL_17811770.Anseriformes.china.NA.2019-10-31:0.0007273275,H4N2.EPI_ISL_17811772.Anseriformes.china.NA.2019-11-09:0.0050714875)92:0.0000024065)99:0.0028868474)64:0.0007203619)100:0.0087340975,(H9N2.EPI_ISL_13156685.Anseriformes.china.NA.2021-11-23:0.0059801477,H9N2.EPI_ISL_13156588.Charadriiformes.china.NA.2020-09-10:0.0037610399)93:0.0007131318)99:0.0029110924,H9N2.EPI_ISL_1760456.Anseriformes.china.NA.2020-11-10:0.0007290121);
+
+TIME STAMP
+----------
+
+Date and time: Mon Jan  8 19:24:31 2024
+Total CPU time used: 49.28225 seconds (0h:0m:49s)
+Total wall-clock time used: 24.49316788 seconds (0h:0m:24s)
+

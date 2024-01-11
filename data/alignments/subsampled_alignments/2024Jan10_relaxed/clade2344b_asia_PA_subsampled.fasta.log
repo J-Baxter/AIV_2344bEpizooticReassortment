@@ -1,0 +1,974 @@
+IQ-TREE multicore version 1.6.12 for Mac OS X 64-bit built Aug 15 2019
+Developed by Bui Quang Minh, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
+
+Host:    sce-bio-c05393 (AVX2, FMA3, 16 GB RAM)
+Command: iqtree -s clade2344b_asia_PA_subsampled.fasta -nt AUTO -m HKY+G4 -bb 1000
+Seed:    967353 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Thu Jan 11 02:20:26 2024
+Kernel:  AVX+FMA - auto-detect threads (6 CPU cores detected)
+
+Reading alignment file clade2344b_asia_PA_subsampled.fasta ... Fasta format detected
+Alignment most likely contains DNA/RNA sequences
+Alignment has 688 sequences with 2151 columns, 977 distinct patterns
+794 parsimony-informative, 178 singleton sites, 1179 constant sites
+                                                                   Gap/Ambiguity  Composition  p-value
+   1  H5N8.EPI_ISL_614401.Anseriformes.kazakhstan.1.2020-09-23             0.00%    passed     99.65%
+   2  H5N8.EPI_ISL_615072.Anseriformes.kazakhstan.1.2020-09-25             0.00%    passed     99.93%
+   3  H5N8.EPI_ISL_623074.Galliformes.iraq.1.2020-05-12                    0.00%    passed     98.32%
+   4  H5N8.EPI_ISL_625672.Anseriformes.china.1.2020-10-17                  0.00%    passed     99.90%
+   5  H5N8.EPI_ISL_631824.Anseriformes.south_korea.10.2020-10-21           0.00%    passed     99.95%
+   6  H5N8.EPI_ISL_666687.Anseriformes.south_korea.10.2020-10-24           0.00%    passed     99.96%
+   7  H5N8.EPI_ISL_682297.environment.japan.10.2020-11-09                  0.00%    passed     99.73%
+   8  H5N8.EPI_ISL_718107.Galliformes.japan.16.2020-12-07                  0.00%    passed     99.91%
+   9  H5N8.EPI_ISL_738052.Galliformes.japan.16.2020-12-15                  0.00%    passed     99.96%
+  10  H5N8.EPI_ISL_738053.Galliformes.japan.16.2020-12-18                  0.00%    passed     99.91%
+  11  H5N8.EPI_ISL_738059.Galliformes.japan.10.2020-12-18                  0.00%    passed     99.41%
+  12  H5N8.EPI_ISL_738060.Galliformes.japan.10.2020-12-18                  0.00%    passed     99.21%
+  13  H5N8.EPI_ISL_739687.Galliformes.kazakhstan.1.2020-09-18              0.14%    passed     99.90%
+  14  H5N8.EPI_ISL_681272.Galliformes.japan.10.2020-11-19                  0.00%    passed     99.97%
+  15  H5N8.EPI_ISL_681281.Anseriformes.japan.10.2020-11-16                 0.00%    passed     99.89%
+  16  H5N8.EPI_ISL_681288.Galliformes.japan.10.2020-11-07                  0.00%    passed     99.89%
+  17  H5N8.EPI_ISL_697771.Anseriformes.japan.10.2020-10-24                 0.00%    passed     99.95%
+  18  H5N8.EPI_ISL_710437.Galliformes.japan.16.2020-12-06                  0.00%    passed     99.96%
+  19  H5N8.EPI_ISL_710446.Galliformes.japan.16.2020-12-02                  0.00%    passed     99.95%
+  20  H5N8.EPI_ISL_710449.Galliformes.japan.16.2020-12-02                  0.00%    passed     99.97%
+  21  H5N8.EPI_ISL_710453.Galliformes.japan.16.2020-12-05                  0.00%    passed     99.91%
+  22  H5N8.EPI_ISL_718109.Galliformes.japan.16.2020-12-07                  0.00%    passed     99.89%
+  23  H5N8.EPI_ISL_718114.Galliformes.japan.16.2020-12-09                  0.00%    passed     99.99%
+  24  H5N8.EPI_ISL_718116.Galliformes.japan.16.2020-12-10                  0.00%    passed     99.97%
+  25  H5N8.EPI_ISL_718117.Galliformes.japan.16.2020-12-10                  0.00%    passed     99.95%
+  26  H5N8.EPI_ISL_718121.Galliformes.japan.16.2020-12-09                  0.00%    passed     99.91%
+  27  H5N8.EPI_ISL_732931.Galliformes.japan.16.2020-12-15                  0.00%    passed     99.91%
+  28  H5N8.EPI_ISL_732933.Galliformes.japan.16.2020-12-15                  0.00%    passed     99.87%
+  29  H5N8.EPI_ISL_732935.Galliformes.japan.16.2020-12-13                  0.00%    passed     99.96%
+  30  H5N8.EPI_ISL_732942.Galliformes.japan.16.2020-12-13                  0.00%    passed     99.91%
+  31  H5N8.EPI_ISL_732945.Galliformes.japan.16.2020-12-12                  0.00%    passed     99.77%
+  32  H5N8.EPI_ISL_4071019.Anseriformes.japan.10.2020-11-05                0.00%    passed     99.37%
+  33  H5N8.EPI_ISL_1041134.Galliformes.japan.1.2021-02-08                  0.00%    passed     99.81%
+  34  H5N8.EPI_ISL_1041135.Galliformes.japan.1.2021-02-08                  0.00%    passed     99.78%
+  35  H5N8.EPI_ISL_1041140.Anseriformes.japan.1.2021-01-23                 0.00%    passed     99.95%
+  36  H5N8.EPI_ISL_1041144.Anseriformes.japan.1.2021-01-23                 0.00%    passed     99.98%
+  37  H5N8.EPI_ISL_1041153.Anseriformes.japan.1.2021-01-23                 0.00%    passed     99.85%
+  38  H5N8.EPI_ISL_1041159.Galliformes.japan.1.2021-02-14                  0.00%    passed     99.98%
+  39  H5N8.EPI_ISL_1041166.Anseriformes.japan.1.2021-01-23                 0.00%    passed     99.88%
+  40  H5N8.EPI_ISL_1041169.Anseriformes.japan.1.2021-01-23                 0.00%    passed     99.94%
+  41  H5N8.EPI_ISL_1041172.Accipitriformes.japan.16.2021-02-10             0.00%    passed     97.45%
+  42  H5N8.EPI_ISL_1041176.Strigiformes.japan.10.2021-02-16                0.00%    passed     99.73%
+  43  H5N8.EPI_ISL_1041178.Falconiformes.japan.10.2021-02-15               0.00%    passed     99.46%
+  44  H5N8.EPI_ISL_1041180.Anseriformes.japan.10.2021-02-13                0.05%    passed     99.51%
+  45  H5N8.EPI_ISL_1081353.Anseriformes.japan.1.2021-02-14                 0.00%    passed     99.24%
+  46  H5N8.EPI_ISL_1098830.Gruiformes.japan.1.2021-01-19                   0.09%    passed     99.77%
+  47  H5N8.EPI_ISL_1114725.Anseriformes.japan.1.2021-01-16                 0.00%    passed     99.99%
+  48  H5N8.EPI_ISL_1184510.Galliformes.japan.16.2021-02-24                 0.00%    passed     99.21%
+  49  H5N8.EPI_ISL_1184518.Accipitriformes.japan.16.2021-02-24             0.00%    passed     99.91%
+  50  H5N8.EPI_ISL_2556113.Anseriformes.china.1.2020-11-12                 0.00%    passed     99.78%
+  51  H5N8.EPI_ISL_2713170.Anseriformes.china.1.2020-11-16                 0.00%    passed     99.90%
+  52  H5N8.EPI_ISL_2815336.Anseriformes.china.1.2020-10-11                 0.00%    passed     99.74%
+  53  H5N8.EPI_ISL_2815374.Anseriformes.china.10.2020-10-15                0.00%    passed     99.89%
+  54  H5N8.EPI_ISL_5260416.Charadriiformes.china.1.2021-02-22              0.00%    passed     99.97%
+  55  H5N8.EPI_ISL_5260417.Charadriiformes.china.1.2021-05-16              0.00%    passed     99.82%
+  56  H5N8.EPI_ISL_5260418.Anseriformes.china.1.2021-01-25                 0.00%    passed     99.96%
+  57  H5N8.EPI_ISL_5260420.Anseriformes.china.1.2021-02-01                 0.00%    passed     99.12%
+  58  H5N8.EPI_ISL_5260444.Anseriformes.china.1.2021-03-09                 0.00%    passed     98.78%
+  59  H5N8.EPI_ISL_5260446.Anseriformes.china.1.2021-05-11                 0.00%    passed     99.64%
+  60  H5N8.EPI_ISL_5260448.Anseriformes.china.1.2021-03-19                 0.00%    passed     99.88%
+  61  H5N8.EPI_ISL_5260450.Anseriformes.china.1.2021-03-09                 0.00%    passed     99.79%
+  62  H5N8.EPI_ISL_5260453.Anseriformes.china.1.2021-01-14                 0.00%    passed     99.97%
+  63  H5N8.EPI_ISL_5260462.Anseriformes.china.1.2020-11-10                 0.00%    passed     99.90%
+  64  H5N8.EPI_ISL_5260465.Pelecaniformes.china.1.2021-01-26               0.00%    passed     99.67%
+  65  H5N8.EPI_ISL_5260466.Podicipediformes.china.1.2021-02-22             0.00%    passed     99.91%
+  66  H5N8.EPI_ISL_5260467.Podicipediformes.china.1.2021-06-05             0.00%    passed     99.45%
+  67  H5N8.EPI_ISL_5260468.Podicipediformes.china.1.2021-06-15             0.00%    passed     99.16%
+  68  H5N8.EPI_ISL_5260469.Anseriformes.china.1.2021-01-26                 0.00%    passed     99.65%
+  69  H5N8.EPI_ISL_5260470.Anseriformes.china.1.2021-01-23                 0.00%    passed     99.81%
+  70  H5N8.EPI_ISL_5865550.Anseriformes.united_states.1.2020-10-02         0.00%    passed     98.14%
+  71  H5N1.EPI_ISL_6829533.Galliformes.japan.22.2021-11-12                 0.00%    passed     99.91%
+  72  H5N8.EPI_ISL_6829536.Galliformes.japan.1.2021-11-14                  0.00%    passed     98.31%
+  73  H5N6.EPI_ISL_6914131.Galliformes.china.61.2021-06-10                 0.00%    passed     89.37%
+  74  H5N8.EPI_ISL_7349517.Anseriformes.china.1.2021-01                    0.00%    passed     99.91%
+  75  H5N8.EPI_ISL_7381026.Galliformes.china.1.2021-03                     0.00%    passed     99.99%
+  76  H5N8.EPI_ISL_7381115.Anseriformes.china.1.2021-06                    0.00%    passed     99.93%
+  77  H5N8.EPI_ISL_7381183.Anseriformes.china.279.2021-04                  0.00%    passed     99.87%
+  78  H5N8.EPI_ISL_7381448.Galliformes.china.205.2021-07                   0.00%    passed     99.97%
+  79  H5N6.EPI_ISL_7983813.NA.china.73.2021-12-22                          0.00%    passed     96.60%
+  80  H5N6.EPI_ISL_16208999.NA.china.126.2021-09-19                        0.00%    passed     99.33%
+  81  H5N8.EPI_ISL_17088884.Anseriformes.china.1.2021-01-29                0.00%    passed     99.97%
+  82  H5N8.EPI_ISL_759850.Galliformes.japan.10.2020-12-23                  0.00%    passed     99.91%
+  83  H5N8.EPI_ISL_759855.Galliformes.japan.16.2020-12-22                  0.00%    passed     99.91%
+  84  H5N8.EPI_ISL_759857.Galliformes.japan.16.2020-12-22                  0.00%    passed     99.87%
+  85  H5N8.EPI_ISL_854595.Galliformes.japan.10.2021-01-10                  0.00%    passed     99.87%
+  86  H5N8.EPI_ISL_854599.Galliformes.japan.10.2021-01-01                  0.00%    passed     99.21%
+  87  H5N8.EPI_ISL_854603.Galliformes.japan.10.2021-01-01                  0.00%    passed     99.70%
+  88  H5N8.EPI_ISL_854605.Galliformes.japan.16.2021-01-12                  0.00%    passed     99.96%
+  89  H5N8.EPI_ISL_854606.Galliformes.japan.16.2021-01-12                  0.00%    passed     99.95%
+  90  H5N8.EPI_ISL_977595.Anseriformes.china.1.2020-12-31                  0.05%    passed     99.85%
+  91  H5N8.EPI_ISL_985180.Galliformes.south_korea.10.2020-12-01            0.00%    passed     99.76%
+  92  H5N8.EPI_ISL_985182.Galliformes.south_korea.79.2020-12-06            0.00%    passed     99.34%
+  93  H5N8.EPI_ISL_985184.Anseriformes.south_korea.1.2020-12-08            0.00%    passed     99.78%
+  94  H5N8.EPI_ISL_985185.Galliformes.south_korea.79.2020-12-08            0.00%    passed     99.68%
+  95  H5N8.EPI_ISL_985191.Galliformes.south_korea.1.2020-12-12             0.00%    passed     99.67%
+  96  H5N8.EPI_ISL_985192.Galliformes.south_korea.16.2020-12-14            0.00%    passed     99.91%
+  97  H5N8.EPI_ISL_985195.Galliformes.south_korea.79.2020-12-16            0.00%    passed     99.28%
+  98  H5N8.EPI_ISL_985200.Anseriformes.south_korea.79.2020-12-22           0.00%    passed     99.34%
+  99  H5N8.EPI_ISL_985201.Anseriformes.south_korea.16.2020-12-22           0.00%    passed     99.91%
+ 100  H5N8.EPI_ISL_985206.Galliformes.south_korea.1.2020-12-25             0.00%    passed     99.67%
+ 101  H5N8.EPI_ISL_985208.Anseriformes.south_korea.79.2020-12-27           0.00%    passed     99.84%
+ 102  H5N8.EPI_ISL_985222.Galliformes.japan.1.2021-02-06                   0.00%    passed     99.97%
+ 103  H5N8.EPI_ISL_985226.Galliformes.japan.1.2021-02-07                   0.00%    passed     99.95%
+ 104  H5N8.EPI_ISL_985229.Galliformes.japan.1.2021-02-06                   0.00%    passed     99.82%
+ 105  H5N8.EPI_ISL_985232.Anseriformes.japan.10.2021-02-08                 0.00%    passed     99.73%
+ 106  H5N8.EPI_ISL_1009680.Galliformes.south_korea.1.2020-12-28            0.00%    passed     99.91%
+ 107  H5N8.EPI_ISL_1009681.Galliformes.south_korea.16.2020-12-29           0.00%    passed     99.88%
+ 108  H5N8.EPI_ISL_1009683.Anseriformes.south_korea.1.2020-12-29           0.00%    passed     99.86%
+ 109  H5N8.EPI_ISL_1009684.Anseriformes.south_korea.16.2020-12-30          0.00%    passed     99.77%
+ 110  H5N8.EPI_ISL_1009690.Galliformes.south_korea.1.2021-01-04            0.00%    passed     99.82%
+ 111  H5N8.EPI_ISL_1009691.Anseriformes.south_korea.1.2021-01-04           0.00%    passed     99.91%
+ 112  H5N8.EPI_ISL_1009693.Galliformes.south_korea.1.2021-01-08            0.00%    passed     99.86%
+ 113  H5N8.EPI_ISL_1009694.Anseriformes.south_korea.1.2021-01-09           0.00%    passed     99.67%
+ 114  H5N8.EPI_ISL_1009697.NA.south_korea.16.2020-11-23                    0.00%    passed     99.97%
+ 115  H5N8.EPI_ISL_1009699.Anseriformes.south_korea.16.2020-11-25          0.00%    passed     99.96%
+ 116  H5N8.EPI_ISL_1009704.Anseriformes.south_korea.16.2020-12-01          0.00%    passed     99.99%
+ 117  H5N8.EPI_ISL_1009706.NA.south_korea.79.2020-12-02                    0.00%    passed     98.27%
+ 118  H5N8.EPI_ISL_1009707.NA.south_korea.1.2020-12-14                     0.00%    passed     99.84%
+ 119  H5N8.EPI_ISL_1009709.NA.south_korea.1.2020-12-16                     0.00%    passed     99.91%
+ 120  H5N8.EPI_ISL_1009711.Anseriformes.south_korea.1.2021-01-06           0.00%    passed     99.91%
+ 121  H5N8.EPI_ISL_1063533.Anseriformes.japan.16.2020-12-22                0.00%    passed     99.91%
+ 122  H5N8.EPI_ISL_1273411.Galliformes.japan.16.2020-11-24                 0.00%    passed     99.95%
+ 123  H5N8.EPI_ISL_1273413.Galliformes.japan.10.2020-11-25                 0.00%    passed     99.94%
+ 124  H5N8.EPI_ISL_1273414.Galliformes.japan.10.2021-02-01                 0.00%    passed     99.78%
+ 125  H5N8.EPI_ISL_1273415.Galliformes.japan.10.2021-02-01                 0.00%    passed     99.75%
+ 126  H5N8.EPI_ISL_1273418.Galliformes.japan.10.2020-11-04                 0.00%    passed     99.96%
+ 127  H5N8.EPI_ISL_1273439.Galliformes.japan.16.2021-03-13                 0.00%    passed     99.94%
+ 128  H5N8.EPI_ISL_1760446.Anseriformes.china.1.2020-11-09                 0.00%    passed     99.87%
+ 129  H5N8.EPI_ISL_1760447.Anseriformes.china.1.2020-11-10                 0.00%    passed     99.79%
+ 130  H5N8.EPI_ISL_1760450.Anseriformes.china.1.2020-11-10                 0.00%    passed     99.74%
+ 131  H5N8.EPI_ISL_1760453.Anseriformes.china.1.2020-11-10                 0.00%    passed     99.86%
+ 132  H5N2.EPI_ISL_1760455.Anseriformes.china.286.2020-11-10               0.00%    passed     97.28%
+ 133  H5N8.EPI_ISL_1829205.Anseriformes.china.1.2020-11-02                 0.00%    passed     99.79%
+ 134  H5N8.EPI_ISL_1939617.Strigiformes.china.1.2020-11-11                 0.00%    passed     99.74%
+ 135  H5N8.EPI_ISL_2685842.Anseriformes.china.1.2020-11-04                 0.00%    passed     99.78%
+ 136  H5N8.EPI_ISL_2685900.Anseriformes.china.1.2020-11-16                 0.00%    passed     99.74%
+ 137  H5N8.EPI_ISL_2713314.Charadriiformes.china.1.2020-11-16              0.00%    passed     99.66%
+ 138  H5N8.EPI_ISL_2820504.Anseriformes.china.10.2020-10-16                0.00%    passed     99.91%
+ 139  H5N6.EPI_ISL_3090099.NA.china.61.2021-07-03                          0.00%    passed     93.93%
+ 140  H5N6.EPI_ISL_3770740.NA.china.73.2021-07-14                          0.00%    passed     96.35%
+ 141  H5N8.EPI_ISL_4061712.Anseriformes.japan.10.2021-02-17                0.00%    passed     99.82%
+ 142  H5N8.EPI_ISL_4061713.Anseriformes.japan.10.2021-02-08                0.00%    passed     99.72%
+ 143  H5N8.EPI_ISL_4061714.Accipitriformes.japan.10.2021-02-03             0.00%    passed     99.78%
+ 144  H5N8.EPI_ISL_4061715.Falconiformes.japan.10.2021-01-28               0.00%    passed     99.83%
+ 145  H5N8.EPI_ISL_5863567.Anseriformes.united_states.1.2020-10-06         0.00%    passed     99.90%
+ 146  H5N3.EPI_ISL_5863749.Anseriformes.united_states.289.2020-10-20       0.00%    passed     99.90%
+ 147  H5N6.EPI_ISL_6757629.Anseriformes.china.290.2021-03                  0.00%    passed     90.10%
+ 148  H5N6.EPI_ISL_6757631.Anseriformes.china.61.2021-04                   0.00%    passed     90.57%
+ 149  H5N6.EPI_ISL_6760682.Galliformes.china.61.2021-07                    0.00%    passed     90.56%
+ 150  H5N6.EPI_ISL_6760686.Galliformes.china.291.2021-06                   0.00%    passed     81.29%
+ 151  H5N6.EPI_ISL_6772738.Galliformes.china.127.2021-08                   0.00%    passed     91.59%
+ 152  H5N6.EPI_ISL_6772739.Galliformes.china.127.2021-08                   0.00%    passed     91.19%
+ 153  H5N6.EPI_ISL_6772898.Anseriformes.china.209.2021-08                  0.00%    passed     98.29%
+ 154  H5N8.EPI_ISL_7379463.Anseriformes.china.1.2021-01                    0.00%    passed     99.79%
+ 155  H5N8.EPI_ISL_7379464.Anseriformes.china.1.2021-01                    0.00%    passed     99.96%
+ 156  H5N8.EPI_ISL_7379509.Anseriformes.china.1.2021-01                    0.00%    passed     99.93%
+ 157  H5N6.EPI_ISL_7457654.Galliformes.china.209.2021-08                   0.00%    passed     97.44%
+ 158  H5N8.EPI_ISL_1273441.Accipitriformes.japan.10.2021-03-03             0.00%    passed     99.72%
+ 159  H5N8.EPI_ISL_2932612.Anseriformes.kazakhstan.1.2020-09-22            0.00%    passed     99.93%
+ 160  H5N8.EPI_ISL_2932600.Anseriformes.kazakhstan.1.2020-09-01            0.00%    passed     99.58%
+ 161  H5N8.EPI_ISL_2555536.Charadriiformes.china.1.2020-11-16              0.00%    passed     99.97%
+ 162  H5N8.EPI_ISL_2932619.Anseriformes.kazakhstan.1.2020-09-23            0.00%    passed     99.86%
+ 163  H5N8.EPI_ISL_978915.Anseriformes.japan.1.2021-02-01                  0.00%    passed     99.97%
+ 164  H5N8.EPI_ISL_2555543.Anseriformes.china.1.2020-11-12                 0.00%    passed     99.93%
+ 165  H5N8.EPI_ISL_2555542.Anseriformes.china.1.2020-11-12                 0.00%    passed     99.99%
+ 166  H5N8.EPI_ISL_2555538.Anseriformes.china.1.2020-11-16                 0.00%    passed     99.82%
+ 167  H5N8.EPI_ISL_2932617.Passeriformes.kazakhstan.1.2020-09-15           0.00%    passed     99.93%
+ 168  H5N8.EPI_ISL_978906.Galliformes.japan.16.2021-01-22                  0.00%    passed     99.69%
+ 169  H5N8.EPI_ISL_978903.Galliformes.japan.1.2021-01-30                   0.00%    passed     99.91%
+ 170  H5N8.EPI_ISL_978902.Galliformes.japan.1.2021-01-30                   0.00%    passed     99.78%
+ 171  H5N8.EPI_ISL_978897.Galliformes.japan.1.2021-02-05                   0.00%    passed     99.91%
+ 172  H5N8.EPI_ISL_978896.Galliformes.japan.1.2021-02-05                   0.00%    passed     99.94%
+ 173  H5N8.EPI_ISL_7380813.Anseriformes.china.1.2021-03                    0.00%    passed     99.93%
+ 174  H5N8.EPI_ISL_978910.Anseriformes.japan.1.2021-01-20                  0.00%    passed     99.95%
+ 175  H5N8.EPI_ISL_2932682.Columbiformes.kazakhstan.1.2020-09-15           0.00%    passed     99.90%
+ 176  H5N8.EPI_ISL_2932616.Galliformes.kazakhstan.1.2020-09-19             0.00%    passed     99.90%
+ 177  H5N8.EPI_ISL_2932608.Galliformes.kazakhstan.1.2020-09-01             0.00%    passed     99.58%
+ 178  H5N8.EPI_ISL_1822597.Anseriformes.china.1.2020-11-10                 0.00%    passed     99.96%
+ 179  H5N1.EPI_ISL_13243350.Anseriformes.bangladesh.19.2022-03-09          0.05%    passed     99.33%
+ 180  H5N8.EPI_ISL_13632084.Galliformes.kazakhstan.1.2020-08-01            0.00%    passed     98.99%
+ 181  H5N1.EPI_ISL_14070455.Carnivora.japan.2.2022-04-01                   0.00%    passed     99.78%
+ 182  H5N8.EPI_ISL_14775517.Anseriformes.china.1.2021-01                   0.00%    passed     99.78%
+ 183  H5N8.EPI_ISL_14823646.Anseriformes.china.1.2020-11-08                0.00%    passed     99.67%
+ 184  H5N8.EPI_ISL_14824122.Anseriformes.china.1.2020-11-10                0.00%    passed     99.74%
+ 185  H5N8.EPI_ISL_14836079.Anseriformes.china.1.2020-11-16                0.00%    passed     99.45%
+ 186  H5N8.EPI_ISL_14836080.Anseriformes.china.1.2020-11-16                0.00%    passed     99.97%
+ 187  H5N8.EPI_ISL_14836082.Anseriformes.china.1.2020-11-16                0.00%    passed     99.90%
+ 188  H5N8.EPI_ISL_14836088.Anseriformes.china.1.2020-11-16                0.00%    passed     99.90%
+ 189  H5N8.EPI_ISL_14836098.Anseriformes.china.1.2020-11-16                0.00%    passed     99.90%
+ 190  H5N8.EPI_ISL_14836376.Anseriformes.china.1.2020-11-18                0.00%    passed     99.97%
+ 191  H5N8.EPI_ISL_15430209.Anseriformes.china.1.2021-01-15                5.53%    passed     99.42%
+ 192  H5N2.EPI_ISL_15732741.Passeriformes.japan.297.2022-10-28             0.00%    passed     99.99%
+ 193  H5N6.EPI_ISL_8517996.environment.china.73.2021-12-23                 0.00%    passed     95.50%
+ 194  H5N6.EPI_ISL_8517998.environment.china.73.2021-12-23                 0.00%    passed     98.25%
+ 195  H5N6.EPI_ISL_8518000.environment.china.73.2021-12-23                 0.00%    passed     98.00%
+ 196  H5N6.EPI_ISL_11208193.Anseriformes.china.213.2021-10-19              0.00%    passed     99.84%
+ 197  H5N6.EPI_ISL_11208195.Anseriformes.china.73.2021-12-02               0.00%    passed     97.52%
+ 198  H5N6.EPI_ISL_11208196.Anseriformes.china.126.2021-12-01              0.00%    passed     99.45%
+ 199  H5N6.EPI_ISL_11208197.Anseriformes.china.73.2021-12-01               0.00%    passed     97.50%
+ 200  H5N6.EPI_ISL_11208198.Anseriformes.china.61.2021-11-02               0.00%    passed     85.94%
+ 201  H5N6.EPI_ISL_11208199.Anseriformes.china.73.2021-12-03               0.00%    passed     98.28%
+ 202  H5N6.EPI_ISL_11208200.Anseriformes.china.126.2021-12-08              0.00%    passed     99.21%
+ 203  H5N1.EPI_ISL_12174843.Passeriformes.japan.2.2022-03-29               0.00%    passed     99.78%
+ 204  H5N1.EPI_ISL_12572652.Galliformes.china.110.2022-03-03               0.00%    passed     99.71%
+ 205  H5N1.EPI_ISL_12572653.Galliformes.china.110.2021-12-07               0.00%    passed     99.86%
+ 206  H5N1.EPI_ISL_12572655.Anseriformes.china.22.2021-12-08               0.00%    passed     99.57%
+ 207  H5N1.EPI_ISL_12572656.Anseriformes.china.22.2022-02-22               0.00%    passed     99.97%
+ 208  H5N1.EPI_ISL_12572658.Anseriformes.china.110.2022-01-10              0.00%    passed     99.95%
+ 209  H5N1.EPI_ISL_12572660.Anseriformes.china.110.2021-12-08              0.00%    passed     99.69%
+ 210  H5N1.EPI_ISL_12572662.Anseriformes.china.19.2022-01-05               0.00%    passed     99.64%
+ 211  H5N1.EPI_ISL_12572663.Columbiformes.china.110.2021-12-08             0.00%    passed     99.95%
+ 212  H5N1.EPI_ISL_12572664.Anseriformes.china.2.2021-11-25                0.00%    passed     99.71%
+ 213  H5N1.EPI_ISL_13243698.Anseriformes.bangladesh.19.2021-12-22          0.00%    passed     99.85%
+ 214  H5N1.EPI_ISL_14886367.Anseriformes.bangladesh.19.2021-12-19          0.00%    passed     99.96%
+ 215  H5N8.EPI_ISL_15435511.Anseriformes.china.1.2021-01-21                0.19%    passed     99.07%
+ 216  H5N1.EPI_ISL_15647834.Anseriformes.south_korea.19.2022-10-17         0.00%    passed     99.77%
+ 217  H5N1.EPI_ISL_15647835.Anseriformes.south_korea.9.2022-10-19          0.00%    passed     99.42%
+ 218  H5N1.EPI_ISL_15647836.Anseriformes.south_korea.80.2022-10-10         0.00%    passed     97.64%
+ 219  H5N1.EPI_ISL_15923322.Falconiformes.japan.22.2022-09-25              0.00%    passed     99.89%
+ 220  H5N1.EPI_ISL_15943002.Anseriformes.south_korea.128.2022-11-17        0.00%    passed     95.40%
+ 221  H5N1.EPI_ISL_15943015.NA.south_korea.128.2022-11-07                  0.00%    passed     93.89%
+ 222  H5N6.EPI_ISL_8518268.Galliformes.china.73.2021-12-23                 0.00%    passed     95.50%
+ 223  H5N8.EPI_ISL_11504587.Galliformes.viet_nam.205.2021-12-01            0.00%    passed     99.16%
+ 224  H5N1.EPI_ISL_12917757.Galliformes.israel.2.2021-10-29                0.00%    passed     99.85%
+ 225  H5N8.EPI_ISL_13295077.Anseriformes.canada.81.2021-09-16              0.14%    passed     98.63%
+ 226  H5N8.EPI_ISL_13295078.Anseriformes.canada.81.2021-10-15              0.00%    passed     94.99%
+ 227  H5N8.EPI_ISL_14822356.Anseriformes.china.1.2021-03-11                0.00%    passed     99.90%
+ 228  H5N8.EPI_ISL_14822357.Anseriformes.china.1.2021-03-11                0.00%    passed     99.90%
+ 229  H5N8.EPI_ISL_14822756.Anseriformes.china.1.2021-05-19                0.00%    passed     99.64%
+ 230  H5N1.EPI_ISL_15944665.Anseriformes.south_korea.128.2022-11-17        0.00%    passed     94.69%
+ 231  H5N8.EPI_ISL_14770166.Anseriformes.china.16.2020-11-23               0.00%    passed     99.95%
+ 232  H5N8.EPI_ISL_14770165.Gruiformes.china.1.2020-12-31                  0.00%    passed     99.65%
+ 233  H5N1.EPI_ISL_15072540.Passeriformes.japan.2.2022-05-18               0.00%    passed     99.78%
+ 234  H5N1.EPI_ISL_15072539.Casuariiformes.japan.2.2022-04-16              0.00%    passed     99.71%
+ 235  H5N1.EPI_ISL_14064988.Passeriformes.japan.2.2022-02-09               0.00%    passed     99.71%
+ 236  H5N1.EPI_ISL_15072538.Galliformes.japan.2.2022-04-16                 0.00%    passed     99.19%
+ 237  H5N8.EPI_ISL_16215736.Galliformes.china.1.2020-12                    0.00%    passed     99.97%
+ 238  H5N1.EPI_ISL_15576617.Anseriformes.japan.22.2022-10-08               0.00%    passed     99.57%
+ 239  H5N1.EPI_ISL_15576616.Anseriformes.japan.2.2022-10-04                0.00%    passed     99.75%
+ 240  H5N8.EPI_ISL_13295170.Anseriformes.canada.81.2021-11-16              0.00%    passed     91.02%
+ 241  H5N1.EPI_ISL_16388458.Anseriformes.japan.80.2022-11-23               0.00%    passed     92.68%
+ 242  H5N8.EPI_ISL_16405650.environment.japan.10.2020-11-09                0.00%    passed     99.10%
+ 243  H5N8.EPI_ISL_16405651.environment.japan.10.2020-11-09                0.00%    passed     98.19%
+ 244  H5N8.EPI_ISL_16405654.environment.japan.10.2020-11-09                0.00%    passed     98.88%
+ 245  H5N8.EPI_ISL_16405656.environment.japan.10.2020-11-16                0.00%    passed     99.83%
+ 246  H5N8.EPI_ISL_16405657.environment.japan.10.2020-11-16                0.00%    passed     99.62%
+ 247  H5N8.EPI_ISL_16405658.environment.japan.10.2020-11-16                0.00%    passed     99.83%
+ 248  H5N8.EPI_ISL_16405660.environment.japan.10.2020-11-23                0.00%    passed     99.88%
+ 249  H5N8.EPI_ISL_16405661.environment.japan.10.2020-11-23                0.00%    passed     97.03%
+ 250  H5N8.EPI_ISL_16405662.environment.japan.10.2020-11-30                0.00%    passed     99.79%
+ 251  H5N8.EPI_ISL_16405663.environment.japan.10.2020-11-30                0.00%    passed     99.79%
+ 252  H5N8.EPI_ISL_16405664.environment.japan.10.2020-11-30                0.00%    passed     99.76%
+ 253  H5N8.EPI_ISL_16405665.environment.japan.10.2020-11-30                0.00%    passed     99.73%
+ 254  H5N8.EPI_ISL_16405666.environment.japan.10.2020-11-30                0.00%    passed     99.96%
+ 255  H5N8.EPI_ISL_16405667.environment.japan.10.2020-11-30                0.00%    passed     99.72%
+ 256  H5N8.EPI_ISL_16405668.environment.japan.10.2020-11-30                0.00%    passed     99.91%
+ 257  H5N8.EPI_ISL_16405669.environment.japan.10.2020-11-30                0.00%    passed     99.54%
+ 258  H5N8.EPI_ISL_16405670.environment.japan.10.2020-12-07                0.00%    passed     99.83%
+ 259  H5N8.EPI_ISL_16405671.environment.japan.10.2020-12-07                0.00%    passed     98.35%
+ 260  H5N8.EPI_ISL_16405672.environment.japan.10.2020-12-07                0.00%    passed     99.06%
+ 261  H5N8.EPI_ISL_16405673.environment.japan.10.2020-12-07                0.00%    passed     99.83%
+ 262  H5N8.EPI_ISL_16405674.environment.japan.10.2020-12-07                0.00%    passed     99.68%
+ 263  H5N8.EPI_ISL_16405676.environment.japan.10.2020-12-21                0.00%    passed     98.98%
+ 264  H5N8.EPI_ISL_16405677.environment.japan.10.2020-12-21                0.00%    passed     99.79%
+ 265  H5N8.EPI_ISL_16405678.environment.japan.10.2020-12-21                0.00%    passed     99.77%
+ 266  H5N6.EPI_ISL_16466440.NA.china.126.2022-11-11                        0.00%    passed     98.64%
+ 267  H5N1.EPI_ISL_17638143.Galliformes.japan.80.2023-04-02                0.00%    passed     88.50%
+ 268  H5N8.EPI_ISL_17760581.Anseriformes.canada.81.2021-09-16              0.00%    passed     94.95%
+ 269  H5N8.EPI_ISL_17760583.Anseriformes.canada.81.2021-10-15              0.00%    passed     97.87%
+ 270  H5N8.EPI_ISL_17805814.environment.japan.10.2020-12-21                0.00%    passed     99.77%
+ 271  H5N8.EPI_ISL_17805816.environment.japan.10.2020-12-07                0.00%    passed     99.68%
+ 272  H5N8.EPI_ISL_17805822.NA.japan.16.2021-02-01                         0.00%    passed     99.96%
+ 273  H5N8.EPI_ISL_17805824.environment.japan.10.2020-12-07                0.00%    passed     99.83%
+ 274  H5N8.EPI_ISL_17805826.environment.japan.10.2020-11-30                0.00%    passed     99.73%
+ 275  H5N8.EPI_ISL_17805828.environment.japan.10.2020-12-07                0.00%    passed     99.83%
+ 276  H5N8.EPI_ISL_17805837.environment.japan.10.2020-11-16                0.00%    passed     99.83%
+ 277  H5N8.EPI_ISL_17805839.environment.japan.10.2020-11-16                0.00%    passed     99.83%
+ 278  H5N8.EPI_ISL_17805841.environment.japan.10.2020-11-30                0.00%    passed     99.72%
+ 279  H5N8.EPI_ISL_17805845.environment.japan.10.2020-12-21                0.00%    passed     99.79%
+ 280  H5N8.EPI_ISL_17805848.environment.japan.10.2020-11-09                0.00%    passed     99.10%
+ 281  H5N8.EPI_ISL_17805849.environment.japan.10.2020-11-30                0.00%    passed     99.91%
+ 282  H5N8.EPI_ISL_17805853.environment.japan.10.2020-11-09                0.00%    passed     99.88%
+ 283  H5N8.EPI_ISL_17805857.environment.japan.10.2020-11-09                0.00%    passed     98.88%
+ 284  H5N8.EPI_ISL_17805861.environment.japan.10.2020-11-23                0.00%    passed     97.03%
+ 285  H5N8.EPI_ISL_17805866.environment.japan.10.2020-11-16                0.00%    passed     99.62%
+ 286  H5N8.EPI_ISL_17805868.environment.japan.10.2020-11-30                0.00%    passed     99.76%
+ 287  H5N8.EPI_ISL_17805870.environment.japan.10.2020-11-30                0.00%    passed     99.96%
+ 288  H5N8.EPI_ISL_17805873.environment.japan.10.2020-11-30                0.00%    passed     99.79%
+ 289  H5N8.EPI_ISL_17805874.environment.japan.10.2020-12-07                0.00%    passed     99.06%
+ 290  H5N8.EPI_ISL_17805877.environment.japan.10.2020-11-30                0.00%    passed     99.79%
+ 291  H5N8.EPI_ISL_17805890.NA.japan.10.2021-02-05                         0.00%    passed     99.73%
+ 292  H5N8.EPI_ISL_17805894.environment.japan.10.2020-12-07                0.00%    passed     98.35%
+ 293  H5N8.EPI_ISL_17805901.NA.japan.10.2020-12-18                         0.00%    passed     99.69%
+ 294  H5N8.EPI_ISL_17805905.Anseriformes.japan.1.2021-01-16                0.00%    passed     99.99%
+ 295  H5N8.EPI_ISL_17805910.environment.japan.10.2020-11-09                0.00%    passed     98.19%
+ 296  H5N8.EPI_ISL_17805914.environment.japan.10.2020-12-21                0.00%    passed     98.98%
+ 297  H5N8.EPI_ISL_17805918.environment.japan.10.2020-11-30                0.00%    passed     99.54%
+ 298  H5N1.EPI_ISL_17949961.Passeriformes.japan.80.2023-03-10              0.00%    passed     87.17%
+ 299  H5N1.EPI_ISL_17949986.Passeriformes.japan.80.2023-02-07              0.00%    passed     91.53%
+ 300  H5N1.EPI_ISL_17949987.Anseriformes.japan.80.2022-11-26               0.00%    passed     99.16%
+ 301  H5N1.EPI_ISL_17950087.Passeriformes.japan.2.2023-03-30               0.00%    passed     99.37%
+ 302  H5N1.EPI_ISL_16698060.Galliformes.japan.15.2022-11-07                0.00%    passed     99.95%
+ 303  H5N1.EPI_ISL_16698546.Accipitriformes.japan.2.2022-10-21             0.00%    passed     99.92%
+ 304  H5N1.EPI_ISL_16698576.Gruiformes.japan.2.2022-11-20                  0.00%    passed     99.77%
+ 305  H5N1.EPI_ISL_16698579.Charadriiformes.japan.2.2022-11-06             0.00%    passed     98.93%
+ 306  H5N8.EPI_ISL_16718460.Accipitriformes.japan.16.2021-02-01            0.00%    passed     99.96%
+ 307  H5N8.EPI_ISL_16718461.Gruiformes.japan.10.2021-02-03                 0.00%    passed     99.73%
+ 308  H5N8.EPI_ISL_16718465.Gruiformes.japan.1.2021-01-16                  0.00%    passed     99.99%
+ 309  H5N8.EPI_ISL_16718466.Anseriformes.japan.10.2020-12-18               0.00%    passed     99.69%
+ 310  H5N1.EPI_ISL_16955748.Passeriformes.japan.2.2022-11-24               0.00%    passed     99.41%
+ 311  H5N1.EPI_ISL_16955829.Accipitriformes.japan.2.2022-11-23             0.00%    passed     99.58%
+ 312  H5N1.EPI_ISL_17075747.NA.china.19.2023-02-10                         0.05%    passed     97.65%
+ 313  H5N1.EPI_ISL_17267427.Passeriformes.japan.15.2022-12-12              0.00%    passed     96.35%
+ 314  H5N1.EPI_ISL_17317373.Passeriformes.japan.15.2022-12-19              0.00%    passed     96.65%
+ 315  H5N1.EPI_ISL_17606816.Anseriformes.south_korea.22.2021-11-15         0.00%    passed     99.67%
+ 316  H5N1.EPI_ISL_17606818.Anseriformes.south_korea.22.2022-02-08         0.00%    passed     99.98%
+ 317  H5N1.EPI_ISL_17606820.Anseriformes.south_korea.22.2021-11-11         0.00%    passed     99.87%
+ 318  H5N1.EPI_ISL_17606833.Galliformes.south_korea.22.2021-12-17          0.00%    passed     99.82%
+ 319  H5N1.EPI_ISL_17606835.Galliformes.south_korea.22.2021-12-23          0.00%    passed     99.67%
+ 320  H5N1.EPI_ISL_17606836.Anseriformes.south_korea.22.2021-12-27         0.00%    passed     99.99%
+ 321  H5N1.EPI_ISL_17606839.Anseriformes.south_korea.22.2022-01-14         0.00%    passed     99.95%
+ 322  H5N1.EPI_ISL_17606841.Galliformes.south_korea.22.2022-01-21          0.00%    passed     99.97%
+ 323  H5N1.EPI_ISL_17606843.Galliformes.south_korea.22.2022-01-24          0.00%    passed     99.97%
+ 324  H5N1.EPI_ISL_17606844.Anseriformes.south_korea.22.2022-01-25         0.00%    passed     96.20%
+ 325  H5N1.EPI_ISL_17606847.Anseriformes.south_korea.22.2022-01-31         0.00%    passed     99.99%
+ 326  H5N1.EPI_ISL_17606850.Galliformes.south_korea.22.2022-02-04          0.00%    passed     96.20%
+ 327  H5N1.EPI_ISL_17606851.Galliformes.south_korea.19.2022-02-06          0.00%    passed     99.45%
+ 328  H5N1.EPI_ISL_17606853.Galliformes.south_korea.22.2022-02-07          0.00%    passed     99.98%
+ 329  H5N1.EPI_ISL_17606855.Anseriformes.south_korea.22.2022-02-08         0.00%    passed     99.96%
+ 330  H5N1.EPI_ISL_17606859.Galliformes.south_korea.22.2022-02-13          0.00%    passed     99.88%
+ 331  H5N1.EPI_ISL_17606862.Anseriformes.south_korea.22.2022-02-21         0.00%    passed     99.77%
+ 332  H5N1.EPI_ISL_17766057.Carnivora.japan.15.2023-04-12                  0.00%    passed     96.35%
+ 333  H5N6.EPI_ISL_china_1.Galliformes.china.314.2022-02-28                7.02%    passed     94.78%
+ 334  H5N8.EPI_ISL_china_2.Galliformes.china.1.2021-05-31                  0.60%    passed     98.49%
+ 335  H5N8.EPI_ISL_china_5.Galliformes.china.1.2021-06-26                  0.56%    passed     99.26%
+ 336  H5N2.EPI_ISL_china_11.Anseriformes.china.101.2022-01-26              0.56%    passed     99.76%
+ 337  H5N2.EPI_ISL_china_12.Anseriformes.china.101.2022-01-26              0.56%    passed     99.69%
+ 338  H5N1.EPI_ISL_china_18.NA.china.80.2023-01-01                         0.00%    passed     90.20%
+ 339  H5N1.EPI_ISL_china_25.Charadriiformes.china.19.2022-07-20            0.00%    passed     99.89%
+ 340  H5N1.EPI_ISL_china_26.Podicipediformes.china.19.2022-07-15           0.00%    passed     99.77%
+ 341  H5N1.EPI_ISL_china_27.Charadriiformes.china.19.2022-07-23            0.00%    passed     99.78%
+ 342  H5N1.EPI_ISL_china_29.Podicipediformes.china.19.2022-07-15           0.00%    passed     99.55%
+ 343  H5N1.EPI_ISL_china_31.Charadriiformes.china.19.2022-06-20            0.00%    passed     99.77%
+ 344  H5N1.EPI_ISL_china_34.Anseriformes.china.19.2022-06-18               0.00%    passed     99.78%
+ 345  H5N1.EPI_ISL_china_36.Anseriformes.china.19.2022-06-18               0.00%    passed     99.55%
+ 346  H5N1.EPI_ISL_china_38.Anseriformes.china.19.2022-06-18               0.00%    passed     99.78%
+ 347  H5N1.EPI_ISL_china_43.Charadriiformes.china.19.2022-07-21            0.00%    passed     99.55%
+ 348  H5N1.EPI_ISL_china_2023089.Anseriformes.china.22.2021-11-18          0.00%    passed     99.79%
+ 349  H5N1.EPI_ISL_china_20230811.Anseriformes.china.19.2021-11-18         0.00%    passed     99.63%
+ 350  H5N1.EPI_ISL_china_20230818.Anseriformes.china.19.2021-11-16         0.00%    passed     99.95%
+ 351  H5N1.EPI_ISL_china_20230820.Anseriformes.china.2.2021-11-16          0.00%    passed     98.85%
+ 352  H5N1.EPI_ISL_china_20230824.Anseriformes.china.19.2021-11-23         0.00%    passed     99.97%
+ 353  H5N1.EPI_ISL_china_20230826.Anseriformes.china.19.2021-11-23         0.00%    passed     99.87%
+ 354  H5N1.EPI_ISL_china_20230830.Anseriformes.china.19.2021-11-22         0.00%    passed     99.93%
+ 355  H5N1.EPI_ISL_china_20230832.Anseriformes.china.2.2021-10-20          0.00%    passed     99.63%
+ 356  H5N1.EPI_ISL_china_20230838.Anseriformes.china.22.2021-10-16         0.00%    passed     99.97%
+ 357  H5N1.EPI_ISL_china_20230839.Anseriformes.china.22.2021-10-16         0.00%    passed     99.98%
+ 358  H5N1.EPI_ISL_china_20230842.Anseriformes.china.19.2021-11-25         0.00%    passed     99.85%
+ 359  H5N1.EPI_ISL_china_20230845.Anseriformes.china.19.2021-12-01         0.00%    passed     99.28%
+ 360  H5N1.EPI_ISL_china_20230847.Anseriformes.china.22.2021-12-02         0.00%    passed     99.89%
+ 361  H5N1.EPI_ISL_china_20230849.Anseriformes.china.19.2021-11-26         0.00%    passed     99.01%
+ 362  H5N1.EPI_ISL_china_20230850.Anseriformes.china.19.2021-12-03         0.00%    passed     99.02%
+ 363  H5N1.EPI_ISL_china_20230852.Anseriformes.china.19.2021-12-02         0.00%    passed     99.09%
+ 364  H5N1.EPI_ISL_china_20230853.Anseriformes.china.19.2021-12-02         0.00%    passed     99.19%
+ 365  H5N1.EPI_ISL_china_20230854.Suliformes.china.19.2021-12-01           0.00%    passed     97.92%
+ 366  H6N2.EPI_ISL_1184525.Anseriformes.russia.NA.2020-10-06               0.00%    passed     97.98%
+ 367  H3N8.EPI_ISL_1081357.Anseriformes.russia.NA.2020-08-13               0.00%    passed     99.24%
+ 368  H3N8.EPI_ISL_1081365.Anseriformes.russia.NA.2020-08-15               0.00%    passed     99.97%
+ 369  H3N8.EPI_ISL_1081366.Anseriformes.russia.NA.2020-08-14               0.00%    passed     99.71%
+ 370  H5N1.EPI_ISL_18284467.Anseriformes.japan.NA.2022-11-11               0.00%    passed     97.25%
+ 371  H5N8.EPI_ISL_14823405.Anseriformes.china.NA.2021-01-27               0.00%    passed     99.90%
+ 372  H5N8.EPI_ISL_14819899.Anseriformes.china.NA.2021-03-09               0.00%    passed     99.90%
+ 373  H5N8.EPI_ISL_644135.Galliformes.russia.1.2020-08-17                  0.00%    passed     99.90%
+ 374  H5N8.EPI_ISL_644132.Anseriformes.russia.1.2020-08-17                 0.00%    passed     99.90%
+ 375  H5N6.EPI_ISL_18000337.NA.china.NA.2022-02-27                         0.00%    passed     98.15%
+ 376  H3N8.EPI_ISL_16166667.Anseriformes.china.NA.2019-10-08               0.00%    passed     99.44%
+ 377  NA.EPI_ISL_14767420.Anseriformes.united_states.NA.2019-10-05         0.05%    passed     99.41%
+ 378  H4N1.EPI_ISL_1634468.environment.japan.NA.2018-12-03                 0.00%    passed     98.96%
+ 379  H5N6.EPI_ISL_3770721.NA.china.287.2021-02-27                         0.00%    passed     99.48%
+ 380  H10N4.EPI_ISL_483056.NA.south_korea.NA.2018-11-05                    0.00%    passed     98.47%
+ 381  H5N8.EPI_ISL_644154.Galliformes.russia.1.2020-08-17                  0.00%    passed     99.97%
+ 382  H5N1.EPI_ISL_11633708.Anseriformes.china.NA.2021-12-20               0.00%    passed     99.87%
+ 383  H5N1.EPI_ISL_11633707.Anseriformes.china.NA.2021-12-20               0.00%    passed     99.93%
+ 384  H5N1.EPI_ISL_5463806.Anseriformes.russia.2.2021-10-07                0.00%    passed     99.71%
+ 385  H5N1.EPI_ISL_5463804.Galliformes.russia.2.2021-10-07                 0.00%    passed     99.71%
+ 386  H5N1.EPI_ISL_9029957.Galliformes.united_kingdom.2.2021-11-16         0.00%    passed     99.71%
+ 387  H5N1.EPI_ISL_5463805.Anseriformes.russia.2.2021-10-07                0.00%    passed     99.88%
+ 388  H5N1.EPI_ISL_17785729.Anseriformes.austria.2.2021-12-14              0.00%    passed     99.70%
+ 389  H5N1.EPI_ISL_8338002.Galliformes.sweden.2.2021-12-12                 0.00%    passed     99.85%
+ 390  H5N1.EPI_ISL_7055384.Anseriformes.sweden.2.2021-11-17                0.00%    passed     99.77%
+ 391  H5N1.EPI_ISL_16831328.Casuariiformes.japan.NA.2022-04-16             0.00%    passed     99.71%
+ 392  H5N1.EPI_ISL_16831310.Galliformes.japan.NA.2022-02-12                0.00%    passed     99.71%
+ 393  H5N1.EPI_ISL_16831319.Galliformes.japan.NA.2022-03-25                0.00%    passed     99.71%
+ 394  H5N1.EPI_ISL_16831092.Passeriformes.japan.NA.2022-03-04              0.05%    passed     99.59%
+ 395  H5N1.EPI_ISL_14389133.Charadriiformes.belgium.2.2022-01-06           0.00%    passed     99.92%
+ 396  H5N1.EPI_ISL_13618384.Anseriformes.israel.NA.2021-11-18              0.00%    passed     99.88%
+ 397  H5N1.EPI_ISL_13465456.Pelecaniformes.israel.NA.2021-11-29            0.00%    passed     98.61%
+ 398  H5N1.EPI_ISL_13370559.Galliformes.united_kingdom.2.2021-12-09        0.00%    passed     99.24%
+ 399  H5N1.EPI_ISL_13369775.Galliformes.united_kingdom.2.2021-11-23        0.00%    passed     99.56%
+ 400  H5N1.EPI_ISL_15063429.Galliformes.japan.NA.2021-11-13                0.00%    passed     99.91%
+ 401  H5N1.EPI_ISL_18373225.Anseriformes.south_korea.NA.2022-01-17         0.00%    passed     99.77%
+ 402  H5N1.EPI_ISL_18373220.Anseriformes.south_korea.NA.2021-12-01         0.00%    passed     99.77%
+ 403  H5N1.EPI_ISL_15063431.Galliformes.japan.NA.2022-01-04                0.00%    passed     99.77%
+ 404  H5N1.EPI_ISL_18373236.Anseriformes.south_korea.NA.2022-01-25         0.00%    passed     99.97%
+ 405  H4N2.EPI_ISL_4072140.Anseriformes.south_korea.NA.2019-11-20          0.00%    passed     93.33%
+ 406  H6N1.EPI_ISL_16886957.NA.south_korea.NA.2019-02-01                   0.00%    passed     94.65%
+ 407  H6N1.EPI_ISL_16886942.Anseriformes.south_korea.NA.2019-12-03         0.00%    passed     94.65%
+ 408  H3N8.EPI_ISL_15723924.environment.china.NA.2019-12-23                0.00%    passed     89.98%
+ 409  H3N8.EPI_ISL_6784911.NA.south_korea.NA.2020-10-05                    0.00%    passed     89.60%
+ 410  H3N8.EPI_ISL_6784880.Anseriformes.south_korea.NA.2020-10-05          0.00%    passed     89.60%
+ 411  H3N8.EPI_ISL_16165481.Charadriiformes.china.NA.2021-10-10            0.00%    passed     96.11%
+ 412  H5N8.EPI_ISL_14835724.Anseriformes.south_korea.212.2021-03-10        0.00%    passed     95.30%
+ 413  H4N8.EPI_ISL_18287391.Anseriformes.thailand.NA.2020-11-01            0.00%    passed     89.99%
+ 414  H5N1.EPI_ISL_18132572.Anseriformes.united_states.NA.2022-04-27       0.00%    passed     99.97%
+ 415  H5N1.EPI_ISL_16189977.Strigiformes.canada.9.2022-04-28               0.05%    passed     99.98%
+ 416  H5N1.EPI_ISL_18132924.Accipitriformes.united_states.NA.2022-03-20    0.00%    passed     99.99%
+ 417  H5N1.EPI_ISL_18132793.Galliformes.united_states.NA.2022-04-04        0.00%    passed     99.99%
+ 418  H5N1.EPI_ISL_18132762.Galliformes.united_states.NA.2022-03-21        0.00%    passed     99.99%
+ 419  H5N1.EPI_ISL_18132418.Anseriformes.united_states.NA.2022-04-14       0.00%    passed     99.87%
+ 420  H5N1.EPI_ISL_18132320.Anseriformes.united_states.NA.2022-04-11       0.00%    passed     99.99%
+ 421  H5N1.EPI_ISL_16297140.Galliformes.united_states.9.2022-10-20         0.00%    passed     99.93%
+ 422  H5N1.EPI_ISL_16243202.Galliformes.united_states.9.2022-05-11         0.00%    passed     99.91%
+ 423  H5N1.EPI_ISL_16183595.Galliformes.canada.9.2022-05-16                0.00%    passed     99.99%
+ 424  H5N1.EPI_ISL_16183504.Galliformes.canada.9.2022-05-16                0.00%    passed     99.99%
+ 425  H5N1.EPI_ISL_16023372.Carnivora.canada.9.2022-06-28                  0.00%    passed     99.99%
+ 426  H5N1.EPI_ISL_16003253.Carnivora.canada.9.2022-04-07                  0.00%    passed     99.99%
+ 427  H5N1.EPI_ISL_13432604.Galliformes.united_states.4.2022-04-04         0.00%    passed     99.99%
+ 428  H5N1.EPI_ISL_13052720.Carnivora.united_states.9.2022-04-22           0.00%    passed     99.99%
+ 429  H5N1.EPI_ISL_11971481.Galliformes.united_states.9.2022-03-21         0.00%    passed     99.99%
+ 430  H5N1.EPI_ISL_18133527.Strigiformes.united_states.NA.2022-04-03       0.00%    passed     99.95%
+ 431  H5N1.EPI_ISL_18133522.Anseriformes.united_states.NA.2022-03-14       0.00%    passed     99.98%
+ 432  H5N1.EPI_ISL_18133512.Strigiformes.united_states.NA.2022-04-22       0.00%    passed     99.97%
+ 433  H5N1.EPI_ISL_18133499.Anseriformes.united_states.NA.2022-03-07       0.00%    passed     99.98%
+ 434  H5N1.EPI_ISL_18133495.Strigiformes.united_states.NA.2022-04-04       0.00%    passed     99.98%
+ 435  H5N2.EPI_ISL_18284476.Galliformes.japan.NA.2023-01-17                0.00%    passed     99.62%
+ 436  H3N8.EPI_ISL_1041164.Anseriformes.russia.NA.2020-09-08               0.00%    passed     98.78%
+ 437  H3N8.EPI_ISL_355937.Charadriiformes.russia.NA.2018-08-26             0.00%    passed     98.76%
+ 438  H1N1.EPI_ISL_502736.Anseriformes.belgium.NA.2017-11-19               0.00%    passed     98.78%
+ 439  H3N8.EPI_ISL_355935.Charadriiformes.russia.NA.2018-08-26             0.00%    passed     99.12%
+ 440  H3N6.EPI_ISL_17805829.environment.japan.NA.2020-11-23                0.00%    passed     98.78%
+ 441  H3N6.EPI_ISL_16390402.environment.japan.NA.2020-11-23                0.00%    passed     98.78%
+ 442  H5N2.EPI_ISL_14767414.Anseriformes.united_states.283.2020-10-22      0.00%    passed     97.23%
+ 443  H3N8.EPI_ISL_339040.Anseriformes.russia.NA.2018-09-15                0.00%    passed     98.65%
+ 444  H5N2.EPI_ISL_9261739.Anseriformes.netherlands.210.2021-12-23         0.00%    passed     99.19%
+ 445  H5N2.EPI_ISL_338359.Galliformes.russia.NA.2017-12-25                 0.00%    passed     99.78%
+ 446  H14N7.EPI_ISL_641517.Charadriiformes.russia.NA.2019-01-01            0.00%    passed     99.82%
+ 447  H5N6.EPI_ISL_4031476.Accipitriformes.denmark.NA.2019-03-27           0.00%    passed     99.88%
+ 448  H5N1.EPI_ISL_18284474.Anseriformes.japan.NA.2022-12-20               0.00%    passed     96.82%
+ 449  H5N3.EPI_ISL_11212324.Anseriformes.bangladesh.211.2022-01-10         0.00%    passed     95.10%
+ 450  H7N7.EPI_ISL_1081358.Anseriformes.russia.NA.2020-08-13               0.00%    passed     95.35%
+ 451  H9N2.EPI_ISL_1760456.Anseriformes.china.NA.2020-11-10                0.00%    passed     95.18%
+ 452  H4N6.EPI_ISL_697691.Anseriformes.mongolia.NA.2018-09-02              0.00%    passed     96.14%
+ 453  H8N4.EPI_ISL_503495.Anseriformes.bangladesh.NA.2019-01-16            0.00%    passed     91.70%
+ 454  H4N6.EPI_ISL_697695.Anseriformes.mongolia.NA.2018-09-02              0.00%    passed     96.24%
+ 455  H5N2.EPI_ISL_1005680.Anseriformes.russia.284.2020-08-29              0.00%    passed     96.77%
+ 456  H5N2.EPI_ISL_6780573.Anseriformes.japan.NA.2020-12-15                0.00%    passed     97.37%
+ 457  H3N8.EPI_ISL_17638577.Pelecaniformes.china.NA.2020-10-01             0.00%    passed     95.24%
+ 458  H10N9.EPI_ISL_4073124.Anseriformes.bangladesh.NA.2020-02-22          0.00%    passed     93.66%
+ 459  H5N1.EPI_ISL_18284465.Galliformes.japan.NA.2022-11-01                0.00%    passed     99.11%
+ 460  H5N1.EPI_ISL_18284473.Galliformes.japan.NA.2022-12-16                0.00%    passed     91.41%
+ 461  H5N1.EPI_ISL_18066450.Passeriformes.japan.NA.2023-01-06              0.00%    passed     95.35%
+ 462  H5N1.EPI_ISL_18284478.Galliformes.japan.NA.2023-02-01                0.00%    passed     98.97%
+ 463  H3N2.EPI_ISL_17805831.environment.japan.NA.2020-12-07                0.00%    passed     98.70%
+ 464  H3N2.EPI_ISL_16390400.environment.japan.NA.2020-12-07                0.00%    passed     98.70%
+ 465  H6N6.EPI_ISL_17805917.environment.japan.NA.2020-11-16                0.00%    passed     99.21%
+ 466  H6N6.EPI_ISL_16405679.environment.japan.NA.2020-11-16                0.00%    passed     99.21%
+ 467  H5N6.EPI_ISL_15613574.NA.china.NA.2021-08-19                         0.00%    passed     99.82%
+ 468  H3N8.EPI_ISL_17805864.environment.japan.NA.2020-11-30                0.00%    passed     97.72%
+ 469  H3N8.EPI_ISL_16405643.environment.japan.NA.2020-11-30                0.00%    passed     97.72%
+ 470  H3N8.EPI_ISL_17805889.environment.japan.NA.2020-12-07                0.00%    passed     98.85%
+ 471  H3N8.EPI_ISL_16405645.environment.japan.NA.2020-12-07                0.00%    passed     98.85%
+ 472  H3N6.EPI_ISL_17805930.environment.japan.NA.2020-11-30                0.00%    passed     98.26%
+ 473  H3N6.EPI_ISL_16390403.environment.japan.NA.2020-11-30                0.00%    passed     98.26%
+ 474  H4N6.EPI_ISL_1184536.Anseriformes.russia.NA.2020-09-06               0.00%    passed     98.93%
+ 475  H7N7.EPI_ISL_12627552.NA.china.NA.2020-03-15                         0.00%    passed     98.74%
+ 476  H3N8.EPI_ISL_400279.Anseriformes.russia.NA.2019-10-12                0.00%    passed     99.40%
+ 477  H3N8.EPI_ISL_17805925.environment.japan.NA.2020-12-07                0.00%    passed     97.41%
+ 478  H3N8.EPI_ISL_16405646.environment.japan.NA.2020-12-07                0.00%    passed     97.41%
+ 479  H2N9.EPI_ISL_9957809.Anseriformes.bangladesh.NA.2021-03-01           0.00%    passed     98.49%
+ 480  H5N8.EPI_ISL_4030493.environment.japan.NA.2020-12-09                 0.00%    passed     99.83%
+ 481  H5N8.EPI_ISL_17086342.environment.japan.NA.2020-11-16                0.00%    passed     99.62%
+ 482  H5N8.EPI_ISL_17086222.Anseriformes.japan.NA.2020-11-30               0.00%    passed     99.89%
+ 483  H5N8.EPI_ISL_17086340.Galliformes.japan.NA.2021-02-02                0.00%    passed     99.78%
+ 484  H5N8.EPI_ISL_17086336.Galliformes.japan.NA.2021-01-02                0.00%    passed     99.70%
+ 485  H5N8.EPI_ISL_17086228.environment.japan.NA.2020-11-25                0.00%    passed     99.94%
+ 486  H5N8.EPI_ISL_17086231.environment.japan.NA.2020-12-07                0.00%    passed     99.96%
+ 487  H5N8.EPI_ISL_17086229.environment.japan.NA.2020-12-02                0.00%    passed     99.96%
+ 488  H5N1.EPI_ISL_18284461.Galliformes.japan.NA.2022-10-28                0.00%    passed     99.95%
+ 489  H4N2.EPI_ISL_17811776.Anseriformes.china.NA.2019-11-09               0.28%    passed     99.01%
+ 490  H5N2.EPI_ISL_4032270.Galliformes.taiwan.NA.2018-05-07                0.00%    passed     96.49%
+ 491  H6N2.EPI_ISL_400261.Anseriformes.russia.NA.2019-09-21                0.19%    passed     99.67%
+ 492  H5N2.EPI_ISL_4032283.Galliformes.taiwan.NA.2018-05-09                0.05%    passed     96.43%
+ 493  H5N2.EPI_ISL_4032573.Anseriformes.taiwan.NA.2018-12-17               0.00%    passed     98.25%
+ 494  NA.EPI_ISL_399748.Anseriformes.canada.NA.2018-04-10                  0.00%    passed     96.70%
+ 495  H6N2.EPI_ISL_364045.Anseriformes.china.NA.2016-03-09                 0.00%    passed     99.46%
+ 496  H5N2.EPI_ISL_4032218.Galliformes.taiwan.NA.2018-12-18                0.00%    passed     96.03%
+ 497  H6N2.EPI_ISL_364049.Anseriformes.china.NA.2016-03-09                 0.00%    passed     99.28%
+ 498  H5N1.EPI_ISL_16831015.Anseriformes.japan.NA.2022-01-27               0.00%    passed     99.96%
+ 499  H1N3.EPI_ISL_339038.Anseriformes.russia.NA.2018-09-06                0.00%    passed     97.00%
+ 500  H10N3.EPI_ISL_13984071.Anseriformes.china.NA.2017-07-07              0.00%    passed     90.79%
+ 501  H5N1.EPI_ISL_18066453.Passeriformes.japan.NA.2023-02-17              0.00%    passed     96.35%
+ 502  H5N1.EPI_ISL_18066451.Anseriformes.japan.NA.2023-02-09               0.00%    passed     96.35%
+ 503  H5N1.EPI_ISL_17857959.Carnivora.japan.NA.2023-02-20                  0.00%    passed     96.35%
+ 504  H5N1.EPI_ISL_18007230.Passeriformes.japan.NA.2023-04-18              0.00%    passed     96.35%
+ 505  H5N1.EPI_ISL_18284477.Galliformes.japan.NA.2023-03-14                0.00%    passed     99.06%
+ 506  H6N2.EPI_ISL_363761.NA.china.NA.2017-01-18                           0.00%    passed     98.11%
+ 507  H6N1.EPI_ISL_278509.Anseriformes.china.NA.2016-11-28                 0.00%    passed     95.34%
+ 508  H3N8.EPI_ISL_368640.Anseriformes.mongolia.NA.2018-09-03              0.00%    passed     98.75%
+ 509  H11N3.EPI_ISL_239578.Anseriformes.japan.NA.2016-11-28                0.00%    passed     98.15%
+ 510  H3N8.EPI_ISL_368665.Anseriformes.mongolia.NA.2018-09-04              0.00%    passed     98.62%
+ 511  H5N6.EPI_ISL_14749474.Anseriformes.china.NA.2016-11-29               0.00%    passed     99.95%
+ 512  H3N8.EPI_ISL_4031063.Galliformes.india.NA.2014-11-28                 0.00%    passed     99.85%
+ 513  H5N6.EPI_ISL_243681.Galliformes.japan.NA.2017-01-24                  0.00%    passed     99.72%
+ 514  H5N6.EPI_ISL_243687.Galliformes.japan.NA.2017-01-24                  0.00%    passed     99.54%
+ 515  H5N8.EPI_ISL_1665263.Anseriformes.slovenia.1.2020-11-17              0.00%    passed     99.93%
+ 516  H5N6.EPI_ISL_16886862.Rodentia.china.309.2021-10-01                  0.00%    passed     87.02%
+ 517  H5N6.EPI_ISL_340798.environment.china.NA.2018-04-24                  0.00%    passed     95.17%
+ 518  H5N6.EPI_ISL_283970.Struthioniformes.china.NA.2017-06-28             0.00%    passed     93.58%
+ 519  H5N6.EPI_ISL_14749602.Anseriformes.china.NA.2016-08-06               0.00%    passed     91.59%
+ 520  H5N6.EPI_ISL_283971.Galliformes.china.NA.2017-07-15                  0.00%    passed     88.11%
+ 521  H5N6.EPI_ISL_221709.Anseriformes.china.NA.2016-01-01                 0.00%    passed     94.16%
+ 522  H5N6.EPI_ISL_17728635.Anseriformes.china.NA.2017-08-10               0.00%    passed     82.68%
+ 523  H5N6.EPI_ISL_221716.Anseriformes.china.NA.2016-01-01                 0.00%    passed     93.29%
+ 524  H5N6.EPI_ISL_221714.Anseriformes.china.NA.2016-01-01                 0.00%    passed     93.29%
+ 525  H5N6.EPI_ISL_18058055.Anseriformes.china.NA.2021-05-01               0.00%    passed     90.81%
+ 526  H5N6.EPI_ISL_18231267.Anseriformes.laos.NA.2022-02-16                0.00%    passed     89.93%
+ 527  H5N6.EPI_ISL_18231307.Galliformes.laos.NA.2022-07-13                 0.00%    passed     89.62%
+ 528  H5N6.EPI_ISL_18231288.environment.laos.NA.2022-07-26                 0.00%    passed     89.62%
+ 529  H3N2.EPI_ISL_15723921.environment.china.NA.2019-12-10                0.09%    passed     91.29%
+ 530  H5N6.EPI_ISL_18231284.Anseriformes.laos.NA.2022-07-13                0.05%    passed     90.38%
+ 531  H5N6.EPI_ISL_18231286.Galliformes.laos.NA.2022-07-13                 0.00%    passed     87.50%
+ 532  H5N6.EPI_ISL_18231282.Anseriformes.laos.NA.2022-07-13                0.00%    passed     91.54%
+ 533  H7N9.EPI_ISL_1520374.Galliformes.china.NA.2021-02-10                 0.00%    passed     92.13%
+ 534  H7N9.EPI_ISL_1374067.Galliformes.china.NA.2019-04-01                 0.00%    passed     91.07%
+ 535  H7N9.EPI_ISL_1374065.Galliformes.china.NA.2019-04-01                 0.00%    passed     84.88%
+ 536  H7N9.EPI_ISL_1495971.Galliformes.china.NA.2021-02-23                 0.00%    passed     87.06%
+ 537  H7N9.EPI_ISL_1495152.Galliformes.china.NA.2021-02-10                 0.00%    passed     90.08%
+ 538  H7N9.EPI_ISL_1374062.Galliformes.china.NA.2018-10-01                 0.00%    passed     80.77%
+ 539  H7N9.EPI_ISL_1374055.Galliformes.china.NA.2018-02-01                 0.00%    passed     85.95%
+ 540  H7N9.EPI_ISL_379677.Anseriformes.china.NA.2017-04-18                 0.00%    passed     73.93%
+ 541  H7N9.EPI_ISL_379672.Galliformes.china.NA.2017-06-06                  0.00%    passed     73.93%
+ 542  H7N9.EPI_ISL_379670.Galliformes.china.NA.2017-05-27                  0.00%    passed     73.93%
+ 543  H7N9.EPI_ISL_379668.Galliformes.china.NA.2017-05-07                  0.00%    passed     73.93%
+ 544  H7N9.EPI_ISL_379667.Galliformes.china.NA.2017-05-01                  0.00%    passed     73.93%
+ 545  H7N9.EPI_ISL_274206.Galliformes.china.NA.2017-04-24                  0.00%    passed     73.93%
+ 546  H7N9.EPI_ISL_269520.environment.china.NA.2017-05-05                  0.00%    passed     73.93%
+ 547  H7N9.EPI_ISL_269516.NA.china.NA.2017-05-13                           0.00%    passed     73.93%
+ 548  H5N8.EPI_ISL_984690.Falconiformes.denmark.1.2020-11-06               0.00%    passed     99.77%
+ 549  H5N8.EPI_ISL_2234811.Anseriformes.spain.1.2021-01-07                 0.00%    passed     99.93%
+ 550  H5N8.EPI_ISL_15063430.Galliformes.japan.NA.2021-11-15                0.00%    passed     98.31%
+ 551  H5N8.EPI_ISL_15063428.environment.japan.NA.2021-11-10                0.00%    passed     98.53%
+ 552  H5N1.EPI_ISL_18007231.Passeriformes.japan.NA.2023-03-15              0.00%    passed     88.50%
+ 553  H5N1.EPI_ISL_18284468.Galliformes.japan.NA.2022-12-05                0.00%    passed     91.42%
+ 554  H5N1.EPI_ISL_18066455.Accipitriformes.japan.NA.2023-01-07            0.00%    passed     94.26%
+ 555  H5N1.EPI_ISL_18284472.Anseriformes.japan.NA.2022-11-26               0.00%    passed     87.17%
+ 556  H5N1.EPI_ISL_18130247.Passeriformes.japan.NA.2023-01-05              0.00%    passed     94.56%
+ 557  H5N1.EPI_ISL_18066456.Passeriformes.japan.NA.2023-02-20              0.00%    passed     88.05%
+ 558  H5N1.EPI_ISL_18066454.Gruiformes.japan.NA.2023-02-23                 0.00%    passed     91.42%
+ 559  H5N1.EPI_ISL_18066457.Passeriformes.japan.NA.2023-02-06              0.00%    passed     94.60%
+ 560  H5N1.EPI_ISL_18007232.Passeriformes.japan.NA.2023-03-24              0.00%    passed     93.12%
+ 561  H5N1.EPI_ISL_18241798.Anseriformes.viet_nam.NA.2023-06-04            0.00%    passed     91.13%
+ 562  H5N1.EPI_ISL_18241796.Galliformes.viet_nam.NA.2023-09-05             0.00%    passed     91.13%
+ 563  H5N1.EPI_ISL_18241793.Anseriformes.viet_nam.NA.2023-06-05            0.00%    passed     92.23%
+ 564  H5N1.EPI_ISL_18102700.Carnivora.south_korea.NA.2023-07-04            0.00%    passed     89.79%
+ 565  H5N1.EPI_ISL_18066452.Anseriformes.japan.NA.2023-02-17               0.00%    passed     96.25%
+ 566  H5N1.EPI_ISL_18373238.Anseriformes.south_korea.NA.2022-02-07         0.00%    passed     99.70%
+ 567  H5N1.EPI_ISL_13352727.Anseriformes.china.NA.2021-12-17               0.00%    passed     98.85%
+ 568  H5N1.EPI_ISL_13352715.Anseriformes.china.NA.2021-12-17               0.00%    passed     98.85%
+ 569  H5N1.EPI_ISL_16838580.Pelecaniformes.russia.2.2021-06-29             0.00%    passed     99.45%
+ 570  H5N1.EPI_ISL_13352728.Anseriformes.china.NA.2021-12-17               0.00%    passed     99.02%
+ 571  H5N1.EPI_ISL_14760632.Galliformes.italy.2.2021-11-24                 0.00%    passed     99.57%
+ 572  H5N1.EPI_ISL_14760565.Galliformes.italy.2.2021-11-10                 0.00%    passed     99.57%
+ 573  H5N1.EPI_ISL_14760559.NA.italy.2.2021-11-08                          0.00%    passed     99.57%
+ 574  H5N1.EPI_ISL_13352719.Anseriformes.china.NA.2021-12-17               0.00%    passed     98.86%
+ 575  H5N1.EPI_ISL_13352717.Anseriformes.china.NA.2021-12-17               0.00%    passed     99.31%
+ 576  H3N8.EPI_ISL_400289.Anseriformes.russia.NA.2019-08-31                0.00%    passed     97.49%
+ 577  H4N6.EPI_ISL_337396.Anseriformes.russia.NA.2018-10-01                0.00%    passed     94.99%
+ 578  H4N6.EPI_ISL_337148.Anseriformes.russia.NA.2018-08-25                0.00%    passed     94.99%
+ 579  H5N1.EPI_ISL_9261749.Charadriiformes.netherlands.2.2022-01-14        0.00%    passed     99.57%
+ 580  H5N1.EPI_ISL_6761021.Anseriformes.netherlands.2.2021-11-07           0.00%    passed     99.80%
+ 581  H5N8.EPI_ISL_17086337.environment.japan.NA.2021-01-13                0.00%    passed     99.95%
+ 582  H5N8.EPI_ISL_17086303.environment.japan.NA.2020-12-10                0.00%    passed     99.91%
+ 583  H5N8.EPI_ISL_17086220.Accipitriformes.japan.NA.2020-12-08            0.00%    passed     99.95%
+ 584  H5N8.EPI_ISL_4105052.Anseriformes.japan.NA.2020-01-01                0.09%    passed     99.98%
+ 585  H5N8.EPI_ISL_17086344.Falconiformes.japan.NA.2020-12-04              0.00%    passed     99.96%
+ 586  H5N8.EPI_ISL_17086230.environment.japan.NA.2020-12-06                0.00%    passed     99.91%
+ 587  H5N8.EPI_ISL_17086227.environment.japan.NA.2020-11-25                0.00%    passed     99.95%
+ 588  H5N8.EPI_ISL_17086221.Accipitriformes.japan.NA.2020-12-20            0.00%    passed     99.91%
+ 589  H5N8.EPI_ISL_4105028.Galliformes.japan.NA.2020-01-01                 0.00%    passed     99.89%
+ 590  H5N8.EPI_ISL_17086353.environment.japan.NA.2021-03-13                0.00%    passed     99.94%
+ 591  H5N8.EPI_ISL_17086335.environment.japan.NA.2020-12-19                0.00%    passed     99.21%
+ 592  H5N8.EPI_ISL_17086225.environment.japan.NA.2020-11-11                0.00%    passed     99.97%
+ 593  H5N8.EPI_ISL_17086334.Galliformes.japan.NA.2020-12-12                0.00%    passed     99.91%
+ 594  H5N8.EPI_ISL_17086333.environment.japan.NA.2020-12-12                0.00%    passed     99.77%
+ 595  H5N8.EPI_ISL_17086354.Anseriformes.japan.NA.2021-01-29               0.00%    passed     99.69%
+ 596  H5N8.EPI_ISL_17086348.environment.japan.NA.2020-12-19                0.05%    passed     99.93%
+ 597  H5N8.EPI_ISL_17086339.Galliformes.japan.NA.2021-01-23                0.00%    passed     99.69%
+ 598  H5N8.EPI_ISL_5064971.Galliformes.germany.1.2020-12-26                0.00%    passed     99.88%
+ 599  H5N8.EPI_ISL_1139015.NA.netherlands.1.2020-10-26                     0.00%    passed     99.90%
+ 600  H5N8.EPI_ISL_1139014.Anseriformes.netherlands.1.2020-10-27           0.00%    passed     99.90%
+ 601  H5N8.EPI_ISL_739684.Anseriformes.russia.1.2020-09-15                 0.14%    passed     99.92%
+ 602  H5N8.EPI_ISL_15613492.Anseriformes.japan.NA.2021-01-24               0.00%    passed     99.99%
+ 603  H5N8.EPI_ISL_14823863.Anseriformes.china.NA.2020-11-09               0.00%    passed     99.78%
+ 604  H5N8.EPI_ISL_5096629.Anseriformes.germany.1.2021-01-12               0.00%    passed     99.93%
+ 605  H5N8.EPI_ISL_1399245.Anseriformes.czech_republic.1.2021-03-06        0.00%    passed     99.93%
+ 606  H5N8.EPI_ISL_846604.Galliformes.poland.1.2020-12-07                  0.00%    passed     99.93%
+ 607  H5N8.EPI_ISL_1114755.Galliformes.russia.1.2021-01-29                 0.00%    passed     99.78%
+ 608  H5N8.EPI_ISL_1114752.Anseriformes.russia.1.2020-12-31                0.00%    passed     99.64%
+ 609  H5N8.EPI_ISL_1114740.Galliformes.russia.1.2020-10-17                 0.00%    passed     99.79%
+ 610  H5N8.EPI_ISL_1058021.Galliformes.czech_republic.1.2021-02-12         0.00%    passed     99.84%
+ 611  H5N8.EPI_ISL_1039236.Galliformes.russia.1.2020-12-12                 0.00%    passed     99.80%
+ 612  H5N8.EPI_ISL_647969.Galliformes.sweden.1.2020-11-13                  0.00%    passed     99.93%
+ 613  H5N8.EPI_ISL_14778363.NA.china.NA.2020-11-25                         0.09%    passed     99.68%
+ 614  H5N8.EPI_ISL_18244181.Anseriformes.poland.NA.2021-01-19              0.09%    passed     99.84%
+ 615  H5N8.EPI_ISL_17086347.Anseriformes.japan.NA.2021-02-04               0.00%    passed     99.97%
+ 616  H5N8.EPI_ISL_17086341.environment.japan.NA.2021-02-09                0.00%    passed     99.78%
+ 617  H5N8.EPI_ISL_8215660.Anseriformes.china.NA.2021-05-15                0.00%    passed     99.74%
+ 618  H5N8.EPI_ISL_5115614.Galliformes.germany.1.2021-02-26                0.00%    passed     99.64%
+ 619  H5N8.EPI_ISL_5098143.Galliformes.germany.1.2021-01-22                0.00%    passed     99.88%
+ 620  H5N8.EPI_ISL_5064825.Galliformes.germany.1.2020-12-26                0.00%    passed     99.87%
+ 621  H5N8.EPI_ISL_2113167.Anseriformes.poland.1.2021-02-22                0.00%    passed     99.41%
+ 622  H5N8.EPI_ISL_1697188.Galliformes.czech_republic.1.2021-04-01         0.00%    passed     99.93%
+ 623  H5N8.EPI_ISL_1114757.Galliformes.russia.1.2021-01-29                 0.00%    passed     99.65%
+ 624  H5N8.EPI_ISL_1114738.Galliformes.russia.1.2020-10-17                 0.00%    passed     99.78%
+ 625  H5N8.EPI_ISL_1080579.Anseriformes.czech_republic.1.2021-02-14        0.00%    passed     99.74%
+ 626  H5N8.EPI_ISL_1058019.Anseriformes.czech_republic.1.2021-02-04        0.00%    passed     99.93%
+ 627  H5N8.EPI_ISL_1038924.NA.russia.1.2020-12-12                          0.00%    passed     99.90%
+ 628  H5N8.EPI_ISL_977513.Galliformes.czech_republic.1.2021-01-22          0.00%    passed     99.78%
+ 629  H5N8.EPI_ISL_666890.Galliformes.croatia.1.2020-11-17                 0.00%    passed     99.84%
+ 630  H5N8.EPI_ISL_644123.Galliformes.russia.1.2020-08-13                  0.00%    passed     99.82%
+ 631  H5N8.EPI_ISL_626651.Anseriformes.russia.1.2020-08-20                 0.00%    passed     99.82%
+ 632  H5N8.EPI_ISL_779129.Galliformes.poland.1.2020-12-01                  0.05%    passed     99.55%
+ 633  H5N8.EPI_ISL_18245531.Anseriformes.poland.NA.2021-03-16              0.05%    passed     98.81%
+ 634  H5N8.EPI_ISL_18244810.Accipitriformes.poland.NA.2021-02-19           0.05%    passed     99.90%
+ 635  H5N8.EPI_ISL_17086349.Galliformes.japan.NA.2021-02-08                0.00%    passed     99.95%
+ 636  H5N8.EPI_ISL_17086338.Anseriformes.japan.NA.2021-01-21               0.00%    passed     99.95%
+ 637  H9N2.EPI_ISL_14223937.Galliformes.china.NA.2021-11-12                0.00%    passed     99.66%
+ 638  H5N8.EPI_ISL_5058630.Anseriformes.germany.NA.2020-10-31              0.00%    passed     99.49%
+ 639  H5N8.EPI_ISL_8215662.Anseriformes.china.NA.2021-05-17                0.00%    passed     99.90%
+ 640  H5N8.EPI_ISL_5143586.Galliformes.germany.1.2021-03-24                0.00%    passed     99.93%
+ 641  H5N8.EPI_ISL_5116065.Rheiformes.germany.1.2021-03-02                 0.00%    passed     99.79%
+ 642  H5N8.EPI_ISL_5115618.Galliformes.germany.1.2021-03-04                0.00%    passed     99.93%
+ 643  H5N8.EPI_ISL_5099367.Galliformes.germany.1.2021-02-07                0.00%    passed     99.85%
+ 644  H5N8.EPI_ISL_3128523.Pelecaniformes.greece.1.2021-03-22              0.00%    passed     99.56%
+ 645  H5N8.EPI_ISL_3102061.Anseriformes.poland.1.2021-04-09                0.00%    passed     99.78%
+ 646  H5N8.EPI_ISL_2172531.Anseriformes.netherlands.1.2021-02-21           0.00%    passed     98.93%
+ 647  H5N8.EPI_ISL_1399241.Galliformes.czech_republic.1.2021-03-06         0.00%    passed     99.93%
+ 648  H5N8.EPI_ISL_1399235.Galliformes.czech_republic.1.2021-03-06         0.00%    passed     99.64%
+ 649  H5N8.EPI_ISL_1399233.Galliformes.czech_republic.1.2021-02-27         0.00%    passed     99.95%
+ 650  H5N8.EPI_ISL_1139097.Anseriformes.netherlands.1.2020-11-04           0.00%    passed     99.68%
+ 651  H5N8.EPI_ISL_1114736.Galliformes.russia.1.2020-09-26                 0.00%    passed     99.99%
+ 652  H5N8.EPI_ISL_1095453.Galliformes.sweden.1.2020-11-17                 0.00%    passed     99.81%
+ 653  H5N8.EPI_ISL_1039240.Galliformes.russia.1.2020-12-12                 0.00%    passed     99.80%
+ 654  H5N8.EPI_ISL_1033029.Galliformes.czech_republic.1.2021-02-03         0.00%    passed     99.79%
+ 655  H5N1.EPI_ISL_18245816.Anseriformes.poland.NA.2022-04-07              0.05%    passed     99.84%
+ 656  H5N1.EPI_ISL_16831291.Galliformes.japan.NA.2022-04-13                0.00%    passed     99.89%
+ 657  H5N1.EPI_ISL_18373219.Anseriformes.south_korea.NA.2021-11-22         0.00%    passed     99.88%
+ 658  H5N1.EPI_ISL_15063423.Galliformes.japan.NA.2021-11-17                0.00%    passed     99.64%
+ 659  H5N1.EPI_ISL_17371283.Anseriformes.indonesia.NA.2022-04-04           0.00%    passed     99.57%
+ 660  H5N1.EPI_ISL_18373249.Anseriformes.south_korea.NA.2022-03-02         0.00%    passed     99.87%
+ 661  H5N1.EPI_ISL_18373246.Pelecaniformes.south_korea.NA.2022-02-15       0.00%    passed     99.97%
+ 662  H5N1.EPI_ISL_18373261.Anseriformes.south_korea.NA.2022-03-24         0.00%    passed     99.37%
+ 663  H5N1.EPI_ISL_17999470.Falconiformes.japan.NA.2022-10-16              0.00%    passed     99.57%
+ 664  H5N1.EPI_ISL_16838577.Anseriformes.canada.2.2021-09-14               0.00%    passed     99.57%
+ 665  H5N1.EPI_ISL_16831140.Passeriformes.japan.NA.2022-04-09              0.00%    passed     99.78%
+ 666  H5N1.EPI_ISL_15843373.Accipitriformes.canada.2.2022-02-03            0.00%    passed     99.88%
+ 667  H5N1.EPI_ISL_11798577.Pelecaniformes.denmark.2.2021-10-28            0.00%    passed     99.77%
+ 668  H5N1.EPI_ISL_7996369.Anseriformes.netherlands.2.2021-11-19           0.00%    passed     99.57%
+ 669  H5N1.EPI_ISL_7753443.Accipitriformes.germany.2.2021-10-26            0.00%    passed     99.57%
+ 670  H5N1.EPI_ISL_6930238.Galliformes.poland.2.2021-11-02                 0.05%    passed     99.78%
+ 671  H5N1.EPI_ISL_6328409.Anseriformes.czech_republic.2.2021-11-01        0.00%    passed     99.80%
+ 672  H5N1.EPI_ISL_17527094.Passeriformes.japan.NA.2023-01-03              0.00%    passed     99.77%
+ 673  H5N1.EPI_ISL_16676477.Anseriformes.belgium.2.2022-01-17              0.00%    passed     99.80%
+ 674  H5N1.EPI_ISL_9261748.Pelecaniformes.netherlands.2.2022-01-14         0.00%    passed     99.56%
+ 675  H5N1.EPI_ISL_7952128.Anseriformes.netherlands.2.2021-11-09           0.00%    passed     99.56%
+ 676  H5N1.EPI_ISL_7952119.Charadriiformes.netherlands.2.2021-11-28        0.00%    passed     99.56%
+ 677  H5N1.EPI_ISL_7753407.Anseriformes.germany.2.2021-10-25               0.00%    passed     99.62%
+ 678  H5N1.EPI_ISL_7753367.Anseriformes.germany.2.2021-10-21               0.00%    passed     99.71%
+ 679  H5N1.EPI_ISL_7267245.Anseriformes.netherlands.2.2021-11-13           0.00%    passed     99.24%
+ 680  H5N1.EPI_ISL_6761022.Anseriformes.netherlands.2.2021-11-09           0.00%    passed     99.95%
+ 681  H5N1.EPI_ISL_6675739.Galliformes.netherlands.2.2021-11-19            0.00%    passed     99.56%
+ 682  H5N1.EPI_ISL_18445700.Anseriformes.france.NA.2021-11-29              0.09%    passed     99.66%
+ 683  H5N1.EPI_ISL_7626514.Anseriformes.czech_republic.2.2021-11-29        0.00%    passed     99.24%
+ 684  H5N1.EPI_ISL_7224463.Galliformes.czech_republic.2.2021-11-12         0.00%    passed     99.24%
+ 685  H5N1.EPI_ISL_18071580.Anseriformes.russia.NA.2022-10-09              0.00%    passed     99.15%
+ 686  H5N1.EPI_ISL_17785733.Anseriformes.austria.2.2022-03-11              0.00%    passed     99.57%
+ 687  H5N1.EPI_ISL_17785725.Galliformes.austria.2.2021-11-25               0.00%    passed     99.80%
+ 688  H5N1.EPI_ISL_16831664.Casuariiformes.japan.NA.2022-05-12             0.00%    passed     99.70%
+****  TOTAL                                                                0.02%  0 sequences failed composition chi2 test (p-value<5%; df=3)
+NOTE: H5N8.EPI_ISL_697771.Anseriformes.japan.10.2020-10-24 is identical to H5N8.EPI_ISL_631824.Anseriformes.south_korea.10.2020-10-21 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_710437.Galliformes.japan.16.2020-12-06 is identical to H5N8.EPI_ISL_738052.Galliformes.japan.16.2020-12-15 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17086335.environment.japan.NA.2020-12-19 is identical to H5N8.EPI_ISL_738060.Galliformes.japan.10.2020-12-18 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17086225.environment.japan.NA.2020-11-11 is identical to H5N8.EPI_ISL_681272.Galliformes.japan.10.2020-11-19 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17086230.environment.japan.NA.2020-12-06 is identical to H5N8.EPI_ISL_710453.Galliformes.japan.16.2020-12-05 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_4105028.Galliformes.japan.NA.2020-01-01 is identical to H5N8.EPI_ISL_718109.Galliformes.japan.16.2020-12-07 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17086303.environment.japan.NA.2020-12-10 is identical to H5N8.EPI_ISL_718121.Galliformes.japan.16.2020-12-09 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17086334.Galliformes.japan.NA.2020-12-12 is identical to H5N8.EPI_ISL_732931.Galliformes.japan.16.2020-12-15 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17086333.environment.japan.NA.2020-12-12 is identical to H5N8.EPI_ISL_732945.Galliformes.japan.16.2020-12-12 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17086341.environment.japan.NA.2021-02-09 is identical to H5N8.EPI_ISL_1041135.Galliformes.japan.1.2021-02-08 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17805905.Anseriformes.japan.1.2021-01-16 is identical to H5N8.EPI_ISL_1114725.Anseriformes.japan.1.2021-01-16 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_5260462.Anseriformes.china.1.2020-11-10 is identical to H5N8.EPI_ISL_2713170.Anseriformes.china.1.2020-11-16 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_1760450.Anseriformes.china.1.2020-11-10 is identical to H5N8.EPI_ISL_2815336.Anseriformes.china.1.2020-10-11 but kept for subsequent analysis
+NOTE: H5N1.EPI_ISL_15063429.Galliformes.japan.NA.2021-11-13 is identical to H5N1.EPI_ISL_6829533.Galliformes.japan.22.2021-11-12 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_15063430.Galliformes.japan.NA.2021-11-15 is identical to H5N8.EPI_ISL_6829536.Galliformes.japan.1.2021-11-14 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17086336.Galliformes.japan.NA.2021-01-02 is identical to H5N8.EPI_ISL_854603.Galliformes.japan.10.2021-01-01 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17086337.environment.japan.NA.2021-01-13 is identical to H5N8.EPI_ISL_854606.Galliformes.japan.16.2021-01-12 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_985200.Anseriformes.south_korea.79.2020-12-22 is identical to H5N8.EPI_ISL_985182.Galliformes.south_korea.79.2020-12-06 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_985201.Anseriformes.south_korea.16.2020-12-22 is identical to H5N8.EPI_ISL_985192.Galliformes.south_korea.16.2020-12-14 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_1009694.Anseriformes.south_korea.1.2021-01-09 is identical to H5N8.EPI_ISL_985206.Galliformes.south_korea.1.2020-12-25 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_978910.Anseriformes.japan.1.2021-01-20 is identical to H5N8.EPI_ISL_985226.Galliformes.japan.1.2021-02-07 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_1009691.Anseriformes.south_korea.1.2021-01-04 is identical to H5N8.EPI_ISL_1009680.Galliformes.south_korea.1.2020-12-28 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_1009693.Galliformes.south_korea.1.2021-01-08 is identical to H5N8.EPI_ISL_1009683.Anseriformes.south_korea.1.2020-12-29 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17086227.environment.japan.NA.2020-11-25 is identical to H5N8.EPI_ISL_1273411.Galliformes.japan.16.2020-11-24 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17086228.environment.japan.NA.2020-11-25 is identical to H5N8.EPI_ISL_1273413.Galliformes.japan.10.2020-11-25 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17086340.Galliformes.japan.NA.2021-02-02 is identical to H5N8.EPI_ISL_1273414.Galliformes.japan.10.2021-02-01 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17086353.environment.japan.NA.2021-03-13 is identical to H5N8.EPI_ISL_1273439.Galliformes.japan.16.2021-03-13 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_1829205.Anseriformes.china.1.2020-11-02 is identical to H5N8.EPI_ISL_1760447.Anseriformes.china.1.2020-11-10 but kept for subsequent analysis
+NOTE: H5N3.EPI_ISL_5863749.Anseriformes.united_states.289.2020-10-20 is identical to H5N8.EPI_ISL_5863567.Anseriformes.united_states.1.2020-10-06 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_2932617.Passeriformes.kazakhstan.1.2020-09-15 is identical to H5N8.EPI_ISL_2932612.Anseriformes.kazakhstan.1.2020-09-22 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_2932608.Galliformes.kazakhstan.1.2020-09-01 is identical to H5N8.EPI_ISL_2932600.Anseriformes.kazakhstan.1.2020-09-01 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17086347.Anseriformes.japan.NA.2021-02-04 is identical to H5N8.EPI_ISL_978915.Anseriformes.japan.1.2021-02-01 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17086354.Anseriformes.japan.NA.2021-01-29 is identical to H5N8.EPI_ISL_978906.Galliformes.japan.16.2021-01-22 but kept for subsequent analysis
+NOTE: H5N1.EPI_ISL_15072540.Passeriformes.japan.2.2022-05-18 is identical to H5N1.EPI_ISL_14070455.Carnivora.japan.2.2022-04-01 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_14822357.Anseriformes.china.1.2021-03-11 is identical to H5N8.EPI_ISL_14836098.Anseriformes.china.1.2020-11-16 but kept for subsequent analysis
+NOTE: H5N6.EPI_ISL_8518268.Galliformes.china.73.2021-12-23 is identical to H5N6.EPI_ISL_8517996.environment.china.73.2021-12-23 but kept for subsequent analysis
+NOTE: H5N1.EPI_ISL_14064988.Passeriformes.japan.2.2022-02-09 is identical to H5N1.EPI_ISL_15072539.Casuariiformes.japan.2.2022-04-16 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17805848.environment.japan.10.2020-11-09 is identical to H5N8.EPI_ISL_16405650.environment.japan.10.2020-11-09 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17805910.environment.japan.10.2020-11-09 is identical to H5N8.EPI_ISL_16405651.environment.japan.10.2020-11-09 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17805857.environment.japan.10.2020-11-09 is identical to H5N8.EPI_ISL_16405654.environment.japan.10.2020-11-09 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17805839.environment.japan.10.2020-11-16 is identical to H5N8.EPI_ISL_16405656.environment.japan.10.2020-11-16 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17805866.environment.japan.10.2020-11-16 is identical to H5N8.EPI_ISL_16405657.environment.japan.10.2020-11-16 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17805837.environment.japan.10.2020-11-16 is identical to H5N8.EPI_ISL_16405658.environment.japan.10.2020-11-16 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17805853.environment.japan.10.2020-11-09 is identical to H5N8.EPI_ISL_16405660.environment.japan.10.2020-11-23 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17805861.environment.japan.10.2020-11-23 is identical to H5N8.EPI_ISL_16405661.environment.japan.10.2020-11-23 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17805877.environment.japan.10.2020-11-30 is identical to H5N8.EPI_ISL_16405662.environment.japan.10.2020-11-30 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17805873.environment.japan.10.2020-11-30 is identical to H5N8.EPI_ISL_16405663.environment.japan.10.2020-11-30 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17805868.environment.japan.10.2020-11-30 is identical to H5N8.EPI_ISL_16405664.environment.japan.10.2020-11-30 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17805826.environment.japan.10.2020-11-30 is identical to H5N8.EPI_ISL_16405665.environment.japan.10.2020-11-30 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17805870.environment.japan.10.2020-11-30 is identical to H5N8.EPI_ISL_16405666.environment.japan.10.2020-11-30 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17805841.environment.japan.10.2020-11-30 is identical to H5N8.EPI_ISL_16405667.environment.japan.10.2020-11-30 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17805849.environment.japan.10.2020-11-30 is identical to H5N8.EPI_ISL_16405668.environment.japan.10.2020-11-30 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17805918.environment.japan.10.2020-11-30 is identical to H5N8.EPI_ISL_16405669.environment.japan.10.2020-11-30 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17805828.environment.japan.10.2020-12-07 is identical to H5N8.EPI_ISL_16405670.environment.japan.10.2020-12-07 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17805894.environment.japan.10.2020-12-07 is identical to H5N8.EPI_ISL_16405671.environment.japan.10.2020-12-07 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17805874.environment.japan.10.2020-12-07 is identical to H5N8.EPI_ISL_16405672.environment.japan.10.2020-12-07 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17805824.environment.japan.10.2020-12-07 is identical to H5N8.EPI_ISL_16405673.environment.japan.10.2020-12-07 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17805816.environment.japan.10.2020-12-07 is identical to H5N8.EPI_ISL_16405674.environment.japan.10.2020-12-07 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17805914.environment.japan.10.2020-12-21 is identical to H5N8.EPI_ISL_16405676.environment.japan.10.2020-12-21 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17805845.environment.japan.10.2020-12-21 is identical to H5N8.EPI_ISL_16405677.environment.japan.10.2020-12-21 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_17805814.environment.japan.10.2020-12-21 is identical to H5N8.EPI_ISL_16405678.environment.japan.10.2020-12-21 but kept for subsequent analysis
+NOTE: H5N1.EPI_ISL_18007231.Passeriformes.japan.NA.2023-03-15 is identical to H5N1.EPI_ISL_17638143.Galliformes.japan.80.2023-04-02 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_16718461.Gruiformes.japan.10.2021-02-03 is identical to H5N8.EPI_ISL_17805890.NA.japan.10.2021-02-05 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_16718466.Anseriformes.japan.10.2020-12-18 is identical to H5N8.EPI_ISL_17805901.NA.japan.10.2020-12-18 but kept for subsequent analysis
+NOTE: H5N1.EPI_ISL_18284461.Galliformes.japan.NA.2022-10-28 is identical to H5N1.EPI_ISL_16698060.Galliformes.japan.15.2022-11-07 but kept for subsequent analysis
+NOTE: H5N1.EPI_ISL_17766057.Carnivora.japan.15.2023-04-12 is identical to H5N1.EPI_ISL_17267427.Passeriformes.japan.15.2022-12-12 but kept for subsequent analysis
+NOTE: H5N1.EPI_ISL_17606835.Galliformes.south_korea.22.2021-12-23 is identical to H5N1.EPI_ISL_17606816.Anseriformes.south_korea.22.2021-11-15 but kept for subsequent analysis
+NOTE: H5N1.EPI_ISL_17606853.Galliformes.south_korea.22.2022-02-07 is identical to H5N1.EPI_ISL_17606818.Anseriformes.south_korea.22.2022-02-08 but kept for subsequent analysis
+NOTE: H5N1.EPI_ISL_18373236.Anseriformes.south_korea.NA.2022-01-25 is identical to H5N1.EPI_ISL_17606841.Galliformes.south_korea.22.2022-01-21 but kept for subsequent analysis
+NOTE: H5N1.EPI_ISL_17606850.Galliformes.south_korea.22.2022-02-04 is identical to H5N1.EPI_ISL_17606844.Anseriformes.south_korea.22.2022-01-25 but kept for subsequent analysis
+NOTE: H5N1.EPI_ISL_18373225.Anseriformes.south_korea.NA.2022-01-17 is identical to H5N1.EPI_ISL_17606862.Anseriformes.south_korea.22.2022-02-21 but kept for subsequent analysis
+NOTE: H5N1.EPI_ISL_china_43.Charadriiformes.china.19.2022-07-21 is identical to H5N1.EPI_ISL_china_29.Podicipediformes.china.19.2022-07-15 but kept for subsequent analysis
+NOTE: H5N1.EPI_ISL_11633708.Anseriformes.china.NA.2021-12-20 is identical to H5N1.EPI_ISL_china_20230826.Anseriformes.china.19.2021-11-23 but kept for subsequent analysis
+NOTE: H5N1.EPI_ISL_11633707.Anseriformes.china.NA.2021-12-20 is identical to H5N1.EPI_ISL_china_20230830.Anseriformes.china.19.2021-11-22 but kept for subsequent analysis
+NOTE: H5N1.EPI_ISL_13352728.Anseriformes.china.NA.2021-12-17 is identical to H5N1.EPI_ISL_china_20230850.Anseriformes.china.19.2021-12-03 but kept for subsequent analysis
+NOTE: H5N1.EPI_ISL_5463804.Galliformes.russia.2.2021-10-07 is identical to H5N1.EPI_ISL_5463806.Anseriformes.russia.2.2021-10-07 but kept for subsequent analysis
+NOTE: H5N1.EPI_ISL_7952128.Anseriformes.netherlands.2.2021-11-09 is identical to H5N1.EPI_ISL_13369775.Galliformes.united_kingdom.2.2021-11-23 but kept for subsequent analysis
+NOTE: H6N1.EPI_ISL_16886942.Anseriformes.south_korea.NA.2019-12-03 is identical to H6N1.EPI_ISL_16886957.NA.south_korea.NA.2019-02-01 but kept for subsequent analysis
+NOTE: H3N8.EPI_ISL_6784880.Anseriformes.south_korea.NA.2020-10-05 is identical to H3N8.EPI_ISL_6784911.NA.south_korea.NA.2020-10-05 but kept for subsequent analysis
+NOTE: H5N1.EPI_ISL_18132762.Galliformes.united_states.NA.2022-03-21 is identical to H5N1.EPI_ISL_18132924.Accipitriformes.united_states.NA.2022-03-20 but kept for subsequent analysis
+NOTE: H5N1.EPI_ISL_13432604.Galliformes.united_states.4.2022-04-04 is identical to H5N1.EPI_ISL_18132793.Galliformes.united_states.NA.2022-04-04 but kept for subsequent analysis
+NOTE: H5N1.EPI_ISL_18133499.Anseriformes.united_states.NA.2022-03-07 is identical to H5N1.EPI_ISL_18133522.Anseriformes.united_states.NA.2022-03-14 but kept for subsequent analysis
+NOTE: H3N6.EPI_ISL_16390402.environment.japan.NA.2020-11-23 is identical to H3N6.EPI_ISL_17805829.environment.japan.NA.2020-11-23 but kept for subsequent analysis
+NOTE: H3N2.EPI_ISL_16390400.environment.japan.NA.2020-12-07 is identical to H3N2.EPI_ISL_17805831.environment.japan.NA.2020-12-07 but kept for subsequent analysis
+NOTE: H6N6.EPI_ISL_16405679.environment.japan.NA.2020-11-16 is identical to H6N6.EPI_ISL_17805917.environment.japan.NA.2020-11-16 but kept for subsequent analysis
+NOTE: H3N8.EPI_ISL_16405643.environment.japan.NA.2020-11-30 is identical to H3N8.EPI_ISL_17805864.environment.japan.NA.2020-11-30 but kept for subsequent analysis
+NOTE: H3N8.EPI_ISL_16405645.environment.japan.NA.2020-12-07 is identical to H3N8.EPI_ISL_17805889.environment.japan.NA.2020-12-07 but kept for subsequent analysis
+NOTE: H3N6.EPI_ISL_16390403.environment.japan.NA.2020-11-30 is identical to H3N6.EPI_ISL_17805930.environment.japan.NA.2020-11-30 but kept for subsequent analysis
+NOTE: H3N8.EPI_ISL_16405646.environment.japan.NA.2020-12-07 is identical to H3N8.EPI_ISL_17805925.environment.japan.NA.2020-12-07 but kept for subsequent analysis
+NOTE: H5N6.EPI_ISL_18231288.environment.laos.NA.2022-07-26 is identical to H5N6.EPI_ISL_18231307.Galliformes.laos.NA.2022-07-13 but kept for subsequent analysis
+NOTE: H7N9.EPI_ISL_379672.Galliformes.china.NA.2017-06-06 is identical to H7N9.EPI_ISL_379677.Anseriformes.china.NA.2017-04-18 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_1399245.Anseriformes.czech_republic.1.2021-03-06 is identical to H5N8.EPI_ISL_2234811.Anseriformes.spain.1.2021-01-07 but kept for subsequent analysis
+NOTE: H5N1.EPI_ISL_18241796.Galliformes.viet_nam.NA.2023-09-05 is identical to H5N1.EPI_ISL_18241798.Anseriformes.viet_nam.NA.2023-06-04 but kept for subsequent analysis
+NOTE: H5N1.EPI_ISL_13352715.Anseriformes.china.NA.2021-12-17 is identical to H5N1.EPI_ISL_13352727.Anseriformes.china.NA.2021-12-17 but kept for subsequent analysis
+NOTE: H5N1.EPI_ISL_14760565.Galliformes.italy.2.2021-11-10 is identical to H5N1.EPI_ISL_14760632.Galliformes.italy.2.2021-11-24 but kept for subsequent analysis
+NOTE: H4N6.EPI_ISL_337148.Anseriformes.russia.NA.2018-08-25 is identical to H4N6.EPI_ISL_337396.Anseriformes.russia.NA.2018-10-01 but kept for subsequent analysis
+NOTE: H5N1.EPI_ISL_6328409.Anseriformes.czech_republic.2.2021-11-01 is identical to H5N1.EPI_ISL_6761021.Anseriformes.netherlands.2.2021-11-07 but kept for subsequent analysis
+NOTE: H5N8.EPI_ISL_1139014.Anseriformes.netherlands.1.2020-10-27 is identical to H5N8.EPI_ISL_1139015.NA.netherlands.1.2020-10-26 but kept for subsequent analysis
+NOTE: H5N1.EPI_ISL_7753443.Accipitriformes.germany.2.2021-10-26 is identical to H5N1.EPI_ISL_7996369.Anseriformes.netherlands.2.2021-11-19 but kept for subsequent analysis
+NOTE: H5N1.EPI_ISL_7224463.Galliformes.czech_republic.2.2021-11-12 is identical to H5N1.EPI_ISL_7626514.Anseriformes.czech_republic.2.2021-11-29 but kept for subsequent analysis
+NOTE: 47 identical sequences (see below) will be ignored for subsequent analysis
+NOTE: H5N8.EPI_ISL_732935.Galliformes.japan.16.2020-12-13 (identical to H5N8.EPI_ISL_738052.Galliformes.japan.16.2020-12-15) is ignored but added at the end
+NOTE: H5N8.EPI_ISL_854605.Galliformes.japan.16.2021-01-12 (identical to H5N8.EPI_ISL_738052.Galliformes.japan.16.2020-12-15) is ignored but added at the end
+NOTE: H5N8.EPI_ISL_1009699.Anseriformes.south_korea.16.2020-11-25 (identical to H5N8.EPI_ISL_738052.Galliformes.japan.16.2020-12-15) is ignored but added at the end
+NOTE: H5N8.EPI_ISL_17805822.NA.japan.16.2021-02-01 (identical to H5N8.EPI_ISL_738052.Galliformes.japan.16.2020-12-15) is ignored but added at the end
+NOTE: H5N8.EPI_ISL_16718460.Accipitriformes.japan.16.2021-02-01 (identical to H5N8.EPI_ISL_738052.Galliformes.japan.16.2020-12-15) is ignored but added at the end
+NOTE: H5N8.EPI_ISL_17086231.environment.japan.NA.2020-12-07 (identical to H5N8.EPI_ISL_738052.Galliformes.japan.16.2020-12-15) is ignored but added at the end
+NOTE: H5N8.EPI_ISL_17086229.environment.japan.NA.2020-12-02 (identical to H5N8.EPI_ISL_738052.Galliformes.japan.16.2020-12-15) is ignored but added at the end
+NOTE: H5N8.EPI_ISL_16718465.Gruiformes.japan.1.2021-01-16 (identical to H5N8.EPI_ISL_1114725.Anseriformes.japan.1.2021-01-16) is ignored but added at the end
+NOTE: H5N8.EPI_ISL_2932682.Columbiformes.kazakhstan.1.2020-09-15 (identical to H5N8.EPI_ISL_2713170.Anseriformes.china.1.2020-11-16) is ignored but added at the end
+NOTE: H5N8.EPI_ISL_2932616.Galliformes.kazakhstan.1.2020-09-19 (identical to H5N8.EPI_ISL_2713170.Anseriformes.china.1.2020-11-16) is ignored but added at the end
+NOTE: H5N8.EPI_ISL_14836082.Anseriformes.china.1.2020-11-16 (identical to H5N8.EPI_ISL_2713170.Anseriformes.china.1.2020-11-16) is ignored but added at the end
+NOTE: H5N8.EPI_ISL_14822356.Anseriformes.china.1.2021-03-11 (identical to H5N8.EPI_ISL_2713170.Anseriformes.china.1.2020-11-16) is ignored but added at the end
+NOTE: H5N8.EPI_ISL_14823405.Anseriformes.china.NA.2021-01-27 (identical to H5N8.EPI_ISL_2713170.Anseriformes.china.1.2020-11-16) is ignored but added at the end
+NOTE: H5N8.EPI_ISL_14819899.Anseriformes.china.NA.2021-03-09 (identical to H5N8.EPI_ISL_2713170.Anseriformes.china.1.2020-11-16) is ignored but added at the end
+NOTE: H5N8.EPI_ISL_644135.Galliformes.russia.1.2020-08-17 (identical to H5N8.EPI_ISL_2713170.Anseriformes.china.1.2020-11-16) is ignored but added at the end
+NOTE: H5N8.EPI_ISL_644132.Anseriformes.russia.1.2020-08-17 (identical to H5N8.EPI_ISL_2713170.Anseriformes.china.1.2020-11-16) is ignored but added at the end
+NOTE: H5N8.EPI_ISL_1939617.Strigiformes.china.1.2020-11-11 (identical to H5N8.EPI_ISL_2815336.Anseriformes.china.1.2020-10-11) is ignored but added at the end
+NOTE: H5N8.EPI_ISL_14824122.Anseriformes.china.1.2020-11-10 (identical to H5N8.EPI_ISL_2815336.Anseriformes.china.1.2020-10-11) is ignored but added at the end
+NOTE: H5N8.EPI_ISL_17086349.Galliformes.japan.NA.2021-02-08 (identical to H5N8.EPI_ISL_985226.Galliformes.japan.1.2021-02-07) is ignored but added at the end
+NOTE: H5N8.EPI_ISL_17086338.Anseriformes.japan.NA.2021-01-21 (identical to H5N8.EPI_ISL_985226.Galliformes.japan.1.2021-02-07) is ignored but added at the end
+NOTE: H5N8.EPI_ISL_17086339.Galliformes.japan.NA.2021-01-23 (identical to H5N8.EPI_ISL_978906.Galliformes.japan.16.2021-01-22) is ignored but added at the end
+NOTE: H5N1.EPI_ISL_16831140.Passeriformes.japan.NA.2022-04-09 (identical to H5N1.EPI_ISL_14070455.Carnivora.japan.2.2022-04-01) is ignored but added at the end
+NOTE: H5N1.EPI_ISL_16831328.Casuariiformes.japan.NA.2022-04-16 (identical to H5N1.EPI_ISL_15072539.Casuariiformes.japan.2.2022-04-16) is ignored but added at the end
+NOTE: H5N1.EPI_ISL_16831310.Galliformes.japan.NA.2022-02-12 (identical to H5N1.EPI_ISL_15072539.Casuariiformes.japan.2.2022-04-16) is ignored but added at the end
+NOTE: H5N1.EPI_ISL_16831319.Galliformes.japan.NA.2022-03-25 (identical to H5N1.EPI_ISL_15072539.Casuariiformes.japan.2.2022-04-16) is ignored but added at the end
+NOTE: H5N1.EPI_ISL_18066453.Passeriformes.japan.NA.2023-02-17 (identical to H5N1.EPI_ISL_17267427.Passeriformes.japan.15.2022-12-12) is ignored but added at the end
+NOTE: H5N1.EPI_ISL_18066451.Anseriformes.japan.NA.2023-02-09 (identical to H5N1.EPI_ISL_17267427.Passeriformes.japan.15.2022-12-12) is ignored but added at the end
+NOTE: H5N1.EPI_ISL_17857959.Carnivora.japan.NA.2023-02-20 (identical to H5N1.EPI_ISL_17267427.Passeriformes.japan.15.2022-12-12) is ignored but added at the end
+NOTE: H5N1.EPI_ISL_18007230.Passeriformes.japan.NA.2023-04-18 (identical to H5N1.EPI_ISL_17267427.Passeriformes.japan.15.2022-12-12) is ignored but added at the end
+NOTE: H5N1.EPI_ISL_9029957.Galliformes.united_kingdom.2.2021-11-16 (identical to H5N1.EPI_ISL_5463806.Anseriformes.russia.2.2021-10-07) is ignored but added at the end
+NOTE: H5N1.EPI_ISL_7952119.Charadriiformes.netherlands.2.2021-11-28 (identical to H5N1.EPI_ISL_13369775.Galliformes.united_kingdom.2.2021-11-23) is ignored but added at the end
+NOTE: H5N1.EPI_ISL_6675739.Galliformes.netherlands.2.2021-11-19 (identical to H5N1.EPI_ISL_13369775.Galliformes.united_kingdom.2.2021-11-23) is ignored but added at the end
+NOTE: H5N1.EPI_ISL_18132320.Anseriformes.united_states.NA.2022-04-11 (identical to H5N1.EPI_ISL_18132924.Accipitriformes.united_states.NA.2022-03-20) is ignored but added at the end
+NOTE: H5N1.EPI_ISL_16183595.Galliformes.canada.9.2022-05-16 (identical to H5N1.EPI_ISL_18132924.Accipitriformes.united_states.NA.2022-03-20) is ignored but added at the end
+NOTE: H5N1.EPI_ISL_16003253.Carnivora.canada.9.2022-04-07 (identical to H5N1.EPI_ISL_18132924.Accipitriformes.united_states.NA.2022-03-20) is ignored but added at the end
+NOTE: H5N1.EPI_ISL_13052720.Carnivora.united_states.9.2022-04-22 (identical to H5N1.EPI_ISL_18132924.Accipitriformes.united_states.NA.2022-03-20) is ignored but added at the end
+NOTE: H5N1.EPI_ISL_11971481.Galliformes.united_states.9.2022-03-21 (identical to H5N1.EPI_ISL_18132924.Accipitriformes.united_states.NA.2022-03-20) is ignored but added at the end
+NOTE: H5N1.EPI_ISL_18133495.Strigiformes.united_states.NA.2022-04-04 (identical to H5N1.EPI_ISL_18133522.Anseriformes.united_states.NA.2022-03-14) is ignored but added at the end
+NOTE: H7N9.EPI_ISL_379670.Galliformes.china.NA.2017-05-27 (identical to H7N9.EPI_ISL_379677.Anseriformes.china.NA.2017-04-18) is ignored but added at the end
+NOTE: H7N9.EPI_ISL_379668.Galliformes.china.NA.2017-05-07 (identical to H7N9.EPI_ISL_379677.Anseriformes.china.NA.2017-04-18) is ignored but added at the end
+NOTE: H7N9.EPI_ISL_379667.Galliformes.china.NA.2017-05-01 (identical to H7N9.EPI_ISL_379677.Anseriformes.china.NA.2017-04-18) is ignored but added at the end
+NOTE: H7N9.EPI_ISL_274206.Galliformes.china.NA.2017-04-24 (identical to H7N9.EPI_ISL_379677.Anseriformes.china.NA.2017-04-18) is ignored but added at the end
+NOTE: H7N9.EPI_ISL_269520.environment.china.NA.2017-05-05 (identical to H7N9.EPI_ISL_379677.Anseriformes.china.NA.2017-04-18) is ignored but added at the end
+NOTE: H7N9.EPI_ISL_269516.NA.china.NA.2017-05-13 (identical to H7N9.EPI_ISL_379677.Anseriformes.china.NA.2017-04-18) is ignored but added at the end
+NOTE: H5N8.EPI_ISL_846604.Galliformes.poland.1.2020-12-07 (identical to H5N8.EPI_ISL_2234811.Anseriformes.spain.1.2021-01-07) is ignored but added at the end
+NOTE: H5N8.EPI_ISL_647969.Galliformes.sweden.1.2020-11-13 (identical to H5N8.EPI_ISL_2234811.Anseriformes.spain.1.2021-01-07) is ignored but added at the end
+NOTE: H5N1.EPI_ISL_14760559.NA.italy.2.2021-11-08 (identical to H5N1.EPI_ISL_14760632.Galliformes.italy.2.2021-11-24) is ignored but added at the end
+
+For your convenience alignment with unique sequences printed to clade2344b_asia_PA_subsampled.fasta.uniqueseq.phy
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.117 seconds
+Generating 1000 samples for ultrafast bootstrap (seed: 967353)...
+
+NOTE: 85 MB RAM (0 GB) is required!
+Measuring multi-threading efficiency up to 6 CPU cores
+Increase to 10 rounds for branch lengths
+7 trees examined
+Threads: 1 / Time: 6.378 sec / Speedup: 1.000 / Efficiency: 100% / LogL: -178243
+Threads: 2 / Time: 3.899 sec / Speedup: 1.636 / Efficiency: 82% / LogL: -178243
+Threads: 3 / Time: 3.164 sec / Speedup: 2.016 / Efficiency: 67% / LogL: -178243
+Threads: 4 / Time: 2.866 sec / Speedup: 2.226 / Efficiency: 56% / LogL: -178243
+Threads: 5 / Time: 2.752 sec / Speedup: 2.317 / Efficiency: 46% / LogL: -178243
+BEST NUMBER OF THREADS: 4
+
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -25801.014
+2. Current log-likelihood: -23399.149
+3. Current log-likelihood: -23388.978
+Optimal log-likelihood: -23388.861
+Rate parameters:  A-C: 1.00000  A-G: 10.87834  A-T: 1.00000  C-G: 1.00000  C-T: 10.87834  G-T: 1.00000
+Base frequencies:  A: 0.331  C: 0.201  G: 0.243  T: 0.225
+Gamma shape alpha: 0.350
+Parameters optimization took 3 rounds (1.014 sec)
+Computing ML distances based on estimated model parameters... 5.380 sec
+Computing BIONJ tree...
+0.523 seconds
+Log-likelihood of BIONJ tree: -23479.990
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 12.554 second
+Computing log-likelihood of 98 initial trees ... 10.600 seconds
+Current best score: -23301.561
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 1: -23295.118
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 4: -23291.002
+Iteration 10 / LogL: -23309.720 / Time: 0h:1m:25s
+Iteration 20 / LogL: -23317.436 / Time: 0h:2m:3s
+Finish initializing candidate tree set (20)
+Current best tree score: -23291.002 / CPU time: 101.561
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 26: -23290.962
+Iteration 30 / LogL: -23296.924 / Time: 0h:2m:26s (0h:8m:5s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 31: -23290.345
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 35: -23282.638
+Iteration 40 / LogL: -23374.802 / Time: 0h:2m:51s (0h:6m:56s left)
+Iteration 50 / LogL: -23370.727 / Time: 0h:3m:14s (0h:5m:36s left)
+Log-likelihood cutoff on original alignment: -23345.430
+Iteration 60 / LogL: -23294.075 / Time: 0h:3m:41s (0h:4m:41s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 63: -23282.456
+Iteration 70 / LogL: -23292.847 / Time: 0h:4m:7s (0h:5m:33s left)
+Iteration 80 / LogL: -23282.780 / Time: 0h:4m:28s (0h:4m:41s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 87: -23281.584
+Iteration 90 / LogL: -23363.431 / Time: 0h:4m:52s (0h:5m:18s left)
+Iteration 100 / LogL: -23286.320 / Time: 0h:5m:18s (0h:4m:39s left)
+Log-likelihood cutoff on original alignment: -23344.572
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.993
+Iteration 110 / LogL: -23283.540 / Time: 0h:5m:44s (0h:4m:44s left)
+Iteration 120 / LogL: -23322.160 / Time: 0h:6m:7s (0h:4m:7s left)
+Iteration 130 / LogL: -23286.404 / Time: 0h:6m:34s (0h:3m:33s left)
+Iteration 140 / LogL: -23304.719 / Time: 0h:6m:57s (0h:2m:59s left)
+Iteration 150 / LogL: -23282.759 / Time: 0h:7m:21s (0h:2m:28s left)
+Log-likelihood cutoff on original alignment: -23344.572
+Iteration 160 / LogL: -23348.004 / Time: 0h:7m:45s (0h:1m:56s left)
+Iteration 170 / LogL: -23286.146 / Time: 0h:8m:9s (0h:1m:26s left)
+Iteration 180 / LogL: -23287.407 / Time: 0h:8m:35s (0h:0m:57s left)
+TREE SEARCH COMPLETED AFTER 188 ITERATIONS / Time: 0h:8m:54s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -23281.584
+Optimal log-likelihood: -23281.584
+Rate parameters:  A-C: 1.00000  A-G: 10.93662  A-T: 1.00000  C-G: 1.00000  C-T: 10.93662  G-T: 1.00000
+Base frequencies:  A: 0.331  C: 0.201  G: 0.243  T: 0.225
+Gamma shape alpha: 0.351
+Parameters optimization took 1 rounds (0.185 sec)
+BEST SCORE FOUND : -23281.584
+Creating bootstrap support values...
+Split supports printed to NEXUS file clade2344b_asia_PA_subsampled.fasta.splits.nex
+Total tree length: 1.566
+
+Total number of iterations: 188
+CPU time used for tree search: 1968.165 sec (0h:32m:48s)
+Wall-clock time used for tree search: 512.109 sec (0h:8m:32s)
+Total CPU time used: 2033.049 sec (0h:33m:53s)
+Total wall-clock time used: 536.713 sec (0h:8m:56s)
+
+Computing bootstrap consensus tree...
+Reading input file clade2344b_asia_PA_subsampled.fasta.splits.nex...
+641 taxa and 10445 splits.
+Consensus tree written to clade2344b_asia_PA_subsampled.fasta.contree
+Reading input trees file clade2344b_asia_PA_subsampled.fasta.contree
+Log-likelihood of consensus tree: -23281.505
+
+Analysis results written to: 
+  IQ-TREE report:                clade2344b_asia_PA_subsampled.fasta.iqtree
+  Maximum-likelihood tree:       clade2344b_asia_PA_subsampled.fasta.treefile
+  Likelihood distances:          clade2344b_asia_PA_subsampled.fasta.mldist
+
+Ultrafast bootstrap approximation results written to:
+  Split support values:          clade2344b_asia_PA_subsampled.fasta.splits.nex
+  Consensus tree:                clade2344b_asia_PA_subsampled.fasta.contree
+  Screen log file:               clade2344b_asia_PA_subsampled.fasta.log
+
+Date and Time: Thu Jan 11 02:29:25 2024

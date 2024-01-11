@@ -1,0 +1,150 @@
+IQ-TREE multicore version 1.6.12 for Mac OS X 64-bit built Aug 15 2019
+Developed by Bui Quang Minh, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
+
+Host:    sce-bio-c05393 (AVX2, FMA3, 16 GB RAM)
+Command: iqtree -s clade2344b_asia_N2_subsampled.fasta -nt AUTO -m HKY+G4 -bb 1000
+Seed:    672004 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Thu Jan 11 01:34:29 2024
+Kernel:  AVX+FMA - auto-detect threads (6 CPU cores detected)
+
+Reading alignment file clade2344b_asia_N2_subsampled.fasta ... Fasta format detected
+Alignment most likely contains DNA/RNA sequences
+Alignment has 29 sequences with 1389 columns, 174 distinct patterns
+116 parsimony-informative, 98 singleton sites, 1175 constant sites
+                                                              Gap/Ambiguity  Composition  p-value
+   1  H5N2.EPI_ISL_1760455.Anseriformes.china.286.2020-11-10          0.00%    passed     99.93%
+   2  H5N2.EPI_ISL_15732741.Passeriformes.japan.297.2022-10-28        0.00%    passed     93.86%
+   3  H5N2.EPI_ISL_china_13.Anseriformes.china.101.2022-01-26         0.00%    passed     97.49%
+   4  H5N2.EPI_ISL_18284476.Galliformes.japan.NA.2023-01-17           0.00%    passed     95.61%
+   5  H3N2.EPI_ISL_9572777.Anseriformes.viet_nam.NA.2020-07-29        0.00%    passed     92.85%
+   6  H9N2.EPI_ISL_14867047.Anseriformes.japan.NA.2021-09-01          0.00%    passed     97.24%
+   7  H3N2.EPI_ISL_9572817.Anseriformes.viet_nam.NA.2020-09-25        0.00%    passed     93.84%
+   8  H11N2.EPI_ISL_13439051.environment.japan.NA.2019-12-16          0.00%    passed     97.76%
+   9  H5N2.EPI_ISL_3229260.Anseriformes.china.NA.2018-12-25           0.07%    passed     98.45%
+  10  H9N2.EPI_ISL_1760456.Anseriformes.china.NA.2020-11-10           0.00%    passed     99.95%
+  11  H6N2.EPI_ISL_462607.Anseriformes.china.NA.2019-11-19            0.00%    passed     99.89%
+  12  H6N2.EPI_ISL_4071038.Anseriformes.south_korea.NA.2019-11-06     0.00%    passed     99.08%
+  13  H4N2.EPI_ISL_700932.NA.china.NA.2019-10-31                      0.00%    passed     97.65%
+  14  H6N2.EPI_ISL_462611.Anseriformes.china.NA.2019-11-19            0.07%    passed     96.42%
+  15  H9N2.EPI_ISL_13156588.Charadriiformes.china.NA.2020-09-10       3.53%    passed     98.19%
+  16  H4N2.EPI_ISL_17811772.Anseriformes.china.NA.2019-11-09          0.22%    passed     99.65%
+  17  H3N2.EPI_ISL_14776042.Anseriformes.bangladesh.NA.2020-10-22     0.00%    passed     99.44%
+  18  H6N2.EPI_ISL_16886900.Anseriformes.south_korea.NA.2022-03-02    0.00%    passed     94.39%
+  19  H5N2.EPI_ISL_16839585.NA.south_korea.NA.2018-01-05              0.00%    passed     99.18%
+  20  H5N2.EPI_ISL_369324.Anseriformes.south_korea.NA.2017-10-26      0.00%    passed     98.81%
+  21  H5N2.EPI_ISL_14867043.Anseriformes.japan.NA.2020-09-01          0.22%    passed     89.10%
+  22  H3N2.EPI_ISL_337398.Anseriformes.russia.NA.2018-09-15           0.00%    passed     97.58%
+  23  H5N2.EPI_ISL_369335.environment.south_korea.NA.2017-12-06       0.00%    passed     96.42%
+  24  H6N2.EPI_ISL_243406.Anseriformes.netherlands.NA.2011-11-04      0.00%    passed     99.83%
+  25  H9N2.EPI_ISL_9593364.Anseriformes.iran.NA.2019-10-01            0.00%    passed     99.74%
+  26  NA.EPI_ISL_209116.Anseriformes.mongolia.NA.2015-08-30           0.00%    passed     99.27%
+  27  H10N2.EPI_ISL_18414927.Anseriformes.mongolia.NA.2022-05-01      0.00%    passed     98.59%
+  28  H4N2.EPI_ISL_18287397.Anseriformes.thailand.NA.2018-11-01       0.00%    passed     97.18%
+  29  H6N2.EPI_ISL_244552.Anseriformes.china.NA.2014-12-22            0.00%    passed     99.70%
+****  TOTAL                                                           0.14%  0 sequences failed composition chi2 test (p-value<5%; df=3)
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.001 seconds
+Generating 1000 samples for ultrafast bootstrap (seed: 672004)...
+
+NOTE: 1 MB RAM (0 GB) is required!
+Measuring multi-threading efficiency up to 6 CPU cores
+Increase to 10 rounds for branch lengths
+1546 trees examined
+Threads: 1 / Time: 6.001 sec / Speedup: 1.000 / Efficiency: 100% / LogL: -6035
+Threads: 2 / Time: 4.516 sec / Speedup: 1.329 / Efficiency: 66% / LogL: -6035
+Threads: 3 / Time: 4.178 sec / Speedup: 1.437 / Efficiency: 48% / LogL: -6035
+BEST NUMBER OF THREADS: 2
+
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -3876.394
+2. Current log-likelihood: -3683.234
+3. Current log-likelihood: -3682.949
+Optimal log-likelihood: -3682.948
+Rate parameters:  A-C: 1.00000  A-G: 15.69551  A-T: 1.00000  C-G: 1.00000  C-T: 15.69551  G-T: 1.00000
+Base frequencies:  A: 0.312  C: 0.186  G: 0.238  T: 0.263
+Gamma shape alpha: 0.293
+Parameters optimization took 3 rounds (0.008 sec)
+Computing ML distances based on estimated model parameters... 0.005 sec
+Computing BIONJ tree...
+0.008 seconds
+Log-likelihood of BIONJ tree: -3684.002
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 0.074 second
+Computing log-likelihood of 98 initial trees ... 0.117 seconds
+Current best score: -3682.630
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 1: -3682.629
+BETTER TREE FOUND at iteration 2: -3682.629
+Iteration 10 / LogL: -3682.629 / Time: 0h:0m:14s
+Iteration 20 / LogL: -3683.716 / Time: 0h:0m:15s
+Finish initializing candidate tree set (4)
+Current best tree score: -3682.629 / CPU time: 0.340
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+UPDATE BEST LOG-LIKELIHOOD: -3682.629
+UPDATE BEST LOG-LIKELIHOOD: -3682.629
+Iteration 30 / LogL: -3682.629 / Time: 0h:0m:15s (0h:0m:37s left)
+UPDATE BEST LOG-LIKELIHOOD: -3682.629
+Iteration 40 / LogL: -3684.335 / Time: 0h:0m:15s (0h:0m:24s left)
+UPDATE BEST LOG-LIKELIHOOD: -3682.628
+Iteration 50 / LogL: -3682.630 / Time: 0h:0m:15s (0h:0m:16s left)
+Log-likelihood cutoff on original alignment: -3718.579
+Iteration 60 / LogL: -3682.629 / Time: 0h:0m:15s (0h:0m:11s left)
+UPDATE BEST LOG-LIKELIHOOD: -3682.628
+Iteration 70 / LogL: -3683.723 / Time: 0h:0m:16s (0h:0m:7s left)
+UPDATE BEST LOG-LIKELIHOOD: -3682.628
+Iteration 80 / LogL: -3713.180 / Time: 0h:0m:16s (0h:0m:4s left)
+Iteration 90 / LogL: -3682.628 / Time: 0h:0m:16s (0h:0m:2s left)
+UPDATE BEST LOG-LIKELIHOOD: -3682.628
+Iteration 100 / LogL: -3683.716 / Time: 0h:0m:16s (0h:0m:0s left)
+Log-likelihood cutoff on original alignment: -3718.579
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.998
+TREE SEARCH COMPLETED AFTER 103 ITERATIONS / Time: 0h:0m:16s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -3682.628
+Optimal log-likelihood: -3682.628
+Rate parameters:  A-C: 1.00000  A-G: 15.69157  A-T: 1.00000  C-G: 1.00000  C-T: 15.69157  G-T: 1.00000
+Base frequencies:  A: 0.312  C: 0.186  G: 0.238  T: 0.263
+Gamma shape alpha: 0.295
+Parameters optimization took 1 rounds (0.001 sec)
+BEST SCORE FOUND : -3682.628
+Creating bootstrap support values...
+Split supports printed to NEXUS file clade2344b_asia_N2_subsampled.fasta.splits.nex
+Total tree length: 0.204
+
+Total number of iterations: 103
+CPU time used for tree search: 4.009 sec (0h:0m:4s)
+Wall-clock time used for tree search: 1.934 sec (0h:0m:1s)
+Total CPU time used: 32.691 sec (0h:0m:32s)
+Total wall-clock time used: 16.733 sec (0h:0m:16s)
+
+Computing bootstrap consensus tree...
+Reading input file clade2344b_asia_N2_subsampled.fasta.splits.nex...
+29 taxa and 184 splits.
+Consensus tree written to clade2344b_asia_N2_subsampled.fasta.contree
+Reading input trees file clade2344b_asia_N2_subsampled.fasta.contree
+Log-likelihood of consensus tree: -3682.629
+
+Analysis results written to: 
+  IQ-TREE report:                clade2344b_asia_N2_subsampled.fasta.iqtree
+  Maximum-likelihood tree:       clade2344b_asia_N2_subsampled.fasta.treefile
+  Likelihood distances:          clade2344b_asia_N2_subsampled.fasta.mldist
+
+Ultrafast bootstrap approximation results written to:
+  Split support values:          clade2344b_asia_N2_subsampled.fasta.splits.nex
+  Consensus tree:                clade2344b_asia_N2_subsampled.fasta.contree
+  Screen log file:               clade2344b_asia_N2_subsampled.fasta.log
+
+Date and Time: Thu Jan 11 01:34:46 2024
