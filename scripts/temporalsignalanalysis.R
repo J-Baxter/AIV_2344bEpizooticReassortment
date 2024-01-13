@@ -1,3 +1,20 @@
+####################################################################################################
+# Basic temporal signal analysis
+# NB: inferior analysis to TEMPEST as doesn't account for variable precision in dates and only uses
+#     RSM (not heuristic RSM) to infer best-fitting root
+
+# Requires a phylogeny (branch lengths inferred from genetic distance only) with tipdates
+
+
+####################################################################################################
+# Package dependencies
+library(ape)
+library(tidyverse)
+library(treeio)
+library(TreeTools)
+
+# Functions
+
 # Filter out sequences with no date
 CleanPhylo <- function(phylo){
   out <- drop.tip(phylo,
@@ -6,17 +23,7 @@ CleanPhylo <- function(phylo){
   return(out)
 }
 
-#rooted_phylos <- lapply(renamed_phylos, 
-# CleanPhylo) %>%
-# mapply(rtt, .,
-#  tipdates,
-#  SIMPLIFY = F) %>%
-# mapply(function(x,y) ggtree(x) + geom_tiplab(is.na(y$cluster.genome)),
-# ., 
-# formatted_metadata, 
-# SIMPLIFY = F)
 
-###################
 CleanandRoot <- function(phylo, metadata){
   require(ape)
   require(TreeTools)
@@ -26,9 +33,9 @@ CleanandRoot <- function(phylo, metadata){
   
   phylo_dropped <- CleanPhylo(phylo = phylo)
   
-  r2t <- rtt(phylo_dropped,
-             objective = 'rms', 
-             tip.dates = metadata$collection.datedecimal[!is.na(metadata$collection.datedecimal)])
+  r2t <- ape::rtt(phylo_dropped,
+                  objective = 'rms', 
+                  tip.dates = metadata$collection.datedecimal[!is.na(metadata$collection.datedecimal)])
   
   rttdist <- adephylo::distRoot(r2t)
   
@@ -40,30 +47,41 @@ CleanandRoot <- function(phylo, metadata){
 }
 
 
+RTTReg <- function(x){
+  my_model <- lm(dist ~ collection.datedecimal, data = x)
+  rate <-  coef(my_model)[2]
+  x_intercept <- -coef(my_model)[1] / coef(my_model)[2] 
+  
+  out <- cbind.data.frame(rate, x_intercept) %>%
+    as_tibble()
+  return(out)
+}
+
+test_treedata <- tidytree::as_tibble(trees[[1]]) %>%
+  left_join(., HA_strict, by = join_by(label == tipnames)) %>%
+  as.treedata()
+####################################################################################################
+# Import Phylogenies
+# Import tree data
+treefiles <- list.files(path = './data/alignments/subsampled_alignments/2024Jan10_strict/iqtrees',
+                        recursive = FALSE,
+                        include.dirs = FALSE, 
+                        full.names = TRUE) %>%
+  .[grep('treefile$', .)]
+
+trees <- lapply(treefiles, read.newick) 
+
+# Create treedata object (joins dataframe and phylo into one object)
+
+
+####################################################################################################
 # Infer best-fitting root and get rtt distances (returns list of dataframes)
+
 rtt_dist <- mapply(CleanandRoot,
                    phylo = renamed_phylos,
                    metadata = formatted_metadata,
                    SIMPLIFY = FALSE) %>%
-  setNames(segnames) #%>%
-#bind_rows(.id = 'segment')
-
-#pb2_tree_dropped <- drop.tip(pb2_tree, TipLabels(pb2_tree)[grep('NA$', TipLabels(pb2_tree))])
-#r2t <- rtt(pb2_tree_dropped )
-#rttdist <- adephylo::distRoot(r2t)
-
-#test_df <-  cbind.data.frame('dist' = rttdist, 'tipnames' = names(rttdist)) %>% 
-#left_join(df )
-
-
-rtt_reg <- function(x){
-  my_model <- lm(dist ~ collection.datedecimal, data = x)
-  rate = coef(my_model)[2]
-  x_intercept <- -coef(my_model)[1] / coef(my_model)[2] 
-  
-  out <- cbind.data.frame(rate, x_intercept) %>% as_tibble()
-  return(out)
-}
+  setNames(segnames) 
 
 
 t <- rtt_dist %>% bind_rows(., .id = 'segment') %>%

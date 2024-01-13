@@ -557,15 +557,15 @@ renamed_alignments <- alignments %>%
 ####################################################################################################
 # Identify duplicate sequences from alignment
 
-identical_seqs <- lapply(alignments,
+identical_seqs <- lapply(renamed_alignments,
                          FindIdenticalSeqs) %>%
   bind_rows(., .id = 'virus.segment')
 
 
 ####################################################################################################
-# Subsample 
+# Subsample - strict
 
-metadata_subsampled <- metadata %>%
+metadata_subsampled_strict <- metadata %>%
   bind_rows(., .id = 'virus.segment')%>%
   
   # join identical sequence groupings
@@ -576,21 +576,52 @@ metadata_subsampled <- metadata %>%
   mutate(across(contains('collection'), .fns = ~ gsub('^NA$', NA, .x))) %>% 
   mutate(best_location_code = coalesce(collection.subdiv1.code,
                                        collection.country.code)) %>%
+  mutate(group = as.factor(group)) %>%
   
   # Sample one virus in each segment that has unique combination of location, host family, 
   # reasssortment, and sequence identity (viruses in the same group are identical)
-  group_by(virus.segment,
-           best_location_code,
+  
+  group_by(group,
            host.family, 
-           cluster.genome, 
-           group) %>%
+           #best_location_code, #Leave in if relaxed, leave out if strict
+           cluster.genome) %>%
   slice_sample(n = 1) %>%
   ungroup() %>%
   
   # as list
   group_split(virus.segment, .keep = FALSE) %>%
+  as.list() %>%
   setNames(segnames)
 
+
+####################################################################################################
+metadata_subsampled_relaxed <- metadata %>%
+  bind_rows(., .id = 'virus.segment')%>%
+  
+  # join identical sequence groupings
+  left_join(identical_seqs, 
+            by = join_by(virus.segment, 
+                         tipnames)) %>%
+  # create groupings
+  mutate(across(contains('collection'), .fns = ~ gsub('^NA$', NA, .x))) %>% 
+  mutate(best_location_code = coalesce(collection.subdiv1.code,
+                                       collection.country.code)) %>%
+  mutate(group = as.factor(group)) %>%
+  
+  # Sample one virus in each segment that has unique combination of location, host family, 
+  # reasssortment, and sequence identity (viruses in the same group are identical)
+  
+  group_by(group,
+           host.family, 
+           best_location_code, #Leave in if relaxed, leave out if strict
+           cluster.genome) %>%
+  slice_sample(n = 1) %>%
+  ungroup() %>%
+  
+  # as list
+  group_split(virus.segment, .keep = FALSE) %>%
+  as.list() %>%
+  setNames(segnames)
 
 ####################################################################################################
 # Subsample alignments
