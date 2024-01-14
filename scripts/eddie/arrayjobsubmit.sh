@@ -8,20 +8,20 @@
 #
 # The options for beast and grid engine for each run are specified in beast.sh
 #
-# To submit: qsub -t 1-n arrayjob.sh, in which n = the total number of XMLs to 
+# To submit: qsub -t 1-n arrayjob.sh, in which n = the total number of XMLs to
 # run.
 
 ################################################################################
 ################################################################################
 # Grid Engine options (lines prefixed with #$)
 #$ -N beast_array_submission
-#$ -cwd                
+#$ -cwd
 #$ -l h_vmem=2G
 
 ################################################################################
-xml_files=$(find /exports/eddie/scratch/jbaxter/ -type f -name "*.xml")
+xml_files=$(find . -type f -name \*.rb)
 
-./beast.sh $xml_files 
+./beast.sh $xml_files
 
 ################################################################################
 ################################################################################

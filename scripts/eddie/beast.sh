@@ -6,12 +6,12 @@
 # It requires the beauti XMLs to be present in the current working directory and
 # for all beast runs to require the same command line options.
 #
-# Works alongside arrayjobsubmit.sh as part of array job submission, but can easily be appropriated
-# for submission of a single BEAST run
+# Works alongside arrayjobsubmit.sh as part of array job submission, but can
+# easily be appropriated for submission of a single BEAST run
 
 ################################################################################
 # Grid Engine options
-beast_run=${1:-beast_run}
+beast_run=${1}
 #$ -N $beast_run
 #$ -cwd
 #$ -pe sharedmem 2
