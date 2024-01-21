@@ -277,12 +277,14 @@ ExtractMetadata <- function(tiplabels){
       
       
       # Canada
-      grepl("ab", location) ~ "alberta",
-      grepl("bc", location) ~ "british columbia",
-      grepl('mb', location) ~'manitoba',
+      grepl("^ab$", location) ~ "alberta",
+      grepl("^bc$", location) ~ "british columbia",
+      grepl('^mb$', location) ~'manitoba',
       
       # Russian Federation
       grepl('russian federation', location) ~ 'russia',
+      grepl('khabarovsk', location) ~ "khabarovskiy kray",
+      grepl('chelyabinsk', location) ~ "chelyabinskaya oblast'",
       grepl("astrakhan", location) ~ "astrakhanskaya oblast'",
       grepl("novosibirsk region|chany lake|^chany$", location) ~ "novosibirskaya oblast'",
       grepl("omsk.*", location) ~ "omskaya oblast'",
@@ -502,7 +504,7 @@ alignmentfiles <- list.files('./data/alignments/init_alignments',
                              full.names = T, 
                              pattern="\\.")
 
-alignments <- lapply(init_filenames,
+alignments <- lapply(alignmentfiles,
                      read.dna, 
                      format = 'fasta',
                      as.matrix = T)
@@ -512,18 +514,20 @@ alignments <- lapply(init_filenames,
 segnames <- str_split(treefiles,  '_') %>% 
   lapply(., tail, n = 1) %>% 
   unlist() %>%
-  toupper()
+  toupper() %>%
+  gsub('NA', 'N', .)
 
 names(alignments) <- segnames
 names(trees) <- segnames
-
 
 # Import existing metadata
 reassortant_metadata <- read_csv('./data/metadata/h5_metadata.csv')
 
 
 # Import list of sequences to remove due to lack of temporal signal
-seqstoremove <- read_csv('./data/erroneous_seqs.csv')
+seqstoremove <- read_csv('./data/erroneous_seqs.csv') %>%
+  mutate(drop.temporal = 'drop') %>%
+  setNames(c('virus.segment', 'tipnames', 'drop.temporal'))
 
 
 ####################################################################################################
@@ -564,9 +568,13 @@ identical_seqs <- lapply(renamed_alignments,
 
 ####################################################################################################
 # Subsample - strict
-
-metadata_subsampled_strict <- metadata %>%
-  bind_rows(., .id = 'virus.segment')%>%
+metadata_subsampled <- metadata %>%
+  bind_rows(., .id = 'virus.segment') %>%
+  
+  #drop seqs
+  left_join(., seqstoremove) %>% 
+  filter(is.na(drop.temporal)) %>%
+  select(-drop.temporal) %>%
   
   # join identical sequence groupings
   left_join(identical_seqs, 
@@ -578,14 +586,24 @@ metadata_subsampled_strict <- metadata %>%
                                        collection.country.code)) %>%
   mutate(group = as.factor(group)) %>%
   
+  # Remove seqs in RU/JP/CN that do not have subdivision data (unless it is a unique seq)
+  group_by(virus.segment, 
+           group,
+           host.family, 
+           cluster.genome) %>%
+  mutate(todrop = case_when(collection.country.code %in% c('RU', 'JP', 'CN') && is.na(collection.subdiv1.code) && n()>1 ~ 'drop',
+                            .default = 'keep')) %>%
+  filter(todrop == 'keep') %>%
+  ungroup() %>%
+  
   # Sample one virus in each segment that has unique combination of location, host family, 
   # reasssortment, and sequence identity (viruses in the same group are identical)
-  
-  group_by(group,
+  group_by(virus.segment, 
+           group,
            host.family, 
-           #best_location_code, #Leave in if relaxed, leave out if strict
-           cluster.genome) %>%
-  slice_sample(n = 1) %>%
+           cluster.genome,
+           best_location_code) %>%
+  slice_sample(n = 1)  %>%
   ungroup() %>%
   
   # as list
@@ -593,39 +611,9 @@ metadata_subsampled_strict <- metadata %>%
   as.list() %>%
   setNames(segnames)
 
-
-####################################################################################################
-metadata_subsampled_relaxed <- metadata %>%
-  bind_rows(., .id = 'virus.segment')%>%
-  
-  # join identical sequence groupings
-  left_join(identical_seqs, 
-            by = join_by(virus.segment, 
-                         tipnames)) %>%
-  # create groupings
-  mutate(across(contains('collection'), .fns = ~ gsub('^NA$', NA, .x))) %>% 
-  mutate(best_location_code = coalesce(collection.subdiv1.code,
-                                       collection.country.code)) %>%
-  mutate(group = as.factor(group)) %>%
-  
-  # Sample one virus in each segment that has unique combination of location, host family, 
-  # reasssortment, and sequence identity (viruses in the same group are identical)
-  
-  group_by(group,
-           host.family, 
-           best_location_code, #Leave in if relaxed, leave out if strict
-           cluster.genome) %>%
-  slice_sample(n = 1) %>%
-  ungroup() %>%
-  
-  # as list
-  group_split(virus.segment, .keep = FALSE) %>%
-  as.list() %>%
-  setNames(segnames)
 
 ####################################################################################################
 # Subsample alignments
-
 alignments_subsampled <- renamed_alignments %>%
   mapply(SubsampleAlignment,
          .,
@@ -639,7 +627,7 @@ alignmentfiles_subsampled <- alignmentfiles  %>%
   gsub('Re_H5_', '',. ) %>%
   gsub('_Asia_blast_', '_asia_',. ) %>%
   gsub('.trim.fasta$', '_subsampled.fasta',. ) %>%
-  gsub('/init_alignments/', '/subsampled_alignments/',. )
+  gsub('/init_alignments/', '/subsampled_alignments/2024Jan14/',. )
 
 mapply(write.dna, 
        alignments_subsampled, 
@@ -647,10 +635,10 @@ mapply(write.dna,
        format = 'fasta')
 
 
-metadatafiles_subsampled <- paste('./data/metadata/clade2344b_asia', 
+metadatafiles_subsampled <- paste('./data/metadata/2024Jan14/', 
                                   segnames, 
-                                  'subsampled.csv',  
-                                  sep = '_')
+                                  '_subsampled.csv',  
+                                  sep = '')
 mapply(write.csv, 
        metadata_subsampled, 
        metadatafiles_subsampled)

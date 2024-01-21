@@ -2460,6 +2460,7 @@ std::unordered_map<std::string, Atlas> createAtlasHashTable() {
   atlasTable["gyeongsangbukdo"]= {"eastern asia", "KR", "south korea", "35.907757", "127.766922", "KR-47", "gyeongsangbukdo", "36.4919", "128.8889", "NA", "NA", "NA", "NA" };
   atlasTable["gyeongsangnamdo"]= {"eastern asia", "KR", "south korea", "35.907757", "127.766922", "KR-48", "gyeongsangnamdo", "35.4606", "128.2132", "NA", "NA", "NA", "NA" };
   atlasTable["jejudo"]= {"eastern asia", "KR", "south korea", "35.907757", "127.766922", "KR-49", "jejudo", "NA", "NA", "NA", "NA", "NA", "NA" };
+  atlasTable["sejong teugbyeolsi"]= {"eastern asia", "KR", "south korea", "35.907757", "127.766922", "KR-50", "sejong teugbyeolsi", "36.487002", "127.282234", "NA", "NA", "NA", "NA" };
   atlasTable["jeonrabukdo"]= {"eastern asia", "KR", "south korea", "35.907757", "127.766922", "KR-45", "jeonrabukdo", "NA", "NA", "NA", "NA", "NA", "NA" };
   atlasTable["jeonranamdo"]= {"eastern asia", "KR", "south korea", "35.907757", "127.766922", "KR-46", "jeonranamdo", "34.8679", "126.991", "NA", "NA", "NA", "NA" };
   atlasTable["kuwait"]= {"western asia", "KW", "kuwait", "29.3697222", "47.9783333", "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA" };
