@@ -4659,7 +4659,7 @@ std::unordered_map<std::string, Atlas> createAtlasHashTable() {
   atlasTable["connecticut"]= {"northern america", "US", "united states", "37.09024", "-95.712891", "US-CT", "connecticut", "41.6032207", "-73.087749", "NA", "NA", "NA", "NA" };
   atlasTable["delaware"]= {"northern america", "US", "united states", "37.09024", "-95.712891", "US-DE", "delaware", "38.9108325", "-75.5276699", "NA", "NA", "NA", "NA" };
   atlasTable["florida"]= {"northern america", "US", "united states", "37.09024", "-95.712891", "US-FL", "florida", "27.6648274", "-81.5157535", "NA", "NA", "NA", "NA" };
-  atlasTable["georgia"]= {"northern america", "US", "united states", "37.09024", "-95.712891", "US-GA", "georgia", "32.1574351", "-82.907123", "NA", "NA", "NA", "NA" };
+  atlasTable["state of georgia"]= {"northern america", "US", "united states", "37.09024", "-95.712891", "US-GA", "state of georgia", "32.1574351", "-82.907123", "NA", "NA", "NA", "NA" };
   atlasTable["hawaii"]= {"northern america", "US", "united states", "37.09024", "-95.712891", "US-HI", "hawaii", "19.8967662", "-155.5827818", "NA", "NA", "NA", "NA" };
   atlasTable["idaho"]= {"northern america", "US", "united states", "37.09024", "-95.712891", "US-ID", "idaho", "45.9019541", "-115.7237432", "NA", "NA", "NA", "NA" };
   atlasTable["illinois"]= {"northern america", "US", "united states", "37.09024", "-95.712891", "US-IL", "illinois", "40.6331249", "-89.3985283", "NA", "NA", "NA", "NA" };
