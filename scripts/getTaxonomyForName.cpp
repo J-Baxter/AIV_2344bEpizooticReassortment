@@ -16,6 +16,7 @@ std::unordered_map<std::string, Taxonomy> createTaxonomyHashTable() {
   taxonomyTable["common ostrich"]= {"Struthioniformes", "Struthionidae", "struthio camelus"};
   taxonomyTable["somali ostrich"]= {"Struthioniformes", "Struthionidae", "struthio molybdophanes"};
   taxonomyTable["common/somali ostrich"]= {"Struthioniformes", "Struthionidae", "struthio camelus/molybdophanes"};
+  taxonomyTable["rhea sp."]= {"Rheiformes", "Rheidae", "rhea sp."};
   taxonomyTable["greater rhea"]= {"Rheiformes", "Rheidae", "rhea americana"};
   taxonomyTable["lesser rhea"]= {"Rheiformes", "Rheidae", "rhea pennata"};
   taxonomyTable["tawny-breasted tinamou"]= {"Tinamiformes", "Tinamidae", "nothocercus julius"};
@@ -12658,22 +12659,39 @@ std::unordered_map<std::string, Taxonomy> createTaxonomyHashTable() {
   taxonomyTable["bird sp."]= {"NA", "NA", "aves sp."};
   
   //Mammals
-  taxonomyTable["skunk"]= {"Carnivora", "Mephitidae", "NA"};
+  taxonomyTable["skunk sp."]= {"Carnivora", "Mephitidae", "skunk sp."};
+  taxonomyTable["striped skunk"]= {"Carnivora", "Mephitidae", "Mephitis mephitis"};
   taxonomyTable["red fox"]= {"Carnivora", "Canidae", "Vulpes vulpes"};
   taxonomyTable["harbour seal"]= {"Carnivora", "Pinnipedia", "Phoca vitulina"};
-  taxonomyTable["seal sp."]= {"Carnivora", "Pinnipedia", "NA"};
-  taxonomyTable["mink sp."]= {"Carnivora", "Mustelidae", "NA"};
-  taxonomyTable["otter sp."]= {"Carnivora", "Mustelidae", "NA"};
+  taxonomyTable["grey seal"]= {"Carnivora", "Pinnipedia", "Halichoerus grypus"};
+  taxonomyTable["seal sp."]= {"Carnivora", "Pinnipedia", "seal sp."};
+  taxonomyTable["mink sp."]= {"Carnivora", "Mustelidae", "mink sp."};
+  taxonomyTable["otter sp."]= {"Carnivora", "Mustelidae", "otter sp."};
   taxonomyTable["eurasian otter"]= {"Carnivora", "Mustelidae", "Lutra lutra"};
   taxonomyTable["european badger"]= {"Carnivora", "Mustelidae", "Meles meles"};
   taxonomyTable["tanuki"]= {"Carnivora", "Canidae", "nyctereutes viverrinus)"};
   taxonomyTable["brown rat"]= {"Rodentia", "Muridae", "rattus norvegicus"};
-  taxonomyTable["canine"]= {"Carnivora", "Canidae", "NA"};
-  taxonomyTable["feline"]= {"Carnivora", "Felidae", "NA"};
+  taxonomyTable["canine sp."]= {"Carnivora", "Canidae", "canine sp."};
+  taxonomyTable["feline sp."]= {"Carnivora", "Felidae", "feline sp."};
   taxonomyTable["environment"]= {"environment", "environment", "environment"}; 
   taxonomyTable["NA"]= {"NA", "NA", "NA"}; 
-
-  return taxonomyTable;
+  taxonomyTable["bobcat"]= {"Carnivora", "Felidae", "Lynx rufus"};
+  taxonomyTable["virginia opossum"]= {"Didelphimorphia", "Didelphidae", "Didelphis virginiana"};
+  taxonomyTable["raccoon"]= {"Carnivora", "Procyonidae", "Procyon lotor"};
+  taxonomyTable["human"]= {"Primates", "Hominidae", "Homo sapiens"};
+  taxonomyTable["ferret"]= {"Carnivora", "Mustelidae", "Mustela furo"}; 
+  taxonomyTable["european polecat"]= {"Carnivora", "Mustelidae", "Mustela putorius"}; 
+  taxonomyTable["beech marten"]= {"Carnivora", "Mustelidae", "Martes foina"}; 
+  taxonomyTable["bear sp."]= {"Carnivora", "Ursidae", "Ursus sp."}; 
+  taxonomyTable["cetacea sp."]= {"Artiodactyla", "Ursidae", "Ursus sp."}; 
+  taxonomyTable["fisher"]= {"Carnivora", "Mustelidae", "Pekania pennanti"};
+  taxonomyTable["fox sp."]= {"Carnivora", "Canidae", "Vulpes sp."};
+  taxonomyTable["coyote"]= {"Carnivora", "Canidae", "Canis latrans"};
+  taxonomyTable["lynx sp."]= {"Carnivora", "Felidae", "Lynx sp."};
+  taxonomyTable["mustelid sp."]= {"Carnivora", "Mustelidae", "mustelid sp."};
+  taxonomyTable["bush dog"]= {"Carnivora", "Canidae", "Speothos venaticus"};
+  
+return taxonomyTable;
 }
 
 // Function to get bird taxonomy for a given common name
