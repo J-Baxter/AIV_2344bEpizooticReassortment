@@ -141,31 +141,41 @@ MyFunc <- function(data, newdata){
     mutate(across(ends_with(".x"), ~coalesce(., get(sub("\\.x$", ".y", cur_column()))), .names = "{.col}")) %>%
     select(-ends_with(".y")) %>%
     rename_with(~gsub('.x', '', .x)) %>%
-    select(-c(id.unsure, week.date, is.problem.bird, virus.species))
+    select(-c(id.unsure, week.date, is.problem.bird, virus.species)) %>%
+    mutate(collection.tipdate = case_when(is.na(collection.date) ~ collection.datemonth,
+                                          .default = as.character(collection.date))) 
   
   return(df)
 }
 
 metadata_joined <- lapply(metadata_formatted, MyFunc, reassortant_metadata_formatted ) %>%
-  setNames(segnames) 
+  setNames(segnames) %>%
+  lapply(., MakeTipNames)
+  
 
 metadata_joined_df <- metadata_joined %>% 
   bind_rows(., .id = 'virus.segment')
 
+####################################################################################################
 # Rename phylogenies and alignments with new-format tipnames
 renamed_phylos <- lapply(segnames,
                          ReNamePhylo, 
                          trees = trees, 
-                         metadata = metadata)
+                         metadata = metadata_joined)
+
+mapply(write.tree,
+       renamed_phylos,
+       file = paste0(segnames,  '2.tree'))
+
 
 
 renamed_alignments <- alignments %>%
   mapply(ReNameAlignment, 
          .,
-         metadata, 
+         metadata_joined , 
          SIMPLIFY = FALSE)
 
-
+mapply()
 ####################################################################################################
 # Identify duplicate sequences from alignment
 
@@ -176,8 +186,7 @@ identical_seqs <- lapply(renamed_alignments,
 
 ####################################################################################################
 # Subsample - strict
-metadata_subsampled <- metadata %>%
-  bind_rows(., .id = 'virus.segment') %>%
+metadata_subsampled <- metadata_joined_df %>%
   
   #drop seqs
   left_join(., seqstoremove) %>% 
@@ -195,11 +204,15 @@ metadata_subsampled <- metadata %>%
   mutate(group = as.factor(group)) %>%
   
   # Remove seqs in RU/JP/CN that do not have subdivision data (unless it is a unique seq)
-  group_by(virus.segment, 
-           group,
-           host.family, 
-           cluster.genome) %>%
-  mutate(todrop = case_when(collection.country.code %in% c('RU', 'JP', 'CN') && is.na(collection.subdiv1.code) && n()>1 ~ 'drop',
+  #group_by(virus.segment, 
+          # group) %>%
+  #mutate(todrop = case_when(collection.country.code %in% c('RU', 'JP', 'CN') && is.na(collection.subdiv1.code) && n()>1 ~ 'drop',
+                           # .default = 'keep')) %>%
+  #filter(todrop == 'keep') %>%
+  #ungroup() %>%
+  
+  group_by(host.order) %>%
+  mutate(todrop = case_when(n()<10 ~ 'drop',
                             .default = 'keep')) %>%
   filter(todrop == 'keep') %>%
   ungroup() %>%
@@ -211,7 +224,7 @@ metadata_subsampled <- metadata %>%
            host.family, 
            cluster.genome,
            best_location_code) %>%
-  slice_sample(n = 1)  %>%
+  slice_sample(n = 1)   %>%
   ungroup() %>%
   
   # as list
@@ -226,8 +239,15 @@ alignments_subsampled <- renamed_alignments %>%
   mapply(SubsampleAlignment,
          .,
          metadata_subsampled,
-         SIMPLIFY = FALSE)
-
+         SIMPLIFY = FALSE) 
+####################################################################################################
+#BEAST traits
+metadata_subsampled_beast <- metadata_subsampled %>%
+  lapply(., function(x) x %>% 
+           select(c(tipnames, virus.subtype, contains('collection'), cluster.profile, host.order)) %>%
+           mutate(tiplocation_discrete = coalesce(collection.subdiv2.code, collection.subdiv1.code, collection.country.code)) %>%
+           mutate(tiplocation_lon = coalesce(collection.subdiv2.long , collection.subdiv1.long, collection.country.long)) %>%
+           mutate(tiplocation_lat = coalesce(collection.subdiv2.lat , collection.subdiv1.lat, collection.country.lat)))
 
 ####################################################################################################
 # Write alignments and metadata to file
@@ -235,7 +255,7 @@ alignmentfiles_subsampled <- alignmentfiles  %>%
   gsub('Re_H5_', '',. ) %>%
   gsub('_Asia_blast_', '_asia_',. ) %>%
   gsub('.trim.fasta$', '_subsampled.fasta',. ) %>%
-  gsub('/init_alignments/', '/subsampled_alignments/2024Jan14/',. )
+  gsub('/init_alignments/', '/subsampled_alignments/2024Jan24/',. )
 
 mapply(write.dna, 
        alignments_subsampled, 
@@ -243,12 +263,12 @@ mapply(write.dna,
        format = 'fasta')
 
 
-metadatafiles_subsampled <- paste('./data/metadata/2024Jan14/', 
+metadatafiles_subsampled <- paste('./data/metadata/2024Jan24/', 
                                   segnames, 
-                                  '_subsampled.csv',  
+                                  '_subsampled.tsv',  
                                   sep = '')
-mapply(write.csv, 
-       metadata_subsampled, 
+mapply(write_tsv, 
+       metadata_subsampled_beast, 
        metadatafiles_subsampled)
 
   
