@@ -17,6 +17,9 @@ Jan24_metadata <- lapply(metadatafiles, read_csv) %>%
   select(-clade.y) 
 
 missing_latlong <- Jan24_metadata %>% filter(!is.na(collection.subdiv1.name)) %>% filter(is.na(collection.subdiv1.long))
+missing_latlong %>% select(c(collection.country.code, collection.subdiv1.name)) %>% distinct()
+
+
 
 metadatafiles_tsv <- gsub('.csv$', '.tsv' ,metadatafiles)
 
