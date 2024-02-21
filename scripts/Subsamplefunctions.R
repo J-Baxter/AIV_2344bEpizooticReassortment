@@ -1013,7 +1013,7 @@ FormatMetadata <- function(data){
     )) %>%
     
     rowwise() %>%
-    mutate(loc = getLocation(location)) %>%
+    mutate(loc = getLocation(location))
     as_tibble() %>%
     unnest(loc)  %>%
     

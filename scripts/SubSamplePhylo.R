@@ -103,7 +103,7 @@ names(alignments) <- segnames
 names(trees) <- segnames
 
 # Import existing metadata
-reassortant_metadata <- read_csv('./data/metadata/h5_metadata.csv') %>%
+reassortant_metadata <- read_csv('./data/metadata/h5_metadata_global_6280_update.csv') %>%
   mutate(date = dmy(date) %>%
            as.Date())
 
@@ -175,7 +175,7 @@ renamed_alignments <- alignments %>%
          metadata_joined , 
          SIMPLIFY = FALSE)
 
-mapply()
+stop()
 ####################################################################################################
 # Identify duplicate sequences from alignment
 
@@ -267,7 +267,8 @@ metadatafiles_subsampled <- paste('./data/metadata/2024Jan24/',
                                   segnames, 
                                   '_subsampled.tsv',  
                                   sep = '')
-mapply(write_tsv, 
+mapply(write_delim, 
+       quote= 'needed',
        metadata_subsampled_beast, 
        metadatafiles_subsampled)
 
