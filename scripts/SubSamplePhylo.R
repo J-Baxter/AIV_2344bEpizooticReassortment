@@ -24,6 +24,7 @@ MakeTipNames <- function(data){
   out <- data %>%
     unite(tipnames, 
           virus.subtype,
+          clade,
           isolate.id,
           host.order,
           collection.country.name,
