@@ -17,7 +17,7 @@ metadata_subsampled_strict_df <- metadata_subsampled_strict %>%
   bind_rows(., .id = 'virus.segment') %>%
   filter(virus.segment == 'HA') %>%
   ggplot() +
-  geom_bar(aes(x = `collection.country.code`)) + 
+  geom_bar(aes(x = best_location_code)) + 
   facet_wrap(host.~virus.segment)
 
 

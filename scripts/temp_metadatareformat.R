@@ -1,342 +1,13 @@
-FormatMetadata <- function(data){
-  data <- data %>%
-    # Format source before taxa allocation
-    mutate(source = gsub("_", " ", tolower(source))) %>%
-    mutate(source = str_trim(source)) %>%
-    mutate(source= gsub('gray', 'grey', source)) %>%
-    mutate(primary_com_name = case_when(
-      grepl("common|eurasian teal|green-winged-teal", source) ~ "green-winged teal", # This one is a pain
-      grepl("spot-billed duck", source) ~ "eastern spot-billed duck",
-      grepl("crested grebe", source) ~ "great crested grebe",
-      grepl("eastern curlew", source) ~ "far eastern curlew",
-      grepl("bean goose", source) ~ "taiga/tundra bean-goose",
-      grepl("surf scooter", source) ~ "surf scoter",
-      grepl("northern goshawk|^goshawk$", source) ~ "eurasian goshawk", # add & for country
-      grepl('sparrowhawk', source) & grepl('England', location) ~ 'eurasian sparrowhawk',
-      grepl("coopers s hawk", source) ~ "cooper's hawk",
-      grepl("rosss goose", source) ~ "ross's goose",
-      grepl("turnstone", source) & location == "Netherlands" ~ "ruddy turnstone",
-      grepl("madarin duck", source) ~ "mandarin duck",
-      grepl("bar headed goose", source) ~ "bar-headed goose",
-      grepl('grey goose|graylag goose', source) ~ 'greylag goose',
-      grepl("shoveler", source) ~ "northern shoveler",
-      grepl("white-fronted goose", source) ~ "greater/lesser white-fronted goose",
-      grepl("mallard duck", source) ~ "mallard",
-      grepl("chicken|layer hen|laying hen|broiler|poultry|chichen", source) ~ "red junglefowl (domestic type)",
-      grepl("domestic goose|pomeranian goose", source) ~ "domestic goose sp. (domestic type)",
-      grepl("domestic duck|pekin duck|mule duck", source) ~ "mallard (domestic type)",
-      grepl('^buzzard$', source) ~ 'common buzzard',
-      grepl('knot wader', source) ~ 'red knot',
-      grepl("turkey", source) & location != "Mexico" ~ "wild turkey",
-      grepl('^kestrel$', source) & grepl('Germany|England|Italy', location) ~ 'eurasian kestrel',
-      grepl('brent goose', source) ~ 'brant',
-      grepl('eagle owl', source) ~'eurasian eagle-owl',
-      grepl('jungle crow', source) & location == 'Japan' ~ 'large-billed crow',
-      grepl('^magpie$' ,source) & location == 'Idaho' ~ 'black-billed magpie',
-      grepl('oystercatcher', source) & grepl('Germany', location) ~ 'eurasian oystercatcher',
-      grepl('canade goose', source) ~ 'canada goose',
-      grepl('european herring gull', source) ~ 'herring gull',
-      grepl('towny owel', source) ~ 'tawny owl',
-      grepl('gadwall duck', source) ~ 'gadwall',
-      grepl('lesser snow goose', source) ~ 'snow goose',
-      grepl("pink footed goose", source) ~ "pink-footed goose",
-      grepl("european wigeon", source) ~ "eurasian wigeon",
-      source == 'sea eagle' & grepl('Norway', location)~"white-tailed eagle",
-      grepl('guinea fowl', source) & grepl('Italy|Estonia|Germany', location) ~ "helmeted guineafowl (domestic type)",
-      grepl('western jackdaw', source) ~ 'eurasian jackdaw',
-      grepl('^gannet$', source) & grepl('Scotland', location) ~ "northern gannet",
-      grepl('spotbill duck', source) ~ "indian spot-billed duck",
-      grepl("whistling duck", source) ~ "whistling-duck sp.",
-      grepl('pink footed goose', source) ~ 'pink-footed goose',
-      grepl('falcated teal', source) ~ 'falcated duck',
-      grepl('^pintail$', source) ~ 'northern pintail',
-      grepl('grey plover', source)~ "black-bellied plover",
-      grepl('greenwing duck', source) ~ "green-winged teal",
-      grepl('franklins gull', source) ~ "franklin's gull",
-      
-      
-      
-      # latin names
-      grepl("anas crecca", source) ~ "green-winged teal",
-      grepl('tyto alba', source) ~ 'barn owl',
-      grepl('gallus gallus', source) ~ 'red junglefowl (domestic type)',
-      grepl("anas platyrhynchos", source) ~ "mallard",
-      grepl("anser albifrons", source) ~ "greater white-fronted goose",
-      grepl("anser brachyrhynchus", source) ~ "pink-footed goose",
-      grepl("anser anser", source) ~ "greylag goose",
-      grepl("anser fabalis", source) ~ "taiga/tundra bean-goose",
-      grepl("chlidonias hybrida", source) ~ "whiskered tern",
-      grepl("cygnus columbianus", source) ~ "tundra swan",
-      grepl("falco peregrinus", source) ~ "peregrine falcon",
-      grepl("anser fabalis", source) ~ "taiga/tundra bean-goose",
-      grepl('larus argentatus', source) ~ 'herring gull',
-      grepl('pica pica', source) ~ 'eurasian magpie',
-      grepl("ciconia ciconia", source) ~ 'white stork',
-      grepl("buteo buteo", source) ~ 'common buzzard',
-      grepl('podiceps cristatus', source) ~ 'great crested grebe',
-      grepl('anas poecilorhyncha|anas poecilohyncha', source) ~ "indian spot-billed duck",
-      grepl('garrulus glandarius', source) ~ 'eurasian jay',
-      grepl('columba palumbus', source) ~ "common wood-pigeon",
-      grepl('branta canadensis', source) ~ 'canada goose',
-      grepl('cygnus olor', source) ~"mute swan",
-      grepl('spatula clypeata', source) ~ "northern shoveler",
-      grepl('tadorna tadorna', source) ~ "common shelduck",
-      grepl('anseriformes', source) ~ 'waterfowl sp.',
-      grepl('sterna hirundo', source) ~ "common tern",
-      
-      grepl('^seal$', source) ~ 'seal sp.', 
-      grepl('^mink$', source) ~ 'mink sp.',
-      grepl('^otter$', source) & grepl('Scotland', location) ~ 'eurasian otter',
-      grepl('badger', source) ~ 'european badger',
-      
-      
-      # generics
-      grepl("^swan$", source) ~ "swan sp.",
-      grepl("^cormorant$", source) ~ 'cormorant sp.',
-      grepl("^egret$", source) ~ "white egret sp.",
-      grepl("^crane$|black-throated crane", source) ~ "crane sp.",
-      grepl("^goose$|wild geese|wild goose", source) ~ "goose sp.",
-      grepl('^stork$', source) ~ 'stork sp.',
-      grepl('^ostrich$' ,source) ~ "common ostrich",
-      grepl("^egret$", source) ~ "egret sp.",
-      grepl('lapwing', source) ~ 'lapwing sp.',
-      grepl('^pochard$', source) ~ "aythya sp.",
-      grepl('coot', source) ~ 'coot sp.',
-      grepl("waterfowl", source) ~ "waterfowl sp.",
-      grepl("peacock|peafowl", source) ~ "indian peafowl (domestic type)",
-      grepl("quail", source) & location != "America" ~ "old world quail sp.", # requires better location
-      grepl("shorebird|sandpiper", source) ~ "shorebird sp.",
-      grepl("black-backed gull|^gull$|seagull", source) ~ "gull sp.",
-      grepl("^crow$", source) ~ "crow/raven sp.",
-      grepl("^duck$|wild duck|migratory duck", source) ~ "duck sp.",
-      grepl("^grebe$", source) ~ "grebe sp.",
-      grepl("^owl$", source) ~ "owl sp.",
-      grepl('^hawk$', source) ~ "hawk sp.",
-      grepl('^eagle$', source) ~ 'eagle sp.',
-      grepl('steamer duck', source) ~ "steamer-duck sp.",
-      grepl('^falcon$', source) ~ "falcon sp.",
-      grepl("^pelican$", source) ~ "pelican sp.",
-      grepl("^pheasant$", source) ~ "pheasant sp.",
-      grepl("^pigeon$", source) ~ "pigeon/dove sp.",
-      grepl("^teal$", source) ~ "teal sp.",
-      grepl('^ibis$', source) ~ 'ibis sp.',
-      source %in% c("aquatic bird", "avian", "bird", "wild bird", "wild bird", "backyard bird") ~ "bird sp.",
-      source %in% c("en", "env", "environment", "enviroment", "environmental", 'environment sample',
-                    "water", "wild bird feces") ~ "environment",
-      grepl("red fox|^fox$", source) ~ "red fox",
-      grepl("attus norvegicus", source) ~ "brown rat",
-      .default = source
-    )) %>%
-    
-    # Get host taxonomy
-    rowwise() %>%
-    mutate(taxonomy = getTaxonomyForName(primary_com_name)) %>%
-    as_tibble() %>%
-    unnest(taxonomy) %>%
-    rename_with(.fn = ~ tolower(.x)) %>%
-    
-    # binary host information
-    mutate(is.domestic = case_when(grepl("domestic type", sci.name) ~ "domestic",
-                                   .default = "wild"
-    )) %>%
-    mutate(is.bird = case_when(grepl("ormes$", order) ~ "bird",
-                               .default = "other"
-    )) %>%
-    
-    # Location (iso name and subdivision)
-    #mutate(location = tolower(location)) %>%
-    mutate(location = gsub("_", " ", tolower(location))) %>%
-    
-    mutate(location = case_when(
-      
-      # Korea
-      grepl("korea", location) ~ "south korea",
-      
-      # PRC
-      grepl("yunnan.*", location) ~ "yunnan",
-      grepl('rongcheng', location) ~ 'shandong',
-      grepl("inner mongolia|tumuji", location) ~ "nei mongol",
-      grepl("hong kong|hongkong", location) ~ "xianggang (hong-kong)",
-      grepl("xizang$", location) ~ "xizang",
-      grepl("ningxia$", location) ~ "ningxia",
-      grepl("xinjiang$", location) ~ "xinjiang",
-      grepl("guangxi$|guilin|hechi", location) ~ "guangxi",
-      grepl("tibet", location) ~ "xizang",
-      grepl("hangzhou|nanji$", location) ~ "zhejiang",  # confirm nanji
-      grepl("sanmenxia|dongting", location) ~ "henan",
-      grepl("heinan", location) ~ "hainan", # confirm 
-      grepl("wuhan", location) ~ "hebei",
-      grepl('^fujain$', location) ~ 'fujian',
-      grepl('suzhou|xuzhou', location) ~ 'jiangsu',
-      grepl("changsha", location) ~ "hunan",
-      grepl('tianjing', location) ~ 'tianjin',
-      grepl('qingyuan|foshan', location) ~ 'guangdong',
-      grepl("northern china", location) ~ "beijing", # Interpretation from paper - check with Lu
-      grepl("southwestern china", location) ~ "shanxi", # Interpretation from paper - check with Lu
-      grepl('eastern china', location) ~ 'zhejiang', #Inferred - if we need to be 100% sure then change to country level
-      
-      
-      # Canada
-      grepl("^ab$", location) ~ "alberta",
-      grepl("^bc$", location) ~ "british columbia",
-      grepl('^mb$', location) ~'manitoba',
-      
-      # Russian Federation
-      grepl('russian federation', location) ~ 'russia',
-      grepl('khabarovsk', location) ~ "khabarovskiy kray",
-      grepl('chelyabinsk', location) ~ "chelyabinskaya oblast'",
-      grepl("astrakhan", location) ~ "astrakhanskaya oblast'",
-      grepl("novosibirsk region|chany lake|^chany$", location) ~ "novosibirskaya oblast'",
-      grepl("omsk.*", location) ~ "omskaya oblast'",
-      grepl("rostov-on-don", location) ~ "rostovskaya oblast'",
-      grepl("russia primorje", location) ~ "primorskiy kray",
-      grepl("sakhalin", location) ~ "sakhalinskaya oblast'",
-      grepl("yakutia", location) ~ "sakha, respublika [yakutiya]",
-      grepl("kostroma", location) ~ "kostromskaya oblast'",
-      grepl("amur region", location) ~ "amurskaya oblast'",
-      grepl("buryatia", location) ~ "buryatiya, respublika",
-      grepl('north ossetia-alania', location) ~ 'severnaya osetiya-alaniya, respublika',
-      grepl('dagestan', location) ~ 'dagestan, respublika',
-      grepl('stavropol', location) ~ "stavropol'skiy kray",
-      grepl('krasnodar', location) ~ "krasnodarskiy kray", 
-      grepl('tyumen', location) ~ "tyumenskaya oblast'",
-      grepl("magadan", location) ~ "magadanskaya oblast'",
-      grepl('saratov', location) ~ "saratovskaya oblast'",
-      grepl('kurgan*', location) ~ "kurganskaya oblast'",
-      grepl('central russia' ,location) ~ 'russia',
-      
-      # USA
-      grepl("north dakota", location) ~ "north dakota",
-      
-      # UK
-      grepl("england", location) ~ "england and wales",
-      # Japan
-      grepl("tsukuba", location) ~ "ibaraki",
-      
-      # Spain
-      grepl("castillalamancha", location) ~ "castilla-la mancha",
-      
-      # Germany 
-      location == 'germany-mv' ~ 'mecklenburg-vorpommern',
-      location == 'germany-nw' ~ 'nordrhein-westfalen',
-      location == 'germany-be' ~ 'berlin',
-      location == 'germany-by' ~ 'bayern',
-      location =='germany-st' ~ 'sachsen-anhalt',
-      location == 'germany-bb' ~ 'brandenburg',
-      location == 'germany-ni' ~ 'niedersachsen',
-      location == 'germany-sh' ~ 'schleswig-holstein',
-      location == 'germany-sn' ~ 'sachsen',
-      location == 'germany-he' ~ 'hessen',
-      location == 'germany-hh' ~ 'hamburg',
-      location == 'germany-bw' ~ 'baden-württemberg',
-      location == 'germany-th' ~ 'thüringen',
-      location == 'germany-rp' ~ 'rheinland-pfalz',
-      
-      # Korea
-      grepl('^gg$|gyeonggi*', collection.subdiv1.name) ~ "gyeonggido",
-      grepl('^gw$', collection.subdiv1.name) ~ "gang'weondo",
-      grepl('^cn$|chungcheongnam*', collection.subdiv1.name) ~ "chungcheongnamdo",
-      grepl('^cb$|chungcheongbuk*', collection.subdiv1.name) ~ "chungcheongbukdo",
-      grepl('^gn$', collection.subdiv1.name) ~ "gyeongsangnamdo",
-      grepl('^gb$', collection.subdiv1.name) ~ "gyeongsangbukdo",
-      grepl('^jn$', collection.subdiv1.name) ~ "jeonranamdo",
-      grepl('^jb$', collection.subdiv1.name) ~ "jeonrabukdo",
-      grepl('^jj$', collection.subdiv1.name) ~ "jejudo",
-      grepl('^sw$', collection.subdiv1.name) ~ "seoul teugbyeolsi", 
-      grepl('^ic$', collection.subdiv1.name) ~ "incheon gwang'yeogsi", 
-      grepl('^dj$', collection.subdiv1.name) ~ "daejeon gwang'yeogsi", 
-      grepl('^sj$', collection.subdiv1.name) ~ "sejong teugbyeolsi", 
-      grepl('^gj$', collection.subdiv1.name) ~ "gwangju gwang'yeogsi", 
-      grepl('^dg$', collection.subdiv1.name) ~ "daegu gwang'yeogsi", 
-      grepl('^ps$', collection.subdiv1.name) ~ "busan gwang'yeogsi", 
-      grepl('^us$', collection.subdiv1.name) ~ "ulsan gwang'yeogsi", 
-      
-     
-      
-      
-      grepl('bosnia and herzegovina', location) ~ 'bosnia-herzegovina',
-      
-      grepl('sva[:0-9:]', location) ~ 'NA',
-      
-      # Indonesia
-      grepl("hulu sungai utara|banjarbaru", location) ~ "kalimantan selatan",
-      grepl("republic of georgia", location) ~ "georgia",
-      grepl("czech republic|czechia", location) ~ "czech republic",
-      # grepl('laos', location) ~ "lao people's democratic republic",
-      grepl("vietnam", location) ~ "viet nam",
-      grepl("quang ninh" , location) ~  "quảng ninh" ,
-      grepl('tinh lang son', collection.subdiv1.name) ~ "lạng sơn",
-      
-      .default = location
-    )) %>%
-    rowwise() %>%
-    mutate(loc = getLocation(location)) %>%
-    as_tibble() %>%
-    unnest(loc) %>%
-    
-    # Format column names
-    dplyr::select(-c(virus_species, id_unsure)) %>%
-    dplyr::rename(
-      virus.subtype = subtype,
-      collection.date = date,
-      collection.datedecimal = decimal.date,
-      collection.dateweek = week.date,
-      collection.region.name = region,
-      collection.country.name = name_country,
-      collection.country.code = code_country,
-      collection.country.lat = lat_country,
-      collection.country.long = long_country,
-      collection.subdiv1.name = name_subdiv1,
-      collection.subdiv1.code = code_subdiv1,
-      collection.subdiv1.lat = lat_subdiv1,
-      collection.subdiv1.long = long_subdiv1,
-      collection.subdiv2.name = name_subdiv2,
-      collection.subdiv2.code = code_subdiv2,
-      collection.subdiv2.lat = lat_subdiv2,
-      collection.subdiv2.long = long_subdiv2,
-      host.order = order,
-      host.family = family,
-      host.sciname = sci.name,
-      host.commonname = primary_com_name,
-      host.isbird = is.bird,
-      host.isdomestic = is.domestic
-    ) %>%
-    dplyr::relocate(
-      virus.subtype,
-      isolate.id,
-      isolate.name,
-      collection.date,
-      collection.datedecimal,
-      collection.dateweek,
-      host.order,
-      host.family,
-      host.sciname,
-      host.commonname,
-      host.isbird,
-      host.isdomestic,
-      collection.region.name,
-      collection.country.name,
-      collection.country.code,
-      collection.country.lat,
-      collection.country.long,
-      collection.subdiv1.name,
-      collection.subdiv1.code,
-      collection.subdiv1.lat,
-      collection.subdiv1.long,
-      collection.subdiv2.name,
-      collection.subdiv2.code,
-      collection.subdiv2.lat,
-      collection.subdiv2.long
-    ) %>%
-    # Select columns
-    select(-c(source, location)) 
-  
-  return(data)
-  
-}
+
 reassortant_metadata <- read_csv('./data/metadata/h5_metadata.csv')
+birds <- read_csv('ebird_taxonomy_v2023.csv') %>%
+  mutate(PRIMARY_COM_NAME = tolower(PRIMARY_COM_NAME)) %>%
+  mutate(PRIMARY_COM_NAME= gsub('gray', 'grey', PRIMARY_COM_NAME))
+
 test_reassortant <- reassortant_metadata %>%
   rename(joint_location = location) %>%
+  mutate(across(contains('location'), 
+                .fns = ~ gsub("^NA$|^missing$|^unknown$", NA, .x))) %>%
   mutate(location = coalesce(location_3,location_2)) %>%
   mutate(date = parsedate::parse_date(date) %>%
            as.Date()) %>%
@@ -353,6 +24,7 @@ test_reassortant <- reassortant_metadata %>%
   #mutate(location = tolower(location)) %>%
   mutate(location = gsub("[^A-Za-z]", " ", tolower(location))) %>%
   mutate(location =  gsub("\\s+", " ", str_trim(location))) %>%
+  
  
   mutate(location = case_when(
     
@@ -471,73 +143,175 @@ test_reassortant <- reassortant_metadata %>%
          location) ~ "zoundwéogo",
     
     # Cambodia
-    grepl("krong phnum penh", location) ~"phnom penh",
-    grepl("khett kandal", location) ~"kandal",
-    grepl("khett prey veng", location) ~"prey veaeng",
-    grepl("takeo", location) ~"taakaev",
+    grepl("krong phnum penh", 
+          location) ~"phnom penh",
+    grepl("khett kandal",
+          location) ~"kandal",
+    grepl("khett prey veng",
+          location) ~"prey veaeng",
+    grepl("takeo", 
+          location) ~"taakaev",
     
     # Chile
-    grepl("region de antofagasta", location) ~ "antofagasta",
+    grepl("region de antofagasta", 
+          location) ~ "antofagasta",
     
     # Colombia
-    grepl("departamento de bolivar", location) ~"bolívar",
-    grepl("departamento del choco", location) ~"chocó",
-    grepl("departamento de cordoba", location) ~"córdoba",
-    grepl("departamento del magdalena", location) ~"magdalena",
+    grepl("departamento de bolivar", 
+          location) ~"bolívar",
+    grepl("departamento del choco", 
+          location) ~"chocó",
+    grepl("departamento de cordoba",
+          location) ~"córdoba",
+    grepl("departamento del magdalena", 
+          location) ~"magdalena",
     
     # Costa Rica
-    grepl("provincia de limon", location) ~ "limón",
+    grepl("provincia de limon",
+          location) ~ "limón",
     
     # Croatia
-    
+    grepl('koprivnicko krizevacka zupanija', 
+          location) ~ "koprivničko-križevačka županija",
+    grepl('vukovarsko srijemska zupanija',
+          location) ~ "vukovarsko-srijemska županija",
+    grepl('sisacko moslavacka zupanija',
+          location) ~ "sisačko-moslavačka županija",   
     
     # Denmark
+    grepl('region sjaland', 
+          location) ~    "sjælland",
+    grepl('region syddanmark', 
+            location) ~ "syddanmark",
+    grepl('region nordjylland', 
+            location) ~ "nordjylland",
+    grepl('region midtjylland',
+            location) ~"midtjylland",
     
     # Ecuador
+    grepl('provincia de manabi', 
+          location) ~ "manabí",
     
     # Honduras
-    
+    grepl('departamento de atlantida',
+          location) ~ "atlántida",
+      
     # Hungary
+    grepl('bacs kiskun',
+          location) ~   "bács-kiskun",
+    grepl('csongrad megye', 
+            location) ~ "csongrád",
+    grepl('bekes megye', 
+            location) ~ "békés",
+    grepl('hajdu bihar', 
+            location) ~ "hajdú-bihar",
+    grepl('somogy megye', 
+            location) ~  "somogy",
     
     # Iceland
+    grepl('westfjords',
+          location) ~ "vestfirðir",
     
     # Indonesia
+    grepl('east java', 
+          location) ~ "jawa timur",
     
     # Iraq
-    
+    grepl('muhafazat ninawa',
+          location) ~ "ninawa",
+      
     # Israel
-    
-    # Kazakhstan
+    grepl('northern district', 
+          location) ~ "hazafon",
+   
+       # Kazakhstan
+    grepl('akmola', 
+          location) ~ "aqmola oblysy", 
+    grepl('kostanay', 
+          location) ~ "qostanay oblysy",        
+    grepl('north kazakhstan',
+          location) ~ "soltüstik quzaqstan oblysy",
+    grepl('almaty province', 
+          location) ~ "almaty oblysy",
     
     # Latvia
-    
+    grepl('jurmala',
+          location) ~"jūrmala",
     # Lithuania
-    
+    grepl('vilnius', 
+          location) ~"vilniaus apskritis",
     # Luxembourg
-    
+    grepl('district de grevenmacher', 
+          location) ~ "grevenmacher",
+    grepl('district de diekirch', 
+          location) ~ "diekirch",
     # Mali
+    grepl('kati', 
+          location) ~ "koulikoro",
     
     # Montenegro
+    grepl('skadar lake',
+          location) ~ "bar",
     
-    # Netherlands
-    
-    # Niger
-    
-    # Norway
-    
+      # Niger
+    grepl('bouza tahoua', 
+          location) ~ "tahoua",
+    grepl('torodi tillab ri',
+          location) ~ "tillabéri",  
+    grepl(' zinder$', 
+          location) ~ "zinder",
+    grepl('maradi$',
+          location) ~ "maradi",
+    grepl('niamey$', 
+          location) ~ "niamey",
+  
+      # Norway
+    grepl('hitra', 
+          location) ~ "sør-trøndelag",
+    grepl('tromso',
+          location) ~"troms",
+
     # Peru
-    
+    grepl('departamento de lima', 
+          location) ~  "municipalidad metropolitana de lima",      
+    grepl('provincia constitucional del callao',
+          location) ~"el callao",
+    grepl('departamento de tacna',
+          location) ~ "tacna",        
+    grepl('departamento de ica',
+         location) ~  "ica",             
+  
     # Portugal
-    
-    # Romania
-    
-    # Senegal
+    grepl('distrito de setubal', 
+          location) ~ "setúbal",
+  
+     # Romania
+    grepl('judetul timis', 
+          location) ~ "timiș",     
+    grepl('judetul ilfov', 
+          location) ~ "ilfov",      
+    grepl('judetul constanta', 
+          location) ~ "constanța", 
+    grepl('mures ungheni', 
+          location) ~ "mureș",     
+    grepl('judetul giurgiu', 
+          location) ~ "giurgiu",   
+    grepl('tulcea',
+          location) ~ "tulcea",    
+ 
+     # Senegal
     grepl('region de thies',
-          location) ~ "thiès",
+          location) ~ 'thiès',
     grepl('djoudj bird sanctuary',
-          location) ~ "saint-louis",
+          location) ~ 'saint-louis',
     
     # Slovakia
+    grepl('dobrohost', 
+          location) ~ "trnavský kraj",
+   grepl('kosice',
+         location) ~  "košický kraj" ,
+   grepl('kalinkovo|petrzalka',
+         location) ~"bratislavský kraj",
     
     # South Africa
     grepl('province of the western cape',
@@ -772,11 +546,18 @@ test_reassortant <- reassortant_metadata %>%
     grepl("^vi$", 
           location) ~"vicenza",
     
-    # Kosovo
-    
-
-    
-    
+    # Kosovo (Currently represented as serbia)
+   grepl('gjilan',
+         location) ~ "kosovsko-pomoravski okrug",  
+   grepl('mitrovice|mitrovica', 
+         location) ~ "kosovsko-mitrovački okrug",
+   grepl('shtime|rahovec|malisheve',
+         location) ~ "pećki okrug",
+   grepl('kacanik|ferizaj|shtime|suhareke',
+         location) ~ "kosovski okrug",
+   grepl('kosovo', 
+         location) ~   "kosovo-metohija",
+ 
     # Russian Federation
     grepl('russian federation', 
           location) ~ 'russia',
@@ -786,11 +567,11 @@ test_reassortant <- reassortant_metadata %>%
           location) ~ "chelyabinskaya oblast'",
     grepl("astrakhan", 
           location) ~ "astrakhanskaya oblast'",
-    grepl("novosibirsk region|chany lake|^chany$", 
+    grepl("novosibirsk|chany lake|^chany$", 
           location) ~ "novosibirskaya oblast'",
     grepl("omsk.*", 
           location) ~ "omskaya oblast'",
-    grepl("rostov-on-don", 
+    grepl("rostov oblast|rostov-on-don", 
           location) ~ "rostovskaya oblast'",
     grepl("russia primorje", 
           location) ~ "primorskiy kray",
@@ -820,9 +601,13 @@ test_reassortant <- reassortant_metadata %>%
           location) ~ "saratovskaya oblast'",
     grepl('kurgan*', 
           location) ~ "kurganskaya oblast'",
-    grepl('central russia' 
-          ,location) ~ 'russia',
-    
+    grepl('central russia',
+          location) ~ 'russia',
+   grepl('republic of tatarstan', 
+         location) ~"tatarstan, respublika",
+   grepl('republic of kalmykia', 
+         location) ~ "kalmykiya, respublika",
+   
     # USA
     grepl("north dakota",
           location) ~ "north dakota",
@@ -863,35 +648,61 @@ test_reassortant <- reassortant_metadata %>%
           location) ~ "castilla-la mancha",
     
     # Poland
-    grepl("lower silesian voivodeship", location) ~"dolnośląskie",
-    grepl("kuyavian pomeranian voivodeship", location) ~"kujawsko-pomorskie",
-    grepl("lublin voivodeship", location) ~"lubelskie",
-    grepl("lubusz voivodeship", location) ~"lubuskie",
-    grepl("lodzkie|odz voivodeship", location) ~"łódzkie",
-    grepl("lesser poland voivodeship", location) ~"małopolskie",
-    grepl("masovian voivodeship", location) ~"mazowieckie",
-    grepl("opole voivodeship", location) ~"opolskie",
-    grepl("pomeranian voivodeship", location) ~"pomorskie",
-    grepl("silesian voivodeship", location) ~"śląskie",
-    grepl("swietokrzyskie voivodeship", location) ~"świętokrzyskie",
-    grepl("warmi sko mazurskie", location) ~"warmińsko-mazurskie",
-    grepl("greater poland voivodeship", location) ~"wielkopolskie",
-    grepl("west pomeranian voivodeship", location) ~"zachodniopomorskie",
+    grepl("lower silesian voivodeship", 
+          location) ~"dolnośląskie",
+    grepl("kuyavian pomeranian voivodeship",
+          location) ~"kujawsko-pomorskie",
+    grepl("lublin voivodeship", 
+          location) ~"lubelskie",
+    grepl("lubusz voivodeship",
+          location) ~"lubuskie",
+    grepl("lodzkie|odz voivodeship",
+          location) ~"łódzkie",
+    grepl("lesser poland voivodeship", 
+          location) ~"małopolskie",
+    grepl("masovian voivodeship",
+          location) ~"mazowieckie",
+    grepl("opole voivodeship", 
+          location) ~"opolskie",
+    grepl("pomeranian voivodeship",
+          location) ~"pomorskie",
+    grepl("silesian voivodeship", 
+          location) ~"śląskie",
+    grepl("swietokrzyskie voivodeship", 
+          location) ~"świętokrzyskie",
+    grepl("warmi sko mazurskie",
+          location) ~"warmińsko-mazurskie",
+    grepl("greater poland voivodeship", 
+          location) ~"wielkopolskie",
+    grepl("west pomeranian voivodeship",
+          location) ~"zachodniopomorskie",
     
     
     # Sweden
-    grepl("blekinge lan", location) ~"blekinge län",
-    grepl("dalarnas lan", location) ~"dalarnas län",
-    grepl("gotlands lan", location) ~"gotlands län",
-    grepl("hallands lan", location) ~"hallands län",
-    grepl("jonkopings lan", location) ~"jönköpings län",
-    grepl("kalmar lan", location) ~"kalmar län",
-    grepl("skane lan", location) ~"skåne län",
-    grepl("stockholms lan", location) ~"stockholms län",
-    grepl("sodermanlands lan", location) ~"södermanlands län",
-    grepl("uppsala lan", location) ~"uppsala län",
-    grepl("vastra gotalands lan", location) ~"västra götalands län",
-    grepl("ostergotlands lan", location) ~"östergötlands län",
+    grepl("blekinge lan",
+          location) ~"blekinge län",
+    grepl("dalarnas lan",
+          location) ~"dalarnas län",
+    grepl("gotlands lan",
+          location) ~"gotlands län",
+    grepl("hallands lan", 
+          location) ~"hallands län",
+    grepl("jonkopings lan"
+          , location) ~"jönköpings län",
+    grepl("kalmar lan",
+          location) ~"kalmar län",
+    grepl("skane lan",
+          location) ~"skåne län",
+    grepl("stockholms lan",
+          location) ~"stockholms län",
+    grepl("sodermanlands lan", 
+          location) ~"södermanlands län",
+    grepl("uppsala lan", 
+          location) ~"uppsala län",
+    grepl("vastra gotalands lan",
+          location) ~"västra götalands län",
+    grepl("ostergotlands lan", 
+          location) ~"östergötlands län",
     
     
     # Germany 
@@ -960,7 +771,7 @@ test_reassortant <- reassortant_metadata %>%
           location) ~ "incheon gwang'yeogsi", 
     grepl('^dj$',
           location) ~ "daejeon gwang'yeogsi", 
-    grepl('^sj$', 
+    grepl('^sj$|sejong teugbyeolsi', 
           location) ~ "sejong teugbyeolsi", 
     grepl('^gj$',
           location) ~ "gwangju gwang'yeogsi", 
@@ -1101,7 +912,7 @@ test_reassortant <- reassortant_metadata %>%
     #########################################################################################
     grepl('bosnia and herzegovina', location) ~ 'bosnia-herzegovina',
     
-    grepl('sva[:0-9:]', location) ~ 'NA',
+    grepl('sva[:0-9:]|north america|zeebrugge belgi', location) ~ 'NA',
     
     # Indonesia
     grepl("hulu sungai utara|banjarbaru", location) ~ "kalimantan selatan",
@@ -1112,39 +923,27 @@ test_reassortant <- reassortant_metadata %>%
     
     .default = location
   )) %>%
-  mutate(is.problem = case_when(location %in% tolower(geographicalmetadata$name_subdiv1) ~ FALSE, 
-                                location %in% tolower(geographicalmetadata$name_country) ~ FALSE,
-                                location %in% tolower(geographicalmetadata$name_subdiv2) ~ FALSE,
-                                .default = TRUE))
-
-probs <- test_reassortant %>%
-  filter(is.problem == TRUE) %>%
-  select(location, location.2) %>%
-  distinct()
-
-probs %>% filter(location.2 == 'Czech Republic') %>% pull(location) %>% unique()
-
-
-
+ # mutate(is.problem = case_when(location %in% tolower(geographicalmetadata$name_subdiv1) ~ FALSE, 
+                              #  location %in% tolower(geographicalmetadata$name_country) ~ FALSE,
+                               # location %in% tolower(geographicalmetadata$name_subdiv2) ~ FALSE,
+                                #.default = TRUE)) %>%
   rowwise() %>%
   mutate(loc = getLocation(location)) %>%
   as_tibble() %>%
-  unnest(loc)
-
-
+  unnest(loc)  %>%
   # Format source before taxa allocation
   mutate(source = gsub("_", " ", tolower(source))) %>%
   mutate(source = str_trim(source)) %>%
   mutate(source= gsub('gray', 'grey', source)) %>%
   mutate(primary_com_name = case_when(
-    grepl("common|eurasian teal|green-winged-teal", source) ~ "green-winged teal", # This one is a pain
+   
     grepl("spot-billed duck", source) ~ "eastern spot-billed duck",
     grepl("crested grebe", source) ~ "great crested grebe",
     grepl("eastern curlew", source) ~ "far eastern curlew",
     grepl("bean goose", source) ~ "taiga/tundra bean-goose",
     grepl("surf scooter", source) ~ "surf scoter",
     grepl("northern goshawk|^goshawk$", source) ~ "eurasian goshawk", # add & for country
-    grepl('sparrowhawk', source) & grepl('England', location) ~ 'eurasian sparrowhawk',
+    grepl('sparrowhawk', source) & grepl('Europe', location.1) ~ 'eurasian sparrowhawk',
     grepl("coopers s hawk", source) ~ "cooper's hawk",
     grepl("rosss goose", source) ~ "ross's goose",
     grepl("turnstone", source) & location == "Netherlands" ~ "ruddy turnstone",
@@ -1154,27 +953,25 @@ probs %>% filter(location.2 == 'Czech Republic') %>% pull(location) %>% unique()
     grepl("shoveler", source) ~ "northern shoveler",
     grepl("white-fronted goose", source) ~ "greater/lesser white-fronted goose",
     grepl("mallard duck", source) ~ "mallard",
-    grepl("chicken|layer hen|laying hen|broiler|poultry|chichen", source) ~ "red junglefowl (domestic type)",
-    grepl("domestic goose|pomeranian goose", source) ~ "domestic goose sp. (domestic type)",
-    grepl("domestic duck|pekin duck|mule duck", source) ~ "mallard (domestic type)",
+    grepl("chicken|layer hen|laying hen|broiler|poultry|chichen|^hen$|^rooster$|^layer$", source) ~ "red junglefowl (domestic type)",
+    grepl("domestic goose|pomeranian goose|embden goose|sebastopol goose|anser anser domesticus|american buff goose|african goose|rural goose", source) ~ "domestic goose sp. (domestic type)",
+    grepl("domestic duck|pekin duck|mule duck|runner duck|cascade duck|rural duck", source) ~ "mallard (domestic type)",
     grepl('^buzzard$', source) ~ 'common buzzard',
     grepl('knot wader', source) ~ 'red knot',
-    grepl("turkey", source) & location != "Mexico" ~ "wild turkey",
-    grepl('^kestrel$', source) & grepl('Germany|England|Italy', location) ~ 'eurasian kestrel',
-    grepl('brent goose', source) ~ 'brant',
+    grepl("turkey|^pavo$", source) & location != "Mexico" ~ "wild turkey",
+    grepl('brent goose|brant goose', source) ~ 'brant',
     grepl('eagle owl', source) ~'eurasian eagle-owl',
     grepl('jungle crow', source) & location == 'Japan' ~ 'large-billed crow',
     grepl('^magpie$' ,source) & location == 'Idaho' ~ 'black-billed magpie',
     grepl('oystercatcher', source) & grepl('Germany', location) ~ 'eurasian oystercatcher',
-    grepl('canade goose', source) ~ 'canada goose',
+    grepl('canade goose|canada goose', source) ~ 'canada goose',
     grepl('european herring gull', source) ~ 'herring gull',
     grepl('towny owel', source) ~ 'tawny owl',
     grepl('gadwall duck', source) ~ 'gadwall',
     grepl('lesser snow goose', source) ~ 'snow goose',
     grepl("pink footed goose", source) ~ "pink-footed goose",
     grepl("european wigeon", source) ~ "eurasian wigeon",
-    source == 'sea eagle' & grepl('Norway', location)~"white-tailed eagle",
-    grepl('guinea fowl', source) & grepl('Italy|Estonia|Germany', location) ~ "helmeted guineafowl (domestic type)",
+    source == 'sea eagle' & location.1 == 'Europe' ~"white-tailed eagle",
     grepl('western jackdaw', source) ~ 'eurasian jackdaw',
     grepl('^gannet$', source) & grepl('Scotland', location) ~ "northern gannet",
     grepl('spotbill duck', source) ~ "indian spot-billed duck",
@@ -1185,8 +982,55 @@ probs %>% filter(location.2 == 'Czech Republic') %>% pull(location) %>% unique()
     grepl('grey plover', source)~ "black-bellied plover",
     grepl('greenwing duck', source) ~ "green-winged teal",
     grepl('franklins gull', source) ~ "franklin's gull",
-    
-    
+    grepl("hartlaubs gull", source) ~ "hartlaub's gull",
+    grepl('long-tailed skua', source) ~ "long-tailed jaeger",
+    grepl('amazon parrot', source) ~ "amazona sp.",
+    grepl('catalina macaw', source) ~ "large macaw sp.",
+    grepl('coopers{0,2} hawk', source) ~ "cooper's hawk",
+    grepl("bufflehead", source) ~ "bufflehead",
+    grepl("great-white pelican", source) ~ "great white pelican",
+    grepl("nene goose", source) ~ "hawaiian goose",
+    grepl("american pelican", source) ~ "american white pelican",
+    grepl("white breasted cormorant", source) ~ "great cormorant",
+    grepl("northern giant petrel", source) ~ "northern giant-petrel",
+    grepl("african fish eagle", source) ~ "african fish-eagle",
+    grepl("european white stork", source) ~ "white stork",
+    grepl("nothern gannet", source) ~ "northern gannet",
+    grepl("chinese ringneck pheasant", source) ~ "ring-necked pheasant",
+    grepl("carolina duck", source) ~ "wood duck",
+    grepl("african black oystercatcher", source) ~ "african oystercatcher",
+    grepl("red-backed-hawk", source) ~ "variable hawk",
+    grepl("black-headead gull", source) ~ "black-headed gull",
+    grepl("western screech owl", source) ~ "western screech-owl", 
+    grepl("harris{1,2} hawk", source) ~ "harris's hawk",
+    grepl("northwestern crow", source) ~ "american crow",    
+    grepl( "lady amhersts pheasant", source) ~ "lady amherst's pheasant",
+    grepl("barn owl", source) ~ 'barn owl',
+    grepl('^fulmar$', source) & location.1 != 'South America' ~ "northern fulmar",
+    grepl('^fulmar$', source) & location.1 == 'South America' ~ "southern fulmar",
+    grepl("arc{0,1}tic tern", source) ~ "arctic tern",
+    grepl("black-swan", source) ~ "black swan",
+    grepl("swainsons hawk", source ) ~"swainson's hawk",
+    grepl('^reed warbler$', source) ~ "acrocephalus sp.",
+    grepl("common|eurasian teal|green[- ]{0,1}winged[- ]{0,1}teal", source) ~ "green-winged teal", 
+    grepl("^oystercatcher$", source) ~ "oystercatcher sp.", 
+    grepl("^curlew$", source) ~ "curlew sp.", 
+    grepl("blue-winged teal", source) ~ "blue-winged teal", 
+    grepl("swift tern", source) ~ "great crested tern",   
+    grepl("shelduck" , source) ~ "dabbling duck sp.",
+    grepl("rt-hawk", source) ~  "red-tailed hawk",
+    grepl("sea eagle", source) ~ "eagle sp.",
+    grepl("^moorhen$", source) ~ "rail/crake sp.",
+    grepl("^kittiwake$", source) ~ "black-legged/red-legged kittiwake",
+    grepl('mute[- ]{0,1}swan', source) ~"mute swan",
+    grepl("^magpie$", source) & location.1 == 'Europe' ~ "eurasian magpie",
+    grepl("^magpie$", source) & location.1 == 'East Asia' ~ "oriental/eurasian magpie",
+    grepl("^magpie$", source) & location.1 == 'North America' ~ "black-billed magpie",
+    grepl("^kestrel$", source) & location.1 == 'North America' ~ "american kestrel",
+    grepl("^kestrel$", source) & location.1 == 'Europe' ~ "lesser/eurasian kestrel",
+    grepl("^guinea {0,1}fowl", source) & location.1 == 'Africa' ~ "crested guineafowl sp.",
+    grepl('^guinea {0,1}fowl', source) & location.1 != 'Africa' ~ "helmeted guineafowl (domestic type)",
+    grepl('^rhea$', source)  ~ "rhea sp.",
     
     # latin names
     grepl("anas crecca", source) ~ "green-winged teal",
@@ -1215,13 +1059,35 @@ probs %>% filter(location.2 == 'Czech Republic') %>% pull(location) %>% unique()
     grepl('tadorna tadorna', source) ~ "common shelduck",
     grepl('anseriformes', source) ~ 'waterfowl sp.',
     grepl('sterna hirundo', source) ~ "common tern",
-    
-    grepl('^seal$', source) ~ 'seal sp.', 
-    grepl('^mink$', source) ~ 'mink sp.',
-    grepl('^otter$', source) & grepl('Scotland', location) ~ 'eurasian otter',
-    grepl('badger', source) ~ 'european badger',
-    
-    
+    grepl("meleagris gallopavo", source) ~ "wild turkey",
+    grepl("branta leucopsis", source) ~ "barnacle goose",
+    grepl("alopochen aegyptiaca", source) ~ "egyptian goose",
+    grepl("numenius arquata", source) ~ 'eurasian curlew',
+    grepl("pavo cristatus", source) ~ "indian peafowl",
+    grepl("pelecanus", source) ~ "pelican sp.",             
+    grepl("corvus corvus", source) ~ "crow sp.",              
+    grepl("cygnus cygnus", source) ~ "whooper swan",
+    grepl("chroicocephalus ridibundus", source) ~ "black-headed gull",
+    grepl("otus scops", source) ~ "eurasian scops-owl",                 
+    grepl("aythya fuligula", source) ~ "tufted duck",             
+    grepl("corvus monedula", source) ~ "eurasian jackdaw",            
+    grepl("morus bassanus", source)~ "northern gannet", 
+    grepl("tachybaptus ruficollis", source) ~ "little grebe",    
+    grepl("egretta garzetta", source)~"little egret",            
+    grepl("pelecanus conspicillatus", source) ~ "australian pelican",   
+    grepl("phasianus colchicus", source) ~ "ring-necked pheasant",   
+    grepl("gypaetus barbatus", source) ~ "bearded vulture",
+    grepl("pelecanus occidentalis", source) ~ "brown pelican",
+    grepl("ardea cinerea", source) ~ "grey heron",
+    grepl("thalasseus sandvicensis", source) ~ "sandwich tern",    
+    grepl("phalacrocorax carbo", source) ~ "great cormorant",
+    grepl("laridae", source) ~ "gull/tern sp.",
+    grepl("phasianidae", source) ~ "pheasant sp.",
+    grepl('anatidae', source) ~ "teal sp.",    
+    grepl('bubo bubo', source) ~'eurasian eagle-owl',
+    grepl('larus canus', source) ~ 'common gull',
+   
+
     # generics
     grepl("^swan$", source) ~ "swan sp.",
     grepl("^cormorant$", source) ~ 'cormorant sp.',
@@ -1232,14 +1098,15 @@ probs %>% filter(location.2 == 'Czech Republic') %>% pull(location) %>% unique()
     grepl('^ostrich$' ,source) ~ "common ostrich",
     grepl("^egret$", source) ~ "egret sp.",
     grepl('lapwing', source) ~ 'lapwing sp.',
+    grepl('^wigeon$', source) ~ "eurasian/american wigeon",
     grepl('^pochard$', source) ~ "aythya sp.",
     grepl('coot', source) ~ 'coot sp.',
     grepl("waterfowl", source) ~ "waterfowl sp.",
     grepl("peacock|peafowl", source) ~ "indian peafowl (domestic type)",
     grepl("quail", source) & location != "America" ~ "old world quail sp.", # requires better location
     grepl("shorebird|sandpiper", source) ~ "shorebird sp.",
-    grepl("black-backed gull|^gull$|seagull", source) ~ "gull sp.",
-    grepl("^crow$", source) ~ "crow/raven sp.",
+    grepl("black-backed gull|^gull$|seagull|seabird", source) ~ "gull sp.",
+    grepl("^crow$|^raven$|american raven", source) ~ "crow/raven sp.",
     grepl("^duck$|wild duck|migratory duck", source) ~ "duck sp.",
     grepl("^grebe$", source) ~ "grebe sp.",
     grepl("^owl$", source) ~ "owl sp.",
@@ -1247,33 +1114,80 @@ probs %>% filter(location.2 == 'Czech Republic') %>% pull(location) %>% unique()
     grepl('^eagle$', source) ~ 'eagle sp.',
     grepl('steamer duck', source) ~ "steamer-duck sp.",
     grepl('^falcon$', source) ~ "falcon sp.",
+    grepl("^flamingo$", source) ~ "flamingo sp.",
     grepl("^pelican$", source) ~ "pelican sp.",
-    grepl("^pheasant$", source) ~ "pheasant sp.",
+    grepl("^pheasant$|^partridge$", source) ~ "pheasant sp.",
     grepl("^pigeon$", source) ~ "pigeon/dove sp.",
     grepl("^teal$", source) ~ "teal sp.",
     grepl('^ibis$', source) ~ 'ibis sp.',
-    source %in% c("aquatic bird", "avian", "bird", "wild bird", "wild bird", "backyard bird") ~ "bird sp.",
+    grepl('^rhea$', source) ~ 'rhea sp.',
+    
+    grepl('^vulture$', source) & any(location.1 %in% c('North America', 'South America')) ~ "new world vulture sp.",
+    grepl('^vulture$', source) & !any(location.1 %in% c('North America', 'South America')) ~ "old world vulture sp.",
+    grepl('^gannet$', source) ~ "sulid sp.",
+    grepl("^heron$", source) ~"heron sp.",
+    grepl("^aquatic bird$|^avian$|^bird$|wild[- ]{0,1}birds{0,1}|backyard bird", source) ~ "bird sp.",
     source %in% c("en", "env", "environment", "enviroment", "environmental", 'environment sample',
                   "water", "wild bird feces") ~ "environment",
-    grepl("red fox|^fox$", source) ~ "red fox",
-    grepl("attus norvegicus", source) ~ "brown rat",
-    .default = source
+    
+    # Mammals
+    grepl("red fox|^fox$|vulpes vulpes", source) ~ "red fox",
+    grepl("r{0,1}attus norvegicus", source) ~ "brown rat",
+    grepl('^seal$|sea lion', source) ~ 'seal sp.', 
+    grepl('^mink$|wild mink', source) ~ 'mink sp.',
+    grepl('^otter$', source) & grepl('Scotland', location) ~ 'eurasian otter',
+    grepl('badger', source) & location.1 == 'Europe' ~ 'european badger',
+    grepl("harbou{0,1}r seal", source) ~ 'harbour seal',
+    grepl("mustela furo", source) ~"ferret",
+    grepl("mustela putorius", source) ~"european polecat",
+    grepl("stone marten", source) ~"beech marten",
+    grepl("bear$", source) ~"bear sp.",
+    grepl("dolphin$|porpoise", source) ~"cetacea sp.",
+    grepl("pekania pennanti", source) ~"fisher",
+    grepl("^fox$", source) ~"fox sp.",
+    grepl("^lynx$", source) ~"lynx sp.",
+    grepl("^polecat$", source) ~"mustelid sp.",
+    grepl('^skunk$', source) ~ 'skunk sp.',
+    grepl('^otter$', source) ~ 'otter sp.',
+    grepl('^lion$|^cat$|domestic cat', source) ~ 'feline sp.',
+    
+    .default = source 
   )) %>%
+  mutate(is.problem.bird = case_when(primary_com_name %in% tolower(birds$PRIMARY_COM_NAME) ~ FALSE, 
+                                .default = TRUE))%>%
   
   # Get host taxonomy
   rowwise() %>%
-  mutate(taxonomy = getTaxonomyForName(primary_com_name)) %>%
+  mutate(taxonomy = getTaxonomyForName(primary_com_name))%>%
   as_tibble() %>%
   unnest(taxonomy) %>%
-  rename_with(.fn = ~ tolower(.x)) %>%
+  rename_with(.fn = ~ tolower(.x))
+
+probs_birds <- test_reassortant_birb %>%
+  filter(is.problem.bird == TRUE) %>%
+  pull(primary_com_name) %>% unique()
+
+probs %>% filter(location.2 == 'Czech Republic') %>% pull(location) %>% unique()
+
+
+
+
+
+                       
+
+           
+           
+                
+            
+          
+                    
+                  
+
+
+
+ %>%
   
-  # binary host information
-  mutate(is.domestic = case_when(grepl("domestic type", sci.name) ~ "domestic",
-                                 .default = "wild"
-  )) %>%
-  mutate(is.bird = case_when(grepl("ormes$", order) ~ "bird",
-                             .default = "other"
-  )) %>%
+  %>%
 
     
     # The plan is to format both frames properly, then left join to 'main' metadata, r
