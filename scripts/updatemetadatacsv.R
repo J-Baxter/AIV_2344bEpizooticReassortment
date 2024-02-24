@@ -1,6 +1,6 @@
 metadatafiles <- list.files('./data/metadata/2024Jan24',
                             full.names = T,
-                            pattern = '.tsv')
+                            pattern = '.csv')
 
 segnames <- c('HA', 'MP', 'N1', 'N2', 'N3', 'N6', 'N8', 'NP', 'NS', 'PA', 'PB1', 'PB2')
 
@@ -8,11 +8,11 @@ updated_reassortantdata <- read_csv('./data/metadata/h5_metadata_global_6280_upd
 
 
 
-Jan24_metadata <- lapply(metadatafiles, read_tsv) %>%
+Jan24_metadata <- lapply(metadatafiles, read_csv) %>%
   setNames(., segnames) %>%
   lapply(., function(x) x %>% mutate(collection.tipdate = as.character(collection.tipdate))) %>%
   bind_rows(., .id = 'segment') %>%
-  left_join(.,updated_reassortantdata , by = join_by(isolate.id == isolate_id)) %>%
+  left_join(., updated_reassortantdata, by = join_by(isolate.id == isolate_id)) %>%
   mutate(clade = coalesce(clade.y, clade.x)) %>%
   select(-clade.y) 
 
@@ -32,6 +32,7 @@ reformatted <- Jan24_metadata %>%
                                             collection.country.name == 'russia' & collection.subdiv1.long >= 105 ~ 'eastern asia',
                                             .default = collection.region.name)) %>%
   # replace wild NA with unknown
+  unite('host.class', c(host.order, host.isdomestic), remove = F) %>%
   mutate(host.class = case_when(is.na(host.order) ~ 'unknown',
                                 grepl('environment', host.order) ~ 'unknown',
                                 .default = host.class)) %>%
@@ -46,10 +47,3 @@ reformatted <- Jan24_metadata %>%
   
   
 
-metadatafiles_tsv <- gsub('.csv$', '.tsv' ,metadatafiles)
-
-Jan24_metadata_joint <- Jan24_metadata 
-mapply(write_delim, 
-       quote= 'needed',
-       metadata_subsampled_beast, 
-       metadatafiles_tsv)
