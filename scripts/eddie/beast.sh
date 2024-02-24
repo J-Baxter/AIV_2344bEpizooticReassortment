@@ -18,6 +18,7 @@ beast_run=${1}
 #$ -l h_vmem=8G
 #$ -l h_rt=120:00:00
 #$ -M james.baxter@ed.ac.uk
+#$ -P roslin_eeid_aiv
 #$ -m baes
 . /etc/profile.d/modules.sh
 

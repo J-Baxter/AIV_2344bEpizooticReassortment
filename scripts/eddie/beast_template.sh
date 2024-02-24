@@ -14,7 +14,7 @@
 #$ -cwd
 #$ -pe sharedmem 2
 #$ -l h_vmem=8G
-#$ -l h_rt=168:00:00
+#$ -l h_rt=200:00:00
 #$ -M james.baxter@ed.ac.uk
 #$ -P roslin_eeid_aiv
 #$ -m baes
