@@ -1320,6 +1320,7 @@ FormatMetadata <- function(data){
       collection.subdiv2.lat,
       collection.subdiv2.long
     ) %>%
+      
     # Select columns
     select(-c(source, location)) %>%
     mutate(across(everything(), .fns = ~ gsub('^NA$', NA, .x)))

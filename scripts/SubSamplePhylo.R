@@ -117,7 +117,7 @@ seqstoremove <- read_csv('./data/erroneous_seqs.csv') %>%
 
 ####################################################################################################
 # Extract metadata and format tipnames
-tipnames <- lapply(trees, TipLabels) %>% 
+phylotipnames <- lapply(trees, TipLabels) %>% 
   setNames(segnames) # Only required because we are working backwards from tipnames
 
 
@@ -155,7 +155,9 @@ metadata_joined <- lapply(metadata_formatted, MyFunc, reassortant_metadata_forma
   
 
 metadata_joined_df <- metadata_joined %>% 
-  bind_rows(., .id = 'virus.segment')
+  bind_rows(., .id = 'virus.segment') 
+
+######### Clade and cluster guess here ##########
 
 ####################################################################################################
 # Rename phylogenies and alignments with new-format tipnames
