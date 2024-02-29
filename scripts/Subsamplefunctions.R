@@ -79,7 +79,15 @@ ExtractMetadata <- function(tiplabels){
     )) %>%
     mutate(source = case_when(str_length(source) == 1 ~ NA,
                               .default = source
-    )) 
+    )) %>%
+    
+    mutate(source = case_when(grepl("black[-_[:space:]]headed[-_[:space:]]heron|hartlaubs[-_[:space:]]gull|chicken|great[-_[:space:]]black[-_[:space:]]backed[-_[:space:]]gull|gallus[-_[:space:]]gallus|guinea[-_[:space:]]fowl|northern[-_[:space:]]shoveler", location, ignore.case = T) ~ location,
+                              .default = source)) %>%
+    mutate(location = case_when(grepl("black[-_[:space:]]headed[-_[:space:]]heron|hartlaubs[-_[:space:]]gull|chicken|great[-_[:space:]]black[-_[:space:]]backed[-_[:space:]]gull|gallus[-_[:space:]]gallus|guinea[-_[:space:]]fowl|northern[-_[:space:]]shoveler", location, ignore.case = T) & 
+                                  grepl('africa|europe|kansas' , id_unsure) ~ id_unsure,
+                                grepl("black[-_[:space:]]headed[-_[:space:]]heron|hartlaubs[-_[:space:]]gull|chicken|great[-_[:space:]]black[-_[:space:]]backed[-_[:space:]]gull|gallus[-_[:space:]]gallus|guinea[-_[:space:]]fowl|northern[-_[:space:]]shoveler", location, ignore.case = T) & 
+                                  !grepl('africa|europe' , id_unsure) ~ NA,
+                              .default = location))
   
   return(out)
 }
