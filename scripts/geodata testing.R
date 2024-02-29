@@ -1,5 +1,36 @@
 library(tidyverse)
-geodata <- read_csv('./gdam_geodata.csv')
+geodata <- read_csv('./annotated_geodata.csv')
+countries_regions <- read_csv('geographicalmetadata.csv') %>% 
+  select(region, name_country) %>% 
+  distinct() %>%
+  mutate(across(everything(.), .fns = ~ tolower(.x))) %>%
+  mutate(name_country = case_when(
+    grepl('czech republic', name_country) ~ 'czechia', 
+    grepl('viet nam', name_country) ~ 'vietnam',
+    grepl('mexico', name_country) ~ 'méxico',
+    grepl('burkina-faso', name_country) ~ 'burkina faso',
+    grepl('bosnia', name_country) ~ "bosnia and herzegovina",
+    grepl('macedonia', name_country) ~ 'north macedonia', 
+    .default = name_country))%>% 
+  rbind(data.frame(name_country = 'kosovo', region = 'southern europe'))
+
+geodata_regions <- geodata %>% 
+  left_join(countries_regions, by = join_by(country == name_country)) %>%
+  mutate(region = case_when(
+    adm1_long > 60 & adm1_long < 110 & country == 'russia' ~ 'central asia',
+    adm1_long >= 110 & country == 'russia' ~ 'eastern asia',
+    .default = region)) %>% 
+  mutate(match = case_when(is.na(name_1) ~ country,
+                           !is.na(name_1) ~ paste(country, name_1, sep = '_'))) %>%
+  filter(ifelse(country == 'china' && grepl('z*', gid_0), F, T))
+
+write_csv(geodata_regions, 'annotated_geodata.csv')
+
+geodata <- geodata_all %>% 
+  mutate(match = case_when(is.na(name_1) ~ country,
+                           !is.na(name_1) ~ paste(country, name_1, sep = '_'))) %>%
+  filter(ifelse(country == 'china' && grepl('z*', gid_0), F, T))
+
 
 test <- metadata_unformatted %>% bind_rows(., .id = 'ref')
 
@@ -357,6 +388,13 @@ test <- test %>%
     grepl('antofagasta', location) ~ 'chile_antofagasta',
     grepl('maule', location) ~ 'chile_maule',
     grepl('arica y parinacota', location) ~ 'chile_arica y parinacota',
+    grepl('bolivar', location) ~ 'ecuador_bolivar',
+    grepl('magdalena', location) ~ 'colombia_magdalena',
+    
+    #Oz
+    grepl('south australia', location) ~ 'australia_south australia',
+    grepl('victoria', location) ~ 'australia_victoria',
+    
     
     # Vietnam
     grepl("viet nam", 
@@ -454,7 +492,7 @@ test <- test %>%
     
     
     # Canada
-    grepl("^ab$",
+    grepl("^ab$|alberta",
           location) ~ "canada_alberta",
     grepl("^bc$", 
           location) ~ "canada_british columbia",
@@ -606,6 +644,8 @@ test <- test %>%
           location) ~ "russia_novosibirsk",
     grepl("^omsk*|russia omsk region|russia omsk", 
           location) ~ "russia_omsk",
+    grepl("tomsk*", 
+          location) ~ "russia_tomsk",
     grepl("rostov oblast|rostov on don|^rostov$", 
           location) ~ "russia_rostov",
     grepl("russia primorje", 
@@ -1020,7 +1060,7 @@ test <- test %>%
           location)  ~ 'netherlands_drenthe',
     grepl('flevoland|almere|lelystad|noordoostpolder|noordosterpolder|marker wadden|stroe waddenkust',
           location) ~ 'netherlands_flevoland',
-    grepl('zeewolde tulpeiland|zuidlaarmeergebiede oost polder|roggebotsluis|zeewolde',
+    grepl('zeewolde tulpeiland|zuidlaarmeergebiede oost polder|roggebotsluis|zeewolde|almeerder zand',
           location) ~ 'netherlands_flevoland',
     grepl('friesland|fryslan|tytsjerksteradiel|eastermar|heerenveen|schiermonnikoog|^ameland$', 
           location) ~ "netherlands_fryslân",
@@ -1145,7 +1185,7 @@ test <- test %>%
           location) ~ 'bosnia and herzegovina',
     
     grepl('sva |^sva$|north america|zeebrugge belgi',
-          location) ~ 'NA',
+          location) ~ NA,
     
     # Indonesia
     grepl("hulu sungai utara|banjarbaru", 
@@ -1164,15 +1204,22 @@ test <- test %>%
     grepl('macedonia', location) ~ 'north macedonia',
     grepl('king island', location) ~ 'australia_tasmania',
     grepl('lisbon', location) ~ 'portugal_lisboa',
+    grepl('ashanti', location) ~ 'ghana_ashanti',
+    grepl('kerala', location) ~ 'india_kerala',
+    grepl('^assam$', location) ~ 'india_assam',
+    
+    
     .default = location
   ))
 
-countries <- geodata %>% 
+
+
+
   filter(is.na(name_1)) %>%
   mutate(match = country) %>%
   filter(ifelse(country == 'china' && grepl('z*', gid_0), F, T))
 
-subdiv1 <- geodata %>% 
+subdiv1 <- geodata_all  %>% 
   filter(!is.na(name_1)) %>%
    unite('match', c(country, name_1), sep = '_', remove = F) %>%
   filter(ifelse(country == 'china' && grepl('z*', gid_0), F, T))
@@ -1187,15 +1234,10 @@ test %>%
 test %>% 
   pull(location) %>% unique() %>% .[!tolower(.) %in% geodata_query$match]
 
-[1] NA                  "an"                "ma"                "me"                "ashanti"          
-[6] "ns"                "canada_alberta"    "NA"                "tomsk"             "kerala"           
-[11] "p"                 "nl almeerder zand" ""                  "assam"             "victoria"         
-[16] "south australia"   "md"                "bolivar"           "magdalena"         "alberta"          
-[21] "cordoba"           "ohiggins"  
 
 test_2 <- test %>%
   left_join(geodata_query, by = join_by(location == match))
 
-test_2 <- test %>%
- left_join(countries, by = join_by(location == country)) %>%
-  left_join(geodata, by = join_by(location == name_1))
+
+
+  
