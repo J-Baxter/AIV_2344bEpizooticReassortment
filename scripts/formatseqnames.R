@@ -16,7 +16,8 @@ library(igraph)
 
 source('./scripts/FindIdenticalSeqs.R')
 sourceCpp("./scripts/getTaxonomyForName.cpp") # ~8mins
-sourceCpp('./scripts/getLocation.cpp') #~3mins
+source("./scripts/Subsamplefunctions.R")
+#sourceCpp('./scripts/getLocation.cpp') #~3mins
 
 
 # Join alignment metadata with reassortant data
