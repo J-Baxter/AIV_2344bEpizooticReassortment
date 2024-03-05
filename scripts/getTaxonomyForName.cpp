@@ -3505,6 +3505,7 @@ std::unordered_map<std::string, Taxonomy> createTaxonomyHashTable() {
   taxonomyTable["zone-tailed hawk"]= {"Accipitriformes", "Accipitridae", "buteo albonotatus"};
   taxonomyTable["rufous-tailed hawk"]= {"Accipitriformes", "Accipitridae", "buteo ventralis"};
   taxonomyTable["red-tailed hawk"]= {"Accipitriformes", "Accipitridae", "buteo jamaicensis"};
+  taxonomyTable["rough-legged buzzard"]= {"Accipitriformes", "Accipitridae", "buteo lagopus"};
   taxonomyTable["rough-legged hawk"]= {"Accipitriformes", "Accipitridae", "buteo lagopus"};
   taxonomyTable["ferruginous hawk"]= {"Accipitriformes", "Accipitridae", "buteo regalis"};
   taxonomyTable["common buzzard"]= {"Accipitriformes", "Accipitridae", "buteo buteo"};
@@ -12690,6 +12691,10 @@ std::unordered_map<std::string, Taxonomy> createTaxonomyHashTable() {
   taxonomyTable["lynx sp."]= {"Carnivora", "Felidae", "Lynx sp."};
   taxonomyTable["mustelid sp."]= {"Carnivora", "Mustelidae", "mustelid sp."};
   taxonomyTable["bush dog"]= {"Carnivora", "Canidae", "Speothos venaticus"};
+  taxonomyTable["south amerian sea lion"]= {"Carnivora", "Pinnipedia", "Otaria flavescens"};
+  taxonomyTable["caracal"]= {"Carnivora", "Felidae", "caracal caracal"};
+  taxonomyTable["arctic fox"]= {"Carnivora", "Canidae", "Vulpes lagopus"};
+  
   
 return taxonomyTable;
 }
