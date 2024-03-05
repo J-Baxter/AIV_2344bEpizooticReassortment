@@ -13,12 +13,12 @@ library(treeio)
 library(TreeTools)
 library(Rcpp)
 library(igraph)
-
+library(zoo)
 source('./scripts/FindIdenticalSeqs.R')
 sourceCpp("./scripts/getTaxonomyForName.cpp") # ~8mins
 source("./scripts/Subsamplefunctions.R")
 #sourceCpp('./scripts/getLocation.cpp') #~3mins
-
+geodata <- read_csv('./annotated_geodata.csv')
 
 # Join alignment metadata with reassortant data
 MyFunc <- function(data, newdata){
@@ -27,7 +27,7 @@ MyFunc <- function(data, newdata){
     mutate(across(ends_with(".x"), ~coalesce(., get(sub("\\.x$", ".y", cur_column()))), .names = "{.col}")) %>%
     select(-ends_with(".y")) %>%
     rename_with(~gsub('.x', '', .x)) %>%
-    select(-c(id.unsure, week.date, is.problem.bird, virus.species)) %>%
+    select(-id.unsure) %>%
     mutate(collection.tipdate = case_when(is.na(collection.date) ~ collection.datemonth,
                                           .default = as.character(collection.date))) 
   
@@ -147,23 +147,52 @@ reassortant_metadata_formatted <- FormatMetadata(reassortant_metadata) %>%
 metadata_formatted <- lapply(metadata_unformatted, FormatMetadata) 
 
 
-
 metadata_joined <- lapply(metadata_formatted, MyFunc, reassortant_metadata_formatted ) %>%
   setNames(segnames) %>%
-  lapply(., MakeTipNames)
+  lapply(., MakeTipNames) %>%
+  mapply(function(x, y) x %>%  mutate(segment = gsub('.*_', '', y)) ,x= .,  y= as.list(segnames), SIMPLIFY = F)
 
+# impute clade and cluster (from NJ tree)
+temp_alignments <- alignments %>%
+  mapply(ReNameAlignment, 
+         .,
+         metadata_joined , 
+         SIMPLIFY = FALSE)
 
-metadata_joined_df <- metadata_joined %>% 
-  bind_rows(., .id = 'virus.segment') 
+metadata_joined_imputed <- mapply(ImputeCladeandCluster,  metadata_joined, temp_alignments, SIMPLIFY = F) %>%
+  lapply(., function(x) x %>% mutate(tipnames = gsub( '\\|', '\\.', tipnames))) %>%
+  lapply(., function(x) x %>% mutate(cluster.number = paste0('profile', str_pad(cluster.number, 3, pad = "0"))))
 
-######### Clade and cluster guess here ##########
 
 ####################################################################################################
 # Rename alignments with new-format tipnames
 renamed_alignments <- alignments %>%
   mapply(ReNameAlignment, 
          .,
-         metadata_joined , 
+         metadata_joined_imputed, 
          SIMPLIFY = FALSE)
 
+####################################################################################################
+# Alignments and meta data to file
+alignmentfiles_newnames <- alignmentfiles  %>%
+  gsub('.*Re_H5_', '',. ) %>%
+  gsub('_.*', '',. ) %>%
+  paste0(gsub('.*_','',segnames), '_', gsub('_.*','',segnames),'_', ., '.fasta') %>%
+  paste0('./2023Dec02/alignments/', .)
+
+mapply(write.dna, 
+       renamed_alignments, 
+       alignmentfiles_newnames  ,
+       format = 'fasta')
+
+
+metadatafiles <- paste('./2023Dec02/metadata/', 
+                       segnames, 
+                       '.csv',  
+                       sep = '')
+
+mapply(write_csv, 
+       quote= 'needed',
+       metadata_joined_imputed, 
+       metadatafiles)  
 stop()
