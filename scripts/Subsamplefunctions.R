@@ -1566,7 +1566,10 @@ FormatMetadata <- function(data){
     )) %>%
     mutate(is.bird = case_when(grepl("ormes$", order) ~ "bird",
                                .default = "other"
-    )) %>%
+    )) %>% 
+    
+    mutate(order = tolower(order)) %>%
+    
 
     # Format column names
     #dplyr::select(-c(virus_species, id_unsure)) %>%
@@ -1625,7 +1628,13 @@ FormatMetadata <- function(data){
       
     # Select columns
     select(-c(source, location, varname_1, iso_1)) %>%
-    mutate(across(everything(), .fns = ~ gsub('^NA$', NA, .x)))
+    mutate(across(everything(), .fns = ~ gsub('^NA$', NA, .x))) %>%
+    
+    # replace wild NA with unknown
+    unite('host.class', c(host.order, host.isdomestic), remove = F) %>%
+    mutate(host.class = case_when(is.na(host.order) ~ 'unknown',
+                                  grepl('environment', host.order) ~ 'unknown',
+                                  .default = host.class))
   
   return(data)
   
@@ -1679,6 +1688,9 @@ MergeReassortantData <- function(data, newdata){
 
 
 ImputeCladeandCluster <- function(metadata, alignment, ordered = FALSE){
+  
+  seg <- metadata %>% pull(segment) %>% unique()
+  print(seg)
   
   if(ordered == FALSE){
     tree = nj(dist.dna(alignment))

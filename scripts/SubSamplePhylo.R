@@ -270,12 +270,16 @@ metadatafiles_subsampled <- paste('./data/metadata/2024Jan24/',
                                   segnames, 
                                   '_subsampled.tsv',  
                                   sep = '')
-mapply(write_delim, 
-       quote= 'needed',
-       metadata_subsampled_beast, 
-       metadatafiles_subsampled)
+#mapply(write_delim, 
+      # quote= 'needed',
+      # metadata_subsampled_beast, 
+       #metadatafiles_subsampled)
 
-  
+mapply(write_delim, 
+       delim = '\t',
+       quote= 'needed',
+       test, 
+       metadatafiles_tsv)  
 ####################################################################################################
 # END #
 ####################################################################################################
