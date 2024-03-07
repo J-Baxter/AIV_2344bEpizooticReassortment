@@ -1713,7 +1713,7 @@ ImputeCladeandCluster <- function(metadata, alignment, ordered = FALSE){
     rename(genome = cluster.genome) %>%
     pivot_longer(contains('cluster'), values_to = 'cluster.number', names_to = 'cluster.segment') %>%
     mutate(cluster.segment = gsub('.*\\.', '', cluster.segment)) %>%
-    mutate(cluster.segment = case_when(grepl('^N[:0-9:]', segment) & cluster.segment == 'na' ~ tolower(segment),
+    mutate(cluster.segment = case_when(grepl('^N[:0-9:]', segment, ignore.case = T) & cluster.segment == 'na' ~ tolower(segment),
                                        .default = cluster.segment)) %>% 
     filter(tolower(segment) == cluster.segment) %>%
     mutate(cluster.number = case_when(is.na(cluster.number) & na.locf0(cluster.number, fromLast = TRUE) == na.locf0(cluster.number, fromLast = FALSE) ~ na.locf0(cluster.number, fromLast = TRUE), 
