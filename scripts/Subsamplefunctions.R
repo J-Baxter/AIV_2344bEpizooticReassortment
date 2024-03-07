@@ -1634,7 +1634,7 @@ FormatMetadata <- function(data){
     unite('host.class', c(host.order, host.isdomestic), remove = F) %>%
     mutate(host.class = case_when(is.na(host.order) ~ 'unknown',
                                   grepl('environment', host.order) ~ 'unknown',
-                                  .default = host.class))
+                                  .default = host.class)) 
   
   return(data)
   
@@ -1687,6 +1687,8 @@ MergeReassortantData <- function(data, newdata){
 }
 
 
+# Where tiplabels are not in order, a neighbour joining tree formed and lables
+#  imputed if tips are monophyletic with respect to clade/subtype
 ImputeCladeandCluster <- function(metadata, alignment, ordered = FALSE){
   
   seg <- metadata %>% pull(segment) %>% unique()

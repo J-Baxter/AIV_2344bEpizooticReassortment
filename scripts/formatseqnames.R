@@ -142,7 +142,8 @@ reassortant_metadata_formatted <- FormatMetadata(reassortant_metadata) %>%
             domestic.wild)) %>% 
   unite('collection.original', 
         starts_with('location'), 
-        sep = ' / ')
+        sep = ' / ') %>%
+  mutate(clade =  gsub('[[:punct:]]+','', clade))
 
 metadata_formatted <- lapply(metadata_unformatted, FormatMetadata) 
 
