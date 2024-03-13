@@ -1,10 +1,10 @@
-FindIdenticalSeqs<- function(alignment){
+FindIdenticalSeqs<- function(alignment, snp_threshold = 3){
   
   # calculate pairwise distances
   distances <- ape::dist.dna(alignment, model = "N")
   
   # Identify identical sequences
-  identical_pairs <- which(as.matrix(distances) == 0, arr.ind = TRUE) %>%
+  identical_pairs <- which(as.matrix(distances) < 3, arr.ind = TRUE) %>%
     dplyr::as_tibble(rownames = 'tipnames') %>% 
     filter(row !=col) 
   
