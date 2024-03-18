@@ -1,0 +1,21 @@
+WARNING: You are currenly using BEAGLE v2.x. For best performance and compatibility
+with models in BEAST, please upgrade to BEAGLE v3.x at http://github.com/beagle-dev/beagle-lib/
+
+WARNING: Likelihood component, null, created but not used in the MCMC
+WARNING: Likelihood component, treeLikelihood, created but not used in the MCMC
+Exception in thread "Thread-1" java.lang.ArrayIndexOutOfBoundsException: 21
+	at dr.evolution.coalescent.TreeIntervals.getIntervalTime(Unknown Source)
+	at dr.evomodel.coalescent.GMRFMultilocusSkyrideLikelihood.setupSufficientStatistics(Unknown Source)
+	at dr.evomodel.coalescent.GMRFMultilocusSkyrideLikelihood.calculateLogCoalescentLikelihood(Unknown Source)
+	at dr.evomodel.coalescent.GMRFMultilocusSkyrideLikelihood.getLogLikelihood(Unknown Source)
+	at dr.inference.model.CompoundLikelihood.evaluateLikelihoods(Unknown Source)
+	at dr.inference.model.CompoundLikelihood.getLogLikelihood(Unknown Source)
+	at dr.inference.model.CompoundLikelihood.evaluateLikelihoods(Unknown Source)
+	at dr.inference.model.CompoundLikelihood.getLogLikelihood(Unknown Source)
+	at dr.inference.markovchain.MarkovChain.evaluate(Unknown Source)
+	at dr.inference.markovchain.MarkovChain.runChain(Unknown Source)
+	at dr.inference.mcmc.MCMC.chain(Unknown Source)
+	at dr.inference.mcmc.MCMC.run(Unknown Source)
+	at java.lang.Thread.run(Thread.java:750)
+/var/spool/gridscheduler/execd/node2i18/job_scripts/41595660: line 39: You: command not found
+/var/spool/gridscheduler/execd/node2i18/job_scripts/41595660: line 40: This: command not found

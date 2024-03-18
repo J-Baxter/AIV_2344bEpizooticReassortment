@@ -1,0 +1,7 @@
+WARNING: You are currenly using BEAGLE v2.x. For best performance and compatibility
+with models in BEAST, please upgrade to BEAGLE v3.x at http://github.com/beagle-dev/beagle-lib/
+
+WARNING: Likelihood component, treeLikelihood, created but not used in the MCMC
+WARNING: Likelihood component, null, created but not used in the MCMC
+/var/spool/gridscheduler/execd/node2i13/job_scripts/41595666: line 39: You: command not found
+/var/spool/gridscheduler/execd/node2i13/job_scripts/41595666: line 40: This: command not found
