@@ -1,0 +1,21 @@
+/Applications/bin/logcombiner -burnin 10000000 ../raw_logfiles/asia_ha_2344b_subsampled_SRD06_relaxLn_skygrid4-16_1.log ../raw_logfiles/asia_ha_2344b_subsampled_SRD06_relaxLn_skygrid4-16_2.log asia_ha_2344b_subsampled_SRD06_relaxLn_skygrid4-16_combined.log
+
+/Applications/bin/logcombiner -burnin 10000000 ../raw_logfiles/asia_n8_2344b_subsampled_SRD06_relaxLn_skygrid2-8_1.log ../raw_logfiles/asia_n8_2344b_subsampled_SRD06_relaxLn_skygrid2-8_2.log asia_n8_2344b_subsampled_SRD06_relaxLn_skygrid2-8_combined.log
+
+/Applications/bin/logcombiner -burnin 10000000 ../raw_logfiles/asia_n6_2344b_subsampled_SRD06_relaxLn_skygrid7-28_1.log ../raw_logfiles/asia_n6_2344b_subsampled_SRD06_relaxLn_skygrid7-28_2.log asia_n6_2344b_subsampled_SRD06_relaxLn_skygrid7-28_combined.log
+
+/Applications/bin/logcombiner -burnin 10000000 ../raw_logfiles/asia_mp_2344b_subsampled_SRD06_relaxLn_skygrid4-16_1.log ../raw_logfiles/asia_mp_2344b_subsampled_SRD06_relaxLn_skygrid4-16_2.log asia_mp_2344b_subsampled_SRD06_relaxLn_skygrid4-16_combined.log
+
+/Applications/bin/logcombiner -burnin 10000000 ../raw_logfiles/asia_np_2344b_subsampled_SRD06_relaxLn_skygrid8-32_1.log ../raw_logfiles/asia_np_2344b_subsampled_SRD06_relaxLn_skygrid8-32_2.log asia_np_2344b_subsampled_SRD06_relaxLn_skygrid8-32_combined.log
+
+/Applications/bin/logcombiner -burnin 10000000 ../raw_logfiles/asia_n1_2344b_subsampled_SRD06_relaxLn_skygrid4-16_1.log ../raw_logfiles/asia_n1_2344b_subsampled_SRD06_relaxLn_skygrid4-16_2.log asia_n1_2344b_subsampled_SRD06_relaxLn_skygrid4-16_combined.log
+
+/Applications/bin/logcombiner -burnin 10000000 ../raw_logfiles/asia_n2_2344b_subsampled_SRD06_relaxLn_skygrid13-52_1.log	 ../raw_logfiles/asia_n2_2344b_subsampled_SRD06_relaxLn_skygrid13-52_2.log asia_n2_2344b_subsampled_SRD06_relaxLn_skygrid13-52_combined.log
+
+/Applications/bin/logcombiner -burnin 10000000 ../raw_logfiles/asia_pa_2344b_subsampled_SRD06_relaxLn_skygrid9-36_2.log ../raw_logfiles/asia_pa_2344b_subsampled_SRD06_relaxLn_skygrid9-36_1.log asia_pa_2344b_subsampled_SRD06_relaxLn_skygrid9-36_combined.log
+
+/Applications/bin/logcombiner -burnin 10000000 ../raw_logfiles/asia_pb1_2344b_subsampled_SRD06_relaxLn_skygrid10-40_1.log ../raw_logfiles/asia_pb1_2344b_subsampled_SRD06_relaxLn_skygrid10-40_2.log asia_pb1_2344b_subsampled_SRD06_relaxLn_skygrid10-40_combined.log
+
+/Applications/bin/logcombiner -burnin 10000000 ../raw_logfiles/asia_n3_2344b_SRD06_relaxLn_skygrid7-16_2.log ../raw_logfiles/asia_n3_2344b_SRD06_relaxLn_skygrid7-16_1.log asia_n3_2344b_SRD06_relaxLn_skygrid7-16_combined.log
+
+/Applications/bin/logcombiner -burnin 10000000 ../raw_logfiles/asia_pb2_2344b_subsampled_SRD06_relaxLn_skygrid23-92_1.log ../raw_logfiles/asia_pb2_2344b_subsampled_SRD06_relaxLn_skygrid23-92_2.log asia_pb2_2344b_subsampled_SRD06_relaxLn_skygrid23-92_combined.log
