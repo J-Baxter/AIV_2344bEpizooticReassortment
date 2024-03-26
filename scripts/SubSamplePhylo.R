@@ -188,12 +188,23 @@ alignments_subsampled <- alignments %>%
          SIMPLIFY = FALSE) 
 ####################################################################################################
 #BEAST traits
-metadata_subsampled_beast <- metadata_subsampled %>%
-  lapply(., function(x) x %>% 
-           select(c(tipnames, virus.subtype, contains('collection'), cluster.number, host.order)) %>%
-           #mutate(tiplocation_discrete = coalesce(collection.subdiv2.code, collection.subdiv1.code, collection.country.code)) %>%
-           mutate(tiplocation_lon = coalesce(collection.subdiv1.long, collection.country.long)) %>%
-           mutate(tiplocation_lat = coalesce(collection.subdiv1.lat, collection.country.lat)))
+metadata_subsampled_beast <- lapply(., 
+                                    function(x) x %>% 
+                                      select(c(tipnames,
+                                               virus.subtype, 
+                                               contains('collection'), 
+                                               cluster.number,
+                                               host.order,
+                                               host.class)) %>%
+                                      mutate(tiplocation_lon = coalesce(collection.subdiv1.long, 
+                                                                        collection.country.long)) %>%
+                                      mutate(tiplocation_lat = coalesce(collection.subdiv1.lat, 
+                                                                        collection.country.lat)) %>%
+                                      select(where(~n_distinct(.) > 1)) %>%
+                                      select(-c(collection.country.code,
+                                                contains('subdiv'), 
+                                                collection.original, 
+                                                collection.tipdate)))
 
 ####################################################################################################
 # Write alignments and metadata to file
