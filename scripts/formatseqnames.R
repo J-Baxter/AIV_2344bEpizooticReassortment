@@ -44,7 +44,7 @@ MakeTipNames <- function(data){
           collection.country.name,
           cluster.genome,
           collection.tipdate,
-          sep = '|',
+          sep = '|',                        
           remove = FALSE) %>%
     mutate(tipnames = gsub(' ', '_', tipnames))
   
@@ -87,15 +87,6 @@ SubsampleAlignment <- function(alignment, data, removepipe = TRUE){
 
 
 ####################################################################################################
-# Import tree data
-#treefiles <- list.files(path = './2023/phylo_ml/original_mlphylos',
-                      #  recursive = FALSE,
-                       # include.dirs = FALSE, 
-                        #full.names = TRUE)
-
-#trees <- lapply(treefiles, read.newick) 
-
-
 # Subset alignments
 alignmentfiles <- list.files('./2023Dec01/alignments',
                              full.names = T, 
@@ -119,6 +110,8 @@ segnames <- str_split(alignmentfiles,  '_') %>%
 
 names(alignments) <- segnames
 #names(trees) <- segnames
+
+
 
 # Import existing metadata
 reassortant_metadata <- read_csv('./2023Dec01/metadata/h5_metadata_global_6280_update.csv') %>%
