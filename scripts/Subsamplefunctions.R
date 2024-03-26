@@ -1,13 +1,13 @@
 # Data Import and Subsampling Functions
 FormatTipData <- function(x) {
-  isolate.id <- x[grep("EPI_ISL_*", x)]
+  isolate_id <- x[grep("EPI_ISL_*", x)]
   
   subtype <- x[grep("H[[:digit:]]{1,}N[[:digit:]]*", x)] %>%
     str_extract(., "H[[:digit:]]{1,}N[[:digit:]]*")
   
   date <- x[grep("^[[:digit:]][[:digit:]][[:digit:]][[:digit:]]-[[:digit:]][[:digit:]]-[[:digit:]][[:digit:]]", x)]
   
-  isolate.name <- x[grep("/[^/]*/[^/]*/", x)]
+  isolate_name <- x[grep("/[^/]*/[^/]*/", x)]
   
   if (identical(isolate.id, character(0))) {
     isolate.id <- NA
@@ -26,10 +26,10 @@ FormatTipData <- function(x) {
   }
   
   out <- cbind.data.frame(
-    "isolate.id" = isolate.id,
+    "isolate_id" = isolate_id,
     "subtype" = subtype,
     "date" = date,
-    "isolate.name" = isolate.name
+    "isolate_name" = isolate_name
   ) %>%
     distinct()
   
@@ -51,20 +51,20 @@ ExtractMetadata <- function(tiplabels){
              as.Date()) %>%
     mutate(decimal.date = format(round(decimal_date(date), 2), 
                                  nsmall = 2) ) %>%
-    mutate(decimal.date = suppressWarnings(as.double(decimal.date))) %>%
-    mutate(week.date = format(date, "%Y-%V")) %>%
-    mutate(month.date = format(date, "%Y-%m")) %>%
+    mutate(decimal_date = suppressWarnings(as.double(decimal_date))) %>%
+    mutate(week_date = format(date, "%Y-%V")) %>%
+    mutate(month_date = format(date, "%Y-%m")) %>%
     
     # Format isolate name
-    mutate(isolate.name = gsub("_(\\d{4})|(\\d{4})_", "\\1", perl = TRUE, isolate.name)) %>%
-    mutate(isolate.name = case_when(!grepl("/(\\d{4})$", isolate.name) & !grepl("/$", isolate.name) ~ 
-                                      paste0(isolate.name, "/NA"),
-                                    !grepl("/(\\d{4})$", isolate.name) & grepl("/$", isolate.name) ~ paste0(isolate.name, "NA"),
-                                    .default = isolate.name
+    mutate(isolate_name = gsub("_(\\d{4})|(\\d{4})_", "\\1", perl = TRUE, isolate_name)) %>%
+    mutate(isolate_name = case_when(!grepl("/(\\d{4})$", isolate_name) & !grepl("/$", isolate_name) ~ 
+                                      paste0(isolate_name, "/NA"),
+                                    !grepl("/(\\d{4})$", isolate_name) & grepl("/$", isolate_name) ~ paste0(isolate_name, "NA"),
+                                    .default = isolate_name
     )) %>%
     
     # Extract data from isolate name
-    separate_wider_delim(isolate.name,
+    separate_wider_delim(isolate_name,
                          delim = "/",
                          names = c("virus_species", "source", "location", "id_unsure", "year"),
                          cols_remove = F,
@@ -73,7 +73,7 @@ ExtractMetadata <- function(tiplabels){
     ) %>%
     
     # Drop extraneous cols and format
-    dplyr::select(-c(year, contains("isolate.name_"))) %>%
+    dplyr::select(-c(year, contains("isolate_name_"))) %>%
     mutate(virus_species = case_when(str_length(source) == 1 ~ source,
                                      .default = virus_species
     )) %>%
@@ -105,22 +105,22 @@ FormatMetadata <- function(data){
       select(-joint_location)%>%
       rename(source=host) %>%
       select(-starts_with('host')) %>%
-      rename(month.date = date_year_month) %>%
-      rename(decimal.date = date_frac)
+      rename(month_date = date_year_month) %>%
+      rename(decimal_date = date_frac)
     
   } else{
     data <- data %>%
       mutate(date = parsedate::parse_date(date) %>%
                as.Date()) %>%
-      mutate(decimal.date = format(round(decimal_date(date), 2), 
+      mutate(decimal_date = format(round(decimal_date(date), 2), 
                                    nsmall = 2) ) %>%
-      mutate(decimal.date = suppressWarnings(as.double(decimal.date))) %>%
-      mutate(month.date = format(date, "%Y-%m"))
+      mutate(decimal_date = suppressWarnings(as.double(decimal_date))) %>%
+      mutate(month_date = format(date, "%Y-%m"))
   }
   
   data <- data %>%
     select(-matches('^date.+')) %>%
-    rename_with(.fn = ~gsub('_', '.', .x))%>%
+    #rename_with(.fn = ~gsub('_', '.', .x))%>%
     # Location (iso name and subdivision)
     mutate(location = tolower(location)) %>%
     mutate(location = gsub("[^A-Za-z]", " ", tolower(location))) %>%
@@ -1308,7 +1308,6 @@ FormatMetadata <- function(data){
     mutate(source = str_trim(source)) %>%
     mutate(source= gsub('gray', 'grey', source)) %>%
     mutate(primary_com_name = case_when(
-      
       grepl("spot-billed duck", source) ~ "eastern spot-billed duck",
       grepl("crested grebe|g c grebe", source) ~ "great crested grebe",
       grepl("eastern curlew", source) ~ "far eastern curlew",
@@ -1330,17 +1329,17 @@ FormatMetadata <- function(data){
       grepl('knot wader', source) ~ 'red knot',
       grepl('brent goose|brant goose', source) ~ 'brant',
       grepl('eagle owl|eurasian[- ]{0,1}eagle[- ]{0,1}owl', source) ~'eurasian eagle-owl',
-      grepl('canade goose|canada goose', source) ~ 'canada goose',
+      #grepl('canade goose|canada goose', source) ~ 'canada goose',
       grepl('european herring gull|herrin gull', source) ~ 'herring gull',
       grepl('towny owel', source) ~ 'tawny owl',
       grepl('gadwall duck', source) ~ 'gadwall',
       grepl('lesser snow goose', source) ~ 'snow goose',
-      grepl("pink footed goose", source) ~ "pink-footed goose",
+     # grepl("pink footed goose", source) ~ "pink-footed goose",
       grepl("european wigeon|eur wig", source) ~ "eurasian wigeon",
       grepl('western jackdaw', source) ~ 'eurasian jackdaw',
       grepl('spotbill duck', source) ~ "indian spot-billed duck",
       grepl("whistling duck", source) ~ "whistling-duck sp.",
-      grepl('pink footed goose', source) ~ 'pink-footed goose',
+      #grepl('pink footed goose', source) ~ 'pink-footed goose',
       grepl('falcated teal', source) ~ 'falcated duck',
       grepl('^pintail$', source) ~ 'northern pintail',
       grepl('grey plover', source)~ "black-bellied plover",
@@ -1403,9 +1402,9 @@ FormatMetadata <- function(data){
       grepl("anas crecca", source) ~ "green-winged teal",
       grepl('tyto alba', source) ~ 'barn owl',
       grepl('gallus gallus', source) ~ 'red junglefowl (domestic type)',
-      grepl("anas platyrhynchos|platyrynchos|plathyrhynchos", source) ~ "mallard",
+      #grepl("anas platyrhynchos|platyrynchos|plathyrhynchos", source) ~ "mallard",
       grepl("anser albifrons", source) ~ "greater white-fronted goose",
-      grepl("anser brachyrhynchus", source) ~ "pink-footed goose",
+      #grepl("anser brachyrhynchus", source) ~ "pink-footed goose",
       grepl("^anser anser$", source) ~ "greylag goose",
       grepl("anser fabalis", source) ~ "taiga/tundra bean-goose",
       grepl("chlidonias hybrida", source) ~ "whiskered tern",
@@ -1467,7 +1466,7 @@ FormatMetadata <- function(data){
       grepl('^ostrich$' ,source) ~ "common ostrich",
       grepl("^egret$", source) ~ "egret sp.",
       grepl('lapwing', source) ~ 'lapwing sp.',
-      grepl('^wigeon$', source) ~ "eurasian/american wigeon",
+      #grepl('^wigeon$', source) ~ "eurasian/american wigeon",
       grepl('^pochard$', source) ~ "aythya sp.",
       grepl('coot', source) ~ 'coot sp.',
       grepl("waterfowl|wild waterbird", source) ~ "waterfowl sp.",
@@ -1561,10 +1560,10 @@ FormatMetadata <- function(data){
     rename_with(.fn = ~ tolower(.x)) %>%
     
     # binary host information
-    mutate(is.domestic = case_when(grepl("domestic type", sci.name) ~ "domestic",
+    mutate(is_domestic = case_when(grepl("domestic type", sci_name) ~ "domestic",
                                    .default = "wild"
     )) %>%
-    mutate(is.bird = case_when(grepl("ormes$", order) ~ "bird",
+    mutate(is_bird = case_when(grepl("ormes$", order) ~ "bird",
                                .default = "other"
     )) %>% 
     
@@ -1574,56 +1573,56 @@ FormatMetadata <- function(data){
     # Format column names
     #dplyr::select(-c(virus_species, id_unsure)) %>%
     dplyr::rename(
-      virus.subtype = subtype,
-      collection.date = date,
-      collection.datedecimal = decimal.date,
-      collection.datemonth = month.date,
-      collection.region.name = region,
-      collection.country.name = country,
-      collection.country.code = gid_0,
-      collection.country.lat = adm0_lat,
-      collection.country.long = adm0_long,
-      collection.subdiv1.name = name_1,
-      collection.subdiv1.code = hasc_1,
-      collection.subdiv1.lat = adm1_lat,
-      collection.subdiv1.long = adm1_long,
-      #collection.subdiv2.name = name_subdiv2,
-      #collection.subdiv2.code = code_subdiv2,
-      #collection.subdiv2.lat = lat_subdiv2,
-      #collection.subdiv2.long = long_subdiv2,
-      host.order = order,
-      host.family = family,
-      host.sciname = sci.name,
-      host.commonname = primary_com_name,
-      host.isbird = is.bird,
-      host.isdomestic = is.domestic
+      virus_subtype = subtype,
+      collection_date = date,
+      collection_datedecimal = decimal_date,
+      collection_datemonth = month_date,
+      collection_region_name = region,
+      collection_country_name = country,
+      collection_country_code = gid_0,
+      collection_country_lat = adm0_lat,
+      collection_country_long = adm0_long,
+      collection_subdiv1_name = name_1,
+      collection_subdiv1_code = hasc_1,
+      collection_subdiv1_lat = adm1_lat,
+      collection_subdiv1_long = adm1_long,
+      #collection_subdiv2.name = name_subdiv2,
+      #collection_subdiv2.code = code_subdiv2,
+      #collection_subdiv2.lat = lat_subdiv2,
+      #collection_subdiv2.long = long_subdiv2,
+      host_order = order,
+      host_family = family,
+      host_sciname = sci.name,
+      host_commonname = primary_com_name,
+      host_isbird = is.bird,
+      host_isdomestic = is.domestic
     ) %>%
     dplyr::relocate(
-      virus.subtype,
-      isolate.id,
-      isolate.name,
-      collection.date,
-      collection.datedecimal,
-      collection.datemonth,
-      host.order,
-      host.family,
-      host.sciname,
-      host.commonname,
-      host.isbird,
-      host.isdomestic,
-      collection.region.name,
-      collection.country.name,
-      collection.country.code,
-      collection.country.lat,
-      collection.country.long,
-      collection.subdiv1.name,
-      collection.subdiv1.code,
-      collection.subdiv1.lat,
-      collection.subdiv1.long#,
-      #collection.subdiv2.name,
-      #collection.subdiv2.code,
-      #collection.subdiv2.lat,
-      #collection.subdiv2.long
+      virus_subtype,
+      isolate_id,
+      isolate_name,
+      collection_date,
+      collection_datedecimal,
+      collection_datemonth,
+      host_order,
+      host_family,
+      host_sciname,
+      host_commonname,
+      host_isbird,
+      host_isdomestic,
+      collection_region_name,
+      collection_country_name,
+      collection_country_code,
+      collection_country_lat,
+      collection_country_long,
+      collection_subdiv1_name,
+      collection_subdiv1_code,
+      collection_subdiv1_lat,
+      collection_subdiv1_long#,
+      #collection_subdiv2_name,
+      #collection_subdiv2_code,
+      #collection_subdiv2_lat,
+      #collection_subdiv2_long
     ) %>%
       
     # Select columns
@@ -1631,10 +1630,10 @@ FormatMetadata <- function(data){
     mutate(across(everything(), .fns = ~ gsub('^NA$', NA, .x))) %>%
     
     # replace wild NA with unknown
-    unite('host.class', c(host.order, host.isdomestic), remove = F) %>%
-    mutate(host.class = case_when(is.na(host.order) ~ 'unknown',
-                                  grepl('environment', host.order) ~ 'unknown',
-                                  .default = host.class)) 
+    unite('host_class', c(host_order, host_isdomestic), remove = F) %>%
+    mutate(host_class = case_when(is.na(host_order) ~ 'unknown',
+                                  grepl('environment', host_order) ~ 'unknown',
+                                  .default = host_class)) 
   
   return(data)
   
@@ -1649,8 +1648,8 @@ MergeReassortantData <- function(data, newdata){
               by = join_by(isolate.id)) %>%
     
     # Resolve discrepancies
-    mutate(collection.datedecimal = case_when(
-      collection.datedecimal.x != collection.datedecimal.y ~ collection.datedecimal.y
+    mutate(collection_datedecimal = case_when(
+      collection_datedecimal.x != collection_datedecimal.y ~ collection_datedecimal.y
     ))
     
     
@@ -1662,10 +1661,10 @@ MergeReassortantData <- function(data, newdata){
     separate_wider_delim(location, 
                          delim = ' / ', 
                          names = c('region',
-                                   'collection.country.name', 
-                                   'collection.subdiv1.name',
-                                   'collection.subdiv2.name',
-                                   'collection.subdiv3.name'),
+                                   'collection_country.name', 
+                                   'collection_subdiv1.name',
+                                   'collection_subdiv2.name',
+                                   'collection_subdiv3.name'),
                          too_few = 'align_start') %>%
     rename_with(.fn = ~gsub('_', '.', .x))
   
@@ -1675,11 +1674,11 @@ MergeReassortantData <- function(data, newdata){
                    by = join_by(isolate.id)) %>%
     
     # Get missing dates from metadata csv
-    mutate(collection.dateweek = dplyr::coalesce(collection.dateweek, 
-                                                 date.year.month)) %>%
+    mutate(collection_dateweek = dplyr::coalesce(collection_dateweek, 
+                                                 date_year_month)) %>%
     
-    mutate(collection.tipdate = case_when(is.na(collection.date) ~ collection.dateweek,
-                                          .default = as.character(collection.date))) #%>%
+    mutate(collection_tipdate = case_when(is.na(collection_date) ~ collection_dateweek,
+                                          .default = as.character(collection_date))) #%>%
   # select(-c(date.month.year, month.date))
 
   return()
@@ -1711,15 +1710,17 @@ ImputeCladeandCluster <- function(metadata, alignment, ordered = FALSE){
                              .default = clade)) %>%
     
     # Impute cluster (column is dependent on segment)
-    rename(profile = cluster.profile) %>%
-    rename(genome = cluster.genome) %>%
-    pivot_longer(contains('cluster'), values_to = 'cluster.number', names_to = 'cluster.segment') %>%
-    mutate(cluster.segment = gsub('.*\\.', '', cluster.segment)) %>%
-    mutate(cluster.segment = case_when(grepl('^N[:0-9:]', segment, ignore.case = T) & cluster.segment == 'na' ~ tolower(segment),
-                                       .default = cluster.segment)) %>% 
-    filter(tolower(segment) == cluster.segment) %>%
-    mutate(cluster.number = case_when(is.na(cluster.number) & na.locf0(cluster.number, fromLast = TRUE) == na.locf0(cluster.number, fromLast = FALSE) ~ na.locf0(cluster.number, fromLast = TRUE), 
-                                      .default = cluster.number)) 
+    rename(profile = cluster_profile) %>%
+    rename(genome = cluster_genome) %>%
+    pivot_longer(contains('cluster'), values_to = 'cluster_number', names_to = 'cluster_segment') %>%
+    mutate(cluster_segment = gsub('.*\\.', '', cluster_segment)) %>%
+    mutate(cluster_segment = case_when(grepl('^N[:0-9:]', segment, ignore.case = T) & cluster_segment == 'na' ~ tolower(segment),
+                                       .default = cluster_segment)) %>% 
+    filter(tolower(segment) == cluster_segment) %>%
+    mutate(cluster_number = case_when(is.na(cluster_number) & na.locf0(cluster_number, fromLast = TRUE) == na.locf0(cluster_number, fromLast = FALSE) ~ na.locf0(cluster_number, fromLast = TRUE), 
+                                      .default = cluster_number)) %>%
+    mutate(cluster_profile = case_when(is.na(cluster_profile) & na.locf0(cluster_profile, fromLast = TRUE) == na.locf0(cluster_profile, fromLast = FALSE) ~ na.locf0(cluster_profile, fromLast = TRUE), 
+                                      .default = cluster_profile)) 
   
   return(out)
 }
