@@ -9,8 +9,8 @@ FormatTipData <- function(x) {
   
   isolate_name <- x[grep("/[^/]*/[^/]*/", x)]
   
-  if (identical(isolate.id, character(0))) {
-    isolate.id <- NA
+  if (identical(isolate_id, character(0))) {
+    isolate_id <- NA
   }
   
   if (identical(subtype, character(0))) {
@@ -21,8 +21,8 @@ FormatTipData <- function(x) {
     date <- NA
   }
   
-  if (identical(isolate.name, character(0))) {
-    isolate.name <- NA
+  if (identical(isolate_name, character(0))) {
+    isolate_name <- NA
   }
   
   out <- cbind.data.frame(
@@ -49,7 +49,7 @@ ExtractMetadata <- function(tiplabels){
     # Format Dates
     mutate(date = parsedate::parse_date(date) %>%
              as.Date()) %>%
-    mutate(decimal.date = format(round(decimal_date(date), 2), 
+    mutate(decimal_date = format(round(decimal_date(date), 2), 
                                  nsmall = 2) ) %>%
     mutate(decimal_date = suppressWarnings(as.double(decimal_date))) %>%
     mutate(week_date = format(date, "%Y-%V")) %>%
