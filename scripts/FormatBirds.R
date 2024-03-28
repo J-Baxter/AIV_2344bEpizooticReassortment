@@ -578,7 +578,7 @@ FormatBird<- function(x){
   x  <- FormatStruthioniformes(x) 
   x  <- FormatSuliformes(x) 
   x <- gsub('^birds{0,1}$|avian|.*wild {0,1}birds{0,1}.*|acquatic birds{0,1}', 'aves', x)
-  x <- gsub("^env{0,1}(iron{0,1}ment{0,1}).*|^water$", 'environment', x)
+  x <- gsub("^env{0,1}(iron{0,1}ment{0,1}){0,1}.*|^water$", 'environment', x)
 
   return(x)  
 }
