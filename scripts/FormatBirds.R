@@ -17,31 +17,6 @@ isBird <- function(x){
   return(x)
 }
 
-# input from sam's function - may be superfluous here due to domestic rows (just use these names to check)
-isDomestic<- function(x){
-  domestic_birds <- c(
-    "ck", "ch", "chicken", "guinea_fowl", "guineafowl", "sck", "silky_chicken",
-    "silkie_chicken", "silkie", "silky_fowl", "fowl", "poultry", "quail", "gs",
-    "goose", "dk", "duck", "pheasant", "ph", "partridge", "gf", "turkey",
-    "village_chicken", "muscovy_duck", "muscovy", "cairina_moschata", "bantam", 
-    "breeder_duck", "broiler_duck", "rooster", "breeder_chicken", "mulard", 
-    "mulard_duck", "korean_native_chicken", "bronze_turkey", "black_chicken", 
-    "anser_cygnoides", "indian_runner_duck", "gallus_gallus",
-    "meleagris_gallopavo",  "white_peacock", "peacock", "peafowl", "peahen",
-    "laying_hen", "layer_hen", "chiken", 
-    "broiler", "hen", "layer", "fancy_chicken", "breeding_hen", "backyard_chicken", 
-    "broiler_chicken", "chichen", "layer_chicken", "rural_laying_hen", "buff_orpington_chicken", 
-    "brahma_chicken", "guinea_fowl-chicken")
-  
-  if(x %in% domestic_birds){
-    x <- TRUE
-  }else{
-    x <- FALSE
-  }
-  
-  return(x)
-}
-
 
 FormatAnseriformes <- function(x){
   anseriformes <- c(
