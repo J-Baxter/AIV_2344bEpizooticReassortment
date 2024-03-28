@@ -3,7 +3,7 @@
 
 #grepl('^otter$', source) & grepl('europe', region) ~ 'eurasian otter',
 #grepl('badger', source) & grepl('europe', region) ~ 'european badger'
-
+# Needs mammal csv
 
 FormatMammals <- function(x){
   mammals <- c(
