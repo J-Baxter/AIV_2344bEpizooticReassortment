@@ -11,28 +11,20 @@ library(ape)
 library(tidyverse)
 library(treeio)
 library(TreeTools)
-library(Rcpp)
+#library(Rcpp)
 library(igraph)
 library(zoo)
 source('./scripts/FindIdenticalSeqs.R')
-sourceCpp("./scripts/getTaxonomyForName.cpp") # ~8mins
+#sourceCpp("./scripts/getTaxonomyForName.cpp") # ~8mins
 source("./scripts/Subsamplefunctions.R")
+source('./scripts/FormatBirds.R')
+source('./scripts/FormatMammals.R')
 #sourceCpp('./scripts/getLocation.cpp') #~3mins
+# Import required taxonomy files
 geodata <- read_csv('./annotated_geodata.csv')
-
-# Join alignment metadata with reassortant data
-MyFunc <- function(data, newdata){
-  df <- data  %>% 
-    left_join(newdata, by = join_by(isolate_id)) %>%
-    mutate(across(ends_with(".x"), ~coalesce(., get(sub("\\.x$", ".y", cur_column()))), .names = "{.col}")) %>%
-    select(-ends_with(".y")) %>%
-    rename_with(~gsub('.x', '', .x)) %>%
-    select(-id_unsure) %>%
-    mutate(collection_tipdate = case_when(is.na(collection_date) ~ collection_datemonth,
-                                          .default = as.character(collection_date))) 
-  
-  return(df)
-}
+birds <- read_csv('bird_taxonomy.csv')
+mammals <- read_csv('mammal_taxonomy.csv')
+cluster_classes <- read_csv('clusterprofile_summary.csv')
 
 MakeTipNames <- function(data){
   out <- data %>%
@@ -42,7 +34,7 @@ MakeTipNames <- function(data){
           isolate_id,
           host_order,
           collection_countryname,
-          cluster_genome,
+          cluster_profile,
           collection_tipdate,
           sep = '|',                        
           remove = FALSE) %>%
@@ -55,8 +47,9 @@ MakeTipNames <- function(data){
 isDateError <- function(dataframe){
   out <- dataframe %>%
     mutate(collection_dateerror = case_when(
-      is.na(collection_datedecimal) ~ TRUE,
-      collection_datedecimal<1980 & collection_datedecimal>2023 ~ TRUE,
+      is.na(collection_tipdate) ~ TRUE,
+      as.numeric(gsub('-.*', '', collection_tipdate))>2024 ~ TRUE,
+      as.numeric(gsub('-.*', '', collection_tipdate))<1990 ~ TRUE,
       .default = FALSE))
   
   return(out)
@@ -74,25 +67,12 @@ ReNameAlignment <- function(alignment, data){
   isolates <- str_extract(rownames(alignment), "([^|]*)\\|")%>%
     str_replace_all("\\|", "")
   
-  new_seqnames <- sapply(isolates, function(x) data$tipnames[data$isolate.id %in% x]) %>% 
+  new_seqnames <- sapply(isolates, function(x) data$tipnames[data$isolate_id %in% x]) %>% 
     as.vector() 
   
   rownames(alignment) <-  new_seqnames
   
   return(alignment)
-}
-
-
-SubsampleAlignment <- function(alignment, data, removepipe = TRUE){
-  out <- alignment[rownames(alignment) %in% data$tipnames,]
-  
-  if(removepipe == TRUE){
-    rownames(out) <- gsub('\\|', '.', rownames(out)) 
-  }else{
-    rownames(out) <- rownames(out)
-  }
-  
-  return(out)
 }
 
 
@@ -129,9 +109,7 @@ reassortant_metadata <- read_csv('./2023Dec01/metadata/h5_metadata_global_6280_u
            as.Date())
 
 
-# Import required taxonomy files
-birds <- read_csv('bird_taxonomy.csv')
-mammals <- read_csv('mammal_taxonomy.csv')
+
 
 ####################################################################################################
 # Extract metadata and format tipnames
@@ -150,19 +128,22 @@ reassortant_metadata_formatted <- FormatMetadata(reassortant_metadata) %>%
   unite('collection_original', 
         starts_with('location'), 
         sep = ' / ') %>%
-  mutate(clade =  gsub('[[:punct:]]+','', clade)) 
+  mutate(clade =  gsub('[[:punct:]]+','', clade)) %>%
+  left_join(cluster_classes, by = join_by(cluster_profile)) %>%
+  mutate(cluster_profile = case_when(
+    collection_regionname == 'eastern asia' & cluster_profile == '1_1_1_1_1_1_1_1' ~ '1_1_1_1_1_1_1_1A',
+    collection_regionname != 'eastern asia' & cluster_profile == '1_1_1_1_1_1_1_1' ~ '1_1_1_1_1_1_1_1B',
+    .default = cluster_profile))
 
-metadata_formatted <- lapply(metadata_unformatted, FormatMetadata)
 
+metadata_formatted <- lapply(metadata_unformatted, FormatMetadata) 
 
-
-metadata_joined <- lapply(metadata_formatted, MyFunc, reassortant_metadata_formatted) %>%
+ 
+metadata_joined <- lapply(metadata_formatted, MergeReassortantData, reassortant_metadata_formatted) %>%
   setNames(segnames) %>%
   lapply(., MakeTipNames) %>%
   mapply(function(x, y) x %>%  mutate(segment = gsub('.*_', '', y)) ,x= .,  y= as.list(segnames), SIMPLIFY = F) %>%
   lapply(., isDateError)
-
-metadata_formatted_all <- bind_rows(metadata_joined)
 
 
 # impute clade and cluster (from NJ tree)
@@ -174,12 +155,7 @@ temp_alignments <- alignments %>%
 
 metadata_joined_imputed <- mapply(ImputeCladeandCluster,  metadata_joined, temp_alignments, SIMPLIFY = F) %>%
   lapply(., function(x) x %>% mutate(tipnames = gsub( '\\|', '\\.', tipnames))) %>%
-  lapply(., function(x) x %>% mutate(cluster.number = paste0('profile', str_pad(cluster.number, 3, pad = "0"))))
-
-
-####################################################################################################
-# Check year and remove if problematic
-
+  lapply(., function(x) x %>% mutate(cluster_number = paste0('profile', str_pad(cluster_number, 3, pad = "0"))))
 
 
 ####################################################################################################
@@ -190,6 +166,21 @@ renamed_alignments <- alignments %>%
          metadata_joined_imputed, 
          SIMPLIFY = FALSE)
 
+
+####################################################################################################
+# Check year and remove if problematic
+metadata_joined_imputed_dateschecked <- metadata_joined_imputed %>%
+  lapply(., function(x) x %>% filter(!collection_dateerror))
+
+prob_seqs <- lapply(metadata_joined_imputed, function(x) x %>% 
+                      filter(collection_dateerror) %>% 
+                      pull(tipnames))
+
+renamed_alignments_dateschecked <- alignments %>%
+  mapply(function(alignment,seqnames_to_drop) alignment[!rownames(alignment) %in% seqnames_to_drop,], 
+         .,
+         prob_seqs, 
+         SIMPLIFY = FALSE)
 ####################################################################################################
 # Alignments and meta data to file
 alignmentfiles_newnames <- alignmentfiles  %>%
@@ -199,8 +190,8 @@ alignmentfiles_newnames <- alignmentfiles  %>%
   paste0('./2023Dec02/alignments/', .)
 
 mapply(write.dna, 
-       renamed_alignments, 
-       alignmentfiles_newnames  ,
+       renamed_alignments_dateschecked, 
+       alignmentfiles_newnames,
        format = 'fasta')
 
 
@@ -211,5 +202,5 @@ metadatafiles <- paste('./2023Dec02/metadata/',
 
 mapply(write_csv, 
        quote= 'needed',
-       metadata_joined_imputed, 
+       metadata_joined_imputed_dateschecked, 
        metadatafiles)  
