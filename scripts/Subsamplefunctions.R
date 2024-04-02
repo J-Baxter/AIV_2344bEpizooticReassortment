@@ -125,8 +125,7 @@ FormatMetadata <- function(data){
     mutate(location = tolower(location)) %>%
     mutate(location = gsub("[^A-Za-z]", " ", tolower(location))) %>%
     mutate(location =  gsub("\\s+", " ", str_trim(location))) %>%
-    
-    mutate(location = case_when( 
+    mutate(location = case_when(
       # Austria
       grepl('burgenland|stegersbach|mattersburg|bad sauerbrunn',
             location) ~ 'austria_burgenland',
@@ -684,7 +683,7 @@ FormatMetadata <- function(data){
       grepl("campobasso|isernia", 
             location) ~ "italy_molise",
       
-      grepl("torino|alessandria|asti|biella|cuneo|novara|verbano-cusio-ossola|vercelli", 
+      grepl("torino|alessandria|^asti$|biella|^cuneo$|^novara$|verbano-cusio-ossola|vercelli", 
             location) ~ "italy_piemonte",
       
       grepl("bari|brindisi|foggia|lecce|taranto|barletta-andria-trani|puglia", 
@@ -693,16 +692,16 @@ FormatMetadata <- function(data){
       grepl("cagliari|nuoro|oristano|sassari|sud sardegna", 
             location) ~ "italy_sardegna",
       
-      grepl("agrigento|caltanissetta|catania|enna|messina|palermo|ragusa|siracusa|trapani",
+      grepl("agrigento|caltanissetta|catania|^enna$|messina|palermo|ragusa|siracusa|trapani",
             location) ~ "italy_sicily",
       
-      grepl("firenze|arezzo|grosseto|livorno|lucca|massa-carrara|pisa|pistoia|prato|siena", 
+      grepl("firenze|arezzo|grosseto|livorno|lucca|massa-carrara|^pisa$|pistoia|prato|siena", 
             location) ~ "italy_toscana",
       
       grepl("trento|bolzano", 
             location) ~ "italy_trentino-alto adige",
       
-      grepl("perugia|terni", 
+      grepl("perugia|^terni$", 
             location) ~ "italy_umbria",
       
       grepl("^aosta$", 
@@ -999,7 +998,7 @@ FormatMetadata <- function(data){
             location) ~ 'japan_yamaguchi',
       grepl('yamanashi', 
             location) ~ 'japan_yamanashi',
-      # Spain
+      # Spain CastillaLaMancha
       grepl("castilla[ ]{0,1}la[ ]{0,1}mancha|castille[ ]{0,1}la[ ]{0,1}mancha",
             location) ~ "spain_castilla-la mancha",
       
@@ -1309,11 +1308,11 @@ FormatMetadata <- function(data){
     as_tibble() %>%
     mutate(primary_com_name = case_when(
       
-      # locations
+      # location-specific birds
       grepl('sparrowhawk', primary_com_name) & grepl('europe', region) ~ 'eurasian sparrowhawk',
-      grepl("^magpie$", primary_com_name) & grepl('europe', region) ~ "eurasian magpie",
-      grepl("^magpie$", primary_com_name) & grepl('eastern asia', region) ~ "oriental/eurasian magpie",
-      grepl("^magpie$", primary_com_name) & grepl('northern america', region) ~ "black-billed magpie",
+      grepl("^magpie$|^common magpie", primary_com_name) & grepl('europe', region) ~ "eurasian magpie",
+      grepl("^magpie$|^common magpie", primary_com_name) & grepl('eastern asia', region) ~ "oriental/eurasian magpie",
+      grepl("^magpie$|^common magpie", primary_com_name) & grepl('northern america', region) ~ "black-billed magpie",
       grepl("^kestrel$", primary_com_name) & grepl('northern america', region) ~ "american kestrel",
       grepl("^kestrel$", primary_com_name) & grepl('europe', region) ~ "lesser/eurasian kestrel",
       grepl("^guinea {0,1}fowl", primary_com_name) & grepl('africa', region) ~ "crested guineafowl sp.",
@@ -1332,30 +1331,31 @@ FormatMetadata <- function(data){
       grepl('^vulture$', primary_com_name) &  grepl('america', region) ~ "new world vulture sp.",
       grepl('^vulture$', primary_com_name) & !grepl('america', region) ~ "old world vulture sp.",
       
+      # unknown
+      grepl('^an$|unknown', primary_com_name) ~ 'unknown',
+      is.na(primary_com_name) ~ 'unknown',
+      
       
       .default = primary_com_name
     )) %>%
-    select(c(source, primary_com_name)) %>%
-    left_join(birds) %>%
-    left_join(mammals)
-    # Get host taxonomy
-    rowwise() %>%
-    mutate(taxonomy = getTaxonomyForName(primary_com_name))%>%
-    as_tibble() %>%
-    unnest(taxonomy) %>%
-    rename_with(.fn = ~ tolower(.x)) %>%
+    
+    # Join taxonomy csvs
+    left_join(birds, by = join_by(primary_com_name)) %>%
+    left_join(mammals,  by = join_by(primary_com_name)) %>%
+    
+    # fix joins
+    mutate(across(ends_with(".x"), .names = "{gsub('.x', '', {.col})}", 
+                  .fns = ~coalesce(., get(sub("\\.x$", ".y", cur_column()))))) %>%
+    select(-(ends_with('.x') |ends_with('.y'))) %>%
+    
     
     # binary host information
     mutate(is_domestic = case_when(grepl("domestic type", sci_name) ~ "domestic",
                                    .default = "wild"
     )) %>%
-    mutate(is_bird = case_when(grepl("ormes$", order) ~ "bird",
-                               .default = "other"
-    )) %>% 
     
-    mutate(order = tolower(order)) %>%
+    mutate(is_bird = isBird(tolower(order)))%>% 
     
-
     # Format column names
     #dplyr::select(-c(virus_species, id_unsure)) %>%
     dplyr::rename(
@@ -1376,12 +1376,13 @@ FormatMetadata <- function(data){
       #collection_subdiv2.code = code_subdiv2,
       #collection_subdiv2.lat = lat_subdiv2,
       #collection_subdiv2.long = long_subdiv2,
+      host_class = class,
       host_order = order,
       host_family = family,
-      host_sciname = sci.name,
+      host_sciname = sci_name,
       host_commonname = primary_com_name,
-      host_isbird = is.bird,
-      host_isdomestic = is.domestic
+      host_isbird = is_bird,
+      host_isdomestic = is_domestic
     ) %>%
     dplyr::relocate(
       virus_subtype,
@@ -1390,6 +1391,7 @@ FormatMetadata <- function(data){
       collection_date,
       collection_datedecimal,
       collection_datemonth,
+      host_class,
       host_order,
       host_family,
       host_sciname,
@@ -1410,16 +1412,22 @@ FormatMetadata <- function(data){
       #collection_subdiv2_lat,
       #collection_subdiv2_long
     ) %>%
-      
+    
     # Select columns
     select(-c(source, location, varname_1, iso_1)) %>%
+    
+    # Format NAs
     mutate(across(everything(), .fns = ~ gsub('^NA$', NA, .x))) %>%
     
-    # replace wild NA with unknown
-    unite('host_class', c(host_order, host_isdomestic), remove = F) %>%
-    mutate(host_class = case_when(is.na(host_order) ~ 'unknown',
-                                  grepl('environment', host_order) ~ 'unknown',
-                                  .default = host_class)) 
+    
+    # Infer simplified host categories for BEAST
+    mutate(host_simplifiedhost = case_when(
+      any(host_order %in% c('anseriformes', 'galliformes', 'charadriiformes')) ~ paste(host_order, 
+                                                                             host_isdomestic,
+                                                                             sep = '-'),
+      host_class == 'mammalia' ~ 'mammal',
+      host_commonname == 'unknown' ~ 'unknown',
+      .default = 'other')) 
   
   return(data)
   
