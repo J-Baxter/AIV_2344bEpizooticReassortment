@@ -6024,3 +6024,192 @@ Sorex ventralis,Mammalia,Soricomorpha,Soricidae,chestnut-bellied shrew
 Sus salvanius,Mammalia,Artiodactyla,Suidae,pygmy hog
 Natalus primus,Mammalia,Chiroptera,Natalidae,cuban greater funnel-eared bat
 Microgale dryas,Mammalia,Afrosoricida,Tenrecidae,dryad shrew tenrec
+Callitrichidae sp.,Mammalia,Primates,Callitrichidae,marmoset and tamarin sp.
+Pitheciidae sp.,Mammalia,Primates,Pitheciidae,new world monkey sp.
+Phyllostomidae sp.,Mammalia,Chiroptera,Phyllostomidae,leaf-nosed bat sp.
+Cercopithecidae sp.,Mammalia,Primates,Cercopithecidae,old world monkey sp.
+Lorisidae sp.,Mammalia,Primates,Lorisidae,loris sp.
+Mustelidae sp.,Mammalia,Carnivora,Mustelidae,mustelid sp.
+Ochotonidae sp.,Mammalia,Lagomorpha,Ochotonidae,pika sp.
+Leporidae sp.,Mammalia,Lagomorpha,Leporidae,rabbit sp.
+Cyclopedidae sp.,Mammalia,Pilosa,Cyclopedidae,cyclops leaf-nosed bat sp.
+Myrmecophagidae sp.,Mammalia,Pilosa,Myrmecophagidae,anteater sp.
+Bradypodidae sp.,Mammalia,Pilosa,Bradypodidae,three-toed sloth sp.
+Megalonychidae sp.,Mammalia,Pilosa,Megalonychidae,two-toed sloth sp.
+Delphinidae sp.,Mammalia,Cetacea,Delphinidae,dolphin sp.
+Platanistidae sp.,Mammalia,Cetacea,Platanistidae,river dolphin sp.
+Balaenopteridae sp.,Mammalia,Cetacea,Balaenopteridae,rorqual sp.
+Odobenidae sp.,Mammalia,Carnivora,Odobenidae,walrus sp.
+Phocidae sp.,Mammalia,Carnivora,Phocidae,true seal sp.
+Otariidae sp.,Mammalia,Carnivora,Otariidae,eared seal sp.
+Pteropodidae sp.,Mammalia,Chiroptera,Pteropodidae,megabat sp.
+Aotidae sp.,Mammalia,Primates,Aotidae,night monkey sp.
+Cebidae sp.,Mammalia,Primates,Cebidae,cebids sp.
+Indriidae sp.,Mammalia,Primates,Indriidae,indri sp.
+Atelidae sp.,Mammalia,Primates,Atelidae,spider monkey sp.
+Lepilemuridae sp.,Mammalia,Primates,Lepilemuridae,sportive lemur sp.
+Emballonuridae sp.,Mammalia,Chiroptera,Emballonuridae,sac-winged bat sp.
+Vespertilionidae sp.,Mammalia,Chiroptera,Vespertilionidae,vespertilionid bat sp.
+Molossidae sp.,Mammalia,Chiroptera,Molossidae,free-tailed bat sp.
+Ailuridae sp.,Mammalia,Carnivora,Ailuridae,red panda sp.
+Procyonidae sp.,Mammalia,Carnivora,Procyonidae,procyonid sp.
+Ursidae sp.,Mammalia,Carnivora,Ursidae,bear sp.
+Mephitidae sp.,Mammalia,Carnivora,Mephitidae,skunk sp.
+Didelphidae sp.,Mammalia,Didelphimorphia,Didelphidae,opossum sp.
+Macropodidae sp.,Mammalia,Diprotodontia,Macropodidae,macropod sp.
+Soricidae sp.,Mammalia,Soricomorpha,Soricidae,shrew sp.
+Talpidae sp.,Mammalia,Soricomorpha,Talpidae,mole sp.
+Noctilionidae sp.,Mammalia,Chiroptera,Noctilionidae,bulldog bat sp.
+Mormoopidae sp.,Mammalia,Chiroptera,Mormoopidae,leaf-chinned bat sp.
+Hominidae sp.,Mammalia,Primates,Hominidae,hominid sp.
+Dasypodidae sp.,Mammalia,Cingulata,Dasypodidae,armadillo sp.
+Aplodontiidae sp.,Mammalia,Rodentia,Aplodontiidae,mountain beaver sp.
+Sciuridae sp.,Mammalia,Rodentia,Sciuridae,squirrel sp.
+Castoridae sp.,Mammalia,Rodentia,Castoridae,beaver sp.
+Geomyidae sp.,Mammalia,Rodentia,Geomyidae,pocket gopher sp.
+Heteromyidae sp.,Mammalia,Rodentia,Heteromyidae,kangaroo rat sp.
+Cricetidae sp.,Mammalia,Rodentia,Cricetidae,cricket sp.
+Muridae sp.,Mammalia,Rodentia,Muridae,murid sp.
+Dipodidae sp.,Mammalia,Rodentia,Dipodidae,jerboa sp.
+Capromyidae sp.,Mammalia,Rodentia,Capromyidae,hutia sp.
+Myocastoridae sp.,Mammalia,Rodentia,Myocastoridae,coypu sp.
+Iniidae sp.,Mammalia,Cetacea,Iniidae,boto sp.
+Lipotidae sp.,Mammalia,Cetacea,Lipotidae,finless porpoise sp.
+Pontoporiidae sp.,Mammalia,Cetacea,Pontoporiidae,la plata dolphin sp.
+Phocoenidae sp.,Mammalia,Cetacea,Phocoenidae,porpoise sp.
+Monodontidae sp.,Mammalia,Cetacea,Monodontidae,narwhal sp.
+Physeteridae sp.,Mammalia,Cetacea,Physeteridae,sperm whale sp.
+Kogiidae sp.,Mammalia,Cetacea,Kogiidae,pygmy sperm whale sp.
+Hyperoodontidae sp.,Mammalia,Cetacea,Hyperoodontidae,beaked whale sp.
+Eschrichtiidae sp.,Mammalia,Cetacea,Eschrichtiidae,gray whale sp.
+Balaenidae sp.,Mammalia,Cetacea,Balaenidae,right whale sp.
+Neobalaenidae sp.,Mammalia,Cetacea,Neobalaenidae,pygmy right whale sp.
+Felidae sp.,Mammalia,Carnivora,Felidae,feline sp.
+Canidae sp.,Mammalia,Carnivora,Canidae,canid sp.
+Dugongidae sp.,Mammalia,Sirenia,Dugongidae,dugong sp.
+Trichechidae sp.,Mammalia,Sirenia,Trichechidae,manatee sp.
+Equidae sp.,Mammalia,Perissodactyla,Equidae,equid sp.
+Cervidae sp.,Mammalia,Artiodactyla,Cervidae,deer sp.
+Bovidae sp.,Mammalia,Artiodactyla,Bovidae,bovid sp.
+Antilocapridae sp.,Mammalia,Artiodactyla,Antilocapridae,pronghorn sp.
+Suidae sp.,Mammalia,Artiodactyla,Suidae,pig sp.
+Tarsiidae sp.,Mammalia,Primates,Tarsiidae,tarsier sp.
+Hylobatidae sp.,Mammalia,Primates,Hylobatidae,gibbon sp.
+Galagidae sp.,Mammalia,Primates,Galagidae,galago sp.
+Rhinonycteridae sp.,Mammalia,Chiroptera,Rhinonycteridae,greater horseshoe bat sp.
+Hipposideridae sp.,Mammalia,Chiroptera,Hipposideridae,leaf-nosed bat sp.
+Rhinolophidae sp.,Mammalia,Chiroptera,Rhinolophidae,horseshoe bat sp.
+Megadermatidae sp.,Mammalia,Chiroptera,Megadermatidae,false vampire bat sp.
+Cheirogaleidae sp.,Mammalia,Primates,Cheirogaleidae,dwarf lemur sp.
+Miniopteridae sp.,Mammalia,Chiroptera,Miniopteridae,long-winged bat sp.
+Erethizontidae sp.,Mammalia,Rodentia,Erethizontidae,porcupine sp.
+Tayassuidae sp.,Mammalia,Artiodactyla,Tayassuidae,peccary sp.
+Erinaceidae sp.,Mammalia,Erinaceomorpha,Erinaceidae,hedgehog sp.
+Dasyuridae sp.,Mammalia,Dasyuromorphia,Dasyuridae,dasyurid sp.
+Phalangeridae sp.,Mammalia,Diprotodontia,Phalangeridae,phalanger sp.
+Lemuridae sp.,Mammalia,Primates,Lemuridae,lemur sp.
+Cynocephalidae sp.,Mammalia,Dermoptera,Cynocephalidae,flying lemur sp.
+Chinchillidae sp.,Mammalia,Rodentia,Chinchillidae,chinchilla sp.
+Caviidae sp.,Mammalia,Rodentia,Caviidae,cavy sp.
+Dasyproctidae sp.,Mammalia,Rodentia,Dasyproctidae,agouti sp.
+Cuniculidae sp.,Mammalia,Rodentia,Cuniculidae,pacarana sp.
+Ctenomyidae sp.,Mammalia,Rodentia,Ctenomyidae,tuco-tuco sp.
+Echimyidae sp.,Mammalia,Rodentia,Echimyidae,spiny rat sp.
+Heptaxodontidae sp.,Mammalia,Rodentia,Heptaxodontidae,giant hutia sp.
+Procaviidae sp.,Mammalia,Hyracoidea,Procaviidae,rock hyrax sp.
+Gliridae sp.,Mammalia,Rodentia,Gliridae,dormouse sp.
+Pseudocheiridae sp.,Mammalia,Diprotodontia,Pseudocheiridae,ringtail possum sp.
+Herpestidae sp.,Mammalia,Carnivora,Herpestidae,mongoose sp.
+Hyaenidae sp.,Mammalia,Carnivora,Hyaenidae,hyaenid sp.
+Viverridae sp.,Mammalia,Carnivora,Viverridae,civet sp.
+Tapiridae sp.,Mammalia,Perissodactyla,Tapiridae,tapir sp.
+Camelidae sp.,Mammalia,Artiodactyla,Camelidae,camelid sp.
+Rhinopomatidae sp.,Mammalia,Chiroptera,Rhinopomatidae,mouse-tailed bat sp.
+Natalidae sp.,Mammalia,Chiroptera,Natalidae,funnel-eared bat sp.
+Cistugidae sp.,Mammalia,Chiroptera,Cistugidae,cistugo sp.
+Platacanthomyidae sp.,Mammalia,Rodentia,Platacanthomyidae,spiny dormouse sp.
+Nesomyidae sp.,Mammalia,Rodentia,Nesomyidae,malagasy rat sp.
+Spalacidae sp.,Mammalia,Rodentia,Spalacidae,mole rat sp.
+Tenrecidae sp.,Mammalia,Afrosoricida,Tenrecidae,tenrec sp.
+Chrysochloridae sp.,Mammalia,Afrosoricida,Chrysochloridae,golden mole sp.
+Manidae sp.,Mammalia,Pholidota,Manidae,pangolin sp.
+Bathyergidae sp.,Mammalia,Rodentia,Bathyergidae,mole rat sp.
+Hystricidae sp.,Mammalia,Rodentia,Hystricidae,porcupine sp.
+Octodontidae sp.,Mammalia,Rodentia,Octodontidae,octodont sp.
+Giraffidae sp.,Mammalia,Artiodactyla,Giraffidae,giraffe sp.
+Rhinocerotidae sp.,Mammalia,Perissodactyla,Rhinocerotidae,rhinoceros sp.
+Solenodontidae sp.,Mammalia,Soricomorpha,Solenodontidae,solenodon sp.
+Daubentoniidae sp.,Mammalia,Primates,Daubentoniidae,aye-aye sp.
+Nycteridae sp.,Mammalia,Chiroptera,Nycteridae,slit-faced bat sp.
+Furipteridae sp.,Mammalia,Chiroptera,Furipteridae,smoky bat sp.
+Thyropteridae sp.,Mammalia,Chiroptera,Thyropteridae,disc-winged bat sp.
+Mystacinidae sp.,Mammalia,Chiroptera,Mystacinidae,short-tailed bat sp.
+Anomaluridae sp.,Mammalia,Rodentia,Anomaluridae,scaly-tailed squirrel sp.
+Ctenodactylidae sp.,Mammalia,Rodentia,Ctenodactylidae,gundis sp.
+Pedetidae sp.,Mammalia,Rodentia,Pedetidae,springhare sp.
+Abrocomidae sp.,Mammalia,Rodentia,Abrocomidae,chinchilla rat sp.
+Tragulidae sp.,Mammalia,Artiodactyla,Tragulidae,chevrotain sp.
+Moschidae sp.,Mammalia,Artiodactyla,Moschidae,musk deer sp.
+Hippopotamidae sp.,Mammalia,Artiodactyla,Hippopotamidae,hippopotamus sp.
+Myzopodidae sp.,Mammalia,Chiroptera,Myzopodidae,sucker-footed bat sp.
+Calomyscidae sp.,Mammalia,Rodentia,Calomyscidae,mouse-like hamster sp.
+Tachyglossidae sp.,Mammalia,Monotremata,Tachyglossidae,echidna sp.
+Ornithorhynchidae sp.,Mammalia,Monotremata,Ornithorhynchidae,platypus sp.
+Caenolestidae sp.,Mammalia,Paucituberculata,Caenolestidae,shrew opossum sp.
+Microbiotheriidae sp.,Mammalia,Microbiotheria,Microbiotheriidae,colocolo sp.
+Thylacinidae sp.,Mammalia,Dasyuromorphia,Thylacinidae,thylacine sp.
+Myrmecobiidae sp.,Mammalia,Dasyuromorphia,Myrmecobiidae,numbat sp.
+Chaeropodidae sp.,Mammalia,Peramelemorphia,Chaeropodidae,pig-footed bandicoot sp.
+Peramelidae sp.,Mammalia,Peramelemorphia,Peramelidae,bandicoot sp.
+Thylacomyidae sp.,Mammalia,Peramelemorphia,Thylacomyidae,bilby sp.
+Notoryctidae sp.,Mammalia,Notoryctemorphia,Notoryctidae,marsupial mole sp.
+Phascolarctidae sp.,Mammalia,Diprotodontia,Phascolarctidae,koala sp.
+Vombatidae sp.,Mammalia,Diprotodontia,Vombatidae,wombat sp.
+Potoroidae sp.,Mammalia,Diprotodontia,Potoroidae,potoroo sp.
+Hypsiprymnodontidae sp.,Mammalia,Diprotodontia,Hypsiprymnodontidae,musky rat-kangaroo sp.
+Tupaiidae sp.,Mammalia,Scandentia,Tupaiidae,tree shrew sp.
+Ptilocercidae sp.,Mammalia,Scandentia,Ptilocercidae,pen-tailed treeshrew sp.
+Petromuridae sp.,Mammalia,Rodentia,Petromuridae,dassie rat sp.
+Thryonomyidae sp.,Mammalia,Rodentia,Thryonomyidae,cane rat sp.
+Dinomyidae sp.,Mammalia,Rodentia,Dinomyidae,pacarana sp.
+Macroscelididae sp.,Mammalia,Macroscelidea,Macroscelididae,elephant shrew sp.
+Orycteropodidae sp.,Mammalia,Tubulidentata,Orycteropodidae,aardvark sp.
+Elephantidae sp.,Mammalia,Proboscidea,Elephantidae,elephant sp.
+Burramyidae sp.,Mammalia,Diprotodontia,Burramyidae,pygmy possum sp.
+Petauridae sp.,Mammalia,Diprotodontia,Petauridae,glider sp.
+Tarsipedidae sp.,Mammalia,Diprotodontia,Tarsipedidae,honey possum sp.
+Acrobatidae sp.,Mammalia,Diprotodontia,Acrobatidae,feathertail glider sp.
+Eupleridae sp.,Mammalia,Carnivora,Eupleridae,malagasy carnivoran sp.
+Nandiniidae sp.,Mammalia,Carnivora,Nandiniidae,african palm civet sp.
+Prolagidae sp.,Mammalia,Lagomorpha,Prolagidae,lorisiform primate sp.
+Craseonycteridae sp.,Mammalia,Chiroptera,Craseonycteridae,bumblebee bat sp.
+Diatomyidae sp.,Mammalia,Rodentia,Diatomyidae,laonastes sp.
+Primates sp.,Mammalia,Primates,NA,primates sp.
+Chiroptera sp.,Mammalia,Chiroptera,NA,bats sp.
+Carnivora sp.,Mammalia,Carnivora,NA,carnivorans sp.
+Lagomorpha sp.,Mammalia,Lagomorpha,NA,lagomorphs sp.
+Pilosa sp.,Mammalia,Pilosa,NA,pilosa sp.
+Cetacea sp.,Mammalia,Cetacea,NA,cetaceans sp.
+Didelphimorphia sp.,Mammalia,Didelphimorphia,NA,opossums sp.
+Diprotodontia sp.,Mammalia,Diprotodontia,NA,diprotodonts sp.
+Soricomorpha sp.,Mammalia,Soricomorpha,NA,shrews and moles sp.
+Cingulata sp.,Mammalia,Cingulata,NA,armadillos sp.
+Rodentia sp.,Mammalia,Rodentia,NA,rodents sp.
+Sirenia sp.,Mammalia,Sirenia,NA,sirenians sp.
+Perissodactyla sp.,Mammalia,Perissodactyla,NA,odd-toed ungulates sp.
+Artiodactyla sp.,Mammalia,Artiodactyla,NA,even-toed ungulates sp.
+Erinaceomorpha sp.,Mammalia,Erinaceomorpha,NA,hedgehogs sp.
+Dasyuromorphia sp.,Mammalia,Dasyuromorphia,NA,dasyuromorphs sp.
+Dermoptera sp.,Mammalia,Dermoptera,NA,flying lemurs sp.
+Hyracoidea sp.,Mammalia,Hyracoidea,NA,hyraxes sp.
+Afrosoricida sp.,Mammalia,Afrosoricida,NA,golden moles and tenrecs sp.
+Pholidota sp.,Mammalia,Pholidota,NA,pangolins sp.
+Monotremata sp.,Mammalia,Monotremata,NA,monotremes sp.
+Paucituberculata sp.,Mammalia,Paucituberculata,NA,shrew opossums sp.
+Microbiotheria sp.,Mammalia,Microbiotheria,NA,monito del monte sp.
+Peramelemorphia sp.,Mammalia,Peramelemorphia,NA,bandicoots and bilbies sp.
+Notoryctemorphia sp.,Mammalia,Notoryctemorphia,NA,marsupial moles sp.
+Scandentia sp.,Mammalia,Scandentia,NA,treeshrews sp.
+Macroscelidea sp.,Mammalia,Macroscelidea,NA,elephant shrews sp.
+Tubulidentata sp.,Mammalia,Tubulidentata,NA,aardvarks sp.
+Proboscidea sp.,Mammalia,Proboscidea,NA,elephants sp.

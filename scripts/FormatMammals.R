@@ -1,10 +1,4 @@
 # Format Mammals
-
-
-#grepl('^otter$', source) & grepl('europe', region) ~ 'eurasian otter',
-#grepl('badger', source) & grepl('europe', region) ~ 'european badger'
-# Needs mammal csv
-
 FormatMammal <- function(x){
   mammals <- c(
     "red fox" = "(red|blue|silver) fox|^fox$|vulpes vulpes",
@@ -17,18 +11,16 @@ FormatMammal <- function(x){
     "arctic fox"= "arctic[ -]fox|vulpes lagopus",
     'human' = '^humans{0,1}$',
     'lion' = '^lion$|leo panthera',
-    'otariidae sp.' = '^sea lion$',
+    'eared seal sp.' = '^sea lion$',
     'true seal sp.' = '^seal$|seal sp\\.',
     'bear sp.'= "^bear$|bear sp\\.",
-    
-    
-    'mink sp.'= '^mink$|wild mink|mink sp\\.',
-    "cetacea sp."= "dolphin$|porpoise|cetacea sp\\.",
-    "lynx sp."= "lynx sp\\.|^lynx$",
-    "mustelid sp."= "^polecat$",
+    'mustelid sp.'= '^mink$|wild mink|mink sp\\.|polecat|^otter$|badger',
+    'common otter' = 'luta {0,1}lutra|common otter',
+    "dolphin sp."= "^dolphin$",
+    "porpoise sp."= "^porpoise$",
+    "lynx"= "lynx sp\\.|^lynx$",
     'skunk sp.'= '^skunk$|skunk sp\\.',
-    'otter sp.'= '^otter$|lutralutra|otter sp\\.',
-    'feline sp.'= '^cat$|domestic cat|feline|lion|feline sp\\.',
+    'feline sp.'= '^cat$|domestic cat|feline',
     'canine sp.'= 'canine'
     )
   
@@ -41,6 +33,3 @@ FormatMammal <- function(x){
   return(x)
 }
 
-
-# European badger
-# European mink
