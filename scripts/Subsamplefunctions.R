@@ -54,6 +54,7 @@ ExtractMetadata <- function(tiplabels){
     mutate(decimal_date = suppressWarnings(as.double(decimal_date))) %>%
     mutate(week_date = format(date, "%Y-%V")) %>%
     mutate(month_date = format(date, "%Y-%m")) %>%
+    mutate(year_date = format(date, "%Y")) %>%
     
     # Format isolate name
     mutate(isolate_name = gsub("_(\\d{4})|(\\d{4})_", "\\1", perl = TRUE, isolate_name)) %>%
@@ -106,7 +107,8 @@ FormatMetadata <- function(data){
       rename(source=host) %>%
       select(-starts_with('host')) %>%
       rename(month_date = date_year_month) %>%
-      rename(decimal_date = date_frac)
+      rename(decimal_date = date_frac) %>%
+      mutate(year_date = date_year)
     
   } else{
     data <- data %>%
@@ -115,7 +117,8 @@ FormatMetadata <- function(data){
       mutate(decimal_date = format(round(decimal_date(date), 2), 
                                    nsmall = 2) ) %>%
       mutate(decimal_date = suppressWarnings(as.double(decimal_date))) %>%
-      mutate(month_date = format(date, "%Y-%m"))
+      mutate(month_date = format(date, "%Y-%m")) %>%
+      mutate(year_date = format(date, "%Y"))
   }
   
   data <- data %>%
@@ -1370,15 +1373,16 @@ FormatMetadata <- function(data){
       collection_date = date,
       collection_datedecimal = decimal_date,
       collection_datemonth = month_date,
-      collection_region_name = region,
-      collection_country_name = country,
-      collection_country_code = gid_0,
-      collection_country_lat = adm0_lat,
-      collection_country_long = adm0_long,
-      collection_subdiv1_name = name_1,
-      collection_subdiv1_code = hasc_1,
-      collection_subdiv1_lat = adm1_lat,
-      collection_subdiv1_long = adm1_long,
+      collection_dateyear = year_date,
+      collection_regionname = region,
+      collection_countryname = country,
+      collection_countrycode = gid_0,
+      collection_countrylat = adm0_lat,
+      collection_countrylong = adm0_long,
+      collection_subdiv1name = name_1,
+      collection_subdiv1code = hasc_1,
+      collection_subdiv1lat = adm1_lat,
+      collection_subdiv1long = adm1_long,
       #collection_subdiv2.name = name_subdiv2,
       #collection_subdiv2.code = code_subdiv2,
       #collection_subdiv2.lat = lat_subdiv2,
@@ -1391,6 +1395,17 @@ FormatMetadata <- function(data){
       host_isbird = is_bird,
       host_isdomestic = is_domestic
     ) %>%
+    
+    # Infer simplified host categories for BEAST
+    mutate(host_simplifiedhost = case_when(
+      host_order %in% c('anseriformes', 'galliformes', 'charadriiformes') ~ paste(host_order, 
+                                                                                  host_isdomestic,
+                                                                                  sep = '-'),
+      host_class == 'mammalia' ~ 'mammal',
+      host_commonname == 'unknown' ~ 'unknown',
+      host_commonname == 'environment' ~ 'environment',
+      .default = 'other')) %>%
+    
     dplyr::relocate(
       virus_subtype,
       isolate_id,
@@ -1398,6 +1413,7 @@ FormatMetadata <- function(data){
       collection_date,
       collection_datedecimal,
       collection_datemonth,
+      collection_dateyear,
       host_class,
       host_order,
       host_family,
@@ -1405,15 +1421,16 @@ FormatMetadata <- function(data){
       host_commonname,
       host_isbird,
       host_isdomestic,
-      collection_region_name,
-      collection_country_name,
-      collection_country_code,
-      collection_country_lat,
-      collection_country_long,
-      collection_subdiv1_name,
-      collection_subdiv1_code,
-      collection_subdiv1_lat,
-      collection_subdiv1_long#,
+      host_simplifiedhost,
+      collection_regionname,
+      collection_countryname,
+      collection_countrycode,
+      collection_countrylat,
+      collection_countrylong,
+      collection_subdiv1name,
+      collection_subdiv1code,
+      collection_subdiv1lat,
+      collection_subdiv1long#,
       #collection_subdiv2_name,
       #collection_subdiv2_code,
       #collection_subdiv2_lat,
@@ -1424,67 +1441,26 @@ FormatMetadata <- function(data){
     select(-c(source, location, varname_1, iso_1)) %>%
     
     # Format NAs
-    mutate(across(everything(), .fns = ~ gsub('^NA$', NA, .x))) %>%
-    
-    
-    # Infer simplified host categories for BEAST
-    mutate(host_simplifiedhost = case_when(
-      host_order %in% c('anseriformes', 'galliformes', 'charadriiformes') ~ paste(host_order, 
-                                                                             host_isdomestic,
-                                                                             sep = '-'),
-      host_class == 'mammalia' ~ 'mammal',
-      host_commonname == 'unknown' ~ 'unknown',
-      host_commonname == 'environment' ~ 'environment',
-      .default = 'other')) 
+    mutate(across(everything(), .fns = ~ gsub('^NA$', NA, .x))) 
+  
   
   return(data)
   
 }
 
 
-MergeReassortantData <- function(data, newdata){
-  stopifnot(any('isolate.id' %in% colnames(newdata)))
+MergeReassortantData <-  function(data, newdata){
+  df <- data  %>% 
+    left_join(newdata, by = join_by(isolate_id)) %>%
+    mutate(across(ends_with(".x"), ~coalesce(., get(sub("\\.x$", ".y", cur_column()))), .names = "{.col}")) %>%
+    select(-ends_with(".y")) %>%
+    rename_with(~gsub('.x', '', .x)) %>%
+    select(-id_unsure) %>%
+    mutate(collection_tipdate = case_when(is.na(collection_date) & is.na(collection_datedecimal) ~ collection_dateyear,
+                                          is.na(collection_date) ~ collection_datemonth,
+                                          .default = as.character(collection_date))) 
   
-  joineddata <- data %>% 
-    left_join(newdata, 
-              by = join_by(isolate.id)) %>%
-    
-    # Resolve discrepancies
-    mutate(collection_datedecimal = case_when(
-      collection_datedecimal.x != collection_datedecimal.y ~ collection_datedecimal.y
-    ))
-    
-    
-    
-  
-  
-    newdata %>% 
-    select(c(isolate_id, location, contains('cluster'), date_year_month)) %>%
-    separate_wider_delim(location, 
-                         delim = ' / ', 
-                         names = c('region',
-                                   'collection_country.name', 
-                                   'collection_subdiv1.name',
-                                   'collection_subdiv2.name',
-                                   'collection_subdiv3.name'),
-                         too_few = 'align_start') %>%
-    rename_with(.fn = ~gsub('_', '.', .x))
-  
-  # Get reassortant data from metadata
-  out <- left_join(data, 
-                   newdata,
-                   by = join_by(isolate.id)) %>%
-    
-    # Get missing dates from metadata csv
-    mutate(collection_dateweek = dplyr::coalesce(collection_dateweek, 
-                                                 date_year_month)) %>%
-    
-    mutate(collection_tipdate = case_when(is.na(collection_date) ~ collection_dateweek,
-                                          .default = as.character(collection_date))) #%>%
-  # select(-c(date.month.year, month.date))
-
-  return()
-
+  return(df)
 }
 
 
@@ -1519,9 +1495,7 @@ ImputeCladeandCluster <- function(metadata, alignment, ordered = FALSE){
                                        .default = cluster_segment)) %>% 
     filter(tolower(segment) == cluster_segment) %>%
     mutate(cluster_number = case_when(is.na(cluster_number) & na.locf0(cluster_number, fromLast = TRUE) == na.locf0(cluster_number, fromLast = FALSE) ~ na.locf0(cluster_number, fromLast = TRUE), 
-                                      .default = cluster_number)) %>%
-    mutate(cluster_profile = case_when(is.na(cluster_profile) & na.locf0(cluster_profile, fromLast = TRUE) == na.locf0(cluster_profile, fromLast = FALSE) ~ na.locf0(cluster_profile, fromLast = TRUE), 
-                                      .default = cluster_profile)) 
+                                      .default = cluster_number))
   
   return(out)
 }
