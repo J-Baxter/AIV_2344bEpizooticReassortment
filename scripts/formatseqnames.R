@@ -23,13 +23,13 @@ geodata <- read_csv('./annotated_geodata.csv')
 # Join alignment metadata with reassortant data
 MyFunc <- function(data, newdata){
   df <- data  %>% 
-    left_join(newdata, by = join_by(isolate.id)) %>%
+    left_join(newdata, by = join_by(isolate_id)) %>%
     mutate(across(ends_with(".x"), ~coalesce(., get(sub("\\.x$", ".y", cur_column()))), .names = "{.col}")) %>%
     select(-ends_with(".y")) %>%
     rename_with(~gsub('.x', '', .x)) %>%
-    select(-id.unsure) %>%
-    mutate(collection.tipdate = case_when(is.na(collection.date) ~ collection.datemonth,
-                                          .default = as.character(collection.date))) 
+    select(-id_unsure) %>%
+    mutate(collection_tipdate = case_when(is.na(collection_date) ~ collection_datemonth,
+                                          .default = as.character(collection_date))) 
   
   return(df)
 }
@@ -37,13 +37,13 @@ MyFunc <- function(data, newdata){
 MakeTipNames <- function(data){
   out <- data %>%
     unite(tipnames, 
-          virus.subtype,
+          virus_subtype,
           clade,
-          isolate.id,
-          host.order,
-          collection.country.name,
-          cluster.genome,
-          collection.tipdate,
+          isolate_id,
+          host_order,
+          collection_countryname,
+          cluster_genome,
+          collection_tipdate,
           sep = '|',                        
           remove = FALSE) %>%
     mutate(tipnames = gsub(' ', '_', tipnames))
@@ -52,7 +52,15 @@ MakeTipNames <- function(data){
 }
 
 
-
+isDateError <- function(dataframe){
+  out <- dataframe %>%
+    mutate(collection_dateerror = case_when(
+      is.na(collection_datedecimal) ~ TRUE,
+      collection_datedecimal<1980 & collection_datedecimal>2023 ~ TRUE,
+      .default = FALSE))
+  
+  return(out)
+}
 
 ReNamePhylo <- function(trees, metadata, x){
   
@@ -142,16 +150,20 @@ reassortant_metadata_formatted <- FormatMetadata(reassortant_metadata) %>%
   unite('collection_original', 
         starts_with('location'), 
         sep = ' / ') %>%
-  mutate(clade =  gsub('[[:punct:]]+','', clade))
+  mutate(clade =  gsub('[[:punct:]]+','', clade)) 
 
-metadata_formatted <- lapply(metadata_unformatted, FormatMetadata) 
+metadata_formatted <- lapply(metadata_unformatted, FormatMetadata)
+
 
 
 metadata_joined <- lapply(metadata_formatted, MyFunc, reassortant_metadata_formatted) %>%
   setNames(segnames) %>%
   lapply(., MakeTipNames) %>%
-  lapply(., IsDateError) %>%
-  mapply(function(x, y) x %>%  mutate(segment = gsub('.*_', '', y)) ,x= .,  y= as.list(segnames), SIMPLIFY = F)
+  mapply(function(x, y) x %>%  mutate(segment = gsub('.*_', '', y)) ,x= .,  y= as.list(segnames), SIMPLIFY = F) %>%
+  lapply(., isDateError)
+
+metadata_formatted_all <- bind_rows(metadata_joined)
+
 
 # impute clade and cluster (from NJ tree)
 temp_alignments <- alignments %>%
