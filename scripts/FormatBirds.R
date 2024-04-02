@@ -8,7 +8,7 @@ isBird <- function(x){
     "phoenicopteriformes", "cuculiformes", "coraciformes", "trogoniformes", "gaviiformes", 
     "pteroclidiformes", "anseranseriformes", "phaethontiformes","opisthocomiformes")
   
-  if(x %in% bird_orders){
+  if(any(x %in% bird_orders)){
     x <- TRUE
   }else{
     x <- FALSE
@@ -24,11 +24,11 @@ FormatAnseriformes <- function(x){
     "mute swan" = "c[yi]gnus olor|m(ute){0,1}[ -]swan",
     "domestic goose sp. (domestic type)" = "(domestic|pomeranian|embden|sebastopol|american buff|african|rural) goose|anser anser domesticus",
     "mallard (domestic type)" = "(domestic|pekin|mule|runner|cascade|rural|mulard) duck",
-    "barnacle goose" = "branta leucopsis|barnacle goose",
+    "barnacle goose" = "branta leucopsis|barnacle goose|^barnacle$|",
     "mandarin duck" = "aix galericulata|man{0,1}darin duck",
     "duck sp." = "anatidae|^duck$|(wild|migratory) duck|^dk$|duck sp\\.",
     "greater/lesser white-fronted goose" = "^white[- ]fronted goose$",
-    "goose sp." = "anatidae \\(goose sp\\.\\)|^goose$|wild (goose|geese)|^geese$",
+    "goose sp." = "anatidae \\(goose sp\\.\\)|^goose$|wild (goose|geese)|^geese$|^go$",
     "greylag goose" = "anser anser|^(gr[ea]y {0,1}lag) goose$|grey go*",
     "green-winged teal" = "anas crecca|greenwing duck|(common|eurasian)[ -]teal|green[- ]{0,1}winged[- ]{0,1}teal$",
     "muscovy duck" = "cairina moschata|muscovy duck", #
@@ -141,7 +141,7 @@ FormatCharadriiformes <- function(x){
     'large alcid sp.' = '^guillemot$',
     'black-bellied plover' = 	"pluvialis squatarola|(black[- ]belli(ed){0,1}|gr[ea]y) plover",
     'scolopacidae sp.' = 'sandpiper',
-    'shorebird sp.' = 	'shorebird|charadriiformes sp\\.'
+    'shorebird sp.' = 	'^shorebird$|charadriiformes sp\\.|^seabird$'
     
     
   )
@@ -335,7 +335,8 @@ FormatGruiformes <- function(x){
     "rail/crake sp." = "rallidae sp\\.|rail/crake sp\\.|^moorhen$",
     "red-crowned crane" = "grus japonensis|red[- ]crown(ed){0,1}[- ]crane",
     "white-naped crane" = "grus vipio|white[- ]nap(ed){0,1}[- ]crane",
-    'eurasian coot' = '(common|eurai{0,1}si{0,1}an|australian) coot|fulica atra')
+    'eurasian coot' = '(common|eurai{0,1}si{0,1}an|australian) coot|fulica atra'
+    )
 
   
   for (i in 1:length(gruiformes)){
@@ -366,7 +367,10 @@ FormatPodicipediformes <- function(x){
 
 FormatFalconiformes <- function(x){
   falconiformes <- c("peregrine falcon" = "falco peregrinus|peregrine falcon",
-                     "falcon sp." = "falco sp\\.|falcon sp\\.|^falcon$")
+                     "falcon sp." = "falco sp\\.|falcon sp\\.|^falcon$",
+                     'eurasian kestrel' = '(common|european|eurasian|old[- ]world) kestr{0,1}el|falco tinnunculus',
+                     'american kestrel' = 'american kestrel|falco sparverius'
+                     )
   
   
   for (i in 1:length(falconiformes)){
@@ -430,7 +434,7 @@ FormatPsittaciformes <- function(x){
   psittaciformes <-  c(
     "amazona sp." = "amazona sp\\.|amazona sp\\.|amazon parrot",
     "large macaw sp." = "large macaw sp\\.|large macaw sp\\.|catalina macaw",
-    "parrot sp." =	"psittaciformes sp\\.|parrot sp\\.|^parrot$"
+    "parrot sp." =	"psittaciformes sp\\.|parrot sp\\.|^parrot$|ornamental bird"
   )
   
   for (i in 1:length(psittaciformes)){
@@ -552,7 +556,7 @@ FormatBird<- function(x){
   x  <- FormatStrigiformes(x) 
   x  <- FormatStruthioniformes(x) 
   x  <- FormatSuliformes(x) 
-  x <- gsub('^birds{0,1}$|avian|.*wild {0,1}birds{0,1}.*|acquatic birds{0,1}', 'aves', x)
+  x <- gsub('^birds{0,1}$|avian|.*wild {0,1}birds{0,1}.*|ac{0,1}quatic birds{0,1}', 'aves', x)
   x <- gsub("^env{0,1}(iron{0,1}ment{0,1}){0,1}.*|^water$", 'environment', x)
 
   return(x)  
