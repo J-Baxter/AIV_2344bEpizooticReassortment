@@ -1305,8 +1305,10 @@ FormatMetadata <- function(data){
     mutate(source= gsub('gray', 'grey', source)) %>%
     rowwise() %>%
     mutate(primary_com_name = FormatBird(source)) %>%
+    mutate(primary_com_name = FormatMammal(primary_com_name)) %>%
     as_tibble() %>%
     mutate(primary_com_name = case_when(
+      
       # locations
       grepl('sparrowhawk', primary_com_name) & grepl('europe', region) ~ 'eurasian sparrowhawk',
       grepl("^magpie$", primary_com_name) & grepl('europe', region) ~ "eurasian magpie",
@@ -1334,7 +1336,8 @@ FormatMetadata <- function(data){
       .default = primary_com_name
     )) %>%
     select(c(source, primary_com_name)) %>%
-    left_join(birds)
+    left_join(birds) %>%
+    left_join(mammals)
     # Get host taxonomy
     rowwise() %>%
     mutate(taxonomy = getTaxonomyForName(primary_com_name))%>%
@@ -1470,7 +1473,6 @@ MergeReassortantData <- function(data, newdata){
 
 
 # Where tiplabels are not in order, a neighbour joining tree formed and lables
-#  imputed if tips are monophyletic with respect to clade/subtype
 ImputeCladeandCluster <- function(metadata, alignment, ordered = FALSE){
   
   seg <- metadata %>% pull(segment) %>% unique()
