@@ -1348,13 +1348,20 @@ FormatMetadata <- function(data){
                   .fns = ~coalesce(., get(sub("\\.x$", ".y", cur_column()))))) %>%
     select(-(ends_with('.x') |ends_with('.y'))) %>%
     
+    # environment
+    mutate(across(c(order, class, family),
+                  ~ case_when(primary_com_name == 'environment' ~ 'environment', TRUE ~ .)),
+           across(c(order, class, family),
+                  ~ case_when(primary_com_name == 'unknown' ~ 'unknown', TRUE ~ .))) %>%
     
     # binary host information
-    mutate(is_domestic = case_when(grepl("domestic type", sci_name) ~ "domestic",
+    mutate(is_domestic = case_when(grepl("domestic", sci_name) ~ "domestic",
+                                   grepl('homo sapiens',sci_name) ~ 'unknown',
                                    .default = "wild"
     )) %>%
-    
+    rowwise() %>%
     mutate(is_bird = isBird(tolower(order)))%>% 
+    as_tibble() %>%
     
     # Format column names
     #dplyr::select(-c(virus_species, id_unsure)) %>%
@@ -1422,11 +1429,12 @@ FormatMetadata <- function(data){
     
     # Infer simplified host categories for BEAST
     mutate(host_simplifiedhost = case_when(
-      any(host_order %in% c('anseriformes', 'galliformes', 'charadriiformes')) ~ paste(host_order, 
+      host_order %in% c('anseriformes', 'galliformes', 'charadriiformes') ~ paste(host_order, 
                                                                              host_isdomestic,
                                                                              sep = '-'),
       host_class == 'mammalia' ~ 'mammal',
       host_commonname == 'unknown' ~ 'unknown',
+      host_commonname == 'environment' ~ 'environment',
       .default = 'other')) 
   
   return(data)
