@@ -52,6 +52,8 @@ MakeTipNames <- function(data){
 }
 
 
+
+
 ReNamePhylo <- function(trees, metadata, x){
   
   trees[[x]][['tip.label']] <- metadata[[x]][['tipnames']]
@@ -119,6 +121,10 @@ reassortant_metadata <- read_csv('./2023Dec01/metadata/h5_metadata_global_6280_u
            as.Date())
 
 
+# Import required taxonomy files
+birds <- read_csv('bird_taxonomy.csv')
+mammals <- read_csv('mammal_taxonomy.csv')
+
 ####################################################################################################
 # Extract metadata and format tipnames
 seqnames <- lapply(alignments, rownames) %>% 
@@ -131,9 +137,9 @@ metadata_unformatted <- lapply(seqnames, ExtractMetadata)
 # Format metadata
 reassortant_metadata_formatted <- FormatMetadata(reassortant_metadata) %>%
   select(-matches('location.[cn]')) %>%
-  select(-c(domestic.status, 
-            domestic.wild)) %>% 
-  unite('collection.original', 
+  select(-c(domestic_status, 
+            domestic_wild)) %>% 
+  unite('collection_original', 
         starts_with('location'), 
         sep = ' / ') %>%
   mutate(clade =  gsub('[[:punct:]]+','', clade))
@@ -141,9 +147,10 @@ reassortant_metadata_formatted <- FormatMetadata(reassortant_metadata) %>%
 metadata_formatted <- lapply(metadata_unformatted, FormatMetadata) 
 
 
-metadata_joined <- lapply(metadata_formatted, MyFunc, reassortant_metadata_formatted ) %>%
+metadata_joined <- lapply(metadata_formatted, MyFunc, reassortant_metadata_formatted) %>%
   setNames(segnames) %>%
   lapply(., MakeTipNames) %>%
+  lapply(., IsDateError) %>%
   mapply(function(x, y) x %>%  mutate(segment = gsub('.*_', '', y)) ,x= .,  y= as.list(segnames), SIMPLIFY = F)
 
 # impute clade and cluster (from NJ tree)
@@ -156,6 +163,11 @@ temp_alignments <- alignments %>%
 metadata_joined_imputed <- mapply(ImputeCladeandCluster,  metadata_joined, temp_alignments, SIMPLIFY = F) %>%
   lapply(., function(x) x %>% mutate(tipnames = gsub( '\\|', '\\.', tipnames))) %>%
   lapply(., function(x) x %>% mutate(cluster.number = paste0('profile', str_pad(cluster.number, 3, pad = "0"))))
+
+
+####################################################################################################
+# Check year and remove if problematic
+
 
 
 ####################################################################################################
