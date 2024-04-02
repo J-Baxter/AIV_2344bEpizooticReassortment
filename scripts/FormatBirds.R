@@ -24,7 +24,7 @@ FormatAnseriformes <- function(x){
     "mute swan" = "c[yi]gnus olor|m(ute){0,1}[ -]swan",
     "domestic goose sp. (domestic type)" = "(domestic|pomeranian|embden|sebastopol|american buff|african|rural) goose|anser anser domesticus",
     "mallard (domestic type)" = "(domestic|pekin|mule|runner|cascade|rural|mulard) duck",
-    "barnacle goose" = "branta leucopsis|barnacle goose|^barnacle$|",
+    "barnacle goose" = "branta leucopsis|barnacle goose|^barnacle$",
     "mandarin duck" = "aix galericulata|man{0,1}darin duck",
     "duck sp." = "anatidae|^duck$|(wild|migratory) duck|^dk$|duck sp\\.",
     "greater/lesser white-fronted goose" = "^white[- ]fronted goose$",
