@@ -1312,30 +1312,51 @@ FormatMetadata <- function(data){
     mutate(primary_com_name = case_when(
       
       # location-specific birds
-      grepl('sparrowhawk', primary_com_name) & grepl('europe', region) ~ 'eurasian sparrowhawk',
-      grepl("^magpie$|^common magpie", primary_com_name) & grepl('europe', region) ~ "eurasian magpie",
-      grepl("^magpie$|^common magpie", primary_com_name) & grepl('eastern asia', region) ~ "oriental/eurasian magpie",
-      grepl("^magpie$|^common magpie", primary_com_name) & grepl('northern america', region) ~ "black-billed magpie",
-      grepl("^kestrel$", primary_com_name) & grepl('northern america', region) ~ "american kestrel",
-      grepl("^kestrel$", primary_com_name) & grepl('europe', region) ~ "lesser/eurasian kestrel",
-      grepl("^guinea {0,1}fowl", primary_com_name) & grepl('africa', region) ~ "crested guineafowl sp.",
-      grepl('^guinea {0,1}fowl', primary_com_name) & !grepl('africa', region) ~ "helmeted guineafowl (domestic type)",
-      grepl('^fulmar$', primary_com_name) & !grepl('south america', region) ~ "northern fulmar",
-      grepl('^fulmar$', primary_com_name) & grepl('south america', region) ~ "southern fulmar",
-      grepl('^gannet$', primary_com_name) & grepl('europe', region) ~ "northern gannet",
-      grepl('jungle crow', primary_com_name) ~ "crow/raven sp.",
-      grepl('oystercatcher', primary_com_name) & grepl('europe', region) ~ 'eurasian oystercatcher',
-      grepl("turkey|^pavo$", primary_com_name) & grepl('central america', region) ~ "wild turkey", 
-      grepl("turkey|^pavo$", primary_com_name) & !grepl('central america', region) ~ "wild turkey (domestic type)", 
-      grepl("turnstone", primary_com_name) & grepl('europe', region) ~ "ruddy turnstone",
+      grepl('sparrowhawk', 
+            primary_com_name) & grepl('europe', region) ~ 'eurasian sparrowhawk',
+      grepl("^magpie$|^common magpie",
+            primary_com_name) & grepl('europe', region) ~ "eurasian magpie",
+      grepl("^magpie$|^common magpie",
+            primary_com_name) & grepl('eastern asia', region) ~ "oriental/eurasian magpie",
+      grepl("^magpie$|^common magpie", 
+            primary_com_name) & grepl('northern america', region) ~ "black-billed magpie",
+      grepl("^kestrel$",
+            primary_com_name) & grepl('northern america', region) ~ "american kestrel",
+      grepl("^kestrel$", 
+            primary_com_name) & grepl('europe', region) ~ "lesser/eurasian kestrel",
+      grepl("^guinea {0,1}fowl", 
+            primary_com_name) & grepl('africa', region) ~ "crested guineafowl sp.",
+      grepl('^guinea {0,1}fowl', 
+            primary_com_name) & !grepl('africa', region) ~ "helmeted guineafowl (domestic type)",
+      grepl('^fulmar$', 
+            primary_com_name) & !grepl('south america', region) ~ "northern fulmar",
+      grepl('^fulmar$',
+            primary_com_name) & grepl('south america', region) ~ "southern fulmar",
+      grepl('^gannet$', 
+            primary_com_name) & grepl('europe', region) ~ "northern gannet",
+      grepl('jungle crow', 
+            primary_com_name) ~ "crow/raven sp.",
+      grepl('oystercatcher', 
+            primary_com_name) & grepl('europe', region) ~ 'eurasian oystercatcher',
+      grepl("turkey|^pavo$", 
+            primary_com_name) & grepl('central america', region) ~ "wild turkey", 
+      grepl("turkey|^pavo$",
+            primary_com_name) & !grepl('central america', region) ~ "wild turkey (domestic type)", 
+      grepl("turnstone", 
+            primary_com_name) & grepl('europe', region) ~ "ruddy turnstone",
       primary_com_name == 'sea eagle' & grepl('europe', region) ~"white-tailed eagle",
-      grepl("quail", primary_com_name) & !grepl('america', region) ~ "old world quail sp.", 
-      grepl("quail", primary_com_name) & grepl('america', region) ~ "new world quail sp.", 
-      grepl('^vulture$', primary_com_name) &  grepl('america', region) ~ "new world vulture sp.",
-      grepl('^vulture$', primary_com_name) & !grepl('america', region) ~ "old world vulture sp.",
+      grepl("quail", 
+            primary_com_name) & !grepl('america', region) ~ "old world quail sp.", 
+      grepl("quail", 
+            primary_com_name) & grepl('america', region) ~ "new world quail sp.", 
+      grepl('^vulture$', 
+            primary_com_name) &  grepl('america', region) ~ "new world vulture sp.",
+      grepl('^vulture$', 
+            primary_com_name) & !grepl('america', region) ~ "old world vulture sp.",
       
       # unknown
-      grepl('^an$|unknown', primary_com_name) ~ 'unknown',
+      grepl('^an$|unknown', 
+            primary_com_name) ~ 'unknown',
       is.na(primary_com_name) ~ 'unknown',
       
       
@@ -1452,13 +1473,16 @@ FormatMetadata <- function(data){
 MergeReassortantData <-  function(data, newdata){
   df <- data  %>% 
     left_join(newdata, by = join_by(isolate_id)) %>%
-    mutate(across(ends_with(".x"), ~coalesce(., get(sub("\\.x$", ".y", cur_column()))), .names = "{.col}")) %>%
+    mutate(across(ends_with(".x"),
+                  ~coalesce(., get(sub("\\.x$", ".y", cur_column()))),
+                  .names = "{.col}")) %>%
     select(-ends_with(".y")) %>%
     rename_with(~gsub('.x', '', .x)) %>%
     select(-id_unsure) %>%
-    mutate(collection_tipdate = case_when(is.na(collection_date) & is.na(collection_datedecimal) ~ collection_dateyear,
-                                          is.na(collection_date) ~ collection_datemonth,
-                                          .default = as.character(collection_date))) 
+    mutate(collection_tipdate = case_when(
+      is.na(collection_date) & is.na(collection_datedecimal) ~ collection_dateyear,
+      is.na(collection_date) ~ collection_datemonth,
+      .default = as.character(collection_date))) 
   
   return(df)
 }
@@ -1467,7 +1491,10 @@ MergeReassortantData <-  function(data, newdata){
 # Where tiplabels are not in order, a neighbour joining tree formed and lables
 ImputeCladeandCluster <- function(metadata, alignment, ordered = FALSE){
   
-  seg <- metadata %>% pull(segment) %>% unique()
+  seg <- metadata %>% 
+    pull(segment) %>%
+    unique()
+  
   print(seg)
   
   if(ordered == FALSE){
@@ -1479,23 +1506,31 @@ ImputeCladeandCluster <- function(metadata, alignment, ordered = FALSE){
   }
   
   out <- metadata %>%
-    mutate(tipnames = ordered(tipnames, levels = seqnames)) %>%
+    mutate(tipnames = ordered(tipnames,
+                              levels = seqnames)) %>%
     arrange(tipnames) %>%
     
     # Impute clade
-    mutate(clade = case_when(is.na(clade) & na.locf0(clade, fromLast = TRUE) == na.locf0(clade, fromLast = FALSE) ~ na.locf0(clade, fromLast = TRUE), 
-                             .default = clade)) %>%
+    mutate(clade = case_when(
+      is.na(clade) & na.locf0(clade, fromLast = TRUE) == na.locf0(clade, fromLast = FALSE) ~ na.locf0(clade, fromLast = TRUE), 
+      .default = clade)) %>%
     
     # Impute cluster (column is dependent on segment)
     rename(profile = cluster_profile) %>%
     rename(genome = cluster_genome) %>%
-    pivot_longer(contains('cluster'), values_to = 'cluster_number', names_to = 'cluster_segment') %>%
-    mutate(cluster_segment = gsub('.*\\.', '', cluster_segment)) %>%
-    mutate(cluster_segment = case_when(grepl('^N[:0-9:]', segment, ignore.case = T) & cluster_segment == 'na' ~ tolower(segment),
-                                       .default = cluster_segment)) %>% 
+    pivot_longer(matches('cluster_[a-z]{2}\\d{0,1}$'), 
+                 values_to = 'cluster_number',
+                 names_to = 'cluster_segment') %>%
+    mutate(cluster_segment = gsub('.*_', '',
+                                  cluster_segment)) %>%
+    mutate(cluster_segment = case_when(
+      grepl('^N[:0-9:]', segment, ignore.case = T) & cluster_segment == 'na' ~ tolower(segment),
+      .default = cluster_segment)) %>% 
     filter(tolower(segment) == cluster_segment) %>%
-    mutate(cluster_number = case_when(is.na(cluster_number) & na.locf0(cluster_number, fromLast = TRUE) == na.locf0(cluster_number, fromLast = FALSE) ~ na.locf0(cluster_number, fromLast = TRUE), 
-                                      .default = cluster_number))
+    mutate(cluster_number = case_when(
+      is.na(cluster_number) & na.locf0(cluster_number, fromLast = TRUE) == na.locf0(cluster_number, fromLast = FALSE) ~ na.locf0(cluster_number, fromLast = TRUE), 
+      .default = cluster_number))
+  
   
   return(out)
 }
