@@ -1480,8 +1480,8 @@ MergeReassortantData <-  function(data, newdata){
     rename_with(~gsub('.x', '', .x)) %>%
     select(-id_unsure) %>%
     mutate(collection_tipdate = case_when(
-      is.na(collection_date) & is.na(collection_datedecimal) ~ collection_dateyear,
-      is.na(collection_date) ~ collection_datemonth,
+      is.na(collection_date) & is.na(collection_datemonth) ~ collection_dateyear,
+      is.na(collection_date) & !is.na(collection_datemonth) ~ collection_datemonth,
       .default = as.character(collection_date))) 
   
   return(df)
@@ -1524,7 +1524,7 @@ ImputeCladeandCluster <- function(metadata, alignment, ordered = FALSE){
     mutate(cluster_segment = gsub('.*_', '',
                                   cluster_segment)) %>%
     mutate(cluster_segment = case_when(
-      grepl('^N[:0-9:]', segment, ignore.case = T) & cluster_segment == 'na' ~ tolower(segment),
+      grepl('^N[:0-9:]{0,1}$', segment, ignore.case = T) & cluster_segment == 'na' ~ tolower(segment),
       .default = cluster_segment)) %>% 
     filter(tolower(segment) == cluster_segment) %>%
     mutate(cluster_number = case_when(
