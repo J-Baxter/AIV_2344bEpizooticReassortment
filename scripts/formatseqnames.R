@@ -176,7 +176,7 @@ prob_seqs <- lapply(metadata_joined_imputed, function(x) x %>%
                       filter(collection_dateerror) %>% 
                       pull(tipnames))
 
-renamed_alignments_dateschecked <- alignments %>%
+renamed_alignments_dateschecked <- renamed_alignments %>%
   mapply(function(alignment,seqnames_to_drop) alignment[!rownames(alignment) %in% seqnames_to_drop,], 
          .,
          prob_seqs, 
@@ -196,7 +196,7 @@ mapply(write.dna,
 
 
 metadatafiles <- paste('./2023Dec02/metadata/', 
-                       segnames, 
+                       gsub('.*_','',segnames), '_', gsub('_.*','',segnames),
                        '.csv',  
                        sep = '')
 
