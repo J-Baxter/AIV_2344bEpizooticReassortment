@@ -119,7 +119,7 @@ seqstoremove <- read_csv('./2023Dec02/unclocklikeseqs.csv') %>%
   mutate(drop.temporal = 'drop') %>%
   mutate(seqname = gsub('*2.3.4.4.b*', '2344b', seqname)) %>%
   setNames(c('collection.region', 'virus.segment', 'tipnames', 'drop.temporal')) %>%
-  unite(id, collection.region, virus.segment)
+  unite(id, virus.segment, collection.region)
 
 
 ####################################################################################################
@@ -138,7 +138,7 @@ metadata_subsampled <- metadata %>%
   bind_rows(., .id = 'id') %>%
   
   #drop seqs
-  left_join(., seqstoremove) %>% 
+  left_join(., seqstoremove, by = join_by(id == id, tipnames)) %>% 
   filter(is.na(drop.temporal)) %>%
   select(-drop.temporal) %>%
   
@@ -150,8 +150,9 @@ metadata_subsampled <- metadata %>%
                          tipnames)) %>%
   # create groupings
   mutate(across(contains('collection'), .fns = ~ gsub('^NA$', NA, .x))) %>% 
-  mutate(best_location_code = coalesce(collection_subdiv1code,
-                                       collection_countrycode)) %>%
+  mutate(location_code = case_when(grepl('europe', collection_regionname) ~ collection_countryname,
+                                   !grepl('europe', collection_regionname) & is.na(collection_subdiv1name) ~collection_countryname,
+                                   .default = collection_subdiv1name)) %>%
   mutate(group = as.factor(group)) %>%
   
   # Remove seqs in RU/JP/CN that do not have subdivision data (unless it is a unique seq)
@@ -173,8 +174,8 @@ metadata_subsampled <- metadata %>%
   group_by(id, 
            group,
            host_simplifiedhost, 
-           genome,
-           best_location_code) %>%
+           profile,
+           location_code) %>%
   slice_sample(n = 1) %>% 
   ungroup() %>%
   
@@ -184,7 +185,7 @@ metadata_subsampled <- metadata %>%
   as.list() %>%
   setNames(segnames[!segnames %in% problems])
 
-
+lapply(metadata_subsampled, nrow) %>% unlist()
 ####################################################################################################
 # Subsample alignments
 alignments_subsampled <- mapply(function(x,y) x[rownames(x) %in% y$tipnames,],
@@ -242,7 +243,7 @@ mapply(ape::write.dna,
        format = 'fasta')
 
 
-metadatafiles_subsampled <-paste('.',
+metadatafiles_subsampled_beast <-paste('.',
                                  ddmonthyy, 
                                  'metadata',
                                  paste(segnames[!segnames %in% problems], '2344b_subsampled.txt',  sep = '_'),
@@ -252,7 +253,45 @@ mapply(write_delim,
        delim = '\t',
        quote= 'needed',
        metadata_subsampled_beast, 
+       metadatafiles_subsampled_beast)  
+
+
+metadatafiles_subsampled <-paste('.',
+                                 ddmonthyy, 
+                                 'metadata',
+                                 paste(segnames[!segnames %in% problems], '2344b_subsampled.csv',  sep = '_'),
+                                 sep = '/' )
+
+mapply(write_csv, 
+       quote= 'needed',
+       metadata_subsampled, 
        metadatafiles_subsampled)  
+
+####################################################################################################
+# Write plain BEAUTI XML and metadata to file
+# SRD06, relaxed lognormal and skygrid coalescent
+# lognormal prior 
+
+treeprior <- lapply(metadata_subsampled, function(x) x %>% filter(!is.na(collection_datedecimal)) %>% summarise(prior = (as.numeric(max(collection_datedecimal)) - as.numeric(min(collection_datedecimal))))) %>% unlist() %>% ceiling()
+
+cmds <- paste0("./beastgen -date_order -1 -date_prefix . -date_precision  -D ",
+       "'skygrid_PopSize=",
+       treeprior*4,
+       ",skygrid_numGridPoints=",
+       format(treeprior*4-1, nsmall = 1),
+       ",skygrid_cutOff=",
+       format(treeprior, nsmall = 1),
+       ',fileName=',
+       gsub('.prior', '', names(treeprior)), 
+       '_relaxLn_Skygrid', treeprior, '-', treeprior*4, '_1',
+       "' skygridtemplate ",
+       alignmentfiles_subsampled,
+       ' ',
+       gsub('.prior', '', names(treeprior)), 
+       '_relaxLn_Skygrid', treeprior, '-', treeprior*4, '_1', '.xml')
+
+write_lines(cmds, 'beastgen.txt')
+
 ####################################################################################################
 # END #
 ####################################################################################################
