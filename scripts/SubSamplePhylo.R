@@ -14,8 +14,7 @@ library(Rcpp)
 library(igraph)
 
 source('./scripts/FindIdenticalSeqs.R')
-sourceCpp("./scripts/getTaxonomyForName.cpp") # ~8mins
-sourceCpp('./scripts/getLocation.cpp') #~3mins
+
 
 
 
@@ -290,7 +289,10 @@ cmds <- paste0("./beastgen -date_order -1 -date_prefix . -date_precision  -D ",
        gsub('.prior', '', names(treeprior)), 
        '_relaxLn_Skygrid', treeprior, '-', treeprior*4, '_1', '.xml')
 
-write_lines(cmds, 'beastgen.txt')
+write_lines(cmds,  paste('.',
+                         ddmonthyy, 
+                         'beastgen.txt',
+                         sep = '/' ))
 
 ####################################################################################################
 # END #
