@@ -193,26 +193,27 @@ alignments_subsampled <- mapply(function(x,y) x[rownames(x) %in% y$tipnames,],
          SIMPLIFY = FALSE) 
 ####################################################################################################
 #BEAST traits
-metadata_subsampled_beast <- lapply(metadata, 
+metadata_subsampled_beast <- lapply(metadata_subsampled, 
                                     function(x) x %>% 
                                       select(c(tipnames,
                                                virus_subtype, 
                                                contains('collection'), 
                                                cluster_number,
-                                               profile,
-                                               cluster_profileclass,
                                                host_order,
-                                               host_isbird,
                                                host_simplifiedhost)) %>%
-                                      mutate(tiplocation_lon = coalesce(collection_subdiv1long, 
-                                                                        collection_countrylong)) %>%
                                       mutate(tiplocation_lat = coalesce(collection_subdiv1lat, 
                                                                         collection_countrylat)) %>%
+                                      mutate(tiplocation_long = coalesce(collection_subdiv1long, 
+                                                                        collection_countrylong)) %>%
                                       select(where(~n_distinct(.) > 1)) %>%
                                       select(-c(collection_countrycode,
-                                                contains('subdiv'), 
-                                                collection_original, 
-                                                collection_tipdate)))
+                                                contains('date'),
+                                                contains('subdiv'),
+                                                collection_countrylat,
+                                                collection_countrylong
+                                                #collection_original, 
+                                                #collection_tipdate
+                                                )))
 
 ####################################################################################################
 # Write alignments and metadata to file
