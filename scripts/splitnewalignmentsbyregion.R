@@ -1,44 +1,70 @@
-# 
 library(tidyverse)
-load("/Users/s1506888/Downloads/H5_predictive_paper/h5nx_2344b_clusters_20240513.Rda") 
-meta <- meta %>% as_tibble() %>%
-  mutate(date_year = as.double(date_year))
+library(ape)
 
 
-split_by_region <- meta %>% group_split(location_1)
+SplitAlignment <- function(alignment, data){
+  seqnames <- gsub('\\|.*', '', rownames(alignment))
+  subset <- alignment[seqnames  %in% data$isolate_id, ] 
+  
+  return(subset)
+}
 
-regions <- sapply(split_by_region, `[`, 'location_1') %>%
-  sapply(., head, 1) %>%
-  as.vector() %>%
+
+
+# Import metadata
+load("./2024Jun01/h5nx_2344b_clusters_20240513.Rda")
+meta <- meta %>% 
+  as_tibble() %>%
+  mutate(date_year = as.double(date_year),
+         location_1 = case_when(location_1 == 'Antarctica' ~ 'South America', 
+                                .default = location_1))
+
+
+# Import alignments
+aln_files <- list.files(path = './2024Jun01/master',
+                        pattern = '.fasta',
+                        include.dirs = FALSE,
+                        full.names = TRUE)
+
+aln_all <- lapply(aln_files, 
+                  read.dna, 
+                  as.matrix = T, 
+                  format = 'fasta')
+
+
+# set region names
+regions <- meta %>% 
+  pull(location_1) %>%
+  unique %>%
+  sort() %>%
   tolower() %>%
   gsub(' ', '', .)
-names(split_by_region) = regions
-# read HA alignment
-library(ape)
+
+# set segment names
+segments <- aln_files %>%
+  str_split_i(., '/', 4) %>%
+  gsub('aln_|.fasta', '', .) 
+
+
+# Split dataframe by region
+split_by_region <- meta %>%
+  group_split(location_1) %>%
+  setNames(regions)
+
+# Split alignments by regions
+aln_split <- lapply(aln_all, function(x) lapply(split_by_region, SplitAlignment, alignment = x)) %>%
+  setNames(segments) %>%
+  flatten()
+
+# write to file
+filenames <- apply(expand.grid(segments, regions), 1, paste, collapse="_") %>%
+  paste0('./2024Jun01/h5_',., '.fasta' ) %>%
+  sort()
+
+mapply(write.dna,
+       aln_split,
+       filenames,
+       format = 'fasta')
+
+
 # separate tree including only reassortants that originated in east asia.
-
-ha_aln <- read.dna('~/Downloads/aln_ha.fasta',
-                   as.matrix = T,
-                   format = 'fasta')
-
-pb2_aln <- read.dna('~/Downloads/aln_pb2.fasta',
-                   as.matrix = T,
-                   format = 'fasta')
-
-ha_by_region <- lapply(split_by_region, function(x) ha_aln[gsub('\\|.*', '', rownames(ha_aln)) %in% x$isolate_id, ] )
-names(ha_by_region) <- regions
-pb2_by_region <- lapply(split_by_region, function(x) pb2_aln[gsub('\\|.*', '', rownames(pb2_aln)) %in% x$isolate_id, ] )
-names(pb2_by_region) <- regions
-
-ha_filenames <- paste0('~/Downloads/ha_', regions, '.fasta' )
-mapply(write.dna,
-       ha_by_region,
-       ha_filenames,
-       format = 'fasta')
-
-
-pb2_filenames <- paste0('~/Downloads/pb2_', regions, '.fasta' )
-mapply(write.dna,
-       pb2_by_region,
-       pb2_filenames,
-       format = 'fasta')
