@@ -20,11 +20,12 @@ meta <- meta %>%
                                 .default = location_1))
 
 
-# Import alignments
+# Import alignments (all except na)
 aln_files <- list.files(path = './2024Jun01/master',
                         pattern = '.fasta',
                         include.dirs = FALSE,
-                        full.names = TRUE)
+                        full.names = TRUE) %>%
+  .[!grepl('.*na.fasta',.)]
 
 aln_all <- lapply(aln_files, 
                   read.dna, 
@@ -65,6 +66,35 @@ mapply(write.dna,
        aln_split,
        filenames,
        format = 'fasta')
+
+
+############ Seperate protocol for splitting neuraminidase ########
+aln_na <- read.dna('./2024Jun01/master/aln_na.fasta',  as.matrix = T, 
+                   format = 'fasta') 
+
+
+# Split dataframe by region
+split_by_region_na <- meta %>%
+  mutate(location_1 = gsub(' ', '', tolower(location_1)),
+         subtype = gsub('h[:0-9:]','', tolower(subtype))) %>%
+  unite(., na_split, subtype, location_1 ) %>%
+  split(., .$na_split)
+
+# Split alignments by regions
+aln_region_split_na <- lapply(split_by_region_na, SplitAlignment, alignment = aln_na) %>%
+  setNames(names(split_by_region_na)) 
+
+
+
+# write to file
+filenames <- paste0('./2024Jun01/h5_',names(split_by_region_na), '.fasta' ) 
+
+mapply(write.dna,
+       aln_region_split_na,
+       filenames,
+       format = 'fasta')
+
+
 
 
 # separate tree including only reassortants that originated in east asia.
