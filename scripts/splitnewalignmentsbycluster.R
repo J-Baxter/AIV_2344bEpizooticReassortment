@@ -41,7 +41,7 @@ clusters <- meta_dominant %>%
   unique %>%
   sort() %>%
   tolower() %>%
-  gsub(' ', '', .)
+  gsub('_', '', .)
 
 # set segment names
 segments <- aln_files %>%
