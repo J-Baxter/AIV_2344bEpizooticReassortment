@@ -13,14 +13,14 @@ SplitAlignment <- function(alignment, data){
 
 # Import metadata
 load("./2024Jun01/h5nx_2344b_clusters_20240513.Rda")
-summary_data <- read_csv()
-meta <- meta %>% 
+summary_data <- read_csv( '2024-06-05_reassortant_summary.csv')
+meta_dominant <- meta %>% 
   as_tibble() %>%
   mutate(date_year = as.double(date_year),
          location_1 = case_when(location_1 == 'Antarctica' ~ 'South America', 
                                 .default = location_1)) %>%
   left_join(summary_data) %>%
-  filter(group = dominant)
+  filter(group == 'dominant')
 
 
 # Import alignments
@@ -35,13 +35,13 @@ aln_all <- lapply(aln_files,
                   format = 'fasta')
 
 
-# set region names
-cluster_profile <- meta %>% 
+# set cluster names
+clusters <- meta_dominant %>% 
   pull(cluster_profile) %>%
   unique %>%
   sort() %>%
   tolower() %>%
-  gsub(' ', '', .)
+  gsub('_', '', .)
 
 # set segment names
 segments <- aln_files %>%
@@ -50,19 +50,19 @@ segments <- aln_files %>%
 
 
 # Split dataframe by region
-split_by_region <- meta %>%
-  group_split(location_1) %>%
-  setNames(regions)
+split_by_cluster <- meta_dominant %>%
+  group_split(cluster_profile) %>%
+  setNames(clusters)
 
 
 # Split alignments by regions
-aln_split <- lapply(aln_all, function(x) lapply(split_by_region, SplitAlignment, alignment = x)) %>%
+aln_split <- lapply(aln_all, function(x) lapply(split_by_cluster, SplitAlignment, alignment = x)) %>%
   setNames(segments) %>%
   flatten()
 
 
 # write to file
-filenames <- apply(expand.grid(segments, regions), 1, paste, collapse="_") %>%
+filenames <- apply(expand.grid(segments, clusters), 1, paste, collapse="_") %>%
   paste0('./2024Jun01/h5_',., '.fasta' ) %>%
   sort()
 
