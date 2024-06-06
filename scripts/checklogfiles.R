@@ -27,3 +27,51 @@ for( i in 1:length(imported_logs)){
   }
   
 }
+
+probs_edited <- probs %>%
+  mutate(runtype = 'traits') %>%
+  mutate(region = str_split(probs$filename, '_')%>% lapply(., `[`, 2) %>% unlist()) %>%
+  relocate(runtype,
+          region) %>%
+  as_tibble()
+write_csv(probs_edited, 'checklogfiles_apr18.csv')
+
+
+
+
+
+# Patterns to match against the file paths
+patterns <- str_split(treefiles,  '/') %>% 
+  lapply(., tail, n = 1) %>% 
+  #lapply(., `[`, c(1,2)) %>%
+  lapply(., function(x) gsub("^([^_]*_[^_]*).*", "\\1",x)) %>%
+  unlist() %>%
+  tolower() %>%
+  gsub('na', 'n', .) %>%
+  unique()
+
+# Initialize an empty list to store the results
+group_list <- list()
+
+# Iterate over each pattern
+for (pattern in patterns) {
+  # Filter the file paths based on the current pattern
+  matching_files <- treefiles[grepl(pattern, treefiles)]
+  
+  all_files <- c(matching_files, gsub('[^_]*$', 'combined10000.trees', matching_files[1]))
+  # Store the filtered file paths in the result list
+  group_list[[pattern]] <- all_files
+}
+
+
+logcombiner<- lapply(group_list, function(x) paste('/Applications/BEAST\ v1.10.4/bin/logcombiner -burnin 10000000 -trees -resample 10000', x[1], x[2], x[3])) %>% 
+  unlist()
+
+write_lines(logcombiner,
+            'logcombiner.sh'
+)
+
+
+
+
+
