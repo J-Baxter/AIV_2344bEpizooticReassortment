@@ -69,7 +69,7 @@ temp <- lapply(new_meta, function(x) x %>% as_tibble() %>% unite(., location, st
   
 new_meta_formatted <- list()
 
-for (i in 1:length(temp)){
+for (i in 1:length(temp)){ 
   if(nrow(temp[[i]])>0){
     print(i)
     new_meta_formatted[[i]] <- temp[[i]] %>%
