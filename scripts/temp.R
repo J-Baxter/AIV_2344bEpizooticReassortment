@@ -19,7 +19,8 @@ RemoveDuplicated <- function(alignment){
 #import metadata
 metadatafiles <-  list.files('./2023Dec02/metadata',
                              full.names = T, 
-                             pattern="asia")
+                             pattern="csv") %>%
+  .[!grepl('n_', .)]
 
 
 metadata <- lapply(metadatafiles,
@@ -30,7 +31,7 @@ metadata <- lapply(metadatafiles,
 # Import new alignments
 alignmentfiles <- list.files('./2024Jun01/region_alignments_withBLAST',
                              full.names = T, 
-                             pattern="asia.fasta")
+                             pattern="fasta")
 
 alignments <- lapply(alignmentfiles,
                      read.dna, 
@@ -45,6 +46,11 @@ no_duplicates_aln <- lapply(alignments, RemoveDuplicated)
 isolate_ids <-  no_duplicates_aln %>%
   lapply(., rownames) %>%
   lapply(., function(x) regmatches(x, gregexpr("EPI_ISL_\\d+[^.|]*", x)) %>% unlist()) 
+
+
+tip_dates <- no_duplicates_aln %>%
+  lapply(rownames) %>%
+  lapply(function(x) str_extract(x, '(?<=[\\|.])\\d\\d\\d\\d-\\d\\d(-\\d\\d){0,1}'))
 
 # which isolate ID not in meta data
 new_isolate_ids <- mapply(function(x,y) y[!y %in% x$isolate_id],
@@ -67,6 +73,7 @@ for (i in 1:length(temp)){
   if(nrow(temp[[i]])>0){
     print(i)
     new_meta_formatted[[i]] <- temp[[i]] %>%
+      mutate(across(everything(), .fns = ~ifelse(.x == "", NA, .x))) %>%
       # Format source before taxa allocation
       rename(joint_location = location) %>%
       mutate(across(contains('location'), 
@@ -127,6 +134,7 @@ for (i in 1:length(temp)){
       #select(-matches('^date.+')) %>%
   #rename_with(.fn = ~gsub('_', '.', .x))%>%
   # Location (iso name and subdivision)
+      mutate(location = tolower(location)) %>%
       mutate(location = case_when(
         # Austria
         grepl('burgenland|stegersbach|mattersburg|bad sauerbrunn',
@@ -356,7 +364,41 @@ for (i in 1:length(temp)){
         grepl('hitra', 
               location) ~ "norway_sør-trøndelag",
         grepl('tromso',
-              location) ~"norway_troms",
+              location) ~"norway_troms", 
+        grepl('rogaland',
+              location) ~"norway_rogaland",
+        grepl( "akershus",
+               location) ~  "norway_akershus", 
+        grepl("ãstfold",
+              location) ~  "norway_ãstfold",     
+        grepl("aust-agder",
+              location) ~  "norway_aust-agder",   
+        grepl("buskerud",
+              location) ~  "norway_buskerud",      
+        grepl("finnmark",
+              location) ~  "norway_finnmark",     
+        grepl("hedmark",
+              location) ~   "norway_hedmark",        
+        grepl("hordaland",
+              location) ~   "norway_hordaland",  
+        grepl("møre og romsdal",
+              location) ~ "norway_møre og romsdal", 
+        grepl("nord-trøndelag",
+              location) ~ "norway_nord-trøndelag",  
+        grepl("nordland",
+              location) ~ "norway_nordland",        
+        grepl("oppland",
+              location) ~ "norway_oppland",         
+        grepl("oslo",
+              location) ~ "norway_oslo",             
+        grepl("sogn og fjordane",
+              location) ~ "norway_sogn og fjordane", 
+        grepl("telemark",
+              location) ~ "norway_telemark",          
+        grepl("vest-agder",
+              location) ~ "norway_vest-agder", 
+        grepl("vestfold",
+              location) ~  "norway_vestfold",  
         
         # Peru
         grepl('departamento de lima', 
@@ -1296,10 +1338,20 @@ for (i in 1:length(temp)){
         grepl('^south$', location) ~ 'iceland_suðurland',
         
         
-        .default = location
-      )) %>% 
+        .default = location)) %>%
       left_join(geodata, by = join_by(location == match)) %>% 
-      as_tibble() %>%
+      as_tibble()
+    }else{
+        new_meta_formatted[[i]] <- NULL
+      }
+
+  
+} 
+
+test_all <-  bind_rows(new_meta_formatted) %>% filter(is.na(gid_0))
+new_locations <- test_all %>% pull(contains('location')) %>% distinct() 
+
+%>%
       
       # Format column names
       #dplyr::select(-c(virus_species, id_unsure)) %>%
@@ -1384,7 +1436,6 @@ for (i in 1:length(temp)){
   }
   
   }
-
 
 new_meta_formatted <- lapply(new_meta_formatted, function(x) if(!is.null(x)){x %>% 
                                select(-c(starts_with('location'),
