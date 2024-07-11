@@ -1351,7 +1351,7 @@ for (i in 1:length(temp)){
 test_all <-  bind_rows(new_meta_formatted) %>% filter(is.na(gid_0))
 new_locations <- test_all %>% pull(contains('location')) %>% distinct() 
 
-%>%
+
       
       # Format column names
       #dplyr::select(-c(virus_species, id_unsure)) %>%
