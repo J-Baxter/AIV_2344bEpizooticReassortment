@@ -64,8 +64,9 @@ ReNamePhylo <- function(trees, metadata, x){
 
 
 ReNameAlignment <- function(alignment, data){
-  isolates <- str_extract(rownames(alignment), "([^|]*)\\|")%>%
-    str_replace_all("\\|", "")
+  z <- rownames(alignment)
+  
+  isolates <-  regmatches(z, gregexpr("EPI_ISL_(china_){0,1}\\d+[^.|]*", z)) %>% unlist()
   
   new_seqnames <- sapply(isolates, function(x) data$tipnames[data$isolate_id %in% x]) %>% 
     as.vector() 
