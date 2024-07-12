@@ -32,10 +32,23 @@ RemoveDuplicated <- function(alignment){
   return(new_alignment)
 }
 
+isDateError <- function(dataframe){
+  out <- dataframe %>%
+    mutate(collection_dateerror = case_when(
+      is.na(collection_tipdate) ~ TRUE,
+      as.numeric(gsub('-.*', '', collection_tipdate))>2024 ~ TRUE,
+      as.numeric(gsub('-.*', '', collection_tipdate))<1990 ~ TRUE,
+      .default = FALSE))
+  
+  return(out)
+}
+
 
 ReNameAlignment <- function(alignment, data){
   z <- rownames(alignment)
-  isolates <- regmatches(z, gregexpr("EPI_ISL_(china_){0,1}\\d+[^.|]*", z)) %>% unlist()
+  
+  isolates <-  regmatches(z, gregexpr("EPI_ISL_(china_){0,1}\\d+[^.|]*", z)) %>% unlist()
+  
   new_seqnames <- sapply(isolates, function(x) data$tipnames[data$isolate_id %in% x]) %>% 
     as.vector() 
   
@@ -43,6 +56,7 @@ ReNameAlignment <- function(alignment, data){
   
   return(alignment)
 }
+
 
 #import metadata
 metadatafiles <-  list.files('./2023Dec02/metadata',
@@ -1718,4 +1732,59 @@ renamed_aln <- mapply(ReNameAlignment,
                       SIMPLIFY = F)
 
 
-# save all to file
+# Segment names
+segnames <- str_split(alignmentfiles,  '_') %>% 
+  lapply(., tail, n = 3) %>% 
+  lapply(., `[`, 2) %>%
+  lapply(., function(x) gsub("\\..*$", "",x)) %>%
+  lapply(., paste0 , collapse = '_') %>%
+  unlist() %>%
+  tolower() %>%
+  gsub('na', 'n', .)
+
+
+combined_metadata_imp <- mapply(function(x,y) x %>% mutate(segment = y), combined_metadata, as.list(segnames), SIMPLIFY = F) %>%
+  mapply(ImputeCladeandCluster,  ., renamed_aln, SIMPLIFY = F)   %>%
+  lapply(., function(x) x %>% mutate(cluster_number = paste0('profile', str_pad(cluster_number, 3, pad = "0"))))
+  
+
+
+####################################################################################################
+# Check year and remove if problematic
+combined_metadata_imp_dateschecked <- combined_metadata_imp %>%
+  lapply(., function(x) x %>% 
+           isDateError() %>%
+           filter(!collection_dateerror))
+
+prob_seqs <- lapply(combined_metadata_imp, function(x) x %>% 
+                      isDateError() %>%
+                      filter(collection_dateerror) %>% 
+                      pull(tipnames))
+
+renamed_aln_dateschecked <- renamed_aln %>%
+  mapply(function(alignment,seqnames_to_drop) alignment[!rownames(alignment) %in% seqnames_to_drop,], 
+         .,
+         prob_seqs, 
+         SIMPLIFY = FALSE)
+####################################################################################################
+# Alignments and meta data to file
+alignmentfiles_newnames <- alignmentfiles  %>%
+  gsub('./2024Jun01/region_alignments_withBLAST/', './2024Jul12/region_alignments/',. ) 
+
+
+mapply(write.dna, 
+       renamed_aln_dateschecked , 
+       alignmentfiles_newnames,
+       format = 'fasta')
+
+
+alignmentfiles_newnames <- metadatafiles %>%
+  gsub('./2024Jun01/metadata/', './2024Jul12/region_metadata/',. ) 
+
+mapply(write_csv, 
+       quote= 'needed',
+       combined_metadata_imp_dateschecked, 
+       metadatafiles)  
+
+
+
