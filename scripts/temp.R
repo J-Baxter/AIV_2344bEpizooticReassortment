@@ -58,7 +58,14 @@ ReNameAlignment <- function(alignment, data){
 }
 
 
-#import metadata
+# Import metadata
+load("./2024Jun01/h5nx_2344b_clusters_20240513.Rda")
+meta <- meta %>% 
+  as_tibble() %>%
+  mutate(date_year = as.double(date_year),
+         location_1 = case_when(location_1 == 'Antarctica' ~ 'South America', 
+                                .default = location_1))
+
 metadatafiles <-  list.files('./2023Dec02/metadata',
                              full.names = T, 
                              pattern="csv") %>%
