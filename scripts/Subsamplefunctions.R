@@ -1505,6 +1505,15 @@ ImputeCladeandCluster <- function(metadata, alignment, ordered = FALSE){
     seqnames = rownames(alignment)
   }
   
+  if(any(!grepl('cluster_[a-z]{2}\\d{0,1}$', colnames(metadata)))){
+    metadata <-  metadata %>% 
+      separate_wider_delim(cluster_profile, '_', 
+                           names = paste('cluster',
+                                         tolower(c("PB2", "PB1", "PA", "HA", "NP", "NA", "M", "NS")), 
+                                         sep = '_'),
+                           cols_remove = FALSE)
+  }
+
   out <- metadata %>%
     mutate(tipnames = ordered(tipnames,
                               levels = seqnames)) %>%
@@ -1517,7 +1526,7 @@ ImputeCladeandCluster <- function(metadata, alignment, ordered = FALSE){
     
     # Impute cluster (column is dependent on segment)
     rename(profile = cluster_profile) %>%
-    rename(genome = cluster_genome) %>%
+    #rename(genome = cluster_genome) %>%
     pivot_longer(matches('cluster_[a-z]{2}\\d{0,1}$'), 
                  values_to = 'cluster_number',
                  names_to = 'cluster_segment') %>%
