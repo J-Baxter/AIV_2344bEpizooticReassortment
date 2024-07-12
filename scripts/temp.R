@@ -1,4 +1,21 @@
 # Import old meta data
+MakeTipNames <- function(data){
+  out <- data %>%
+    unite(tipnames, 
+          virus_subtype,
+          clade,
+          isolate_id,
+          host_order,
+          collection_countryname,
+          cluster_profile,
+          collection_tipdate,
+          sep = '|',                        
+          remove = FALSE) %>%
+    mutate(tipnames = gsub(' ', '_', tipnames))
+  
+  return(out)
+}
+
 RemoveDuplicated <- function(alignment){
   matches <- rownames(alignment) %>% 
     regmatches(., gregexpr("EPI_ISL_\\d+[^.|]*", .)) %>% 
@@ -15,6 +32,17 @@ RemoveDuplicated <- function(alignment){
   return(new_alignment)
 }
 
+
+ReNameAlignment <- function(alignment, data){
+  z <- rownames(alignment)
+  isolates <- regmatches(z, gregexpr("EPI_ISL_(china_){0,1}\\d+[^.|]*", z)) %>% unlist()
+  new_seqnames <- sapply(isolates, function(x) data$tipnames[data$isolate_id %in% x]) %>% 
+    as.vector() 
+  
+  rownames(alignment) <-  new_seqnames
+  
+  return(alignment)
+}
 
 #import metadata
 metadatafiles <-  list.files('./2023Dec02/metadata',
@@ -45,7 +73,7 @@ no_duplicates_aln <- lapply(alignments, RemoveDuplicated)
 
 isolate_ids <-  no_duplicates_aln %>%
   lapply(., rownames) %>%
-  lapply(., function(x) regmatches(x, gregexpr("EPI_ISL_\\d+[^.|]*", x)) %>% unlist()) 
+  lapply(., function(x) regmatches(x, gregexpr("EPI_ISL_(china_){0,1}\\d+[^.|]*", x)) %>% unlist()) 
 
 
 tip_dates <- no_duplicates_aln %>%
@@ -82,6 +110,8 @@ for (i in 1:length(temp)){
       select(-joint_location)%>%
       #rename(source=host) %>%
       # select(-starts_with('host')) %>%
+      mutate(date = case_when(is.na(date) & !is.na(date_year) ~ date_year,
+                              .default = date)) %>%
       mutate(date_format = case_when(
     grepl('\\d{4}-\\d{2}-\\d{2}', date)  ~ "yyyy-mm-dd", 
     grepl('\\d{2}-\\d{2}-\\d{4}', date) & as.numeric(str_split_i('date', '-', 2)) <= 12 ~ "dd-mm-yyyy", 
@@ -108,22 +138,22 @@ for (i in 1:length(temp)){
       map_at("yyyy-mm",
              ~ mutate(.x,
                       date_parsed = ym(date),
-                      date_ymd = NA_character_, 
+                      date_ymd = NA, 
                       date_dec = NA,
                       date_ym = format(date_parsed,'%Y-%m') ,
                       date_y = format(date_parsed, '%Y') )) %>%
       map_at("mm-yyyy",
              ~ mutate(.x,
                       date_parsed = my(date),
-                      date_ymd = NA_character_, 
+                      date_ymd = NA, 
                       date_dec = NA,
                       date_ym = format(date_parsed,'%Y-%m') ,
                       date_y = format(date_parsed, '%Y') )) %>%
       map_at("yyyy",
              ~ mutate(.x,
                       date_parsed = as.POSIXlt.character(date, format = '%Y'),
-                      date_ymd = NA_character_, 
-                      date_ym = NA_character_,
+                      date_ymd = NA, 
+                      date_ym = NA,
                       date_dec = NA,
                       date_y = format(date_parsed, '%Y'))) %>%
       
@@ -145,7 +175,7 @@ for (i in 1:length(temp)){
               location) ~ "austria_niederösterreich", 
         grepl('sankt poelten|pottschach|neunkirchen|markgrafneusiedl|koenigstetten|klosterneuburg',
               location) ~ "austria_niederösterreich",
-        grepl('hof am leithaberge|haringsee|fishamend|bruderndorf|tulln|lower austria|nieder[ö?]sterreich',
+        grepl('hof am leithaberge|haringsee|fishamend|bruderndorf|tulln|lower austria|nied[(erö)?]sterreich',
               location) ~ "austria_niederösterreich",
         grepl('oberosterreich$|sankt georgen|^linz$|oberneukirchen',
               location) ~ "austria_oberösterreich",
@@ -296,8 +326,24 @@ for (i in 1:length(temp)){
               location) ~"cambodia_takêv",
         
         # Chile
-        grepl("region de antofagasta", 
-              location) ~ "chile_antofagasta",
+        grepl('antofagasta', location) ~ "chile_antofagasta",
+        grepl('araucan[íi]a', location) ~ "chile_araucanía",
+        grepl('arica y parinacota', location) ~ "chile_arica y parinacota",
+        grepl('atacama', location) ~ "chile_atacama",
+        grepl('aysén del general ibañez del cam', location) ~ "chile_aysén del general ibañez del cam",
+        grepl('b[íi]o[- ]{0,1}b[íi]o', location) ~ "chile_bío-bío",
+        grepl('coquimbo', location) ~ "chile_coquimbo",
+        grepl('libertador general bernardo o\'{0,1}hi', location) ~ "chile_libertador general bernardo o'hi",
+        grepl('los lagos', location) ~ "chile_los lagos",
+        grepl('los ríos', location) ~ "chile_los ríos",
+        grepl('magallanes y antártica chilena', location) ~ "chile_magallanes y antártica chilena",
+        grepl('maule', location) ~ "chile_maule",
+        grepl('[ñn]uble', location) ~ "chile_ñuble",
+        grepl('santiago metropolitan|metropolitana de santiago', location) ~ "chile_santiago metropolitan",
+        grepl('tarapac[áa]', location) ~ "chile_tarapacá",
+        grepl('valpara[íi]so', location) ~ "chile_valparaíso",
+        
+        
         
         # Colombia
         grepl("departamento de bolivar", 
@@ -323,7 +369,7 @@ for (i in 1:length(temp)){
         grepl('istarska',
               location) ~ "croatia_istarska",
         grepl('zagreba[cč]ka',
-              location) ~ "croatia_ zagrebačka", 
+              location) ~ "croatia_zagrebačka", 
         grepl('osjecko-baranjska',
               location) ~ "croatia_osjecko-baranjska", 
 
@@ -339,6 +385,11 @@ for (i in 1:length(temp)){
               location) ~"denmark_midtjylland",
         grepl('*denmark$',
               location) ~ 'denmark',
+        grepl( "hovedstaden",
+              location) ~  "denmark_hovedstaden",
+        
+        
+       
         
         # Ecuador
         grepl('provincia de manabi', 
@@ -384,8 +435,9 @@ for (i in 1:length(temp)){
         grepl('soltüstik quzaqstan oblysy|north kazakhstan',
               location) ~ "kazakhstan_north kazakhstan",
         grepl('almaty province', 
-              location) ~ "kazakhstan_almaty",
-        
+              location) ~ "kazakhstan_almaty", 
+        grepl('mang(gh){0,1}ystau', 
+              location) ~ "kazakhstan_mangghystau",
         # Latvia
         grepl('jurmala',
               location) ~"latvia_kurzeme",
@@ -456,6 +508,10 @@ for (i in 1:length(temp)){
               location) ~ "norway_vest-agder", 
         grepl("vestfold",
               location) ~  "norway_vestfold",  
+        grepl("svalbard",
+              location) ~  "svalbard and jan mayen_svalbard", 
+        
+        
         
         # Peru
         grepl('departamento de lima', 
@@ -465,7 +521,10 @@ for (i in 1:length(temp)){
         grepl('departamento de tacna',
               location) ~ "peru_tacna",        
         grepl('departamento de ica',
-              location) ~  "peru_ica",             
+              location) ~  "peru_ica",   
+        grepl('lambayeque',
+              location) ~  "peru_lambayeque",  
+        
         
         # Portugal
         grepl('distrito de setubal', 
@@ -530,20 +589,20 @@ for (i in 1:length(temp)){
         
         # latin
         grepl('mexico', location) ~ 'méxico',
+        grepl('jalisco', location) ~ 'méxico_jalisco',
+        grepl('guanajuato', location) ~ 'méxico_guanajuato',
+        grepl('sonora', location) ~ 'méxico_sonora',
+        grepl('veracruz', location) ~ 'méxico_veracruz',
+        
         grepl('^choco$', location) ~ 'colombia_chocó',
-        grepl('valparaiso', location) ~ 'chile_valparaíso',
-        grepl('tarapaca', location) ~ 'chile_tarapacá',
-        grepl('^nuble$', location) ~ 'chile_ñuble',
-        grepl('araucania', location) ~ 'chile_araucanía',
-        #grepl("cordoba" , location) ~ 'spain_córdoba',
-        grepl('atacama', location) ~ 'chile_atacama',
-        grepl('coquimbo', location) ~ 'chile_coquimbo',
-        grepl('antofagasta', location) ~ 'chile_antofagasta',
-        grepl('maule', location) ~ 'chile_maule',
-        grepl('arica y parinacota', location) ~ 'chile_arica y parinacota',
         grepl('bolivar', location) ~ 'ecuador_bolivar',
         grepl('magdalena', location) ~ 'colombia_magdalena',
-        grepl('jalisco', location) ~ 'méxico_jalisco',
+        
+        
+        grepl('esp[íi]rito santo',location) ~ 'brazil_espírito santo',
+        grepl('rio de janeiro',location) ~ 'brazil_rio de janeiro',
+        grepl('estado do parana|paraná',location) ~ 'brazil_paraná',
+       
         
         #Oz
         grepl('south australia', location) ~ 'australia_south australia',
@@ -672,13 +731,13 @@ for (i in 1:length(temp)){
         # Czechia
         grepl("jihocesky kraj|nov hrady by ov|české budějovice", 
               location) ~"czechia_jihočeský",
-        grepl("south moravian region", 
+        grepl("south moravian region|jihomoravsk[yý] kraj", 
               location) ~"czechia_jihomoravský",
         grepl("kralovehradecky kraj", 
               location) ~"czechia_královéhradecký",
         grepl("liberecky kraj",
               location) ~"czechia_liberecký",
-        grepl("morovskoslezsky kraj", 
+        grepl("mor[oa]vskoslezsk[y?ý] kraj", 
               location) ~"czechia_moravskoslezský",
         grepl("olomoucky kraj",
               location) ~"czechia_olomoucký",
@@ -725,7 +784,7 @@ for (i in 1:length(temp)){
               location) ~ "france_grand est",
         
         # hauts-de-france
-        grepl("^aisne$|^nord$|^oise$|pas-de-calais|^somme$|nord pas de calais|picardie", 
+        grepl("^aisne$|^nord$|^oise$|pas-de-calais|^somme$|nord[ -]pas[ -]de[ -]calais|picardie", 
               location) ~ "france_hauts-de-france",
         
         # île-de-france
@@ -906,7 +965,7 @@ for (i in 1:length(temp)){
               location) ~ "russia_samara",
         grepl('^mari el$', 
               location) ~ 'russia_mariy-el',
-        grepl('^leningrad$|leningrad region', 
+        grepl('^leningrad( oblast){0,1}$|leningrad region', 
               location) ~ "russia_leningrad",
         grepl('^orenburg$', 
               location) ~ "russia_orenburg",
@@ -914,6 +973,12 @@ for (i in 1:length(temp)){
               location) ~ "russia_ryazan'",
         grepl('^altai$', 
               location) ~ 'russia_altay',
+        
+        
+        grepl('kherson',
+              location) ~ 'ukraine_kherson',
+        grepl('p[äa]rnu(maa){0,1}',
+              location) ~ 'estonia_pärnu',
         
         #morocco
         grepl('^fes$', 
@@ -999,12 +1064,37 @@ for (i in 1:length(temp)){
         # UK
         grepl("wales|anglesey|county borough of wrexham",
               location) ~ "united kingdom_wales",
-        grepl("england|barrow|northern ireland|county of kent|stratford|cheshire|derbyshire|northumberland|lincolnshire|dorset|yorkshire|hertfordshire|gloucestershire|*shire$|norfolk|essex|devon",
+        grepl("england|barrow|northern[_ ]ireland|county of kent|stratford|cheshire|derbyshire|northumberland|lincolnshire|dorset|yorkshire|hertfordshire|gloucestershire|*shire$|norfolk|essex|devon",
               location) ~ "united kingdom",
         grepl("scotland|orkney|western isles|fife|^angus$|dumfries*",
               location) ~ "united kingdom_scotland",
         
         # Japan
+        grepl('Kagoshima', 
+              isolate_name) ~ 'japan_kagoshima',
+        grepl('Chiba', 
+              isolate_name) ~ 'japan_chiba',
+        grepl('Aichi', 
+              isolate_name) ~ 'japan_aichi',
+        grepl('Okayama', 
+              isolate_name) ~ 'japan_okayama',
+        grepl('Niigata',
+              isolate_name) ~ 'japan_niigata',
+        grepl('Hyogo', 
+              isolate_name) ~ 'japan_hyōgo',
+        grepl('Ibaraki', 
+              isolate_name) ~ 'japan_ibaraki',
+        grepl('Kagawa', 
+              isolate_name) ~ 'japan_kagawa',
+        grepl('Hiroshima', 
+              isolate_name) ~ 'japan_hiroshima',
+        grepl('Miyazaki', 
+              isolate_name) ~ 'japan_miyazaki',
+        grepl('Iwate', 
+              isolate_name) ~ 'japan_iwate',
+        grepl('Hokkaido', 
+              isolate_name) ~ 'japan_hokkaido',
+       
         grepl('aichi', 
               location) ~ 'japan_aichi',
         grepl('akita', 
@@ -1102,11 +1192,14 @@ for (i in 1:length(temp)){
         # Spain CastillaLaMancha
         grepl("castilla[ ]{0,1}la[ ]{0,1}mancha|castille[ ]{0,1}la[ ]{0,1}mancha",
               location) ~ "spain_castilla-la mancha",
+        grepl("catalonia|catalu[nñ]a",
+              location) ~ "spain_cataluña",
         
+
         # Poland
         grepl("lower silesian voivodeship|dolnośląskie", 
               location) ~"poland_dolnośląskie",
-        grepl("kuyavian[ -]pomeranian voivodeship|kujawsko-pomorskie",
+        grepl("kuyavian[ -]pomer[ae]nian|kujawsko-pomorskie",
               location) ~"poland_kujawsko-pomorskie",
         grepl("lublin voivodeship", 
               location) ~"poland_lubelskie",
@@ -1132,6 +1225,8 @@ for (i in 1:length(temp)){
               location) ~"poland_wielkopolskie",
         grepl("west pomeranian voivodeship|zachodniopomorskie",
               location) ~"poland_zachodniopomorskie",
+        grepl("podkarpackie|subcarpathian voivodeship",
+              location) ~"poland_podkarpackie",
         
         
         # Sweden
@@ -1157,6 +1252,8 @@ for (i in 1:length(temp)){
               location) ~"sweden_uppsala",
         grepl("vastra gotalands lan",
               location) ~"sweden_västra götaland",
+        grepl("v[äa]stmanland",
+              location) ~"sweden_västmanland",
         grepl("ostergotlands lan", 
               location) ~"sweden_östergötland",
         
@@ -1205,9 +1302,9 @@ for (i in 1:length(temp)){
               location) ~ "south korea",
         grepl('^gg$|gyeonggi*|anseong|hwaseong|suwon|gapyeong|yeoncheon|goyang', 
               location) ~ "south korea_gyeonggi-do",
-        grepl('^gw$|gangwon-do|cheorwon', 
+        grepl('^gw$|gangwon-do|cheorwon|goseong', 
               location) ~ "south korea_gangwon-do",
-        grepl('^cn$|chungcheongnam*', 
+        grepl('^cn$|chungcheongnam*|^asan', 
               location) ~ "south korea_chungcheongnam-do",
         grepl('^cb$|chungcheongbuk*|eumseong|seosan',
               location) ~ "south korea_chungcheongbuk-do",
@@ -1286,7 +1383,7 @@ for (i in 1:length(temp)){
               location) ~ 'netherlands_zuid-holland',
         grepl('kwade hoek stellendam|stellendam scheelhoekeiland|leidschendam|nl gouda|groot ammers|reeuwijk|stolwijk', 
               location) ~ 'netherlands_zuid-holland',
-        grepl('^nl$|nl sovon', location) ~ 'netherlands',
+        grepl('^nl$|nl sovon|eendenkooi slijkerman', location) ~ 'netherlands',
         
         
         # Nigeria
@@ -1367,12 +1464,20 @@ for (i in 1:length(temp)){
         
         grepl('bosnia - herzegovina',
               location) ~ 'bosnia and herzegovina',
+        grepl('republika srpska', 
+              location)~ "bosnia and herzegovina_repuplika srpska",
         
         grepl('sva |^sva$|north america|zeebrugge belgi',
               location) ~ NA,
         
+        grepl('central luzon', 
+              location) ~"philippines_nueva ecija",
+        
+        grepl('kokkola',
+              location) ~  'finland_western finland',
+       
         # Indonesia
-        grepl("hulu sungai utara|banjarbaru", 
+        grepl("hulu sungai utara|banjarbaru|south kalimantan", 
               location) ~ "indonesia_kalimantan selatan",
         
         #SA
@@ -1397,18 +1502,8 @@ for (i in 1:length(temp)){
         
         .default = location)) %>%
       left_join(geodata, by = join_by(location == match)) %>% 
-      as_tibble()
-    }else{
-        new_meta_formatted[[i]] <- NULL
-      }
-
-  
-} 
-
-test_all <-  bind_rows(new_meta_formatted) %>% filter(is.na(gid_0))
-new_locations <- test_all %>% select(contains('location')) %>% distinct() 
-
-
+      as_tibble() %>%
+      
       
       # Format column names
       #dplyr::select(-c(virus_species, id_unsure)) %>%
@@ -1441,11 +1536,13 @@ new_locations <- test_all %>% select(contains('location')) %>% distinct()
       ) %>%
       
       # Infer simplified host categories for BEAST
+      mutate(across(starts_with('host'), .fns = ~tolower(.x))) %>%
       mutate(host_simplifiedhost = case_when(
         host_order %in% c('anseriformes', 'galliformes', 'charadriiformes') ~ paste(host_order, 
                                                                                     host_isdomestic,
                                                                                     sep = '-'),
         host_class == 'mammalia' ~ 'mammal',
+        host_class == 'mammal' ~ 'mammal',
         #host_commonname == 'unknown' ~ 'unknown',
         #host_commonname == 'environment' ~ 'environment',
         .default = 'other')) %>%
@@ -1461,7 +1558,7 @@ new_locations <- test_all %>% select(contains('location')) %>% distinct()
         host_class,
         host_order,
         #host_family,
-       # host_sciname,
+        # host_sciname,
         #host_commonname,
         #host_isbird,
         host_isdomestic,
@@ -1488,11 +1585,69 @@ new_locations <- test_all %>% select(contains('location')) %>% distinct()
       mutate(across(everything(), .fns = ~ gsub('^NA$', NA, .x))) 
     
     
+   
+    
+    
   }else{
-    new_meta_formatted[[i]] <- NULL
+    new_meta_formatted[[i]] <-tibble(virus_subtype = character(),
+                                     isolate_id = character(),
+                                     isolate_name = character(),
+                                     collection_date = character(),
+                                     collection_datedecimal = character(),
+                                     collection_datemonth = character(),
+                                     collection_dateyear = character(),
+                                     host_class = character(),
+                                     host_order = character(),
+                                     host_isdomestic = character(),
+                                     host_simplifiedhost = character(),
+                                     collection_regionname = character(),
+                                     collection_countryname = character(),
+                                     collection_countrycode = character(),
+                                     collection_countrylat = character(),
+                                     collection_countrylong = character(),
+                                     collection_subdiv1name = character(),
+                                     collection_subdiv1code = character(),
+                                     collection_subdiv1lat = character(),
+                                     collection_subdiv1long = character(),
+                                     clade = character(),
+                                     location_1 = character(),
+                                     location_2 = character(),
+                                     location_3 = character(),
+                                     location_4 = character(),
+                                     location_5 = character(),
+                                     submission_date = character(),
+                                     date = character(),
+                                     date_frac = character(),
+                                     date_year = character(),
+                                     cluster_pb2 = character(),
+                                     cluster_pb1 = character(),
+                                     cluster_pa = character(),
+                                     cluster_ha = character(),
+                                     cluster_np = character(),
+                                     cluster_na = character(),
+                                     cluster_mp = character(),
+                                     cluster_ns = character(),
+                                     cluster_profile = character(),
+                                     cluster_label = character(),
+                                     location = character(),
+                                     date_format = character(),
+                                     date_parsed = character(),
+                                     ...1 = character(),
+                                     varname_1 = character(),
+                                     iso_1 = character()
+                                     )
+    
+      
+    
   }
   
-  }
+}
+
+
+#new_locations <- test_all %>% select(contains('location')) %>% distinct() 
+stopifnot(all( lapply(new_meta_formatted, nrow) %>%
+                 unlist() - lapply(new_isolate_ids, length) %>% unlist() == 0))
+
 
 new_meta_formatted <- lapply(new_meta_formatted, function(x) if(!is.null(x)){x %>% 
                                select(-c(starts_with('location'),
@@ -1508,15 +1663,59 @@ new_meta_formatted <- lapply(new_meta_formatted, function(x) if(!is.null(x)){x %
                                          iso_1,
                                          "...1"))})
 
-old_isolate_ids <- mapply(function(x,y) x[which(y %in% x$isolate_id),],
+old_isolate_ids <- mapply(function(x,y) x %>% filter(isolate_id %in% y),
                           metadata,
                           isolate_ids,
-                          SIMPLIFY = F)
+                          SIMPLIFY = F) %>% 
+  
+  lapply(., function(x) x[!!rowSums(!is.na(x)),])
 
         
 
 # combine all metadata
+
+combined_metadata <- mapply(function(x,y) list(x,y) %>% 
+                              lapply(., function(z) z %>% 
+                                       mutate(across(everything(), .fns = ~ as.character(.x)))) %>% 
+                              bind_rows(.) ,
+                            old_isolate_ids,
+                            new_meta_formatted,
+                            SIMPLIFY = F) %>%
+  lapply(., function(x) x %>%
+           select(-c(genome,
+                     cluster_profileclass,
+                     cluster_profilecolour, 
+                     collection_tipdate,
+                     segment,
+                     collection_dateerror,
+                     cluster_segment, 
+                     cluster_number,
+                     submission_date,
+                     date,date_frac,
+                     date_year, 
+                     date_format,
+                     date_parsed, 
+                     virus_species,
+                     week_date)) %>%
+           mutate(cluster_profile = coalesce(profile, cluster_profile)) %>%  
+           mutate(cluster_label = coalesce(profile_lab, cluster_label)) %>%
+           select(-starts_with('profile'))) %>%
+  lapply(., function(x) x %>% 
+           mutate(collection_tipdate = coalesce(collection_date,collection_datemonth, collection_dateyear))) %>%
+  lapply(.,function(x) x %>%
+           mutate(clade = gsub('[[:punct:]]', '', clade))) %>%
+  lapply(., MakeTipNames)
+  
+
 # sanity check nrow(meta) == nrow(aln) & all(isolate_id %in% "isolate id's from name")
+all(lapply(combined_metadata, nrow) %>% unlist() == lapply(no_duplicates_aln , nrow) %>% unlist())
 
 
-# export new meta data
+# assign new seqnames to alignment
+renamed_aln <- mapply(ReNameAlignment,
+                      no_duplicates_aln,
+                      combined_metadata,
+                      SIMPLIFY = F)
+
+
+# save all to file
