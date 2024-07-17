@@ -742,11 +742,10 @@ for (i in 1:length(temp)){
               location) ~ 'canada_saskatchewan',
         grepl('new brunswick', 
               location) ~ 'canada_new brunswick',
-        grepl('newfoundland*|*labrador$', 
+        grepl('newfoundland*|*labrador$|^nl$', 
               location) ~ 'canada_newfoundland and labrador',
         grepl('nova scotia$', 
               location) ~ 'canada_nova scotia',
-        
         
         
         # Czechia
@@ -781,7 +780,7 @@ for (i in 1:length(temp)){
         # France
         grepl("^france&",
               location) ~"france",
-        grepl("ain|allier|ardèche|cantal|drôme|isère|loire|haute-loire|puy-de-dôme|rhône|savoie|haute-savoie|rhone alpes", 
+        grepl("^ain$|allier|ardèche|cantal|drôme|isère|loire|haute-loire|puy-de-dôme|rhône|savoie|haute-savoie|rhone alpes", 
               location) ~ "france_auvergne-rhône-alpes",
         
         # bourgogne-franche-comté
@@ -849,7 +848,7 @@ for (i in 1:length(temp)){
         grepl("gorizia|pordenone|trieste|udine|^ud$", 
               location) ~ "italy_friuli-venezia giulia",
         
-        grepl("roma|latina|rieti|viterbo|frosinone",
+        grepl("^roma$|latina|rieti|viterbo|frosinone",
               location) ~ "italy_lazio",
         
         grepl("genova|imperia|la spezia|savona",
@@ -998,6 +997,7 @@ for (i in 1:length(temp)){
         
         grepl('kherson',
               location) ~ 'ukraine_kherson',
+        grepl('ukraine', location) ~ 'ukraine',
         grepl('p[äa]rnu(maa){0,1}',
               location) ~ 'estonia_pärnu',
         
@@ -1050,7 +1050,7 @@ for (i in 1:length(temp)){
         grepl('iowa', location)~ 'united states_iowa',
         grepl('kansas', location)~ 'united states_kansas',
         grepl('kentucky', location)~ 'united states_kentucky',
-        grepl('maine', location)~ 'united states_maine',
+        grepl('^maine$', location)~ 'united states_maine',
         grepl( 'maryland', location)~ 'united states_maryland',
         grepl('massachusetts', location)~ 'united states_massachusetts',
         grepl('michigan', location)~ 'united states_michigan',
@@ -1404,7 +1404,7 @@ for (i in 1:length(temp)){
               location) ~ 'netherlands_zuid-holland',
         grepl('kwade hoek stellendam|stellendam scheelhoekeiland|leidschendam|nl gouda|groot ammers|reeuwijk|stolwijk', 
               location) ~ 'netherlands_zuid-holland',
-        grepl('^nl$|nl sovon|eendenkooi slijkerman', location) ~ 'netherlands',
+        grepl('nl sovon|eendenkooi slijkerman', location) ~ 'netherlands',
         
         
         # Nigeria
@@ -1755,7 +1755,7 @@ combined_metadata_imp <- mapply(function(x,y) x %>% mutate(segment = y), combine
   lapply(., function(x) x %>% mutate(cluster_number = paste0('profile', str_pad(cluster_number, 3, pad = "0"))))
   
 
-
+combined_metadata_imp <- combined_metadata
 ####################################################################################################
 # Check year and remove if problematic
 combined_metadata_imp_dateschecked <- combined_metadata_imp %>%
@@ -1786,12 +1786,12 @@ mapply(write.dna,
 
 
 alignmentfiles_newnames <- metadatafiles %>%
-  gsub('./2024Jun01/metadata/', './2024Jul12/region_metadata/',. ) 
+  gsub('./2023Dec02/metadata/', './2024Jul12/region_metadata/',. ) 
 
 mapply(write_csv, 
        quote= 'needed',
        combined_metadata_imp_dateschecked, 
-       metadatafiles)  
+       alignmentfiles_newnames)  
 
 
 
