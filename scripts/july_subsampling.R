@@ -76,7 +76,8 @@ metadata_subsampled_strict_test <- metadata %>%
   group_by(label, 
            group,
            host_simplifiedhost, 
-           cluster_profile) %>%
+           #cluster_profile
+           ) %>%
   mutate(todrop = case_when(collection_countrycode %in% c('RU', 'JP', 'CN') && is.na(collection_subdiv1code) && n()>1 ~ 'drop',
                             collection_countrycode == 'IRN' ~ 'drop',
                             .default = 'keep')) %>%
@@ -85,7 +86,7 @@ metadata_subsampled_strict_test <- metadata %>%
   group_by(label, 
            group,
            host_simplifiedhost, 
-           cluster_profile,
+           #cluster_profile,
            best_location_code) %>%
   slice_sample(n = 1) %>%
   ungroup() %>%
@@ -94,3 +95,102 @@ metadata_subsampled_strict_test <- metadata %>%
   group_split(label, .keep = FALSE) %>%
   as.list() %>%
   setNames(names(metadata))
+
+####################################################################################################
+# Subsample alignments
+alignments_subsampled <- mapply(function(x,y) x[rownames(x) %in% y$tipnames,],
+                                alignments,
+                                metadata_subsampled,
+                                SIMPLIFY = FALSE) 
+####################################################################################################
+#BEAST traits
+metadata_subsampled_beast <- lapply(metadata_subsampled, 
+                                    function(x) x %>% 
+                                      select(c(tipnames,
+                                               virus_subtype, 
+                                               contains('collection'), 
+                                               cluster_number,
+                                               host_order,
+                                               host_simplifiedhost)) %>%
+                                      mutate(tiplocation_lat = coalesce(collection_subdiv1lat, 
+                                                                        collection_countrylat)) %>%
+                                      mutate(tiplocation_long = coalesce(collection_subdiv1long, 
+                                                                         collection_countrylong)) %>%
+                                      select(where(~n_distinct(.) > 1)) %>%
+                                      select(-c(collection_countrycode,
+                                                contains('date'),
+                                                contains('subdiv'),
+                                                collection_countrylat,
+                                                collection_countrylong
+                                                #collection_original, 
+                                                #collection_tipdate
+                                      )))
+
+####################################################################################################
+# Write alignments and metadata to file
+
+
+
+alignmentfiles_subsampled <- paste('.',
+                                   ddmonthyy, 
+                                   'alignments',
+                                   paste(segnames[!segnames %in% problems], '2344b_subsampled.fasta', sep = '_'),
+                                   sep = '/' )
+
+mapply(ape::write.dna, 
+       alignments_subsampled, 
+       alignmentfiles_subsampled ,
+       format = 'fasta')
+
+
+metadatafiles_subsampled_beast <-paste('.',
+                                       ddmonthyy, 
+                                       'metadata',
+                                       paste(segnames[!segnames %in% problems], '2344b_subsampled.txt',  sep = '_'),
+                                       sep = '/' )
+
+mapply(write_delim, 
+       delim = '\t',
+       quote= 'needed',
+       metadata_subsampled_beast, 
+       metadatafiles_subsampled_beast)  
+
+
+metadatafiles_subsampled <-paste('.',
+                                 ddmonthyy, 
+                                 'metadata',
+                                 paste(segnames[!segnames %in% problems], '2344b_subsampled.csv',  sep = '_'),
+                                 sep = '/' )
+
+mapply(write_csv, 
+       quote= 'needed',
+       metadata_subsampled, 
+       metadatafiles_subsampled)  
+
+####################################################################################################
+# Write plain BEAUTI XML and metadata to file
+# SRD06, relaxed lognormal and skygrid coalescent
+# lognormal prior 
+
+treeprior <- lapply(metadata_subsampled, function(x) x %>% filter(!is.na(collection_datedecimal)) %>% summarise(prior = (as.numeric(max(collection_datedecimal)) - as.numeric(min(collection_datedecimal))))) %>% unlist() %>% ceiling()
+
+cmds <- paste0("./beastgen -date_order -1 -date_prefix . -date_precision  -D ",
+               "'skygrid_PopSize=",
+               treeprior*4,
+               ",skygrid_numGridPoints=",
+               format(treeprior*4-1, nsmall = 1),
+               ",skygrid_cutOff=",
+               format(treeprior, nsmall = 1),
+               ',fileName=',
+               gsub('.prior', '', names(treeprior)), 
+               '_relaxLn_Skygrid', treeprior, '-', treeprior*4, '_1',
+               "' skygridtemplate ",
+               alignmentfiles_subsampled,
+               ' ',
+               gsub('.prior', '', names(treeprior)), 
+               '_relaxLn_Skygrid', treeprior, '-', treeprior*4, '_1', '.xml')
+
+write_lines(cmds,  paste('.',
+                         ddmonthyy, 
+                         'beastgen.txt',
+                         sep = '/' ))
