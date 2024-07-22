@@ -1,3 +1,7 @@
+# Split regional alignments by dominant subtype
+# NB useful list manipulation using purr (lines 62 - 66)
+
+# Dependencies
 library(tidyverse)
 library(ape)
 
@@ -9,6 +13,7 @@ SplitAlignment <- function(alignment, data){
   return(as.list(subset))
 }
 
+# Import metadata
 metadatafiles <- list.files(path = './2024Jul12/region_metadata',
                             full.names = TRUE)
 
