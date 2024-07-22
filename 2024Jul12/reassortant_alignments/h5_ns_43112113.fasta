@@ -658,21 +658,6 @@ ttcgcttgga gaagcagtaa tgaggatggg agacctccac tccttccaaa gcagaaacgg
 aaaatggcga gaacaattga gtcagaagtt --tgaagaaa taaggtggct gattgaagaa
 gtgcgacaca gactaaagat cacagaaaat agttttgaac aaataacatt tatgcaagcc
 ttacaactac tgcttgaagt ggagcaagag ataagaactt tctcgtttca gcttatttaa
->H5N1|2344b|EPI_ISL_18132572|anseriformes|united_states|NA|2022-04-27
-atggattcca acactgtgtc aagctttcag gtagactgct ttctttggca tgtccgcaaa
-cgatttgcag accaagaact gggtgatgcc ccattccttg accggctccg ccgagaccag
-aagtctctaa gaggaagagg cagcactctt ggtctggaca tcgagacggc cactcgtgct
-ggaaagcaga tagtggagag gattctggag gaagaatccg acgaggcact caaaatgact
-attgcctctg tgcctgctcc acgctaccta actgacatga ctcttgaaga gatgtcaaga
-gactggttca tgctcatgcc caagcaaaaa gtggcaggct ccctctgtat cagaatggac
-caggcgatta tggataagaa catcatactg aaggcaaact tcagtgtgat cttcaatcgg
-ctggagacac taatactact cagagctttc actgaagagg gagcaattgt cggcgaaatt
-tcaccattgc cttctcttcc aggacatact gatgaggatg tcaaaaatgc aattggggtc
-ctcatcggag gacttgaatg gaatgataac acagttcgag tctctgaaac tttacagaga
-ttcgcttgga gaagcagtaa tgaggatggg agacctccac tccctccaaa gcagaaacgg
-aaaatggcga gaacaattga gtcagaagtt --tgaagaaa taaggtggct gattgaagaa
-gtgcgacaca gactaaagat cacagaaaat agttttgaac aaataacatt tatgcaagcc
-ttacaactac tgcttgaagt ggagcaagag ataagaactt tctcgtttca gcttatttaa
 >H5N1|NA|EPI_ISL_18132646|galliformes|united_states|NA|2022-04-10
 atggattcca acactgtgtc aagctttcag gtagactgct ttctttggca tgtccgcaaa
 cgatttgcag accaagaact gggtgatgcc ccattccttg accggctccg ccgagaccag
@@ -1041,36 +1026,6 @@ ggaaagcaga tagtggagag gattctggag gaagaatccg acgaggcact caaaatgact
 attgcctctg tgcctgctcc acgctaccta actgacatga ctcttgaaga gatgtcaaga
 gactggttca tgctcatgcc caagcaaaaa gtggcaggct ccctctgtat cagaatggac
 caggcgatta tggataagaa catcatactg aaggcaaact tcagtgtgat cttcgatcgg
-ctggagacac taatactact cagagctttc actgaagagg gagcaattgt cggcgaaatt
-tcaccattgc cttctcttcc aggacatact gatgaggatg tcaaaaatgc aattggggtc
-ctcatcggag gacttgaatg gaatgataac acagttcgag tctctgaaac tttacagaga
-ttcgcttgga gaagcagtaa tgaggatggg agacctccac tccctccaaa gcagaaacgg
-aaaatggcga gaacaattga gtcagaagtt --tgaagaaa taaggtggct gattgaagaa
-gtgcgacaca gactaaagat cacagaaaat agttttgaac aaataacatt tatgcaagcc
-ttacaactac tgcttgaagt ggagcaagag ataagaactt tctcgtttca gcttatttaa
->H5N1|2344b|EPI_ISL_18132826|galliformes|united_states|NA|2022-04-19
-atggattcca acactgtgtc aagctttcag gtagactgct ttctttggca tgtccgcaaa
-cgatttgcag accaagaact gggtgatgcc ccattccttg accggctccg ccgagaccag
-aagtctctaa gaggaagagg cagcactctt ggtctggaca tcgagacggc cactcgtgct
-ggaaagcaga tagtggagag gattctggag gaagaatccg acgaggcact caaaatgact
-attgcctctg tgcctgctcc acgctaccta actgacatga ctcttgaaga gatgtcaaga
-gactggttca tgctcatgcc caagcaaaaa gtggcaggct ccctctgtat cagaatggac
-caggcgatta tggataagaa catcatactg aaggcaaact tcagtgtgat cttcaatcgg
-ctggagacac taatactact cagagctttc actgaagagg gagcaattgt cggcgaaatt
-tcaccattgc cttctcttcc aggacatact gatgaggatg tcaaaaatgc aattggggtc
-ctcatcggag gacttgaatg gaatgataac acagttcgag tctctgaaac tttacagaga
-ttcgcttgga gaagcagtaa tgaggatggg agacctccac tccctccaaa gcagaaacgg
-aaaatggcga gaacaattga gtcagaagtt --tgaagaaa taaggtggct gattgaagaa
-gtgcgacaca gactaaagat cacagaaaat agttttgaac aaataacatt tatgcaagcc
-ttacaactac tgcttgaagt ggagcaagag ataagaactt tctcgtttca gcttatttaa
->H5N1|2344b|EPI_ISL_18132829|galliformes|united_states|NA|2022-04-19
-atggattcca acactgtgtc aagctttcag gtagactgct ttctttggca tgtccgcaaa
-cgatttgcag accaagaact gggtgatgcc ccattccttg accggctccg ccgagaccag
-aagtctctaa gaggaagagg cagcactctt ggtctggaca tcgagacggc cactcgtgct
-ggaaagcaga tagtggagag gattctggag gaagaatccg acgaggcact caaaatgact
-attgcctctg tgcctgctcc acgctaccta actgacatga ctcttgaaga gatgtcaaga
-gactggttca tgctcatgcc caagcaaaaa gtggcaggct ccctctgtat cagaatggac
-caggcgatta tggataagaa catcatactg aaggcaaact tcagtgtgat cttcaatcgg
 ctggagacac taatactact cagagctttc actgaagagg gagcaattgt cggcgaaatt
 tcaccattgc cttctcttcc aggacatact gatgaggatg tcaaaaatgc aattggggtc
 ctcatcggag gacttgaatg gaatgataac acagttcgag tctctgaaac tttacagaga

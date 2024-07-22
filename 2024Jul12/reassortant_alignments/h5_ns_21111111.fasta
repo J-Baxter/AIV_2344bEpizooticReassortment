@@ -17323,21 +17323,6 @@ ttcgcttgga gaagcagtaa tgaggatggg agacctccac tccctccaaa gcagaaacag
 aaaatggcga ggacaattga gtcagaagtt --tgaagaaa taagatggct gattgaagaa
 gtgcggcaca gattgaagat tacagagaac agtttcgaac agataacttt catgcaagcc
 ttacaactat tgcttgaagt ggagcaagag ataagaactt tctcgtttca gcttatttaa
->H5N1|2344b|EPI_ISL_17212547|anseriformes|united_kingdom|NA|2020-12-03
-atggattcca acactgtgtc aagctttcag gtagactgct ttctttggca tgtccgcaaa
-cgatttgcag accaagaact gggtgatgcc ccattccttg accggcttcg ccgagatcag
-aaatccctga gaggaagagg cagcactctt ggtctggaca tcgaaacagc cacccgtgcg
-ggaaagcaga tagtggagcg gattctggaa gaagaatctg atgaggcact taaaatgact
-attgcccccg tgccagcttc acgctaccta actgacatga ctcttgagga gatgtcaagg
-gactggttca tgctcatgcc caaacagaaa gtggcaggtt ccctttgcat cagaatggac
-caggcaataa tggataaaaa catcatattg aaagcaaact tcagtgtgat ttttgaccgg
-ctggaaaccc taatactact tagagctttc acagaagaag gagcaattgt gggagaaatc
-tcaccattac cttctcttcc aggacatact gatgaggatg tcaaaaatgc aattggggtc
-ctcatcggag gacttgaatg gaatgataac acagttcgag tctctgaaac tctacagaga
-ttcgcttgga gaagcagtaa tgaggatggg agacctccac tccctccaaa gcagaaacgg
-aaaatggcga gaacaattga gtcagaagtt --tgaagaaa taagatggct gattgaagaa
-gtgcggcaca gattgaagat tacagagaac agtttcgaac agataacttt tatgcaagcc
-ttacaactat tgcttgaagt ggagcaagag ataagaactt tctcgtttca gcttatttaa
 >H5N1|2344b|EPI_ISL_17465835|carnivora|united_kingdom|2_1_1_1_1_1_1_1|2022-06-19
 atggattcca acactgtgtc aagctttcag gtagactgct ttctttggca tgtccgcaaa
 cgatttgcag accaagaact gggtgatgcc ccattccttg accggcttcg ccgagatcag
@@ -18177,21 +18162,6 @@ ctcatcggag gacttgaatg gaatgataac acagttcgag tctctgaaac tctacagaga
 ttcgcttgga gaagcagtaa tgaggatggg agacctccac tccctccaaa gcagaaacgg
 aaaatggcga ggacaattga gtcagaagtt --tgaagaaa taagatggct gattgaagaa
 gtgcggcaaa gattgaagat tacagagaac agtttcgaac agataacttt catgcaagcc
-ttacaactat tgcttgaagt ggagcaagag ataagaactt tctcgtttca gcttatttaa
->H5N1|2344b|EPI_ISL_18112322|galliformes|united_kingdom|NA|2021-02-10
-atggattcca acactgtgtc aagctttcag gtagactgct ttctttggca tgtccgcaaa
-cgatttgcag accaagaact gggtgatgcc ccattccttg accggcttcg ccgagatcag
-aaatccctga gaggaagagg cagcactctt ggtctggaca tcgaaacagc cacccgtgcg
-ggaaagcaga tagtggagcg gattctggaa gaagaatctg atgaggcact taaaatgact
-attgcccccg tgccagcttc acgctaccta actgacatga ctcttgagga gatgtcaagg
-gactggttca tgctcatgcc caaacagaaa gtggcaggtt ccctttgcat cagaatggac
-caggccataa tggataaaaa catcatattg aaagcaaact tcagtgtgat ttttgaccgg
-ctggaaaccc taatactact tagagctttc acagaagaag gagcaattgt gggagaaatc
-tcaccattac cttctcttcc aggacatact gatgaggatg tcaaaaatgc aattggggtc
-ctcatcggag gacttgaatg gaatgataac acagttcgag tctctgaaac tctacagaga
-ttcgcttgga gaagcagtaa tgaggatggg agacctccac tccctccaaa gcagaaacgg
-aaaatggcga gaacaattga gtcagaagtt --tgaagaaa taagatggct gattgaagaa
-gtgcggcaca gattgaagat tacagagaac agtttcgaac agataacttt tatgcaagcc
 ttacaactat tgcttgaagt ggagcaagag ataagaactt tctcgtttca gcttatttaa
 >H5N1|2344b|EPI_ISL_18445700|anseriformes|france|2_1_1_1_1_1_1_1|2021-11-29
 atggattcca acactgtgtc aagctttcag gtagactgct ttctttggca tgtccgcaaa
