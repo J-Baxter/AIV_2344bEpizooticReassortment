@@ -1,0 +1,27 @@
+tipnames	virus_subtype	collection_regionname	collection_countryname	collection_original	cluster_profile	host_simplifiedhost	lat	long
+H5N2|2344b|EPI_ISL_1760455|anseriformes|china|22_38_22_2_6_66_1_2|2020-11-10	H5N2	eastern asia	china	Asia / China / Shanxi Province / NA / NA	22_38_22_2_6_66_1_2	anseriformes-wild	37.5496375119255	112.274268590565
+H9N2|NA|EPI_ISL_1760456|anseriformes|china|NA|2020-11-10	H9N2	eastern asia	china	NA	NA	anseriformes-wild	37.5496375119255	112.274268590565
+H6N2|NA|EPI_ISL_16886944|anseriformes|south_korea|NA|2019-11-27	H6N2	eastern asia	south korea	NA	NA	anseriformes-wild	36.341057964317	127.784630688405
+H6N2|NA|EPI_ISL_462613|anseriformes|china|NA|2019-11-19	H6N2	eastern asia	china	NA	NA	anseriformes-wild	31.8128943962267	117.235219497068
+H5N2|NA|EPI_ISL_3229260|anseriformes|china|NA|2018-12-25	H5N2	eastern asia	china	NA	NA	anseriformes-wild	33.8761853651454	113.614527263456
+H3N2|NA|EPI_ISL_9572810|anseriformes|vietnam|NA|2020-09-25	H3N2	south-eastern asia	vietnam	NA	NA	anseriformes-wild	16.5422416723933	106.354375350692
+H9N2|NA|EPI_ISL_9593364|anseriformes|iran|NA|2019-10-01	H9N2	southern asia	iran	NA	NA	anseriformes-wild	32.5092139996448	54.4699733871232
+H4N2|NA|EPI_ISL_18287397|anseriformes|thailand|NA|2018-11-01	H4N2	south-eastern asia	thailand	NA	NA	anseriformes-wild	15.0747768902199	101.011931727975
+H10N2|NA|EPI_ISL_207031|anseriformes|mongolia|NA|2015-08-30	H10N2	eastern asia	mongolia	NA	NA	anseriformes-wild	46.9660284560213	103.138307461425
+H6N2|NA|EPI_ISL_16886900|anseriformes|south_korea|NA|2022-03-02	H6N2	eastern asia	south korea	NA	NA	anseriformes-wild	36.341057964317	127.784630688405
+H5N2|2344b|EPI_ISL_china_9|anseriformes|china|3_14_3_1_15_22_1_1|2022-01-26	H5N2	eastern asia	china	Asia / China / Hunan / NA / NA	3_14_3_1_15_22_1_1	anseriformes-wild	27.5978523947888	111.713471439142
+H5N2|2344b|EPI_ISL_china_10|anseriformes|china|3_14_3_1_15_22_1_2|2022-01-26	H5N2	eastern asia	china	Asia / China / Hunan / NA / NA	3_14_3_1_15_22_1_2	anseriformes-wild	27.5978523947888	111.713471439142
+H5N2|2344b|EPI_ISL_15732741|passeriformes|japan|60_1_78_1_1_78_1_1|2022-10-28	H5N2	eastern asia	japan	Asia / Japan / Hokkaido / Sapporo / NA	60_1_78_1_1_78_1_1	other	43.3824165431654	142.542521870972
+H3N2|NA|EPI_ISL_14776042|anseriformes|bangladesh|NA|2020-10-22	H3N2	southern asia	bangladesh	NA	NA	anseriformes-wild	23.8299093538119	90.2865403636969
+H6N2|NA|EPI_ISL_244552|anseriformes|china|NA|2014-12-22	H6N2	eastern asia	china	NA	NA	anseriformes-wild	36.6848135465548	103.513718494908
+H6N2|NA|EPI_ISL_462607|anseriformes|china|NA|2019-11-19	H6N2	eastern asia	china	NA	NA	anseriformes-wild	31.8128943962267	117.235219497068
+H4N2|NA|EPI_ISL_17811779|anseriformes|china|NA|2019-11-09	H4N2	eastern asia	china	NA	NA	anseriformes-wild	31.1960430849676	121.454488171451
+H3N2|NA|EPI_ISL_13374950|environment|japan|NA|2019-12-02	H3N2	eastern asia	japan	NA	NA	environment	30.9949222722596	130.419711465505
+H9N2|NA|EPI_ISL_14867047|anseriformes|japan|NA|2021-09-01	H9N2	eastern asia	japan	NA	NA	anseriformes-wild	33.2322685084502	129.609538821332
+H5N2|NA|EPI_ISL_18284476|galliformes|japan|NA|2023-01-17	H5N2	eastern asia	japan	NA	NA	galliformes-domestic	33.2003954700371	131.433742894646
+H5N2|NA|EPI_ISL_6780573|anseriformes|japan|NA|2020-12-15	H5N2	eastern asia	japan	NA	NA	anseriformes-wild	35.3595547900768	133.863177571414
+H5N2|NA|EPI_ISL_16839585|NA|south_korea|NA|2018-01-05	H5N2	eastern asia	south korea	NA	NA	other	36.341057964317	127.784630688405
+H4N2|NA|EPI_ISL_503356|anseriformes|mongolia|NA|2019-09-20	H4N2	eastern asia	mongolia	NA	NA	anseriformes-wild	46.9660284560213	103.138307461425
+H6N2|NA|EPI_ISL_243648|anseriformes|netherlands|NA|2011-01-11	H6N2	western europe	netherlands	NA	NA	anseriformes-wild	52.2573048104135	5.56251311224367
+H3N2|NA|EPI_ISL_337398|anseriformes|russia|NA|2018-09-15	H3N2	eastern asia	russia	NA	NA	anseriformes-wild	53.5593936765214	109.267398204686
+H3N2|NA|EPI_ISL_9572817|anseriformes|vietnam|NA|2020-09-25	H3N2	south-eastern asia	vietnam	NA	NA	anseriformes-wild	16.5422416723933	106.354375350692

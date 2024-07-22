@@ -1,0 +1,14 @@
+tipnames	virus_subtype	collection_regionname	collection_countryname	collection_original	cluster_profile	host_simplifiedhost	lat	long
+H8N4|NA|EPI_ISL_503502|anseriformes|bangladesh|NA|2019-01-17	H8N4	southern asia	bangladesh	NA	NA	anseriformes-wild	23.8299093538119	90.2865403636969
+H10N4|NA|EPI_ISL_15620320|environment|bangladesh|NA|2022-01-29	H10N4	southern asia	bangladesh	NA	NA	environment	23.8299093538119	90.2865403636969
+H7N4|NA|EPI_ISL_445091|charadriiformes|china|NA|2019-04-26	H7N4	eastern asia	china	NA	NA	charadriiformes-wild	41.2987124958383	122.600275282862
+H5N4|2344b|EPI_ISL_2234809|charadriiformes|switzerland|1_1_2_1_1_19_1_15|2021-02-01	H5N4	western europe	switzerland	Europe / Switzerland / NA / NA / NA	1_1_2_1_1_19_1_15	charadriiformes-wild	46.8020016321822	8.22737507663364
+H5N4|2344b|EPI_ISL_1225079|charadriiformes|netherlands|1_1_2_1_1_19_1_15|2021-02-15	H5N4	western europe	netherlands	Europe / Netherlands / Provincie Friesland / Gemeente Harlingen / NA	1_1_2_1_1_19_1_15	charadriiformes-wild	53.1100430768808	5.84863928632393
+H5N4|2344b|EPI_ISL_3098719|falconiformes|sweden|1_1_2_1_1_19_1_15|2021-03-02	H5N4	northern europe	sweden	Europe / Sweden / Blekinge Lan / Solvesborgs Kommun / NA	1_1_2_1_1_19_1_15	other	56.2754954629495	15.2029498652564
+H5N4|2344b|EPI_ISL_3298234|falconiformes|sweden|1_1_2_1_1_19_1_15|2021-03-05	H5N4	northern europe	sweden	Europe / Sweden / Kalmar Lan / Vasterviks Kommun / NA	1_1_2_1_1_19_1_15	other	57.1855292476939	16.1305148015024
+H5N4|2344b|EPI_ISL_5099372|charadriiformes|germany|1_1_32_1_1_19_1_15|2021-02-17	H5N4	western europe	germany	Europe / Germany / Schleswig-Holstein / Ostholstein / NA	1_1_32_1_1_19_1_15	charadriiformes-wild	54.1814850326718	9.81577342948134
+H5N4|2344b|EPI_ISL_2173364|falconiformes|netherlands|1_1_32_1_1_19_1_15|2021-03-10	H5N4	western europe	netherlands	Europe / Netherlands / South Holland / Brielle / NA	1_1_32_1_1_19_1_15	other	51.9374604216783	4.46477045234472
+H8N4|NA|EPI_ISL_14390387|anseriformes|belgium|NA|2021-08-20	H8N4	western europe	belgium	NA	NA	anseriformes-wild	50.64017310615	4.66939027974939
+H7N4|NA|EPI_ISL_503509|anseriformes|bangladesh|NA|2019-02-07	H7N4	southern asia	bangladesh	NA	NA	anseriformes-wild	23.8299093538119	90.2865403636969
+H8N4|NA|EPI_ISL_17989853|gruiformes|china|NA|2022-01-16	H8N4	eastern asia	china	NA	NA	other	36.3536638777003	118.136153809721
+H10N4|NA|EPI_ISL_499089|anseriformes|china|NA|2018-12-06	H10N4	eastern asia	china	NA	NA	anseriformes-wild	31.1960430849676	121.454488171451

@@ -1,0 +1,167 @@
+tipnames	virus_subtype	collection_regionname	collection_countryname	collection_original	cluster_profile	host_simplifiedhost	lat	long
+H5N8|2344b|EPI_ISL_9572654|anseriformes|nigeria|7_2_5_2_9_3_1_2|2019-02-23	H5N8	western africa	nigeria	NA	7_2_5_2_9_3_1_2	anseriformes-domestic	9.58907159716497	8.08769036750384
+H5N8|2344b|EPI_ISL_4069650|galliformes|egypt|NA|2019-02-21	H5N8	northern africa	egypt	NA	NA	galliformes-domestic	26.5331366423868	29.7934978487062
+H5N8|2344b|EPI_ISL_4069762|anseriformes|egypt|1_2_3_2_3_3_2_2|2019-02-21	H5N8	northern africa	egypt	NA	1_2_3_2_3_3_2_2	anseriformes-domestic	26.5331366423868	29.7934978487062
+H5N8|2344b|EPI_ISL_4069710|galliformes|egypt|3_2_3_2_3_3_2_2|2019-02-13	H5N8	northern africa	egypt	NA	3_2_3_2_3_3_2_2	galliformes-domestic	26.5331366423868	29.7934978487062
+H5N8|2344b|EPI_ISL_4069778|anseriformes|egypt|NA|2019-02-27	H5N8	northern africa	egypt	NA	NA	anseriformes-wild	26.5331366423868	29.7934978487062
+H5N8|2344b|EPI_ISL_4070896|galliformes|egypt|NA|2019-06-25	H5N8	northern africa	egypt	NA	NA	galliformes-domestic	26.5331366423868	29.7934978487062
+H5N8|2344b|EPI_ISL_9594306|galliformes|egypt|6_2_64_12_34_32_1_2|2020-04-01	H5N8	northern africa	egypt	Africa / Egypt / NA / NA / NA	6_2_64_12_34_32_1_2	galliformes-domestic	26.5331366423868	29.7934978487062
+H5N8|NA|EPI_ISL_267135|anseriformes|egypt|NA|2016-12-08	H5N8	northern africa	egypt	NA	NA	anseriformes-wild	26.5331366423868	29.7934978487062
+H5N1|2344b|EPI_ISL_2276070|galliformes|senegal|2_1_1_1_1_1_1_1|2020-12-23	H5N1	western africa	senegal	Africa / Senegal / Region de Thies / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	14.831526394723	-16.7546068121427
+H5N8|2344b|EPI_ISL_17414607|NA|nigeria|3_2_3_1_1_2_1_2|2021-02-26	H5N8	western africa	nigeria	Africa / Nigeria / Plateau / NA / NA	3_2_3_1_1_2_1_2	other	9.20979731798597	9.54756607799562
+H5N8|2344b|EPI_ISL_4061490|galliformes|nigeria|3_2_3_1_1_2_1_2|2021-02-25	H5N8	western africa	nigeria	Africa / Nigeria / NA / NA / NA	3_2_3_1_1_2_1_2	galliformes-domestic	9.58907159716497	8.08769036750384
+H5N1|2344b|EPI_ISL_17414664|galliformes|nigeria|2_1_1_1_1_1_1_1|2021-03-10	H5N1	western africa	nigeria	Africa / Nigeria / Nasarawa State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	8.49899690269019	8.18723814005546
+H5N1|2344b|EPI_ISL_17414608|NA|nigeria|2_1_1_1_1_1_1_1|2021-03-12	H5N1	western africa	nigeria	Africa / Nigeria / Niger State / NA / NA	2_1_1_1_1_1_1_1	other	9.93587181689239	5.60268175555151
+H5N1|2344b|EPI_ISL_4061485|galliformes|nigeria|2_1_1_1_1_1_1_1|2021-03-01	H5N1	western africa	nigeria	Africa / Nigeria / NA / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	9.58907159716497	8.08769036750384
+H5N1|2344b|EPI_ISL_15350905|galliformes|ghana|2_1_1_1_1_1_1_1|2021-06-08	H5N1	western africa	ghana	Africa / Ghana / NA / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	7.9638263738498	-1.20832086013494
+H5N1|2344b|EPI_ISL_17414598|NA|nigeria|2_1_1_1_1_1_1_1|2021-12-28	H5N1	western africa	nigeria	Africa / Nigeria / Aguata LGA, Anambra State / NA / NA	2_1_1_1_1_1_1_1	other	6.20811508115918	6.9305894901959
+H5N1|2344b|EPI_ISL_17414650|galliformes|nigeria|2_1_1_1_1_1_1_1|2021-12-17	H5N1	western africa	nigeria	Africa / Nigeria / Dirko, Toro LGA, Bauchi State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	10.7743712595196	9.98774039325803
+H5N1|2344b|EPI_ISL_17414633|galliformes|nigeria|2_1_1_1_1_1_1_1|2022-01-30	H5N1	western africa	nigeria	Africa / Nigeria / Kpirikpiri LBM, Ebonyi State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	6.26522248643496	8.00212811926889
+H5N1|2344b|EPI_ISL_17414665|galliformes|nigeria|2_1_1_1_1_1_1_1|2021-04-12	H5N1	western africa	nigeria	Africa / Nigeria / Edo State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	6.62406411939859	5.9045044271078
+H5N1|2344b|EPI_ISL_17414624|galliformes|nigeria|2_1_1_1_1_1_1_1|2022-01-17	H5N1	western africa	nigeria	Africa / Nigeria / Yamaltu Daba LGC Gombe State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	10.4048391234083	11.2449552554432
+H5N1|2344b|EPI_ISL_17414635|galliformes|nigeria|2_1_1_1_1_1_1_1|2022-02-01	H5N1	western africa	nigeria	Africa / Nigeria / Dutse LGA, Jigawa State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	12.2156756549758	9.55085496397132
+H5N1|2344b|EPI_ISL_17414613|galliformes|nigeria|2_1_1_1_1_1_1_1|2022-01-07	H5N1	western africa	nigeria	Africa / Nigeria / Goni Gora, Chikun Kaduna State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	10.354940788533	7.70696240441167
+H5N1|2344b|EPI_ISL_17414618|galliformes|nigeria|2_1_1_1_1_1_1_1|2022-01-10	H5N1	western africa	nigeria	Africa / Nigeria / Gunduwawa Gezawa, Kano State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	11.7356997144779	8.51358459540793
+H5N1|2344b|EPI_ISL_17414662|anseriformes|nigeria|2_1_1_1_1_1_1_1|2021-05-28	H5N1	western africa	nigeria	Africa / Nigeria / Lagos State / NA / NA	2_1_1_1_1_1_1_1	anseriformes-wild	6.52719428768168	3.56492158964815
+H5N1|2344b|EPI_ISL_17414609|NA|nigeria|2_1_1_1_1_1_1_1|2021-03-21	H5N1	western africa	nigeria	Africa / Nigeria / Nasarawa State / NA / NA	2_1_1_1_1_1_1_1	other	8.49899690269019	8.18723814005546
+H5N1|2344b|EPI_ISL_17414648|galliformes|nigeria|2_1_1_1_1_1_1_1|2021-12-16	H5N1	western africa	nigeria	Africa / Nigeria / Tofa LGC, Niger State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	9.93587181689239	5.60268175555151
+H5N1|2344b|EPI_ISL_17414587|NA|nigeria|2_1_1_1_1_1_1_1|2021-10-16	H5N1	western africa	nigeria	Africa / Nigeria / Odeda LGA, Ogun State / NA / NA	2_1_1_1_1_1_1_1	other	7.0017747155077	3.4674053159721
+H5N1|2344b|EPI_ISL_17414582|NA|nigeria|2_1_1_1_1_1_1_1|2022-01-04	H5N1	western africa	nigeria	Africa / Nigeria / Jos north, Plateau State / NA / NA	2_1_1_1_1_1_1_1	other	9.20979731798597	9.54756607799562
+H5N1|2344b|EPI_ISL_18462533|ciconiiformes|nigeria|2_1_1_1_1_1_1_1|2022-04-01	H5N1	western africa	nigeria	NA	2_1_1_1_1_1_1_1	other	9.58907159716497	8.08769036750384
+H5N2|2344b|EPI_ISL_17414667|galliformes|nigeria|2_1_1_1_1_95_36_1|2021-12-28	H5N2	western africa	nigeria	Africa / Nigeria / Jumpi II, Toro LGA, Bauchi State / NA / NA	2_1_1_1_1_95_36_1	galliformes-domestic	10.7743712595196	9.98774039325803
+H5N1|2344b|EPI_ISL_17414661|anseriformes|nigeria|NA|2021-12-28	H5N1	western africa	nigeria	NA	NA	anseriformes-wild	9.58907159716497	8.08769036750384
+H5N1|2344b|EPI_ISL_14769967|galliformes|lesotho|2_1_1_1_1_1_1_1|2021-06-05	H5N1	southern africa	lesotho	Africa / Lesotho / NA / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	-29.5819622998706	28.2484329985868
+H5N1|2344b|EPI_ISL_14645331|pelecaniformes|south_africa|2_1_1_1_1_1_1_1|2021-05-25	H5N1	southern africa	south africa	Africa / South Africa / Province of the Western Cape / Hout Bay / NA	2_1_1_1_1_1_1_1	other	-33.016256445291	20.6109109128761
+H5N1|2344b|EPI_ISL_14918217|galliformes|south_africa|2_1_1_1_1_1_1_1|2021-06-20	H5N1	southern africa	south africa	Africa / South Africa / Province of KwaZulu-Natal / Ashburton / NA	2_1_1_1_1_1_1_1	galliformes-domestic	-28.7220063412643	30.7367833141436
+H5N1|2344b|EPI_ISL_14918030|struthioniformes|south_africa|2_1_1_1_1_1_1_1|2021-06-14	H5N1	southern africa	south africa	Africa / South Africa / Province of the Western Cape / Albertinia / NA	2_1_1_1_1_1_1_1	other	-33.016256445291	20.6109109128761
+H5N1|2344b|EPI_ISL_14918031|pelecaniformes|south_africa|NA|2021-06-19	H5N1	southern africa	south africa	NA	NA	other	-28.9709136281448	25.1981253246192
+H5N1|2344b|EPI_ISL_14710239|galliformes|south_africa|2_1_1_1_1_1_1_1|2021-05-31	H5N1	southern africa	south africa	Africa / South Africa / Free State / Parys, Fezile Dabi District Municipality / NA	2_1_1_1_1_1_1_1	galliformes-domestic	-28.6110435828424	26.8801631625401
+H5N1|2344b|EPI_ISL_14542831|galliformes|south_africa|2_1_1_1_1_1_1_1|2021-05-01	H5N1	southern africa	south africa	Africa / South Africa / Gauteng / Kempton Park / NA	2_1_1_1_1_1_1_1	galliformes-domestic	-26.1053974962555	28.126943330491
+H5N1|2344b|EPI_ISL_14620233|galliformes|south_africa|2_1_1_1_1_1_1_1|2021-05-19	H5N1	southern africa	south africa	Africa / South Africa / Province of the Western Cape / Hout Bay / NA	2_1_1_1_1_1_1_1	galliformes-domestic	-33.016256445291	20.6109109128761
+H5N1|2344b|EPI_ISL_14646080|pelecaniformes|south_africa|2_1_1_1_1_1_1_1|2021-05-29	H5N1	southern africa	south africa	Africa / South Africa / Province of the Western Cape / Malmesbury / NA	2_1_1_1_1_1_1_1	other	-33.016256445291	20.6109109128761
+H5N1|2344b|EPI_ISL_14933916|galliformes|south_africa|2_1_1_1_1_1_1_1|2021-07-29	H5N1	southern africa	south africa	Africa / South Africa / Province of KwaZulu-Natal / Camperdown / NA	2_1_1_1_1_1_1_1	galliformes-domestic	-28.7220063412643	30.7367833141436
+H5N1|2344b|EPI_ISL_14934479|galliformes|south_africa|2_1_1_1_1_1_1_1|2021-08-18	H5N1	southern africa	south africa	Africa / South Africa / Province of the Western Cape / Stellenbosch / NA	2_1_1_1_1_1_1_1	galliformes-domestic	-33.016256445291	20.6109109128761
+H5N1|2344b|EPI_ISL_14934884|galliformes|south_africa|2_1_1_1_1_1_1_1|2021-09-08	H5N1	southern africa	south africa	Africa / South Africa / Province of KwaZulu-Natal / Camperdown / NA	2_1_1_1_1_1_1_1	galliformes-domestic	-28.7220063412643	30.7367833141436
+H5N1|2344b|EPI_ISL_15837851|suliformes|south_africa|2_1_1_1_1_1_1_1|2021-10-11	H5N1	southern africa	south africa	Africa / South Africa / Province of the Western Cape / Bettys Bay / NA	2_1_1_1_1_1_1_1	other	-33.016256445291	20.6109109128761
+H5N1|2344b|EPI_ISL_15839841|sphenisciformes|south_africa|2_1_1_1_1_1_1_1|2021-10-26	H5N1	southern africa	south africa	Africa / South Africa / Province of the Western Cape / Dyer Island / NA	2_1_1_1_1_1_1_1	other	-33.016256445291	20.6109109128761
+H5N1|2344b|EPI_ISL_14973559|suliformes|south_africa|2_1_1_1_1_1_1_1|2021-10-07	H5N1	southern africa	south africa	Africa / South Africa / Province of the Western Cape / Lamberts Bay / NA	2_1_1_1_1_1_1_1	other	-33.016256445291	20.6109109128761
+H5N1|2344b|EPI_ISL_15837660|galliformes|south_africa|NA|2021-10-10	H5N1	southern africa	south africa	NA	NA	galliformes-domestic	-28.9709136281448	25.1981253246192
+H5N1|2344b|EPI_ISL_11007544|galliformes|niger|2_1_1_1_1_1_1_1|2022-01-01	H5N1	western africa	niger	Africa / Niger / NA / NA / NA	2_1_1_1_1_1_1_1	galliformes-wild	17.416961812486	9.34752038596442
+H5N1|2344b|EPI_ISL_11007546|galliformes|niger|2_1_1_1_1_1_1_1|2022-01-01	H5N1	western africa	niger	Africa / Niger / NA / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	17.416961812486	9.34752038596442
+H5N1|2344b|EPI_ISL_14973864|suliformes|south_africa|2_1_1_1_1_1_1_1|2021-10-07	H5N1	southern africa	south africa	Africa / South Africa / Province of the Western Cape / Lamberts Bay / NA	2_1_1_1_1_1_1_1	other	-33.016256445291	20.6109109128761
+H5N1|2344b|EPI_ISL_15852625|galliformes|south_africa|2_1_1_1_1_1_1_1|2022-01-24	H5N1	southern africa	south africa	Africa / South Africa / Gauteng / Kempton Park / NA	2_1_1_1_1_1_1_1	galliformes-domestic	-26.1053974962555	28.126943330491
+H5N1|2344b|EPI_ISL_15853610|charadriiformes|south_africa|2_1_1_1_1_1_1_1|2022-03-22	H5N1	southern africa	south africa	Africa / South Africa / Province of the Western Cape / Elsenburg / NA	2_1_1_1_1_1_1_1	charadriiformes-wild	-33.016256445291	20.6109109128761
+H5N1|2344b|EPI_ISL_15853933|sphenisciformes|south_africa|2_1_1_1_1_16_1_1|2022-07-27	H5N1	southern africa	south africa	Africa / South Africa / Province of the Western Cape / Dyer Island / NA	2_1_1_1_1_16_1_1	other	-33.016256445291	20.6109109128761
+H5N8|2344b|EPI_ISL_16209015|galliformes|egypt|3_2_87_1_1_87_34_50|2020-02	H5N8	northern africa	egypt	Africa / Egypt / NA / NA / NA	3_2_87_1_1_87_34_50	galliformes-domestic	26.5331366423868	29.7934978487062
+H5N8|2344b|EPI_ISL_17760686|galliformes|egypt|NA|2020-11-01	H5N8	northern africa	egypt	NA	NA	galliformes-domestic	26.5331366423868	29.7934978487062
+H5N1|2344b|EPI_ISL_13957819|galliformes|mali|2_1_28_1_1_1_1_1|2022-03-16	H5N1	western africa	mali	Africa / Mali / Kati / NA / NA	2_1_28_1_1_1_1_1	galliformes-domestic	13.6206931729579	-7.64564850795128
+H5N1|2344b|EPI_ISL_13957823|galliformes|mali|2_1_28_1_1_1_1_1|2022-03-16	H5N1	western africa	mali	Africa / Mali / Kati / NA / NA	2_1_28_1_1_1_1_1	galliformes-domestic	13.6206931729579	-7.64564850795128
+H5N1|2344b|EPI_ISL_14871335|galliformes|benin|2_1_1_1_1_1_1_1|2021-09-01	H5N1	western africa	benin	Africa / Benin / NA / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	9.64834530386091	2.33970693359707
+H5N8|2344b|EPI_ISL_14937233|galliformes|egypt|3_2_3_54_1_89_1_52|2021-03-03	H5N8	northern africa	egypt	Africa / Egypt / NA / NA / NA	3_2_3_54_1_89_1_52	galliformes-domestic	26.5331366423868	29.7934978487062
+H5N8|2344b|EPI_ISL_14901700|anseriformes|egypt|NA|2021-02-20	H5N8	northern africa	egypt	NA	NA	anseriformes-wild	26.5331366423868	29.7934978487062
+H5N1|2344b|EPI_ISL_17529371|anseriformes|egypt|1_1_2_1_1_1_1_1|2022-03-30	H5N1	northern africa	egypt	Africa / Egypt / NA / NA / NA	1_1_2_1_1_1_1_1	anseriformes-wild	26.5331366423868	29.7934978487062
+H5N1|2344b|EPI_ISL_17069180|sphenisciformes|south_africa|2_1_1_1_1_16_1_1|2022-09-20	H5N1	southern africa	south africa	Africa / South Africa / Province of the Western Cape / Simons Town / NA	2_1_1_1_1_16_1_1	other	-33.016256445291	20.6109109128761
+H5N1|2344b|EPI_ISL_17638501|galliformes|niger|2_1_1_1_1_1_1_1|2023-02-02	H5N1	western africa	niger	Africa / Niger / BAKO RAOUNI, ZINDER / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	14.9848330965973	10.0264149840137
+H5N1|2344b|EPI_ISL_17638505|galliformes|niger|2_1_1_1_1_1_1_1|2023-02-14	H5N1	western africa	niger	Africa / Niger / GUIDAN ROUMDJI, MARADI / NA / NA	2_1_1_1_1_1_1_1	galliformes-wild	14.1152079093427	7.29977536646403
+H5N1|2344b|EPI_ISL_17638504|galliformes|niger|2_1_1_1_1_1_1_1|2023-02-10	H5N1	western africa	niger	Africa / Niger / YANTALA BAS, NIAMEY / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	13.5308086643374	2.12749988854334
+H5N1|2344b|EPI_ISL_17071943|sphenisciformes|south_africa|2_1_1_1_1_16_1_1|2022-11-04	H5N1	southern africa	south africa	Africa / South Africa / Province of the Western Cape / Stony Point / NA	2_1_1_1_1_16_1_1	other	-33.016256445291	20.6109109128761
+H5N1|2344b|EPI_ISL_17414597|NA|nigeria|2_1_1_1_1_1_1_1|2021-12-28	H5N1	western africa	nigeria	Africa / Nigeria / Pantaini LBM, Gombe State / NA / NA	2_1_1_1_1_1_1_1	other	45.5190780558984	4.54715006428513
+H5N1|2344b|EPI_ISL_17414592|NA|nigeria|2_1_1_1_1_1_1_1|2021-12-15	H5N1	western africa	nigeria	Africa / Nigeria / Gombe, Gombe State / NA / NA	2_1_1_1_1_1_1_1	other	10.4048391234083	11.2449552554432
+H5N8|2344b|EPI_ISL_17414604|NA|nigeria|3_2_3_1_1_2_1_2|2021-02-12	H5N8	western africa	nigeria	Africa / Nigeria / Plateau / NA / NA	3_2_3_1_1_2_1_2	other	9.20979731798597	9.54756607799562
+H5N1|2344b|EPI_ISL_18127712|unknown_avian|gambia|1_1_4_1_4_1_1_4|2023-04-01	H5N1	western africa	gambia	NA	1_1_4_1_4_1_1_4	other	13.4527938239197	-15.3731969085987
+H5N1|2344b|EPI_ISL_18462524|caprimulgidae|nigeria|2_1_1_1_1_1_1_1|2022-03-01	H5N1	western africa	nigeria	NA	2_1_1_1_1_1_1_1	other	9.58907159716497	8.08769036750384
+H5N1|2344b|EPI_ISL_18462540|charadriiformes|nigeria|2_1_1_1_1_1_1_1|2022-04-01	H5N1	western africa	nigeria	NA	2_1_1_1_1_1_1_1	charadriiformes-wild	9.58907159716497	8.08769036750384
+H5N1|2344b|EPI_ISL_18462538|anseriformes|nigeria|2_1_1_1_1_1_1_1|2022-04-01	H5N1	western africa	nigeria	NA	2_1_1_1_1_1_1_1	anseriformes-wild	9.58907159716497	8.08769036750384
+H5N1|2344b|EPI_ISL_18846970|anseriformes|egypt|1_1_2_1_1_1_1_1|2023-02-09	H5N1	northern africa	egypt	NA	1_1_2_1_1_1_1_1	anseriformes-domestic	26.5331366423868	29.7934978487062
+H5N8|2344b|EPI_ISL_18847131|anseriformes|egypt|22_2_3_1_3_2_1_2|2021-12-29	H5N8	northern africa	egypt	NA	22_2_3_1_3_2_1_2	anseriformes-domestic	26.5331366423868	29.7934978487062
+H9N2|2344b|EPI_ISL_368367|galliformes|ghana|NA|2018-01-19	H9N2	western africa	ghana	NA	NA	galliformes-domestic	6.79926844995436	-1.45724143293749
+H9N2|2344b|EPI_ISL_309191|galliformes|morocco|NA|2016-02-16	H9N2	northern africa	morocco	NA	NA	galliformes-domestic	33.4307272259567	-2.56580338432954
+H9N2|2344b|EPI_ISL_309193|galliformes|morocco|NA|2016-02-25	H9N2	northern africa	morocco	NA	NA	galliformes-domestic	33.7039803456286	-6.37053176229832
+H9N2|2344b|EPI_ISL_697626|galliformes|morocco|NA|2017-12-01	H9N2	northern africa	morocco	NA	NA	galliformes-domestic	31.8293937185367	-6.35032719129954
+H9N2|2344b|EPI_ISL_697601|galliformes|benin|NA|2018-12-15	H9N2	western africa	benin	NA	NA	galliformes-domestic	9.64834530386091	2.33970693359707
+H5N8|2344b|EPI_ISL_268642|anseriformes|netherlands|NA|2016-12-08	H5N8	western europe	netherlands	NA	NA	anseriformes-wild	53.1100430768808	5.84863928632393
+H5N8|2344b|EPI_ISL_255914|anseriformes|netherlands|NA|2016-12-04	H5N8	western europe	netherlands	NA	NA	anseriformes-wild	52.2573048104135	5.56251311224367
+H5N8|2344b|EPI_ISL_379983|anseriformes|NA|NA|2016-12-14	H5N8	NA	NA	NA	NA	anseriformes-wild	NA	NA
+H5N8|2344b|EPI_ISL_300547|anseriformes|NA|NA|2016-12-15	H5N8	NA	NA	NA	NA	anseriformes-wild	NA	NA
+H5N8|2344b|EPI_ISL_14770047|galliformes|egypt|NA|2018-02-05	H5N8	northern africa	egypt	NA	NA	galliformes-domestic	26.5331366423868	29.7934978487062
+H5N8|2344b|EPI_ISL_9594294|galliformes|egypt|NA|2018-02-05	H5N8	northern africa	egypt	NA	NA	galliformes-domestic	26.5331366423868	29.7934978487062
+H5N1|2344b|EPI_ISL_13658359|falconiformes|israel|NA|2022-01-02	H5N1	western asia	israel	NA	NA	other	31.4459854424407	35.0090837317994
+H5N1|2344b|EPI_ISL_16831319|galliformes|japan|NA|2022-03-25	H5N1	eastern asia	japan	NA	NA	galliformes-domestic	38.446036231103	140.92583944453
+H5N1|2344b|EPI_ISL_16831328|casuariiformes|japan|NA|2022-04-16	H5N1	eastern asia	japan	NA	NA	other	37.3996665395305	137.574137168765
+H5N1|2344b|EPI_ISL_18132953|accipitriformes|united_states|NA|2022-04-27	H5N1	northern america	united states	NA	NA	other	63.9513927980493	-152.396756538795
+H5N8|NA|EPI_ISL_237554|ciconiiformes|india|NA|2016-10-20	H5N8	southern asia	india	NA	NA	other	22.2417444721501	79.3532012780795
+H5N8|NA|EPI_ISL_240677|anseriformes|russia|NA|2016-10-04	H5N8	central asia	russia	NA	NA	anseriformes-domestic	65.951077439978	95.3658732364833
+H5N2|NA|EPI_ISL_297465|galliformes|italy|NA|2017-12-22	H5N2	southern europe	italy	NA	NA	galliformes-domestic	41.979336323661	12.7721450906831
+H5N8|NA|EPI_ISL_292340|anseriformes|china|NA|2017-05-14	H5N8	eastern asia	china	NA	NA	anseriformes-wild	35.7553973024078	96.0028538289268
+H5N8|NA|EPI_ISL_306958|psittaciformes|saudi_arabia|NA|2017-01-01	H5N8	western asia	saudi arabia	NA	NA	other	26.2001539297896	43.288920615829
+H5N8|NA|EPI_ISL_306955|passeriformes|saudi_arabia|NA|2017-01-01	H5N8	western asia	saudi arabia	NA	NA	other	23.0784844370694	45.5821881817745
+H5N6|2344b|EPI_ISL_503150|anseriformes|nigeria|14_2_11_2_3_17_1_15|2019-06-30	H5N6	western africa	nigeria	NA	14_2_11_2_3_17_1_15	anseriformes-domestic	9.58907159716497	8.08769036750384
+H5N1|2344b|EPI_ISL_18846969|anseriformes|egypt|1_1_2_1_1_1_1_1|2022-12-15	H5N1	northern africa	egypt	NA	1_1_2_1_1_1_1_1	anseriformes-domestic	26.5331366423868	29.7934978487062
+H5N1|2344b|EPI_ISL_18127711|unknown_avian|gambia|1_1_4_1_4_1_1_4|2023-04-01	H5N1	western africa	gambia	NA	1_1_4_1_4_1_1_4	other	13.4527938239197	-15.3731969085987
+H5N8|2344b|EPI_ISL_18847130|anseriformes|egypt|22_2_3_1_3_2_1_2|2022-01-19	H5N8	northern africa	egypt	NA	22_2_3_1_3_2_1_2	anseriformes-domestic	26.5331366423868	29.7934978487062
+H5N1|2344b|EPI_ISL_15853835|charadriiformes|south_africa|2_1_1_1_1_16_1_1|2022-03-28	H5N1	southern africa	south africa	Africa / South Africa / Province of the Western Cape / Seaforth Beach / NA	2_1_1_1_1_16_1_1	charadriiformes-wild	-33.016256445291	20.6109109128761
+H5N1|2344b|EPI_ISL_14871336|galliformes|benin|2_1_1_1_1_1_1_1|2021-08-01	H5N1	western africa	benin	Africa / Benin / NA / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	9.64834530386091	2.33970693359707
+H5N1|2344b|EPI_ISL_15614803|pelecaniformes|egypt|2_1_1_1_1_1_1_1|2022-06-17	H5N1	northern africa	egypt	Africa / Egypt / NA / NA / NA	2_1_1_1_1_1_1_1	other	26.5331366423868	29.7934978487062
+H5N1|2344b|EPI_ISL_2276071|pelecaniformes|senegal|2_1_1_1_1_1_1_1|2021-01-23	H5N1	western africa	senegal	Africa / Senegal / Djoudj bird sanctuary / NA / NA	2_1_1_1_1_1_1_1	other	45.5190780558984	4.54715006428513
+H5N1|2344b|EPI_ISL_16839065|suliformes|namibia|2_1_1_1_1_1_1_1|2022-01-27	H5N1	southern africa	namibia	Africa / Namibia / NA / NA / NA	2_1_1_1_1_1_1_1	other	-22.0779804513922	17.2076847589786
+H5N1|2344b|EPI_ISL_17638496|galliformes|niger|2_1_1_1_1_1_1_1|2023-01-17	H5N1	western africa	niger	Africa / Niger / GUIDAN ROUMDJI, MARADI / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	14.1152079093427	7.29977536646403
+H5N1|2344b|EPI_ISL_17638492|galliformes|niger|2_1_1_1_1_1_1_1|2022-12-18	H5N1	western africa	niger	Africa / Niger / GOUDEL GOROU, NIAMEY / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	13.5308086643374	2.12749988854334
+H5N1|2344b|EPI_ISL_17638503|anseriformes|niger|2_1_1_1_1_1_1_1|2023-02-06	H5N1	western africa	niger	Africa / Niger / BOUZA, TAHOUA / NA / NA	2_1_1_1_1_1_1_1	anseriformes-wild	15.7709378501361	5.22990257425899
+H5N1|2344b|EPI_ISL_17638493|galliformes|niger|2_1_1_1_1_1_1_1|2023-01-12	H5N1	western africa	niger	Africa / Niger / TORODI, TILLAB?RI / ?RI / ?RI	2_1_1_1_1_1_1_1	galliformes-domestic	14.1834739365711	2.18634678358895
+H5N1|2344b|EPI_ISL_17638495|anseriformes|niger|2_1_1_1_1_1_1_1|2023-01-12	H5N1	western africa	niger	Africa / Niger / QUARTIER ALKALI, ZINDER / NA / NA	2_1_1_1_1_1_1_1	anseriformes-wild	14.9848330965973	10.0264149840137
+H5N1|2344b|EPI_ISL_17414641|galliformes|nigeria|2_1_1_1_1_1_1_1|2021-10-26	H5N1	western africa	nigeria	Africa / Nigeria / Abia State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	5.45166157527629	7.50906571219372
+H5N1|2344b|EPI_ISL_17414636|galliformes|nigeria|2_1_1_1_1_1_1_1|2022-02-02	H5N1	western africa	nigeria	Africa / Nigeria / Duware Yola, Adamawa State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	9.3426200777514	12.443001831073
+H5N1|2344b|EPI_ISL_17414599|NA|nigeria|2_1_1_1_1_1_1_1|2021-12-29	H5N1	western africa	nigeria	Africa / Nigeria / Tilden Fulani Toro LGA, Bauchi State / NA / NA	2_1_1_1_1_1_1_1	other	10.7743712595196	9.98774039325803
+H5N1|2344b|EPI_ISL_17414630|galliformes|nigeria|2_1_1_1_1_1_1_1|2022-01-26	H5N1	western africa	nigeria	Africa / Nigeria / Maiduguri, Borno State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	11.8922370151818	13.1748649188857
+H5N1|2344b|EPI_ISL_17414656|galliformes|nigeria|2_1_1_1_1_1_1_1|2021-06-25	H5N1	western africa	nigeria	Africa / Nigeria / Bayelsa State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	4.76778423512924	6.10529827090822
+H5N1|2344b|EPI_ISL_17414588|NA|nigeria|2_1_1_1_1_1_1_1|2021-10-28	H5N1	western africa	nigeria	Africa / Nigeria / Enugu State / NA / NA	2_1_1_1_1_1_1_1	other	6.53403695811186	7.42105893133197
+H5N1|2344b|EPI_ISL_17414620|galliformes|nigeria|2_1_1_1_1_1_1_1|2022-01-12	H5N1	western africa	nigeria	Africa / Nigeria / Garki, FCT, Abuja / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	8.86133952932799	7.14160399725458
+H5N1|2344b|EPI_ISL_17414611|galliformes|nigeria|2_1_1_1_1_1_1_1|2022-01-04	H5N1	western africa	nigeria	Africa / Nigeria / Akko Gombe State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	10.4048391234083	11.2449552554432
+H5N1|2344b|EPI_ISL_17414655|galliformes|nigeria|2_1_1_1_1_1_1_1|2021-04-03	H5N1	western africa	nigeria	Africa / Nigeria / Kano State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	11.7356997144779	8.51358459540793
+H5N1|2344b|EPI_ISL_17414610|NA|nigeria|2_1_1_1_1_1_1_1|2021-03-23	H5N1	western africa	nigeria	Africa / Nigeria / Katsina State / NA / NA	2_1_1_1_1_1_1_1	other	12.3716337687424	7.62989372513377
+H5N1|2344b|EPI_ISL_17414625|galliformes|nigeria|2_1_1_1_1_1_1_1|2022-01-17	H5N1	western africa	nigeria	Africa / Nigeria / Keffi LGC, Nasarawa State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	8.49899690269019	8.18723814005546
+H5N1|2344b|EPI_ISL_17414644|galliformes|nigeria|2_1_1_1_1_1_1_1|2021-12-20	H5N1	western africa	nigeria	Africa / Nigeria / Obafemi Owode LGA, Ogun State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	7.0017747155077	3.4674053159721
+H5N1|2344b|EPI_ISL_17414634|galliformes|nigeria|2_1_1_1_1_1_1_1|2022-02-01	H5N1	western africa	nigeria	Africa / Nigeria / Oyo State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	8.14334925475427	3.61881206075384
+H5N1|2344b|EPI_ISL_17414617|galliformes|nigeria|2_1_1_1_1_1_1_1|2022-01-07	H5N1	western africa	nigeria	Africa / Nigeria / Maraban, Jos, Plateau State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	9.20979731798597	9.54756607799562
+H5N1|2344b|EPI_ISL_17414590|NA|nigeria|2_1_1_1_1_1_1_1|2021-11-19	H5N1	western africa	nigeria	Africa / Nigeria / Port Harcourt, Rivers State / NA / NA	2_1_1_1_1_1_1_1	other	4.86037197499283	6.92528956111943
+H5N1|2344b|EPI_ISL_17414631|galliformes|nigeria|2_1_1_1_1_1_1_1|2022-01-26	H5N1	western africa	nigeria	Africa / Nigeria / Birnin Magaji, Zamfara State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	12.0879383702902	6.2614977357571
+H5N1|2344b|EPI_ISL_17415170|NA|nigeria|2_1_1_1_1_1_1_1|2021-01-01	H5N1	western africa	nigeria	Africa / Nigeria / NA / NA / NA	2_1_1_1_1_1_1_1	other	9.58907159716497	8.08769036750384
+H5N1|2344b|EPI_ISL_14573053|galliformes|south_africa|2_1_1_1_1_1_1_1|2021-05-10	H5N1	southern africa	south africa	Africa / South Africa / Free State / Villiers / NA	2_1_1_1_1_1_1_1	galliformes-domestic	-28.6110435828424	26.8801631625401
+H5N1|2344b|EPI_ISL_15853010|ciconiiformes|south_africa|2_1_1_1_1_1_1_1|2022-02-08	H5N1	southern africa	south africa	Africa / South Africa / Gauteng / Bon Accord Dam / NA	2_1_1_1_1_1_1_1	other	-26.1053974962555	28.126943330491
+H5N1|2344b|EPI_ISL_15853935|galliformes|south_africa|2_1_1_1_1_1_1_1|2022-09-18	H5N1	southern africa	south africa	Africa / South Africa / Province of KwaZulu-Natal / Cato Ridge / NA	2_1_1_1_1_1_1_1	galliformes-domestic	-28.7220063412643	30.7367833141436
+H5N1|2344b|EPI_ISL_14542530|galliformes|south_africa|2_1_1_1_1_1_1_1|2021-04-19	H5N1	southern africa	south africa	Africa / South Africa / Province of North-West / Potchefstroom / NA	2_1_1_1_1_1_1_1	galliformes-domestic	-26.2691351203481	25.5243200600828
+H5N1|2344b|EPI_ISL_15838197|suliformes|south_africa|2_1_1_1_1_1_1_1|2021-10-13	H5N1	southern africa	south africa	Africa / South Africa / Province of the Western Cape / Gansbaai / NA	2_1_1_1_1_1_1_1	other	-33.016256445291	20.6109109128761
+H5N1|2344b|EPI_ISL_17414616|galliformes|nigeria|2_1_1_1_1_53_1_1|2022-01-07	H5N1	western africa	nigeria	Africa / Nigeria / Nkpor Obio/Nkpor LGC, Rivers State / /Nkpor LGC, Rivers State / /Nkpor LGC, Rivers State	2_1_1_1_1_53_1_1	galliformes-domestic	4.86037197499283	6.92528956111943
+H5N1|2344b|EPI_ISL_17414649|galliformes|nigeria|2_1_1_1_1_53_1_60|2021-12-16	H5N1	western africa	nigeria	Africa / Nigeria / Rivers State / NA / NA	2_1_1_1_1_53_1_60	galliformes-domestic	4.86037197499283	6.92528956111943
+H5N1|2344b|EPI_ISL_13048383|galliformes|burkina_faso|2_1_28_1_1_1_1_1|2021-12-16	H5N1	western africa	burkina faso	Africa / Burkina Faso / Koubri / NA / NA	2_1_28_1_1_1_1_1	galliformes-domestic	12.2773783178266	-1.75266049543
+H5N8|2344b|EPI_ISL_17414660|galliformes|nigeria|3_2_3_1_1_2_1_2|2021-02-20	H5N8	western africa	nigeria	Africa / Nigeria / Plateau / NA / NA	3_2_3_1_1_2_1_2	galliformes-domestic	9.20979731798597	9.54756607799562
+H5N8|2344b|EPI_ISL_4061483|galliformes|nigeria|3_2_3_1_1_2_1_2|2021-03-01	H5N8	western africa	nigeria	Africa / Nigeria / NA / NA / NA	3_2_3_1_1_2_1_2	galliformes-domestic	9.58907159716497	8.08769036750384
+H5N8|2344b|EPI_ISL_4069652|galliformes|egypt|3_2_3_2_3_3_2_2|2019-02-13	H5N8	northern africa	egypt	NA	3_2_3_2_3_3_2_2	galliformes-domestic	26.5331366423868	29.7934978487062
+H5N1|2344b|EPI_ISL_16675872|struthioniformes|south_africa|71_1_93_56_1_91_1_54|2022-11-21	H5N1	southern africa	south africa	Africa / South Africa / Free State / Hopetown / NA	71_1_93_56_1_91_1_54	other	-28.6110435828424	26.8801631625401
+H5N8|2344b|EPI_ISL_405278|galliformes|nigeria|7_2_5_2_13_3_1_2|2019-07-05	H5N8	western africa	nigeria	NA	7_2_5_2_13_3_1_2	galliformes-domestic	7.0017747155077	3.4674053159721
+H5N8|2344b|EPI_ISL_9572658|galliformes|nigeria|7_2_5_2_9_3_1_2|2019-02-23	H5N8	western africa	nigeria	NA	7_2_5_2_9_3_1_2	galliformes-domestic	9.58907159716497	8.08769036750384
+H9N2|2344b|EPI_ISL_4072273|galliformes|benin|NA|2019-06-11	H9N2	western africa	benin	NA	NA	galliformes-domestic	9.64834530386091	2.33970693359707
+H9N2|2344b|EPI_ISL_282421|galliformes|burkina_faso|NA|2017-01-01	H9N2	western africa	burkina faso	NA	NA	galliformes-domestic	12.2773783178266	-1.75266049543
+H5N1|2344b|EPI_ISL_12045920|accipitriformes|botswana|NA|2021-06-03	H5N1	southern africa	botswana	NA	NA	other	-22.1692328171161	23.8237832499566
+NA|NA|EPI_ISL_707668|anseriformes|china|NA|2017-04-21	NA	eastern asia	china	NA	NA	anseriformes-wild	41.1644442011163	85.1293303962538
+H5N8|2344b|EPI_ISL_5095550|anseriformes|germany|NA|2020-12-21	H5N8	western europe	germany	NA	NA	anseriformes-wild	52.4686720071996	13.4043192497063
+H5N1|2344b|EPI_ISL_5146696|accipitriformes|germany|NA|2021-04-28	H5N1	western europe	germany	NA	NA	other	52.7642105761026	9.16783937293005
+H5N8|2344b|EPI_ISL_436142|anseriformes|germany|NA|2016-12-16	H5N8	western europe	germany	NA	NA	anseriformes-domestic	52.0090264158216	11.7027467770331
+H5N8|2344b|EPI_ISL_505425|anseriformes|egypt|NA|2017-03-01	H5N8	northern africa	egypt	NA	NA	anseriformes-wild	29.9695542045563	31.5848427059026
+H5N8|2344b|EPI_ISL_505399|galliformes|egypt|NA|2018-01-01	H5N8	northern africa	egypt	NA	NA	galliformes-domestic	30.6623398833115	31.7503560180053
+H5N8|2344b|EPI_ISL_505424|galliformes|egypt|NA|2018-01-01	H5N8	northern africa	egypt	NA	NA	galliformes-domestic	24.8075507880262	28.3987044380642
+H5N8|2344b|EPI_ISL_14770042|anseriformes|egypt|NA|2017-06-09	H5N8	northern africa	egypt	NA	NA	anseriformes-wild	26.5331366423868	29.7934978487062
+H5N1|2344b|EPI_ISL_17212547|anseriformes|united_kingdom|NA|2020-12-03	H5N1	northern europe	united kingdom	NA	NA	anseriformes-wild	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_8338502|anseriformes|croatia|NA|2021-12-29	H5N1	southern europe	croatia	NA	NA	anseriformes-wild	45.0210446789036	16.3887129948206
+H5N8|2344b|EPI_ISL_413011|NA|iran|NA|2016-12-09	H5N8	southern asia	iran	NA	NA	other	32.5092139996448	54.4699733871232
+H5N1|2344b|EPI_ISL_13609610|pelecaniformes|israel|NA|2022-01-12	H5N1	western asia	israel	NA	NA	other	31.4459854424407	35.0090837317994
+H5N8|2344b|EPI_ISL_255181|anseriformes|italy|NA|2017-01-19	H5N8	southern europe	italy	NA	NA	anseriformes-wild	42.7080607219025	12.208345049127
+H5N8|NA|EPI_ISL_254725|galliformes|south_korea|NA|2017-02-08	H5N8	eastern asia	south korea	NA	NA	galliformes-domestic	36.341057964317	127.784630688405
+H9N2|2344b|EPI_ISL_309192|galliformes|morocco|NA|2016-02-18	H9N2	northern africa	morocco	NA	NA	galliformes-domestic	33.4583170026315	-4.22050802153172
+H9N2|2344b|EPI_ISL_8387680|galliformes|morocco|NA|2016-01-25	H9N2	northern africa	morocco	NA	NA	galliformes-domestic	31.8293937185367	-6.35032719129954
+H5N1|2344b|EPI_ISL_18112322|galliformes|united_kingdom|NA|2021-02-10	H5N1	northern europe	united kingdom	NA	NA	galliformes-wild	56.7931587491509	-4.20419908814114
+H5N1|2344b|EPI_ISL_17414658|galliformes|nigeria|NA|2021-07-09	H5N1	western africa	nigeria	NA	NA	galliformes-domestic	9.58907159716497	8.08769036750384
+H5N8|2344b|EPI_ISL_268664|anseriformes|netherlands|NA|2016-12-06	H5N8	western europe	netherlands	NA	NA	anseriformes-wild	52.4448999895994	6.44900146928843
+H5N1|2344b|EPI_ISL_17791407|galliformes|netherlands|NA|2020-12-14	H5N1	western europe	netherlands	NA	NA	galliformes-domestic	52.2573048104135	5.56251311224367
+H9N2|2344b|EPI_ISL_697600|galliformes|togo|NA|2019-04-01	H9N2	western africa	togo	NA	NA	galliformes-domestic	8.5312761694629	0.980721674916939
+H5N1|2344b|EPI_ISL_14619775|galliformes|south_africa|NA|2021-05-18	H5N1	southern africa	south africa	NA	NA	galliformes-domestic	-28.9709136281448	25.1981253246192

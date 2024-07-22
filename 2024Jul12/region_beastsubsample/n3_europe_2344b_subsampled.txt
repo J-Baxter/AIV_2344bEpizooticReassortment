@@ -1,0 +1,17 @@
+tipnames	virus_subtype	collection_regionname	collection_countryname	collection_original	cluster_profile	host_simplifiedhost	lat	long
+H5N3|2344b|EPI_ISL_11392591|falconiformes|united_kingdom|1_1_19_1_7_14_1_1|2021-01-22	H5N3	northern europe	united kingdom	Europe / United Kingdom / Northern Ireland / NA / NA	1_1_19_1_7_14_1_1	other	54.0438440515314	-2.78687513666638
+H5N3|2344b|EPI_ISL_1206285|charadriiformes|germany|1_1_19_1_7_14_1_1|2020-12-30	H5N3	western europe	germany	Europe / Germany / Lower Saxony / Aurich / NA	1_1_19_1_7_14_1_1	charadriiformes-wild	52.7642105761026	9.16783937293005
+H5N3|2344b|EPI_ISL_1205487|charadriiformes|germany|1_1_19_1_7_14_1_1|2020-12-14	H5N3	western europe	germany	Europe / Germany / Schleswig-Holstein / Nordfriesland / NA	1_1_19_1_7_14_1_1	charadriiformes-wild	54.1814850326718	9.81577342948134
+H5N3|2344b|EPI_ISL_1259399|charadriiformes|france|1_1_19_1_7_14_1_1|2021-01-18	H5N3	western europe	france	Europe / France / Basse-Normandie / Departement de la Manche / NA	1_1_19_1_7_14_1_1	charadriiformes-wild	49.1207774760085	0.103954251480573
+H5N3|2344b|EPI_ISL_2234808|charadriiformes|ireland|1_1_19_1_7_14_1_1|2021-01-01	H5N3	northern europe	ireland	Europe / Ireland / NA / NA / NA	1_1_19_1_7_14_1_1	charadriiformes-wild	53.1625189533631	-8.16313556364258
+H5N3|2344b|EPI_ISL_1048239|accipitriformes|netherlands|1_1_19_1_7_14_1_1|2021-01-04	H5N3	western europe	netherlands	Europe / Netherlands / Provincie Groningen / Gemeente Delfzijl / NA	1_1_19_1_7_14_1_1	other	52.0617180422494	5.94466833784019
+H5N3|NA|EPI_ISL_825173|anseriformes|netherlands|NA|2018-12-24	H5N3	western europe	netherlands	NA	NA	anseriformes-wild	52.2573048104135	5.56251311224367
+H5N3|NA|EPI_ISL_502615|anseriformes|belgium|NA|2016-09-20	H5N3	western europe	belgium	NA	NA	anseriformes-wild	50.64017310615	4.66939027974939
+H5N3|NA|EPI_ISL_176809|galliformes|netherlands|NA|2013-12-09	H5N3	western europe	netherlands	NA	NA	galliformes-domestic	53.2180813959811	6.7445168668343
+H5N3|NA|EPI_ISL_309814|galliformes|netherlands|NA|2013-12-10	H5N3	western europe	netherlands	NA	NA	galliformes-domestic	52.2573048104135	5.56251311224367
+H5N3|2344b|EPI_ISL_1063993|falconiformes|denmark|1_1_19_1_7_14_1_1|2021-01-01	H5N3	northern europe	denmark	Europe / Denmark / Region Syddanmark / Kolding Kommune / NA	1_1_19_1_7_14_1_1	other	55.3568797999445	9.45020901930698
+H5N3|2344b|EPI_ISL_2172530|accipitriformes|netherlands|1_1_19_1_7_14_1_1|2021-02-22	H5N3	western europe	netherlands	Europe / Netherlands / Provincie Friesland / Oostbierum / NA	1_1_19_1_7_14_1_1	other	53.1100430768808	5.84863928632393
+H5N3|NA|EPI_ISL_502616|anseriformes|belgium|NA|2016-09-25	H5N3	western europe	belgium	NA	NA	anseriformes-wild	50.64017310615	4.66939027974939
+H5N3|NA|EPI_ISL_18458719|galliformes|germany|NA|2021-12-18	H5N3	western europe	germany	NA	NA	galliformes-domestic	52.7642105761026	9.16783937293005
+H2N3|NA|EPI_ISL_309831|galliformes|netherlands|NA|2016-08-30	H2N3	western europe	netherlands	NA	NA	galliformes-domestic	52.2573048104135	5.56251311224367
+H2N3|NA|EPI_ISL_18245819|anseriformes|poland|NA|2022-07-15	H2N3	eastern europe	poland	NA	NA	anseriformes-wild	52.1141994014432	19.4236724631525

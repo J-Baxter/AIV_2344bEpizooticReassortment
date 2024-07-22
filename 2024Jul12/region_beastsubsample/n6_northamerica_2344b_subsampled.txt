@@ -1,0 +1,8 @@
+tipnames	virus_subtype	collection_countryname	collection_original	cluster_profile	host_simplifiedhost	lat	long
+H4N6|NA|EPI_ISL_366392|anseriformes|canada|NA|2018-08-12	H4N6	canada	NA	NA	anseriformes-wild	54.9859148218572	-114.405475342745
+H4N6|NA|EPI_ISL_328365|anseriformes|canada|NA|2017-08-12	H4N6	canada	NA	NA	anseriformes-wild	54.9859148218572	-114.405475342745
+H5N6|2344b|EPI_ISL_17964973|accipitriformes|united_states|4_4_8_1_2_97_1_1|2023-05-08	H5N6	united states	North America / United States / Minnesota / Washington County / NA	4_4_8_1_2_97_1_1	other	46.3193148536411	-94.1968042401401
+H4N6|NA|EPI_ISL_501809|anseriformes|canada|NA|2019-08-22	H4N6	canada	NA	NA	anseriformes-wild	54.9859148218572	-114.405475342745
+H4N6|NA|EPI_ISL_376343|anseriformes|united_states|NA|2017-09-09	H4N6	united states	NA	NA	anseriformes-wild	38.3563815994258	-92.4583278415207
+H4N6|NA|EPI_ISL_501683|anseriformes|united_states|NA|2018-07-01	H4N6	united states	NA	NA	anseriformes-wild	40.470536265191	-82.6389467524245
+NA|NA|EPI_ISL_701662|anseriformes|united_states|NA|2018-11-13	NA	united states	NA	NA	anseriformes-wild	44.627499166429	-89.7126755416022
