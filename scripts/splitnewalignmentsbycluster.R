@@ -66,7 +66,8 @@ aln_split <- lapply(aln_all, function(x) lapply(split_by_cluster, SplitAlignment
   split(.,  str_split_i(segments, '_', 1)) %>%
   lapply(., function(x)  pmap(.l = x, .f = c)) %>%
   list_flatten() %>%
-  compact()
+  compact() %>%
+  lapply(., function(x) x[unique(names(x))])
 
 
 # write to file
