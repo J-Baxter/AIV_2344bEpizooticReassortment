@@ -1710,7 +1710,6 @@ combined_metadata <- mapply(function(x,y) list(x,y) %>%
                      segment,
                      collection_dateerror,
                      cluster_segment, 
-                     cluster_number,
                      submission_date,
                      date,date_frac,
                      date_year, 
