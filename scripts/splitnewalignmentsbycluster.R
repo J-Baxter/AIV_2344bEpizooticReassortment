@@ -3,28 +3,27 @@ library(ape)
 
 
 SplitAlignment <- function(alignment, data){
-  seqnames <- gsub('\\|.*', '', rownames(alignment))
-  subset <- alignment[seqnames  %in% data$isolate_id, ] 
   
-  return(subset)
+  subset <- alignment[str_extract(rownames(alignment), "EPI_ISL_(china_){0,1}\\d+[^.|]*")  %in% data$isolate_id, ] 
+  
+  return(as.list(subset))
 }
 
+metadatafiles <- list.files(path = './2024Jul12/region_metadata',
+                            full.names = TRUE)
 
-
-# Import metadata
-load("./2024Jun01/h5nx_2344b_clusters_20240513.Rda")
 summary_data <- read_csv( '2024-06-05_reassortant_summary.csv')
-meta_dominant <- meta %>% 
-  as_tibble() %>%
-  mutate(date_year = as.double(date_year),
-         location_1 = case_when(location_1 == 'Antarctica' ~ 'South America', 
-                                .default = location_1)) %>%
-  left_join(summary_data) %>%
+
+metadata_dominant <- lapply(metadatafiles, read_csv, col_types = cols(collection_tipdate = col_character())) %>% 
+  bind_rows() %>%
+  distinct() %>%
+  left_join(summary_data, by = join_by(cluster_profile)) %>%
   filter(group == 'dominant')
 
 
+
 # Import alignments
-aln_files <- list.files(path = './2024Jun01/master',
+aln_files <- list.files(path = './2024Jul12/region_alignments',
                         pattern = '.fasta',
                         include.dirs = FALSE,
                         full.names = TRUE)
@@ -36,34 +35,38 @@ aln_all <- lapply(aln_files,
 
 
 # set cluster names
-clusters <- meta_dominant %>% 
+clusters <- summary_data %>% 
+  select(c(cluster_profile, group)) %>%
+  filter(group == 'dominant') %>%
   pull(cluster_profile) %>%
-  unique %>%
+  unique() %>%
   sort() %>%
   tolower() %>%
   gsub('_', '', .)
 
+
 # set segment names
 segments <- aln_files %>%
-  str_split_i(., '/', 4) %>%
-  gsub('aln_|.fasta', '', .) 
+  str_split_i(., '/', 4) %>% gsub('h5_|.fasta', '',.)
 
 
 # Split dataframe by region
-split_by_cluster <- meta_dominant %>%
+split_by_cluster <- metadata_dominant %>%
   group_split(cluster_profile) %>%
   setNames(clusters)
 
 
-# Split alignments by regions
+# Split alignments by reassortant
 aln_split <- lapply(aln_all, function(x) lapply(split_by_cluster, SplitAlignment, alignment = x)) %>%
-  setNames(segments) %>%
-  flatten()
+  split(.,  str_split_i(segments, '_', 1)) %>%
+  lapply(., function(x)  pmap(.l = x, .f = c)) %>%
+  list_flatten() %>%
+  compact()
 
 
 # write to file
-filenames <- apply(expand.grid(segments, clusters), 1, paste, collapse="_") %>%
-  paste0('./2024Jun01/h5_',., '.fasta' ) %>%
+filenames <- names(aln_split) %>%
+  paste0('./2024Jul12/reassortant_alignments/h5_',., '.fasta' ) %>%
   sort()
 
 mapply(write.dna,
@@ -72,4 +75,13 @@ mapply(write.dna,
        format = 'fasta')
 
 
-# separate tree including only reassortants that originated in east asia.
+# metadata
+reassortant_metadata <- lapply(aln_split, function(x) metadata_dominant %>% filter(isolate_id %in% str_extract(names(x), "EPI_ISL_(china_){0,1}\\d+[^.|]*")))
+
+filenames <- names(aln_split) %>%
+  paste0('./2024Jul12/reassortant_metadata/h5_',., '.csv' ) %>%
+  sort()
+
+mapply(write_csv,
+       reassortant_metadata,
+       filenames)
