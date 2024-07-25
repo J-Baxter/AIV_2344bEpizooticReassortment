@@ -77,6 +77,125 @@ metadata <- lapply(metadatafiles,
                    col_types = cols(collection_date = col_date(format = "%Y-%m-%d"),
                                     collection_tipdate = col_character(),
                                     `...28` = col_skip())) 
+
+#########################################################################
+# Correct metadata
+
+corrected <- lapply(metadata[c(4,9,14,31,36,41,46,51)], function(x) x %>% 
+                      filter(grepl('[mM]aine|/nl/', isolate_name)) %>%
+                      select(-c(contains('country'),
+                                contains('subdiv'))) %>% 
+                      separate_wider_delim(collection_original, 
+                                           delim = '/', 
+                                           names_sep = '_') %>%
+                      rename_with(.,
+                                  ~gsub('collection_original', 'location', .x), 
+                                  starts_with('collection_original')) %>% 
+                      mutate(across(starts_with('location'), .fns = ~ tolower(.x))) %>%
+                      mutate(across(starts_with('location'), .fns = ~ str_trim(.x, side = 'both'))) %>%
+                      mutate(across(starts_with('location'), 
+                                    .fns = ~ gsub("^na$|^NA$|^missing$|^unknown$", NA, .x))) %>%
+                      mutate(location = coalesce(location_3,location_2)) %>%
+                      
+                      mutate(location = case_when(
+                        grepl('^[mM]aine$', location) ~ 'united states_maine',
+                        grepl('/Maine/', isolate_name) ~ 'united states_maine',
+                        grepl('newfoundland*|*labrador$|^nl$', location) ~ 'canada_newfoundland and labrador',
+                        grepl('^united states$', location) ~ 'united states',
+                        grepl('^mb$|manitoba', location) ~'canada_manitoba'
+                      )) %>%
+                      left_join(., geodata, by = join_by(location == match)) %>% 
+                      as_tibble() %>%
+                      select(-c("collection_regionname", "...1"
+                                
+                      )) %>%
+                      
+                      dplyr::rename(
+                        collection_regionname = region,
+                        collection_countryname = country,
+                        collection_countrycode = gid_0,
+                        collection_countrylat = adm0_lat,
+                        collection_countrylong = adm0_long,
+                        collection_subdiv1name = name_1,
+                        collection_subdiv1code = hasc_1,
+                        collection_subdiv1lat = adm1_lat,
+                        collection_subdiv1long = adm1_long
+                      ) %>%
+                      
+                      unite('collection_original', 
+                            starts_with('location_'), 
+                            sep = ' / ') %>%
+                      
+                      dplyr::relocate(
+                        tipnames,
+                        virus_subtype,
+                        isolate_id,
+                        isolate_name,
+                        collection_date,
+                        collection_datedecimal,
+                        collection_datemonth,
+                        collection_dateyear,
+                        host_class,
+                        host_order,
+                        host_family,
+                        host_sciname,
+                        host_commonname,
+                        host_isbird,
+                        host_isdomestic,
+                        host_simplifiedhost,
+                        collection_regionname,
+                        collection_countryname,
+                        collection_countrycode,
+                        collection_countrylat,
+                        collection_countrylong,
+                        collection_subdiv1name,
+                        collection_subdiv1code,
+                        collection_subdiv1lat,
+                        collection_subdiv1long,
+                        virus_species,
+                        week_date,
+                        clade,
+                        collection_original,
+                        profile,
+                        profile_lab,
+                        genome,
+                        cluster_profileclass,
+                        cluster_profilecolour,
+                        collection_tipdate,
+                        segment,
+                        collection_dateerror,
+                        cluster_segment,
+                        cluster_number) %>%
+                      
+                      # Select columns
+                      select(-c(location, segment, varname_1, iso_1)) %>%
+                      
+                      
+                      # Format NAs
+                      mutate(across(everything(), .fns = ~ gsub('^NA$', NA, .x))) %>%
+                      
+                      mutate(collection_date = as_date(collection_date),
+                             collection_datedecimal = as.double(collection_datedecimal),
+                             collection_countrylat = as.double(collection_countrylat),
+                             collection_countrylong = as.double(collection_countrylong),
+                             collection_subdiv1lat = as.double(collection_subdiv1lat),
+                             collection_subdiv1long = as.double(collection_subdiv1long),
+                             collection_dateyear = as.double(collection_dateyear),
+                             genome = as.double(genome),
+                             host_isbird = as.logical(host_isbird),
+                             collection_dateerror = as.logical(collection_dateerror)
+                      )
+)
+
+
+metadata[c(4,9,14,31,36,41,46,51)] <-  mapply(function(x, y) x %>% 
+                                                filter(!grepl('[mM]aine|/nl/', isolate_name)) %>%
+                                                bind_rows(y),
+                                              metadata[c(4,9,14,31,36,41,46,51)], 
+                                              corrected,
+                                              SIMPLIFY = F)
+#########################################################################
+
 # Import new alignments
 alignmentfiles <- list.files('./2024Jun01/region_alignments_withBLAST',
                              full.names = T, 
@@ -131,7 +250,7 @@ for (i in 1:length(temp)){
       select(-joint_location)%>%
       #rename(source=host) %>%
       # select(-starts_with('host')) %>%
-      mutate(date = case_when(is.na(date) & !is.na(date_year) ~ date_year,
+      mutate(date = case_when(is.na(date) & !is.na(date_year) ~ as.character(date_year),
                               .default = date)) %>%
       mutate(date_format = case_when(
     grepl('\\d{4}-\\d{2}-\\d{2}', date)  ~ "yyyy-mm-dd", 
@@ -1703,8 +1822,7 @@ combined_metadata <- mapply(function(x,y) list(x,y) %>%
                             new_meta_formatted,
                             SIMPLIFY = F) %>%
   lapply(., function(x) x %>%
-           select(-c(genome,
-                     cluster_profileclass,
+           select(-c(cluster_profileclass,
                      cluster_profilecolour, 
                      collection_tipdate,
                      segment,
@@ -1718,6 +1836,7 @@ combined_metadata <- mapply(function(x,y) list(x,y) %>%
                      virus_species,
                      week_date)) %>%
            mutate(cluster_profile = coalesce(profile, cluster_profile)) %>%  
+           rename(cluster_genome = genome) %>%  
            mutate(cluster_label = coalesce(profile_lab, cluster_label)) %>%
            select(-starts_with('profile'))) %>%
   lapply(., function(x) x %>% 
@@ -1750,11 +1869,12 @@ segnames <- str_split(alignmentfiles,  '_') %>%
 
 
 combined_metadata_imp <- mapply(function(x,y) x %>% mutate(segment = y), combined_metadata, as.list(segnames), SIMPLIFY = F) %>%
+  lapply(., function(x) x %>% select(-cluster_number)) %>%
   mapply(ImputeCladeandCluster,  ., renamed_aln, SIMPLIFY = F)   %>%
   lapply(., function(x) x %>% mutate(cluster_number = paste0('profile', str_pad(cluster_number, 3, pad = "0"))))
   
 
-combined_metadata_imp <- combined_metadata
+#combined_metadata_imp <- combined_metadata
 ####################################################################################################
 # Check year and remove if problematic
 combined_metadata_imp_dateschecked <- combined_metadata_imp %>%
