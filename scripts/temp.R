@@ -18,15 +18,16 @@ MakeTipNames <- function(data){
 
 RemoveDuplicated <- function(alignment){
   matches <- rownames(alignment) %>% 
-    regmatches(., gregexpr("EPI_ISL_\\d+[^.|]*", .)) %>% 
-    unlist() 
+    str_extract(., "EPI_ISL_(china_){0,1}\\d+[^.|]*") 
   
-  duplicated_indices <- which(duplicated(matches) | duplicated(matches, fromLast = TRUE))
-  duplicated_items <- matches[duplicated_indices]
-  duplicated_list <- sapply(duplicated_items, function(x) which(grepl(x, rownames(alignment))), simplify = F)
+  duplicated_id <- matches[which(duplicated(matches) | duplicated(matches, fromLast = TRUE))]
+  #duplicated_items <- matches[duplicated_indices]
+  duplicated_vect <- sapply(duplicated_id, function(x) which(grepl(x, rownames(alignment))), simplify = F)
   
-  duplicated_seqnames <- lapply(duplicated_list, function(x) rownames(alignment)[x])
-  drop_seqnames <- lapply(duplicated_seqnames, function(x) x[!grepl('^EPI', x)]) %>% unlist()
+  # pull sequence names and select the one starting with isolate_ID
+  drop_seqnames <- lapply(duplicated_vect, function(x) rownames(alignment)[x]) %>%
+    lapply(., function(x) x[!grepl('^EPI', x)]) %>% 
+    unlist()
   
   new_alignment <- alignment[!rownames(alignment) %in% drop_seqnames,]
   return(new_alignment)
@@ -59,9 +60,14 @@ ReNameAlignment <- function(alignment, data){
 
 
 # Import metadata
+geodata <- read_csv('./annotated_geodata.csv')
+birds <- read_csv('bird_taxonomy.csv')
+mammals <- read_csv('mammal_taxonomy.csv')
+
 load("./2024Jun01/h5nx_2344b_clusters_20240513.Rda")
 meta <- meta %>% 
   as_tibble() %>%
+  select(-date_frac) %>%
   mutate(date_year = as.double(date_year),
          location_1 = case_when(location_1 == 'Antarctica' ~ 'South America', 
                                 .default = location_1))
@@ -76,7 +82,8 @@ metadata <- lapply(metadatafiles,
                    read_csv,
                    col_types = cols(collection_date = col_date(format = "%Y-%m-%d"),
                                     collection_tipdate = col_character(),
-                                    `...28` = col_skip())) 
+                                    `...28` = col_skip())) %>%
+  lapply(., function(x) x %>% select(-collection_datedecimal))
 
 #########################################################################
 # Correct metadata
@@ -132,7 +139,7 @@ corrected <- lapply(metadata[c(4,9,14,31,36,41,46,51)], function(x) x %>%
                         isolate_id,
                         isolate_name,
                         collection_date,
-                        collection_datedecimal,
+                        #collection_datedecimal,
                         collection_datemonth,
                         collection_dateyear,
                         host_class,
@@ -175,7 +182,7 @@ corrected <- lapply(metadata[c(4,9,14,31,36,41,46,51)], function(x) x %>%
                       mutate(across(everything(), .fns = ~ gsub('^NA$', NA, .x))) %>%
                       
                       mutate(collection_date = as_date(collection_date),
-                             collection_datedecimal = as.double(collection_datedecimal),
+                            # collection_datedecimal = as.double(collection_datedecimal),
                              collection_countrylat = as.double(collection_countrylat),
                              collection_countrylong = as.double(collection_countrylong),
                              collection_subdiv1lat = as.double(collection_subdiv1lat),
@@ -1829,7 +1836,8 @@ combined_metadata <- mapply(function(x,y) list(x,y) %>%
                      collection_dateerror,
                      cluster_segment, 
                      submission_date,
-                     date,date_frac,
+                     date,
+                     #date_frac,
                      date_year, 
                      date_format,
                      date_parsed, 
