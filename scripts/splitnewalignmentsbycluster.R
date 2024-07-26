@@ -19,12 +19,22 @@ metadatafiles <- list.files(path = './2024Jul12/region_metadata',
 
 summary_data <- read_csv( '2024-06-05_reassortant_summary.csv')
 
+new_clusters <- meta %>% select(c(isolate_id, cluster_profile))
 metadata_dominant <- lapply(metadatafiles, read_csv, col_types = cols(collection_tipdate = col_character())) %>% 
   bind_rows() %>%
-  distinct() %>%
+  select(-c(cluster_profile, clade, collection_datedecimal)) %>%
+  left_join(new_clusters) %>%
   left_join(summary_data, by = join_by(cluster_profile)) %>%
-  filter(group == 'dominant')
+  filter(group == 'dominant') %>%
+  distinct()
+  summarise(n = n(), .by = cluster_profile)
 
+check_meta <- meta %>% 
+  left_join(summary_data, by = join_by(cluster_profile)) %>%
+  filter(group == 'dominant') %>%
+  summarise(n = n(), .by = cluster_profile)
+
+all(unique(meta$isolate_id) %in% metadata_dominant$isolate_id)  # Check all isolate ID are present in metadata
 
 
 # Import alignments
@@ -38,6 +48,8 @@ aln_all <- lapply(aln_files,
                   as.matrix = T, 
                   format = 'fasta')
 
+aln_isolates <- lapply(aln_all, function(x) str_extract(rownames(x), "EPI_ISL_(china_){0,1}\\d+[^.|]*"))
+all(unique(meta$isolate_id) %in% unlist(unique(aln_isolates)))  # Check all isolate ID are present in alignments
 
 # set cluster names
 clusters <- summary_data %>% 
