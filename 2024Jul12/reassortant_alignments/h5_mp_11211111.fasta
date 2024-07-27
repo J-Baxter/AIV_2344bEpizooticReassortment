@@ -3220,6 +3220,42 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_15585755|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-10-10
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_15585756|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-10-18
+---------- --aacgaggt cgaaacg--a cgtctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtat tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gttccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
 >H5N1|2344b|EPI_ISL_15585757|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-10-18
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -3364,6 +3400,24 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_15585765|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-10-09
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtat tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_15585839|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-10-09
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -3376,6 +3430,24 @@ gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
 tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
 ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
 gaagccatgg aggttgctag taaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_15585840|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-10-10
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
 actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
 caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
 agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
@@ -3401,6 +3473,24 @@ gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_15585842|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-10-10
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_15585844|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-10-11
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -3580,6 +3670,24 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_15585882|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-10-12
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_15585883|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-10-13
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -3598,6 +3706,24 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga g---
+>H5N1|2344b|EPI_ISL_15585884|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-10-13
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_15585885|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-10-14
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -3678,6 +3804,24 @@ ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
 caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
 aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
 accggtgcac tcgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_15585894|anseriformes|united_kingdom|1_1_2_1_1_1_1_1|2022-10-03
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtat tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
 gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
 tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
 ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
@@ -3796,6 +3940,24 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga caatggtcat
 tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_15585905|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-10-15
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac tcgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_15585906|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-08-26
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -3807,6 +3969,42 @@ accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
 gaagtggcat tgggcctagt gtgtgccatc tgtgagcaga ttgctgattc acagcatcgg
 tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
 ttggccagta ctacggctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_15585908|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-09-26
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtat tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_15585909|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-10-15
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
 gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
 actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
 caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
@@ -3904,6 +4102,24 @@ agcatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_15586109|anseriformes|united_kingdom|1_1_2_1_1_1_1_1|2022-10-06
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_15586110|anseriformes|united_kingdom|1_1_2_1_1_1_1_1|2022-10-08
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -3992,6 +4208,24 @@ actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
 caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgctgca
 agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gctttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_15586115|anseriformes|united_kingdom|1_1_2_1_1_1_1_1|2022-10-19
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_15586116|anseriformes|united_kingdom|1_1_2_1_1_1_1_1|2022-10-10
@@ -4138,6 +4372,24 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_15586125|anseriformes|united_kingdom|1_1_2_1_1_1_1_1|2022-10-02
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtat tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_15586126|anseriformes|united_kingdom|1_1_2_1_1_1_1_1|2022-10-12
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -4185,6 +4437,24 @@ accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
 gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
 tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
 ttggccagta ctacggctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_15586129|anseriformes|united_kingdom|1_1_2_1_1_1_1_1|2022-10-17
+---------- -------ggt cgaacgacg- --tctctcta tcgtcccgtc gggcccctca
+gcggccgc-- --------ag gactgaagat gtctttgcag g-aagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtat tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
 gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
 actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
 caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
@@ -6910,6 +7180,24 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_15542438|unknown|spain|1_1_2_1_1_1_1_1|2022-09-23
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_15579537|anseriformes|netherlands|1_1_2_1_1_1_1_1|2022-09-26
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -7514,6 +7802,78 @@ aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
 accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
 gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
 tctcacaggc aaatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_15878543|galliformes|france|1_1_2_1_1_1_1_1|2022-09-09
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_15878544|galliformes|france|1_1_2_1_1_1_1_1|2022-09-09
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_15878545|galliformes|france|1_1_2_1_1_1_1_1|2022-09-19
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_15878546|galliformes|france|1_1_2_1_1_1_1_1|2022-09-19
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
 ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
 gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
 actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
@@ -10024,60 +10384,6 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|2344b|EPI_ISL_15957998|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-11-15
-atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
-aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
-gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
-ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
-caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
-aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
-accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
-gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
-tctcacaggc agatagccac aaccaccaac ccactaatca gacatgaaaa cagaatggtg
-ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
-gaagccatgg aggttgctag tcaggctagg caaatggtgc aagcgatgag gaccattgga
-actcatcata gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
-caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
-agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
-gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
-tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatgatcat
-tttgtcaaca tagagctgga gtaa
->H5N1|2344b|EPI_ISL_15957984|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-11-14
-atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
-aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
-gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
-ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
-caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
-aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
-accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
-gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
-tctcacaggc agatagccac aaccaccaac ccactaatca gacatgaaaa cagaatggtg
-ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
-gaagccatgg aggttgctag tcaggctagg caaatggtgc aagcgatgag gaccattgga
-actcatcata gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
-caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
-agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
-gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
-tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatgatcat
-tttgtcaaca tagagctgga g---
->H5N1|2344b|EPI_ISL_15957972|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-11-13
-atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
-aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
-gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
-ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
-caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
-aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
-accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
-gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
-tctcacaggc agatagccac aaccaccaac ccactaatca gacatgaaaa cagaatggtg
-ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
-gaagccatgg aggttgctag tcaggctagg caaatggtgc aagcgatgag gaccattgga
-actcatcata gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
-caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
-agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
-gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
-tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatgatcat
-tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_15957940|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-11-10
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -10093,6 +10399,24 @@ gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
 actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
 caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
 agtatcattg ggatcttgca cttgacattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_15957933|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-11-08
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtat tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag ccaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
@@ -10132,24 +10456,6 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|2344b|EPI_ISL_15957899|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-11-06
-atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
-aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
-gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
-ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
-caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
-aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
-accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
-gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
-tctcacaggc agatagccac aaccaccaac ccactaatca gacatgaaaa cagaatggtg
-ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
-gaagccatgg aggttgctag tcaggctagg caaatggtgc aagcgatgag gaccattgga
-actcatcata gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
-caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
-agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
-gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
-tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatgatcat
-tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_15957865|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-11-03
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -10168,6 +10474,24 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_15957857|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-11-03
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtat tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_15957837|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-11-02
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -10179,6 +10503,24 @@ accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
 gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
 tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
 ttggccagta ctacggctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_15957830|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-11-02
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
 gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
 actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
 caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
@@ -10341,6 +10683,24 @@ accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
 gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
 tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
 ttggccagta ctacggctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_15957635|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-10-20
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
 gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
 actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
 caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
@@ -11212,6 +11572,24 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_15957946|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-11-09
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtat tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag ccaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_15957872|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-11-04
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -11244,6 +11622,24 @@ ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
 gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
 actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
 caaaaacgga tgggagtgca actgcagcgg ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_15957824|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-11-02
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
 agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
@@ -11428,6 +11824,24 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_15957648|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-10-20
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_15957641|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-10-20
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -11584,6 +11998,24 @@ gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
 tctcacaggc aaatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
 ttggccagta ctacggctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
 gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_15957629|anseriformes|united_kingdom|1_1_2_1_1_1_1_1|2022-10-20
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctaa tcaggctagg caaatggtgc aggcgatgag gaccattgga
 actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
 caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
 agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
@@ -11878,6 +12310,60 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_16384128|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-10-27
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtat tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag ccaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_16384129|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-10-21
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_16384137|anseriformes|united_kingdom|1_1_2_1_1_1_1_1|2022-10-20
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctaa tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_16384138|anseriformes|united_kingdom|1_1_2_1_1_1_1_1|2022-10-14
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -12051,6 +12537,24 @@ accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
 gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
 tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
 ttggccagta ctacggctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_16384148|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-11-21
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
 gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
 actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
 caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
@@ -13264,6 +13768,60 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 cttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_16613713|galliformes|czechia|1_1_2_1_1_1_1_1|2023-01-04
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_16613714|galliformes|czechia|1_1_2_1_1_1_1_1|2023-01-04
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_16613715|galliformes|czechia|1_1_2_1_1_1_1_1|2023-01-04
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
 >H5N1|2344b|EPI_ISL_16613716|galliformes|czechia|1_1_2_1_1_1_1_1|2023-01-04
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -13276,6 +13834,24 @@ gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
 tctcacaggc agatagccac cacaaccaac ccactaatca gacatgaaaa cagaatggta
 ttggccagta ctactgctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
 gaagccatgg aggttgctag tcaggctagg caaatggtgc aagcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_16613717|anseriformes|czechia|1_1_2_1_1_1_1_1|2023-01-05
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
 actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
 caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
 agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
@@ -14146,6 +14722,96 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_16937292|galliformes|czechia|1_1_2_1_1_1_1_1|2023-01-04
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_16937293|galliformes|czechia|1_1_2_1_1_1_1_1|2023-01-04
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_16937295|anseriformes|czechia|1_1_2_1_1_1_1_1|2023-01-12
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_16937296|galliformes|czechia|1_1_2_1_1_1_1_1|2022-12-30
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_16937297|galliformes|czechia|1_1_2_1_1_1_1_1|2022-12-30
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
 >H5N1|2344b|EPI_ISL_16937298|galliformes|czechia|1_1_2_1_1_1_1_1|2022-12-10
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc aggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -14272,6 +14938,24 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_16937306|anseriformes|czechia|1_1_2_1_1_1_1_1|2023-01-16
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
 >H5N1|2344b|EPI_ISL_16937307|anseriformes|czechia|1_1_2_1_1_1_1_1|2023-01-18
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -14284,6 +14968,24 @@ gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
 tctcacaggc agatagccac cacaaccaac ccactaatca gacatgaaaa cagaatggtg
 ttggccagta ctactgctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
 gaagccatgg aggttgctag tcaggctagg caaatggtgc aagcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_16937308|anseriformes|czechia|1_1_2_1_1_1_1_1|2023-01-16
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
 actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
 caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
 agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
@@ -14470,6 +15172,24 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_16979816|accipitriformes|italy|1_1_2_1_1_1_1_1|2023-01-04
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
 >H5N1|2344b|EPI_ISL_17008431|ciconiiformes|netherlands|1_1_2_1_1_1_1_1|2023-02-06
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -14578,6 +15298,24 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_17015365|anseriformes|czechia|1_1_2_1_1_1_1_1|2023-02-17
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+atttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cggtggtcat
+tttgtcaaca tagagctgga gta-
 >H5N1|2344b|EPI_ISL_17015366|galliformes|czechia|1_1_2_1_1_1_1_1|2023-02-16
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccatc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -14667,6 +15405,24 @@ caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
 agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga ctatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17072336|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2023-02-07
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac tcgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagca ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_17072337|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2023-02-11
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
@@ -14878,6 +15634,24 @@ gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
 tctcacaggc agatagccac cacaaccaac ccactaatca gacatgaaaa cagaatggtg
 ttggccagta ctactgctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
 gaagccatgg aggttgctag tcaggctagg caaatggtgc aagcgatgag gaccatcgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17245142|galliformes|belgium|1_1_2_1_1_1_1_1|2023-02-23
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
 actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
 caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
 agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
@@ -15172,6 +15946,24 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_17511728|anseriformes|austria|1_1_2_1_1_1_1_1|2023-01-02
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_17564740|anseriformes|united_kingdom|1_1_2_1_1_1_1_1|2023-04-11
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -15274,6 +16066,24 @@ gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
 tctcacaggc agatagccac cacaaccaac ccactaatca gacatgaaaa cagaatggta
 ttggccagta ctactgctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
 gaagccatgg aggttgctag tcaggctagg caaatggtgc aagcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_17584808|galliformes|czechia|1_1_2_1_1_1_1_1|2023-03-27
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
 actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
 caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
 agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
@@ -15496,6 +16306,60 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_17679793|anseriformes|slovenia|1_1_2_1_1_1_1_1|2023-01-31
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga ggagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgct
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_17679794|anseriformes|slovenia|1_1_2_1_1_1_1_1|2023-02-02
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa agggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_17679795|strigiformes|slovenia|1_1_2_1_1_1_1_1|2023-02-02
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
 >H5N1|2344b|EPI_ISL_17679797|pelecaniformes|france|1_1_2_1_1_1_1_1|2022-11-08
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -15604,6 +16468,60 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatagtcat
 tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_17679815|galliformes|slovakia|1_1_2_1_1_1_1_1|2023-01-12
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggccagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_17679816|galliformes|slovakia|1_1_2_1_1_1_1_1|2023-01-12
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggccagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_17679817|galliformes|slovakia|1_1_2_1_1_1_1_1|2023-01-12
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggccagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
 >H5N1|2344b|EPI_ISL_17679818|anseriformes|slovakia|1_1_2_1_1_1_1_1|2023-01-17
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -15616,6 +16534,42 @@ gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
 tctcacaggc agatagccac cacaaccaac ccactaatca gacatgaaaa cagaatggtg
 ttggccagta ctactgctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
 gaagccatgg aggttgctag tcaggctagg caaatggtgc aagcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_17679819|anseriformes|slovakia|1_1_2_1_1_1_1_1|2023-01-20
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgcaagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_17679820|anseriformes|slovakia|1_1_2_1_1_1_1_1|2023-01-21
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
 actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
 caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
 agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
@@ -15820,6 +16774,42 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17716086|pelecaniformes|austria|1_1_2_1_1_1_1_1|2023-02-28
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17716087|anseriformes|austria|1_1_2_1_1_1_1_1|2023-03-02
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttacag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaaa--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_17736969|galliformes|italy|1_1_2_1_1_1_1_1|2022-10-21
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta ttgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -15874,7 +16864,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga ctatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|NA|EPI_ISL_17786288|anseriformes|croatia|NA|2022-01-11
+>H5N1|2344b|EPI_ISL_17786288|anseriformes|croatia|1_1_2_1_1_1_1_1|2022-01-11
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -15975,6 +16965,24 @@ accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
 gaagtggcat tgggcctggt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
 tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
 ttggccagta ctacggctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_16398192|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2022-10-18
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
 gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
 actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
 caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
@@ -16828,6 +17836,24 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_16939160|galliformes|czechia|1_1_2_1_1_1_1_1|2023-01-13
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
 >H5N1|2344b|EPI_ISL_16956027|galliformes|united_kingdom|1_1_2_1_1_1_1_1|2023-01-24
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -16917,24 +17943,6 @@ caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
 agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
-tttgtcaaca tagagctgga gtaa
->H5N1|2344b|EPI_ISL_16956386|falconiformes|united_kingdom|1_1_2_1_1_1_1_1|2023-01-07
------tcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
-aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
-gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
-ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
-caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
-aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
-accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgaccgca
-gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
-tctcacaggc agatagccac aaccaccaac ccactaatca gacatgaaaa cagaatggtg
-ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
-gaagccatgg aggttgctag tcaggctagg caaatggtgc aagcgatgag gaccattgga
-actcatcata gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
-caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
-agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
-gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
-tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatgatcat
 tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_16956404|accipitriformes|united_kingdom|1_1_2_1_1_1_1_1|2023-01-12
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
@@ -17134,6 +18142,42 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_16997752|galliformes|czechia|1_1_2_1_1_1_1_1|2023-01-30
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcatcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtaactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_16997753|galliformes|czechia|1_1_2_1_1_1_1_1|2023-01-30
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcatcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtaactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
 >H5N1|2344b|EPI_ISL_16997754|galliformes|czechia|1_1_2_1_1_1_1_1|2023-01-29
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -17200,6 +18244,42 @@ gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
 tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
 ttggccagta ctactgctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
 gaagccatgg aggttgctag tcaggctagg caaatggtgc aagcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_16997758|anseriformes|czechia|1_1_2_1_1_1_1_1|2023-02-02
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_16997759|anseriformes|czechia|1_1_2_1_1_1_1_1|2023-02-06
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc aggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
 actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
 caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
 agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
@@ -17350,6 +18430,78 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17164983|galliformes|czechia|1_1_2_1_1_1_1_1|2023-01-04
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gt--
+>H5N1|2344b|EPI_ISL_17164986|galliformes|czechia|1_1_2_1_1_1_1_1|2022-12-15
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gt--
+>H5N1|2344b|EPI_ISL_17164987|galliformes|czechia|1_1_2_1_1_1_1_1|2022-12-15
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_17164988|galliformes|czechia|1_1_2_1_1_1_1_1|2022-12-15
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
 >H5N1|2344b|EPI_ISL_17164989|galliformes|czechia|1_1_2_1_1_1_1_1|2022-12-23
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -17386,6 +18538,24 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_17164991|galliformes|czechia|1_1_2_1_1_1_1_1|2023-01-02
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
 >H5N1|2344b|EPI_ISL_17164992|galliformes|czechia|1_1_2_1_1_1_1_1|2023-01-02
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -17404,6 +18574,42 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaaaag cagaatgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_17164993|pelecaniformes|czechia|1_1_2_1_1_1_1_1|2023-02-21
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_17164994|pelecaniformes|czechia|1_1_2_1_1_1_1_1|2023-02-21
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta ttgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttt atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gt--
 >H5N1|2344b|EPI_ISL_17164995|anseriformes|czechia|1_1_2_1_1_1_1_1|2022-12-30
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -17422,6 +18628,42 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaaaag cagaatgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gta-
+>H5N1|2344b|EPI_ISL_17165498|passeriformes|italy|1_1_2_1_1_1_1_1|2023-02-01
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17165499|anseriformes|italy|1_1_2_1_1_1_1_1|2023-02-02
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_17165500|anseriformes|italy|1_1_2_1_1_1_1_1|2022-11-15
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -17441,6 +18683,24 @@ gttta-cgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 ttcatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_17165501|anseriformes|italy|1_1_2_1_1_1_1_1|2022-11-17
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17165502|anseriformes|italy|1_1_2_1_1_1_1_1|2023-01-03
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -17530,6 +18790,24 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga ctatggtcat
 tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17165507|anseriformes|italy|1_1_2_1_1_1_1_1|2023-01-17
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_17165508|anseriformes|italy|1_1_2_1_1_1_1_1|2023-01-17
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -17548,6 +18826,78 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 ttcatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17165509|galliformes|italy|1_1_2_1_1_1_1_1|2023-01-27
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17165510|galliformes|italy|1_1_2_1_1_1_1_1|2023-01-27
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17165511|galliformes|italy|1_1_2_1_1_1_1_1|2023-01-28
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17165512|galliformes|italy|1_1_2_1_1_1_1_1|2023-01-26
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_17180382|charadriiformes|switzerland|1_1_2_1_1_1_1_1|2023-01-25
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -17565,6 +18915,24 @@ caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
 agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagaatgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17181724|anseriformes|switzerland|1_1_2_1_1_1_1_1|2023-02-03
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac -gtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaacgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_17214730|anseriformes|united_kingdom|1_1_2_1_1_1_1_1|2023-02-18
 -tga-tcttc --a-cg--g- cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
@@ -17674,6 +19042,24 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17246921|carnivora|belgium|1_1_2_1_1_1_1_1|2023-03-02
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_17267157|charadriiformes|netherlands|1_1_2_1_1_1_1_1|2023-03-03
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -17746,6 +19132,24 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17512128|anseriformes|austria|1_1_2_1_1_1_1_1|2022-12-28
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctatggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_17514126|anseriformes|austria|1_1_2_1_1_1_1_1|2023-01-04
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -17758,6 +19162,24 @@ gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
 tctcacaggc agatagccac cacaaccaac ccactaatca gacatgaaaa cagaatggta
 ttggccagta ctactgctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
 gaagccatgg aggttgctag tcaggctagg caaatggtgc aagcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17514127|pelecaniformes|austria|1_1_2_1_1_1_1_1|2023-01-04
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
 actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
 caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
 agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
@@ -18322,6 +19744,24 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17514173|charadriiformes|austria|1_1_2_1_1_1_1_1|2023-01-30
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_17514172|charadriiformes|austria|1_1_2_1_1_1_1_1|2023-01-24
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -18369,6 +19809,24 @@ accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac agtgaccgca
 gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
 tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
 ttggccagta ctacggctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17514178|charadriiformes|austria|1_1_2_1_1_1_1_1|2023-03-20
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
 gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
 actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
 caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
@@ -18502,6 +19960,24 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17514169|pelecaniformes|austria|1_1_2_1_1_1_1_1|2023-02-28
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_17514137|pelecaniformes|austria|1_1_2_1_1_1_1_1|2023-01-20
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -18628,6 +20104,132 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17951056|carnivora|poland|1_1_2_1_1_1_1_1|2023-06-19
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc aaatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17951055|carnivora|poland|1_1_2_1_1_1_1_1|2023-06-20
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc aaatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17951054|carnivora|poland|1_1_2_1_1_1_1_1|2023-06-15
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc aaatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17951053|carnivora|poland|1_1_2_1_1_1_1_1|2023-06-22
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc aaatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17951052|carnivora|poland|1_1_2_1_1_1_1_1|2023-06-22
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc aaatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17951051|carnivora|poland|1_1_2_1_1_1_1_1|2023-06-22
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc aaatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17950995|carnivora|poland|1_1_2_1_1_1_1_1|2023-06-22
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc aaatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_17959737|environment|poland|1_1_2_1_1_1_1_1|2023-06-09
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -18664,7 +20266,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|2344b|EPI_ISL_18032166|anseriformes|poland|NA|2023-01-10
+>H5N1|2344b|EPI_ISL_18032166|anseriformes|poland|1_1_2_1_1_1_1_1|2023-01-10
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -18682,7 +20284,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|NA|EPI_ISL_18032171|anseriformes|poland|NA|2023-01-10
+>H5N1|2344b|EPI_ISL_18032171|anseriformes|poland|1_1_2_1_1_1_1_1|2023-01-10
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -18700,7 +20302,25 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|2344b|EPI_ISL_18032444|anseriformes|poland|NA|2023-01-16
+>H5N1|2344b|EPI_ISL_18032204|anseriformes|poland|1_1_2_1_1_1_1_1|2023-01-16
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_18032444|anseriformes|poland|1_1_2_1_1_1_1_1|2023-01-16
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -18718,7 +20338,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgaa
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|NA|EPI_ISL_18032445|anseriformes|poland|NA|2023-02-14
+>H5N1|2344b|EPI_ISL_18032445|anseriformes|poland|1_1_2_1_1_1_1_1|2023-02-14
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -18772,7 +20392,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|2344b|EPI_ISL_18033134|galliformes|poland|NA|2022-12-14
+>H5N1|2344b|EPI_ISL_18033134|galliformes|poland|1_1_2_1_1_1_1_1|2022-12-14
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -18780,6 +20400,24 @@ ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
 caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
 aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
 accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggt-actgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_18033137|anseriformes|poland|1_1_2_1_1_1_1_1|2022-12-16
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
 gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
 tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
 ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
@@ -19006,7 +20644,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|2344b|EPI_ISL_18033160|accipitriformes|poland|NA|2022-12-28
+>H5N1|2344b|EPI_ISL_18033160|accipitriformes|poland|1_1_2_1_1_1_1_1|2022-12-28
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -19024,7 +20662,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|2344b|EPI_ISL_18033161|anseriformes|poland|NA|2022-12-25
+>H5N1|2344b|EPI_ISL_18033161|anseriformes|poland|1_1_2_1_1_1_1_1|2022-12-25
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -19042,7 +20680,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|2344b|EPI_ISL_18033162|anseriformes|poland|NA|2023-01-04
+>H5N1|2344b|EPI_ISL_18033162|anseriformes|poland|1_1_2_1_1_1_1_1|2023-01-04
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -19058,6 +20696,24 @@ actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
 caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
 agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_18033163|anseriformes|poland|1_1_2_1_1_1_1_1|2023-01-05
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+atttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_18033167|anseriformes|poland|1_1_2_1_1_1_1_1|2023-01-16
@@ -19078,7 +20734,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|2344b|EPI_ISL_18033168|anseriformes|poland|NA|2023-01-16
+>H5N1|2344b|EPI_ISL_18033168|anseriformes|poland|1_1_2_1_1_1_1_1|2023-01-16
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -19096,7 +20752,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgaa
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|2344b|EPI_ISL_18033169|anseriformes|poland|NA|2023-01-16
+>H5N1|2344b|EPI_ISL_18033169|anseriformes|poland|1_1_2_1_1_1_1_1|2023-01-16
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -19114,7 +20770,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgaa
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|2344b|EPI_ISL_18033170|anseriformes|poland|NA|2023-01-16
+>H5N1|2344b|EPI_ISL_18033170|anseriformes|poland|1_1_2_1_1_1_1_1|2023-01-16
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -19132,7 +20788,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgaa
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|NA|EPI_ISL_18033171|anseriformes|poland|NA|2023-01-17
+>H5N1|2344b|EPI_ISL_18033171|anseriformes|poland|1_1_2_1_1_1_1_1|2023-01-17
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -19150,7 +20806,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|NA|EPI_ISL_18033173|galliformes|poland|NA|2023-01-18
+>H5N1|2344b|EPI_ISL_18033172|anseriformes|poland|1_1_2_1_1_1_1_1|2023-01-17
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -19168,7 +20824,25 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|2344b|EPI_ISL_18033174|anseriformes|poland|NA|2023-01-18
+>H5N1|2344b|EPI_ISL_18033173|galliformes|poland|1_1_2_1_1_1_1_1|2023-01-18
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_18033174|anseriformes|poland|1_1_2_1_1_1_1_1|2023-01-18
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -19186,7 +20860,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgaa
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|2344b|EPI_ISL_18033175|anseriformes|poland|NA|2023-01-18
+>H5N1|2344b|EPI_ISL_18033175|anseriformes|poland|1_1_2_1_1_1_1_1|2023-01-18
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -19204,7 +20878,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgaa
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|2344b|EPI_ISL_18033176|galliformes|poland|NA|2023-01-21
+>H5N1|2344b|EPI_ISL_18033176|galliformes|poland|1_1_2_1_1_1_1_1|2023-01-21
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -19256,6 +20930,42 @@ actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
 caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
 agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgaa
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_18033179|anseriformes|poland|1_1_2_1_1_1_1_1|2023-01-23
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aagttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_18033180|anseriformes|poland|1_1_2_1_1_1_1_1|2023-01-24
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_18033181|anseriformes|poland|1_1_2_1_1_1_1_1|2023-01-31
@@ -19420,7 +21130,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|NA|EPI_ISL_18033192|anseriformes|poland|NA|2023-02-10
+>H5N1|2344b|EPI_ISL_18033192|anseriformes|poland|1_1_2_1_1_1_1_1|2023-02-10
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -19492,7 +21202,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|NA|EPI_ISL_18033197|galliformes|poland|NA|2023-02-20
+>H5N1|2344b|EPI_ISL_18033197|galliformes|poland|1_1_2_1_1_1_1_1|2023-02-20
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -19510,7 +21220,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|2344b|EPI_ISL_18033198|anseriformes|poland|NA|2023-02-23
+>H5N1|2344b|EPI_ISL_18033198|anseriformes|poland|1_1_2_1_1_1_1_1|2023-02-23
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -19582,7 +21292,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|NA|EPI_ISL_18033399|galliformes|poland|NA|2023-01-04
+>H5N1|2344b|EPI_ISL_18033399|galliformes|poland|1_1_2_1_1_1_1_1|2023-01-04
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -19600,7 +21310,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|2344b|EPI_ISL_18033400|anseriformes|poland|NA|2023-01-09
+>H5N1|2344b|EPI_ISL_18033400|anseriformes|poland|1_1_2_1_1_1_1_1|2023-01-09
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -19618,7 +21328,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|2344b|EPI_ISL_18033401|galliformes|poland|NA|2023-01-08
+>H5N1|2344b|EPI_ISL_18033401|galliformes|poland|1_1_2_1_1_1_1_1|2023-01-08
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -19630,6 +21340,24 @@ gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
 tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
 ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
 gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcaatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_18033402|anseriformes|poland|1_1_2_1_1_1_1_1|2022-12-29
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc agatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
 actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
 caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
 agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
@@ -19708,7 +21436,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gctttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggagcag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|2344b|EPI_ISL_18033409|carnivora|poland|NA|2023-01-01
+>H5N1|2344b|EPI_ISL_18033409|carnivora|poland|1_1_2_1_1_1_1_1|2023-01-01
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -19744,7 +21472,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gctttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|2344b|EPI_ISL_18033411|carnivora|poland|NA|2023-01-01
+>H5N1|2344b|EPI_ISL_18033411|carnivora|poland|1_1_2_1_1_1_1_1|2023-01-01
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -19762,7 +21490,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|2344b|EPI_ISL_18033412|carnivora|poland|NA|2023-01-01
+>H5N1|2344b|EPI_ISL_18033412|carnivora|poland|1_1_2_1_1_1_1_1|2023-01-01
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -19780,7 +21508,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|2344b|EPI_ISL_18033413|carnivora|poland|NA|2023-01-01
+>H5N1|2344b|EPI_ISL_18033413|carnivora|poland|1_1_2_1_1_1_1_1|2023-01-01
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -19798,7 +21526,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|2344b|EPI_ISL_18033414|carnivora|poland|NA|2023-07-06
+>H5N1|2344b|EPI_ISL_18033414|carnivora|poland|1_1_2_1_1_1_1_1|2023-07-06
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -19816,7 +21544,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|2344b|EPI_ISL_18033415|carnivora|poland|NA|2023-01-01
+>H5N1|2344b|EPI_ISL_18033415|carnivora|poland|1_1_2_1_1_1_1_1|2023-01-01
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -19834,7 +21562,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|2344b|EPI_ISL_18033416|carnivora|poland|NA|2023-01-01
+>H5N1|2344b|EPI_ISL_18033416|carnivora|poland|1_1_2_1_1_1_1_1|2023-01-01
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -19852,7 +21580,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|2344b|EPI_ISL_18033417|carnivora|poland|NA|2023-01-01
+>H5N1|2344b|EPI_ISL_18033417|carnivora|poland|1_1_2_1_1_1_1_1|2023-01-01
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -19870,7 +21598,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|2344b|EPI_ISL_18033418|carnivora|poland|NA|2023-01-01
+>H5N1|2344b|EPI_ISL_18033418|carnivora|poland|1_1_2_1_1_1_1_1|2023-01-01
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -19906,7 +21634,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|NA|EPI_ISL_18040892|anseriformes|poland|NA|2023-01-19
+>H5N1|2344b|EPI_ISL_18040892|anseriformes|poland|1_1_2_1_1_1_1_1|2023-01-19
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -19924,7 +21652,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|2344b|EPI_ISL_18040893|anseriformes|poland|NA|2023-01-20
+>H5N1|2344b|EPI_ISL_18040893|anseriformes|poland|1_1_2_1_1_1_1_1|2023-01-20
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -20428,7 +22156,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gta-
->H5N1|NA|EPI_ISL_18042388|anseriformes|slovenia|NA|2023-02-17
+>H5N1|2344b|EPI_ISL_18042388|anseriformes|slovenia|1_1_2_1_1_1_1_1|2023-02-17
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -20446,7 +22174,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gta-
->H5N1|NA|EPI_ISL_18042389|anseriformes|slovenia|NA|2023-02-20
+>H5N1|2344b|EPI_ISL_18042389|anseriformes|slovenia|1_1_2_1_1_1_1_1|2023-02-20
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -20482,7 +22210,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gta-
->H5N1|NA|EPI_ISL_18042391|galliformes|slovenia|NA|2023-02-21
+>H5N1|2344b|EPI_ISL_18042391|galliformes|slovenia|1_1_2_1_1_1_1_1|2023-02-21
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -20752,6 +22480,240 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga caatggtcat
 tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17956378|carnivora|poland|1_1_2_1_1_1_1_1|2023-06-21
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc aaatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17956379|carnivora|poland|1_1_2_1_1_1_1_1|2023-06-21
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc aaatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17971989|carnivora|poland|1_1_2_1_1_1_1_1|2023-06-21
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc aaatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17971990|carnivora|poland|1_1_2_1_1_1_1_1|2023-06-24
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgtag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc aaatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gctttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17971991|carnivora|poland|1_1_2_1_1_1_1_1|2023-06-24
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc aaatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17971992|carnivora|poland|1_1_2_1_1_1_1_1|2023-06-26
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc aaatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17971993|carnivora|poland|1_1_2_1_1_1_1_1|2023-06-19
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc aaatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17971994|carnivora|poland|1_1_2_1_1_1_1_1|2023-06-25
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc aaatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17971995|carnivora|poland|1_1_2_1_1_1_1_1|2023-06-25
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc aaatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17971996|carnivora|poland|1_1_2_1_1_1_1_1|2023-06-25
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggcctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc aaatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17971997|carnivora|poland|1_1_2_1_1_1_1_1|2023-06-26
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc aaatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17971998|carnivora|poland|1_1_2_1_1_1_1_1|2023-06-26
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc aaatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
+>H5N1|2344b|EPI_ISL_17978700|ciconiiformes|poland|1_1_2_1_1_1_1_1|2023-06-04
+atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
+aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
+gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
+ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag acgctttgtc
+caaaatgctc taaatggaaa tggagaccca aacaacatgg acagggcagt caaactgtac
+aagaaattga agagagagat aacattccat ggggctaaag aagttgcact cagttactca
+accggtgcac ttgccagttg tatgggtctc atatacaaca ggatggggac ggtgactgca
+gaagtggcat tgggcctagt gtgtgccacc tgtgagcaga ttgctgattc acagcatcgg
+tctcacaggc aaatagccac caccaccaac ccactaatca gacatgaaaa cagaatggtg
+ttggccagta ctacagctaa ggctatggag cagatggctg gatcgagtga gcaagcagcg
+gaagccatgg aggttgctag tcaggctagg caaatggtgc aggcgatgag gaccattgga
+actcatccta gctccagtgc cggtctgaga gatgatctcc ttgaaaattt gcaggcctac
+caaaaacgga tgggagtgca actgcagcga ttcaag--tg atcctctcgt tattgccgca
+agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
+gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
+tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
+tttgtcaaca tagagctgga gtaa
 >H5N1|2344b|EPI_ISL_18011232|accipitriformes|finland|1_1_2_1_1_1_1_1|2023-06-28
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
@@ -20860,7 +22822,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|2344b|EPI_ISL_18439514|passeriformes|belgium|NA|2023-01-27
+>H5N1|2344b|EPI_ISL_18439514|passeriformes|belgium|1_1_2_1_1_1_1_1|2023-01-27
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -20914,7 +22876,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|NA|EPI_ISL_18445712|accipitriformes|france|NA|2022-05-20
+>H5N1|2344b|EPI_ISL_18445712|accipitriformes|france|1_1_2_1_1_1_1_1|2022-05-20
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg
@@ -20932,7 +22894,7 @@ agtatcattg ggatcttgca cttgatattg tggattcttg atcgcctttt cttcaaatgc
 gtttatcgtc gccttaaata cggtttgaaa agagggcctt ctacggaagg agtacctgag
 tccatgaggg aagagtaccg gcaggaacag cagagtgctg tggatgttga cgatggtcat
 tttgtcaaca tagagctgga gtaa
->H5N1|NA|EPI_ISL_18445716|accipitriformes|france|NA|2022-05-07
+>H5N1|2344b|EPI_ISL_18445716|accipitriformes|france|1_1_2_1_1_1_1_1|2022-05-07
 atgagtcttc taaccgaggt cgaaacgtac gttctctcta tcgtcccgtc gggccccctc
 aaagccgaga tcgcgcagag acttgaagat gtctttgcag ggaagaacac cgatcttgag
 gctctcatgg aatggctaaa gacaagacca atcctgtcac ctatgactaa ggggattttg

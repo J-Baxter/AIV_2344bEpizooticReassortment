@@ -1,4 +1,4 @@
->H5N8|2344b|EPI_ISL_400027|galliformes|egypt|NA|2019-04-03
+>H5N8|2344b|EPI_ISL_400027|galliformes|egypt|3_2_3_2_3_3_2_2|2019-04-03
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg aaatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -206,7 +206,7 @@ gaaaggacga ccattatggc agcgttcaca gggaatactg agggcagaac atcagacatg
 aggactgaaa tcataagaat gatggaacgt gccagaccag aagatgtgtc cttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caatta-
->H5N8|2344b|EPI_ISL_4069650|galliformes|egypt|NA|2019-02-21
+>H5N8|2344b|EPI_ISL_4069650|galliformes|egypt|3_2_3_1_3_2_4_2|2019-02-21
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agatcagagc atcggttgga agaatggttg gtggaattgg gagattctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -388,7 +388,7 @@ gaaagggcga ccattatggc ggcgttcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_4069752|galliformes|egypt|NA|2019-02-21
+>H5N8|2344b|EPI_ISL_4069752|galliformes|egypt|3_2_3_1_3_2_1_2|2019-02-21
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agatcagagc atcggttgga agaatggttg gtggaattgg gagattctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -544,7 +544,7 @@ gaaagggcga ccattatggc ggcattcaca gggaacaccg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_4069778|anseriformes|egypt|NA|2019-02-27
+>H5N8|2344b|EPI_ISL_4069778|anseriformes|egypt|3_2_3_1_3_2_1_2|2019-02-27
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agatcagagc atcggttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -648,7 +648,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcaggac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtacga caattaa
->H5N8|2344b|EPI_ISL_4070847|galliformes|egypt|NA|2019-06-25
+>H5N8|2344b|EPI_ISL_4070847|galliformes|egypt|3_2_3_1_3_2_1_2|2019-06-25
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agatcagagc atcggttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -674,7 +674,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_9594306|galliformes|egypt|6_2_64_12_34_32_1_2|2020-04-01
+>H5N8|2344b|EPI_ISL_9594306|galliformes|egypt|7_2_5_2_5_3_1_2|2020-04-01
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactagtgg agaacgccag
 aatgccactg aaatcagagc atctgttgga aggatggttg gtggaattgg gaggttttac
 atacagatgt gcactgaact caaactcagc gattatgaag gaagactgat ccagaacagc
@@ -804,7 +804,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_4061482|galliformes|nigeria|3_2_3_1_1_2_1_2|2021-02-05
+>H5N8|2344b|EPI_ISL_4061482|galliformes|nigeria|3_2_3_1_3_2_1_2|2021-02-05
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agattagagc atcggttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaagactgat ccagaacagc
@@ -830,7 +830,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg aaggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_4061483|galliformes|nigeria|3_2_3_1_1_2_1_2|2021-03-01
+>H5N8|2344b|EPI_ISL_4061483|galliformes|nigeria|3_2_3_1_3_2_1_2|2021-03-01
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agattagagc atcggttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaagactgat ccagaacagc
@@ -908,7 +908,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 agaactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_4061490|galliformes|nigeria|3_2_3_1_1_2_1_2|2021-02-25
+>H5N8|2344b|EPI_ISL_4061490|galliformes|nigeria|3_2_3_1_3_2_1_2|2021-02-25
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agattagagc atcggttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaagactgat ccagaacagc
@@ -1350,7 +1350,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_14918892|galliformes|south_africa|2_1_1_1_1_1_1_1|2021-06-30
+>H5N1|2344b|EPI_ISL_14918892|galliformes|south_africa|1_1_1_1_1_1_1_1|2021-06-30
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agaccggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -1402,7 +1402,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_14918903|galliformes|south_africa|2_1_1_1_1_1_1_1|2021-07-19
+>H5N1|2344b|EPI_ISL_14918903|galliformes|south_africa|1_1_1_1_1_1_1_1|2021-07-19
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agaccggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -1428,7 +1428,7 @@ gaaagagcga ccattatggc ggtgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_14934317|galliformes|south_africa|2_1_1_1_1_1_1_1|2021-07-30
+>H5N1|2344b|EPI_ISL_14934317|galliformes|south_africa|1_1_1_1_1_1_1_1|2021-07-30
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agaccggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -1454,7 +1454,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_14934318|galliformes|south_africa|2_1_1_1_1_1_1_1|2021-08-09
+>H5N1|2344b|EPI_ISL_14934318|galliformes|south_africa|1_1_1_1_1_1_1_1|2021-08-09
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agaccggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -1532,7 +1532,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_14934883|galliformes|south_africa|2_1_1_1_1_1_1_1|2021-09-07
+>H5N1|2344b|EPI_ISL_14934883|galliformes|south_africa|1_1_1_1_1_1_1_1|2021-09-07
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agaccggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcacggagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -1558,7 +1558,7 @@ gaaagagcga ccattatggc ggtgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_14934884|galliformes|south_africa|2_1_1_1_1_1_1_1|2021-09-08
+>H5N1|2344b|EPI_ISL_14934884|galliformes|south_africa|1_1_1_1_1_1_1_1|2021-09-08
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agaccggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcacggagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -2494,7 +2494,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_15852625|galliformes|south_africa|2_1_1_1_1_1_1_1|2022-01-24
+>H5N1|2344b|EPI_ISL_15852625|galliformes|south_africa|1_1_1_1_1_1_1_1|2022-01-24
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agaccggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -2520,7 +2520,7 @@ gaaagagcga ccattatggc ggtgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_15852626|galliformes|south_africa|2_1_1_1_1_1_1_1|2022-01-24
+>H5N1|2344b|EPI_ISL_15852626|galliformes|south_africa|1_1_1_1_1_1_1_1|2022-01-24
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agaccggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -2598,7 +2598,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaaggat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_15853010|ciconiiformes|south_africa|2_1_1_1_1_1_1_1|2022-02-08
+>H5N1|2344b|EPI_ISL_15853010|ciconiiformes|south_africa|1_1_1_1_1_1_1_1|2022-02-08
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agaccggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -2650,7 +2650,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_15853438|galliformes|south_africa|2_1_1_1_1_1_1_1|2022-02-22
+>H5N1|2344b|EPI_ISL_15853438|galliformes|south_africa|1_1_1_1_1_1_1_1|2022-02-22
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agaccggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggcttat ccagaacagc
@@ -2676,7 +2676,7 @@ gaaagagcga ccattatggc ggtgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtgagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_15853608|charadriiformes|south_africa|2_1_1_1_1_16_1_1|2022-03-21
+>H5N1|2344b|EPI_ISL_15853608|charadriiformes|south_africa|2_1_1_1_1_1_1_1|2022-03-21
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gagattctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggcttat ccagaacagc
@@ -2754,7 +2754,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa ttgtaagaat gatggaaggt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_15853835|charadriiformes|south_africa|2_1_1_1_1_16_1_1|2022-03-28
+>H5N1|2344b|EPI_ISL_15853835|charadriiformes|south_africa|2_1_1_1_1_1_1_1|2022-03-28
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggcttat ccagaacagc
@@ -2780,7 +2780,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_15853920|charadriiformes|south_africa|2_1_1_1_1_16_1_1|2022-05-10
+>H5N1|2344b|EPI_ISL_15853920|charadriiformes|south_africa|2_1_1_1_1_1_1_1|2022-05-10
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggcttat ccagaacagc
@@ -2806,7 +2806,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_15853932|sphenisciformes|south_africa|2_1_1_1_1_16_1_1|2022-07-27
+>H5N1|2344b|EPI_ISL_15853932|sphenisciformes|south_africa|2_1_1_1_1_1_1_1|2022-07-27
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggcttat ccaaaacagc
@@ -2832,7 +2832,7 @@ gaaagagcga ccattatggc ggcattcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_15853933|sphenisciformes|south_africa|2_1_1_1_1_16_1_1|2022-07-27
+>H5N1|2344b|EPI_ISL_15853933|sphenisciformes|south_africa|2_1_1_1_1_1_1_1|2022-07-27
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggcttat ccaaaacagc
@@ -2858,7 +2858,7 @@ gaaagagcga ccattatggc ggcattcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_15853934|charadriiformes|south_africa|2_1_1_1_1_16_1_1|2022-08-01
+>H5N1|2344b|EPI_ISL_15853934|charadriiformes|south_africa|2_1_1_1_1_1_1_1|2022-08-01
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggcttat ccaaaacagc
@@ -2884,7 +2884,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_15853935|galliformes|south_africa|2_1_1_1_1_1_1_1|2022-09-18
+>H5N1|2344b|EPI_ISL_15853935|galliformes|south_africa|1_1_1_1_1_1_1_1|2022-09-18
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agaccggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -2910,7 +2910,7 @@ gaaagagcga ccattatggc ggtgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_16209015|galliformes|egypt|3_2_87_1_1_87_34_50|2020-02
+>H5N8|2344b|EPI_ISL_16209015|galliformes|egypt|3_2_3_1_3_2_2_2|2020-02
 ---------- ---------- ---------- ---------- -----ggtgg ggagcgccag
 aatgccactg aaatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -2936,7 +2936,7 @@ gaaagagcaa ccattatggc ggcattcaca gggaacactg aaggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagcct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aggga----- ---------- ---------- ---------- -------
->H5N1|2344b|EPI_ISL_13048382|NA|burkina_faso|2_1_28_1_1_1_1_1|2021-12-07
+>H5N1|2344b|EPI_ISL_13048382|NA|burkina_faso|2_1_17_1_1_1_1_1|2021-12-07
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gcggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -2962,7 +2962,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_13048383|galliformes|burkina_faso|2_1_28_1_1_1_1_1|2021-12-16
+>H5N1|2344b|EPI_ISL_13048383|galliformes|burkina_faso|2_1_17_1_1_1_1_1|2021-12-16
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gcggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -2988,7 +2988,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcataagaat gatggaaagt gccaggccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_13957819|galliformes|mali|2_1_28_1_1_1_1_1|2022-03-16
+>H5N1|2344b|EPI_ISL_13957819|galliformes|mali|2_1_17_1_1_1_1_1|2022-03-16
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gcggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -3014,7 +3014,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_13957821|galliformes|mali|2_1_28_1_1_1_1_1|2022-03-16
+>H5N1|2344b|EPI_ISL_13957821|galliformes|mali|2_1_17_1_1_1_1_1|2022-03-16
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gcggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -3040,7 +3040,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_13957822|galliformes|mali|2_1_28_1_1_1_1_1|2022-03-16
+>H5N1|2344b|EPI_ISL_13957822|galliformes|mali|2_1_17_1_1_1_1_1|2022-03-16
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gcggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -3066,7 +3066,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_13957823|galliformes|mali|2_1_28_1_1_1_1_1|2022-03-16
+>H5N1|2344b|EPI_ISL_13957823|galliformes|mali|2_1_17_1_1_1_1_1|2022-03-16
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gcggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -3404,7 +3404,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 agaactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_14932914|galliformes|south_africa|2_1_1_1_1_1_1_1|2021-07-20
+>H5N1|2344b|EPI_ISL_14932914|galliformes|south_africa|1_1_1_1_1_1_1_1|2021-07-20
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agaccggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -3430,7 +3430,7 @@ gaaagagcga ccattatggc ggtgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_14933095|galliformes|south_africa|2_1_1_1_1_1_1_1|2021-07-23
+>H5N1|2344b|EPI_ISL_14933095|galliformes|south_africa|1_1_1_1_1_1_1_1|2021-07-23
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agaccggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -3456,7 +3456,7 @@ gaaagagcga ccattatggc ggtgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_14933096|galliformes|south_africa|2_1_1_1_1_1_1_1|2021-07-25
+>H5N1|2344b|EPI_ISL_14933096|galliformes|south_africa|1_1_1_1_1_1_1_1|2021-07-25
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agaccggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -3482,7 +3482,7 @@ gaaagagcga ccattatggc ggtgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_14933117|galliformes|south_africa|2_1_1_1_1_1_1_1|2021-07-26
+>H5N1|2344b|EPI_ISL_14933117|galliformes|south_africa|1_1_1_1_1_1_1_1|2021-07-26
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agaccggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -3508,7 +3508,7 @@ gaaagagcga ccattatggc ggtgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_14937233|galliformes|egypt|3_2_3_54_1_89_1_52|2021-03-03
+>H5N8|2344b|EPI_ISL_14937233|galliformes|egypt|3_2_3_1_3_2_1_2|2021-03-03
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agatcagagc atcggttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -3898,7 +3898,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_14933916|galliformes|south_africa|2_1_1_1_1_1_1_1|2021-07-29
+>H5N1|2344b|EPI_ISL_14933916|galliformes|south_africa|1_1_1_1_1_1_1_1|2021-07-29
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agaccggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -3924,7 +3924,7 @@ gaaagagcga ccattatggc ggtgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_14933725|galliformes|south_africa|2_1_1_1_1_1_1_1|2021-07-28
+>H5N1|2344b|EPI_ISL_14933725|galliformes|south_africa|1_1_1_1_1_1_1_1|2021-07-28
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agaccggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -3950,7 +3950,7 @@ gaaagagcga ccattatggc ggtgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_14933723|galliformes|south_africa|2_1_1_1_1_1_1_1|2021-07-28
+>H5N1|2344b|EPI_ISL_14933723|galliformes|south_africa|1_1_1_1_1_1_1_1|2021-07-28
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agaccggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -3976,7 +3976,7 @@ gaaagagcga ccattatggc ggtgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_14933721|galliformes|south_africa|2_1_1_1_1_1_1_1|2021-07-27
+>H5N1|2344b|EPI_ISL_14933721|galliformes|south_africa|1_1_1_1_1_1_1_1|2021-07-27
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agaccggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -4002,7 +4002,7 @@ gaaagagcga ccattatggc ggtgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_14933695|galliformes|south_africa|2_1_1_1_1_1_1_1|2021-07-26
+>H5N1|2344b|EPI_ISL_14933695|galliformes|south_africa|1_1_1_1_1_1_1_1|2021-07-26
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agaccggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -4054,7 +4054,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_16675872|struthioniformes|south_africa|71_1_93_56_1_91_1_54|2022-11-21
+>H5N1|2344b|EPI_ISL_16675872|struthioniformes|south_africa|2_1_1_1_1_1_1_1|2022-11-21
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -4080,7 +4080,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaacg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_17069180|sphenisciformes|south_africa|2_1_1_1_1_16_1_1|2022-09-20
+>H5N1|2344b|EPI_ISL_17069180|sphenisciformes|south_africa|2_1_1_1_1_1_1_1|2022-09-20
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggcttat ccaaaacagc
@@ -4106,7 +4106,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattga
->H5N1|2344b|EPI_ISL_17638491|galliformes|niger|2_1_1_1_1_1_1_1|2022-12-14
+>H5N1|2344b|EPI_ISL_17638491|galliformes|niger|17_1_1_1_1_1_1_1|2022-12-14
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactagtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -4132,7 +4132,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 agaactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaacg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_17638492|galliformes|niger|2_1_1_1_1_1_1_1|2022-12-18
+>H5N1|2344b|EPI_ISL_17638492|galliformes|niger|17_1_1_1_1_1_1_1|2022-12-18
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactagtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -4158,7 +4158,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 agaactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaacg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_17638493|galliformes|niger|2_1_1_1_1_1_1_1|2023-01-12
+>H5N1|2344b|EPI_ISL_17638493|galliformes|niger|17_1_1_1_1_1_1_1|2023-01-12
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactagtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -4184,7 +4184,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 agaactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaacg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_17638495|anseriformes|niger|2_1_1_1_1_1_1_1|2023-01-12
+>H5N1|2344b|EPI_ISL_17638495|anseriformes|niger|17_1_1_1_1_1_1_1|2023-01-12
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactagtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -4210,7 +4210,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaacg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_17638496|galliformes|niger|2_1_1_1_1_1_1_1|2023-01-17
+>H5N1|2344b|EPI_ISL_17638496|galliformes|niger|17_1_1_1_1_1_1_1|2023-01-17
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactagtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -4236,7 +4236,7 @@ gaaagagcga ccattatggc -gcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaacg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_17638498|galliformes|niger|2_1_1_1_1_1_1_1|2023-01-23
+>H5N1|2344b|EPI_ISL_17638498|galliformes|niger|17_1_1_1_1_1_1_1|2023-01-23
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactagtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -4262,7 +4262,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 agaactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaacg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_17638499|anseriformes|niger|2_1_1_1_1_1_1_1|2023-01-28
+>H5N1|2344b|EPI_ISL_17638499|anseriformes|niger|17_1_1_1_1_1_1_1|2023-01-28
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactagtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -4288,7 +4288,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 agaactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaacg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_17638500|galliformes|niger|2_1_1_1_1_1_1_1|2023-01-28
+>H5N1|2344b|EPI_ISL_17638500|galliformes|niger|17_1_1_1_1_1_1_1|2023-01-28
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactagtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -4314,7 +4314,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 agaactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaacg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_17638501|galliformes|niger|2_1_1_1_1_1_1_1|2023-02-02
+>H5N1|2344b|EPI_ISL_17638501|galliformes|niger|17_1_1_1_1_1_1_1|2023-02-02
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactagtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -4340,7 +4340,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 agaactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaacg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_17638502|galliformes|niger|2_1_1_1_1_1_1_1|2023-02-02
+>H5N1|2344b|EPI_ISL_17638502|galliformes|niger|17_1_1_1_1_1_1_1|2023-02-02
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactagtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -4366,7 +4366,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 agaactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaacg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_17638503|anseriformes|niger|2_1_1_1_1_1_1_1|2023-02-06
+>H5N1|2344b|EPI_ISL_17638503|anseriformes|niger|17_1_1_1_1_1_1_1|2023-02-06
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactagtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -4392,7 +4392,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 agaactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaacg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_17638504|galliformes|niger|2_1_1_1_1_1_1_1|2023-02-10
+>H5N1|2344b|EPI_ISL_17638504|galliformes|niger|17_1_1_1_1_1_1_1|2023-02-10
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactagtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -4418,7 +4418,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 agaactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaacg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_17638505|galliformes|niger|2_1_1_1_1_1_1_1|2023-02-14
+>H5N1|2344b|EPI_ISL_17638505|galliformes|niger|17_1_1_1_1_1_1_1|2023-02-14
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactagtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -4444,7 +4444,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 agaactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaacg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_16676447|charadriiformes|south_africa|2_1_1_1_1_16_1_1|2022-06-17
+>H5N1|2344b|EPI_ISL_16676447|charadriiformes|south_africa|2_1_1_1_1_1_1_1|2022-06-17
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggcttat ccagaacagc
@@ -4496,7 +4496,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 agaactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_17071927|sphenisciformes|south_africa|2_1_1_1_1_16_1_1|2022-09-28
+>H5N1|2344b|EPI_ISL_17071927|sphenisciformes|south_africa|2_1_1_1_1_1_1_1|2022-09-28
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggcttat ccaaaacagc
@@ -4522,7 +4522,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgagcc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_17071932|sphenisciformes|south_africa|2_1_1_1_1_16_1_1|2022-10-11
+>H5N1|2344b|EPI_ISL_17071932|sphenisciformes|south_africa|2_1_1_1_1_1_1_1|2022-10-11
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggcttat ccaaaacagc
@@ -4548,7 +4548,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_17071937|sphenisciformes|south_africa|2_1_1_1_1_16_1_1|2022-10-28
+>H5N1|2344b|EPI_ISL_17071937|sphenisciformes|south_africa|2_1_1_1_1_1_1_1|2022-10-28
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggcttat ccaaaacagc
@@ -4574,7 +4574,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_17071943|sphenisciformes|south_africa|2_1_1_1_1_16_1_1|2022-11-04
+>H5N1|2344b|EPI_ISL_17071943|sphenisciformes|south_africa|2_1_1_1_1_1_1_1|2022-11-04
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggcttat ccaaaacagc
@@ -4600,7 +4600,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_17072111|sphenisciformes|south_africa|2_1_1_1_1_16_1_1|2022-11-07
+>H5N1|2344b|EPI_ISL_17072111|sphenisciformes|south_africa|2_1_1_1_1_1_1_1|2022-11-07
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggcttat ccaaaacagc
@@ -5068,7 +5068,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 agaactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_17414602|NA|nigeria|3_2_3_1_1_2_1_2|2021-02-02
+>H5N8|2344b|EPI_ISL_17414602|NA|nigeria|3_2_3_1_3_2_1_2|2021-02-02
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agattagagc atcggttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaagactgat ccagaacagc
@@ -5094,7 +5094,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg aaggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_17414604|NA|nigeria|3_2_3_1_1_2_1_2|2021-02-12
+>H5N8|2344b|EPI_ISL_17414604|NA|nigeria|3_2_3_1_3_2_1_2|2021-02-12
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agattagagc atcggttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaagactgat ccagaacagc
@@ -5120,7 +5120,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg aaggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_17414605|NA|nigeria|3_2_3_1_1_2_1_2|2021-02-19
+>H5N8|2344b|EPI_ISL_17414605|NA|nigeria|3_2_3_1_3_2_1_2|2021-02-19
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agattagagc atcggttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaagactgat ccagaacagc
@@ -5146,7 +5146,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg aaggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_17414606|NA|nigeria|3_2_3_1_1_2_1_2|2021-02-25
+>H5N8|2344b|EPI_ISL_17414606|NA|nigeria|3_2_3_1_3_2_1_2|2021-02-25
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agattagagc atcggttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaagactgat ccagaacagc
@@ -5172,7 +5172,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg aaggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_17414607|NA|nigeria|3_2_3_1_1_2_1_2|2021-02-26
+>H5N8|2344b|EPI_ISL_17414607|NA|nigeria|3_2_3_1_3_2_1_2|2021-02-26
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agattagagc atcggttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaagactgat ccagaacagc
@@ -5380,7 +5380,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 agaactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccaggga
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaacg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_17414616|galliformes|nigeria|2_1_1_1_1_53_1_1|2022-01-07
+>H5N1|2344b|EPI_ISL_17414616|galliformes|nigeria|2_1_1_1_1_1_1_1|2022-01-07
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -6212,7 +6212,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atcagacatg
 agaactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaacg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_17414649|galliformes|nigeria|2_1_1_1_1_53_1_60|2021-12-16
+>H5N1|2344b|EPI_ISL_17414649|galliformes|nigeria|2_1_1_1_1_1_1_1|2021-12-16
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -6446,7 +6446,7 @@ gaaagagcga ccatcatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 agaactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_17414659|galliformes|nigeria|3_2_3_1_1_2_1_2|2021-02-05
+>H5N8|2344b|EPI_ISL_17414659|galliformes|nigeria|3_2_3_1_3_2_1_2|2021-02-05
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agattagagc atcggttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaagactgat ccagaacagc
@@ -6472,7 +6472,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg aaggcagaac gtccgacatg
 aggactgaaa tcataagaat tatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_17414660|galliformes|nigeria|3_2_3_1_1_2_1_2|2021-02-20
+>H5N8|2344b|EPI_ISL_17414660|galliformes|nigeria|3_2_3_1_3_2_1_2|2021-02-20
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agattagagc atcggttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaagactgat ccagaacagc
@@ -6628,7 +6628,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 agaactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N2|2344b|EPI_ISL_17414667|galliformes|nigeria|2_1_1_1_1_95_36_1|2021-12-28
+>H5N2|2344b|EPI_ISL_17414667|galliformes|nigeria|2_1_1_1_1_28_6_1|2021-12-28
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactagtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -7668,7 +7668,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatcctg agggcagaac atcagacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaaag aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_13048381|NA|burkina_faso|NA|2021-12-08
+>H5N1|NA|EPI_ISL_13048381|NA|burkina_faso|NA|2021-12-08
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gcggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -7694,7 +7694,7 @@ gaaagagcga ccattatggc ggcattcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcataagaat gatggaaagt gccaggccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_17212547|anseriformes|united_kingdom|NA|2020-12-03
+>H5N1|2344b|EPI_ISL_17212547|anseriformes|united_kingdom|2_1_1_1_1_1_1_1|2020-12-03
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -7720,7 +7720,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_7753347|charadriiformes|germany|NA|2021-10-21
+>H5N1|NA|EPI_ISL_7753347|charadriiformes|germany|NA|2021-10-21
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaacatgaag gaaggctgat ccagaacagc
@@ -7746,7 +7746,7 @@ gagagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_14901700|anseriformes|egypt|NA|2021-02-20
+>H5N8|NA|EPI_ISL_14901700|anseriformes|egypt|NA|2021-02-20
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agatcagagc atcggttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -7772,7 +7772,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc cttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggaatatga caattaa
->NA|2344b|EPI_ISL_4070377|anseriformes|egypt|NA|2019-02-27
+>NA|NA|EPI_ISL_4070377|anseriformes|egypt|NA|2019-02-27
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agatcagagc atcggttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -7798,7 +7798,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaaagcag gggagtatga caattaa
->H5N8|2344b|EPI_ISL_4070940|galliformes|egypt|NA|2019-06-25
+>H5N8|NA|EPI_ISL_4070940|galliformes|egypt|NA|2019-06-25
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agatcagagc atcggttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -7824,7 +7824,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_9594302|galliformes|egypt|NA|2018-01-14
+>H5N8|NA|EPI_ISL_9594302|galliformes|egypt|NA|2018-01-14
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgctactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -7850,7 +7850,7 @@ gaaagagtga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccaaggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_297235|galliformes|russia|NA|2017-11-17
+>H5N8|NA|EPI_ISL_297235|galliformes|russia|NA|2017-11-17
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -7876,7 +7876,7 @@ gaaagagcga ccattatggc ggcattcaca ggaaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_274858|anseriformes|russia|NA|2017-02-13
+>H5N8|NA|EPI_ISL_274858|anseriformes|russia|NA|2017-02-13
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -7902,7 +7902,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_9594310|galliformes|egypt|NA|2018-02-05
+>H5N8|NA|EPI_ISL_9594310|galliformes|egypt|NA|2018-02-05
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -7928,7 +7928,7 @@ gaaagggcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_9594308|galliformes|egypt|NA|2018-02-05
+>H5N8|NA|EPI_ISL_9594308|galliformes|egypt|NA|2018-02-05
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -7954,7 +7954,7 @@ gaaagggcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_9594303|galliformes|egypt|NA|2018-02-05
+>H5N8|NA|EPI_ISL_9594303|galliformes|egypt|NA|2018-02-05
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -7980,7 +7980,7 @@ gaaagggcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_9594298|galliformes|egypt|NA|2018-02-05
+>H5N8|NA|EPI_ISL_9594298|galliformes|egypt|NA|2018-02-05
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8006,7 +8006,7 @@ gaaagggcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_9594297|galliformes|egypt|NA|2018-02-05
+>H5N8|NA|EPI_ISL_9594297|galliformes|egypt|NA|2018-02-05
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8032,7 +8032,7 @@ gaaagggcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_9594296|galliformes|egypt|NA|2018-02-05
+>H5N8|NA|EPI_ISL_9594296|galliformes|egypt|NA|2018-02-05
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8058,7 +8058,7 @@ gaaagggcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_9594294|galliformes|egypt|NA|2018-02-05
+>H5N8|NA|EPI_ISL_9594294|galliformes|egypt|NA|2018-02-05
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8084,7 +8084,7 @@ gaaagggcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_9594293|galliformes|egypt|NA|2018-02-05
+>H5N8|NA|EPI_ISL_9594293|galliformes|egypt|NA|2018-02-05
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8110,7 +8110,7 @@ gaaagggcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_9594292|galliformes|egypt|NA|2018-02-05
+>H5N8|NA|EPI_ISL_9594292|galliformes|egypt|NA|2018-02-05
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8136,7 +8136,7 @@ gaaagggcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_1121145|anseriformes|france|NA|2016-11-14
+>H5N8|NA|EPI_ISL_1121145|anseriformes|france|NA|2016-11-14
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8162,7 +8162,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_486440|anseriformes|germany|NA|2016-01-01
+>H5N8|NA|EPI_ISL_486440|anseriformes|germany|NA|2016-01-01
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8188,7 +8188,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_337151|galliformes|russia|NA|2018-08-03
+>H5N8|NA|EPI_ISL_337151|galliformes|russia|NA|2018-08-03
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8214,7 +8214,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagagt
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_320958|galliformes|russia|NA|2018-08-01
+>H5N8|NA|EPI_ISL_320958|galliformes|russia|NA|2018-08-01
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8240,7 +8240,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagagt
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtacga caattaa
->H5N8|2344b|EPI_ISL_320957|galliformes|russia|NA|2018-07-31
+>H5N8|NA|EPI_ISL_320957|galliformes|russia|NA|2018-07-31
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8266,7 +8266,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagagt
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtacga caattaa
->H5N8|2344b|EPI_ISL_320956|galliformes|russia|NA|2018-07-31
+>H5N8|NA|EPI_ISL_320956|galliformes|russia|NA|2018-07-31
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8292,7 +8292,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagagt
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtacga caattaa
->H5N8|2344b|EPI_ISL_320955|galliformes|russia|NA|2018-07-20
+>H5N8|NA|EPI_ISL_320955|galliformes|russia|NA|2018-07-20
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8318,7 +8318,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagagt
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtacga caattaa
->H5N8|2344b|EPI_ISL_320954|galliformes|russia|NA|2018-07-20
+>H5N8|NA|EPI_ISL_320954|galliformes|russia|NA|2018-07-20
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8344,7 +8344,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagagt
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtacga caattaa
->H5N8|2344b|EPI_ISL_320953|galliformes|russia|NA|2018-07-20
+>H5N8|NA|EPI_ISL_320953|galliformes|russia|NA|2018-07-20
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8370,7 +8370,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagagt
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtacga caattaa
->H5N8|2344b|EPI_ISL_320681|galliformes|russia|NA|2018-06-26
+>H5N8|NA|EPI_ISL_320681|galliformes|russia|NA|2018-06-26
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8396,7 +8396,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagagt
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtacga caattaa
->H5N1|2344b|EPI_ISL_14973339|suliformes|south_africa|NA|2021-09-14
+>H5N1|NA|EPI_ISL_14973339|suliformes|south_africa|NA|2021-09-14
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -8422,7 +8422,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_15837743|suliformes|south_africa|NA|2021-10-11
+>H5N1|NA|EPI_ISL_15837743|suliformes|south_africa|NA|2021-10-11
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -8448,7 +8448,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_14918031|pelecaniformes|south_africa|NA|2021-06-19
+>H5N1|NA|EPI_ISL_14918031|pelecaniformes|south_africa|NA|2021-06-19
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -8474,7 +8474,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_14573124|anseriformes|south_africa|NA|2021-05-13
+>H5N1|NA|EPI_ISL_14573124|anseriformes|south_africa|NA|2021-05-13
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -8500,7 +8500,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_16209016|galliformes|egypt|NA|2020-11-01
+>H5N8|NA|EPI_ISL_16209016|galliformes|egypt|NA|2020-11-01
 ---------- ---------- ---------- ---------- -----ggtgg ggagcgccag
 aatgccactg aaatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8526,7 +8526,7 @@ gaaagagcaa ccattatggc ggcattcaca gggaacactg aaggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagcct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aggga----- ---------- ---------- ---------- -------
->H5N8|2344b|EPI_ISL_379982|anseriformes|NA|NA|2016-12-15
+>H5N8|NA|EPI_ISL_379982|anseriformes|NA|NA|2016-12-15
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8552,7 +8552,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_300547|anseriformes|NA|NA|2016-12-15
+>H5N8|NA|EPI_ISL_300547|anseriformes|NA|NA|2016-12-15
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8578,7 +8578,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_285621|galliformes|egypt|NA|2017-01-01
+>H5N8|NA|EPI_ISL_285621|galliformes|egypt|NA|2017-01-01
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8604,7 +8604,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_268513|anseriformes|egypt|NA|2017-04-06
+>H5N8|NA|EPI_ISL_268513|anseriformes|egypt|NA|2017-04-06
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8630,7 +8630,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_15430045|charadriiformes|poland|NA|2016-11-02
+>H5N8|NA|EPI_ISL_15430045|charadriiformes|poland|NA|2016-11-02
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8656,7 +8656,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_14770042|anseriformes|egypt|NA|2017-06-09
+>H5N8|NA|EPI_ISL_14770042|anseriformes|egypt|NA|2017-06-09
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8682,7 +8682,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_4070259|anseriformes|denmark|NA|2016-11-19
+>H5N8|NA|EPI_ISL_4070259|anseriformes|denmark|NA|2016-11-19
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8708,7 +8708,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_4070217|charadriiformes|denmark|NA|2016-11-16
+>H5N8|NA|EPI_ISL_4070217|charadriiformes|denmark|NA|2016-11-16
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8734,7 +8734,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_4070083|charadriiformes|denmark|NA|2016-11-16
+>H5N8|NA|EPI_ISL_4070083|charadriiformes|denmark|NA|2016-11-16
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8760,7 +8760,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_4070022|accipitriformes|denmark|NA|2017-03-23
+>H5N8|NA|EPI_ISL_4070022|accipitriformes|denmark|NA|2017-03-23
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8786,7 +8786,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg aaggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_505427|galliformes|egypt|NA|2018-05-01
+>H5N8|NA|EPI_ISL_505427|galliformes|egypt|NA|2018-05-01
 ---------- --------aa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8812,7 +8812,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaat- ---------- ---------- ---------- ---------- -------
->H5N8|2344b|EPI_ISL_379983|anseriformes|NA|NA|2016-12-14
+>H5N8|NA|EPI_ISL_379983|anseriformes|NA|NA|2016-12-14
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8838,7 +8838,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_300548|anseriformes|NA|NA|2016-12-14
+>H5N8|NA|EPI_ISL_300548|anseriformes|NA|NA|2016-12-14
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8864,7 +8864,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N5|2344b|EPI_ISL_287564|anseriformes|netherlands|NA|2016-11-14
+>H5N5|NA|EPI_ISL_287564|anseriformes|netherlands|NA|2016-11-14
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8890,7 +8890,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_268672|anseriformes|netherlands|NA|2016-11-14
+>H5N8|NA|EPI_ISL_268672|anseriformes|netherlands|NA|2016-11-14
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8916,7 +8916,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_268671|anseriformes|netherlands|NA|2016-11-14
+>H5N8|NA|EPI_ISL_268671|anseriformes|netherlands|NA|2016-11-14
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8942,7 +8942,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_268670|anseriformes|netherlands|NA|2016-11-17
+>H5N8|NA|EPI_ISL_268670|anseriformes|netherlands|NA|2016-11-17
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8968,7 +8968,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_268669|anseriformes|netherlands|NA|2016-11-08
+>H5N8|NA|EPI_ISL_268669|anseriformes|netherlands|NA|2016-11-08
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -8994,7 +8994,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_268667|accipitriformes|netherlands|NA|2016-12-05
+>H5N8|NA|EPI_ISL_268667|accipitriformes|netherlands|NA|2016-12-05
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -9020,7 +9020,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_268666|unknown|NA|NA|2016-12-07
+>H5N8|NA|EPI_ISL_268666|unknown|NA|NA|2016-12-07
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -9046,7 +9046,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_268660|charadriiformes|netherlands|NA|2016-11-17
+>H5N8|NA|EPI_ISL_268660|charadriiformes|netherlands|NA|2016-11-17
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -9072,7 +9072,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_268659|charadriiformes|netherlands|NA|2016-11-17
+>H5N8|NA|EPI_ISL_268659|charadriiformes|netherlands|NA|2016-11-17
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -9098,7 +9098,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_268658|charadriiformes|netherlands|NA|2016-11-17
+>H5N8|NA|EPI_ISL_268658|charadriiformes|netherlands|NA|2016-11-17
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -9124,7 +9124,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_268656|charadriiformes|netherlands|NA|2016-11-11
+>H5N8|NA|EPI_ISL_268656|charadriiformes|netherlands|NA|2016-11-11
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -9150,7 +9150,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_268655|anseriformes|netherlands|NA|2016-11-17
+>H5N8|NA|EPI_ISL_268655|anseriformes|netherlands|NA|2016-11-17
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -9176,7 +9176,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_268654|podicipediformes|netherlands|NA|2016-11-08
+>H5N8|NA|EPI_ISL_268654|podicipediformes|netherlands|NA|2016-11-08
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -9202,7 +9202,7 @@ gaaagagcga ccattatggc ggcattcaca gggaacactg agggcagaac gtccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_12045918|columbiformes|botswana|NA|2021-08-18
+>H5N1|NA|EPI_ISL_12045918|columbiformes|botswana|NA|2021-08-18
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -9228,7 +9228,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgaa
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_18112322|galliformes|united_kingdom|NA|2021-02-10
+>H5N1|2344b|EPI_ISL_18112322|galliformes|united_kingdom|2_1_1_1_1_1_1_1|2021-02-10
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -9254,7 +9254,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_17414661|anseriformes|nigeria|NA|2021-12-28
+>H5N1|NA|EPI_ISL_17414661|anseriformes|nigeria|NA|2021-12-28
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -9280,7 +9280,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 agaactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaacg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_13658359|falconiformes|israel|NA|2022-01-02
+>H5N1|NA|EPI_ISL_13658359|falconiformes|israel|NA|2022-01-02
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agatcagagc atctgttggg agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -9306,7 +9306,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatttgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ctcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_13609610|pelecaniformes|israel|NA|2022-01-12
+>H5N1|NA|EPI_ISL_13609610|pelecaniformes|israel|NA|2022-01-12
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agatcagagc atctgttggg agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -9332,7 +9332,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatttgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ctcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_13465456|pelecaniformes|israel|NA|2021-11-29
+>H5N1|NA|EPI_ISL_13465456|pelecaniformes|israel|NA|2021-11-29
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agatcagagc atctgttggg agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -9358,7 +9358,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatttgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ctcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_13068727|gruiformes|israel|NA|2021-12-15
+>H5N1|NA|EPI_ISL_13068727|gruiformes|israel|NA|2021-12-15
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agatcagagc atctgttggg agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -9384,7 +9384,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatttgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ctcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_13477015|galliformes|israel|NA|2022-01-09
+>H5N1|NA|EPI_ISL_13477015|galliformes|israel|NA|2022-01-09
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agatcagagc atctgttggg agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaaggctgat ccagaacagc
@@ -9410,7 +9410,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatttgtc tttccagggg
 cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc ctcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_18361460|pelecaniformes|croatia|NA|2021-12-08
+>H5N1|2344b|EPI_ISL_18361460|pelecaniformes|croatia|2_1_1_1_1_1_1_1|2021-12-08
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -9436,7 +9436,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_7892492|pelecaniformes|croatia|NA|2021-12-08
+>H5N1|NA|EPI_ISL_7892492|pelecaniformes|croatia|NA|2021-12-08
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -9462,7 +9462,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_17791407|galliformes|netherlands|NA|2020-12-14
+>H5N1|2344b|EPI_ISL_17791407|galliformes|netherlands|2_1_1_1_1_1_1_1|2020-12-14
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -9488,7 +9488,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_17719670|anseriformes|bosnia_and_herzegovina|NA|2021-11-18
+>H5N1|2344b|EPI_ISL_17719670|anseriformes|bosnia_and_herzegovina|2_1_1_1_1_1_5_1|2021-11-18
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -9514,7 +9514,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_14934383|galliformes|south_africa|NA|2021-08-16
+>H5N1|NA|EPI_ISL_14934383|galliformes|south_africa|NA|2021-08-16
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -9540,7 +9540,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_14711044|galliformes|south_africa|NA|2021-06-08
+>H5N1|NA|EPI_ISL_14711044|galliformes|south_africa|NA|2021-06-08
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -9566,7 +9566,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_14643356|charadriiformes|south_africa|NA|2021-05-20
+>H5N1|NA|EPI_ISL_14643356|charadriiformes|south_africa|NA|2021-05-20
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -9592,7 +9592,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_14619775|galliformes|south_africa|NA|2021-05-18
+>H5N1|NA|EPI_ISL_14619775|galliformes|south_africa|NA|2021-05-18
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg aaatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -9618,7 +9618,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcgtaagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_10886140|accipitriformes|sweden|NA|2021-12-23
+>H5N1|NA|EPI_ISL_10886140|accipitriformes|sweden|NA|2021-12-23
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gagcatgaag gaaggctgat ccagaacagc
@@ -9644,7 +9644,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_17414640|galliformes|nigeria|NA|2021-10-16
+>H5N1|NA|EPI_ISL_17414640|galliformes|nigeria|NA|2021-10-16
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg aratcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -9670,7 +9670,7 @@ gaaagagcga ccatyatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 agaactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaayg aaggatctta tttcttcgga gacaatgcag aggagtatga ca-----
->H5N1|2344b|EPI_ISL_18509073|anseriformes|latvia|NA|2022-01-14
+>H5N1|2344b|EPI_ISL_18509073|anseriformes|latvia|2_1_1_1_1_1_1_1|2022-01-14
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaacatgaag gaaggctgat ccagaacagc
@@ -9696,7 +9696,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_18458058|galliformes|poland|NA|2021-11-11
+>H5N1|2344b|EPI_ISL_18458058|galliformes|poland|2_1_1_1_1_1_1_1|2021-11-11
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -9722,7 +9722,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_18458057|galliformes|poland|NA|2021-11-06
+>H5N1|2344b|EPI_ISL_18458057|galliformes|poland|2_1_1_1_1_1_1_1|2021-11-06
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -9748,7 +9748,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggttctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N1|2344b|EPI_ISL_18458055|galliformes|poland|NA|2021-11-03
+>H5N1|2344b|EPI_ISL_18458055|galliformes|poland|2_1_1_1_1_1_1_1|2021-11-03
 atggcgtctc aaggcaccaa acgatcctat gaacagatgg agactggtgg agagcgccag
 aatgccactg agatcagagc atctgttgga cgaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gaccatgaag gaaggctgat ccagaacagc
@@ -9774,7 +9774,7 @@ gaaagagcga ccattatggc ggcgttcaca gggaatactg agggcagaac atccgacatg
 aggactgaaa tcataagaat gatggaaagt gccagaccag aagatgtgtc tttccagggg
 cggggagtct tcgagctttc ggacgaaaag gcaacgaacc cgatcgtgcc ttcctttgac
 atgagtaatg aaggatctta tttcttcgga gacaatgcag aggagtatga caattaa
->H5N8|2344b|EPI_ISL_4061481|galliformes|nigeria|NA|2021-02-10
+>H5N8|NA|EPI_ISL_4061481|galliformes|nigeria|NA|2021-02-10
 atggcgtctc aaggcaccaa acgatcttat gaacagatgg aaactggtgg ggagcgccag
 aatgccactg agattagagc atcggttgga agaatggttg gtggaattgg gaggttctac
 atacagatgt gcactgagct caaactcagc gactatgaag gaagactgat ccagaacagc

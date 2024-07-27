@@ -48,7 +48,7 @@ ggttattctg gcattttctc tgttgaaggc aaaagctgca tcaataggtg tttttatgtg
 gaattgataa gaggaaggcc acaagagact agagtgtggt ggacctcgaa cagtattgtc
 gtattttgtg gcacttcagg tacttatgga acaggctcat ggcctgatgg ggcgaatatc
 aa-------- --------
->H5N2|2344b|EPI_ISL_1760455|anseriformes|china|22_38_22_2_6_66_1_2|2020-11-10
+>H5N2|2344b|EPI_ISL_1760455|anseriformes|china|11_9_6_2_5_18_1_2|2020-11-10
 atgaatccaa atcagaagat aataacaatt ggctctgtct ctctgaccat tgcaatagta
 tgtttcctta tgcaaattgc catcctagca acgactataa cactgcactt taagcagaat
 gaatgt---- ---------- --accaagta gtgccatgtg agccaatcat agtagagagg
@@ -823,7 +823,7 @@ ggttattctg gcattttctc tgttgaaggc aaaagctgca tcaataggtg tttttatgtg
 gaattgataa gaggaaggcc acaagagact agagtgtggt ggacctcaaa cagtattgtc
 gtattttgtg gcacttcagg tacttatgga acaggctcat ggcctgatgg ggcgaatatc
 aatttcatgc ctatataa
->H5N2|2344b|EPI_ISL_15732741|passeriformes|japan|60_1_78_1_1_78_1_1|2022-10-28
+>H5N2|2344b|EPI_ISL_15732741|passeriformes|japan|18_1_2_1_1_18_1_1|2022-10-28
 atgaatccaa atcagaagat aataacaatt ggctctgtct ctctaaccat tgcaatagta
 tgtttcctta tgcaaattgc catcctggca acgactataa cgctgcactt caagcagaat
 gaatgt---- ---------- --accaagta atgccatgtg agccaatcat agtagaaaga
@@ -848,7 +848,7 @@ ggttattctg gcattttctc tgttgaaggc aaaagctgca taaataggtg tttttatgtg
 gaattgataa gaggaaggcc acaagag--- agagtttggt ggacctcaaa cagtattgtc
 gtattttgtg gcacttcagg tacttatgga acaggctcat ggcctgatgg ggcgaatat-
 -atttcatgc ctatataa
->H5N2|NA|EPI_ISL_18284476|galliformes|japan|NA|2023-01-17
+>H5N2|2344b|EPI_ISL_18284476|galliformes|japan|18_1_2_1_1_18_1_1|2023-01-17
 atgaatccaa atcagaagat aataacaatt ggctctgtct ctctaaccat tgcaatagta
 tgtttcctta tgcaaattgc catcctggca acgactataa cgctgcactt caagcagaat
 gaatgt---- ---------- --accaagta atgccatgtg agccaatcat agtagaaaga
@@ -1923,7 +1923,7 @@ ggttattctg gcattttttc tgttgaaggc aaaagctgca tcaataggtg tttttatgtg
 gagttgataa gaggaaggcc acaagagact agagtatggt ggacctcaaa cagtattgtt
 gtattttgtg gcacttcagg tacctatgga acaggctcat ggcctgatgg ggcgaatatc
 aatttcatgc ctatataa
->H5N2|2344b|EPI_ISL_china_7|anseriformes|china|3_14_3_1_15_22_1_2|2022-01-26
+>H5N2|2344b|EPI_ISL_china_7|anseriformes|china|3_6_3_1_12_12_1_2|2022-01-26
 atgaatccaa atcagaagat aataacaatt ggctctgtct ctctaaccat tgcaatagta
 tgtttcctta tgcaaattgc cattctagca acgactataa cactgcactt caagcaaaat
 gaatgt---- ---------- --atcaagta gtgccatgtg agccaattat agtagaaagg
@@ -1948,7 +1948,7 @@ ggttattctg gcattttttc tgttgaaggc aaaagctgca tcaataggtg tttttatgtg
 gagttgataa gaggaaggcc acaagag--- agagtatggt ggacctcaaa cagtattgtc
 gtattttgtg gcacttcagg tacttatgga acaggctcat ggcctgatgg ggcgaatat-
 -atttcatgc ctatataa
->H5N2|2344b|EPI_ISL_china_8|anseriformes|china|3_14_3_1_15_22_1_2|2021-12-29
+>H5N2|2344b|EPI_ISL_china_8|anseriformes|china|3_6_3_1_12_12_1_2|2021-12-29
 atgaatccaa atcagaagat aataacaatt ggctctgtct ctctaaccat tgcaatagta
 tgtttcctta tgcaaattgc cattctagca acgactataa cactgcactt caagcaaaat
 gaatgt---- ---------- --atcaagta gtgccatgtg agccaattat agtagaaagg
@@ -1973,7 +1973,7 @@ ggttattctg gcattttttc tgttgaaggc aaaagctgca tcaataggtg tttttatgtg
 gagttgataa gaggaaggcc acaagag--- agagtatggt ggacctcaaa cagtattgtc
 gtattttgtg gcacttcagg tacttatgga acaggctcat ggcctgatgg ggcgaatat-
 -atttcatgc ctatataa
->H5N2|2344b|EPI_ISL_china_12|anseriformes|china|3_14_3_1_15_22_1_2|2022-01-26
+>H5N2|2344b|EPI_ISL_china_12|anseriformes|china|3_6_3_1_12_12_1_2|2022-01-26
 atgaatccaa atcagaagat aataacaatt ggctctgtct ctctaaccat tgcaatagta
 tgtttcctta tgcaaattgc cattctagca acgactataa cactgcactt caagcaaaat
 gaatgt---- ---------- --atcaagta gtgccatgtg agccaattat agtagaaagg
@@ -1998,7 +1998,7 @@ ggttattctg gcattttttc tgttgaaggc aaaagctgca tcaataggtg tttttatgtg
 gagttgataa gaggaaggcc acaagag--- agagtatggt ggacctcaaa cagtattgtc
 gtattttgtg gcacttcagg tacttatgga acaggctcat ggcctgatgg ggcgaatat-
 -atttcatgc ctatataa
->H5N2|2344b|EPI_ISL_china_9|anseriformes|china|3_14_3_1_15_22_1_1|2022-01-26
+>H5N2|2344b|EPI_ISL_china_9|anseriformes|china|3_6_3_1_12_12_1_1|2022-01-26
 atgaatccaa atcagaagat aataacaatt ggctctgtct ctctaaccat tgcaatagta
 tgtttcctta tgcaaattgc cattctagca acgactataa cactgcactt caagcaaaat
 gaatgt---- ---------- --atcaagta gtgccatgtg agccaattat agtagaaagg
@@ -2023,7 +2023,7 @@ ggttattctg gcattttttc tgttgaaggc aaaagctgca tcaataggtg tttttatgtg
 gagttgataa gaggaaggcc acaagag--- agagtatggt ggacctcaaa cagtattgtc
 gtattttgtg gcacttcagg tacttatgga acaggctcat ggcctgatgg ggcgaatat-
 -atttcatgc ctatataa
->H5N2|2344b|EPI_ISL_china_10|anseriformes|china|3_14_3_1_15_22_1_2|2022-01-26
+>H5N2|2344b|EPI_ISL_china_10|anseriformes|china|3_6_3_1_12_12_1_2|2022-01-26
 atgaatccaa atcagaagat aataacaatt ggctctgtct ctctaaccat tgcaatagta
 tgtttcctta tgcaaattgc cattctagca acgactataa cactgcactt caagcaaaat
 gaatgt---- ---------- --atcaagta gtgccatgtg agccaattat agtagaaagg
@@ -2048,7 +2048,7 @@ ggttattctg gcattttttc tgttgaaggc aaaagctgca tcaataggtg tttttatgtg
 gagttgataa gaggaaggcc acaagag--- agagtatggt ggacctcaaa cagtattgtc
 gtattttgtg gcacttcagg tacttatgga acaggctcat ggcctgatgg ggcgaatat-
 -atttcatgc ctatataa
->H5N2|2344b|EPI_ISL_china_11|anseriformes|china|3_14_3_1_15_22_1_2|2022-01-26
+>H5N2|2344b|EPI_ISL_china_11|anseriformes|china|3_6_3_1_12_12_1_2|2022-01-26
 atgaatccaa atcagaagat aataacaatt ggctctgtct ctctaaccat tgcaatagta
 tgtttcctta tgcaaattgc cattctagca acgactataa cactgcactt caagcaaaat
 gaatgt---- ---------- --atcaagta gtgccatgtg agccaattat agtagaaagg
@@ -2073,7 +2073,7 @@ ggttattctg gcattttttc tgttgaaggc aaaagctgca tcaataggtg tttttatgtg
 gagttgataa gaggaaggcc acaagag--- agagtatggt ggacctcaaa cagtattgtc
 gtattttgtg gcacttcagg tacttatgga acaggctcat ggcctgatgg ggcgaatat-
 -atttcatgc ctatataa
->H5N2|2344b|EPI_ISL_china_13|anseriformes|china|3_14_3_1_15_22_1_2|2022-01-26
+>H5N2|2344b|EPI_ISL_china_13|anseriformes|china|3_6_3_1_12_12_1_2|2022-01-26
 atgaatccaa atcagaagat aataacaatt ggctctgtct ctctaaccat tgcaatagta
 tgtttcctta tgcaaattgc cattctagca acgactataa cactgcactt caagcaaaat
 gaatgt---- ---------- --atcaagta gtgccatgtg agccaattat agtagaaagg

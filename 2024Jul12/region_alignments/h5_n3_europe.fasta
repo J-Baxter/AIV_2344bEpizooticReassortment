@@ -1,4 +1,4 @@
->H5N3|2344b|EPI_ISL_2172530|accipitriformes|netherlands|1_1_19_1_7_14_1_1|2021-02-22
+>H5N3|2344b|EPI_ISL_2172530|accipitriformes|netherlands|1_1_2_1_10_8_1_1|2021-02-22
 atgaatccaa acaagaagac aataacaatt ggtgtggtga atactactct atcaacgata
 gcccttctta ttggaattgg gaatctgatt ttcaacactg tcatacatga gaaaataggg
 gaccagcacc aacaataaca gtgcagtgat accataatca catacaacaa cactgtg-ta
@@ -22,7 +22,7 @@ gtgtcaaaca atgattggtc aggttactca gggagcttta ttgttgagaa caatggctgc
 ttccagccct gcttctacat tgaacttata cgagggaggc ccaataaaat gattttttgg
 acaagcaata gtatagttac tttctgtggg ctagacaatg aacctggatc gggaaattgg
 cctgatggtt ccaacattgg gtttatgccc aagtaa
->H5N3|2344b|EPI_ISL_2234831|falconiformes|united_kingdom|1_1_19_1_7_14_1_1|2021-01-25
+>H5N3|2344b|EPI_ISL_2234831|falconiformes|united_kingdom|1_1_2_1_10_8_1_1|2021-01-25
 atgaatccaa atcagaagac aataacaatt ggtgtggtga acaccaccct atcaacgata
 gcccttctta ttggaattgg gaatctgatt ttcaacactg tcatacatga gaaaataggg
 gaccagcacc aacaataaca ---------- ---------- ---------- ----------
@@ -46,7 +46,7 @@ gtgtcaaaca atgattggtc aggttactca gggagcttta ttgttgagaa caatggctgc
 tttcagccct gcttctacat tgaacttata cgagggaggc ccaataaaat gattttttgg
 acaagcaata gtatagttac tttctgtggg ctagacaatg aacctggatc gggaaattgg
 cctgatggtt ccaacattgg gtttatgccc aagtaa
->H5N3|2344b|EPI_ISL_11392591|falconiformes|united_kingdom|1_1_19_1_7_14_1_1|2021-01-22
+>H5N3|2344b|EPI_ISL_11392591|falconiformes|united_kingdom|1_1_2_1_10_8_1_1|2021-01-22
 atgaatccaa atcagaagac aataacaatt ggtgtggtga acaccaccct atcaacgata
 gcccttctta ttggaattgg gaatctgatt ttcaacactg tcatacatga gaaaataggg
 gaccagcacc aacaataaca gtg------- ---------- --tacaacaa cactgtg-ta
@@ -70,7 +70,7 @@ gtgtcaaaca atgattggtc aggttactca gggagcttta ttgttgagaa caatggctgc
 tttcagccct gcttctacat tgaacttata cgagggaggc ccaataaaat gattttttgg
 acaagcaata gtatagttac tttctgtggg ctagacaatg aacctggatc gggaaattgg
 cctgatggtt ccaacattgg gtttatgccc aagtaa
->H5N3|2344b|EPI_ISL_1063993|falconiformes|denmark|1_1_19_1_7_14_1_1|2021-01-01
+>H5N3|2344b|EPI_ISL_1063993|falconiformes|denmark|1_1_2_1_10_8_1_1|2021-01-01
 atgaatccaa ataagaagat aataacaatt ggtgtggtga atactaccct atcaacgata
 gcccttctta ttggaattgg gaatctgatt ttcaacactg tcatacatga gaaaataggg
 gaccagcacc aacaataaca gtgcagtgat accataatca catacaacaa cactgtg-ta
@@ -94,7 +94,7 @@ gtgtcaaaca ataattggtc aggttactca gggagcttta ttgttgagaa caatggctgc
 tttcagccct gcttctacat tgaacttata cgagggaggc ccaataaaat gattttttgg
 acaagcaata gtatagttac tttctgtggg ctagacaatg aacctggatc gggaaattgg
 cctgatggtt ccaacattgg gtttatgccc aagtaa
->H5N3|2344b|EPI_ISL_1259397|charadriiformes|france|1_1_19_1_7_14_1_1|2021-01-22
+>H5N3|2344b|EPI_ISL_1259397|charadriiformes|france|1_1_2_1_10_8_1_1|2021-01-22
 atgaatccaa ataagaagat aataacaatt ggtgtggtga atactaccct atcaacgata
 gcccttctta ttggaattgg gaatctgatt ttcaacactg tcatacatga gaaaataggg
 gaccagcacc aacaataaca gtgcagtgat accataatca catacaacaa cactgtg-ta
@@ -118,7 +118,7 @@ gtgtcaaaca atgattggtc aggttactca gggagcttta ttgttgagaa caatggctgc
 tttcagccct gcttctacat tgaacttata cgagggaggc ccaataaaat gattttttgg
 acaagcaata gtatagttac tttctgtggg ctagacaatg aacctggatc gggaaattgg
 cctgatggtt ccaacattgg gtttatgccc aagtaa
->H5N3|2344b|EPI_ISL_1205487|charadriiformes|germany|1_1_19_1_7_14_1_1|2020-12-14
+>H5N3|2344b|EPI_ISL_1205487|charadriiformes|germany|1_1_2_1_10_8_1_1|2020-12-14
 atgaatccaa atcagaagat aataacaatt ggtgtggtga atactaccct atcaacgata
 gcccttctta ttggaattgg gaatctgatt ttcaacactg tcatacatga gaaaataggg
 gaccagcacc aacaataaca gtgcagtgat accataatca catacaacaa cactgtg-ta
@@ -142,7 +142,7 @@ gtgtcaaaca atgattggtc aggttactca gggagcttta ttgttgagaa caatggctgc
 tttcagccct gcttctacat tgaacttata cgagggaggc ccaataaaat gattttttgg
 acaagcaata gtatagttac tttctgtggg ctagacaatg aacctggatc -ggaaattgg
 cctgatggtt ccaacattgg gtttatgccc aagtaa
->H5N3|2344b|EPI_ISL_1206285|charadriiformes|germany|1_1_19_1_7_14_1_1|2020-12-30
+>H5N3|2344b|EPI_ISL_1206285|charadriiformes|germany|1_1_2_1_10_8_1_1|2020-12-30
 atgaatccaa ataagaagat aataacaatt ggtgtggtga atactaccct atcaacgata
 gcccttctta ttggaattgg gaatctgatt ttcaacactg tcatacatgg gaaaataggg
 gaccagcacc aacaataaca gtgcagtgat accataatca catacaacaa cactgtg-ta
@@ -166,7 +166,7 @@ gtgtcaaaca atgattggtc aggttactca gggagcttta ttgttgagaa caatggctgc
 tttcagccct gcttctacat tgaacttata cgagggaggc ccaataaaat gattttttgg
 acaagcaata gtatagttac tttctgtggg ctagacaatg aacctggatc -ggaaattgg
 cctgatggtt ccaacattgg gtttatgccc aagtaa
->H5N3|2344b|EPI_ISL_1205485|charadriiformes|germany|1_1_19_1_7_14_1_1|2020-12-14
+>H5N3|2344b|EPI_ISL_1205485|charadriiformes|germany|1_1_2_1_10_8_1_1|2020-12-14
 atgaatccaa atcagaagat aataacaatt ggtgtggtga atactaccct atcaacgata
 gcccttctta ttggaattgg gaatctgatt ttcaacactg tcatacatga gaaaataggg
 gaccagcacc aacaataaca gtgcagtgat accataatca catacaacaa cactgtg-ta
@@ -190,7 +190,7 @@ gtgtcaaaca atgattggtc aggttactca gggagcttta ttgttgagaa caatggctgc
 tttcagccct gcttctacat tgaacttata cgagggaggc ccaataaaat gattttttgg
 acaagcaata gtatagttac tttctgtggg ctagacaatg aacctggatc -ggaaattgg
 cctgatggtt ccaacattgg gtttatgccc aagtaa
->H5N3|2344b|EPI_ISL_1205489|charadriiformes|germany|1_1_19_1_7_14_1_1|2020-12-16
+>H5N3|2344b|EPI_ISL_1205489|charadriiformes|germany|1_1_2_1_10_8_1_1|2020-12-16
 atgaatccaa atcagaagat aataacaatt ggtgtggtga atactaccct atcaacgata
 gcccttctta ttggaattgg gaatctgatt ttcaacactg tcatacatga gaaaataggg
 gaccagcacc aacaataaca gtgcagtgat accataatca catacaacaa cactgtg-ta
@@ -214,7 +214,7 @@ gtgtcaaaca atgattggtc aggttactca gggagcttta ttgttgagaa caatggctgc
 tttcagccct gcttctacat tgaacttata cgagggaggc ccaataaaat gattttttgg
 acaagcaata gtatagttac tttctgtggg ctagacaatg aacctggatc -ggaaattgg
 cctgatggtt ccaacattgg gtttatgccc aagtaa
->H5N3|2344b|EPI_ISL_1048239|accipitriformes|netherlands|1_1_19_1_7_14_1_1|2021-01-04
+>H5N3|2344b|EPI_ISL_1048239|accipitriformes|netherlands|1_1_2_1_10_8_1_1|2021-01-04
 atgaatccaa atcagaagat aataacaatt ggtgtggtga atactaccct atcaacgata
 gcccttctta ttggaattgg gaatctgatt ttcaacactg tcatacatga gaaaataggg
 gaccagcacc aacaataaca gtgcagtgat accataatca catacaacaa cactgtg-ta
@@ -238,7 +238,7 @@ gtgtcaaaca atgattggtc aggttactca gggagcttta ttgttgagaa caatggctgc
 tttcagccct gcttctacat tgaacttata cgagggaggc ccaataaaat gattttttgg
 acaagcaata gtatagttac tttctgtggg ctagacaatg aacctggatc gggaaattgg
 cctgatggtt ccaacattgg gtttatgccc aagtaa
->H5N3|2344b|EPI_ISL_1259399|charadriiformes|france|1_1_19_1_7_14_1_1|2021-01-18
+>H5N3|2344b|EPI_ISL_1259399|charadriiformes|france|1_1_2_1_10_8_1_1|2021-01-18
 atgaatccaa ataagaagat aataacaatt ggtgtggtga atactaccct atcaacgata
 gcccttctta ttggaattgg gaatctgatt ttcaacactg tcatacatga gaaaataggg
 gaccagcacc aacaataaca gtgcagtgat accataatca catacaacaa cactgtg-ta
@@ -262,7 +262,7 @@ gtgtcaaaca atgattggtc aggttactca gggagcttta ttgttgagaa caatggctgc
 tttcagccct gcttctacat tgaacttata cgagggaggc ccaataaaat gattttttgg
 acaagcaata gtatagttac tttctgtggg ctagacaatg aacctggatc gggaaattgg
 cctgatggtt ccaacattgg gtttatgccc aagtaa
->H5N3|2344b|EPI_ISL_2234807|charadriiformes|ireland|1_1_19_1_7_14_1_1|2021-01-01
+>H5N3|2344b|EPI_ISL_2234807|charadriiformes|ireland|1_1_2_1_10_8_1_1|2021-01-01
 atgaatccaa ataagaagat aataacaatt ggtgtggtga atactaccct atcaacgata
 gcccttctta ttggaattgg gaatctgatt ttcaacactg tcatacatga gaaaataggg
 gaccagcacc aacaataaca gtgcagtgat accataatca catacaacaa cactgtg-ta
@@ -286,7 +286,7 @@ gtgtcaaaca atgattggtc aggttactca gggagcttta ttgttgagaa caatggctgc
 tttcagccct gcttctacat tgaacttata cgagggaggc ccaataaaat gattttttgg
 acaagcaata gtatagttac tttctgtggg ctagacaatg aacctggatc gggaaattgg
 cctgatggtt ccaacattgg gtttatgccc aagtaa
->H5N3|2344b|EPI_ISL_2234808|charadriiformes|ireland|1_1_19_1_7_14_1_1|2021-01-01
+>H5N3|2344b|EPI_ISL_2234808|charadriiformes|ireland|1_1_2_1_10_8_1_1|2021-01-01
 atgaatccaa ataagaagat aataacaatt ggtgtggtga atactaccct atcaacgata
 gcccttctta ttggaattgg gaatctgatt ttcaacactg tcatacatga gaaaataggg
 gaccagcacc aacaataaca gtgcagtgat accataatca catacaacaa cactgtg-ta

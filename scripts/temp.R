@@ -1,4 +1,10 @@
-# Import old meta data
+# Package Dependencies
+library(tidyverse)
+library(ape)
+library(zoo)
+
+
+# Bespoke Dependencies
 MakeTipNames <- function(data){
   out <- data %>%
     unite(tipnames, 
@@ -16,6 +22,7 @@ MakeTipNames <- function(data){
   return(out)
 }
 
+
 RemoveDuplicated <- function(alignment){
   matches <- rownames(alignment) %>% 
     str_extract(., "EPI_ISL_(china_){0,1}\\d+[^.|]*") 
@@ -32,6 +39,7 @@ RemoveDuplicated <- function(alignment){
   new_alignment <- alignment[!rownames(alignment) %in% drop_seqnames,]
   return(new_alignment)
 }
+
 
 isDateError <- function(dataframe){
   out <- dataframe %>%
@@ -59,7 +67,65 @@ ReNameAlignment <- function(alignment, data){
 }
 
 
-# Import metadata
+ImputeCladeandCluster <- function(metadata, alignment, ordered = FALSE){
+  
+  seg <- metadata %>% 
+    pull(segment) %>%
+    unique()
+  
+  print(seg)
+  
+  if(ordered == FALSE){
+    tree = nj(dist.dna(alignment))
+    seqnames = tree$tip.label
+    
+  }else{
+    seqnames = rownames(alignment)
+  }
+  
+  if(!any(grepl('cluster_[a-z]{2}\\d{0,1}$', colnames(metadata)))){
+    metadata <-  metadata %>% 
+      separate_wider_delim(cluster_profile, '_', 
+                           names = paste('cluster',
+                                         tolower(c("PB2", "PB1", "PA", "HA", "NP", "NA", "M", "NS")), 
+                                         sep = '_'),
+                           cols_remove = FALSE)
+  }
+  
+  out <- metadata %>%
+    mutate(tipnames = ordered(tipnames,
+                              levels = seqnames)) %>%
+    arrange(tipnames) %>%
+    
+    # Impute clade
+    mutate(clade = case_when(
+      is.na(clade) & na.locf0(clade, fromLast = TRUE) == na.locf0(clade, fromLast = FALSE) ~ na.locf0(clade, fromLast = TRUE), 
+      .default = clade)) %>%
+    
+    # Impute cluster (column is dependent on segment)
+    rename(profile = cluster_profile) %>%
+   # rename(genome = cluster_genome) %>%
+    pivot_longer(matches('cluster_[a-z]{2}\\d{0,1}$'), 
+                 values_to = 'cluster_number',
+                 names_to = 'cluster_segment') %>%
+    mutate(cluster_segment = gsub('.*_', '',
+                                  cluster_segment)) %>%
+    mutate(segment =  gsub('_.*', '', segment)) %>%
+    mutate(cluster_segment = case_when(
+      grepl('^N[:0-9:]{0,1}$', segment, ignore.case = T) & cluster_segment == 'na' ~ tolower(segment),
+      .default = cluster_segment)) %>% 
+    filter(tolower(segment) == cluster_segment) %>%
+    mutate(cluster_number = case_when(
+      is.na(cluster_number) & na.locf0(cluster_number, fromLast = TRUE) == na.locf0(cluster_number, fromLast = FALSE) ~ na.locf0(cluster_number, fromLast = TRUE), 
+      .default = cluster_number)) %>%
+    select(-ends_with('segment'))
+  
+  
+  return(out)
+}
+
+
+# Import metadata and associated files
 geodata <- read_csv('./annotated_geodata.csv')
 birds <- read_csv('bird_taxonomy.csv')
 mammals <- read_csv('mammal_taxonomy.csv')
@@ -75,7 +141,7 @@ meta <- meta %>%
 metadatafiles <-  list.files('./2023Dec02/metadata',
                              full.names = T, 
                              pattern="csv") %>%
-  .[!grepl('n_', .)]
+  .[!grepl('n_af', .)]
 
 
 metadata <- lapply(metadatafiles,
@@ -88,7 +154,7 @@ metadata <- lapply(metadatafiles,
 #########################################################################
 # Correct metadata
 
-corrected <- lapply(metadata[c(4,9,14,31,36,41,46,51)], function(x) x %>% 
+corrected <- lapply(metadata[c(4,9,14,32,37,42,47,52)], function(x) x %>% #c(4,9,14,31,36,41,46,51)]
                       filter(grepl('[mM]aine|/nl/', isolate_name)) %>%
                       select(-c(contains('country'),
                                 contains('subdiv'))) %>% 
@@ -195,10 +261,10 @@ corrected <- lapply(metadata[c(4,9,14,31,36,41,46,51)], function(x) x %>%
 )
 
 
-metadata[c(4,9,14,31,36,41,46,51)] <-  mapply(function(x, y) x %>% 
+metadata[c(4,9,14,32,37,42,47,52)] <-  mapply(function(x, y) x %>% 
                                                 filter(!grepl('[mM]aine|/nl/', isolate_name)) %>%
                                                 bind_rows(y),
-                                              metadata[c(4,9,14,31,36,41,46,51)], 
+                                              metadata[c(4,9,14,32,37,42,47,52)], 
                                               corrected,
                                               SIMPLIFY = F)
 #########################################################################
@@ -219,13 +285,11 @@ no_duplicates_aln <- lapply(alignments, RemoveDuplicated)
 # Extract isolate ID
 
 isolate_ids <-  no_duplicates_aln %>%
-  lapply(., rownames) %>%
-  lapply(., function(x) regmatches(x, gregexpr("EPI_ISL_(china_){0,1}\\d+[^.|]*", x)) %>% unlist()) 
+  lapply(., function(x) str_extract(rownames(x), "EPI_ISL_(china_){0,1}\\d+[^.|]*")) 
 
 
 tip_dates <- no_duplicates_aln %>%
-  lapply(rownames) %>%
-  lapply(function(x) str_extract(x, '(?<=[\\|.])\\d\\d\\d\\d-\\d\\d(-\\d\\d){0,1}'))
+  lapply(function(x) str_extract(rownames(x), '(?<=[\\|.])\\d\\d\\d\\d-\\d\\d(-\\d\\d){0,1}'))
 
 # which isolate ID not in meta data
 new_isolate_ids <- mapply(function(x,y) y[!y %in% x$isolate_id],
@@ -272,28 +336,28 @@ for (i in 1:length(temp)){
              ~ mutate(.x,
                       date_parsed = ymd(date),
                       date_ymd = format(date_parsed, '%Y-%m-%d'), 
-                      date_dec = decimal_date(date_parsed),
+                      #date_dec = decimal_date(date_parsed),
                       date_ym = format(date_parsed, '%Y-%m'),
                       date_y = format(date_parsed, '%Y') )) %>% 
       map_at("dd-mm-yyyy",  
              ~ mutate(.x,
                       date_parsed = dmy(date),
                       date_ymd = format(date_parsed, '%Y-%m-%d'), 
-                      date_dec = decimal_date(date_parsed),
+                      #date_dec = decimal_date(date_parsed),
                       date_ym = format(date_parsed, '%Y-%m'),
                       date_y = format(date_parsed, '%Y') )) %>% 
       map_at("yyyy-mm",
              ~ mutate(.x,
                       date_parsed = ym(date),
                       date_ymd = NA, 
-                      date_dec = NA,
+                      #date_dec = NA,
                       date_ym = format(date_parsed,'%Y-%m') ,
                       date_y = format(date_parsed, '%Y') )) %>%
       map_at("mm-yyyy",
              ~ mutate(.x,
                       date_parsed = my(date),
                       date_ymd = NA, 
-                      date_dec = NA,
+                      #date_dec = NA,
                       date_ym = format(date_parsed,'%Y-%m') ,
                       date_y = format(date_parsed, '%Y') )) %>%
       map_at("yyyy",
@@ -301,7 +365,7 @@ for (i in 1:length(temp)){
                       date_parsed = as.POSIXlt.character(date, format = '%Y'),
                       date_ymd = NA, 
                       date_ym = NA,
-                      date_dec = NA,
+                      #date_dec = NA,
                       date_y = format(date_parsed, '%Y'))) %>%
       
       list_rbind() %>%
@@ -1657,7 +1721,7 @@ for (i in 1:length(temp)){
       dplyr::rename(
         virus_subtype = subtype,
         collection_date = date_ymd,
-        collection_datedecimal = date_dec,
+        #collection_datedecimal = date_dec,
         collection_datemonth = date_ym,
         collection_dateyear = date_y,
         collection_regionname = region,
@@ -1699,7 +1763,7 @@ for (i in 1:length(temp)){
         isolate_id,
         isolate_name,
         collection_date,
-        collection_datedecimal,
+        #collection_datedecimal,
         collection_datemonth,
         collection_dateyear,
         host_class,
@@ -1740,7 +1804,7 @@ for (i in 1:length(temp)){
                                      isolate_id = character(),
                                      isolate_name = character(),
                                      collection_date = character(),
-                                     collection_datedecimal = character(),
+                                     #collection_datedecimal = character(),
                                      collection_datemonth = character(),
                                      collection_dateyear = character(),
                                      host_class = character(),
@@ -1810,12 +1874,14 @@ new_meta_formatted <- lapply(new_meta_formatted, function(x) if(!is.null(x)){x %
                                          iso_1,
                                          "...1"))})
 
+new_clusters <- meta %>% select(c(isolate_id, starts_with('cluster'),clade))
+
 old_isolate_ids <- mapply(function(x,y) x %>% filter(isolate_id %in% y),
                           metadata,
                           isolate_ids,
-                          SIMPLIFY = F) %>% 
+                          SIMPLIFY = F) 
   
-  lapply(., function(x) x[!!rowSums(!is.na(x)),])
+  #lapply(., function(x) x[!!rowSums(!is.na(x)),])
 
         
 
@@ -1829,12 +1895,12 @@ combined_metadata <- mapply(function(x,y) list(x,y) %>%
                             new_meta_formatted,
                             SIMPLIFY = F) %>%
   lapply(., function(x) x %>%
-           select(-c(cluster_profileclass,
-                     cluster_profilecolour, 
-                     collection_tipdate,
+           select(-c( collection_tipdate,
                      segment,
                      collection_dateerror,
-                     cluster_segment, 
+                     starts_with('cluster'), 
+                     profile,
+                     genome,
                      submission_date,
                      date,
                      #date_frac,
@@ -1842,15 +1908,19 @@ combined_metadata <- mapply(function(x,y) list(x,y) %>%
                      date_format,
                      date_parsed, 
                      virus_species,
-                     week_date)) %>%
-           mutate(cluster_profile = coalesce(profile, cluster_profile)) %>%  
-           rename(cluster_genome = genome) %>%  
-           mutate(cluster_label = coalesce(profile_lab, cluster_label)) %>%
-           select(-starts_with('profile'))) %>%
+                     clade,
+                     week_date))) %>%
+           #mutate(cluster_profile = coalesce(profile, cluster_profile)) %>%  
+           #rename(cluster_genome = genome) %>%  
+           #mutate(cluster_label = coalesce(profile_lab, cluster_label)) %>%
+           #select(-starts_with('profile'))) %>%
+  lapply(., left_join, new_clusters, join_by(isolate_id == isolate_id)) %>%
+  lapply(.,function(x) x %>%
+           mutate(clade = gsub('[[:punct:]]', '', clade))) %>% 
+  
   lapply(., function(x) x %>% 
            mutate(collection_tipdate = coalesce(collection_date,collection_datemonth, collection_dateyear))) %>%
-  lapply(.,function(x) x %>%
-           mutate(clade = gsub('[[:punct:]]', '', clade))) %>%
+
   lapply(., MakeTipNames)
   
 
@@ -1867,8 +1937,8 @@ renamed_aln <- mapply(ReNameAlignment,
 
 # Segment names
 segnames <- str_split(alignmentfiles,  '_') %>% 
-  lapply(., tail, n = 3) %>% 
-  lapply(., `[`, 2) %>%
+  lapply(., tail, n = 2) %>% 
+  #lapply(., `[`, 2) %>%
   lapply(., function(x) gsub("\\..*$", "",x)) %>%
   lapply(., paste0 , collapse = '_') %>%
   unlist() %>%
@@ -1876,10 +1946,14 @@ segnames <- str_split(alignmentfiles,  '_') %>%
   gsub('na', 'n', .)
 
 
-combined_metadata_imp <- mapply(function(x,y) x %>% mutate(segment = y), combined_metadata, as.list(segnames), SIMPLIFY = F) %>%
-  lapply(., function(x) x %>% select(-cluster_number)) %>%
+combined_metadata_imp <- mapply(function(x,y) x %>%
+                                  mutate(segment = y),
+                                combined_metadata, 
+                                as.list(segnames), 
+                                SIMPLIFY = F) %>%
+  #lapply(., function(x) x %>% select(-cluster_number)) %>%
   mapply(ImputeCladeandCluster,  ., renamed_aln, SIMPLIFY = F)   %>%
-  lapply(., function(x) x %>% mutate(cluster_number = paste0('profile', str_pad(cluster_number, 3, pad = "0"))))
+  lapply(., function(x) x %>% mutate(cluster_number = paste0('cluster', str_pad(cluster_number, 3, pad = "0"))))
   
 
 #combined_metadata_imp <- combined_metadata
@@ -1888,7 +1962,8 @@ combined_metadata_imp <- mapply(function(x,y) x %>% mutate(segment = y), combine
 combined_metadata_imp_dateschecked <- combined_metadata_imp %>%
   lapply(., function(x) x %>% 
            isDateError() %>%
-           filter(!collection_dateerror))
+           filter(!collection_dateerror)) %>%
+  lapply(., function(x) x %>% rename(cluster_profile = profile))
 
 prob_seqs <- lapply(combined_metadata_imp, function(x) x %>% 
                       isDateError() %>%
