@@ -17,7 +17,7 @@ SplitAlignment <- function(alignment, data){
 metadatafiles <- list.files(path = './2024Jul12/region_metadata',
                             full.names = TRUE)
 
-summary_data <- read_csv( '2024-06-05_reassortant_summary.csv')
+summary_data <- read_csv('2024-06-05_reassortant_summary.csv')
 
 new_clusters <- meta %>% select(c(isolate_id, cluster_profile))
 metadata_dominant <- lapply(metadatafiles, read_csv, col_types = cols(collection_tipdate = col_character())) %>% 
