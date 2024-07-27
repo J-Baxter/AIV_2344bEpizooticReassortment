@@ -1,4 +1,4 @@
->H5N1|2344b|EPI_ISL_16013752|pelecaniformes|venezuela|4_1_1_1_2_1_1_8|2022-11-25
+>H5N1|2344b|EPI_ISL_16013752|pelecaniformes|venezuela|5_1_1_1_2_1_1_3|2022-11-25
 atggatgtca atccgacttt acttttctta aaagtgccag cgcaaaatgc cataagtacc
 acattccctt atactggaga tcccccatac agccatggaa cagggacagg atacacaatg
 gacacagtca acaggacaca tcaatactca gagaagggaa aatggacaac aaacacagaa
@@ -37,7 +37,7 @@ ggaattcttg aggatgaaca gatgtaccag aaatgctgca gtctattcga aaaatttttt
 cccagtagtt catacaggag accagttgga atttccagca tggtggaggc catggtgtct
 agggcccgaa tcgatgcacg cattgatttc gaatctggaa ggatcaagaa gggagagttt
 tctgagatca tgaagatctg ttccaccatt gaagagctca gacggcaaaa atag
->H5N1|2344b|EPI_ISL_17011957|pelecaniformes|chile|5_3_1_1_2_1_1_4|2022-12-06
+>H5N1|2344b|EPI_ISL_17011957|pelecaniformes|chile|4_3_1_1_2_1_1_3|2022-12-06
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -76,7 +76,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17011958|charadriiformes|chile|5_3_1_1_2_1_1_4|2022-12-07
+>H5N1|2344b|EPI_ISL_17011958|charadriiformes|chile|4_3_1_1_2_1_1_3|2022-12-07
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga --ccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaa--gga aatggacaac aaactcagaa
@@ -115,7 +115,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17011959|pelecaniformes|chile|5_3_1_1_2_1_1_4|2022-12-06
+>H5N1|2344b|EPI_ISL_17011959|pelecaniformes|chile|4_3_1_1_2_1_1_3|2022-12-06
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -154,7 +154,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17011961|pelecaniformes|chile|5_3_1_1_2_1_1_4|2022-12-05
+>H5N1|2344b|EPI_ISL_17011961|pelecaniformes|chile|4_3_1_1_2_1_1_3|2022-12-05
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga --ccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -193,7 +193,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17011962|pelecaniformes|chile|5_3_1_1_2_1_1_4|2022-12-05
+>H5N1|2344b|EPI_ISL_17011962|pelecaniformes|chile|4_3_1_1_2_1_1_3|2022-12-05
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -232,7 +232,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17011963|pelecaniformes|chile|5_3_1_1_2_1_1_4|2022-12-06
+>H5N1|2344b|EPI_ISL_17011963|pelecaniformes|chile|4_3_1_1_2_1_1_3|2022-12-06
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaa--gga aatggacaac aaactcagaa
@@ -271,7 +271,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17011964|charadriiformes|chile|5_3_1_1_2_1_1_4|2022-12-07
+>H5N1|2344b|EPI_ISL_17011964|charadriiformes|chile|4_3_1_1_2_1_1_3|2022-12-07
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaa--gga aatggacaac aaactcagaa
@@ -310,7 +310,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17012018|pelecaniformes|chile|5_3_1_1_2_1_1_4|2022-12-07
+>H5N1|2344b|EPI_ISL_17012018|pelecaniformes|chile|4_3_1_1_2_1_1_3|2022-12-07
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -349,7 +349,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17777525|suliformes|peru|5_3_1_1_2_1_1_4|2023-04-03
+>H5N1|2344b|EPI_ISL_17777525|suliformes|peru|4_3_1_1_2_1_1_3|2023-04-03
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -388,7 +388,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17777527|charadriiformes|peru|5_3_1_1_2_1_1_4|2023-03-16
+>H5N1|2344b|EPI_ISL_17777527|charadriiformes|peru|4_3_1_1_2_1_1_3|2023-03-16
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -427,7 +427,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagttca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17777528|suliformes|peru|5_3_1_1_2_1_1_4|2023-03-17
+>H5N1|2344b|EPI_ISL_17777528|suliformes|peru|4_3_1_1_2_1_1_3|2023-03-17
 atggatgtca atccggcttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -466,7 +466,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggagaagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17777529|suliformes|peru|5_3_1_1_2_1_1_4|2023-03-17
+>H5N1|2344b|EPI_ISL_17777529|suliformes|peru|4_3_1_1_2_1_1_3|2023-03-17
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -505,7 +505,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17777530|suliformes|peru|5_3_1_1_2_1_1_4|2023-03-17
+>H5N1|2344b|EPI_ISL_17777530|suliformes|peru|4_3_1_1_2_1_1_3|2023-03-17
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -544,7 +544,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacagaag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17777532|carnivora|peru|5_3_1_1_2_1_1_4|2023-03-07
+>H5N1|2344b|EPI_ISL_17777532|carnivora|peru|4_3_1_1_2_1_1_3|2023-03-07
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -583,7 +583,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17805986|galliformes|peru|5_3_1_1_2_1_1_4|2022-12-18
+>H5N1|2344b|EPI_ISL_17805986|galliformes|peru|4_3_1_1_2_1_1_3|2022-12-18
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -622,7 +622,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17805987|galliformes|peru|5_3_1_1_2_1_1_4|2022-11-18
+>H5N1|2344b|EPI_ISL_17805987|galliformes|peru|4_3_1_1_2_1_1_3|2022-11-18
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -661,7 +661,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17805988|galliformes|peru|5_3_1_1_2_1_1_4|2022-11-28
+>H5N1|2344b|EPI_ISL_17805988|galliformes|peru|4_3_1_1_2_1_1_3|2022-11-28
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -700,7 +700,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17805989|galliformes|peru|5_3_1_1_2_1_1_4|2022-12-01
+>H5N1|2344b|EPI_ISL_17805989|galliformes|peru|4_3_1_1_2_1_1_3|2022-12-01
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -739,7 +739,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17805990|galliformes|peru|5_3_1_1_2_1_1_4|2022-12-01
+>H5N1|2344b|EPI_ISL_17805990|galliformes|peru|4_3_1_1_2_1_1_3|2022-12-01
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -778,7 +778,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17805991|galliformes|peru|5_3_1_1_2_1_1_4|2022-12-03
+>H5N1|2344b|EPI_ISL_17805991|galliformes|peru|4_3_1_1_2_1_1_3|2022-12-03
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -817,7 +817,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17805994|galliformes|peru|5_3_1_1_2_1_1_4|2022-12-22
+>H5N1|2344b|EPI_ISL_17805994|galliformes|peru|4_3_1_1_2_1_1_3|2022-12-22
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatat agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -856,7 +856,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17805995|galliformes|peru|5_3_1_1_2_1_1_4|2022-12-12
+>H5N1|2344b|EPI_ISL_17805995|galliformes|peru|4_3_1_1_2_1_1_3|2022-12-12
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca aaaaaaggga aatggacaac aaactcagaa
@@ -895,7 +895,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17805996|galliformes|peru|5_3_1_1_2_1_1_4|2022-12-22
+>H5N1|2344b|EPI_ISL_17805996|galliformes|peru|4_3_1_1_2_1_1_3|2022-12-22
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatat agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -934,7 +934,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17805997|NA|peru|5_3_1_1_2_1_1_4|2022-11-22
+>H5N1|2344b|EPI_ISL_17805997|NA|peru|4_3_1_1_2_1_1_3|2022-11-22
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -973,7 +973,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17805999|carnivora|peru|5_3_1_1_2_1_1_4|2023-02-08
+>H5N1|2344b|EPI_ISL_17805999|carnivora|peru|4_3_1_1_2_1_1_3|2023-02-08
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -1012,7 +1012,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17806000|pelecaniformes|peru|5_3_1_1_2_1_1_4|2022-11-10
+>H5N1|2344b|EPI_ISL_17806000|pelecaniformes|peru|4_3_1_1_2_1_1_3|2022-11-10
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -1051,7 +1051,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17806001|galliformes|peru|5_3_1_1_2_1_1_4|2022-12-12
+>H5N1|2344b|EPI_ISL_17806001|galliformes|peru|4_3_1_1_2_1_1_3|2022-12-12
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca aaaaaaggga aatggacaac aaactcagaa
@@ -1090,7 +1090,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17806003|pelecaniformes|peru|5_3_1_1_2_1_1_4|2022-11-22
+>H5N1|2344b|EPI_ISL_17806003|pelecaniformes|peru|4_3_1_1_2_1_1_3|2022-11-22
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -1129,7 +1129,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_16891400|anseriformes|chile|5_3_1_1_2_1_1_4|2022-12-02
+>H5N1|2344b|EPI_ISL_16891400|anseriformes|chile|4_3_1_1_2_1_1_3|2022-12-02
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -1168,7 +1168,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_16891402|charadriiformes|chile|5_3_1_1_2_1_1_4|2022-12-02
+>H5N1|2344b|EPI_ISL_16891402|charadriiformes|chile|4_3_1_1_2_1_1_3|2022-12-02
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccat atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -1207,7 +1207,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17099964|pelecaniformes|peru|5_3_1_1_2_1_1_4|2022-12-01
+>H5N1|2344b|EPI_ISL_17099964|pelecaniformes|peru|4_3_1_1_2_1_1_3|2022-12-01
 atggatgtca atccga-ttt -cttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -1246,7 +1246,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17165223|pelecaniformes|peru|5_3_1_1_2_1_1_4|2022-12
+>H5N1|2344b|EPI_ISL_17165223|pelecaniformes|peru|4_3_1_1_2_1_1_3|2022-12
 atggatgtca atccga-ttt -cttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -1285,7 +1285,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17353507|galliformes|ecuador|5_3_1_1_2_1_1_4|2022-11-08
+>H5N1|2344b|EPI_ISL_17353507|galliformes|ecuador|4_3_1_1_2_1_1_3|2022-11-08
 atggatgtca atccgacttt acttttcttg aaagttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -1324,7 +1324,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17353508|galliformes|colombia|4_4_8_1_2_1_1_1|2022-11-13
+>H5N1|2344b|EPI_ISL_17353508|galliformes|colombia|5_4_9_1_2_1_1_1|2022-11-13
 atggatgtca atccgacttt acttttcttg aaagttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atacaccatg
 gacacggtca acagaacaca tcaatattca gaaaaaggga aatggacaac aaactcagaa
@@ -1363,7 +1363,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca atctattcga aaaattcttc
 cctagcagtt catacaggag gccggttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgatgcgcg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17353509|galliformes|colombia|4_4_8_1_2_1_1_1|2022-11-01
+>H5N1|2344b|EPI_ISL_17353509|galliformes|colombia|5_4_9_1_2_1_1_1|2022-11-01
 atggatgtca atccgacttt acttttcttg aaagttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atacaccatg
 gacacggtca acagaacaca tcaatattca gaaaaaggga aatggacaac aaactcagaa
@@ -1402,7 +1402,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca atctattcga aaaattcttc
 cctagcagtt catacaggag gccggttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgatgcgcg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa acag
->H5N1|2344b|EPI_ISL_17353510|galliformes|colombia|5_3_1_1_2_1_1_4|2022-11-26
+>H5N1|2344b|EPI_ISL_17353510|galliformes|colombia|4_3_1_1_2_1_1_3|2022-11-26
 atggatgtca acccgacttt acttttcttg aaagttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -1441,7 +1441,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17353838|galliformes|colombia|5_3_1_1_2_1_1_4|2022-11-18
+>H5N1|2344b|EPI_ISL_17353838|galliformes|colombia|4_3_1_1_2_1_1_3|2022-11-18
 atggatgtca atccgacttt acttttcttg aaagttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca ccagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -1480,7 +1480,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17353839|anseriformes|colombia|4_4_8_1_2_1_1_1|2022-10-09
+>H5N1|2344b|EPI_ISL_17353839|anseriformes|colombia|5_4_9_1_2_1_1_1|2022-10-09
 atggatgtca atccgacttt acttttcttg aaagttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atacaccatg
 gacacggtca acagaacaca tcaatattca gaaaaaggga aatggacaac aaactcagaa
@@ -1519,7 +1519,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca atctattcga aaaattcttc
 cctagcagtt catacaggag gccggttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgatgcgcg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17468386|unknown|chile|5_3_1_1_2_1_1_4|2023-03-24
+>H5N1|2344b|EPI_ISL_17468386|unknown|chile|4_3_1_1_2_1_1_3|2023-03-24
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -1558,7 +1558,7 @@ ggaatcattg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17660070|galliformes|peru|5_3_1_1_2_1_1_4|2022-11-11
+>H5N1|2344b|EPI_ISL_17660070|galliformes|peru|4_3_1_1_2_1_1_3|2022-11-11
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -1597,7 +1597,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17660071|galliformes|peru|5_3_1_1_2_1_1_4|2022-11-11
+>H5N1|2344b|EPI_ISL_17660071|galliformes|peru|4_3_1_1_2_1_1_3|2022-11-11
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -1636,7 +1636,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17660072|galliformes|peru|5_3_1_1_2_1_1_4|2022-11-11
+>H5N1|2344b|EPI_ISL_17660072|galliformes|peru|4_3_1_1_2_1_1_3|2022-11-11
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -1675,7 +1675,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17660073|strigiformes|peru|5_3_1_1_2_1_1_4|2022-11-11
+>H5N1|2344b|EPI_ISL_17660073|strigiformes|peru|4_3_1_1_2_1_1_3|2022-11-11
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -1714,7 +1714,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17660074|suliformes|peru|5_3_1_1_2_1_1_4|2022-11-11
+>H5N1|2344b|EPI_ISL_17660074|suliformes|peru|4_3_1_1_2_1_1_3|2022-11-11
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -2182,7 +2182,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgatttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17885915|pelecaniformes|NA|NA|2023-01-24
+>H5N1|2344b|EPI_ISL_17885915|pelecaniformes|NA|4_3_1_1_2_1_1_3|2023-01-24
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -2221,7 +2221,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgatttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17885918|pelecaniformes|chile|NA|2023-01-26
+>H5N1|2344b|EPI_ISL_17885918|pelecaniformes|chile|4_3_1_1_2_1_1_3|2023-01-26
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -2260,7 +2260,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17885924|pelecaniformes|chile|NA|2022-12-30
+>H5N1|2344b|EPI_ISL_17885924|pelecaniformes|chile|4_3_1_1_2_1_1_3|2022-12-30
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -2377,7 +2377,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17885928|pelecaniformes|chile|NA|2022-12-16
+>H5N1|2344b|EPI_ISL_17885928|pelecaniformes|chile|4_3_1_1_2_1_1_3|2022-12-16
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -2455,7 +2455,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagcgca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17885931|pelecaniformes|chile|NA|2022-12-15
+>H5N1|2344b|EPI_ISL_17885931|pelecaniformes|chile|4_3_1_1_2_1_1_3|2022-12-15
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -2494,7 +2494,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17885932|pelecaniformes|chile|NA|2023-01-20
+>H5N1|2344b|EPI_ISL_17885932|pelecaniformes|chile|4_3_1_1_2_1_1_3|2023-01-20
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -2533,7 +2533,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgatttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17885934|pelecaniformes|chile|NA|2022-12-15
+>H5N1|2344b|EPI_ISL_17885934|pelecaniformes|chile|4_3_1_1_2_1_1_3|2022-12-15
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -2572,7 +2572,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17885942|pelecaniformes|chile|NA|2022-12-09
+>H5N1|2344b|EPI_ISL_17885942|pelecaniformes|chile|4_3_1_1_2_1_1_3|2022-12-09
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -2611,7 +2611,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17885944|pelecaniformes|chile|NA|2022-12-16
+>H5N1|2344b|EPI_ISL_17885944|pelecaniformes|chile|4_3_1_1_2_1_1_3|2022-12-16
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -2845,7 +2845,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17885951|anseriformes|chile|NA|2023-01-18
+>H5N1|2344b|EPI_ISL_17885951|anseriformes|chile|4_3_1_1_2_1_1_3|2023-01-18
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -2962,7 +2962,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17885955|charadriiformes|chile|NA|2022-12-24
+>H5N1|2344b|EPI_ISL_17885955|charadriiformes|chile|4_3_1_1_2_1_1_3|2022-12-24
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -3235,7 +3235,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17885967|charadriiformes|NA|NA|2023-03-06
+>H5N1|2344b|EPI_ISL_17885967|charadriiformes|NA|4_3_1_1_2_1_1_3|2023-03-06
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -3274,7 +3274,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17885970|galliformes|chile|NA|2022-12-17
+>H5N1|2344b|EPI_ISL_17885970|galliformes|chile|4_3_1_1_2_1_1_3|2022-12-17
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -3391,7 +3391,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17885976|carnivora|chile|NA|2023-03-01
+>H5N1|2344b|EPI_ISL_17885976|carnivora|chile|4_3_1_1_2_1_1_3|2023-03-01
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -3430,7 +3430,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17885978|charadriiformes|chile|NA|2023-03-03
+>H5N1|2344b|EPI_ISL_17885978|charadriiformes|chile|4_3_1_1_2_1_1_3|2023-03-03
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -3469,7 +3469,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagga atag
->H5N1|2344b|EPI_ISL_17885980|charadriiformes|chile|NA|2022-12-30
+>H5N1|2344b|EPI_ISL_17885980|charadriiformes|chile|4_3_1_1_2_1_1_3|2022-12-30
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -3586,7 +3586,7 @@ ggaatccttg aagacgaaca gatgtatcgg aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgatttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17973443|NA|ecuador|5_3_1_1_2_1_1_4|2023-01-11
+>H5N1|2344b|EPI_ISL_17973443|NA|ecuador|4_3_1_1_2_1_1_3|2023-01-11
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -6394,7 +6394,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_18054501|charadriiformes|peru|NA|2022-11-22
+>H5N1|2344b|EPI_ISL_18054501|charadriiformes|peru|4_3_1_1_2_1_1_3|2022-11-22
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -6550,7 +6550,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_18054507|pelecaniformes|peru|NA|2022-11-24
+>H5N1|2344b|EPI_ISL_18054507|pelecaniformes|peru|4_3_1_1_2_1_1_3|2022-11-24
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -6745,7 +6745,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_18265432|charadriiformes|peru|NA|2022-11-22
+>H5N1|2344b|EPI_ISL_18265432|charadriiformes|peru|4_3_1_1_2_1_1_3|2022-11-22
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -6862,7 +6862,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_18265436|pelecaniformes|peru|NA|2022-11-24
+>H5N1|2344b|EPI_ISL_18265436|pelecaniformes|peru|4_3_1_1_2_1_1_3|2022-11-24
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -7291,7 +7291,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggatttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_16854395|pelecaniformes|venezuela|NA|2022-11-25
+>H5N1|NA|EPI_ISL_16854395|pelecaniformes|venezuela|NA|2022-11-25
 atggatgtca atccgacttt acttttctta aaagtgccag cgcaaaatgc cataagtacc
 acattccctt atactggaga tcccccatac agccatggaa cagggacagg atacacaatg
 gacacagtca acaggacaca tcaatactca gagaagggaa aatggacaac aaacacagaa
@@ -7330,7 +7330,7 @@ ggaattcttg aggatgaaca gatgtaccag aaatgctgca gtctattcga aaaatttttt
 cccagtagtt catacaggag accagttgga atttccagca tggtggaggc catggtgtct
 agggcccgaa tcgatgcacg cattgatttc gaatctggaa ggatcaagaa gggagagttt
 tctgagatca tgaagatctg ttccaccatt gaagagctca gacggcaaaa atag
->H5N1|2344b|EPI_ISL_16631973|pelecaniformes|venezuela|NA|2022-12-12
+>H5N1|NA|EPI_ISL_16631973|pelecaniformes|venezuela|NA|2022-12-12
 atggatgtca atccgacttt acttttctta aaagtgccag cgcaaaatgc cataagtacc
 acattccctt atactggaga tcccccatac agccatggaa cagggacagg atacacaatg
 gacacagtca acaggacaca tcaatactca gagaagggaa aatggacaac aaacacagaa
@@ -7369,7 +7369,7 @@ ggaattcttg aggatgaaca gatgtaccag aaatgctgca gtctattcga aaaatttttt
 cccagtagtt catacaggag accagttgga atttccagca tggtggaggc catggtgtct
 agggcccgaa tcgatgcacg cattgatttc gaatctggaa ggatcaagaa gggagagttt
 tctgagatca tgaagatctg ttccaccatt gaagagctca gacggcaaaa atag
->H5N1|2344b|EPI_ISL_18107018|anseriformes|united_states|NA|2022-09-22
+>H5N1|2344b|EPI_ISL_18107018|anseriformes|united_states|5_1_1_1_2_1_1_3|2022-09-22
 atggatgtca atccgacttt acttttctta aaagtgccag cgcaaaatgc cataagtacc
 acattccctt atactggaga tcctccatac agccatggaa cagggacagg atacacaatg
 gacacagtca acaggacaca tcaatactca gagaagggaa aatggacaac aaacacagaa
@@ -7408,7 +7408,7 @@ ggaattcttg aggatgaaca gatgtaccag aaatgctgca gtctattcga aaaatttttt
 cccagtagtt catacaggag accagttgga atttccagca tggtggaggc catggtgtct
 agggcccgaa tcgatgcacg cattgatttc gaatctggaa ggatcaagaa gggagagttt
 tctgagatca tgaagatctg ttccaccatt gaagagctca gacggcaaaa atag
->H5N1|2344b|EPI_ISL_18107047|anseriformes|united_states|NA|2022-01-25
+>H5N1|2344b|EPI_ISL_18107047|anseriformes|united_states|2_1_1_1_1_1_1_1|2022-01-25
 atggatgtca atccgacttt acttttctta aaagtgccag cgcaaaatgc cataagtacc
 acattccctt atactggaga tcctccatac agccatggaa cagggacagg atacacaatg
 gacacagtca acagaacaca tcaatactca gagaagggaa aatggacaac aaacacagaa
@@ -7447,7 +7447,7 @@ ggaattcttg aggatgaaca gatgtaccag aaatgctgca gtctattcga aaaatttttt
 cccagtagtt catacaggag accagttgga atttccagca tggtggaggc catggtgtct
 agggcccgaa tcgatgcacg cattgatttc gaatctggaa ggatcaagaa gggagagttt
 tctgagatca tgaagatctg ttccaccatt gaagagctca gacggcaaaa atag
->H5N1|2344b|EPI_ISL_18107041|anseriformes|united_states|NA|2022-01-25
+>H5N1|2344b|EPI_ISL_18107041|anseriformes|united_states|2_1_1_1_1_1_1_1|2022-01-25
 atggatgtca atccgacttt acttttctta aaagtgccag cgcaaaatgc cataagtacc
 acattccctt atactggaga tcctccatac agccatggaa cagggacagg atacacaatg
 gacacagtca acagaacaca tcaatactca gagaagggaa aatggacaac aaacacagaa
@@ -7486,7 +7486,7 @@ ggaattcttg aggatgaaca gatgtaccag aaatgctgca gtctattcga aaaatttttt
 cccagtagtt catacaggag accagttgga atttccagca tggtggaggc catggtgtct
 agggcccgaa tcgatgcacg cattgatttc gaatctggaa ggatcaagaa gggagagttt
 tctgagatca tgaagatctg ttccaccatt gaagagctca gacggcaaaa atag
->H5N1|2344b|EPI_ISL_18107035|anseriformes|united_states|NA|2022-01-25
+>H5N1|2344b|EPI_ISL_18107035|anseriformes|united_states|2_1_1_1_1_1_1_1|2022-01-25
 atggatgtca atccgacttt acttttctta aaagtgccag cgcaaaatgc cataagtacc
 acattccctt atactggaga tcctccatac agccatggaa cagggacagg atacacaatg
 gacacagtca acagaacaca tcaatactca gagaagggaa aatggacaac aaacacagaa
@@ -7525,7 +7525,7 @@ ggaattcttg aggatgaaca gatgtaccag aaatgctgca gtctattcga aaaatttttt
 cccagtagtt catacaggag accagttgga atttccagca tggtggaggc catggtgtct
 agggcccgaa tcgatgcacg cattgatttc gaatctggaa ggatcaagaa gggagagttt
 tctgagatca tgaagatctg ttccaccatt gaagagctca gacggcaaaa atag
->H5N1|2344b|EPI_ISL_18107021|anseriformes|united_states|NA|2022-01-25
+>H5N1|2344b|EPI_ISL_18107021|anseriformes|united_states|2_1_1_1_1_1_1_1|2022-01-25
 atggatgtca atccgacttt acttttctta aaagtgccag cgcaaaatgc cataagtacc
 acattccctt atactggaga tcctccatac agccatggaa cagggacagg atacacaatg
 gacacagtca acagaacaca tcaatactca gagaagggaa aatggacaac aaacacagaa
@@ -7564,7 +7564,7 @@ ggaattcttg aggatgaaca gatgtaccag aaatgctgca gtctattcga aaaatttttt
 cccagtagtt catacaggag accagttgga atttccagca tggtggaggc catggtgtct
 agggcccgaa tcgatgcacg cattgatttc gaatctggaa ggatcaagaa gggagagttt
 tctgagatca tgaagatctg ttccaccatt gaagagctca gacggcaaaa atag
->H5N1|2344b|EPI_ISL_18107020|anseriformes|united_states|NA|2022-01-25
+>H5N1|2344b|EPI_ISL_18107020|anseriformes|united_states|2_1_1_1_1_1_1_1|2022-01-25
 atggatgtca atccgacttt acttttctta aaagtgccag cgcaaaatgc cataagtacc
 acattccctt atactggaga tcctccatac agccatggaa cagggacagg atacacaatg
 gacacagtca acagaacaca tcaatactca gagaagggaa aatggacaac aaacacagaa
@@ -7603,7 +7603,7 @@ ggaattcttg aggatgaaca gatgtaccag aaatgctgca gtctattcga aaaatttttt
 cccagtagtt catacaggag accagttgga atttccagca tggtggaggc catggtgtct
 agggcccgaa tcgatgcacg cattgatttc gaatctggaa ggatcaagaa gggagagttt
 tctgagatca tgaagatctg ttccaccatt gaagagctca gacggcaaaa atag
->H5N1|2344b|EPI_ISL_18107046|anseriformes|united_states|NA|2022-01-25
+>H5N1|2344b|EPI_ISL_18107046|anseriformes|united_states|2_1_1_1_1_1_1_1|2022-01-25
 atggatgtca atccgacttt acttttctta aaagtgccag cgcaaaatgc cataagtacc
 acattccctt atactggaga tcctccatac agccatggaa cagggacagg atacacaatg
 gacacagtca acagaacaca tcaatactca gagaagggaa aatggacaac aaacacagaa
@@ -7642,7 +7642,7 @@ ggaattcttg aggatgaaca gatgtaccag aaatgctgca gtctattcga aaaatttttt
 cccagtagtt catacaggag accagttgga atttccagca tggtggaggc catggtgtct
 agggcccgaa tcgatgcacg cattgatttc gaatctggaa ggatcaagaa gggagagttt
 tctgagatca tgaagatctg ttccaccatt gaagagctca gacggcaaaa atag
->H5N1|2344b|EPI_ISL_18107055|anseriformes|united_states|NA|2022-01-30
+>H5N1|2344b|EPI_ISL_18107055|anseriformes|united_states|2_1_1_1_1_1_1_1|2022-01-30
 atggatgtca atccgacttt acttttctta aaagtgccag cgcaaaatgc cataagtacc
 acattccctt atactggaga tcctccatac agccatggaa cagggacagg atacacaatg
 gacacagtca acagaacaca tcaatactca gagaagggaa aatggacaac aaacacagaa
@@ -7681,7 +7681,7 @@ ggaattcttg aggatgaaca gatgtaccag aaatgctgca gtctattcga aaaatttttt
 cccagtagtt catacaggag accagttgga atttccagca tggtggaggc catggtgtct
 agggcccgaa tcgatgcacg cattgatttc gaatctggaa ggatcaagaa gggagagttt
 tctgagatca tgaagatctg ttccaccatt gaagagctca gacggcaaaa atag
->H5N1|2344b|EPI_ISL_18107030|anseriformes|united_states|NA|2022-01-25
+>H5N1|2344b|EPI_ISL_18107030|anseriformes|united_states|2_1_1_1_1_1_1_1|2022-01-25
 atggatgtca atccgacttt acttttctta aaagtgccag cgcaaaatgc cataagtacc
 acattccctt atactggaga tcctccatac agccatggaa cagggacagg atacacaatg
 gacacagtca acagaacaca tcaatactca gagaagggaa aatggacaac aaacacagaa
@@ -7720,7 +7720,7 @@ ggaattcttg aggatgaaca gatgtaccag aaatgctgca gtctattcga aaaatttttt
 cccagtagtt catacaggag accagttgga atttccagca tggtggaggc catggtgtct
 agggcccgaa tcgatgcacg cattgatttc gaatctggaa ggatcaagaa gggagagttt
 tctgagatca tgaagatctg ttccaccatt gaagagctca gacggcaaaa atag
->H5N1|2344b|EPI_ISL_17885929|pelecaniformes|chile|NA|2022-12-18
+>H5N1|NA|EPI_ISL_17885929|pelecaniformes|chile|NA|2022-12-18
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -7759,7 +7759,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17885921|pelecaniformes|chile|NA|2023-01-09
+>H5N1|NA|EPI_ISL_17885921|pelecaniformes|chile|NA|2023-01-09
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -7798,7 +7798,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17885925|pelecaniformes|chile|NA|2022-12-30
+>H5N1|NA|EPI_ISL_17885925|pelecaniformes|chile|NA|2022-12-30
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -7837,7 +7837,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17885969|pelecaniformes|chile|NA|2022-12-20
+>H5N1|NA|EPI_ISL_17885969|pelecaniformes|chile|NA|2022-12-20
 atggatgtca atccgacttt acttttcttg aaggttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcccccatac agccatggaa caggaacagg atataccatg
 gacacagtta acagaacaca tcagtattca gaaaaaggga aatggacaac aaactcagaa
@@ -7876,7 +7876,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca acctgttcga aaaattcttc
 cctagcagtt catacaggag gccagttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgacgcacg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_18107069|anseriformes|united_states|NA|2022-09-15
+>H5N1|2344b|EPI_ISL_18107069|anseriformes|united_states|5_4_9_1_2_1_1_1|2022-09-15
 atggatgtca atccgacttt acttttcttg aaagttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atacaccatg
 gacacggtca acagaacaca tcaatattca gaaaaaggga aatggacaac aaactcagaa
@@ -7915,7 +7915,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca atctattcga aaaattcttc
 cctagcagtt catacaggag gccggttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgatgcgcg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_18107023|anseriformes|united_states|NA|2022-09-17
+>H5N1|2344b|EPI_ISL_18107023|anseriformes|united_states|5_4_9_1_2_1_1_1|2022-09-17
 atggatgtca atccgacttt acttttcttg aaagttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atacaccatg
 gacacggtca acagaacaca tcaatattca gaaaaaggga aatggacaac aaactcagaa
@@ -7954,7 +7954,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca atctattcga aaaattcttc
 cctagcagtt catacaggag gccggttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgatgcgcg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_18107045|anseriformes|united_states|NA|2022-09-19
+>H5N1|2344b|EPI_ISL_18107045|anseriformes|united_states|5_4_9_1_2_1_1_1|2022-09-19
 atggatgtca atccgacttt acttttcttg aaagttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atacaccatg
 gacacggtca acagaacaca tcaatattca gaaaaaggga aatggacaac aaactcagaa
@@ -7993,7 +7993,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca atctattcga aaaattcttc
 cctagcagtt catacaggag gccggttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgatgcgcg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_18107024|anseriformes|united_states|NA|2022-09-17
+>H5N1|2344b|EPI_ISL_18107024|anseriformes|united_states|5_4_9_1_2_1_1_1|2022-09-17
 atggatgtca atccgacttt acttttcttg aaagttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atacaccatg
 gacacggtca acagaacaca tcaatattca gaaaaaggga aatggacaac aaactcagaa
@@ -8032,7 +8032,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca atctattcga aaaattcttc
 cctagcagtt catacaggag gccggttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgatgcgcg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17851860|galliformes|united_states|NA|2022-08-31
+>H5N1|2344b|EPI_ISL_17851860|galliformes|united_states|5_4_9_1_2_1_1_1|2022-08-31
 atggatgtca atccgacttt acttttcttg aaagttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggga caggaacagg atacaccatg
 gacacggtca acagaacaca tcaatattca gaaaaaggga aatggacaac aaactcagaa
@@ -8071,7 +8071,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca atctattcga aaaattcttc
 cctagcagtt catacaggag gccggttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgatgcgcg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17851873|galliformes|united_states|NA|2022-09-12
+>H5N1|2344b|EPI_ISL_17851873|galliformes|united_states|5_4_9_1_2_1_1_1|2022-09-12
 atggatgtca atccgacttt acttttcttg aaagttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atacaccatg
 gacacggtca acagaacaca tcaatattca gaaaaaggga aatggacaac aaactcagaa
@@ -8110,7 +8110,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca atctattcga aaaattcttc
 cctagcagtt catacaggag gccggttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgatgcgcg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17851854|galliformes|united_states|NA|2022-09-12
+>H5N1|2344b|EPI_ISL_17851854|galliformes|united_states|5_4_9_1_2_1_1_1|2022-09-12
 atggatgtca atccgacttt acttttcttg aaagttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atacaccatg
 gacacggtca acagaacaca tcaatattca gaaaaaggga aatggacaac aaactcagaa
@@ -8149,7 +8149,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca atctattcga aaaattcttc
 cctagcagtt catacaggag gccggttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgatgcgcg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17851850|anseriformes|united_states|NA|2022-08-31
+>H5N1|2344b|EPI_ISL_17851850|anseriformes|united_states|5_4_9_1_2_1_1_1|2022-08-31
 atggatgtca atccgacttt acttttcttg aaagttccag cgcaaaatgc cataagcacc
 acgttcccgt atactggaga tcctccatac agccatggga caggaacagg atacaccatg
 gacacggtca acagaacaca tcaatattca gaaaaaggga aatggacaac aaactcagaa
@@ -8188,7 +8188,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca atctattcga aaaattcttc
 cctagcagtt catacaggag gccggttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgatgcgcg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17851876|galliformes|united_states|NA|2022-11-03
+>H5N1|2344b|EPI_ISL_17851876|galliformes|united_states|5_4_9_1_2_1_1_1|2022-11-03
 atggatgtca atccgacttt acttttcttg aaagttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atacaccatg
 gacacggtca acagaacaca tcaatattca gaaaaaggga aatggacaac aaactcagaa
@@ -8227,7 +8227,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca gtctattcga aaaattcttc
 cctagcagtt catacaggag gccggttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgatgcgcg gattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17851903|galliformes|united_states|NA|2022-11-03
+>H5N1|2344b|EPI_ISL_17851903|galliformes|united_states|5_4_9_1_2_1_1_1|2022-11-03
 atggatgtca atccgacttt acttttcttg aaagttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atacaccatg
 gacacggtca acagaacaca tcaatattca gaaaaaggga aatggacaac aaactcagaa
@@ -8266,7 +8266,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca gtctattcga aaaattcttc
 cctagcagtt catacaggag gccggttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgatgcgcg gattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|2344b|EPI_ISL_17851880|galliformes|united_states|NA|2022-11-03
+>H5N1|2344b|EPI_ISL_17851880|galliformes|united_states|5_4_9_1_2_1_1_1|2022-11-03
 atggatgtca atccgacttt acttttcttg aaagttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atacaccatg
 gacacggtca acagaacaca tcaatattca gaaaaaggga aatggacaac aaactcagaa
@@ -8305,7 +8305,7 @@ ggaatccttg aagacgaaca gatgtatcaa aagtgctgca gtctattcga aaaattcttc
 cctagcagtt catacaggag gccggttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgatgcgcg gattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H3N8|2344b|EPI_ISL_16215780|anseriformes|canada|NA|2022-08-22
+>H3N8|NA|EPI_ISL_16215780|anseriformes|canada|NA|2022-08-22
 atggatgtca atccgacttt acttttcttg aaagttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atacaccatg
 gacacggtca acagaacaca tcaatattca gaaaaaggga aatggacaac aaactcagaa
@@ -8344,7 +8344,7 @@ ggaatccttg aagacgaaca gatgtaccaa aagtgctgca atctattcga aaaattcttc
 cctagcagtt catacaggag gccggttgga atttccagca tggtggaggc catggtttct
 agggcccgaa ttgatgcgcg aattgacttc gaatctggac ggattaagaa ggaggagttt
 gctgagatca tgaagatctg ttccaccatt gaagagctca gacggcagaa atag
->H5N1|NA|EPI_ISL_17394090|anseriformes|canada|NA|2022-08-19
+>H5N1|2344b|EPI_ISL_17394090|anseriformes|canada|5_4_9_1_2_1_1_1|2022-08-19
 atggatgtca atccgacttt acttttcttg aaagttccag cgcaaaatgc cataagcacc
 acattcccgt atactggaga tcctccatac agccatggaa caggaacagg atacaccatg
 gacacggtca acagaacaca tcaatattca gaaaaaggga aatggacaac aaactcagaa

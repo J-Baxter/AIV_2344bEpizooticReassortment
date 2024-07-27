@@ -1505,7 +1505,7 @@ ImputeCladeandCluster <- function(metadata, alignment, ordered = FALSE){
     seqnames = rownames(alignment)
   }
   
-  if(any(!grepl('cluster_[a-z]{2}\\d{0,1}$', colnames(metadata)))){
+  if(!any(grepl('cluster_[a-z]{2}\\d{0,1}$', colnames(metadata)))){
     metadata <-  metadata %>% 
       separate_wider_delim(cluster_profile, '_', 
                            names = paste('cluster',
