@@ -110,13 +110,15 @@ ImputeCladeandCluster <- function(metadata, alignment, ordered = FALSE){
                  names_to = 'cluster_segment') %>%
     mutate(cluster_segment = gsub('.*_', '',
                                   cluster_segment)) %>%
+    mutate(segment =  gsub('_.*', '', segment)) %>%
     mutate(cluster_segment = case_when(
       grepl('^N[:0-9:]{0,1}$', segment, ignore.case = T) & cluster_segment == 'na' ~ tolower(segment),
       .default = cluster_segment)) %>% 
     filter(tolower(segment) == cluster_segment) %>%
     mutate(cluster_number = case_when(
       is.na(cluster_number) & na.locf0(cluster_number, fromLast = TRUE) == na.locf0(cluster_number, fromLast = FALSE) ~ na.locf0(cluster_number, fromLast = TRUE), 
-      .default = cluster_number))
+      .default = cluster_number)) %>%
+    select(-ends_with('segment'))
   
   
   return(out)
@@ -1944,10 +1946,14 @@ segnames <- str_split(alignmentfiles,  '_') %>%
   gsub('na', 'n', .)
 
 
-combined_metadata_imp <- mapply(function(x,y) x %>% mutate(segment = y), combined_metadata, as.list(segnames), SIMPLIFY = F) %>%
+combined_metadata_imp <- mapply(function(x,y) x %>%
+                                  mutate(segment = y),
+                                combined_metadata, 
+                                as.list(segnames), 
+                                SIMPLIFY = F) %>%
   #lapply(., function(x) x %>% select(-cluster_number)) %>%
   mapply(ImputeCladeandCluster,  ., renamed_aln, SIMPLIFY = F)   %>%
-  lapply(., function(x) x %>% mutate(cluster_number = paste0('profile', str_pad(cluster_number, 3, pad = "0"))))
+  lapply(., function(x) x %>% mutate(cluster_number = paste0('cluster', str_pad(cluster_number, 3, pad = "0"))))
   
 
 #combined_metadata_imp <- combined_metadata
@@ -1956,7 +1962,8 @@ combined_metadata_imp <- mapply(function(x,y) x %>% mutate(segment = y), combine
 combined_metadata_imp_dateschecked <- combined_metadata_imp %>%
   lapply(., function(x) x %>% 
            isDateError() %>%
-           filter(!collection_dateerror))
+           filter(!collection_dateerror)) %>%
+  lapply(., function(x) x %>% rename(cluster_profile = profile))
 
 prob_seqs <- lapply(combined_metadata_imp, function(x) x %>% 
                       isDateError() %>%
