@@ -1,0 +1,16 @@
+tipnames	collection_regionname	collection_countryname	collection_original	host_simplifiedhost	lat	long
+H5N1|2344b|EPI_ISL_18284461|galliformes|japan|2_1_2_1_1_1_1_1|2022-10-28	eastern asia	japan	NA	galliformes-domestic	43.3824165431654	142.542521870972
+H5N1|2344b|EPI_ISL_15759951|anseriformes|netherlands|2_1_2_1_1_1_1_1|2022-10-18	western europe	netherlands	Europe / Netherlands / Oud-Albas / NA / NA	anseriformes-wild	51.9374604216783	4.46477045234472
+H5N1|2344b|EPI_ISL_15581789|anseriformes|netherlands|2_1_2_1_1_1_1_1|2022-10-12	western europe	netherlands	Europe / Netherlands / Eendenkooi Wieringen / NA / NA	anseriformes-wild	52.0617180422494	5.94466833784019
+H5N1|2344b|EPI_ISL_18815361|anseriformes|sweden|2_1_2_1_1_1_1_1|2024-01-01	northern europe	sweden	NA	anseriformes-wild	55.9474024317265	13.595146733816
+H5N1|2344b|EPI_ISL_18866886|charadriiformes|sweden|2_1_2_1_1_1_1_1|2024-01-07	northern europe	sweden	NA	charadriiformes-wild	55.9474024317265	13.595146733816
+H5N1|2344b|EPI_ISL_19001972|galliformes|sweden|2_1_2_1_1_1_1_1|2024-03-15	northern europe	sweden	NA	galliformes-domestic	55.9474024317265	13.595146733816
+H5N1|2344b|EPI_ISL_18815224|suliformes|sweden|2_1_2_1_1_1_1_1|2023-12-27	northern europe	sweden	NA	other	55.9474024317265	13.595146733816
+H5N1|2344b|EPI_ISL_7753152|anseriformes|germany|2_1_2_1_1_1_1_1|2021-10-14	western europe	germany	Europe / Germany / Schleswig-Holstein / Nordfriesland / NA	anseriformes-wild	54.1814850326718	9.81577342948134
+H5N1|2344b|EPI_ISL_18816295|anseriformes|denmark|2_1_2_1_1_1_1_1|2023-12-05	northern europe	denmark	NA	anseriformes-wild	55.9512996898935	10.0707816763207
+H5N1|2344b|EPI_ISL_10993074|anseriformes|netherlands|2_1_2_1_1_1_1_1|2022-02-14	western europe	netherlands	Europe / Netherlands / Oud Alblas / NA / NA	anseriformes-wild	51.9374604216783	4.46477045234472
+H5N1|2344b|EPI_ISL_9261744|anseriformes|netherlands|2_1_2_1_1_1_1_1|2022-01-11	western europe	netherlands	Europe / Netherlands / Provincie Noord-Holland / Normerven / NA	anseriformes-wild	52.5811544669078	4.87272777813315
+H5N1|2344b|EPI_ISL_19033549|galliformes|poland|2_1_2_1_1_1_1_1|2024-02-12	eastern europe	poland	NA	galliformes-domestic	52.1928452950358	15.3424757324533
+H5N1|2344b|EPI_ISL_16115054|accipitriformes|denmark|2_1_2_1_1_1_1_1|2022-08-30	northern europe	denmark	Europe / Denmark / Region Syddanmark / Sonderborg Kommune / NA	other	55.3568797999445	9.45020901930698
+H5N1|2344b|EPI_ISL_17731667|pelecaniformes|montenegro|2_1_2_1_1_1_1_1|2022-04-04	southern europe	montenegro	Europe / Montenegro / Skadar lake / NA / NA	other	42.1643687011219	19.1477916484943
+H5N1|2344b|EPI_ISL_18652555|phoenicopteriformes|italy|2_1_2_1_1_1_1_1|2022-11-07	southern europe	italy	NA	other	40.0842123757833	9.03040427770903

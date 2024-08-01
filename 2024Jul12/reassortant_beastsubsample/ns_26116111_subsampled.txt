@@ -1,0 +1,48 @@
+tipnames	collection_regionname	collection_countryname	collection_original	host_simplifiedhost	lat	long
+H5N1|2344b|EPI_ISL_china_20230847|anseriformes|china|2_6_1_1_6_1_1_1|2021-12-02	eastern asia	china	Asia / China / Henan / NA / NA	anseriformes-wild	33.8761853651454	113.614527263456
+H5N1|2344b|EPI_ISL_china_20230838|anseriformes|china|2_6_1_1_6_1_1_1|2021-10-16	eastern asia	china	Asia / China / Inner_Mongolia / _Mongolia / _Mongolia	anseriformes-wild	44.083329648604	113.188484632426
+H5N1|2344b|EPI_ISL_8599974|anseriformes|china|2_6_1_1_6_1_1_1|2021-11-15	eastern asia	china	NA	anseriformes-wild	29.1745873279179	120.086382279697
+H5N1|2344b|EPI_ISL_18373217|anseriformes|south_korea|2_6_1_1_6_1_1_1|2021-11-15	eastern asia	south korea	NA	anseriformes-wild	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_17606814|anseriformes|south_korea|2_6_1_1_6_1_1_1|2021-11-05	eastern asia	south korea	Asia / Korea / JB / NA / NA	anseriformes-wild	35.7159281817874	127.140659781938
+H5N1|2344b|EPI_ISL_17606821|anseriformes|south_korea|2_6_1_1_6_1_1_1|2021-11-16	eastern asia	south korea	Asia / Korea / JN / NA / NA	anseriformes-wild	34.8733358026855	126.897223705092
+H5N1|2344b|EPI_ISL_6959592|anseriformes|south_korea|2_6_1_1_6_1_1_1|2021-10-26	eastern asia	south korea	Asia / Korea / Chungcheongnam-do / NA / NA	anseriformes-wild	36.5298116066164	126.847825775926
+H5N1|2344b|EPI_ISL_17606816|anseriformes|south_korea|2_6_1_1_6_1_1_1|2021-11-15	eastern asia	south korea	Asia / Korea / GG / NA / NA	anseriformes-wild	37.5315346337798	127.181023197189
+H5N1|2344b|EPI_ISL_17655676|environment|japan|2_6_1_1_6_1_1_1|2021-12-20	eastern asia	japan	NA	environment	30.9949222722596	130.419711465505
+H5N1|2344b|EPI_ISL_6829533|galliformes|japan|2_6_1_1_6_1_1_1|2021-11-12	eastern asia	japan	Asia / Japan / Kagoshima / NA / NA	galliformes-domestic	30.9949222722596	130.419711465505
+H5N1|2344b|EPI_ISL_17606826|galliformes|south_korea|2_6_1_1_6_1_1_1|2021-12-05	eastern asia	south korea	Asia / Korea / JN / NA / NA	galliformes-domestic	34.8733358026855	126.897223705092
+H5N1|2344b|EPI_ISL_17606833|galliformes|south_korea|2_6_1_1_6_1_1_1|2021-12-17	eastern asia	south korea	Asia / Korea / GG / NA / NA	galliformes-wild	37.5315346337798	127.181023197189
+H5N1|2344b|EPI_ISL_17655676|environment|japan|2_6_1_1_6_1_1_1|2021-12-20	eastern asia	japan	NA	other	30.9949222722596	130.419711465505
+H5N1|2344b|EPI_ISL_18373219|anseriformes|south_korea|2_6_1_1_6_1_1_1|2021-11-22	eastern asia	south korea	NA	anseriformes-wild	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18373219|anseriformes|south_korea|2_6_1_1_6_1_1_1|2021-11-22	eastern asia	south korea	NA	anseriformes-wild	36.737850075983	127.830446360213
+H5N1|2344b|EPI_ISL_6959593|galliformes|south_korea|2_6_1_1_6_1_1_1|2021-11-08	eastern asia	south korea	Asia / Korea / Chungcheongbuk-do / NA / NA	galliformes-wild	36.737850075983	127.830446360213
+H5N1|2344b|EPI_ISL_15732766|anseriformes|japan|2_6_1_1_6_1_1_1|2022-10-23	eastern asia	japan	Asia / Japan / Hokkaido / the Komuke Lake / NA	anseriformes-wild	43.3824165431654	142.542521870972
+H5N1|2344b|EPI_ISL_18755528|anseriformes|united_states|2_6_1_1_6_1_1_1|2022-10-14	northern america	united states	NA	anseriformes-wild	63.9513927980493	-152.396756538795
+H5N1|2344b|EPI_ISL_12572656|anseriformes|china|2_6_1_1_6_1_1_1|2022-02-22	eastern asia	china	Asia / China / Guizhou / NA / NA	anseriformes-wild	26.8128279303549	106.867407716617
+H5N1|2344b|EPI_ISL_17371282|anseriformes|indonesia|2_6_1_1_6_1_1_1|2022-04-04	south-eastern asia	indonesia	NA	anseriformes-domestic	-2.99309303653839	115.439680623362
+H5N1|2344b|EPI_ISL_17371282|anseriformes|indonesia|2_6_1_1_6_1_1_1|2022-04-04	south-eastern asia	indonesia	NA	anseriformes-wild	-2.99309303653839	115.439680623362
+H5N1|2344b|EPI_ISL_18373218|anseriformes|south_korea|2_6_1_1_6_1_1_1|2021-11-16	eastern asia	south korea	NA	anseriformes-wild	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_17606822|anseriformes|south_korea|2_6_1_1_6_1_1_1|2021-11-17	eastern asia	south korea	Asia / Korea / JN / NA / NA	anseriformes-wild	34.8733358026855	126.897223705092
+H5N1|2344b|EPI_ISL_17606865|anseriformes|south_korea|2_6_1_1_6_1_1_1|2021-11-14	eastern asia	south korea	Asia / Korea / CB / NA / NA	anseriformes-wild	36.737850075983	127.830446360213
+H5N1|2344b|EPI_ISL_17606823|galliformes|south_korea|2_6_1_1_6_1_1_1|2021-11-21	eastern asia	south korea	Asia / Korea / CB / NA / NA	galliformes-domestic	36.737850075983	127.830446360213
+H5N1|2344b|EPI_ISL_17606825|galliformes|south_korea|2_6_1_1_6_1_1_1|2021-12-04	eastern asia	south korea	Asia / Korea / CN / NA / NA	galliformes-domestic	36.5298116066164	126.847825775926
+H5N1|2344b|EPI_ISL_17606832|galliformes|south_korea|2_6_1_1_6_1_1_1|2021-12-16	eastern asia	south korea	Asia / Korea / SJ / NA / NA	galliformes-domestic	36.5605294196904	127.258813990513
+H5N1|2344b|EPI_ISL_18373239|anseriformes|south_korea|2_6_1_1_6_1_1_1|2022-02-04	eastern asia	south korea	NA	anseriformes-wild	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18373239|anseriformes|south_korea|2_6_1_1_6_1_1_1|2022-02-04	eastern asia	south korea	NA	anseriformes-wild	33.3869876346889	126.553618799527
+H5N1|2344b|EPI_ISL_18373220|anseriformes|south_korea|2_6_1_1_6_1_1_1|2021-12-01	eastern asia	south korea	NA	anseriformes-wild	34.8733358026855	126.897223705092
+H5N1|2344b|EPI_ISL_18373221|anseriformes|south_korea|2_6_1_1_6_1_1_1|2021-12-05	eastern asia	south korea	NA	anseriformes-wild	36.737850075983	127.830446360213
+H5N1|2344b|EPI_ISL_18373232|anseriformes|south_korea|2_6_1_1_6_1_1_1|2022-01-25	eastern asia	south korea	NA	anseriformes-wild	35.3225325644814	128.261669154089
+H5N1|2344b|EPI_ISL_china_2023089|anseriformes|china|2_6_1_1_6_1_1_1|2021-11-18	eastern asia	china	Asia / China / Hubei / NA / NA	anseriformes-wild	30.9806813015582	112.277189482252
+H5N1|2344b|EPI_ISL_17371283|anseriformes|indonesia|2_6_1_1_6_1_1_1|2022-04-04	south-eastern asia	indonesia	NA	anseriformes-domestic	-2.99309303653839	115.439680623362
+H5N1|2344b|EPI_ISL_12572655|anseriformes|china|2_6_1_1_6_1_1_1|2021-12-08	eastern asia	china	Asia / China / Guangdong / NA / NA	anseriformes-wild	23.33624359406	113.398153372919
+H5N1|2344b|EPI_ISL_12572659|anseriformes|china|2_6_1_1_6_1_1_1|2022-01-10	eastern asia	china	Asia / China / Hubei / NA / NA	anseriformes-wild	30.9806813015582	112.277189482252
+H5N1|2344b|EPI_ISL_17371283|anseriformes|indonesia|2_6_1_1_6_1_1_1|2022-04-04	south-eastern asia	indonesia	NA	anseriformes-wild	-2.99309303653839	115.439680623362
+H5N1|2344b|EPI_ISL_15576617|anseriformes|japan|2_6_1_1_6_1_1_1|2022-10-08	eastern asia	japan	Asia / Japan / Hokkaido / Noduke Peninsula, Bekkai town / NA	anseriformes-wild	43.3824165431654	142.542521870972
+H5N1|2344b|EPI_ISL_18373222|anseriformes|south_korea|2_6_1_1_6_1_1_1|2021-12-06	eastern asia	south korea	NA	anseriformes-wild	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_17606836|anseriformes|south_korea|2_6_1_1_6_1_1_1|2021-12-27	eastern asia	south korea	Asia / Korea / JB / NA / NA	anseriformes-wild	35.7159281817874	127.140659781938
+H5N1|2344b|EPI_ISL_17606839|anseriformes|south_korea|2_6_1_1_6_1_1_1|2022-01-14	eastern asia	south korea	Asia / Korea / JN / NA / NA	anseriformes-wild	34.8733358026855	126.897223705092
+H5N1|2344b|EPI_ISL_18245816|anseriformes|poland|2_6_1_1_6_1_1_1|2022-04-07	eastern europe	poland	NA	anseriformes-wild	53.857820060305	20.8226086933633
+H5N1|2344b|EPI_ISL_18245816|anseriformes|poland|2_6_1_1_6_1_1_1|2022-04-07	eastern europe	poland	NA	anseriformes-wild	52.1141994014432	19.4236724631525
+H5N1|2344b|EPI_ISL_18284466|galliformes|japan|2_6_1_1_6_1_1_1|2022-10-28	eastern asia	japan	NA	galliformes-domestic	34.8921234580739	133.826171708594
+H5N1|2344b|EPI_ISL_17851883|galliformes|japan|2_6_1_1_6_1_1_1|2022-12-01	eastern asia	japan	NA	galliformes-domestic	35.3595547900768	133.863177571414
+H5N1|2344b|EPI_ISL_17851883|galliformes|japan|2_6_1_1_6_1_1_1|2022-12-01	eastern asia	japan	NA	galliformes-domestic	37.3996665395305	137.574137168765
+H5N1|2344b|EPI_ISL_15923322|falconiformes|japan|2_6_1_1_6_1_1_1|2022-09-25	eastern asia	japan	Asia / Japan / Kanagawa / NA / NA	other	35.4153490493937	139.338928797101

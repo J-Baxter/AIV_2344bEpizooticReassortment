@@ -1,0 +1,427 @@
+tipnames	collection_regionname	collection_countryname	collection_original	host_simplifiedhost	lat	long
+H5N8|2344b|EPI_ISL_17414660|galliformes|nigeria|3_2_3_1_3_2_1_2|2021-02-20	western africa	nigeria	Africa / Nigeria / Plateau / NA / NA	galliformes-domestic	9.20979731798597	9.54756607799562
+H5N8|2344b|EPI_ISL_4061482|galliformes|nigeria|3_2_3_1_3_2_1_2|2021-02-05	western africa	nigeria	Africa / Nigeria / NA / NA / NA	galliformes-domestic	9.58907159716497	8.08769036750384
+H5N8|2344b|EPI_ISL_17414602|NA|nigeria|3_2_3_1_3_2_1_2|2021-02-02	western africa	nigeria	Africa / Nigeria / Plateau / NA / NA	other	9.20979731798597	9.54756607799562
+H5N8|2344b|EPI_ISL_5099356|anseriformes|germany|3_2_3_1_3_2_1_2|2021-02-17	western europe	germany	Europe / Germany / Brandenburg / MÃ¤rkisch-Oderland / NA	anseriformes-domestic	52.4686720071996	13.4043192497063
+H5N8|2344b|EPI_ISL_5098144|anseriformes|germany|3_2_3_1_3_2_1_2|2021-02-01	western europe	germany	Europe / Germany / Mecklenburg-Vorpommern / Vorpommern-RÃ¼gen / NA	anseriformes-domestic	53.7551744161606	12.5509509363277
+H5N8|2344b|EPI_ISL_5144529|anseriformes|germany|3_2_3_1_3_2_1_2|2021-03-20	western europe	germany	Europe / Germany / Lower Saxony / Vechta / NA	anseriformes-domestic	52.7642105761026	9.16783937293005
+H5N8|2344b|EPI_ISL_5102033|anseriformes|germany|3_2_3_1_3_2_1_2|2021-03-01	western europe	germany	Europe / Germany / North Rhine-Westphalia / GÃ¼tersloh / NA	anseriformes-domestic	51.4777551092159	7.5539349720828
+H5N8|2344b|EPI_ISL_5115616|anseriformes|germany|3_2_3_1_3_2_1_2|2021-03-04	western europe	germany	Europe / Germany / Schleswig-Holstein / Rendsburg-EckernfÃ¶rde / NA	anseriformes-domestic	54.1814850326718	9.81577342948134
+H5N8|2344b|EPI_ISL_615068|anseriformes|kazakhstan|3_2_3_1_3_2_1_2|2020-09-20	central asia	kazakhstan	Asia / Kazakhstan / Akmola / NA / NA	anseriformes-domestic	51.7623557428944	69.9739209295215
+H5N8|2344b|EPI_ISL_615065|anseriformes|kazakhstan|3_2_3_1_3_2_1_2|2020-09-22	central asia	kazakhstan	Asia / Kazakhstan / Kostanay / NA / NA	anseriformes-domestic	51.5322283786231	64.0853293002361
+H5N8|2344b|EPI_ISL_1665257|anseriformes|austria|3_2_3_1_3_2_1_2|2021-02-04	western europe	austria	Europe / Austria / Tulln / NA / NA	anseriformes-wild	48.2718646696418	15.7529218938467
+H5N8|2344b|EPI_ISL_1665259|anseriformes|austria|3_2_3_1_3_2_1_2|2021-02-01	western europe	austria	Europe / Austria / Vienna / NA / NA	anseriformes-wild	48.2089421257604	16.3790253882177
+H5N8|2344b|EPI_ISL_1057106|anseriformes|czechia|3_2_3_1_3_2_1_2|2021-02-04	eastern europe	czechia	Europe / Czech Republic / Jihocesky Kraj / Okres Tabor / Sobeslav	anseriformes-wild	49.0928166218663	14.4391547985202
+H5N8|2344b|EPI_ISL_1399244|anseriformes|czechia|3_2_3_1_3_2_1_2|2021-03-04	eastern europe	czechia	Europe / Czech Republic / Olomoucky Kraj / Okres Olomouc / Chomoutov	anseriformes-wild	49.7786245115919	17.190355445158
+H5N8|2344b|EPI_ISL_1399238|anseriformes|czechia|3_2_3_1_3_2_1_2|2021-02-22	eastern europe	czechia	Europe / Czech Republic / Hlavni mesto Praha / Okres Praha / Kvetnice, Mlynsky rybnik; GPS: N 50Â°3.49715, E 14Â°40.89878	anseriformes-wild	50.0636978575423	14.4763649175255
+H5N8|2344b|EPI_ISL_5116063|anseriformes|germany|3_2_3_1_3_2_1_2|2021-02-26	western europe	germany	Europe / Germany / Hessen / Offenbach a. Main / . Main	anseriformes-wild	50.5991757228504	9.0260509036638
+H5N8|2344b|EPI_ISL_5096070|anseriformes|germany|3_2_3_1_3_2_1_2|2021-01-20	western europe	germany	Europe / Germany / Mecklenburg-Vorpommern / Vorpommern-Greifswald / NA	anseriformes-wild	53.7551744161606	12.5509509363277
+H5N8|2344b|EPI_ISL_5096629|anseriformes|germany|3_2_3_1_3_2_1_2|2021-01-12	western europe	germany	Europe / Germany / Lower Saxony / Cuxhaven / NA	anseriformes-wild	52.7642105761026	9.16783937293005
+H5N8|2344b|EPI_ISL_5098142|anseriformes|germany|3_2_3_1_3_2_1_2|2021-01-18	western europe	germany	Europe / Germany / Rhineland-Palatinate / Rhein-Pfalz-Kreis / NA	anseriformes-wild	49.9110600051883	7.45203480158582
+H5N8|2344b|EPI_ISL_5058855|anseriformes|germany|3_2_3_1_3_2_1_2|2020-11-02	western europe	germany	Europe / Germany / Schleswig-Holstein / Rendsburg-EckernfÃ¶rde / NA	anseriformes-wild	54.1814850326718	9.81577342948134
+H5N8|2344b|EPI_ISL_984694|anseriformes|denmark|3_2_3_1_3_2_1_2|2020-11-09	northern europe	denmark	Europe / Denmark / Region Nordjylland / Alborg / NA	anseriformes-wild	57.0522607274982	9.67257639647962
+H5N8|2344b|EPI_ISL_984670|anseriformes|denmark|3_2_3_1_3_2_1_2|2020-11-04	northern europe	denmark	Europe / Denmark / Region Syddanmark / Tonder Kommune / NA	anseriformes-wild	55.3568797999445	9.45020901930698
+H5N8|2344b|EPI_ISL_18953087|anseriformes|denmark|3_2_3_1_3_2_1_2|2020-11-04	northern europe	denmark	NA	anseriformes-wild	55.9512996898935	10.0707816763207
+H5N8|2344b|EPI_ISL_7778759|anseriformes|estonia|3_2_3_1_3_2_1_2|2021-03-04	northern europe	estonia	Europe / Estonia / NA / NA / NA	anseriformes-wild	58.6717397518952	25.5522615433491
+H5N8|2344b|EPI_ISL_7778770|anseriformes|finland|3_2_3_1_3_2_1_2|2021-01-01	northern europe	finland	Europe / Finland / NA / NA / NA	anseriformes-wild	64.2398144022788	26.1623842060791
+H5N8|2344b|EPI_ISL_2234812|anseriformes|france|3_2_3_1_3_2_1_2|2021-01-27	western europe	france	Europe / Spain / NA / NA / NA	anseriformes-wild	45.5190780558984	4.54715006428513
+H5N8|2344b|EPI_ISL_11402745|anseriformes|united_kingdom|3_2_3_1_3_2_1_2|2020-11-12	northern europe	united kingdom	Europe / United Kingdom / Northern Ireland / NA / NA	anseriformes-wild	54.0438440515314	-2.78687513666638
+H5N8|2344b|EPI_ISL_1420637|anseriformes|latvia|3_2_3_1_3_2_1_2|2021-02-04	northern europe	latvia	Europe / Latvia / Jurmala / NA / NA	anseriformes-wild	56.9214336659281	21.9832067017723
+H5N8|2344b|EPI_ISL_614401|anseriformes|kazakhstan|3_2_3_1_3_2_1_2|2020-09-23	central asia	kazakhstan	Asia / Kazakhstan / Akmola / NA / NA	anseriformes-wild	51.7623557428944	69.9739209295215
+H5N8|2344b|EPI_ISL_2932614|anseriformes|kazakhstan|3_2_3_1_3_2_1_2|2020-09-21	central asia	kazakhstan	Asia / Kazakhstan / North Kazakhstan / Mamlyutsky district, Mamlyutsky, Mamlyutka village / NA	anseriformes-wild	53.8421826489217	69.2722074369824
+H5N8|2344b|EPI_ISL_1665252|anseriformes|italy|3_2_3_1_3_2_1_2|2021-02-23	southern europe	italy	Europe / Italy / Padova / NA / NA	anseriformes-wild	45.6595758067318	11.8428083995249
+H5N8|2344b|EPI_ISL_1139079|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-10-29	western europe	netherlands	Europe / Netherlands / Provincie Friesland / Buren / NA	anseriformes-wild	53.1100430768808	5.84863928632393
+H5N8|2344b|EPI_ISL_775253|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-12-15	western europe	netherlands	Europe / Netherlands / Provincie Groningen / Gemeente Groningen / NA	anseriformes-wild	52.0617180422494	5.94466833784019
+H5N8|2344b|EPI_ISL_1139086|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-11-07	western europe	netherlands	Europe / Netherlands / North Brabant / Rijswijk (NB) / (NB)	anseriformes-wild	51.5616727876811	5.19541346074046
+H5N8|2344b|EPI_ISL_1139028|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-11-03	western europe	netherlands	Europe / Netherlands / Provincie Noord-Holland / Gemeente Landsmeer / NA	anseriformes-wild	52.5811544669078	4.87272777813315
+H5N8|2344b|EPI_ISL_1139166|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-11-24	western europe	netherlands	Europe / Netherlands / Provincie Overijssel / Gemeente Almelo / NA	anseriformes-wild	52.4448999895994	6.44900146928843
+H5N8|2344b|EPI_ISL_591075|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-10-17	western europe	netherlands	Europe / Netherlands / Provincie Utrecht / Kockengen / NA	anseriformes-wild	52.083727924893	5.16763788059654
+H5N8|2344b|EPI_ISL_1139099|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-11-13	western europe	netherlands	Europe / Netherlands / Provincie Zeeland / Zierikzee / NA	anseriformes-wild	51.4517197034959	3.83526799798383
+H5N8|2344b|EPI_ISL_603136|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-10-16	western europe	netherlands	Europe / Netherlands / NA / NA / NA	anseriformes-wild	52.2573048104135	5.56251311224367
+H5N8|2344b|EPI_ISL_1295638|anseriformes|norway|3_2_3_1_3_2_1_2|2021-01-26	northern europe	norway	Europe / Norway / NA / NA / NA	anseriformes-wild	63.9836330810339	12.3044196327525
+H5N8|2344b|EPI_ISL_637098|anseriformes|russia|3_2_3_1_3_2_1_2|2020-07-31	central asia	russia	Europe / Russia / Chelyabinsk Oblast / NA / NA	anseriformes-wild	54.4531161547399	60.406021972363
+H5N8|2344b|EPI_ISL_626651|anseriformes|russia|3_2_3_1_3_2_1_2|2020-08-20	eastern europe	russia	Europe / Russia / Kurgan Oblast / NA / NA	anseriformes-wild	55.4734051858522	64.8219230597649
+H5N8|2344b|EPI_ISL_644130|anseriformes|russia|3_2_3_1_3_2_1_2|2020-08-17	central asia	russia	Europe / Russia / Omsk Oblast / Omsk / NA	anseriformes-wild	56.0596108837778	73.3669499849514
+H5N8|2344b|EPI_ISL_626649|anseriformes|russia|3_2_3_1_3_2_1_2|2020-09-18	eastern europe	russia	Europe / Russia / Saratov Oblast / NA / NA	anseriformes-wild	51.5994582882348	46.8369479833559
+H5N8|2344b|EPI_ISL_1095363|anseriformes|sweden|3_2_3_1_3_2_1_2|2021-02-03	northern europe	sweden	Europe / Sweden / Blekinge Lan / Solvesborgs Kommun / NA	anseriformes-wild	56.2754954629495	15.2029498652564
+H5N8|2344b|EPI_ISL_3102208|anseriformes|sweden|3_2_3_1_3_2_1_2|2021-02-01	northern europe	sweden	Europe / Sweden / Skane Lan / Svedala Kommun / NA	anseriformes-wild	55.9474024317265	13.595146733816
+H5N8|2344b|EPI_ISL_5863929|anseriformes|united_states|3_2_3_1_3_2_1_2|2020-10-12	northern america	united states	Asia / Georgia / NA / NA / NA	anseriformes-wild	32.6403385373358	-83.4405725551842
+H5N8|2344b|EPI_ISL_5062851|charadriiformes|germany|3_2_3_1_3_2_1_2|2020-11-02	western europe	germany	Europe / Germany / Mecklenburg-Vorpommern / Vorpommern-RÃ¼gen / NA	charadriiformes-wild	53.7551744161606	12.5509509363277
+H5N8|2344b|EPI_ISL_5062078|charadriiformes|germany|3_2_3_1_3_2_1_2|2020-11-06	western europe	germany	Europe / Germany / Schleswig-Holstein / Nordfriesland / NA	charadriiformes-wild	54.1814850326718	9.81577342948134
+H5N8|2344b|EPI_ISL_984680|charadriiformes|denmark|3_2_3_1_3_2_1_2|2020-11-04	northern europe	denmark	Europe / Denmark / Region Syddanmark / Tonder Kommune / NA	charadriiformes-wild	55.3568797999445	9.45020901930698
+H5N8|2344b|EPI_ISL_18953088|charadriiformes|denmark|3_2_3_1_3_2_1_2|2020-11-04	northern europe	denmark	NA	charadriiformes-wild	55.9512996898935	10.0707816763207
+H5N8|2344b|EPI_ISL_2234810|charadriiformes|italy|3_2_3_1_3_2_1_2|2021-01-28	southern europe	italy	Europe / Italy / NA / NA / NA	charadriiformes-wild	42.7080607219025	12.208345049127
+H5N8|2344b|EPI_ISL_1139050|charadriiformes|netherlands|3_2_3_1_3_2_1_2|2020-11-01	western europe	netherlands	Europe / Netherlands / South Holland / Gemeente Delft / NA	charadriiformes-wild	51.9374604216783	4.46477045234472
+H5N8|2344b|EPI_ISL_1139044|charadriiformes|netherlands|3_2_3_1_3_2_1_2|2020-11-10	western europe	netherlands	Europe / Netherlands / Provincie Friesland / West Terschelling / NA	charadriiformes-wild	53.1100430768808	5.84863928632393
+H5N8|2344b|EPI_ISL_1139165|charadriiformes|netherlands|3_2_3_1_3_2_1_2|2020-11-26	western europe	netherlands	Europe / Netherlands / Provincie Utrecht / Ameide / NA	charadriiformes-wild	52.083727924893	5.16763788059654
+H5N8|2344b|EPI_ISL_3102058|galliformes|bulgaria|3_2_3_1_3_2_1_2|2021-05-05	eastern europe	bulgaria	Europe / Bulgaria / Trilistnik, Plovdiv / NA / NA	galliformes-domestic	42.2564257629518	24.8255765075979
+H5N8|2344b|EPI_ISL_1399231|galliformes|czechia|3_2_3_1_3_2_1_2|2021-02-18	eastern europe	czechia	Europe / Czech Republic / Vysocina Kraj / Okres Pelhrimov / Horni Cerekev; GPS: N 49Â°19.49288, E 15Â°19.76120	galliformes-domestic	49.4071187835784	15.6903483593844
+H5N8|2344b|EPI_ISL_1033028|galliformes|czechia|3_2_3_1_3_2_1_2|2021-02-02	eastern europe	czechia	Europe / Czech Republic / Stredocesky Kraj / Okres Benesov / Jankov	galliformes-domestic	49.9969098943343	14.5545810187162
+H5N8|2344b|EPI_ISL_5098145|galliformes|germany|3_2_3_1_3_2_1_2|2021-02-04	western europe	germany	Europe / Germany / Brandenburg / Uckermark / NA	galliformes-domestic	52.4686720071996	13.4043192497063
+H5N8|2344b|EPI_ISL_5099462|galliformes|germany|3_2_3_1_3_2_1_2|2021-02-24	western europe	germany	Europe / Germany / Bavaria / WÃ¼rzburg / NA	galliformes-domestic	48.9386109033625	11.4278546586472
+H5N8|2344b|EPI_ISL_5095645|galliformes|germany|3_2_3_1_3_2_1_2|2021-01-26	western europe	germany	Europe / Germany / Mecklenburg-Vorpommern / Nordwestmecklenburg / NA	galliformes-domestic	53.7551744161606	12.5509509363277
+H5N8|2344b|EPI_ISL_5136192|galliformes|germany|3_2_3_1_3_2_1_2|2021-03-15	western europe	germany	Europe / Germany / Lower Saxony / Cloppenburg / NA	galliformes-domestic	52.7642105761026	9.16783937293005
+H5N8|2344b|EPI_ISL_5142451|galliformes|germany|3_2_3_1_3_2_1_2|2021-03-18	western europe	germany	Europe / Germany / North Rhine-Westphalia / Hochsauerlandkreis / NA	galliformes-domestic	51.4777551092159	7.5539349720828
+H5N8|2344b|EPI_ISL_5115967|galliformes|germany|3_2_3_1_3_2_1_2|2021-03-05	western europe	germany	Europe / Germany / Schleswig-Holstein / Vechta PlÃ¶n / NA	galliformes-domestic	54.1814850326718	9.81577342948134
+H5N8|2344b|EPI_ISL_667810|galliformes|france|3_2_3_1_3_2_1_2|2020-11-10	western europe	france	Europe / France / Corsica / Departement de la Haute-Corse / NA	galliformes-domestic	42.1497137840693	9.10513916746533
+H5N8|2344b|EPI_ISL_766054|galliformes|united_kingdom|3_2_3_1_3_2_1_2|2020-12-04	northern europe	united kingdom	Europe / United Kingdom / Norfolk / NA / NA	galliformes-domestic	54.0438440515314	-2.78687513666638
+H5N8|2344b|EPI_ISL_739686|galliformes|kazakhstan|3_2_3_1_3_2_1_2|2020-09-18	central asia	kazakhstan	Asia / Kazakhstan / North Kazakhstan / NA / NA	galliformes-domestic	53.8421826489217	69.2722074369824
+H5N8|2344b|EPI_ISL_846602|galliformes|poland|3_2_3_1_3_2_1_2|2020-12-03	eastern europe	poland	Europe / Poland / wielkopolskie / NA / NA	galliformes-domestic	52.3269678786096	17.250141052842
+H5N8|2344b|EPI_ISL_641394|galliformes|netherlands|3_2_3_1_3_2_1_2|2020-11-10	western europe	netherlands	Europe / Netherlands / Provincie Friesland / Wons / NA	galliformes-domestic	53.1100430768808	5.84863928632393
+H5N8|2344b|EPI_ISL_8650948|galliformes|netherlands|3_2_3_1_3_2_1_2|2020-10-28	western europe	netherlands	Europe / Netherlands / Provincie Gelderland / NA / NA	galliformes-domestic	52.0617180422494	5.94466833784019
+H5N8|2344b|EPI_ISL_775267|galliformes|netherlands|3_2_3_1_3_2_1_2|2021-01-04	western europe	netherlands	Europe / Netherlands / North Brabant / Gemeente Oisterwijk / NA	galliformes-domestic	51.5616727876811	5.19541346074046
+H5N8|2344b|EPI_ISL_710538|galliformes|netherlands|3_2_3_1_3_2_1_2|2020-12-02	western europe	netherlands	Europe / Netherlands / Provincie Noord-Holland / Edam-Volendam / NA	galliformes-domestic	52.5811544669078	4.87272777813315
+H5N8|2344b|EPI_ISL_653921|galliformes|netherlands|3_2_3_1_3_2_1_2|2020-11-21	western europe	netherlands	Europe / Netherlands / Provincie Utrecht / Gemeente Oudewater / NA	galliformes-domestic	52.083727924893	5.16763788059654
+H5N8|2344b|EPI_ISL_1295639|galliformes|norway|3_2_3_1_3_2_1_2|2020-11-30	northern europe	norway	Europe / Norway / NA / NA / NA	galliformes-domestic	63.9836330810339	12.3044196327525
+H5N8|2344b|EPI_ISL_644147|galliformes|russia|3_2_3_1_3_2_1_2|2020-08-06	central asia	russia	Europe / Russia / Chelyabinsk Oblast / Chelyabinsk / NA	galliformes-domestic	54.4531161547399	60.406021972363
+H5N8|2344b|EPI_ISL_644121|galliformes|russia|3_2_3_1_3_2_1_2|2020-08-13	central asia	russia	Europe / Russia / Omsk Oblast / Omsk / NA	galliformes-domestic	56.0596108837778	73.3669499849514
+H5N8|2344b|EPI_ISL_1114746|galliformes|russia|3_2_3_1_3_2_1_2|2020-10-25	eastern europe	russia	Europe / Russia / Rostov Oblast / Rostov-on-Don / NA	galliformes-domestic	47.725861660493	41.3470662241277
+H5N8|2344b|EPI_ISL_654821|galliformes|russia|3_2_3_1_3_2_1_2|2020-09-15	eastern europe	russia	Europe / Russia / Saratov Oblast / Saratov / NA	galliformes-domestic	51.5994582882348	46.8369479833559
+H5N8|2344b|EPI_ISL_13175608|galliformes|sweden|3_2_3_1_3_2_1_2|2021-02-23	northern europe	sweden	Europe / Sweden / Ostergotlands Lan / Linkopings Kommun / NA	galliformes-domestic	57.5128828372686	18.541723046906
+H5N8|2344b|EPI_ISL_1093422|galliformes|sweden|3_2_3_1_3_2_1_2|2021-02-13	northern europe	sweden	Europe / Sweden / Skane Lan / Simrishamns Kommun / NA	galliformes-domestic	55.9474024317265	13.595146733816
+H5N8|2344b|EPI_ISL_2081527|carnivora|united_kingdom|3_2_3_1_3_2_1_2|2020-12-08	northern europe	united kingdom	Europe / United Kingdom / Norfolk / NA / NA	mammal	54.0438440515314	-2.78687513666638
+H5N8|2344b|EPI_ISL_5098135|falconiformes|germany|3_2_3_1_3_2_1_2|2020-12-21	western europe	germany	Europe / Germany / Lower Saxony / Friesland / NA	other	52.7642105761026	9.16783937293005
+H5N8|2344b|EPI_ISL_5057856|falconiformes|germany|3_2_3_1_3_2_1_2|2020-10-26	western europe	germany	Europe / Germany / Schleswig-Holstein / Nordfriesland / NA	other	54.1814850326718	9.81577342948134
+H5N8|2344b|EPI_ISL_984690|falconiformes|denmark|3_2_3_1_3_2_1_2|2020-11-06	northern europe	denmark	Europe / Denmark / Region Syddanmark / Svendborg Kommune / NA	other	55.3568797999445	9.45020901930698
+H5N8|2344b|EPI_ISL_18953094|falconiformes|denmark|3_2_3_1_3_2_1_2|2020-11-06	northern europe	denmark	NA	other	55.9512996898935	10.0707816763207
+H5N8|2344b|EPI_ISL_2234814|falconiformes|france|3_2_3_1_3_2_1_2|2020-11-20	western europe	france	Europe / Spain / NA / NA / NA	other	45.5190780558984	4.54715006428513
+H5N8|2344b|EPI_ISL_766056|falconiformes|united_kingdom|3_2_3_1_3_2_1_2|2020-12-14	northern europe	united kingdom	Europe / United Kingdom / Derbyshire / NA / NA	other	54.0438440515314	-2.78687513666638
+H5N8|2344b|EPI_ISL_813979|falconiformes|ireland|3_2_3_1_3_2_1_2|2020-11	northern europe	ireland	Europe / Ireland / NA / NA / NA	other	53.1625189533631	-8.16313556364258
+H5N8|2344b|EPI_ISL_1139076|falconiformes|netherlands|3_2_3_1_3_2_1_2|2020-11-05	western europe	netherlands	Europe / Netherlands / South Holland / Roelofarendsveen / NA	other	51.9374604216783	4.46477045234472
+H5N8|2344b|EPI_ISL_1139103|falconiformes|netherlands|3_2_3_1_3_2_1_2|2020-11-01	western europe	netherlands	Europe / Netherlands / Provincie Friesland / Oost-Vlieland / NA	other	53.1100430768808	5.84863928632393
+H5N8|2344b|EPI_ISL_2172533|accipitriformes|netherlands|3_2_3_1_3_2_1_2|2021-03-04	western europe	netherlands	Europe / Netherlands / Provincie Groningen / Leek / NA	other	52.0617180422494	5.94466833784019
+H5N8|2344b|EPI_ISL_1139090|accipitriformes|netherlands|3_2_3_1_3_2_1_2|2020-11-12	western europe	netherlands	Europe / Netherlands / North Brabant / Oudgastel / NA	other	51.5616727876811	5.19541346074046
+H5N8|2344b|EPI_ISL_1048238|falconiformes|netherlands|3_2_3_1_3_2_1_2|2020-12-17	western europe	netherlands	Europe / Netherlands / Provincie Noord-Holland / Gemeente Blaricum / NA	other	52.5811544669078	4.87272777813315
+H5N8|2344b|EPI_ISL_1139095|pelecaniformes|netherlands|3_2_3_1_3_2_1_2|2020-11-01	western europe	netherlands	Europe / Netherlands / Provincie Utrecht / Haarzuilens / NA	other	52.083727924893	5.16763788059654
+H5N8|2344b|EPI_ISL_1239110|accipitriformes|sweden|3_2_3_1_3_2_1_2|2021-02-22	northern europe	sweden	Europe / Sweden / Blekinge Lan / Karlshamns Kommun / NA	other	56.2754954629495	15.2029498652564
+H5N8|2344b|EPI_ISL_1307720|accipitriformes|sweden|3_2_3_1_3_2_1_2|2021-03-02	northern europe	sweden	Europe / Sweden / Jonkopings Lan / Jonkopings Kommun / NA	other	57.4990622714119	14.4340296449519
+H5N8|2344b|EPI_ISL_1240717|accipitriformes|sweden|3_2_3_1_3_2_1_2|2021-02-21	northern europe	sweden	Europe / Sweden / Kalmar Lan / Kalmar Kommun / NA	other	57.1855292476939	16.1305148015024
+H5N8|2344b|EPI_ISL_1240677|accipitriformes|sweden|3_2_3_1_3_2_1_2|2021-02-20	northern europe	sweden	Europe / Sweden / Skane Lan / Kristianstads Kommun / NA	other	55.9474024317265	13.595146733816
+H5N8|2344b|EPI_ISL_615073|anseriformes|kazakhstan|3_2_3_1_3_2_1_2|2020-09-19	central asia	kazakhstan	Asia / Kazakhstan / North Kazakhstan / NA / NA	anseriformes-domestic	53.8421826489217	69.2722074369824
+H5N8|2344b|EPI_ISL_2932619|anseriformes|kazakhstan|3_2_3_1_3_2_1_2|2020-09-23	central asia	kazakhstan	Asia / Kazakhstan / Akmola / Birzhan sal district, Baymyrza, Shoshkaly lake / NA	anseriformes-wild	51.7623557428944	69.9739209295215
+H5N8|2344b|EPI_ISL_1041167|anseriformes|japan|3_2_3_1_3_2_1_2|2021-01-23	eastern asia	japan	Asia / Japan / Chiba / NA / NA	anseriformes-wild	35.5094511865639	140.198261340312
+H5N8|2344b|EPI_ISL_14835964|anseriformes|china|3_2_3_1_3_2_1_2|2020-11-11	eastern asia	china	Asia / China / Henan Province / NA / NA	anseriformes-wild	33.8761853651454	113.614527263456
+H5N8|2344b|EPI_ISL_5260444|anseriformes|china|3_2_3_1_3_2_1_2|2021-03-09	eastern asia	china	Asia / China / Jiangxi / NA / NA	anseriformes-wild	27.6016362656629	115.709570895796
+H5N8|2344b|EPI_ISL_7381115|anseriformes|china|3_2_3_1_3_2_1_2|2021-06	eastern asia	china	Asia / China / Liaoning Province / NA / NA	anseriformes-wild	41.2987124958383	122.600275282862
+H5N8|2344b|EPI_ISL_5260458|anseriformes|china|3_2_3_1_3_2_1_2|2021-01-23	eastern asia	china	Asia / China / Shandong / NA / NA	anseriformes-wild	36.3536638777003	118.136153809721
+H5N8|2344b|EPI_ISL_1009685|anseriformes|south_korea|3_2_3_1_3_2_1_2|2020-12-30	eastern asia	south korea	Asia / Korea / JB / NA / NA	anseriformes-wild	35.7159281817874	127.140659781938
+H5N8|2344b|EPI_ISL_1009710|anseriformes|south_korea|3_2_3_1_3_2_1_2|2020-11-17	eastern asia	south korea	Asia / Korea / JJ / NA / NA	anseriformes-wild	33.3869876346889	126.553618799527
+H5N8|2344b|EPI_ISL_985187|anseriformes|south_korea|3_2_3_1_3_2_1_2|2020-12-10	eastern asia	south korea	Asia / Korea / JN / NA / NA	anseriformes-wild	34.8733358026855	126.897223705092
+H5N8|2344b|EPI_ISL_1009692|anseriformes|south_korea|3_2_3_1_3_2_1_2|2021-01-05	eastern asia	south korea	Asia / Korea / CB / NA / NA	anseriformes-wild	36.737850075983	127.830446360213
+H5N8|2344b|EPI_ISL_985205|anseriformes|south_korea|3_2_3_1_3_2_1_2|2020-12-24	eastern asia	south korea	Asia / Korea / CN / NA / NA	anseriformes-wild	36.5298116066164	126.847825775926
+H5N8|2344b|EPI_ISL_985197|anseriformes|south_korea|3_2_3_1_3_2_1_2|2020-12-20	eastern asia	south korea	Asia / Korea / GG / NA / NA	anseriformes-wild	37.5315346337798	127.181023197189
+H5N8|2344b|EPI_ISL_1041130|galliformes|japan|3_2_3_1_3_2_1_2|2021-02-10	eastern asia	japan	Asia / Japan / Chiba / NA / NA	galliformes-domestic	35.5094511865639	140.198261340312
+H5N8|2344b|EPI_ISL_985228|galliformes|japan|3_2_3_1_3_2_1_2|2021-02-06	eastern asia	japan	Asia / Japan / Miyazaki / NA / NA	galliformes-domestic	32.1919114758892	131.298614512671
+H5N8|2344b|EPI_ISL_1009690|galliformes|south_korea|3_2_3_1_3_2_1_2|2021-01-04	eastern asia	south korea	Asia / Korea / CN / NA / NA	galliformes-domestic	36.5298116066164	126.847825775926
+H5N8|2344b|EPI_ISL_1009680|galliformes|south_korea|3_2_3_1_3_2_1_2|2020-12-28	eastern asia	south korea	Asia / Korea / GG / NA / NA	galliformes-domestic	37.5315346337798	127.181023197189
+H5N8|2344b|EPI_ISL_5260465|pelecaniformes|china|3_2_3_1_3_2_1_2|2021-01-26	eastern asia	china	Asia / China / Jiangsu / NA / NA	other	32.9645721858222	119.470797338049
+H5N8|2344b|EPI_ISL_1098830|gruiformes|japan|3_2_3_1_3_2_1_2|2021-01-19	eastern asia	japan	Asia / Japan / Kagoshima / NA / NA	other	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_1041132|galliformes|japan|3_2_3_1_3_2_1_2|2021-02-08	eastern asia	japan	Asia / Japan / Tokushima / NA / NA	galliformes-domestic	33.9191788356518	134.242093496813
+H5N8|2344b|EPI_ISL_978916|anseriformes|japan|3_2_3_1_3_2_1_2|2021-02-01	eastern asia	japan	Asia / Japan / Ibaraki / NA / NA	anseriformes-wild	36.3027610877484	140.318971903473
+H5N8|2344b|EPI_ISL_1081353|anseriformes|japan|3_2_3_1_3_2_1_2|2021-02-14	eastern asia	japan	Asia / Japan / Tochigi / NA / NA	anseriformes-wild	36.6894768729176	139.818920628006
+H5N8|2344b|EPI_ISL_978895|galliformes|japan|3_2_3_1_3_2_1_2|2021-02-05	eastern asia	japan	Asia / Japan / Chiba / NA / NA	galliformes-domestic	35.5094511865639	140.198261340312
+H5N8|2344b|EPI_ISL_1114725|anseriformes|japan|3_2_3_1_3_2_1_2|2021-01-16	eastern asia	japan	Asia / Japan / Kagoshima / NA / NA	anseriformes-wild	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_17805905|anseriformes|japan|3_2_3_1_3_2_1_2|2021-01-16	eastern asia	japan	Asia / Japan / NA / NA / NA	anseriformes-wild	37.3996665395305	137.574137168765
+H5N8|2344b|EPI_ISL_16718465|gruiformes|japan|3_2_3_1_3_2_1_2|2021-01-16	eastern asia	japan	Asia / Japan / NA / NA / NA	other	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_7380813|anseriformes|china|3_2_3_1_3_2_1_2|2021-03	eastern asia	china	Asia / China / Guangdong Province / NA / NA	anseriformes-wild	23.33624359406	113.398153372919
+H5N8|2344b|EPI_ISL_5260446|anseriformes|china|3_2_3_1_3_2_1_2|2021-05-11	eastern asia	china	Asia / China / Guangxi / NA / NA	anseriformes-wild	23.82591453975	108.782865094166
+H5N8|2344b|EPI_ISL_14824026|anseriformes|china|3_2_3_1_3_2_1_2|2020-11-10	eastern asia	china	Asia / China / Henan Province / NA / NA	anseriformes-wild	33.8761853651454	113.614527263456
+H5N8|2344b|EPI_ISL_2713170|anseriformes|china|3_2_3_1_3_2_1_2|2020-11-16	eastern asia	china	Asia / China / Hubei Province / NA / NA	anseriformes-wild	30.9806813015582	112.277189482252
+H5N8|2344b|EPI_ISL_2815336|anseriformes|china|3_2_3_1_3_2_1_2|2020-10-11	eastern asia	china	Asia / China / Ningxia Hui Autonomous Region / NA / NA	anseriformes-wild	37.2602231520297	106.161545856493
+H5N8|2344b|EPI_ISL_1760450|anseriformes|china|3_2_3_1_3_2_1_2|2020-11-10	eastern asia	china	Asia / China / Shaanxi Province / NA / NA	anseriformes-wild	35.1531910315733	108.845281415025
+H5N8|2344b|EPI_ISL_14770172|anseriformes|china|3_2_3_1_3_2_1_2|2020-11-13	eastern asia	china	Asia / China / NA / NA / NA	anseriformes-wild	36.3536638777003	118.136153809721
+H5N8|2344b|EPI_ISL_1760452|anseriformes|china|3_2_3_1_3_2_1_2|2020-11-10	eastern asia	china	Asia / China / Shanxi Province / NA / NA	anseriformes-wild	37.5496375119255	112.274268590565
+H5N8|2344b|EPI_ISL_1009711|anseriformes|south_korea|3_2_3_1_3_2_1_2|2021-01-06	eastern asia	south korea	Asia / Korea / JN / NA / NA	anseriformes-wild	34.8733358026855	126.897223705092
+H5N8|2344b|EPI_ISL_1009698|anseriformes|south_korea|3_2_3_1_3_2_1_2|2020-11-25	eastern asia	south korea	Asia / Korea / GG / NA / NA	anseriformes-wild	37.5315346337798	127.181023197189
+H5N8|2344b|EPI_ISL_2932612|anseriformes|kazakhstan|3_2_3_1_3_2_1_2|2020-09-22	central asia	kazakhstan	Asia / Kazakhstan / North Kazakhstan / Ayyrtausky district, Arykbalyk, Agymtai batyr village / NA	anseriformes-wild	53.8421826489217	69.2722074369824
+H5N8|2344b|EPI_ISL_2713314|charadriiformes|china|3_2_3_1_3_2_1_2|2020-11-16	eastern asia	china	Asia / China / Hubei Province / NA / NA	charadriiformes-wild	30.9806813015582	112.277189482252
+H5N8|2344b|EPI_ISL_7381026|galliformes|china|3_2_3_1_3_2_1_2|2021-03	eastern asia	china	Asia / China / Liaoning Province / NA / NA	galliformes-domestic	41.2987124958383	122.600275282862
+H5N8|2344b|EPI_ISL_2932616|galliformes|kazakhstan|3_2_3_1_3_2_1_2|2020-09-19	central asia	kazakhstan	Asia / Kazakhstan / North Kazakhstan / Akzhar district, Talshyk, Kazanskoe village / NA	galliformes-domestic	53.8421826489217	69.2722074369824
+H5N8|2344b|EPI_ISL_1114758|galliformes|russia|3_2_3_1_3_2_1_2|2021-01-29	eastern europe	russia	Europe / Russia / Rostov Oblast / Rostov-on-Don / NA	galliformes-domestic	47.725861660493	41.3470662241277
+H5N8|2344b|EPI_ISL_1939617|strigiformes|china|3_2_3_1_3_2_1_2|2020-11-11	eastern asia	china	Asia / China / Henan Province / NA / NA	other	33.8761853651454	113.614527263456
+H5N8|2344b|EPI_ISL_1009707|NA|south_korea|3_2_3_1_3_2_1_2|2020-12-14	eastern asia	south korea	Asia / Korea / CB / NA / NA	other	36.737850075983	127.830446360213
+H5N8|2344b|EPI_ISL_2932617|passeriformes|kazakhstan|3_2_3_1_3_2_1_2|2020-09-15	central asia	kazakhstan	Asia / Kazakhstan / North Kazakhstan / Petropavlovsk city / NA	other	53.8421826489217	69.2722074369824
+H5N8|2344b|EPI_ISL_1937891|anseriformes|china|3_2_3_1_3_2_1_2|2020-11-10	eastern asia	china	Asia / China / Henan Province / NA / NA	anseriformes-wild	33.8761853651454	113.614527263456
+H5N8|2344b|EPI_ISL_1822594|anseriformes|china|3_2_3_1_3_2_1_2|2020-11-10	eastern asia	china	Asia / China / Shanxi Province / NA / NA	anseriformes-wild	37.5496375119255	112.274268590565
+H5N8|2344b|EPI_ISL_5260455|anseriformes|china|3_2_3_1_3_2_1_2|2021-02-22	eastern asia	china	Asia / China / Shandong / NA / NA	anseriformes-wild	36.3536638777003	118.136153809721
+H5N8|2344b|EPI_ISL_5260459|anseriformes|china|3_2_3_1_3_2_1_2|2021-01-23	eastern asia	china	Asia / China / Shandong / NA / NA	anseriformes-wild	36.3536638777003	118.136153809721
+H5N8|2344b|EPI_ISL_5260464|gruiformes|china|3_2_3_1_3_2_1_2|2021-01-23	eastern asia	china	Asia / China / Shandong / NA / NA	other	36.3536638777003	118.136153809721
+H5N8|2344b|EPI_ISL_5865417|anseriformes|united_states|3_2_3_1_3_2_1_2|2020-10-02	northern america	united states	Asia / Georgia / NA / NA / NA	anseriformes-domestic	32.6403385373358	-83.4405725551842
+H5N8|2344b|EPI_ISL_5863491|anseriformes|united_states|3_2_3_1_3_2_1_2|2020-10-06	northern america	united states	Asia / Georgia / NA / NA / NA	anseriformes-wild	32.6403385373358	-83.4405725551842
+H5N8|2344b|EPI_ISL_17655598|environment|japan|3_2_3_1_3_2_1_2|2021-11-29	eastern asia	japan	NA	environment	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_17655584|environment|japan|3_2_3_1_3_2_1_2|2021-11-22	eastern asia	japan	NA	other	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_7349517|anseriformes|china|3_2_3_1_3_2_1_2|2021-01	eastern asia	china	Asia / China / Sichuan Province / NA / NA	anseriformes-wild	30.6066264180489	102.711402322843
+H5N8|2344b|EPI_ISL_977595|anseriformes|china|3_2_3_1_3_2_1_2|2020-12-31	eastern asia	china	Asia / China / Sichuan Province / NA / NA	anseriformes-wild	37.5496375119255	112.274268590565
+H5N8|2344b|EPI_ISL_977582|anseriformes|china|3_2_3_1_3_2_1_2|2020-12-29	eastern asia	china	Asia / China / Shandong Province / NA / NA	anseriformes-wild	40.1838367941588	116.40878248942
+H5N8|2344b|EPI_ISL_985191|galliformes|south_korea|3_2_3_1_3_2_1_2|2020-12-12	eastern asia	south korea	Asia / Korea / GG / NA / NA	galliformes-domestic	37.5315346337798	127.181023197189
+H5N8|2344b|EPI_ISL_1009687|galliformes|south_korea|3_2_3_1_3_2_1_2|2020-12-31	eastern asia	south korea	Asia / Korea / GB / NA / NA	galliformes-wild	36.3474789243827	128.748576389097
+H5N8|2344b|EPI_ISL_1009694|anseriformes|south_korea|3_2_3_1_3_2_1_2|2021-01-09	eastern asia	south korea	Asia / Korea / GN / NA / NA	anseriformes-wild	35.3225325644814	128.261669154089
+H5N8|2344b|EPI_ISL_985206|galliformes|south_korea|3_2_3_1_3_2_1_2|2020-12-25	eastern asia	south korea	Asia / Korea / CN / NA / NA	galliformes-domestic	36.5298116066164	126.847825775926
+H5N8|2344b|EPI_ISL_1760451|anseriformes|china|3_2_3_1_3_2_1_2|2020-11-10	eastern asia	china	Asia / China / Shanxi Province / NA / NA	anseriformes-wild	37.5496375119255	112.274268590565
+H5N8|2344b|EPI_ISL_2713372|anseriformes|china|3_2_3_1_3_2_1_2|2020-11-16	eastern asia	china	Asia / China / Hubei Province / NA / NA	anseriformes-wild	30.9806813015582	112.277189482252
+H5N8|2344b|EPI_ISL_2932683|galliformes|kazakhstan|3_2_3_1_3_2_1_2|2020-10-09	central asia	kazakhstan	Asia / Kazakhstan / North Kazakhstan / Tayinshinsky district, Roshchinsky, Dimitrovka village / NA	galliformes-domestic	53.8421826489217	69.2722074369824
+H5N8|2344b|EPI_ISL_2685947|anseriformes|china|3_2_3_1_3_2_1_2|2020-11-16	eastern asia	china	Asia / China / Hubei Province / NA / NA	anseriformes-wild	30.9806813015582	112.277189482252
+H5N8|2344b|EPI_ISL_2555536|charadriiformes|china|3_2_3_1_3_2_1_2|2020-11-16	eastern asia	china	Asia / China / Jiangxi Province / NA / NA	charadriiformes-wild	30.9806813015582	112.277189482252
+H5N8|2344b|EPI_ISL_2932600|anseriformes|kazakhstan|3_2_3_1_3_2_1_2|2020-09-01	central asia	kazakhstan	Asia / Kazakhstan / Almaty Province / Karasai district, Umtyl, Merei village / NA	anseriformes-wild	44.9554808695858	77.9603747475348
+H5N8|2344b|EPI_ISL_2932608|galliformes|kazakhstan|3_2_3_1_3_2_1_2|2020-09-01	central asia	kazakhstan	Asia / Kazakhstan / Almaty Province / Karasai district, Umtyl, Merei village / NA	galliformes-domestic	44.9554808695858	77.9603747475348
+H5N8|2344b|EPI_ISL_14836088|anseriformes|china|3_2_3_1_3_2_1_2|2020-11-16	eastern asia	china	Asia / China / Henan Province / NA / NA	anseriformes-wild	33.8761853651454	113.614527263456
+H5N8|2344b|EPI_ISL_1822596|anseriformes|china|3_2_3_1_3_2_1_2|2020-11-10	eastern asia	china	Asia / China / Shanxi Province / NA / NA	anseriformes-wild	37.5496375119255	112.274268590565
+H5N8|2344b|EPI_ISL_8215658|anseriformes|china|3_2_3_1_3_2_1_2|2021-05-15	eastern asia	china	NA	anseriformes-wild	31.7354796576819	88.2546629070738
+H5N8|2344b|EPI_ISL_8215687|charadriiformes|china|3_2_3_1_3_2_1_2|2021-05-17	eastern asia	china	NA	charadriiformes-wild	31.7354796576819	88.2546629070738
+H5N8|2344b|EPI_ISL_8215653|anseriformes|china|3_2_3_1_3_2_1_2|2021-05-15	eastern asia	china	NA	anseriformes-wild	31.7354796576819	88.2546629070738
+H5N8|2344b|EPI_ISL_8215663|charadriiformes|china|3_2_3_1_3_2_1_2|2021-05-17	eastern asia	china	NA	charadriiformes-wild	31.7354796576819	88.2546629070738
+H5N8|2344b|EPI_ISL_14874401|galliformes|kazakhstan|3_2_3_1_3_2_1_2|2020-08-01	central asia	kazakhstan	Asia / Kazakhstan / NA / NA / NA	galliformes-domestic	48.3645677524915	67.2060737287064
+H5N8|2344b|EPI_ISL_13632084|galliformes|kazakhstan|3_2_3_1_3_2_1_2|2020-08-01	central asia	kazakhstan	Asia / Kazakhstan / Almaty Province / NA / NA	galliformes-domestic	44.9554808695858	77.9603747475348
+H5N8|2344b|EPI_ISL_14823812|anseriformes|china|3_2_3_1_3_2_1_2|2020-11-09	eastern asia	china	Asia / China / Henan Province / NA / NA	anseriformes-wild	33.8761853651454	113.614527263456
+H5N8|2344b|EPI_ISL_739684|anseriformes|russia|3_2_3_1_3_2_1_2|2020-09-15	central asia	russia	Europe / Russia / Novosibirsk region / NA / NA	anseriformes-wild	55.2762232202593	79.7845914423443
+H5N8|2344b|EPI_ISL_644132|anseriformes|russia|3_2_3_1_3_2_1_2|2020-08-17	central asia	russia	Europe / Russia / Omsk Oblast / Omsk / NA	anseriformes-wild	56.0596108837778	73.3669499849514
+H5N8|2344b|EPI_ISL_644155|galliformes|russia|3_2_3_1_3_2_1_2|2020-08-17	central asia	russia	Europe / Russia / Omsk Oblast / Omsk / NA	galliformes-domestic	56.0596108837778	73.3669499849514
+H5N8|2344b|EPI_ISL_956337|anseriformes|china|3_2_3_1_3_2_1_2|2020-11-29	eastern asia	china	NA	anseriformes-wild	33.8761853651454	113.614527263456
+H5N8|2344b|EPI_ISL_15435500|gruiformes|china|3_2_3_1_3_2_1_2|2021-01-21	eastern asia	china	Asia / China / Yunnan Province / Huize Black-necked Crane National Nature Reserve, Yunnan Province,China / NA	other	24.9645779206387	101.495556215566
+H5N8|2344b|EPI_ISL_14770165|gruiformes|china|3_2_3_1_3_2_1_2|2020-12-31	eastern asia	china	Asia / China / NA / NA / NA	other	36.3536638777003	118.136153809721
+H5N8|2344b|EPI_ISL_china_4|galliformes|china|3_2_3_1_3_2_1_2|2021-06-26	eastern asia	china	Asia / China / Anhui / NA / NA	galliformes-domestic	31.8128943962267	117.235219497068
+H5N8|2344b|EPI_ISL_1139035|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-10-30	western europe	netherlands	Europe / Netherlands / Provincie Noord-Holland / Gemeente Heerhugowaard / NA	anseriformes-wild	52.5811544669078	4.87272777813315
+H5N8|2344b|EPI_ISL_641377|galliformes|netherlands|3_2_3_1_3_2_1_2|2020-11-02	western europe	netherlands	Europe / Netherlands / Provincie Noord-Holland / Edam-Volendam / NA	galliformes-domestic	52.5811544669078	4.87272777813315
+H5N8|2344b|EPI_ISL_644141|anseriformes|russia|3_2_3_1_3_2_1_2|2020-08-17	central asia	russia	Europe / Russia / Omsk Oblast / Omsk / NA	anseriformes-wild	56.0596108837778	73.3669499849514
+H5N8|2344b|EPI_ISL_644140|galliformes|russia|3_2_3_1_3_2_1_2|2020-08-17	central asia	russia	Europe / Russia / Omsk Oblast / Omsk / NA	galliformes-domestic	56.0596108837778	73.3669499849514
+H5N8|2344b|EPI_ISL_644142|anseriformes|russia|3_2_3_1_3_2_1_2|2020-08-17	central asia	russia	Europe / Russia / Omsk Oblast / Omsk / NA	anseriformes-wild	56.0596108837778	73.3669499849514
+H5N8|2344b|EPI_ISL_1139109|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-11-24	western europe	netherlands	Europe / Netherlands / Provincie Friesland / Schraard / NA	anseriformes-wild	53.1100430768808	5.84863928632393
+H5N8|2344b|EPI_ISL_1139106|charadriiformes|netherlands|3_2_3_1_3_2_1_2|2020-11-02	western europe	netherlands	Europe / Netherlands / Provincie Friesland / Holwerd / NA	charadriiformes-wild	53.1100430768808	5.84863928632393
+H5N8|2344b|EPI_ISL_653920|galliformes|netherlands|3_2_3_1_3_2_1_2|2020-11-20	western europe	netherlands	Europe / Netherlands / Provincie Friesland / Witmarsum / NA	galliformes-domestic	53.1100430768808	5.84863928632393
+H5N8|2344b|EPI_ISL_710508|anseriformes|united_kingdom|3_2_3_1_3_2_1_2|2020-10-30	northern europe	united kingdom	Europe / United Kingdom / Gloucestershire / NA / NA	anseriformes-wild	54.0438440515314	-2.78687513666638
+H5N8|2344b|EPI_ISL_668457|anseriformes|sweden|3_2_3_1_3_2_1_2|2020-11-12	northern europe	sweden	Europe / Sweden / Skane Lan / Lunds Kommun / NA	anseriformes-wild	55.9474024317265	13.595146733816
+H5N8|2344b|EPI_ISL_984695|galliformes|denmark|3_2_3_1_3_2_1_2|2020-11-15	northern europe	denmark	Europe / Denmark / Region Midtjylland / Randers Kommune / NA	galliformes-domestic	56.2490598335433	9.39675377639095
+H5N8|2344b|EPI_ISL_18953096|galliformes|denmark|3_2_3_1_3_2_1_2|2020-11-15	northern europe	denmark	NA	galliformes-domestic	55.9512996898935	10.0707816763207
+H5N8|2344b|EPI_ISL_711058|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-12-02	western europe	netherlands	Europe / Netherlands / Provincie Utrecht / Gemeente Woerden / NA	anseriformes-wild	52.083727924893	5.16763788059654
+H5N8|2344b|EPI_ISL_739688|galliformes|russia|3_2_3_1_3_2_1_2|2020-09-22	central asia	russia	Europe / Russia / Novosibirsk region / NA / NA	galliformes-domestic	55.2762232202593	79.7845914423443
+H5N8|2344b|EPI_ISL_654829|anseriformes|russia|3_2_3_1_3_2_1_2|2020-09-03	central asia	russia	Europe / Russia / Omsk Oblast / Omsk / NA	anseriformes-wild	56.0596108837778	73.3669499849514
+H5N8|2344b|EPI_ISL_654831|anseriformes|russia|3_2_3_1_3_2_1_2|2020-09-03	central asia	russia	Europe / Russia / Omsk Oblast / Omsk / NA	anseriformes-wild	56.0596108837778	73.3669499849514
+H5N8|2344b|EPI_ISL_654839|anseriformes|russia|3_2_3_1_3_2_1_2|2020-08-27	central asia	russia	Europe / Russia / Kurgan region / NA / NA	anseriformes-wild	55.4734051858522	64.8219230597649
+H5N8|2344b|EPI_ISL_654838|galliformes|russia|3_2_3_1_3_2_1_2|2020-08-27	central asia	russia	Europe / Russia / Kurgan region / NA / NA	galliformes-domestic	55.4734051858522	64.8219230597649
+H5N8|2344b|EPI_ISL_683594|anseriformes|italy|3_2_3_1_3_2_1_2|2020-11-14	southern europe	italy	Europe / Italy / Veneto / Province of Rovigo / Valle Ca Zuliani	anseriformes-wild	45.6595758067318	11.8428083995249
+H5N8|2344b|EPI_ISL_683751|anseriformes|italy|3_2_3_1_3_2_1_2|2020-11-21	southern europe	italy	Europe / Italy / Veneto / Province of Venice / Jesolo	anseriformes-wild	45.6595758067318	11.8428083995249
+H5N8|2344b|EPI_ISL_1665263|anseriformes|slovenia|3_2_3_1_3_2_1_2|2020-11-17	southern europe	slovenia	Europe / Slovenia / NA / NA / NA	anseriformes-wild	46.124137393352	14.813678667363
+H5N8|2344b|EPI_ISL_826296|anseriformes|sweden|3_2_3_1_3_2_1_2|2020-12-15	northern europe	sweden	Europe / Sweden / Skane Lan / Skurups Kommun / NA	anseriformes-wild	55.9474024317265	13.595146733816
+H5N8|2344b|EPI_ISL_832206|galliformes|sweden|3_2_3_1_3_2_1_2|2021-01-13	northern europe	sweden	Europe / Sweden / Skane Lan / Skurups Kommun / NA	galliformes-domestic	55.9474024317265	13.595146733816
+H5N8|2344b|EPI_ISL_1238902|galliformes|sweden|3_2_3_1_3_2_1_2|2021-02-23	northern europe	sweden	Europe / Sweden / Skane Lan / Trelleborgs Kommun / NA	galliformes-wild	55.9474024317265	13.595146733816
+H5N8|2344b|EPI_ISL_1095454|accipitriformes|sweden|3_2_3_1_3_2_1_2|2021-02-11	northern europe	sweden	Europe / Sweden / Skane Lan / Svedala Kommun / NA	other	55.9474024317265	13.595146733816
+H5N8|2344b|EPI_ISL_984673|anseriformes|denmark|3_2_3_1_3_2_1_2|2020-11-04	northern europe	denmark	Europe / Denmark / Region Syddanmark / Tonder Kommune / NA	anseriformes-wild	55.3568797999445	9.45020901930698
+H5N8|2344b|EPI_ISL_18953086|anseriformes|denmark|3_2_3_1_3_2_1_2|2020-11-04	northern europe	denmark	NA	anseriformes-wild	55.9512996898935	10.0707816763207
+H5N8|2344b|EPI_ISL_1033030|galliformes|czechia|3_2_3_1_3_2_1_2|2021-02-03	eastern europe	czechia	Europe / Czech Republic / Pardubicky kraj / Okres Chrudim / Ronov nad Doubravou; GPS 49Â°532.573N, 15Â°322.451E	galliformes-domestic	49.9006406346158	16.1892997029385
+H5N8|2344b|EPI_ISL_1033124|anseriformes|czechia|3_2_3_1_3_2_1_2|2021-02-04	eastern europe	czechia	Europe / Czech Republic / Jihocesky Kraj / Okres Strakonice / Strakonice	anseriformes-wild	49.0928166218663	14.4391547985202
+H5N8|2344b|EPI_ISL_1058020|galliformes|czechia|3_2_3_1_3_2_1_2|2021-02-10	eastern europe	czechia	Europe / Czech Republic / Jihocesky Kraj / Okres Strakonice / Katovice	galliformes-domestic	49.0928166218663	14.4391547985202
+H5N8|2344b|EPI_ISL_1058021|galliformes|czechia|3_2_3_1_3_2_1_2|2021-02-12	eastern europe	czechia	Europe / Czech Republic / Plzensky Kraj / Okres Plzen-Mesto / Bzi	galliformes-domestic	49.5901077813144	13.2328532454248
+H5N8|2344b|EPI_ISL_1399236|galliformes|czechia|3_2_3_1_3_2_1_2|2021-03-10	eastern europe	czechia	Europe / Czech Republic / Stredocesky Kraj / Okres Pribram / Pocaply, Breznice	galliformes-domestic	49.9969098943343	14.5545810187162
+H5N8|2344b|EPI_ISL_1114736|galliformes|russia|3_2_3_1_3_2_1_2|2020-09-26	central asia	russia	Europe / Russia / Tyumen Oblast / Tyumen / NA	galliformes-domestic	57.6472366156513	69.1218349161945
+H5N8|2344b|EPI_ISL_5098146|galliformes|germany|3_2_3_1_3_2_1_2|2021-02-08	western europe	germany	Europe / Germany / Mecklenburg-Vorpommern / Landkreis Rostock / NA	galliformes-domestic	53.7551744161606	12.5509509363277
+H5N8|2344b|EPI_ISL_1114740|galliformes|italy|3_2_3_1_3_2_1_2|2020-10-17	southern europe	italy	Europe / Russia / Kostroma Oblast / Kostroma / NA	galliformes-domestic	41.979336323661	12.7721450906831
+H5N8|2344b|EPI_ISL_2172526|accipitriformes|netherlands|3_2_3_1_3_2_1_2|2021-02-21	western europe	netherlands	Europe / Netherlands / Provincie Gelderland / Rha (Bronckhorst) / (Bronckhorst)	other	52.0617180422494	5.94466833784019
+H5N8|2344b|EPI_ISL_1114751|galliformes|russia|3_2_3_1_3_2_1_2|2020-12-11	eastern europe	russia	Europe / Russia / Stavropol Krai / Stavropol / NA	galliformes-domestic	44.927089080414	43.4103582512603
+H5N8|2344b|EPI_ISL_1114752|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-12-31	western europe	netherlands	Europe / Russia / Republic of North Ossetia?Alania / ?Alania / ?Alania	anseriformes-wild	51.5616727876811	5.19541346074046
+H5N8|2344b|EPI_ISL_1114762|galliformes|russia|3_2_3_1_3_2_1_2|2021-01-05	central asia	russia	Europe / Russia / Krasnodar Krai / Krasnodar / NA	galliformes-domestic	65.951077439978	95.3658732364833
+H5N8|2344b|EPI_ISL_18112121|galliformes|united_kingdom|3_2_3_1_3_2_1_2|2021-01-26	northern europe	united kingdom	NA	galliformes-domestic	52.3299411115892	-3.76558183366802
+H5N8|2344b|EPI_ISL_18112121|galliformes|united_kingdom|3_2_3_1_3_2_1_2|2021-01-26	northern europe	united kingdom	NA	galliformes-wild	52.3299411115892	-3.76558183366802
+H5N8|2344b|EPI_ISL_1139014|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-10-27	western europe	netherlands	Europe / Netherlands / Provincie Groningen / Lauwersoog / NA	anseriformes-wild	52.0617180422494	5.94466833784019
+H5N8|2344b|EPI_ISL_1139015|NA|netherlands|3_2_3_1_3_2_1_2|2020-10-26	western europe	netherlands	Europe / Netherlands / Provincie Friesland / Cornwerd / NA	other	53.1100430768808	5.84863928632393
+H5N8|2344b|EPI_ISL_1575130|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-11-06	western europe	netherlands	Europe / Netherlands / Rotterdam / NA / NA	anseriformes-wild	51.9374604216783	4.46477045234472
+H5N8|2344b|EPI_ISL_1575133|charadriiformes|netherlands|3_2_3_1_3_2_1_2|2020-11-06	western europe	netherlands	Europe / Netherlands / Rotterdam / NA / NA	charadriiformes-wild	51.9374604216783	4.46477045234472
+H5N8|2344b|EPI_ISL_1575129|accipitriformes|netherlands|3_2_3_1_3_2_1_2|2020-11-06	western europe	netherlands	Europe / Netherlands / Rotterdam / NA / NA	other	51.9374604216783	4.46477045234472
+H5N8|2344b|EPI_ISL_1139172|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-11-26	western europe	netherlands	Europe / Netherlands / South Holland / Stellendam / NA	anseriformes-wild	51.9374604216783	4.46477045234472
+H5N8|2344b|EPI_ISL_1139085|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-11-01	western europe	netherlands	Europe / Netherlands / Provincie Friesland / Holwerd / NA	anseriformes-wild	53.1100430768808	5.84863928632393
+H5N8|2344b|EPI_ISL_1139097|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-11-04	western europe	netherlands	Europe / Netherlands / Provincie Utrecht / Waverveen / NA	anseriformes-wild	52.083727924893	5.16763788059654
+H5N8|2344b|EPI_ISL_1139091|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-11-10	western europe	netherlands	Europe / Netherlands / Provincie Friesland / Grou / NA	anseriformes-wild	53.1100430768808	5.84863928632393
+H5N8|2344b|EPI_ISL_1039239|galliformes|russia|3_2_3_1_3_2_1_2|2020-12-12	eastern europe	russia	Europe / Russia / Astrakhan Oblast / NA / NA	galliformes-domestic	47.1064465901659	47.3587677312838
+H5N8|2344b|EPI_ISL_1038924|unknown|russia|3_2_3_1_3_2_1_2|2020-12-12	eastern europe	russia	Europe / Russia / Astrakhan Oblast / NA / NA	unknown	47.1064465901659	47.3587677312838
+H5N8|2344b|EPI_ISL_1224949|anseriformes|netherlands|3_2_3_1_3_2_1_2|2021-02-04	western europe	netherlands	Europe / Netherlands / South Holland / Gemeente Hellevoetsluis / NA	anseriformes-wild	51.9374604216783	4.46477045234472
+H5N8|2344b|EPI_ISL_2172523|charadriiformes|netherlands|3_2_3_1_3_2_1_2|2021-01-18	western europe	netherlands	Europe / Netherlands / South Holland / Hoogvliet / NA	charadriiformes-wild	51.9374604216783	4.46477045234472
+H5N8|2344b|EPI_ISL_1279262|anseriformes|croatia|3_2_3_1_3_2_1_2|2021-03-01	southern europe	croatia	Europe / Croatia / Vukovarsko-Srijemska Zupanija / River Bosut, PodgraÄ‘e / NA	anseriformes-wild	45.1789051758503	18.8780624838969
+H5N8|2344b|EPI_ISL_3135931|anseriformes|hungary|3_2_3_1_3_2_1_2|2021-03-08	eastern europe	hungary	Europe / Hungary / Csongrad megye / NA / NA	anseriformes-wild	46.4291346697431	20.2330085562192
+H5N8|2344b|EPI_ISL_3128527|anseriformes|kosovo|3_2_3_1_3_2_1_2|2021-06-02	southern europe	kosovo	Europe / Kosovo / Kacanik / NA / NA	anseriformes-wild	42.2921134818528	21.1153262409808
+H5N8|2344b|EPI_ISL_3128533|galliformes|albania|3_2_3_1_3_2_1_2|2021-05-31	southern europe	albania	Europe / Albania / NA / NA / NA	galliformes-domestic	41.1330587421492	20.0646630993931
+H5N8|2344b|EPI_ISL_3128528|galliformes|kosovo|3_2_3_1_3_2_1_2|2021-06-03	southern europe	kosovo	Europe / Kosovo / Shtime / NA / NA	galliformes-domestic	42.2921134818528	21.1153262409808
+H5N8|2344b|EPI_ISL_3128529|galliformes|kosovo|3_2_3_1_3_2_1_2|2021-05-19	southern europe	kosovo	Europe / Kosovo / Mitrovica / NA / NA	galliformes-domestic	42.912769066854	20.7913344545068
+H5N8|2344b|EPI_ISL_3128532|galliformes|kosovo|3_2_3_1_3_2_1_2|2021-06-01	southern europe	kosovo	Europe / Kosovo / Malisheve / NA / NA	galliformes-domestic	42.2389795413595	20.7297102658013
+H5N8|2344b|EPI_ISL_12176853|galliformes|kosovo|3_2_3_1_3_2_1_2|2021-06-14	southern europe	kosovo	Europe / Kosovo / NA / NA / NA	galliformes-domestic	42.5708562510164	20.8773751977042
+H5N8|2344b|EPI_ISL_1303550|galliformes|sweden|3_2_3_1_3_2_1_2|2021-03-13	northern europe	sweden	Europe / Sweden / Ostergotlands Lan / Linkopings Kommun / NA	galliformes-domestic	57.5128828372686	18.541723046906
+H5N8|2344b|EPI_ISL_2254497|passeriformes|sweden|3_2_3_1_3_2_1_2|2021-03-16	northern europe	sweden	Europe / Sweden / Ostergotlands Lan / Mjolby Kommun / NA	other	57.5128828372686	18.541723046906
+H5N8|2344b|EPI_ISL_1697195|anseriformes|czechia|3_2_3_1_3_2_1_2|2021-03-19	eastern europe	czechia	Europe / Czech Republic / Pardubicky kraj / Okres Pardubice / Vapno; GPS: 50.1074822N, 15.5273825E	anseriformes-wild	49.9006406346158	16.1892997029385
+H5N8|2344b|EPI_ISL_1941579|anseriformes|czechia|3_2_3_1_3_2_1_2|2021-04-06	eastern europe	czechia	Europe / Czech Republic / Kralovehradecky Kraj / Okres Hradec Kralove / Stary Bydzov	anseriformes-wild	50.3852537596798	15.8661896036913
+H5N8|2344b|EPI_ISL_2194543|galliformes|czechia|3_2_3_1_3_2_1_2|2021-03-29	eastern europe	czechia	Europe / Czech Republic / Kralovehradecky Kraj / Okres Hradec Kralove / Kosicky	galliformes-domestic	50.3852537596798	15.8661896036913
+H5N8|2344b|EPI_ISL_3102076|anseriformes|poland|3_2_3_1_3_2_1_2|2021-04-07	eastern europe	poland	Europe / Poland / Lodzkie / NA / NA	anseriformes-wild	51.6035747353358	19.4163037332462
+H5N8|2344b|EPI_ISL_1941582|galliformes|czechia|3_2_3_1_3_2_1_2|2021-04-08	eastern europe	czechia	Europe / Czech Republic / Jihocesky Kraj / Okres Strakonice / Vodnany	galliformes-domestic	49.0928166218663	14.4391547985202
+H5N8|2344b|EPI_ISL_1697182|galliformes|czechia|3_2_3_1_3_2_1_2|2021-03-25	eastern europe	czechia	Europe / Czech Republic / Kralovehradecky Kraj / Okres Jicin / Vysoke Veseli	galliformes-domestic	50.3852537596798	15.8661896036913
+H5N8|2344b|EPI_ISL_1697187|galliformes|czechia|3_2_3_1_3_2_1_2|2021-04-03	eastern europe	czechia	Europe / Czech Republic / Hlavni mesto Praha / Okres Praha / Trebotov; GPS: 49.6993983N, 14.2870908E	galliformes-domestic	50.0636978575423	14.4763649175255
+H5N8|2344b|EPI_ISL_1697189|galliformes|czechia|3_2_3_1_3_2_1_2|2021-04-01	eastern europe	czechia	Europe / Czech Republic / Morovskoslezsky Kraj / Okres Bruntal / Zator	galliformes-domestic	49.8368899304208	17.9578982609586
+H5N8|2344b|EPI_ISL_18458050|galliformes|lithuania|3_2_3_1_3_2_1_2|2021-04-28	northern europe	lithuania	NA	galliformes-domestic	55.332528278146	23.9147651507013
+H5N8|2344b|EPI_ISL_3102062|galliformes|poland|3_2_3_1_3_2_1_2|2021-05-11	eastern europe	poland	Europe / Poland / Wielkopolskie / NA / NA	galliformes-domestic	52.3269678786096	17.250141052842
+H5N8|2344b|EPI_ISL_1697193|anseriformes|czechia|3_2_3_1_3_2_1_2|2021-03-24	eastern europe	czechia	Europe / Czech Republic / Kralovehradecky Kraj / Okres Hradec Kralove / Lukova	anseriformes-wild	50.3852537596798	15.8661896036913
+H5N8|2344b|EPI_ISL_12437700|anseriformes|czechia|3_2_3_1_3_2_1_2|2021-03-26	eastern europe	czechia	Europe / Czech Republic / Stredocesky Kraj / Okres Nymburk / Slibovice	anseriformes-wild	49.9969098943343	14.5545810187162
+H5N8|2344b|EPI_ISL_1697191|galliformes|czechia|3_2_3_1_3_2_1_2|2021-04-01	eastern europe	czechia	Europe / Czech Republic / Kralovehradecky Kraj / Okres Hradec Kralove / Dobrenice	galliformes-domestic	50.3852537596798	15.8661896036913
+H5N8|2344b|EPI_ISL_2681044|galliformes|italy|3_2_3_1_3_2_1_2|2021-05-05	southern europe	italy	Europe / Romania / Mures, Ungheni / NA / NA	galliformes-domestic	41.979336323661	12.7721450906831
+H5N8|2344b|EPI_ISL_1941581|anseriformes|czechia|3_2_3_1_3_2_1_2|2021-03-13	eastern europe	czechia	Europe / Czech Republic / Plzensky Kraj / Okres Plzen-Jih / Zbuch, pond; GPS: 49.6897778N, 13.2289439E	anseriformes-wild	49.5901077813144	13.2328532454248
+H5N8|2344b|EPI_ISL_1697197|galliformes|czechia|3_2_3_1_3_2_1_2|2021-03-25	eastern europe	czechia	Europe / Czech Republic / Plzensky Kraj / NA / NA	galliformes-domestic	49.5901077813144	13.2328532454248
+H5N8|2344b|EPI_ISL_5098154|galliformes|germany|3_2_3_1_3_2_1_2|2021-02-06	western europe	germany	Europe / Germany / Mecklenburg-Vorpommern / Vorpommern-RÃ¼gen / NA	galliformes-domestic	53.7551744161606	12.5509509363277
+H5N8|2344b|EPI_ISL_846604|galliformes|poland|3_2_3_1_3_2_1_2|2020-12-07	eastern europe	poland	Europe / Poland / Masovian Voivodeship / mazowieckie / NA	galliformes-domestic	52.3411657327183	21.0998506797105
+H5N8|2344b|EPI_ISL_18244823|accipitriformes|poland|3_2_3_1_3_2_1_2|2021-03-09	eastern europe	poland	NA	other	52.3411657327183	21.0998506797105
+H5N8|2344b|EPI_ISL_18458047|galliformes|lithuania|3_2_3_1_3_2_1_2|2021-04-24	northern europe	lithuania	NA	galliformes-domestic	55.332528278146	23.9147651507013
+H5N8|2344b|EPI_ISL_3102074|galliformes|poland|3_2_3_1_3_2_1_2|2021-05-13	eastern europe	poland	Europe / Poland / Warmi?sko-mazurskie / ?sko-mazurskie / ?sko-mazurskie	galliformes-domestic	53.857820060305	20.8226086933633
+H5N8|2344b|EPI_ISL_3102070|ciconiiformes|poland|3_2_3_1_3_2_1_2|2021-05-02	eastern europe	poland	Europe / Poland / Mazowieckie / NA / NA	other	52.3411657327183	21.0998506797105
+H5N8|2344b|EPI_ISL_3142375|anseriformes|austria|3_2_3_1_3_2_1_2|2021-04-27	western europe	austria	Europe / Austria / Oberneukirchen / NA / NA	anseriformes-wild	48.1371934331394	13.9653618911462
+H5N8|2344b|EPI_ISL_3102080|galliformes|austria|3_2_3_1_3_2_1_2|2021-04-27	western europe	austria	Europe / Austria / Oberneukirchen / NA / NA	galliformes-domestic	48.1371934331394	13.9653618911462
+H5N8|2344b|EPI_ISL_5142894|galliformes|germany|3_2_3_1_3_2_1_2|2021-03-10	western europe	germany	Europe / Germany / Lower Saxony / Wesermarsch / NA	galliformes-domestic	52.7642105761026	9.16783937293005
+H5N8|2344b|EPI_ISL_3138567|accipitriformes|sweden|3_2_3_1_3_2_1_2|2021-03-25	northern europe	sweden	Europe / Sweden / Vastra Gotalands Lan / Boras Kommun / NA	other	58.2955067014075	12.8595382920252
+H5N8|2344b|EPI_ISL_13369742|anseriformes|united_kingdom|3_2_3_1_3_2_1_2|2021-11-07	northern europe	united kingdom	Europe / United Kingdom / England / NA / NA	anseriformes-wild	54.0438440515314	-2.78687513666638
+H5N8|2344b|EPI_ISL_3026699|anseriformes|sweden|3_2_3_1_3_2_1_2|2021-06-17	northern europe	sweden	Europe / Sweden / Gotlands Lan / Gotlands Kommun / NA	anseriformes-wild	57.5128828372686	18.541723046906
+H5N8|2344b|EPI_ISL_3950049|anseriformes|sweden|3_2_3_1_3_2_1_2|2021-08-26	northern europe	sweden	Europe / Sweden / Sodermanlands Lan / Nykopings Kommun / NA	anseriformes-wild	59.0743595934023	16.6929745153277
+H5N8|2344b|EPI_ISL_3026043|charadriiformes|sweden|3_2_3_1_3_2_1_2|2021-06-17	northern europe	sweden	Europe / Sweden / Gotlands Lan / Gotlands Kommun / NA	charadriiformes-wild	57.5128828372686	18.541723046906
+H5N8|2344b|EPI_ISL_5144920|galliformes|germany|3_2_3_1_3_2_1_2|2021-02-20	western europe	germany	Europe / Germany / Lower Saxony / Diepholz / NA	galliformes-domestic	52.7642105761026	9.16783937293005
+H5N8|2344b|EPI_ISL_5123579|anseriformes|germany|3_2_3_1_3_2_1_2|2021-03-19	western europe	germany	Europe / Germany / Lower Saxony / Cloppenburg / NA	anseriformes-domestic	52.7642105761026	9.16783937293005
+H5N8|2344b|EPI_ISL_5143100|galliformes|germany|3_2_3_1_3_2_1_2|2021-03-10	western europe	germany	Europe / Germany / Lower Saxony / Cloppenburg / NA	galliformes-domestic	52.7642105761026	9.16783937293005
+H5N8|2344b|EPI_ISL_1080480|anseriformes|czechia|3_2_3_1_3_2_1_2|2021-02-14	eastern europe	czechia	Europe / Czech Republic / Liberecky Kraj / Okres Liberec / Prisovice, pond Velky pisecak, GPS: 50Â°3413.630N, 15Â°516.236E	anseriformes-wild	50.7015712481419	14.9927241891218
+H5N8|2344b|EPI_ISL_1399240|anseriformes|czechia|3_2_3_1_3_2_1_2|2021-03-02	eastern europe	czechia	Europe / Czech Republic / Stredocesky Kraj / Okres Mlada Boleslav / rybnik Ohrada, Bosen	anseriformes-wild	49.9969098943343	14.5545810187162
+H5N8|2344b|EPI_ISL_2402936|galliformes|czechia|3_2_3_1_3_2_1_2|2021-05-16	eastern europe	czechia	Europe / Czech Republic / Stredocesky Kraj / Okres Melnik / Chorusice	galliformes-domestic	49.9969098943343	14.5545810187162
+H5N8|2344b|EPI_ISL_5115968|galliformes|germany|3_2_3_1_3_2_1_2|2021-03-04	western europe	germany	Europe / Germany / Brandenburg / MÃ¤rkisch-Oderland / NA	galliformes-domestic	52.4686720071996	13.4043192497063
+H5N8|2344b|EPI_ISL_1080579|gruiformes|czechia|3_2_3_1_3_2_1_2|2021-02-14	eastern europe	czechia	Europe / Czech Republic / Liberecky Kraj / Okres Liberec / Prisovice, pond Velky pisecak, GPS: 50Â°3413.630N,	other	50.7015712481419	14.9927241891218
+H5N8|2344b|EPI_ISL_5137952|galliformes|germany|3_2_3_1_3_2_1_2|2021-03-14	western europe	germany	Europe / Germany / Lower Saxony / Cloppenburg / NA	galliformes-domestic	52.7642105761026	9.16783937293005
+H5N8|2344b|EPI_ISL_5142488|galliformes|germany|3_2_3_1_3_2_1_2|2021-03-16	western europe	germany	Europe / Germany / Saxony-Anhalt / Altmarkkreis Salzwedel / NA	galliformes-domestic	52.0090264158216	11.7027467770331
+H5N8|2344b|EPI_ISL_5126214|strigiformes|germany|3_2_3_1_3_2_1_2|2021-03-10	western europe	germany	Europe / Germany / Saxony-Anhalt / Altmarkkreis Salzwedel / NA	other	52.0090264158216	11.7027467770331
+H5N8|2344b|EPI_ISL_5144725|anseriformes|germany|3_2_3_1_3_2_1_2|2021-03-16	western europe	germany	Europe / Germany / Lower Saxony / Vechta / NA	anseriformes-domestic	52.7642105761026	9.16783937293005
+H5N8|2344b|EPI_ISL_5146171|galliformes|germany|3_2_3_1_3_2_1_2|2021-03-29	western europe	germany	Europe / Germany / Baden-Wuerttemberg / Rottweil / NA	galliformes-domestic	48.5335196122676	9.04442576424602
+H5N8|2344b|EPI_ISL_5143584|galliformes|germany|3_2_3_1_3_2_1_2|2021-03-24	western europe	germany	Europe / Germany / Bavaria / Ebersberg / NA	galliformes-domestic	48.9386109033625	11.4278546586472
+H5N8|2344b|EPI_ISL_5144407|galliformes|germany|3_2_3_1_3_2_1_2|2021-03-20	western europe	germany	Europe / Germany / North Rhine-Westphalia / Paderborn / NA	galliformes-domestic	51.4777551092159	7.5539349720828
+H5N8|2344b|EPI_ISL_5143587|galliformes|germany|3_2_3_1_3_2_1_2|2021-03-24	western europe	germany	Europe / Germany / Saxony / Vogtlandkreis / NA	galliformes-domestic	51.0528694457593	13.3447264729352
+H5N8|2344b|EPI_ISL_5143583|galliformes|germany|3_2_3_1_3_2_1_2|2021-03-24	western europe	germany	Europe / Germany / Thuringia / SÃ¶mmerda / NA	galliformes-domestic	50.9034036811626	11.0265393979066
+H5N8|2344b|EPI_ISL_5049590|galliformes|luxembourg|3_2_3_1_3_2_1_2|2021-09-03	western europe	luxembourg	Europe / Luxembourg / District de Grevenmacher / NA / NA	galliformes-domestic	49.6868212553332	6.34949296820615
+H5N8|2344b|EPI_ISL_9250718|galliformes|belgium|3_2_3_1_3_2_1_2|2021-08-31	western europe	belgium	Europe / Belgium / Province de Luxembourg / Chassepierre / NA	galliformes-domestic	50.3127973408239	5.0143267931739
+H5N8|2344b|EPI_ISL_7778776|anseriformes|norway|3_2_3_1_3_2_1_2|2021-06-14	northern europe	norway	Europe / Norway / NA / NA / NA	anseriformes-wild	63.9836330810339	12.3044196327525
+H5N8|2344b|EPI_ISL_1191587|galliformes|czechia|3_2_3_1_3_2_1_2|2021-01-22	eastern europe	czechia	Europe / Czech Republic / Jihocesky Kraj / Okres Tabor / Dlouha Lhota/Chynov; GPS 49.3561703 N, 14.7742128 E	galliformes-domestic	49.0928166218663	14.4391547985202
+H5N8|2344b|EPI_ISL_1095365|anseriformes|sweden|3_2_3_1_3_2_1_2|2021-02-07	northern europe	sweden	Europe / Sweden / Blekinge Lan / Solvesborgs Kommun / NA	anseriformes-wild	56.2754954629495	15.2029498652564
+H5N8|2344b|EPI_ISL_1095451|anseriformes|sweden|3_2_3_1_3_2_1_2|2021-01-22	northern europe	sweden	Europe / Sweden / Skane Lan / Malmo Kommun / NA	anseriformes-wild	55.9474024317265	13.595146733816
+H5N8|2344b|EPI_ISL_1399241|galliformes|czechia|3_2_3_1_3_2_1_2|2021-03-06	eastern europe	czechia	Europe / Czech Republic / Morovskoslezsky Kraj / Okres Opava / Vyhon, Velke Hostice; GPS: N 49Â°55.89045, E 17Â°58.67035	galliformes-domestic	49.8368899304208	17.9578982609586
+H5N8|2344b|EPI_ISL_18244810|accipitriformes|poland|3_2_3_1_3_2_1_2|2021-02-19	eastern europe	poland	NA	other	50.3295799025895	18.9932551559921
+H5N8|2344b|EPI_ISL_18244810|accipitriformes|poland|3_2_3_1_3_2_1_2|2021-02-19	eastern europe	poland	NA	other	52.1141994014432	19.4236724631525
+H5N8|2344b|EPI_ISL_1665273|anseriformes|italy|3_2_3_1_3_2_1_2|2021-01-13	southern europe	italy	Europe / Romania / Judetul Ilfov / NA / NA	anseriformes-wild	41.979336323661	12.7721450906831
+H5N8|2344b|EPI_ISL_2234820|accipitriformes|italy|3_2_3_1_3_2_1_2|2021-01-22	southern europe	italy	Europe / Romania / NA / NA / NA	other	41.979336323661	12.7721450906831
+H5N8|2344b|EPI_ISL_5061890|anseriformes|germany|3_2_3_1_3_2_1_2|2020-11-18	western europe	germany	Europe / Germany / Schleswig-Holstein / Nordfriesland / NA	anseriformes-domestic	54.1814850326718	9.81577342948134
+H5N8|2344b|EPI_ISL_1665256|anseriformes|slovakia|3_2_3_1_3_2_1_2|2021-01-08	eastern europe	slovakia	Europe / Slovakia / Kosice / NA / NA	anseriformes-wild	48.7020478211848	21.2707899575187
+H5N8|2344b|EPI_ISL_1665266|anseriformes|slovenia|3_2_3_1_3_2_1_2|2020-12-10	southern europe	slovenia	Europe / Slovenia / NA / NA / NA	anseriformes-wild	46.124137393352	14.813678667363
+H5N8|2344b|EPI_ISL_5098153|anseriformes|germany|3_2_3_1_3_2_1_2|2020-11-19	western europe	germany	Europe / Germany / Lower Saxony / Hannover / NA	anseriformes-wild	52.7642105761026	9.16783937293005
+H5N8|2344b|EPI_ISL_5098158|galliformes|germany|3_2_3_1_3_2_1_2|2021-02-15	western europe	germany	Europe / Germany / Brandenburg / Prignitz / NA	galliformes-domestic	52.4686720071996	13.4043192497063
+H5N8|2344b|EPI_ISL_1719911|anseriformes|lithuania|3_2_3_1_3_2_1_2|2021-03-19	northern europe	lithuania	Europe / Lithuania / Vilnius / NA / NA	anseriformes-wild	54.8294557942269	25.2490386107757
+H5N8|2344b|EPI_ISL_18245531|anseriformes|poland|3_2_3_1_3_2_1_2|2021-03-16	eastern europe	poland	NA	anseriformes-wild	54.1541828653429	17.9878737941344
+H5N8|2344b|EPI_ISL_18245531|anseriformes|poland|3_2_3_1_3_2_1_2|2021-03-16	eastern europe	poland	NA	anseriformes-wild	52.1141994014432	19.4236724631525
+H5N8|2344b|EPI_ISL_1719914|anseriformes|bulgaria|3_2_3_1_3_2_1_2|2021-02-04	eastern europe	bulgaria	Europe / Bulgaria / Slavyanovo / NA / NA	anseriformes-domestic	43.4863324718956	24.6106292568625
+H5N8|2344b|EPI_ISL_1719915|galliformes|bulgaria|3_2_3_1_3_2_1_2|2021-02-08	eastern europe	bulgaria	Europe / Bulgaria / Slavyanovo / NA / NA	galliformes-domestic	43.4863324718956	24.6106292568625
+H5N8|2344b|EPI_ISL_995172|galliformes|united_kingdom|3_2_3_1_3_2_1_2|2020-12-31	northern europe	united kingdom	Europe / United Kingdom / Northern Ireland / NA / NA	galliformes-domestic	54.0438440515314	-2.78687513666638
+H5N8|2344b|EPI_ISL_11406397|galliformes|united_kingdom|3_2_3_1_3_2_1_2|2021-03-28	northern europe	united kingdom	Europe / United Kingdom / England / NA / NA	galliformes-domestic	54.0438440515314	-2.78687513666638
+H5N8|2344b|EPI_ISL_11406449|galliformes|united_kingdom|3_2_3_1_3_2_1_2|2021-03-28	northern europe	united kingdom	Europe / United Kingdom / England / NA / NA	galliformes-wild	54.0438440515314	-2.78687513666638
+H5N8|2344b|EPI_ISL_11406400|passeriformes|united_kingdom|3_2_3_1_3_2_1_2|2021-03-28	northern europe	united kingdom	Europe / United Kingdom / England / NA / NA	other	54.0438440515314	-2.78687513666638
+H5N8|2344b|EPI_ISL_12176854|galliformes|kosovo|3_2_3_1_3_2_1_2|2022-02-15	southern europe	kosovo	Europe / Kosovo / NA / NA / NA	galliformes-domestic	42.5708562510164	20.8773751977042
+H5N8|2344b|EPI_ISL_12176844|galliformes|kosovo|3_2_3_1_3_2_1_2|2021-10-18	southern europe	kosovo	Europe / Kosovo / NA / NA / NA	galliformes-wild	42.5708562510164	20.8773751977042
+H5N8|2344b|EPI_ISL_5115617|anseriformes|germany|3_2_3_1_3_2_1_2|2021-03-04	western europe	germany	Europe / Germany / Schleswig-Holstein / Stormarn / NA	anseriformes-domestic	54.1814850326718	9.81577342948134
+H5N8|2344b|EPI_ISL_5143995|anseriformes|germany|3_2_3_1_3_2_1_2|2021-03-21	western europe	germany	Europe / Germany / Saxony-Anhalt / Saalekreis / NA	anseriformes-domestic	52.0090264158216	11.7027467770331
+H5N8|2344b|EPI_ISL_615072|anseriformes|kazakhstan|3_2_3_1_3_2_1_2|2020-09-25	central asia	kazakhstan	Asia / Kazakhstan / Kostanay / NA / NA	anseriformes-domestic	51.5322283786231	64.0853293002361
+H5N8|2344b|EPI_ISL_5260418|anseriformes|china|3_2_3_1_3_2_1_2|2021-01-25	eastern asia	china	Asia / China / Beijing / NA / NA	anseriformes-wild	40.1838367941588	116.40878248942
+H5N8|2344b|EPI_ISL_5260452|anseriformes|china|3_2_3_1_3_2_1_2|2021-01-20	eastern asia	china	Asia / China / Guangdong / NA / NA	anseriformes-wild	23.33624359406	113.398153372919
+H5N8|2344b|EPI_ISL_5260421|anseriformes|china|3_2_3_1_3_2_1_2|2021-02-01	eastern asia	china	Asia / China / Guangxi / NA / NA	anseriformes-wild	23.82591453975	108.782865094166
+H5N8|2344b|EPI_ISL_18012465|anseriformes|china|3_2_3_1_3_2_1_2|2021-11-05	eastern asia	china	NA	anseriformes-wild	39.5182972347816	116.100714730353
+H5N8|2344b|EPI_ISL_1829205|anseriformes|china|3_2_3_1_3_2_1_2|2020-11-02	eastern asia	china	Asia / China / Henan Province / NA / NA	anseriformes-wild	33.8761853651454	113.614527263456
+H5N8|2344b|EPI_ISL_5260448|anseriformes|china|3_2_3_1_3_2_1_2|2021-03-19	eastern asia	china	Asia / China / Hunan / NA / NA	anseriformes-wild	27.5978523947888	111.713471439142
+H5N8|2344b|EPI_ISL_2685846|anseriformes|china|3_2_3_1_3_2_1_2|2020-11-09	eastern asia	china	Asia / China / Hubei Province / NA / NA	anseriformes-wild	30.9806813015582	112.277189482252
+H5N8|2344b|EPI_ISL_5260449|anseriformes|china|3_2_3_1_3_2_1_2|2021-03-24	eastern asia	china	Asia / China / Jiangsu / NA / NA	anseriformes-wild	32.9645721858222	119.470797338049
+H5N8|2344b|EPI_ISL_5260451|anseriformes|china|3_2_3_1_3_2_1_2|2021-04-13	eastern asia	china	Asia / China / Liaoning / NA / NA	anseriformes-wild	41.2987124958383	122.600275282862
+H5N8|2344b|EPI_ISL_625672|anseriformes|china|3_2_3_1_3_2_1_2|2020-10-17	eastern asia	china	Asia / China / Inner Mongolia Autonomous Region / NA / NA	anseriformes-wild	44.083329648604	113.188484632426
+H5N8|2344b|EPI_ISL_7379464|anseriformes|china|3_2_3_1_3_2_1_2|2021-01	eastern asia	china	Asia / China / Sichuan Province / NA / NA	anseriformes-wild	30.6066264180489	102.711402322843
+H5N8|2344b|EPI_ISL_7381397|anseriformes|china|3_2_3_1_3_2_1_2|2021-05	eastern asia	china	Asia / China / Shandong Province / NA / NA	anseriformes-wild	36.3536638777003	118.136153809721
+H5N8|2344b|EPI_ISL_1760454|anseriformes|china|3_2_3_1_3_2_1_2|2020-11-10	eastern asia	china	Asia / China / Shanxi Province / NA / NA	anseriformes-wild	37.5496375119255	112.274268590565
+H5N8|2344b|EPI_ISL_5260450|anseriformes|china|3_2_3_1_3_2_1_2|2021-03-09	eastern asia	china	Asia / China / Zhejiang / NA / NA	anseriformes-wild	29.1745873279179	120.086382279697
+H5N8|2344b|EPI_ISL_1941365|anseriformes|czechia|3_2_3_1_3_2_1_2|2021-04-18	eastern europe	czechia	Europe / Czech Republic / Kralovehradecky Kraj / Okres Hradec Kralove / Nove Mesto	anseriformes-wild	50.3852537596798	15.8661896036913
+H5N8|2344b|EPI_ISL_1399239|anseriformes|czechia|3_2_3_1_3_2_1_2|2021-02-23	eastern europe	czechia	Europe / Czech Republic / Olomoucky Kraj / Okres Jesenik / Javornik; GPS: 50Â°2435.8N, 17Â°244.78E	anseriformes-wild	49.7786245115919	17.190355445158
+H5N8|2344b|EPI_ISL_1399237|anseriformes|czechia|3_2_3_1_3_2_1_2|2021-02-19	eastern europe	czechia	Europe / Czech Republic / Stredocesky Kraj / Okres Nymburk / hydroelectric power Nymburk; GPS: 50Â°11Â´6.866Â´Â´N, 15Â°2Â´55.583Â´Â´E	anseriformes-wild	49.9969098943343	14.5545810187162
+H5N8|2344b|EPI_ISL_1399245|anseriformes|czechia|3_2_3_1_3_2_1_2|2021-03-06	eastern europe	czechia	Europe / Czech Republic / Morovskoslezsky Kraj / Okres Opava / Katerinky u Opavy, Stribrne jezero; GPS: N 49Â°57.29960, E 17Â°53.78212	anseriformes-wild	49.8368899304208	17.9578982609586
+H5N8|2344b|EPI_ISL_1399242|anseriformes|czechia|3_2_3_1_3_2_1_2|2021-03-04	eastern europe	czechia	Europe / Czech Republic / Zlinsky Kraj / Okres Uherske Hradiste / Ostrozska jezera, Ostrozska Nova Ves-Chylice	anseriformes-wild	49.2395239668424	17.7694110590927
+H5N8|2344b|EPI_ISL_5145796|anseriformes|germany|3_2_3_1_3_2_1_2|2021-07-20	western europe	germany	Europe / Germany / Lower Saxony / OsnabrÃ¼ck / NA	anseriformes-wild	52.7642105761026	9.16783937293005
+H5N8|2344b|EPI_ISL_5060031|anseriformes|germany|3_2_3_1_3_2_1_2|2020-11-03	western europe	germany	Europe / Germany / Schleswig-Holstein / Nordfriesland / NA	anseriformes-wild	54.1814850326718	9.81577342948134
+H5N8|2344b|EPI_ISL_18361625|anseriformes|denmark|3_2_3_1_3_2_1_2|2022-01-03	northern europe	denmark	NA	anseriformes-wild	56.2490598335433	9.39675377639095
+H5N8|2344b|EPI_ISL_984693|anseriformes|denmark|3_2_3_1_3_2_1_2|2020-11-07	northern europe	denmark	Europe / Denmark / Region Sjaland / Kalundborg Kommune / NA	anseriformes-wild	55.2791973821106	11.7026524381832
+H5N8|2344b|EPI_ISL_4069778|anseriformes|egypt|3_2_3_1_3_2_1_2|2019-02-27	northern africa	egypt	NA	anseriformes-wild	26.5331366423868	29.7934978487062
+H5N8|2344b|EPI_ISL_7778761|anseriformes|estonia|3_2_3_1_3_2_1_2|2021-03-26	northern europe	estonia	Europe / Estonia / NA / NA / NA	anseriformes-wild	58.6717397518952	25.5522615433491
+H5N8|2344b|EPI_ISL_7778767|anseriformes|finland|3_2_3_1_3_2_1_2|2021-08-01	northern europe	finland	Europe / Finland / NA / NA / NA	anseriformes-wild	64.2398144022788	26.1623842060791
+H5N8|2344b|EPI_ISL_710507|anseriformes|united_kingdom|3_2_3_1_3_2_1_2|2020-11-03	northern europe	united kingdom	Europe / United Kingdom / Gloucestershire / NA / NA	anseriformes-wild	54.0438440515314	-2.78687513666638
+H5N8|2344b|EPI_ISL_985211|anseriformes|south_korea|3_2_3_1_3_2_1_2|2020-12-28	eastern asia	south korea	Asia / Korea / JB / NA / NA	anseriformes-wild	35.7159281817874	127.140659781938
+H5N8|2344b|EPI_ISL_1719910|anseriformes|lithuania|3_2_3_1_3_2_1_2|2021-02-26	northern europe	lithuania	Europe / Lithuania / Vilnius / NA / NA	anseriformes-wild	54.8294557942269	25.2490386107757
+H5N8|2344b|EPI_ISL_1220094|anseriformes|poland|3_2_3_1_3_2_1_2|2020-12-09	eastern europe	poland	Europe / Poland / West Pomeranian Voivodeship / NA / NA	anseriformes-wild	54.1541828653429	17.9878737941344
+H5N8|2344b|EPI_ISL_1139040|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-11-02	western europe	netherlands	Europe / Netherlands / Provincie Drenthe / Wapserveen / NA	anseriformes-wild	52.8629285667789	6.62382060282334
+H5N8|2344b|EPI_ISL_1139021|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-10-29	western europe	netherlands	Europe / Netherlands / Provincie Friesland / Terherne / NA	anseriformes-wild	53.1100430768808	5.84863928632393
+H5N8|2344b|EPI_ISL_2172529|anseriformes|netherlands|3_2_3_1_3_2_1_2|2021-01-30	western europe	netherlands	Europe / Netherlands / Provincie Gelderland / Apeldoorn / NA	anseriformes-wild	52.0617180422494	5.94466833784019
+H5N8|2344b|EPI_ISL_2176841|anseriformes|netherlands|3_2_3_1_3_2_1_2|2021-02-05	western europe	netherlands	Europe / Netherlands / Provincie Noord-Holland / Den Oever / NA	anseriformes-wild	52.5811544669078	4.87272777813315
+H5N8|2344b|EPI_ISL_1139170|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-11-25	western europe	netherlands	Europe / Netherlands / Provincie Utrecht / Gemeente Oudewater / NA	anseriformes-wild	52.083727924893	5.16763788059654
+H5N8|2344b|EPI_ISL_7778779|anseriformes|norway|3_2_3_1_3_2_1_2|2021-07-01	northern europe	norway	Europe / Norway / NA / NA / NA	anseriformes-wild	63.9836330810339	12.3044196327525
+H5N8|2344b|EPI_ISL_18244181|anseriformes|poland|3_2_3_1_3_2_1_2|2021-01-19	eastern europe	poland	NA	anseriformes-wild	52.1141994014432	19.4236724631525
+H5N8|2344b|EPI_ISL_739685|anseriformes|russia|3_2_3_1_3_2_1_2|2020-08-29	central asia	russia	Europe / Russia / Omsk region / NA / NA	anseriformes-wild	56.0596108837778	73.3669499849514
+H5N8|2344b|EPI_ISL_661178|anseriformes|russia|3_2_3_1_3_2_1_2|2020-09-10	central asia	russia	Europe / Russia / Tyumen Oblast / NA / NA	anseriformes-wild	57.6472366156513	69.1218349161945
+H5N8|2344b|EPI_ISL_3319316|anseriformes|sweden|3_2_3_1_3_2_1_2|2021-07-19	northern europe	sweden	Europe / Sweden / Gotlands Lan / Gotlands Kommun / NA	anseriformes-wild	57.5128828372686	18.541723046906
+H5N8|2344b|EPI_ISL_3138618|anseriformes|sweden|3_2_3_1_3_2_1_2|2021-04-15	northern europe	sweden	Europe / Sweden / Dalarnas Lan / Borlange Kommun / NA	anseriformes-wild	60.9480775654018	14.3747945686103
+H5N8|2344b|EPI_ISL_3102029|anseriformes|sweden|3_2_3_1_3_2_1_2|2021-01-06	northern europe	sweden	Europe / Sweden / Skane Lan / Vellinge Kommun / NA	anseriformes-wild	55.9474024317265	13.595146733816
+H5N8|2344b|EPI_ISL_3128522|anseriformes|sweden|3_2_3_1_3_2_1_2|2021-04-06	northern europe	sweden	Europe / Sweden / Vastra Gotalands Lan / Hjo Kommun / NA	anseriformes-wild	58.2955067014075	12.8595382920252
+H5N8|2344b|EPI_ISL_5863650|anseriformes|united_states|3_2_3_1_3_2_1_2|2020-12-29	northern america	united states	Asia / Georgia / NA / NA / NA	anseriformes-wild	32.6403385373358	-83.4405725551842
+H5N8|2344b|EPI_ISL_5260416|charadriiformes|china|3_2_3_1_3_2_1_2|2021-02-22	eastern asia	china	Asia / China / Shandong / NA / NA	charadriiformes-wild	36.3536638777003	118.136153809721
+H5N8|2344b|EPI_ISL_5260417|charadriiformes|china|3_2_3_1_3_2_1_2|2021-05-16	eastern asia	china	Asia / China / Tibet / NA / NA	charadriiformes-wild	31.7354796576819	88.2546629070738
+H5N8|2344b|EPI_ISL_5058090|charadriiformes|germany|3_2_3_1_3_2_1_2|2020-11-02	western europe	germany	Europe / Germany / Hamburg / Hamburg / NA	charadriiformes-wild	53.5463325421189	10.020950289547
+H5N8|2344b|EPI_ISL_7623043|charadriiformes|belgium|3_2_3_1_3_2_1_2|2021-01-11	western europe	belgium	Europe / Belgium / Provincie Oost-Vlaanderen / Merelbeke / NA	charadriiformes-wild	51.0391095671615	4.2420548599892
+H5N8|2344b|EPI_ISL_775266|charadriiformes|netherlands|3_2_3_1_3_2_1_2|2020-12-17	western europe	netherlands	Europe / Netherlands / Provincie Flevoland / Almere / NA	charadriiformes-wild	52.5266976905946	5.60009163363913
+H5N8|2344b|EPI_ISL_1093426|charadriiformes|sweden|3_2_3_1_3_2_1_2|2021-02-07	northern europe	sweden	Europe / Sweden / Skane Lan / Malmo Kommun / NA	charadriiformes-wild	55.9474024317265	13.595146733816
+H5N8|2344b|EPI_ISL_17655601|environment|japan|3_2_3_1_3_2_1_2|2021-12-06	eastern asia	japan	NA	environment	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_3128534|galliformes|albania|3_2_3_1_3_2_1_2|2021-06-04	southern europe	albania	Europe / Albania / NA / NA / NA	galliformes-domestic	41.1330587421492	20.0646630993931
+H5N8|2344b|EPI_ISL_3102056|galliformes|bulgaria|3_2_3_1_3_2_1_2|2021-04-23	eastern europe	bulgaria	Europe / Bulgaria / Krivo pole, Haskovo / NA / NA	galliformes-domestic	41.8489090866177	25.942302613522
+H5N8|2344b|EPI_ISL_16215736|galliformes|china|3_2_3_1_3_2_1_2|2020-12	eastern asia	china	Asia / China / NA / NA / NA	galliformes-domestic	36.6848135465548	103.513718494908
+H5N8|2344b|EPI_ISL_china_2|galliformes|china|3_2_3_1_3_2_1_2|2021-05-31	eastern asia	china	Asia / China / Anhui / NA / NA	galliformes-domestic	31.8128943962267	117.235219497068
+H5N8|2344b|EPI_ISL_18012466|galliformes|china|3_2_3_1_3_2_1_2|2021-11-09	eastern asia	china	NA	galliformes-domestic	39.5182972347816	116.100714730353
+H5N8|2344b|EPI_ISL_1399232|galliformes|czechia|3_2_3_1_3_2_1_2|2021-02-25	eastern europe	czechia	Europe / Czech Republic / Jihocesky Kraj / Okres Strakonice / Rojice	galliformes-domestic	49.0928166218663	14.4391547985202
+H5N8|2344b|EPI_ISL_1697184|galliformes|czechia|3_2_3_1_3_2_1_2|2021-04-06	eastern europe	czechia	Europe / Czech Republic / Plzensky Kraj / Okres Tacov / Bor; GPS: 49.7115939N, 12.7751636E	galliformes-domestic	49.5901077813144	13.2328532454248
+H5N8|2344b|EPI_ISL_1697190|galliformes|czechia|3_2_3_1_3_2_1_2|2021-04-02	eastern europe	czechia	Europe / Czech Republic / Ustecky Kraj / Okres Teplice / Bilina, Razice; GPS: 50.5215139N, 13.8259175E	galliformes-domestic	50.5294097303953	13.8509106160886
+H5N8|2344b|EPI_ISL_1697194|galliformes|czechia|3_2_3_1_3_2_1_2|2021-03-12	eastern europe	czechia	Europe / Czech Republic / Zlinsky Kraj / Okres Uherske Hradiste / Osvetimany	galliformes-domestic	49.2395239668424	17.7694110590927
+H5N8|2344b|EPI_ISL_5115614|galliformes|germany|3_2_3_1_3_2_1_2|2021-02-26	western europe	germany	Europe / Germany / Berlin / Berlin,Stadt / NA	galliformes-domestic	52.5015246825321	13.4019638192194
+H5N8|2344b|EPI_ISL_5115615|galliformes|germany|3_2_3_1_3_2_1_2|2021-02-28	western europe	germany	Europe / Germany / Brandenburg / Prignitz / NA	galliformes-domestic	52.4686720071996	13.4043192497063
+H5N8|2344b|EPI_ISL_5102136|galliformes|germany|3_2_3_1_3_2_1_2|2021-03-02	western europe	germany	Europe / Germany / Bavaria / Schwandorf / NA	galliformes-domestic	48.9386109033625	11.4278546586472
+H5N8|2344b|EPI_ISL_5143585|galliformes|germany|3_2_3_1_3_2_1_2|2021-03-26	western europe	germany	Europe / Germany / Mecklenburg-Vorpommern / Landkreis Rostock / NA	galliformes-domestic	53.7551744161606	12.5509509363277
+H5N8|2344b|EPI_ISL_5102130|galliformes|germany|3_2_3_1_3_2_1_2|2021-03-01	western europe	germany	Europe / Germany / North Rhine-Westphalia / Paderborn / NA	galliformes-domestic	51.4777551092159	7.5539349720828
+H5N8|2344b|EPI_ISL_5143586|galliformes|germany|3_2_3_1_3_2_1_2|2021-03-24	western europe	germany	Europe / Germany / Saxony / Mittelsachsen / NA	galliformes-domestic	51.0528694457593	13.3447264729352
+H5N8|2344b|EPI_ISL_18443661|galliformes|denmark|3_2_3_1_3_2_1_2|2022-01-06	northern europe	denmark	NA	galliformes-domestic	56.2490598335433	9.39675377639095
+H5N8|2344b|EPI_ISL_14937233|galliformes|egypt|3_2_3_1_3_2_1_2|2021-03-03	northern africa	egypt	Africa / Egypt / NA / NA / NA	galliformes-domestic	26.5331366423868	29.7934978487062
+H5N8|2344b|EPI_ISL_7778762|galliformes|estonia|3_2_3_1_3_2_1_2|2021-02-18	northern europe	estonia	Europe / Estonia / NA / NA / NA	galliformes-domestic	58.6717397518952	25.5522615433491
+H5N8|2344b|EPI_ISL_1123352|galliformes|united_kingdom|3_2_3_1_3_2_1_2|2020-12-25	northern europe	united kingdom	Europe / United Kingdom / Norfolk / NA / NA	galliformes-domestic	54.0438440515314	-2.78687513666638
+H5N8|2344b|EPI_ISL_666890|galliformes|croatia|3_2_3_1_3_2_1_2|2020-11-17	southern europe	croatia	Europe / Croatia / Koprivnicko-Krizevacka Zupanija / Delovi / NA	galliformes-domestic	46.0941050136215	16.8104817428003
+H5N8|2344b|EPI_ISL_623074|galliformes|iraq|3_2_3_1_3_2_1_2|2020-05-12	western asia	iraq	Asia / Iraq / Muhafazat Ninawa / NA / NA	galliformes-domestic	35.9913317126514	42.4617230992077
+H5N8|2344b|EPI_ISL_6829536|galliformes|japan|3_2_3_1_3_2_1_2|2021-11-14	eastern asia	japan	Asia / Japan / Kagoshima / NA / NA	galliformes-domestic	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_1009688|galliformes|south_korea|3_2_3_1_3_2_1_2|2021-01-01	eastern asia	south korea	Asia / Korea / JN / NA / NA	galliformes-domestic	34.8733358026855	126.897223705092
+H5N8|2344b|EPI_ISL_1009689|galliformes|south_korea|3_2_3_1_3_2_1_2|2021-01-03	eastern asia	south korea	Asia / Korea / CN / NA / NA	galliformes-domestic	36.5298116066164	126.847825775926
+H5N8|2344b|EPI_ISL_985207|galliformes|south_korea|3_2_3_1_3_2_1_2|2020-12-25	eastern asia	south korea	Asia / Korea / GB / NA / NA	galliformes-domestic	36.3474789243827	128.748576389097
+H5N8|2344b|EPI_ISL_985199|galliformes|south_korea|3_2_3_1_3_2_1_2|2020-12-22	eastern asia	south korea	Asia / Korea / GG / NA / NA	galliformes-domestic	37.5315346337798	127.181023197189
+H5N8|2344b|EPI_ISL_846601|galliformes|poland|3_2_3_1_3_2_1_2|2020-12-03	eastern europe	poland	Europe / Poland / pomorskie / NA / NA	galliformes-domestic	54.1541828653429	17.9878737941344
+H5N8|2344b|EPI_ISL_710539|galliformes|netherlands|3_2_3_1_3_2_1_2|2020-12-06	western europe	netherlands	Europe / Netherlands / Provincie Friesland / Sint Annaparochie / NA	galliformes-domestic	53.1100430768808	5.84863928632393
+H5N8|2344b|EPI_ISL_654830|galliformes|russia|3_2_3_1_3_2_1_2|2020-09-03	central asia	russia	Europe / Russia / Omsk Oblast / Omsk / NA	galliformes-domestic	56.0596108837778	73.3669499849514
+H5N8|2344b|EPI_ISL_826283|galliformes|sweden|3_2_3_1_3_2_1_2|2020-12-21	northern europe	sweden	Europe / Sweden / Skane Lan / Svedala Kommun / NA	galliformes-domestic	55.9474024317265	13.595146733816
+H5N8|2344b|EPI_ISL_12176839|galliformes|kosovo|3_2_3_1_3_2_1_2|2021-10-04	southern europe	kosovo	Europe / Kosovo / NA / NA / NA	galliformes-domestic	42.5708562510164	20.8773751977042
+H5N8|2344b|EPI_ISL_18012466|galliformes|china|3_2_3_1_3_2_1_2|2021-11-09	eastern asia	china	NA	galliformes-wild	39.5182972347816	116.100714730353
+H5N8|2344b|EPI_ISL_18361537|galliformes|denmark|3_2_3_1_3_2_1_2|2021-04-24	northern europe	denmark	NA	galliformes-wild	55.3568797999445	9.45020901930698
+H5N8|2344b|EPI_ISL_18361537|galliformes|denmark|3_2_3_1_3_2_1_2|2021-04-24	northern europe	denmark	NA	galliformes-wild	55.9512996898935	10.0707816763207
+H5N8|2344b|EPI_ISL_7778769|galliformes|finland|3_2_3_1_3_2_1_2|2021-01-01	northern europe	finland	Europe / Finland / NA / NA / NA	galliformes-wild	64.2398144022788	26.1623842060791
+H5N8|2344b|EPI_ISL_3128524|galliformes|kosovo|3_2_3_1_3_2_1_2|2021-05-31	southern europe	kosovo	Europe / Kosovo / Suhareke / NA / NA	galliformes-wild	42.2921134818528	21.1153262409808
+H5N8|2344b|EPI_ISL_4805852|carnivora|germany|3_2_3_1_3_2_1_2|2021-08-18	western europe	germany	Europe / Germany / Schleswig-Holstein / Dithmarschen / NA	mammal	54.1814850326718	9.81577342948134
+H5N8|2344b|EPI_ISL_5260468|podicipediformes|china|3_2_3_1_3_2_1_2|2021-06-15	eastern asia	china	Asia / China / Ningxia / NA / NA	other	37.2602231520297	106.161545856493
+H5N8|2344b|EPI_ISL_5260467|podicipediformes|china|3_2_3_1_3_2_1_2|2021-06-05	eastern asia	china	Asia / China / Shaanxi / NA / NA	other	35.1531910315733	108.845281415025
+H5N8|2344b|EPI_ISL_5260466|podicipediformes|china|3_2_3_1_3_2_1_2|2021-02-22	eastern asia	china	Asia / China / Shandong / NA / NA	other	36.3536638777003	118.136153809721
+H5N8|2344b|EPI_ISL_15430209|gruiformes|china|3_2_3_1_3_2_1_2|2021-01-15	eastern asia	china	Asia / China / Yunnan Province / Huize Black-necked Crane National Nature Reserve, Yunnan Province, China / NA	other	24.9645779206387	101.495556215566
+H5N8|2344b|EPI_ISL_5116065|rheiformes|germany|3_2_3_1_3_2_1_2|2021-03-02	western europe	germany	Europe / Germany / Saxony / Zwickau / NA	other	51.0528694457593	13.3447264729352
+H5N8|2344b|EPI_ISL_7778753|strigiformes|estonia|3_2_3_1_3_2_1_2|2021-09-19	northern europe	estonia	Europe / Estonia / NA / NA / NA	other	58.6717397518952	25.5522615433491
+H5N8|2344b|EPI_ISL_7778764|accipitriformes|finland|3_2_3_1_3_2_1_2|2021-07-01	northern europe	finland	Europe / Finland / NA / NA / NA	other	64.2398144022788	26.1623842060791
+H5N8|2344b|EPI_ISL_2234813|ciconiiformes|france|3_2_3_1_3_2_1_2|2021-01-07	western europe	france	Europe / Spain / NA / NA / NA	other	45.5190780558984	4.54715006428513
+H5N8|2344b|EPI_ISL_11388317|falconiformes|united_kingdom|3_2_3_1_3_2_1_2|2021-03-30	northern europe	united kingdom	Europe / United Kingdom / Lancashire / England / NA	other	54.0438440515314	-2.78687513666638
+H5N8|2344b|EPI_ISL_3128523|pelecaniformes|greece|3_2_3_1_3_2_1_2|2021-03-22	southern europe	greece	Europe / Greece / Serres / NA / NA	other	40.9283505289806	23.8878976832222
+H5N8|2344b|EPI_ISL_17655601|environment|japan|3_2_3_1_3_2_1_2|2021-12-06	eastern asia	japan	NA	other	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_1009709|NA|south_korea|3_2_3_1_3_2_1_2|2020-12-16	eastern asia	south korea	Asia / Korea / JJ / NA / NA	other	33.3869876346889	126.553618799527
+H5N8|2344b|EPI_ISL_7597827|podicipediformes|belgium|3_2_3_1_3_2_1_2|2020-11-24	western europe	belgium	Europe / Belgium / Provincie Oost-Vlaanderen / Gent (Blaarmeersen) / (Blaarmeersen)	other	51.0391095671615	4.2420548599892
+H5N8|2344b|EPI_ISL_2175628|accipitriformes|netherlands|3_2_3_1_3_2_1_2|2021-01-04	western europe	netherlands	Europe / Netherlands / Provincie Groningen / Niehoeve / NA	other	52.0617180422494	5.94466833784019
+H5N8|2344b|EPI_ISL_1386249|accipitriformes|sweden|3_2_3_1_3_2_1_2|2021-03-16	northern europe	sweden	Europe / Sweden / Ostergotlands Lan / Linkopings Kommun / NA	other	57.5128828372686	18.541723046906
+H5N8|2344b|EPI_ISL_668456|falconiformes|sweden|3_2_3_1_3_2_1_2|2020-11-10	northern europe	sweden	Europe / Sweden / Skane Lan / Lunds Kommun / NA	other	55.9474024317265	13.595146733816

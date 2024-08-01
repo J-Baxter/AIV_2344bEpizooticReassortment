@@ -1,0 +1,263 @@
+tipnames	collection_regionname	collection_countryname	collection_original	host_simplifiedhost	lat	long
+H5N1|2344b|EPI_ISL_18075709|charadriiformes|spain|1_1_4_1_4_1_1_4|2023-06-02	southern europe	spain	NA	charadriiformes-wild	40.1894641959532	-3.70568864248137
+H5N1|2344b|EPI_ISL_15038821|galliformes|united_kingdom|1_1_4_1_4_1_1_4|2022-09-04	northern europe	united kingdom	NA	galliformes-domestic	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_18127710|unknown_avian|gambia|1_1_4_1_4_1_1_4|2023-04-01	western africa	gambia	NA	other	13.4527938239197	-15.3731969085987
+H5N1|2344b|EPI_ISL_14864649|anseriformes|united_kingdom|1_1_4_1_4_1_1_4|2022-08-20	northern europe	united kingdom	NA	anseriformes-domestic	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_15957892|galliformes|united_kingdom|1_1_4_1_4_1_1_4|2022-11-05	northern europe	united kingdom	Europe / United Kingdom / England / NA / NA	galliformes-domestic	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_15586123|anseriformes|united_kingdom|1_1_4_1_4_1_1_4|2022-09-20	northern europe	united kingdom	NA	anseriformes-domestic	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_18445719|charadriiformes|france|1_1_4_1_4_1_1_4|2022-05-30	western europe	france	NA	charadriiformes-wild	46.5103009447381	2.5780749353201
+H5N1|2344b|EPI_ISL_16398197|charadriiformes|united_kingdom|1_1_4_1_4_1_1_4|2022-08-12	northern europe	united kingdom	NA	charadriiformes-wild	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_14163712|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2022-07-07	western europe	netherlands	Europe / Netherlands / Noordburen, Waddenkust / NA / NA	charadriiformes-wild	53.1100430768808	5.84863928632393
+H5N1|2344b|EPI_ISL_14163714|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2022-07-04	western europe	netherlands	Europe / Netherlands / Ijmuiden, Forteiland / NA / NA	charadriiformes-wild	52.5811544669078	4.87272777813315
+H5N1|2344b|EPI_ISL_13778469|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2022-06-07	western europe	netherlands	Europe / Netherlands / Walcheren, t Vroon Westkapelle / NA / NA	charadriiformes-wild	51.4517197034959	3.83526799798383
+H5N1|2344b|EPI_ISL_14864647|galliformes|united_kingdom|1_1_4_1_4_1_1_4|2022-08-13	northern europe	united kingdom	NA	galliformes-domestic	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_14494796|carnivora|belgium|1_1_4_1_4_1_1_4|2022-06-16	western europe	belgium	Europe / Belgium / Provincie West-Vlaanderen / Knokke-Heist / NA	mammal	51.0391095671615	4.2420548599892
+H5N1|2344b|EPI_ISL_18445730|suliformes|france|1_1_4_1_4_1_1_4|2022-06-09	western europe	france	NA	other	46.5103009447381	2.5780749353201
+H5N1|2344b|EPI_ISL_15038823|pelecaniformes|united_kingdom|1_1_4_1_4_1_1_4|2022-08-28	northern europe	united kingdom	NA	other	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_16507095|carnivora|france|1_1_4_1_4_1_1_4|2022-10-26	western europe	france	Europe / Spain / NA / NA / NA	mammal	45.5190780558984	4.54715006428513
+H5N1|2344b|EPI_ISL_18445739|charadriiformes|france|1_1_4_1_4_1_1_4|2022-06-14	western europe	france	NA	charadriiformes-wild	46.5103009447381	2.5780749353201
+H5N1|2344b|EPI_ISL_14864636|charadriiformes|united_kingdom|1_1_4_1_4_1_1_4|2022-06-13	northern europe	united kingdom	NA	charadriiformes-wild	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_13782459|galliformes|united_kingdom|1_1_4_1_4_1_1_4|2022-06-15	northern europe	united kingdom	Europe / United Kingdom / England / NA / NA	galliformes-domestic	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_15958024|anseriformes|united_kingdom|1_1_4_1_4_1_1_4|2022-10-21	northern europe	united kingdom	NA	anseriformes-wild	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_15957660|galliformes|united_kingdom|1_1_4_1_4_1_1_4|2022-10-21	northern europe	united kingdom	Europe / United Kingdom / Wales / NA / NA	galliformes-domestic	52.3299411115892	-3.76558183366802
+H5N1|2344b|EPI_ISL_17716066|charadriiformes|austria|1_1_4_1_4_1_1_4|2023-03-27	western europe	austria	Europe / Austria / Bundesland Wien / Bundesland Wien / NA	charadriiformes-wild	48.2089421257604	16.3790253882177
+H5N1|2344b|EPI_ISL_17470105|charadriiformes|czechia|1_1_4_1_4_1_1_4|2023-04-04	eastern europe	czechia	Europe / Czech Republic / Stredocesky Kraj / Okres Kladno / Hobsovicky pond; GPS: 50.2732056N, 14.1461994E	charadriiformes-wild	49.9969098943343	14.5545810187162
+H5N1|2344b|EPI_ISL_18509068|charadriiformes|latvia|1_1_4_1_4_1_1_4|2023-05-29	northern europe	latvia	NA	charadriiformes-wild	56.8620641951116	24.9396020767644
+H5N1|2344b|EPI_ISL_17208159|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-02-19	western europe	netherlands	Europe / Netherlands / Lelystad, Bataviahaven / NA / NA	charadriiformes-wild	52.5266976905946	5.60009163363913
+H5N1|2344b|EPI_ISL_16524203|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2022-12-23	western europe	netherlands	Europe / Netherlands / Groningen, Pioenpark / NA / NA	charadriiformes-wild	52.0617180422494	5.94466833784019
+H5N1|2344b|EPI_ISL_17547367|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-03-30	western europe	netherlands	Europe / Netherlands / Venhuizen, Zuiderdijk / NA / NA	charadriiformes-wild	52.5811544669078	4.87272777813315
+H5N1|2344b|EPI_ISL_18075141|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-03-07	western europe	netherlands	NA	charadriiformes-wild	52.4448999895994	6.44900146928843
+H5N1|2344b|EPI_ISL_17409673|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-03-10	western europe	netherlands	Europe / Netherlands / Eemmeer, Dode Hond / NA / NA	charadriiformes-wild	52.083727924893	5.16763788059654
+H5N1|2344b|EPI_ISL_18059054|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-07-07	western europe	netherlands	NA	charadriiformes-wild	52.2573048104135	5.56251311224367
+H5N1|2344b|EPI_ISL_18455264|charadriiformes|norway|1_1_4_1_4_1_1_4|2023-05-23	northern europe	norway	NA	charadriiformes-wild	69.2782075900742	19.5016391581555
+H5N1|2344b|EPI_ISL_18033225|charadriiformes|poland|1_1_4_1_4_1_1_4|2023-05-10	eastern europe	poland	NA	charadriiformes-wild	52.1141994014432	19.4236724631525
+H5N1|2344b|EPI_ISL_17880914|carnivora|germany|1_1_4_1_4_1_1_4|2023-03-29	western europe	germany	Europe / Germany / Lower Saxony / NA / NA	mammal	52.7642105761026	9.16783937293005
+H5N1|2344b|EPI_ISL_18067124|falconiformes|netherlands|1_1_4_1_4_1_1_4|2023-02-07	western europe	netherlands	NA	other	51.9374604216783	4.46477045234472
+H5N1|2344b|EPI_ISL_18075147|falconiformes|netherlands|1_1_4_1_4_1_1_4|2023-03-10	western europe	netherlands	NA	other	52.8629285667789	6.62382060282334
+H5N1|2344b|EPI_ISL_17626175|falconiformes|netherlands|1_1_4_1_4_1_1_4|2023-04-04	western europe	netherlands	Europe / Netherlands / Apeldoorn, Boogschutterstraat 1-43 / NA / NA	other	52.0617180422494	5.94466833784019
+H5N1|2344b|EPI_ISL_18075152|falconiformes|netherlands|1_1_4_1_4_1_1_4|2023-03-16	western europe	netherlands	NA	other	53.2180813959811	6.7445168668343
+H5N1|2344b|EPI_ISL_16524247|falconiformes|netherlands|1_1_4_1_4_1_1_4|2023-01-02	western europe	netherlands	Europe / Netherlands / Wieingerwerf, Sluitgatweg / NA / NA	other	52.5811544669078	4.87272777813315
+H5N1|2344b|EPI_ISL_18075152|falconiformes|netherlands|1_1_4_1_4_1_1_4|2023-03-16	western europe	netherlands	NA	other	52.2573048104135	5.56251311224367
+H5N1|2344b|EPI_ISL_18321751|anseriformes|finland|1_1_4_1_4_1_1_4|2023-07-18	northern europe	finland	NA	anseriformes-wild	64.2398144022788	26.1623842060791
+H5N1|2344b|EPI_ISL_18033230|anseriformes|poland|1_1_4_1_4_1_1_4|2023-05-11	eastern europe	poland	NA	anseriformes-wild	52.1141994014432	19.4236724631525
+H5N1|2344b|EPI_ISL_17514133|charadriiformes|austria|1_1_4_1_4_1_1_4|2023-03-07	western europe	austria	Europe / Austria / Bundesland Oberosterreich / Gmunden / NA	charadriiformes-wild	48.1371934331394	13.9653618911462
+H5N1|2344b|EPI_ISL_17716077|charadriiformes|austria|1_1_4_1_4_1_1_4|2023-05-05	western europe	austria	Europe / Austria / Bundesland Salzburg / Salzburg-Umgebung / NA	charadriiformes-wild	47.3885937043155	13.0848644916096
+H5N1|2344b|EPI_ISL_17716079|charadriiformes|austria|1_1_4_1_4_1_1_4|2023-05-09	western europe	austria	Europe / Austria / Bundesland Wien / NA / NA	charadriiformes-wild	48.2089421257604	16.3790253882177
+H5N1|2344b|EPI_ISL_18058688|charadriiformes|austria|1_1_4_1_4_1_1_4|2023-03-28	western europe	austria	NA	charadriiformes-wild	47.5942901543001	14.1261824377155
+H5N1|2344b|EPI_ISL_18435919|charadriiformes|belgium|1_1_4_1_4_1_1_4|2023-07-12	western europe	belgium	NA	charadriiformes-wild	50.64017310615	4.66939027974939
+H5N1|2344b|EPI_ISL_17584810|charadriiformes|czechia|1_1_4_1_4_1_1_4|2023-04-03	eastern europe	czechia	Europe / Czech Republic / South Moravian Region / Okres Hodonin / Mutenice, pond Treti Zbrod; GPS: 48.8931653N, 17.0566589E	charadriiformes-wild	49.0792008172895	16.6634176148425
+H5N1|2344b|EPI_ISL_17650916|charadriiformes|czechia|1_1_4_1_4_1_1_4|2023-04-24	eastern europe	czechia	Europe / Czech Republic / Pardubicky kraj / Okres Pardubice / Bohumilec; GPS: 50.1011264N, 15.8581722E	charadriiformes-wild	49.9006406346158	16.1892997029385
+H5N1|2344b|EPI_ISL_17470108|charadriiformes|czechia|1_1_4_1_4_1_1_4|2023-04-04	eastern europe	czechia	Europe / Czech Republic / Stredocesky Kraj / Okres Kladno / Hobsovicky pond; GPS: 50.2732056N, 14.1461994E	charadriiformes-wild	49.9969098943343	14.5545810187162
+H5N1|2344b|EPI_ISL_17584823|charadriiformes|czechia|1_1_4_1_4_1_1_4|2023-04-13	eastern europe	czechia	Europe / Czech Republic / Ustecky Kraj / Okres Litomerice / Predonin, piskovna Dobrin, GPS: 50.4381619N, 14.3129747E	charadriiformes-wild	50.5294097303953	13.8509106160886
+H5N1|2344b|EPI_ISL_17650920|charadriiformes|czechia|1_1_4_1_4_1_1_4|2023-05-02	eastern europe	czechia	Europe / Czech Republic / Morovskoslezsky Kraj / Okres Ostrava-Mesto / Hermanicky pond; GPS:49.8716783N, 18.3266433E	charadriiformes-wild	49.8368899304208	17.9578982609586
+H5N1|2344b|EPI_ISL_17584819|charadriiformes|czechia|1_1_4_1_4_1_1_4|2023-04-12	eastern europe	czechia	Europe / Czech Republic / Zlinsky Kraj / Okres Kromeriz / Chopine, Zamecky pond; GPS: 49.3542700N, 17.3694061E	charadriiformes-wild	49.2395239668424	17.7694110590927
+H5N1|2344b|EPI_ISL_18013308|charadriiformes|germany|1_1_4_1_4_1_1_4|2023-06-02	western europe	germany	NA	charadriiformes-wild	54.1814850326718	9.81577342948134
+H5N1|2344b|EPI_ISL_18013308|charadriiformes|germany|1_1_4_1_4_1_1_4|2023-06-02	western europe	germany	NA	charadriiformes-wild	51.0533277435649	10.373650933319
+H5N1|2344b|EPI_ISL_18983379|charadriiformes|spain|1_1_4_1_4_1_1_4|2023-03-07	southern europe	spain	NA	charadriiformes-wild	41.7971317406582	1.52423490165211
+H5N1|2344b|EPI_ISL_18075732|charadriiformes|spain|1_1_4_1_4_1_1_4|2023-03-16	southern europe	spain	NA	charadriiformes-wild	40.1894641959532	-3.70568864248137
+H5N1|2344b|EPI_ISL_18321749|charadriiformes|finland|1_1_4_1_4_1_1_4|2023-07-12	northern europe	finland	NA	charadriiformes-wild	62.0597637912667	23.6696745592397
+H5N1|2344b|EPI_ISL_18122446|charadriiformes|finland|1_1_4_1_4_1_1_4|2023-07-11	northern europe	finland	NA	charadriiformes-wild	64.2398144022788	26.1623842060791
+H5N1|2344b|EPI_ISL_17679811|charadriiformes|france|1_1_4_1_4_1_1_4|2023-01-31	western europe	france	Europe / Spain / NA / NA / NA	charadriiformes-wild	45.5190780558984	4.54715006428513
+H5N1|2344b|EPI_ISL_17831135|charadriiformes|united_kingdom|1_1_4_1_4_1_1_4|2023-05-17	northern europe	united kingdom	Europe / United Kingdom / England / NA / NA	charadriiformes-wild	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_17656637|charadriiformes|luxembourg|1_1_4_1_4_1_1_4|2023-05-10	western europe	luxembourg	Europe / Luxembourg / District de Grevenmacher / NA / NA	charadriiformes-wild	49.6868212553332	6.34949296820615
+H5N1|2344b|EPI_ISL_17679752|charadriiformes|italy|1_1_4_1_4_1_1_4|2023-02-28	southern europe	italy	Europe / Italy / Trento / NA / NA	charadriiformes-wild	46.4409006590215	11.2808218809382
+H5N1|2344b|EPI_ISL_17625761|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-04-09	western europe	netherlands	Europe / Netherlands / Provincie Flevoland / NA / NA	charadriiformes-wild	52.5266976905946	5.60009163363913
+H5N1|2344b|EPI_ISL_17821062|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-02-11	western europe	netherlands	Europe / Netherlands / Vlieland strand / NA / NA	charadriiformes-wild	53.1100430768808	5.84863928632393
+H5N1|2344b|EPI_ISL_17409675|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-03-24	western europe	netherlands	Europe / Netherlands / Groningen, Kaap Hoorn / NA / NA	charadriiformes-wild	52.0617180422494	5.94466833784019
+H5N1|2344b|EPI_ISL_17821059|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-05-28	western europe	netherlands	Europe / Netherlands / Haren, Boeremapark / NA / NA	charadriiformes-wild	53.2180813959811	6.7445168668343
+H5N1|2344b|EPI_ISL_17821057|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-05-22	western europe	netherlands	Europe / Netherlands / Brossele / NA / NA	charadriiformes-wild	51.5616727876811	5.19541346074046
+H5N1|2344b|EPI_ISL_17791392|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-05-01	western europe	netherlands	Europe / Netherlands / Provincie Noord-Holland / NA / NA	charadriiformes-wild	52.5811544669078	4.87272777813315
+H5N1|2344b|EPI_ISL_18075144|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-03-07	western europe	netherlands	NA	charadriiformes-wild	52.4448999895994	6.44900146928843
+H5N1|2344b|EPI_ISL_17208162|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-02-28	western europe	netherlands	Europe / Netherlands / Utrecht, Leo fallplantsoen / NA / NA	charadriiformes-wild	52.083727924893	5.16763788059654
+H5N1|2344b|EPI_ISL_18882069|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-07-04	western europe	netherlands	NA	charadriiformes-wild	51.4517197034959	3.83526799798383
+H5N1|2344b|EPI_ISL_18010929|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-06-24	western europe	netherlands	NA	charadriiformes-wild	52.2573048104135	5.56251311224367
+H5N1|2344b|EPI_ISL_18033224|charadriiformes|poland|1_1_4_1_4_1_1_4|2023-05-10	eastern europe	poland	NA	charadriiformes-wild	52.1141994014432	19.4236724631525
+H5N1|2344b|EPI_ISL_17786646|charadriiformes|sweden|1_1_4_1_4_1_1_4|2023-05-08	northern europe	sweden	NA	charadriiformes-wild	59.4623673036598	18.1712252623315
+H5N1|2344b|EPI_ISL_18257880|charadriiformes|sweden|1_1_4_1_4_1_1_4|2023-06-22	northern europe	sweden	NA	charadriiformes-wild	60.042931435791	17.6839136610447
+H5N1|2344b|EPI_ISL_18612177|charadriiformes|slovenia|1_1_4_1_4_1_1_4|2023-05-16	southern europe	slovenia	NA	charadriiformes-wild	46.124137393352	14.813678667363
+H5N1|2344b|EPI_ISL_17787130|charadriiformes|sweden|1_1_4_1_4_1_1_4|2023-05-22	northern europe	sweden	NA	charadriiformes-wild	62.374013544985	16.2835241791686
+H5N1|2344b|EPI_ISL_17791545|galliformes|united_kingdom|1_1_4_1_4_1_1_4|2023-04-28	northern europe	united kingdom	Europe / United Kingdom / England / NA / NA	galliformes-domestic	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_17606778|galliformes|belgium|1_1_4_1_4_1_1_4|2022-12-27	western europe	belgium	Europe / Belgium / Provincie West-Vlaanderen / Houthulst / NA	galliformes-domestic	51.0391095671615	4.2420548599892
+H5N1|2344b|EPI_ISL_18033421|galliformes|poland|1_1_4_1_4_1_1_4|2023-06-28	eastern europe	poland	NA	galliformes-domestic	52.1141994014432	19.4236724631525
+H5N1|2344b|EPI_ISL_18618377|mammal|finland|1_1_4_1_4_1_1_4|2023-08-05	northern europe	finland	NA	mammal	64.2398144022788	26.1623842060791
+H5N1|2344b|EPI_ISL_17233302|carnivora|france|1_1_4_1_4_1_1_4|2023-02-10	western europe	france	Europe / France / Region Ile-de-France / Departement de Seine-et-Marne / NA	mammal	48.7090354165318	2.5047814681706
+H5N1|2344b|EPI_ISL_17606263|carnivora|belgium|1_1_4_1_4_1_1_4|2023-02-10	western europe	belgium	Europe / Belgium / Provincie Vlaams-Brabant / Lembeek / NA	mammal	51.0391095671615	4.2420548599892
+H5N1|2344b|EPI_ISL_17716088|accipitriformes|austria|1_1_4_1_4_1_1_4|2023-04-12	western europe	austria	Europe / Austria / Lower Austria / Bruck-Leitha / NA	other	48.2718646696418	15.7529218938467
+H5N1|2344b|EPI_ISL_18436064|falconiformes|belgium|1_1_4_1_4_1_1_4|2023-07-11	western europe	belgium	NA	other	50.64017310615	4.66939027974939
+H5N1|2344b|EPI_ISL_17732339|falconiformes|czechia|1_1_4_1_4_1_1_4|2023-05-17	eastern europe	czechia	Europe / Czech Republic / Kralovehradecky Kraj / Okres Nachod / GPS: 50.5883300N, 16.1250100E	other	50.3852537596798	15.8661896036913
+H5N1|2344b|EPI_ISL_18435608|falconiformes|germany|1_1_4_1_4_1_1_4|2023-08-02	western europe	germany	NA	other	51.4777551092159	7.5539349720828
+H5N1|2344b|EPI_ISL_18435608|falconiformes|germany|1_1_4_1_4_1_1_4|2023-08-02	western europe	germany	NA	other	51.0533277435649	10.373650933319
+H5N1|2344b|EPI_ISL_18075770|strigiformes|spain|1_1_4_1_4_1_1_4|2023-03-15	southern europe	spain	NA	other	40.1894641959532	-3.70568864248137
+H5N1|2344b|EPI_ISL_17831137|passeriformes|united_kingdom|1_1_4_1_4_1_1_4|2023-05-16	northern europe	united kingdom	Europe / United Kingdom / England / NA / NA	other	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_17830868|falconiformes|belgium|1_1_4_1_4_1_1_4|2023-04-11	western europe	belgium	Europe / Belgium / Provincie Vlaams-Brabant / Rotselaar / NA	other	51.0391095671615	4.2420548599892
+H5N1|2344b|EPI_ISL_17625762|accipitriformes|netherlands|1_1_4_1_4_1_1_4|2023-04-11	western europe	netherlands	Europe / Netherlands / Provincie Gelderland / NA / NA	other	52.0617180422494	5.94466833784019
+H5N1|2344b|EPI_ISL_18075146|falconiformes|netherlands|1_1_4_1_4_1_1_4|2023-01-31	western europe	netherlands	NA	other	51.5616727876811	5.19541346074046
+H5N1|2344b|EPI_ISL_18075146|falconiformes|netherlands|1_1_4_1_4_1_1_4|2023-01-31	western europe	netherlands	NA	other	52.2573048104135	5.56251311224367
+H5N1|2344b|EPI_ISL_17787128|falconiformes|sweden|1_1_4_1_4_1_1_4|2023-05-06	northern europe	sweden	NA	other	55.9474024317265	13.595146733816
+H5N1|2344b|EPI_ISL_17787585|passeriformes|sweden|1_1_4_1_4_1_1_4|2023-05-24	northern europe	sweden	NA	other	59.4623673036598	18.1712252623315
+H5N1|2344b|EPI_ISL_18514139|falconiformes|sweden|1_1_4_1_4_1_1_4|2023-07-02	northern europe	sweden	NA	other	59.8005794263335	16.315085578774
+H5N1|2344b|EPI_ISL_17787128|falconiformes|sweden|1_1_4_1_4_1_1_4|2023-05-06	northern europe	sweden	NA	other	62.374013544985	16.2835241791686
+H5N1|2344b|EPI_ISL_17736649|unknown|united_kingdom|1_1_4_1_4_1_1_4|2023-05-06	northern europe	united kingdom	Europe / United Kingdom / NA / NA / NA	unknown	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_18347729|charadriiformes|belgium|1_1_4_1_4_1_1_4|2023-05-08	western europe	belgium	NA	charadriiformes-wild	50.64017310615	4.66939027974939
+H5N1|2344b|EPI_ISL_18647480|charadriiformes|belgium|1_1_4_1_4_1_1_4|2023-07-07	western europe	belgium	NA	charadriiformes-wild	51.0391095671615	4.2420548599892
+H5N1|2344b|EPI_ISL_17244818|galliformes|belgium|1_1_4_1_4_1_1_4|2023-02-15	western europe	belgium	Europe / Belgium / Provincie Antwerpen / Zandhoven / NA	galliformes-domestic	51.0391095671615	4.2420548599892
+H5N1|2344b|EPI_ISL_18048778|strigiformes|belgium|1_1_4_1_4_1_1_4|2023-05-29	western europe	belgium	NA	other	51.0391095671615	4.2420548599892
+H5N1|2344b|EPI_ISL_18058694|charadriiformes|austria|1_1_4_1_4_1_1_4|2023-05-23	western europe	austria	NA	charadriiformes-wild	47.2399358407422	9.89649424147589
+H5N1|2344b|EPI_ISL_17514176|charadriiformes|austria|1_1_4_1_4_1_1_4|2023-02-24	western europe	austria	Europe / Austria / Bundesland Wien / Vienna / NA	charadriiformes-wild	48.2089421257604	16.3790253882177
+H5N1|2344b|EPI_ISL_18058691|charadriiformes|austria|1_1_4_1_4_1_1_4|2023-06-05	western europe	austria	NA	charadriiformes-wild	47.5942901543001	14.1261824377155
+H5N1|2344b|EPI_ISL_17584812|charadriiformes|czechia|1_1_4_1_4_1_1_4|2023-04-11	eastern europe	czechia	Europe / Czech Republic / South Moravian Region / Okres Breclav / Boretice; GPS: 48.9130250N, 16.8530628E	charadriiformes-wild	49.0792008172895	16.6634176148425
+H5N1|2344b|EPI_ISL_17584816|charadriiformes|czechia|1_1_4_1_4_1_1_4|2023-04-11	eastern europe	czechia	Europe / Czech Republic / Jihocesky Kraj / Okres Ceske Budejovice / Stary vrbensky pond; GPS: 49.0039486N, 14.4349264E	charadriiformes-wild	49.0928166218663	14.4391547985202
+H5N1|2344b|EPI_ISL_17716813|charadriiformes|czechia|1_1_4_1_4_1_1_4|2023-04-24	eastern europe	czechia	Europe / Czech Republic / Pardubicky kraj / Okres Svitavy / Bohumilecsky pond; GPS: 50.1081219N, 15.8594442E	charadriiformes-wild	49.9006406346158	16.1892997029385
+H5N1|2344b|EPI_ISL_17470107|charadriiformes|czechia|1_1_4_1_4_1_1_4|2023-04-04	eastern europe	czechia	Europe / Czech Republic / Stredocesky Kraj / Okres Kladno / Hobsovicky pond; GPS: 50.2732056N, 14.1461994E	charadriiformes-wild	49.9969098943343	14.5545810187162
+H5N1|2344b|EPI_ISL_17584822|charadriiformes|czechia|1_1_4_1_4_1_1_4|2023-04-13	eastern europe	czechia	Europe / Czech Republic / Ustecky Kraj / Okres Litomerice / Predonin, piskovna Dobrin, GPS: 50.4381619N, 14.3129747E	charadriiformes-wild	50.5294097303953	13.8509106160886
+H5N1|2344b|EPI_ISL_18509069|charadriiformes|latvia|1_1_4_1_4_1_1_4|2023-06-09	northern europe	latvia	NA	charadriiformes-wild	56.8620641951116	24.9396020767644
+H5N1|2344b|EPI_ISL_18075150|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-03-10	western europe	netherlands	NA	charadriiformes-wild	52.0617180422494	5.94466833784019
+H5N1|2344b|EPI_ISL_18075150|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-03-10	western europe	netherlands	NA	charadriiformes-wild	52.2573048104135	5.56251311224367
+H5N1|2344b|EPI_ISL_18033238|charadriiformes|poland|1_1_4_1_4_1_1_4|2023-05-17	eastern europe	poland	NA	charadriiformes-wild	52.1141994014432	19.4236724631525
+H5N1|2344b|EPI_ISL_17514177|falconiformes|austria|1_1_4_1_4_1_1_4|2023-03-10	western europe	austria	Europe / Austria / Bundesland Wien / Vienna / NA	other	48.2089421257604	16.3790253882177
+H5N1|2344b|EPI_ISL_18048779|falconiformes|czechia|1_1_4_1_4_1_1_4|2023-07-17	eastern europe	czechia	NA	other	50.5294097303953	13.8509106160886
+H5N1|2344b|EPI_ISL_18033237|accipitriformes|poland|1_1_4_1_4_1_1_4|2023-05-18	eastern europe	poland	NA	other	52.1141994014432	19.4236724631525
+H5N1|2344b|EPI_ISL_17584827|charadriiformes|czechia|1_1_4_1_4_1_1_4|2023-04-20	eastern europe	czechia	Europe / Czech Republic / Olomoucky Kraj / Okres Prerov / Tovacov, Troubecke jezero; GPS: 49.4215642N, 17.3302828E	charadriiformes-wild	49.7786245115919	17.190355445158
+H5N1|2344b|EPI_ISL_17679751|charadriiformes|italy|1_1_4_1_4_1_1_4|2023-02-23	southern europe	italy	Europe / Italy / Verona / NA / NA	charadriiformes-wild	45.6595758067318	11.8428083995249
+H5N1|2344b|EPI_ISL_18033239|charadriiformes|poland|1_1_4_1_4_1_1_4|2023-05-31	eastern europe	poland	NA	charadriiformes-wild	52.1141994014432	19.4236724631525
+H5N1|2344b|EPI_ISL_17821073|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-06-03	western europe	netherlands	Europe / Netherlands / Marker Wadden / NA / NA	charadriiformes-wild	52.5266976905946	5.60009163363913
+H5N1|2344b|EPI_ISL_17821075|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-06-02	western europe	netherlands	Europe / Netherlands / IJsselmeer, Enkhuizen, De Kreupel / NA / NA	charadriiformes-wild	52.5811544669078	4.87272777813315
+H5N1|2344b|EPI_ISL_18033221|charadriiformes|poland|1_1_4_1_4_1_1_4|2023-05-05	eastern europe	poland	NA	charadriiformes-wild	52.1141994014432	19.4236724631525
+H5N1|2344b|EPI_ISL_17716822|galliformes|czechia|1_1_4_1_4_1_1_4|2023-05-05	eastern europe	czechia	Europe / Czech Republic / Morovskoslezsky Kraj / Okres Karvina / Poruba u Orlove; GPS: 49.8483597N, 18.4006186E	galliformes-domestic	49.8368899304208	17.9578982609586
+H5N1|2344b|EPI_ISL_17679748|galliformes|italy|1_1_4_1_4_1_1_4|2023-03-06	southern europe	italy	Europe / Italy / Verona / NA / NA	galliformes-domestic	45.6595758067318	11.8428083995249
+H5N1|2344b|EPI_ISL_17716072|charadriiformes|austria|1_1_4_1_4_1_1_4|2023-04-27	western europe	austria	Europe / Austria / Bundesland Oberosterreich / Ried / NA	charadriiformes-wild	48.1371934331394	13.9653618911462
+H5N1|2344b|EPI_ISL_17716811|charadriiformes|czechia|1_1_4_1_4_1_1_4|2023-04-24	eastern europe	czechia	Europe / Czech Republic / Pardubicky kraj / Okres Pardubice / Bohumilecsky pond; GPS: 50.1081219N, 15.8594442E	charadriiformes-wild	49.9006406346158	16.1892997029385
+H5N1|2344b|EPI_ISL_17679747|charadriiformes|italy|1_1_4_1_4_1_1_4|2023-03-13	southern europe	italy	Europe / Italy / Verona / NA / NA	charadriiformes-wild	45.6595758067318	11.8428083995249
+H5N1|2344b|EPI_ISL_17679801|charadriiformes|france|1_1_4_1_4_1_1_4|2022-12-25	western europe	france	Europe / Spain / NA / NA / NA	charadriiformes-wild	45.5190780558984	4.54715006428513
+H5N1|2344b|EPI_ISL_17679810|charadriiformes|france|1_1_4_1_4_1_1_4|2023-01-16	western europe	france	Europe / Spain / NA / NA / NA	charadriiformes-wild	45.5190780558984	4.54715006428513
+H5N1|2344b|EPI_ISL_17514165|charadriiformes|austria|1_1_4_1_4_1_1_4|2023-03-08	western europe	austria	Europe / Austria / Bundesland Salzburg / Salzburg-Land / NA	charadriiformes-wild	47.3885937043155	13.0848644916096
+H5N1|2344b|EPI_ISL_17716065|charadriiformes|austria|1_1_4_1_4_1_1_4|2023-03-14	western europe	austria	Europe / Austria / Bundesland Wien / Bundesland Wien / NA	charadriiformes-wild	48.2089421257604	16.3790253882177
+H5N1|2344b|EPI_ISL_17716073|charadriiformes|austria|1_1_4_1_4_1_1_4|2023-05-03	western europe	austria	Europe / Austria / Voralrberg / NA / NA	charadriiformes-wild	47.2399358407422	9.89649424147589
+H5N1|2344b|EPI_ISL_18058692|charadriiformes|austria|1_1_4_1_4_1_1_4|2023-06-05	western europe	austria	NA	charadriiformes-wild	47.5942901543001	14.1261824377155
+H5N1|2344b|EPI_ISL_18058689|charadriiformes|austria|1_1_4_1_4_1_1_4|2023-05-12	western europe	austria	NA	charadriiformes-wild	48.1371934331394	13.9653618911462
+H5N1|2344b|EPI_ISL_17716075|charadriiformes|austria|1_1_4_1_4_1_1_4|2023-05-05	western europe	austria	Europe / Austria / Bundesland Salzburg / Salzburg-Umgebung / NA	charadriiformes-wild	47.3885937043155	13.0848644916096
+H5N1|2344b|EPI_ISL_18058689|charadriiformes|austria|1_1_4_1_4_1_1_4|2023-05-12	western europe	austria	NA	charadriiformes-wild	47.5942901543001	14.1261824377155
+H5N1|2344b|EPI_ISL_18347731|charadriiformes|belgium|1_1_4_1_4_1_1_4|2023-05-23	western europe	belgium	NA	charadriiformes-wild	50.64017310615	4.66939027974939
+H5N1|2344b|EPI_ISL_18347731|charadriiformes|belgium|1_1_4_1_4_1_1_4|2023-05-23	western europe	belgium	NA	charadriiformes-wild	51.0391095671615	4.2420548599892
+H5N1|2344b|EPI_ISL_18343463|columbiformes|belgium|1_1_4_1_4_1_1_4|2023-05-07	western europe	belgium	NA	other	50.64017310615	4.66939027974939
+H5N1|2344b|EPI_ISL_17831040|falconiformes|belgium|1_1_4_1_4_1_1_4|2023-05-07	western europe	belgium	Europe / Belgium / Provincie Oost-Vlaanderen / Merelbeke / NA	other	51.0391095671615	4.2420548599892
+H5N1|2344b|EPI_ISL_18065330|charadriiformes|united_kingdom|1_1_4_1_4_1_1_4|2023-06-20	northern europe	united kingdom	NA	charadriiformes-wild	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_18292960|charadriiformes|finland|1_1_4_1_4_1_1_4|2023-07-27	northern europe	finland	NA	charadriiformes-wild	64.2398144022788	26.1623842060791
+H5N1|2344b|EPI_ISL_18255405|charadriiformes|sweden|1_1_4_1_4_1_1_4|2023-07-20	northern europe	sweden	NA	charadriiformes-wild	57.5128828372686	18.541723046906
+H5N1|2344b|EPI_ISL_18257964|charadriiformes|sweden|1_1_4_1_4_1_1_4|2023-06-20	northern europe	sweden	NA	charadriiformes-wild	57.1855292476939	16.1305148015024
+H5N1|2344b|EPI_ISL_18257963|charadriiformes|sweden|1_1_4_1_4_1_1_4|2023-06-20	northern europe	sweden	NA	charadriiformes-wild	62.374013544985	16.2835241791686
+H5N1|2344b|EPI_ISL_18255288|falconiformes|sweden|1_1_4_1_4_1_1_4|2023-07-20	northern europe	sweden	NA	other	56.9527544067021	12.8455535105187
+H5N1|2344b|EPI_ISL_18255288|falconiformes|sweden|1_1_4_1_4_1_1_4|2023-07-20	northern europe	sweden	NA	other	62.374013544985	16.2835241791686
+H5N1|2344b|EPI_ISL_16984642|anseriformes|belgium|1_1_4_1_4_1_1_4|2023-01-02	western europe	belgium	Europe / Belgium / Provincie Limburg / Lanaken / NA	anseriformes-wild	51.0391095671615	4.2420548599892
+H5N1|2344b|EPI_ISL_16984863|charadriiformes|belgium|1_1_4_1_4_1_1_4|2023-01-02	western europe	belgium	Europe / Belgium / Province de Hainaut / PÃ©ronnes-Lez-Antoing / NA	charadriiformes-wild	50.3127973408239	5.0143267931739
+H5N1|2344b|EPI_ISL_17521022|anseriformes|united_kingdom|1_1_4_1_4_1_1_4|2023-03-30	northern europe	united kingdom	Europe / United Kingdom / England / NA / NA	anseriformes-domestic	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_18065347|charadriiformes|united_kingdom|1_1_4_1_4_1_1_4|2023-06-22	northern europe	united kingdom	NA	charadriiformes-wild	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_17521023|galliformes|united_kingdom|1_1_4_1_4_1_1_4|2023-03-30	northern europe	united kingdom	Europe / United Kingdom / England / NA / NA	galliformes-domestic	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_18439513|charadriiformes|belgium|1_1_4_1_4_1_1_4|2023-06-30	western europe	belgium	NA	charadriiformes-wild	50.64017310615	4.66939027974939
+H5N1|2344b|EPI_ISL_17710028|charadriiformes|united_kingdom|1_1_4_1_4_1_1_4|2023-05-01	northern europe	united kingdom	Europe / United Kingdom / England / NA / NA	charadriiformes-wild	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_18439513|charadriiformes|belgium|1_1_4_1_4_1_1_4|2023-06-30	western europe	belgium	NA	charadriiformes-wild	51.0391095671615	4.2420548599892
+H5N1|2344b|EPI_ISL_17716814|charadriiformes|czechia|1_1_4_1_4_1_1_4|2023-04-24	eastern europe	czechia	Europe / Czech Republic / Morovskoslezsky Kraj / Okres Karvina / Skucak pond; GPS; 49.8642708N, 18.3879925E	charadriiformes-wild	49.8368899304208	17.9578982609586
+H5N1|2344b|EPI_ISL_18501394|charadriiformes|russia|1_1_4_1_4_1_1_4|2023-10-11	eastern europe	russia	NA	charadriiformes-wild	60.0038026239663	31.7192161663564
+H5N1|2344b|EPI_ISL_17716824|charadriiformes|czechia|1_1_4_1_4_1_1_4|2023-05-11	eastern europe	czechia	Europe / Czech Republic / Plzensky Kraj / Okres Plzen-Sever / Line; GPS: 49.6955944N, 13.2385058E	charadriiformes-wild	49.5901077813144	13.2328532454248
+H5N1|2344b|EPI_ISL_17716817|charadriiformes|czechia|1_1_4_1_4_1_1_4|2023-05-03	eastern europe	czechia	Europe / Czech Republic / Ustecky Kraj / Okres Litomerice / Steti; GPS: 50.4702053N, 14.3747528E	charadriiformes-wild	50.5294097303953	13.8509106160886
+H5N1|2344b|EPI_ISL_18033241|charadriiformes|poland|1_1_4_1_4_1_1_4|2023-05-30	eastern europe	poland	NA	charadriiformes-wild	52.1141994014432	19.4236724631525
+H5N1|2344b|EPI_ISL_17716828|falconiformes|czechia|1_1_4_1_4_1_1_4|2023-05-15	eastern europe	czechia	Europe / Czech Republic / Ustecky Kraj / Okres Chomutov / birdhouse on the chimney of the heating plant; GPS: 50.4457106N, 13.4356106E	other	50.5294097303953	13.8509106160886
+H5N1|2344b|EPI_ISL_18013313|charadriiformes|germany|1_1_4_1_4_1_1_4|2023-06-02	western europe	germany	NA	charadriiformes-wild	54.1814850326718	9.81577342948134
+H5N1|2344b|EPI_ISL_18013313|charadriiformes|germany|1_1_4_1_4_1_1_4|2023-06-02	western europe	germany	NA	charadriiformes-wild	51.0533277435649	10.373650933319
+H5N1|2344b|EPI_ISL_17821076|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-05-28	western europe	netherlands	Europe / Netherlands / Den Oever, Waddenhaven / NA / NA	charadriiformes-wild	52.5811544669078	4.87272777813315
+H5N1|2344b|EPI_ISL_18075715|charadriiformes|spain|1_1_4_1_4_1_1_4|2023-06-05	southern europe	spain	NA	charadriiformes-wild	40.1894641959532	-3.70568864248137
+H5N1|2344b|EPI_ISL_17958952|charadriiformes|italy|1_1_4_1_4_1_1_4|2023-06-11	southern europe	italy	Europe / Italy / Ravenna / NA / NA	charadriiformes-wild	44.5384682233432	11.0245992898255
+H5N1|2344b|EPI_ISL_18076031|charadriiformes|italy|1_1_4_1_4_1_1_4|2023-07-07	southern europe	italy	NA	charadriiformes-wild	44.5384682233432	11.0245992898255
+H5N1|2344b|EPI_ISL_18059062|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-07-13	western europe	netherlands	NA	charadriiformes-wild	52.5811544669078	4.87272777813315
+H5N1|2344b|EPI_ISL_17982387|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-06-09	western europe	netherlands	NA	charadriiformes-wild	52.2573048104135	5.56251311224367
+H5N1|2344b|EPI_ISL_18033209|charadriiformes|poland|1_1_4_1_4_1_1_4|2023-04-24	eastern europe	poland	NA	charadriiformes-wild	52.1141994014432	19.4236724631525
+H5N1|2344b|EPI_ISL_18033419|ciconiiformes|poland|1_1_4_1_4_1_1_4|2023-07-07	eastern europe	poland	NA	other	52.1141994014432	19.4236724631525
+H5N1|2344b|EPI_ISL_18065333|charadriiformes|united_kingdom|1_1_4_1_4_1_1_4|2023-06-29	northern europe	united kingdom	NA	charadriiformes-wild	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_18010500|charadriiformes|united_kingdom|1_1_4_1_4_1_1_4|2023-06-02	northern europe	united kingdom	NA	charadriiformes-wild	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_18065348|charadriiformes|united_kingdom|1_1_4_1_4_1_1_4|2023-06-27	northern europe	united kingdom	NA	charadriiformes-wild	56.7931587491509	-4.20419908814114
+H5N1|2344b|EPI_ISL_18304551|charadriiformes|russia|1_1_4_1_4_1_1_4|2023-08-02	eastern europe	russia	NA	charadriiformes-wild	60.0038026239663	31.7192161663564
+H5N1|2344b|EPI_ISL_18509065|charadriiformes|latvia|1_1_4_1_4_1_1_4|2023-05-19	northern europe	latvia	NA	charadriiformes-wild	56.8620641951116	24.9396020767644
+H5N1|2344b|EPI_ISL_18115435|charadriiformes|russia|1_1_4_1_4_1_1_4|2023-08-02	eastern europe	russia	NA	charadriiformes-wild	60.0038026239663	31.7192161663564
+H5N1|2344b|EPI_ISL_18503032|charadriiformes|russia|1_1_4_1_4_1_1_4|2023-08-31	eastern europe	russia	NA	charadriiformes-wild	60.0038026239663	31.7192161663564
+H5N1|2344b|EPI_ISL_18122449|charadriiformes|finland|1_1_4_1_4_1_1_4|2023-07-13	northern europe	finland	NA	charadriiformes-wild	64.2398144022788	26.1623842060791
+H5N1|2344b|EPI_ISL_18123937|charadriiformes|finland|1_1_4_1_4_1_1_4|2023-07-13	northern europe	finland	NA	charadriiformes-wild	64.2398144022788	26.1623842060791
+H5N1|2344b|EPI_ISL_18317317|charadriiformes|russia|1_1_4_1_4_1_1_4|2023-08-02	eastern europe	russia	NA	charadriiformes-wild	60.0038026239663	31.7192161663564
+H5N1|2344b|EPI_ISL_18501402|charadriiformes|russia|1_1_4_1_4_1_1_4|2023-10-11	eastern europe	russia	NA	charadriiformes-wild	60.0038026239663	31.7192161663564
+H5N1|2344b|EPI_ISL_18509077|charadriiformes|latvia|1_1_4_1_4_1_1_4|2023-05-12	northern europe	latvia	NA	charadriiformes-wild	56.8620641951116	24.9396020767644
+H5N1|2344b|EPI_ISL_18509079|podicipediformes|latvia|1_1_4_1_4_1_1_4|2023-05-18	northern europe	latvia	NA	other	56.8620641951116	24.9396020767644
+H5N1|2344b|EPI_ISL_17985409|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-06-20	western europe	netherlands	NA	charadriiformes-wild	52.2573048104135	5.56251311224367
+H5N1|2344b|EPI_ISL_18161267|charadriiformes|russia|1_1_4_1_4_1_1_4|2023-08-14	eastern europe	russia	NA	charadriiformes-wild	60.0038026239663	31.7192161663564
+H5N1|2344b|EPI_ISL_18010920|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-06-30	western europe	netherlands	NA	charadriiformes-wild	52.5811544669078	4.87272777813315
+H5N1|2344b|EPI_ISL_18010926|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-06-23	western europe	netherlands	NA	charadriiformes-wild	52.2573048104135	5.56251311224367
+H5N1|2344b|EPI_ISL_18321748|charadriiformes|finland|1_1_4_1_4_1_1_4|2023-07-12	northern europe	finland	NA	charadriiformes-wild	62.0597637912667	23.6696745592397
+H5N1|2344b|EPI_ISL_17971919|charadriiformes|united_kingdom|1_1_4_1_4_1_1_4|2023-05-28	northern europe	united kingdom	Europe / United Kingdom / Wales / NA / NA	charadriiformes-wild	52.3299411115892	-3.76558183366802
+H5N1|2344b|EPI_ISL_18112331|galliformes|united_kingdom|1_1_4_1_4_1_1_4|2023-07-17	northern europe	united kingdom	NA	galliformes-domestic	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_18112332|galliformes|jersey|1_1_4_1_4_1_1_4|2023-07-17	northern europe	jersey	NA	galliformes-domestic	49.2138286332854	-2.13245261248515
+H5N1|2344b|EPI_ISL_18118727|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-07-28	western europe	netherlands	NA	charadriiformes-wild	52.5811544669078	4.87272777813315
+H5N1|2344b|EPI_ISL_18118729|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-07-28	western europe	netherlands	NA	charadriiformes-wild	52.2573048104135	5.56251311224367
+H5N1|2344b|EPI_ISL_18226742|charadriiformes|united_kingdom|1_1_4_1_4_1_1_4|2023-07-26	northern europe	united kingdom	NA	charadriiformes-wild	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_18226744|mammal|united_kingdom|1_1_4_1_4_1_1_4|2023-07-26	northern europe	united kingdom	NA	mammal	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_18618701|mammal|finland|1_1_4_1_4_1_1_4|2023-09-20	northern europe	finland	NA	mammal	64.2398144022788	26.1623842060791
+H5N1|2344b|EPI_ISL_18325126|charadriiformes|united_kingdom|1_1_4_1_4_1_1_4|2023-07-18	northern europe	united kingdom	NA	charadriiformes-wild	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_18963393|galliformes|norway|1_1_4_1_4_1_1_4|2023-10-09	northern europe	norway	NA	galliformes-domestic	69.2782075900742	19.5016391581555
+H5N1|2344b|EPI_ISL_14497836|galliformes|united_kingdom|1_1_4_1_4_1_1_4|2022-07-20	northern europe	united kingdom	NA	galliformes-domestic	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_17716071|charadriiformes|austria|1_1_4_1_4_1_1_4|2023-04-27	western europe	austria	Europe / Austria / Bundesland Oberosterreich / Ried / NA	charadriiformes-wild	48.1371934331394	13.9653618911462
+H5N1|2344b|EPI_ISL_17716078|charadriiformes|austria|1_1_4_1_4_1_1_4|2023-05-09	western europe	austria	Europe / Austria / Bundesland Salzburg / Salzburg-Umgebung / NA	charadriiformes-wild	47.3885937043155	13.0848644916096
+H5N1|2344b|EPI_ISL_18058695|charadriiformes|austria|1_1_4_1_4_1_1_4|2023-06-05	western europe	austria	NA	charadriiformes-wild	47.2399358407422	9.89649424147589
+H5N1|2344b|EPI_ISL_17716070|charadriiformes|austria|1_1_4_1_4_1_1_4|2023-04-25	western europe	austria	Europe / Austria / Bundesland Wien / Bundesland Wien / NA	charadriiformes-wild	48.2089421257604	16.3790253882177
+H5N1|2344b|EPI_ISL_18058703|charadriiformes|austria|1_1_4_1_4_1_1_4|2023-06-14	western europe	austria	NA	charadriiformes-wild	47.5942901543001	14.1261824377155
+H5N1|2344b|EPI_ISL_18343464|charadriiformes|belgium|1_1_4_1_4_1_1_4|2023-06-14	western europe	belgium	NA	charadriiformes-wild	50.64017310615	4.66939027974939
+H5N1|2344b|EPI_ISL_17884626|charadriiformes|czechia|1_1_4_1_4_1_1_4|2023-05-05	eastern europe	czechia	Europe / Czech Republic / South Moravian Region / Okres Brno-Venkov / GPS: 48.8943656N, 16.5429350E	charadriiformes-wild	49.0792008172895	16.6634176148425
+H5N1|2344b|EPI_ISL_17584815|charadriiformes|czechia|1_1_4_1_4_1_1_4|2023-04-11	eastern europe	czechia	Europe / Czech Republic / Jihocesky Kraj / Okres Ceske Budejovice / Stary vrbensky pond; GPS: 49.0039486N, 14.4349264E	charadriiformes-wild	49.0928166218663	14.4391547985202
+H5N1|2344b|EPI_ISL_17716825|charadriiformes|czechia|1_1_4_1_4_1_1_4|2023-05-11	eastern europe	czechia	Europe / Czech Republic / Plzensky Kraj / Okres Plzen-Sever / Line; GPS: 49.6955944N, 13.2385058E	charadriiformes-wild	49.5901077813144	13.2328532454248
+H5N1|2344b|EPI_ISL_17470109|charadriiformes|czechia|1_1_4_1_4_1_1_4|2023-04-04	eastern europe	czechia	Europe / Czech Republic / Stredocesky Kraj / Okres Kladno / Hobsovicky pond; GPS: 50.2732056N, 14.1461994E	charadriiformes-wild	49.9969098943343	14.5545810187162
+H5N1|2344b|EPI_ISL_17716819|charadriiformes|czechia|1_1_4_1_4_1_1_4|2023-05-03	eastern europe	czechia	Europe / Czech Republic / Ustecky Kraj / Okres Litomerice / Steti; GPS: 50.4702053N, 14.3747528E	charadriiformes-wild	50.5294097303953	13.8509106160886
+H5N1|2344b|EPI_ISL_17716815|charadriiformes|czechia|1_1_4_1_4_1_1_4|2023-04-24	eastern europe	czechia	Europe / Czech Republic / Morovskoslezsky Kraj / Okres Karvina / Skucak pond; GPS; 49.8642708N, 18.3879925E	charadriiformes-wild	49.8368899304208	17.9578982609586
+H5N1|2344b|EPI_ISL_17584817|charadriiformes|czechia|1_1_4_1_4_1_1_4|2023-04-12	eastern europe	czechia	Europe / Czech Republic / Zlinsky Kraj / Okres Kromeriz / Chopine, Zamecky pond; GPS: 49.3542700N, 17.3694061E	charadriiformes-wild	49.2395239668424	17.7694110590927
+H5N1|2344b|EPI_ISL_18013310|charadriiformes|germany|1_1_4_1_4_1_1_4|2023-06-05	western europe	germany	NA	charadriiformes-wild	53.7551744161606	12.5509509363277
+H5N1|2344b|EPI_ISL_18013311|charadriiformes|germany|1_1_4_1_4_1_1_4|2023-06-01	western europe	germany	NA	charadriiformes-wild	51.4777551092159	7.5539349720828
+H5N1|2344b|EPI_ISL_18013311|charadriiformes|germany|1_1_4_1_4_1_1_4|2023-06-01	western europe	germany	NA	charadriiformes-wild	51.0533277435649	10.373650933319
+H5N1|2344b|EPI_ISL_18271509|charadriiformes|denmark|1_1_4_1_4_1_1_4|2023-06-22	northern europe	denmark	NA	charadriiformes-wild	57.0522607274982	9.67257639647962
+H5N1|2344b|EPI_ISL_17716780|charadriiformes|denmark|1_1_4_1_4_1_1_4|2023-05-01	northern europe	denmark	Europe / Denmark / Region Syddanmark / Haderslev Kommune / NA	charadriiformes-wild	55.3568797999445	9.45020901930698
+H5N1|2344b|EPI_ISL_18271509|charadriiformes|denmark|1_1_4_1_4_1_1_4|2023-06-22	northern europe	denmark	NA	charadriiformes-wild	55.9512996898935	10.0707816763207
+H5N1|2344b|EPI_ISL_18075726|charadriiformes|spain|1_1_4_1_4_1_1_4|2023-06-27	southern europe	spain	NA	charadriiformes-wild	40.1894641959532	-3.70568864248137
+H5N1|2344b|EPI_ISL_18290495|charadriiformes|finland|1_1_4_1_4_1_1_4|2023-08-29	northern europe	finland	NA	charadriiformes-wild	64.2398144022788	26.1623842060791
+H5N1|2344b|EPI_ISL_17679800|charadriiformes|france|1_1_4_1_4_1_1_4|2022-12-21	western europe	france	Europe / Spain / NA / NA / NA	charadriiformes-wild	45.5190780558984	4.54715006428513
+H5N1|2344b|EPI_ISL_13519451|charadriiformes|france|1_1_4_1_4_1_1_4|2022-05-11	western europe	france	Europe / France / Picardie / Departement de la Somme / NA	charadriiformes-wild	49.9664542920368	2.77424482433678
+H5N1|2344b|EPI_ISL_18445743|charadriiformes|france|1_1_4_1_4_1_1_4|2022-06-15	western europe	france	NA	charadriiformes-wild	46.5103009447381	2.5780749353201
+H5N1|2344b|EPI_ISL_18010489|charadriiformes|united_kingdom|1_1_4_1_4_1_1_4|2023-06-02	northern europe	united kingdom	NA	charadriiformes-wild	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_17762861|charadriiformes|croatia|1_1_4_1_4_1_1_4|2023-05-15	southern europe	croatia	NA	charadriiformes-wild	45.7905441204838	16.0603237314168
+H5N1|2344b|EPI_ISL_18509074|charadriiformes|latvia|1_1_4_1_4_1_1_4|2023-05-05	northern europe	latvia	NA	charadriiformes-wild	56.8620641951116	24.9396020767644
+H5N1|2344b|EPI_ISL_18076011|charadriiformes|italy|1_1_4_1_4_1_1_4|2023-07-03	southern europe	italy	NA	charadriiformes-wild	44.5384682233432	11.0245992898255
+H5N1|2344b|EPI_ISL_17208165|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-02-19	western europe	netherlands	Europe / Netherlands / Lelystad, Bataviahaven / NA / NA	charadriiformes-wild	52.5266976905946	5.60009163363913
+H5N1|2344b|EPI_ISL_15579539|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2022-10-02	western europe	netherlands	Europe / Netherlands / Noord Buren, Waddenkust / NA / NA	charadriiformes-wild	53.1100430768808	5.84863928632393
+H5N1|2344b|EPI_ISL_17267143|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-03-01	western europe	netherlands	Europe / Netherlands / Arnhem, Rijnuiterwaarden / NA / NA	charadriiformes-wild	52.0617180422494	5.94466833784019
+H5N1|2344b|EPI_ISL_18010915|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-06-26	western europe	netherlands	NA	charadriiformes-wild	52.5811544669078	4.87272777813315
+H5N1|2344b|EPI_ISL_18075143|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-03-07	western europe	netherlands	NA	charadriiformes-wild	52.4448999895994	6.44900146928843
+H5N1|2344b|EPI_ISL_18118723|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-07-21	western europe	netherlands	NA	charadriiformes-wild	52.083727924893	5.16763788059654
+H5N1|2344b|EPI_ISL_15069398|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2022-08-10	western europe	netherlands	Europe / Netherlands / Neeltje Jans / NA / NA	charadriiformes-wild	51.4517197034959	3.83526799798383
+H5N1|2344b|EPI_ISL_18010915|charadriiformes|netherlands|1_1_4_1_4_1_1_4|2023-06-26	western europe	netherlands	NA	charadriiformes-wild	52.2573048104135	5.56251311224367
+H5N1|2344b|EPI_ISL_18033232|charadriiformes|poland|1_1_4_1_4_1_1_4|2023-01-01	eastern europe	poland	NA	charadriiformes-wild	52.1141994014432	19.4236724631525
+H5N1|2344b|EPI_ISL_18501398|charadriiformes|russia|1_1_4_1_4_1_1_4|2023-10-11	eastern europe	russia	NA	charadriiformes-wild	60.0038026239663	31.7192161663564
+H5N1|2344b|EPI_ISL_18255395|charadriiformes|sweden|1_1_4_1_4_1_1_4|2023-07-20	northern europe	sweden	NA	charadriiformes-wild	57.5128828372686	18.541723046906
+H5N1|2344b|EPI_ISL_18612178|charadriiformes|slovenia|1_1_4_1_4_1_1_4|2023-03-20	southern europe	slovenia	NA	charadriiformes-wild	46.124137393352	14.813678667363
+H5N1|2344b|EPI_ISL_18255395|charadriiformes|sweden|1_1_4_1_4_1_1_4|2023-07-20	northern europe	sweden	NA	charadriiformes-wild	62.374013544985	16.2835241791686
+H5N1|2344b|EPI_ISL_14864651|galliformes|united_kingdom|1_1_4_1_4_1_1_4|2022-08-28	northern europe	united kingdom	NA	galliformes-domestic	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_16574529|galliformes|isle_of_man|1_1_4_1_4_1_1_4|2022-12-26	northern europe	isle of man	Europe / Isle of Man / Isle_of_man / _of_man / _of_man	galliformes-domestic	54.2274459818122	-4.5394736212416
+H5N1|2344b|EPI_ISL_18112331|galliformes|jersey|1_1_4_1_4_1_1_4|2023-07-17	northern europe	jersey	NA	galliformes-domestic	49.2138286332854	-2.13245261248515
+H5N1|2344b|EPI_ISL_18067225|galliformes|italy|1_1_4_1_4_1_1_4|2023-04-17	southern europe	italy	NA	galliformes-domestic	45.6209228193015	9.77073774623
+H5N1|2344b|EPI_ISL_18048777|galliformes|netherlands|1_1_4_1_4_1_1_4|2023-07-24	western europe	netherlands	NA	galliformes-domestic	52.5266976905946	5.60009163363913
+H5N1|2344b|EPI_ISL_18048777|galliformes|netherlands|1_1_4_1_4_1_1_4|2023-07-24	western europe	netherlands	NA	galliformes-domestic	52.2573048104135	5.56251311224367
+H5N1|2344b|EPI_ISL_18347730|carnivora|belgium|1_1_4_1_4_1_1_4|2023-05-17	western europe	belgium	NA	mammal	50.64017310615	4.66939027974939
+H5N1|2344b|EPI_ISL_18131278|mammal|finland|1_1_4_1_4_1_1_4|2023-08-03	northern europe	finland	NA	mammal	64.2398144022788	26.1623842060791
+H5N1|2344b|EPI_ISL_16507096|carnivora|france|1_1_4_1_4_1_1_4|2022-10-26	western europe	france	Europe / Spain / NA / NA / NA	mammal	45.5190780558984	4.54715006428513
+H5N1|2344b|EPI_ISL_18226743|carnivora|united_kingdom|1_1_4_1_4_1_1_4|2023-07-26	northern europe	united kingdom	NA	mammal	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_18509071|mammal|latvia|1_1_4_1_4_1_1_4|2023-05-25	northern europe	latvia	NA	mammal	56.8620641951116	24.9396020767644
+H5N1|2344b|EPI_ISL_17606756|carnivora|belgium|1_1_4_1_4_1_1_4|2023-03-14	western europe	belgium	Europe / Belgium / Provincie Vlaams-Brabant / Wilsele / NA	mammal	51.0391095671615	4.2420548599892
+H5N1|2344b|EPI_ISL_18321752|podicipediformes|finland|1_1_4_1_4_1_1_4|2023-07-18	northern europe	finland	NA	other	64.2398144022788	26.1623842060791
+H5N1|2344b|EPI_ISL_18010493|falconiformes|united_kingdom|1_1_4_1_4_1_1_4|2023-06-02	northern europe	united kingdom	NA	other	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_18127711|NA|gambia|1_1_4_1_4_1_1_4|2023-04-01	western africa	gambia	NA	other	13.4527938239197	-15.3731969085987
+H5N1|2344b|EPI_ISL_17830866|falconiformes|belgium|1_1_4_1_4_1_1_4|2023-03-07	western europe	belgium	Europe / Belgium / Province de Namur / Jemeppe-sur-Sambre / NA	other	50.3127973408239	5.0143267931739
+H5N1|2344b|EPI_ISL_18048778|strigiformes|netherlands|1_1_4_1_4_1_1_4|2023-05-29	western europe	netherlands	NA	other	52.2573048104135	5.56251311224367
+H5N1|2344b|EPI_ISL_18255293|falconiformes|sweden|1_1_4_1_4_1_1_4|2023-06-06	northern europe	sweden	NA	other	55.9474024317265	13.595146733816
+H5N1|2344b|EPI_ISL_18255293|falconiformes|sweden|1_1_4_1_4_1_1_4|2023-06-06	northern europe	sweden	NA	other	62.374013544985	16.2835241791686
