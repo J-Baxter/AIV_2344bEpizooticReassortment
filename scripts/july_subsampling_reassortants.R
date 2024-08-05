@@ -55,6 +55,7 @@ metadata_subsampled <- metadata %>%
 
   bind_rows(., .id = 'label') %>%
   mutate(clade = gsub('\\.', '', clade)) %>%
+  
   # join identical sequence groupings
   left_join(identical_seqs, 
             by = join_by(label, 
@@ -160,17 +161,17 @@ mapply(write_delim,
 # lognormal prior 
 
 
-cmds <- paste0("/Applications/BEASTGen_v1.0.2/bin/beastgen -date_order -1 -date_prefix \\| -date_precision  -D ",
+cmds <- paste0("./beastgen -date_order -1 -date_prefix \\| -date_precision -D '",
                'fileName=',
                gsub('.fasta$|.*beastsubsample/', '', alignmentfiles_subsampled), 
                '_relaxLn_constant', '_1',
-               "' /Applications/BEASTGen_v1.0.2/bin/flu_constanttemplate ",
-               alignmentfiles_subsampled,
+               "' flu_constanttemplate ",
+               gsub('.*beastsubsample/', '', alignmentfiles_subsampled),
                ' ',
-               gsub('.fasta', '', alignmentfiles_subsampled),
+               gsub('.fasta|.*beastsubsample/', '', alignmentfiles_subsampled),
                '_relaxLn_constant', '_1', '.xml')
 
-write_lines(cmds,  paste('./2024Jul12/region_beastsubsample', 
+write_lines(cmds,  paste('./2024Jul12/reassortant_beastsubsample', 
                          'beastgen.txt',
                          sep = '/' ))
 

@@ -48,8 +48,9 @@ identical_seqs <- lapply(aln,
 ####################################################################################################
 # Subsample - strict
 
-metadata_subsampled <- metadata %>%
+metadata_prep <- metadata %>%
   bind_rows(., .id = 'label') %>%
+  
   
   # join identical sequence groupings
   left_join(identical_seqs, 
@@ -77,17 +78,60 @@ metadata_subsampled <- metadata %>%
            group,
            #host_simplifiedhost, 
            cluster_profile
-           ) %>%
+  ) %>%
   mutate(todrop = case_when(collection_countrycode %in% c('RU', 'JP', 'CN') && is.na(collection_subdiv1code) && n()>1 ~ 'drop',
                             collection_countrycode == 'IRN' ~ 'drop',
                             .default = 'keep')) %>%
   filter(todrop == 'keep') %>%
-  ungroup() %>%
+  ungroup()
+
+
+# sample the earliest example of each cluster
+metadata_subsampled_1 <- metadata_prep  %>%
   group_by(label, 
-           group,
+           #group,
            #host_simplifiedhost, 
+           cluster_profile#,
+           # best_location_code
+  ) %>%
+  slice_min(order_by = collection_date, n = 1) %>%
+  #slice_sample(n = 1) %>%
+  ungroup() %>%
+  
+  # as list
+  group_split(label, .keep = FALSE) %>%
+  as.list() %>%
+  setNames(names(metadata))
+
+
+
+# sample the most recent example of each cluster
+metadata_subsampled_2 <- metadata_prep  %>%
+  group_by(label, 
+           #group,
+           #host_simplifiedhost, 
+           cluster_profile#,
+           # best_location_code
+  ) %>%
+  slice_max(order_by = collection_date, n = 1) %>%
+  #slice_sample(n = 1) %>%
+  ungroup() %>%
+  
+  # as list
+  group_split(label, .keep = FALSE) %>%
+  as.list() %>%
+  setNames(names(metadata))
+
+
+
+# sample according to location
+metadata_subsampled_3 <- metadata_prep %>%
+  group_by(label, 
+           #group,
+           #host_order, 
            cluster_profile,
-           best_location_code) %>%
+           best_location_code
+  ) %>%
   slice_sample(n = 1) %>%
   ungroup() %>%
   
@@ -96,11 +140,139 @@ metadata_subsampled <- metadata %>%
   as.list() %>%
   setNames(names(metadata))
 
+
+
+# sample according to location
+metadata_subsampled_4 <- metadata_prep %>%
+  group_by(label, 
+           #group,
+           host_order, 
+           cluster_profile#,
+           #best_location_code
+  ) %>%
+  slice_sample(n = 1) %>%
+  ungroup() %>%
+  
+  # as list
+  group_split(label, .keep = FALSE) %>%
+  as.list() %>%
+  setNames(names(metadata))
+
+metadata_subsampled <- lapply(1:length(metadata), function(i) bind_rows(metadata_subsampled_1[[i]],
+                                                                        metadata_subsampled_2[[i]],
+                                                                        metadata_subsampled_3[[i]],
+                                                                        metadata_subsampled_4[[i]]) %>%
+                                distinct()) 
+
+lapply(metadata_subsampled, nrow) %>% unlist()
+####################################################################################################
+# Subsample - No dominants
+summary_data <- read_csv('2024-06-05_reassortant_summary.csv') %>%
+  select(cluster_profile, group) %>%
+  mutate(cluster_profile = gsub('_', '', cluster_profile))
+
+# sample the earliest example of each cluster
+metadata_subsampled_nodominant_1 <- metadata_prep  %>%
+  left_join(summary_data, by = join_by(cluster_profile)) %>%
+  filter(cluster_profile != 'dominant') %>%
+  
+  group_by(label, 
+           #group,
+           #host_simplifiedhost, 
+           cluster_profile#,
+           # best_location_code
+  ) %>%
+  slice_min(order_by = collection_date, n = 1) %>%
+  #slice_sample(n = 1) %>%
+  ungroup() %>%
+  
+  # as list
+  group_split(label, .keep = FALSE) %>%
+  as.list() %>%
+  setNames(names(metadata))
+
+
+
+# sample the most recent example of each cluster
+metadata_subsampled_nodominant_2 <- metadata_prep  %>%
+  left_join(summary_data, by = join_by(cluster_profile)) %>%
+  filter(cluster_profile != 'dominant') %>%
+  
+  group_by(label, 
+           #group,
+           #host_simplifiedhost, 
+           cluster_profile#,
+           # best_location_code
+  ) %>%
+  slice_max(order_by = collection_date, n = 1) %>%
+  #slice_sample(n = 1) %>%
+  ungroup() %>%
+  
+  # as list
+  group_split(label, .keep = FALSE) %>%
+  as.list() %>%
+  setNames(names(metadata))
+
+
+
+# sample according to location
+metadata_subsampled_nodominant_3 <- metadata_prep %>%
+  left_join(summary_data, by = join_by(cluster_profile)) %>%
+  filter(cluster_profile != 'dominant') %>%
+  
+  group_by(label, 
+           #group,
+           host_simplifiedhost, 
+           cluster_profile,
+           best_location_code
+  ) %>%
+  slice_sample(n = 1) %>%
+  ungroup() %>%
+  
+  # as list
+  group_split(label, .keep = FALSE) %>%
+  as.list() %>%
+  setNames(names(metadata))
+
+
+# sample according to host
+metadata_subsampled_nodominant_4 <- metadata_prep %>%
+  left_join(summary_data, by = join_by(cluster_profile)) %>%
+  filter(cluster_profile != 'dominant') %>%
+  
+  group_by(label, 
+           #group,
+           host_order, 
+           cluster_profile#,
+           #best_location_code
+  ) %>%
+  slice_sample(n = 1) %>%
+  ungroup() %>%
+  
+  # as list
+  group_split(label, .keep = FALSE) %>%
+  as.list() %>%
+  setNames(names(metadata))
+
+metadata_subsampled_nodominant <- lapply(1:length(metadata), function(i) bind_rows(metadata_subsampled_nodominant_1[[i]],
+                                                                        metadata_subsampled_nodominant_2[[i]],
+                                                                        metadata_subsampled_nodominant_3[[i]],
+                                                                        metadata_subsampled_nodominant_4[[i]]) %>%
+                                distinct()) 
+
+lapply(metadata_subsampled_nodominant, nrow) %>% unlist()
+
 ####################################################################################################
 # Subsample alignments
 alignments_subsampled <- mapply(function(x,y) x[rownames(x) %in% y$tipnames,],
                                 aln,
                                 metadata_subsampled,
+                                SIMPLIFY = FALSE) 
+
+
+alignments_subsampled_nodominant <- mapply(function(x,y) x[rownames(x) %in% y$tipnames,],
+                                aln,
+                                metadata_subsampled_nodominant,
                                 SIMPLIFY = FALSE) 
 ####################################################################################################
 #BEAST traits
@@ -130,8 +302,9 @@ metadata_subsampled_beast <- lapply(metadata_subsampled,
 
 
 
-alignmentfiles_subsampled <- paste('/Users/s1506888/Documents/EEID_AIV_2023/2024Jul12/region_beastsubsample',
-                                   paste(names(aln), '2344b_subsampled.fasta', sep = '_'),
+
+alignmentfiles_subsampled <- paste('./2024Jul12/region_beastsubsample',
+                                   paste(names(aln), 'subsampled.fasta', sep = '_'),
                                    sep = '/' )
 
 mapply(ape::write.dna, 
@@ -141,7 +314,7 @@ mapply(ape::write.dna,
 
 
 metadatafiles_subsampled_beast <-paste('./2024Jul12/region_beastsubsample',
-                                       paste(names(aln), '2344b_subsampled.txt',  sep = '_'),
+                                       paste(names(aln), 'subsampled.txt',  sep = '_'),
                                        sep = '/' )
 
 mapply(write_delim, 
@@ -151,29 +324,59 @@ mapply(write_delim,
        metadatafiles_subsampled_beast)  
 
 
+
 ####################################################################################################
 # Write plain BEAUTI XML and metadata to file
 # SRD06, relaxed lognormal and skygrid coalescent
 # lognormal prior 
 
-treeprior <- lapply(metadata_subsampled, function(x) x %>% filter(!is.na(collection_datedecimal)) %>% summarise(prior = (as.numeric(max(collection_datedecimal)) - as.numeric(min(collection_datedecimal))))) %>% unlist() %>% ceiling()
+treeprior <- lapply(metadata_subsampled, function(x) x %>% 
+                      filter(!is.na(collection_date)) %>%
+                      mutate(date_dec = decimal_date(ymd(collection_date))) %>%
+                      summarise(prior = (as.numeric(max(date_dec)) - as.numeric(min(date_dec))))) %>% unlist() %>% ceiling()
 
-cmds <- paste0("/Applications/BEASTGen_v1.0.2/bin/beastgen -date_order -1 -date_prefix \\| -date_precision  -D ",
-               "'skygrid_PopSize=",
-               treeprior*4,
-               ",skygrid_numGridPoints=",
-               str_trim(format(treeprior*4-1, nsmall = 1)),
-               ",skygrid_cutOff=",
-               str_trim(format(treeprior, nsmall = 1)),
-               ',fileName=',
-               gsub('.prior', '', names(treeprior)), 
-               '_relaxLn_Skygrid', treeprior, '-', treeprior*4, '_2',
-               "' /Applications/BEASTGen_v1.0.2/bin/skygridtemplate ",
-               alignmentfiles_subsampled,
-               ' ',
-               gsub('.fasta', '', alignmentfiles_subsampled),
-               '_relaxLn_Skygrid', treeprior, '-', treeprior*4, '_2', '.xml')
+cmds_1 <- mapply(function(x,y) paste0("./beastgen -date_order -1 -date_prefix \\| -date_precision -D ",
+                                      "'skygrid_PopSize=",
+                                      min(40, x*4),
+                                      ",skygrid_numGridPoints=",
+                                      str_trim(format(min(40, x*4)-1, nsmall = 1)),
+                                      ",skygrid_cutOff=",
+                                      str_trim(format(x, nsmall = 1)),
+                                      ',fileName=',
+                                      gsub('.fasta$|.*beastsubsample/', '', y), 
+                                      '_relaxLn_Skygrid', x, '-', min(40, x*4), '_1',
+                                      "' skygridtemplate ",
+                                      gsub('.*beastsubsample/', '', y),
+                                      ' ',
+                                      gsub('.fasta|.*beastsubsample/', '', y),
+                                      '_relaxLn_Skygrid', x, '-', min(40, x*4), '_1', '.xml'),
+                 treeprior,
+                 alignmentfiles_subsampled,
+                 SIMPLIFY = F)
+  
 
-write_lines(cmds,  paste('./2024Jul12/region_beastsubsample', 
+
+ 
+cmds_2 <- mapply(function(x,y) paste0("./beastgen -date_order -1 -date_prefix \\| -date_precision -D ",
+                                      "'skygrid_PopSize=",
+                                      min(40, x*4),
+                                      ",skygrid_numGridPoints=",
+                                      str_trim(format(min(40, x*4)-1, nsmall = 1)),
+                                      ",skygrid_cutOff=",
+                                      str_trim(format(x, nsmall = 1)),
+                                      ',fileName=',
+                                      gsub('.fasta$|.*beastsubsample/', '', y), 
+                                      '_relaxLn_Skygrid', x, '-', min(40, x*4), '_2',
+                                      "' skygridtemplate ",
+                                      gsub('.*beastsubsample/', '', y),
+                                      ' ',
+                                      gsub('.fasta|.*beastsubsample/', '', y),
+                                      '_relaxLn_Skygrid', x, '-', min(40, x*4), '_2', '.xml'),
+                 treeprior,
+                 alignmentfiles_subsampled,
+                 SIMPLIFY = F)
+
+
+write_lines(c(cmds_1, cmds_2) ,  paste('./2024Jul12/region_beastsubsample', 
                          'beastgen.txt',
                          sep = '/' ))
