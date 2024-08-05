@@ -1,0 +1,94 @@
+tipnames	collection_regionname	collection_countryname	collection_original	cluster_profile	host_simplifiedhost	lat	long
+H5N1|2344b|EPI_ISL_17638491|galliformes|niger|17_1_1_1_1_1_1_1|2022-12-14	western africa	niger	Africa / Niger / BOUZA, TAHOUA / NA / NA	17_1_1_1_1_1_1_1	galliformes-domestic	15.7709378501361	5.22990257425899
+H5N1|2344b|EPI_ISL_14918892|galliformes|south_africa|1_1_1_1_1_1_1_1|2021-06-30	southern africa	south africa	Africa / South Africa / Province of KwaZulu-Natal / Camperdown / NA	1_1_1_1_1_1_1_1	galliformes-domestic	-28.7220063412643	30.7367833141436
+H5N1|2344b|EPI_ISL_17529372|anseriformes|egypt|1_1_2_1_1_1_1_1|2021-12-15	northern africa	egypt	Africa / Egypt / NA / NA / NA	1_1_2_1_1_1_1_1	anseriformes-wild	26.5331366423868	29.7934978487062
+H5N1|2344b|EPI_ISL_18127711|unknown_avian|gambia|1_1_4_1_4_1_1_4|2023-04-01	western africa	gambia	NA	1_1_4_1_4_1_1_4	other	13.4527938239197	-15.3731969085987
+H5N1|2344b|EPI_ISL_18127713|unknown_avian|gambia|1_1_4_1_4_1_1_4|2023-04-01	western africa	gambia	NA	1_1_4_1_4_1_1_4	other	13.4527938239197	-15.3731969085987
+H5N1|2344b|EPI_ISL_18127710|unknown_avian|gambia|1_1_4_1_4_1_1_4|2023-04-01	western africa	gambia	NA	1_1_4_1_4_1_1_4	other	13.4527938239197	-15.3731969085987
+H5N1|2344b|EPI_ISL_18127714|unknown_avian|gambia|1_1_4_1_4_1_1_4|2023-04-01	western africa	gambia	NA	1_1_4_1_4_1_1_4	other	13.4527938239197	-15.3731969085987
+H5N1|2344b|EPI_ISL_18127712|unknown_avian|gambia|1_1_4_1_4_1_1_4|2023-04-01	western africa	gambia	NA	1_1_4_1_4_1_1_4	other	13.4527938239197	-15.3731969085987
+H5N1|2344b|EPI_ISL_13048382|NA|burkina_faso|2_1_17_1_1_1_1_1|2021-12-07	western africa	burkina faso	Africa / Burkina Faso / Gomboussougou / NA / NA	2_1_17_1_1_1_1_1	other	12.2773783178266	-1.75266049543
+H5N1|2344b|EPI_ISL_2276068|galliformes|senegal|2_1_1_1_1_1_1_1|2020-12-23	western africa	senegal	Africa / Senegal / Region de Thies / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	14.831526394723	-16.7546068121427
+H5N1|2344b|EPI_ISL_2276069|galliformes|senegal|2_1_1_1_1_1_1_1|2020-12-23	western africa	senegal	Africa / Senegal / Region de Thies / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	14.831526394723	-16.7546068121427
+H5N1|2344b|EPI_ISL_2276070|galliformes|senegal|2_1_1_1_1_1_1_1|2020-12-23	western africa	senegal	Africa / Senegal / Region de Thies / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	14.831526394723	-16.7546068121427
+H5N1|NA|EPI_ISL_17414658|galliformes|nigeria|NA|2021-07-09	western africa	nigeria	NA	NA	galliformes-domestic	9.58907159716497	8.08769036750384
+H5N1|2344b|EPI_ISL_17638505|galliformes|niger|17_1_1_1_1_1_1_1|2023-02-14	western africa	niger	Africa / Niger / GUIDAN ROUMDJI, MARADI / NA / NA	17_1_1_1_1_1_1_1	galliformes-wild	14.1152079093427	7.29977536646403
+H5N1|2344b|EPI_ISL_15853935|galliformes|south_africa|1_1_1_1_1_1_1_1|2022-09-18	southern africa	south africa	Africa / South Africa / Province of KwaZulu-Natal / Cato Ridge / NA	1_1_1_1_1_1_1_1	galliformes-domestic	-28.7220063412643	30.7367833141436
+H5N1|2344b|EPI_ISL_18846973|anseriformes|egypt|1_1_2_1_1_1_1_1|2023-02-09	northern africa	egypt	NA	1_1_2_1_1_1_1_1	anseriformes-domestic	26.5331366423868	29.7934978487062
+H5N1|2344b|EPI_ISL_18846971|anseriformes|egypt|1_1_2_1_1_1_1_1|2023-02-09	northern africa	egypt	NA	1_1_2_1_1_1_1_1	anseriformes-domestic	26.5331366423868	29.7934978487062
+H5N1|2344b|EPI_ISL_18846972|anseriformes|egypt|1_1_2_1_1_1_1_1|2023-02-09	northern africa	egypt	NA	1_1_2_1_1_1_1_1	anseriformes-domestic	26.5331366423868	29.7934978487062
+H5N1|2344b|EPI_ISL_18847152|environment|egypt|1_1_2_1_1_1_1_1|2023-02-09	northern africa	egypt	NA	1_1_2_1_1_1_1_1	other	26.5331366423868	29.7934978487062
+H5N1|2344b|EPI_ISL_18846970|anseriformes|egypt|1_1_2_1_1_1_1_1|2023-02-09	northern africa	egypt	NA	1_1_2_1_1_1_1_1	anseriformes-domestic	26.5331366423868	29.7934978487062
+H5N1|2344b|EPI_ISL_13957819|galliformes|mali|2_1_17_1_1_1_1_1|2022-03-16	western africa	mali	Africa / Mali / Kati / NA / NA	2_1_17_1_1_1_1_1	galliformes-domestic	13.6206931729579	-7.64564850795128
+H5N1|2344b|EPI_ISL_13957821|galliformes|mali|2_1_17_1_1_1_1_1|2022-03-16	western africa	mali	Africa / Mali / Kati / NA / NA	2_1_17_1_1_1_1_1	galliformes-domestic	13.6206931729579	-7.64564850795128
+H5N1|2344b|EPI_ISL_13957823|galliformes|mali|2_1_17_1_1_1_1_1|2022-03-16	western africa	mali	Africa / Mali / Kati / NA / NA	2_1_17_1_1_1_1_1	galliformes-domestic	13.6206931729579	-7.64564850795128
+H5N1|2344b|EPI_ISL_13957822|galliformes|mali|2_1_17_1_1_1_1_1|2022-03-16	western africa	mali	Africa / Mali / Kati / NA / NA	2_1_17_1_1_1_1_1	galliformes-domestic	13.6206931729579	-7.64564850795128
+H5N1|2344b|EPI_ISL_19085481|charadriiformes|south_africa|2_1_1_1_1_1_1_1|2024-03-08	southern africa	south africa	NA	2_1_1_1_1_1_1_1	charadriiformes-wild	-33.016256445291	20.6109109128761
+H5N1|NA|EPI_ISL_13609610|pelecaniformes|israel|NA|2022-01-12	western asia	israel	NA	NA	other	31.4459854424407	35.0090837317994
+H5N1|2344b|EPI_ISL_17638498|galliformes|niger|17_1_1_1_1_1_1_1|2023-01-23	western africa	niger	Africa / Niger / MARADI, MARADI / NA / NA	17_1_1_1_1_1_1_1	galliformes-domestic	14.1152079093427	7.29977536646403
+H5N1|2344b|EPI_ISL_17638492|galliformes|niger|17_1_1_1_1_1_1_1|2022-12-18	western africa	niger	Africa / Niger / GOUDEL GOROU, NIAMEY / NA / NA	17_1_1_1_1_1_1_1	galliformes-domestic	13.5308086643374	2.12749988854334
+H5N1|2344b|EPI_ISL_17638503|anseriformes|niger|17_1_1_1_1_1_1_1|2023-02-06	western africa	niger	Africa / Niger / BOUZA, TAHOUA / NA / NA	17_1_1_1_1_1_1_1	anseriformes-wild	15.7709378501361	5.22990257425899
+H5N1|2344b|EPI_ISL_17638493|galliformes|niger|17_1_1_1_1_1_1_1|2023-01-12	western africa	niger	Africa / Niger / TORODI, TILLAB?RI / ?RI / ?RI	17_1_1_1_1_1_1_1	galliformes-domestic	14.1834739365711	2.18634678358895
+H5N1|2344b|EPI_ISL_17638495|anseriformes|niger|17_1_1_1_1_1_1_1|2023-01-12	western africa	niger	Africa / Niger / QUARTIER ALKALI, ZINDER / NA / NA	17_1_1_1_1_1_1_1	anseriformes-wild	14.9848330965973	10.0264149840137
+H5N1|2344b|EPI_ISL_15853438|galliformes|south_africa|1_1_1_1_1_1_1_1|2022-02-22	southern africa	south africa	Africa / South Africa / Gauteng / Fochville / NA	1_1_1_1_1_1_1_1	galliformes-domestic	-26.1053974962555	28.126943330491
+H5N1|2344b|EPI_ISL_13048383|galliformes|burkina_faso|2_1_17_1_1_1_1_1|2021-12-16	western africa	burkina faso	Africa / Burkina Faso / Koubri / NA / NA	2_1_17_1_1_1_1_1	galliformes-domestic	12.2773783178266	-1.75266049543
+H5N1|2344b|EPI_ISL_14871339|galliformes|benin|2_1_1_1_1_1_1_1|2021-09-01	western africa	benin	Africa / Benin / NA / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	9.64834530386091	2.33970693359707
+H5N1|2344b|EPI_ISL_15614803|pelecaniformes|egypt|2_1_1_1_1_1_1_1|2022-06-17	northern africa	egypt	Africa / Egypt / NA / NA / NA	2_1_1_1_1_1_1_1	other	26.5331366423868	29.7934978487062
+H5N1|2344b|EPI_ISL_2276071|pelecaniformes|senegal|2_1_1_1_1_1_1_1|2021-01-23	western africa	senegal	Africa / Senegal / Djoudj bird sanctuary / NA / NA	2_1_1_1_1_1_1_1	other	45.5190780558984	4.54715006428513
+H5N1|2344b|EPI_ISL_16997921|galliformes|ghana|2_1_1_1_1_1_1_1|2021-06-08	western africa	ghana	Africa / Ghana / NA / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	7.9638263738498	-1.20832086013494
+H5N1|2344b|EPI_ISL_14769967|galliformes|lesotho|2_1_1_1_1_1_1_1|2021-06-05	southern africa	lesotho	Africa / Lesotho / NA / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	-29.5819622998706	28.2484329985868
+H5N1|2344b|EPI_ISL_16839065|suliformes|namibia|2_1_1_1_1_1_1_1|2022-01-27	southern africa	namibia	Africa / Namibia / NA / NA / NA	2_1_1_1_1_1_1_1	other	-22.0779804513922	17.2076847589786
+H5N1|2344b|EPI_ISL_11007542|galliformes|niger|2_1_1_1_1_1_1_1|2022-01-01	western africa	niger	Africa / Niger / NA / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	17.416961812486	9.34752038596442
+H5N1|2344b|EPI_ISL_17414641|galliformes|nigeria|2_1_1_1_1_1_1_1|2021-10-26	western africa	nigeria	Africa / Nigeria / Abia State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	5.45166157527629	7.50906571219372
+H5N1|2344b|EPI_ISL_17414636|galliformes|nigeria|2_1_1_1_1_1_1_1|2022-02-02	western africa	nigeria	Africa / Nigeria / Duware Yola, Adamawa State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	9.3426200777514	12.443001831073
+H5N1|2344b|EPI_ISL_17414598|NA|nigeria|2_1_1_1_1_1_1_1|2021-12-28	western africa	nigeria	Africa / Nigeria / Aguata LGA, Anambra State / NA / NA	2_1_1_1_1_1_1_1	other	6.20811508115918	6.9305894901959
+H5N1|2344b|EPI_ISL_17414650|galliformes|nigeria|2_1_1_1_1_1_1_1|2021-12-17	western africa	nigeria	Africa / Nigeria / Dirko, Toro LGA, Bauchi State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	10.7743712595196	9.98774039325803
+H5N1|2344b|EPI_ISL_17414630|galliformes|nigeria|2_1_1_1_1_1_1_1|2022-01-26	western africa	nigeria	Africa / Nigeria / Maiduguri, Borno State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	11.8922370151818	13.1748649188857
+H5N1|2344b|EPI_ISL_17414656|galliformes|nigeria|2_1_1_1_1_1_1_1|2021-06-25	western africa	nigeria	Africa / Nigeria / Bayelsa State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	4.76778423512924	6.10529827090822
+H5N1|2344b|EPI_ISL_17414633|galliformes|nigeria|2_1_1_1_1_1_1_1|2022-01-30	western africa	nigeria	Africa / Nigeria / Kpirikpiri LBM, Ebonyi State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	6.26522248643496	8.00212811926889
+H5N1|2344b|EPI_ISL_17414665|galliformes|nigeria|2_1_1_1_1_1_1_1|2021-04-12	western africa	nigeria	Africa / Nigeria / Edo State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	6.62406411939859	5.9045044271078
+H5N1|2344b|EPI_ISL_17414588|NA|nigeria|2_1_1_1_1_1_1_1|2021-10-28	western africa	nigeria	Africa / Nigeria / Enugu State / NA / NA	2_1_1_1_1_1_1_1	other	6.53403695811186	7.42105893133197
+H5N1|2344b|EPI_ISL_17414620|galliformes|nigeria|2_1_1_1_1_1_1_1|2022-01-12	western africa	nigeria	Africa / Nigeria / Garki, FCT, Abuja / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	8.86133952932799	7.14160399725458
+H5N1|2344b|EPI_ISL_17414624|galliformes|nigeria|2_1_1_1_1_1_1_1|2022-01-17	western africa	nigeria	Africa / Nigeria / Yamaltu Daba LGC Gombe State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	10.4048391234083	11.2449552554432
+H5N1|2344b|EPI_ISL_17414635|galliformes|nigeria|2_1_1_1_1_1_1_1|2022-02-01	western africa	nigeria	Africa / Nigeria / Dutse LGA, Jigawa State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	12.2156756549758	9.55085496397132
+H5N1|2344b|EPI_ISL_17414666|galliformes|nigeria|2_1_1_1_1_1_1_1|2021-04-14	western africa	nigeria	Africa / Nigeria / Kaduna State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	10.354940788533	7.70696240441167
+H5N1|2344b|EPI_ISL_17414601|NA|nigeria|2_1_1_1_1_1_1_1|2021-01-22	western africa	nigeria	Africa / Nigeria / Kano / NA / NA	2_1_1_1_1_1_1_1	other	11.7356997144779	8.51358459540793
+H5N1|2344b|EPI_ISL_17414610|NA|nigeria|2_1_1_1_1_1_1_1|2021-03-23	western africa	nigeria	Africa / Nigeria / Katsina State / NA / NA	2_1_1_1_1_1_1_1	other	12.3716337687424	7.62989372513377
+H5N1|2344b|EPI_ISL_17414662|anseriformes|nigeria|2_1_1_1_1_1_1_1|2021-05-28	western africa	nigeria	Africa / Nigeria / Lagos State / NA / NA	2_1_1_1_1_1_1_1	anseriformes-wild	6.52719428768168	3.56492158964815
+H5N1|2344b|EPI_ISL_17414622|galliformes|nigeria|2_1_1_1_1_1_1_1|2022-01-13	western africa	nigeria	Africa / Nigeria / Uke Nasarawa, Karu LGC Nasarawa State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	8.49899690269019	8.18723814005546
+H5N1|2344b|EPI_ISL_17414648|galliformes|nigeria|2_1_1_1_1_1_1_1|2021-12-16	western africa	nigeria	Africa / Nigeria / Tofa LGC, Niger State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	9.93587181689239	5.60268175555151
+H5N1|2344b|EPI_ISL_17414644|galliformes|nigeria|2_1_1_1_1_1_1_1|2021-12-20	western africa	nigeria	Africa / Nigeria / Obafemi Owode LGA, Ogun State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	7.0017747155077	3.4674053159721
+H5N1|2344b|EPI_ISL_17414634|galliformes|nigeria|2_1_1_1_1_1_1_1|2022-02-01	western africa	nigeria	Africa / Nigeria / Oyo State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	8.14334925475427	3.61881206075384
+H5N1|2344b|EPI_ISL_17414663|galliformes|nigeria|2_1_1_1_1_1_1_1|2021-03-25	western africa	nigeria	Africa / Nigeria / Plateau State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	9.20979731798597	9.54756607799562
+H5N1|2344b|EPI_ISL_17414616|galliformes|nigeria|2_1_1_1_1_1_1_1|2022-01-07	western africa	nigeria	Africa / Nigeria / Nkpor Obio/Nkpor LGC, Rivers State / /Nkpor LGC, Rivers State / /Nkpor LGC, Rivers State	2_1_1_1_1_1_1_1	galliformes-domestic	4.86037197499283	6.92528956111943
+H5N1|2344b|EPI_ISL_17414631|galliformes|nigeria|2_1_1_1_1_1_1_1|2022-01-26	western africa	nigeria	Africa / Nigeria / Birnin Magaji, Zamfara State / NA / NA	2_1_1_1_1_1_1_1	galliformes-domestic	12.0879383702902	6.2614977357571
+H5N1|2344b|EPI_ISL_18462528|anseriformes|nigeria|2_1_1_1_1_1_1_1|2022-04-01	western africa	nigeria	NA	2_1_1_1_1_1_1_1	anseriformes-wild	9.58907159716497	8.08769036750384
+H5N1|2344b|EPI_ISL_14710239|galliformes|south_africa|2_1_1_1_1_1_1_1|2021-05-31	southern africa	south africa	Africa / South Africa / Free State / Parys, Fezile Dabi District Municipality / NA	2_1_1_1_1_1_1_1	galliformes-domestic	-28.6110435828424	26.8801631625401
+H5N1|2344b|EPI_ISL_14934607|galliformes|south_africa|2_1_1_1_1_1_1_1|2021-08-27	southern africa	south africa	Africa / South Africa / Gauteng / Pretoria / NA	2_1_1_1_1_1_1_1	galliformes-domestic	-26.1053974962555	28.126943330491
+H5N1|2344b|EPI_ISL_14918217|galliformes|south_africa|2_1_1_1_1_1_1_1|2021-06-20	southern africa	south africa	Africa / South Africa / Province of KwaZulu-Natal / Ashburton / NA	2_1_1_1_1_1_1_1	galliformes-domestic	-28.7220063412643	30.7367833141436
+H5N1|2344b|EPI_ISL_14573038|galliformes|south_africa|2_1_1_1_1_1_1_1|2021-05-10	southern africa	south africa	Africa / South Africa / Province of North-West / Potchefstroom / NA	2_1_1_1_1_1_1_1	galliformes-domestic	-26.2691351203481	25.5243200600828
+H5N1|2344b|EPI_ISL_15852552|charadriiformes|south_africa|2_1_1_1_1_1_1_1|2022-01-07	southern africa	south africa	Africa / South Africa / Province of the Western Cape / Muizenburg / NA	2_1_1_1_1_1_1_1	charadriiformes-wild	-33.016256445291	20.6109109128761
+H5N1|NA|EPI_ISL_13048381|NA|burkina_faso|NA|2021-12-08	western africa	burkina faso	NA	NA	other	12.2773783178266	-1.75266049543
+H5N1|NA|EPI_ISL_13465456|pelecaniformes|israel|NA|2021-11-29	western asia	israel	NA	NA	other	31.4459854424407	35.0090837317994
+H5N1|NA|EPI_ISL_9641226|charadriiformes|sweden|NA|2021-11-08	northern europe	sweden	NA	NA	charadriiformes-wild	62.374013544985	16.2835241791686
+H5N1|NA|EPI_ISL_15852302|sphenisciformes|south_africa|NA|2021-11-23	southern africa	south africa	NA	NA	other	-28.9709136281448	25.1981253246192
+H5N1|2344b|EPI_ISL_14710814|accipitriformes|south_africa|2_1_1_1_1_1_1_1|2021-06-03	southern africa	south africa	Africa / South Africa / Province of the Western Cape / Bredasdorp / NA	2_1_1_1_1_1_1_1	other	-33.016256445291	20.6109109128761
+H5N1|2344b|EPI_ISL_17529371|anseriformes|egypt|1_1_2_1_1_1_1_1|2022-03-30	northern africa	egypt	Africa / Egypt / NA / NA / NA	1_1_2_1_1_1_1_1	anseriformes-wild	26.5331366423868	29.7934978487062
+H5N1|NA|EPI_ISL_15839274|anseriformes|south_africa|NA|2021-10-21	southern africa	south africa	NA	NA	anseriformes-wild	-28.9709136281448	25.1981253246192
+H5N1|2344b|EPI_ISL_18462524|caprimulgidae|nigeria|2_1_1_1_1_1_1_1|2022-03-01	western africa	nigeria	NA	2_1_1_1_1_1_1_1	other	9.58907159716497	8.08769036750384
+H5N1|2344b|EPI_ISL_14640323|charadriiformes|south_africa|2_1_1_1_1_1_1_1|2021-05-20	southern africa	south africa	Africa / South Africa / Province of the Western Cape / Cape Town / NA	2_1_1_1_1_1_1_1	charadriiformes-wild	-33.016256445291	20.6109109128761
+H5N1|NA|EPI_ISL_10880515|charadriiformes|sweden|NA|2021-12-21	northern europe	sweden	NA	NA	charadriiformes-wild	62.374013544985	16.2835241791686
+H5N1|2344b|EPI_ISL_15853010|ciconiiformes|south_africa|1_1_1_1_1_1_1_1|2022-02-08	southern africa	south africa	Africa / South Africa / Gauteng / Bon Accord Dam / NA	1_1_1_1_1_1_1_1	other	-26.1053974962555	28.126943330491
+H5N1|2344b|EPI_ISL_18462533|ciconiiformes|nigeria|2_1_1_1_1_1_1_1|2022-04-01	western africa	nigeria	NA	2_1_1_1_1_1_1_1	other	9.58907159716497	8.08769036750384
+H5N1|NA|EPI_ISL_13658359|falconiformes|israel|NA|2022-01-02	western asia	israel	NA	NA	other	31.4459854424407	35.0090837317994
+H5N1|2344b|EPI_ISL_17638502|galliformes|niger|17_1_1_1_1_1_1_1|2023-02-02	western africa	niger	Africa / Niger / BAKO RAOUNI, ZINDER / NA / NA	17_1_1_1_1_1_1_1	galliformes-domestic	14.9848330965973	10.0264149840137
+H5N1|2344b|EPI_ISL_14933695|galliformes|south_africa|1_1_1_1_1_1_1_1|2021-07-26	southern africa	south africa	Africa / South Africa / Province of KwaZulu-Natal / Camperdown / NA	1_1_1_1_1_1_1_1	galliformes-domestic	-28.7220063412643	30.7367833141436
+H5N1|2344b|EPI_ISL_14918893|gruiformes|south_africa|2_1_1_1_1_1_1_1|2021-07-01	southern africa	south africa	Africa / South Africa / Province of the Western Cape / Grassy Park, Cape Town / NA	2_1_1_1_1_1_1_1	other	-33.016256445291	20.6109109128761
+H5N1|NA|EPI_ISL_13068727|gruiformes|israel|NA|2021-12-15	western asia	israel	NA	NA	other	31.4459854424407	35.0090837317994
+H5N1|2344b|EPI_ISL_15838583|procellariiformes|south_africa|2_1_1_1_1_1_1_1|2021-10-16	southern africa	south africa	Africa / South Africa / Province of the Western Cape / St Helena Bay / NA	2_1_1_1_1_1_1_1	other	-33.016256445291	20.6109109128761
+H5N1|2344b|EPI_ISL_15839840|sphenisciformes|south_africa|2_1_1_1_1_1_1_1|2021-10-26	southern africa	south africa	Africa / South Africa / Province of the Western Cape / Dyer Island / NA	2_1_1_1_1_1_1_1	other	-33.016256445291	20.6109109128761
+H5N1|2344b|EPI_ISL_14644592|strigiformes|south_africa|2_1_1_1_1_1_1_1|2021-05-25	southern africa	south africa	Africa / South Africa / Province of the Western Cape / Hout Bay / NA	2_1_1_1_1_1_1_1	other	-33.016256445291	20.6109109128761
+H5N1|2344b|EPI_ISL_16675872|struthioniformes|south_africa|2_1_1_1_1_1_1_1|2022-11-21	southern africa	south africa	Africa / South Africa / Free State / Hopetown / NA	2_1_1_1_1_1_1_1	other	-28.6110435828424	26.8801631625401
+H5N1|2344b|EPI_ISL_14973559|suliformes|south_africa|2_1_1_1_1_1_1_1|2021-10-07	southern africa	south africa	Africa / South Africa / Province of the Western Cape / Lamberts Bay / NA	2_1_1_1_1_1_1_1	other	-33.016256445291	20.6109109128761
+H5N1|NA|EPI_ISL_14973297|suliformes|south_africa|NA|2021-09-13	southern africa	south africa	NA	NA	other	-28.9709136281448	25.1981253246192
+H5N1|NA|EPI_ISL_17414589|NA|nigeria|NA|2021-11-11	western africa	nigeria	NA	NA	other	9.58907159716497	8.08769036750384
