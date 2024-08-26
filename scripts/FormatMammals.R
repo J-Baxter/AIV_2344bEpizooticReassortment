@@ -8,25 +8,31 @@ FormatMammal <- function(x){
     'european polecat'= 'mustela putorius|european polecat',
     'beech marten'= "(stone|beech) marten",
     "fisher"= "pekania pennanti|^fisher$",
-    "arctic fox"= "arctic[ -]fox|vulpes lagopus",
-    'human' = '^humans{0,1}$',
+    "arctic fox"= "arc{0,1}tic[ -]fox|vulpes lagopus",
+    'human' = '^humans{0,1}$|homo sapiens{0,1}',
     'lion' = '^lion$|leo panthera',
     'eared seal sp.' = '^sea lion$',
+    'brown bear' = '(brown|blue) bear|ursus arctos',
     'american black bear' = '^black bear$|ursus americanus',
     'true seal sp.' = '^seal$|seal sp\\.',
     'atlantic grey seal' = 'gr[ea]y seal',
     'bear sp.'= "^bear$|bear sp\\.",
-    'mustelid sp.'= '^mink$|wild mink|mink sp\\.|polecat|^otter$|badger',
+    'mustelid sp.'= '^mink$|wild mink|mink sp\\.|polecat|^otter$|badger|white mink',
     'domestic ferret' = '^ferret$|mustela furo', 
     'common otter' = 'lutra {0,1}lutra|common otter',
+    'aurochs' = 'dairy cattle|bos taurus',
     "dolphin sp."= "^dolphin$",
     'common dolphin' = '(short[- ]beaked|long[- ]beaked) common dolphin|^common dolphin$',
     "porpoise sp."= "^porpoise$",
     "lynx"= "lynx sp\\.|^lynx$",
     'skunk sp.'= '^skunk$|skunk sp\\.',
     'feline sp.'= '^cat$|domestic cat|feline',
-    'canid sp.'= 'canine'
-    )
+    'canid sp.'= 'canine',
+    'murid sp.' = '^murine$',
+    'mammal sp,' = 'mammal',
+    'cougar' = 'mountain lion|cougar|puma concolor',
+    'raccoon' = 'raccoon',
+    'bovid sp.' = 'bovine')
   
   for (i in 1:length(mammals)){
     if(any(grepl(mammals[[i]], x))){

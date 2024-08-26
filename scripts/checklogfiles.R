@@ -2,7 +2,8 @@ library(beastio)
 library(tidyverse)
 
 
-logfiles <- list.files('~/Downloads/temp',
+logfiles <- list.files('./2024Jul12/region_beastlog',
+                       pattern = 'africa',
                        full.names = T)
 
 
@@ -34,11 +35,12 @@ probs_edited <- probs %>%
   relocate(runtype,
           region) %>%
   as_tibble()
-write_csv(probs_edited, 'checklogfiles_apr18.csv')
 
+#write_csv(probs_edited, 'checklogfiles_apr18.csv')
 
-
-
+treefiles <- list.files('./2024Jul12/region_beasttreefile',
+                        pattern = 'africa',
+                        full.names = T)
 
 # Patterns to match against the file paths
 patterns <- str_split(treefiles,  '/') %>% 
@@ -58,18 +60,24 @@ for (pattern in patterns) {
   # Filter the file paths based on the current pattern
   matching_files <- treefiles[grepl(pattern, treefiles)]
   
-  all_files <- c(matching_files, gsub('[^_]*$', 'combined10000.trees', matching_files[1]))
+  all_files <- c(matching_files, gsub('[^_]*$', 'combined1800.trees', matching_files[1]))
   # Store the filtered file paths in the result list
   group_list[[pattern]] <- all_files
 }
 
 
-logcombiner<- lapply(group_list, function(x) paste('/Applications/BEAST\ v1.10.4/bin/logcombiner -burnin 10000000 -trees -resample 10000', x[1], x[2], x[3])) %>% 
+logcombiner<- lapply(group_list, function(x) paste('/Applications/bin/logcombiner -burnin 10000000 -trees -resample 100000', x[1], x[2], x[3])) %>% 
+
+  lapply(., function(x) gsub('./2024Jul12/region_beasttreefile/' , '', x)) %>%
   unlist()
 
 write_lines(logcombiner,
-            'logcombiner.sh'
+            './2024Jul12/region_beasttreefile/logcombiner.sh'
 )
+
+
+
+
 
 
 
