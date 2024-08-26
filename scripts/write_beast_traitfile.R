@@ -1,3 +1,8 @@
+#dependencies
+library(ape)
+library(tidyverse)
+library(zoo)
+
 # create beast txt files from subsampled alignments
 ImputeCladeandCluster <- function(metadata, alignment, ordered = FALSE){
   
@@ -19,7 +24,7 @@ ImputeCladeandCluster <- function(metadata, alignment, ordered = FALSE){
     metadata <-  metadata %>% 
       separate_wider_delim(cluster_profile, '_', 
                            names = paste('cluster',
-                                         tolower(c("PB2", "PB1", "PA", "HA", "NP", "NA", "M", "NS")), 
+                                         tolower(c("PB2", "PB1", "PA", "HA", "NP", "NA", "MP", "NS")), 
                                          sep = '_'),
                            cols_remove = FALSE)
   }
@@ -81,7 +86,7 @@ stopifnot(all(unlist(lapply(aln, nrow)) == unlist(lapply(metadata_per_alignment,
 names(metadata_per_alignment) <- str_split_i(aln_files, '/', 4) %>%
   gsub('h5_|.fasta|_subsampled', '', .) 
 
-# infer cluster number 
+# infer cluster number --------
 test <-  metadata_per_alignment %>%
   mapply(function(x, y) x %>% mutate(segment = gsub('_.*', '', y)) ,x= .,  y= as.list(names(aln)), SIMPLIFY = F) %>%
   mapply(ImputeCladeandCluster,
@@ -90,7 +95,14 @@ test <-  metadata_per_alignment %>%
          ordered = FALSE,
          SIMPLIFY = F)
 
+# sanity checks
 stopifnot(all(unlist(lapply(aln, nrow)) == unlist(lapply(test, nrow))))
+
+mapply(function(alignment, data) all(rownames(alignment) %in% data$tipnames),
+       aln,
+       test,
+       SIMPLIFY = F)
+
 
 # output to txt file
 metadata_subsampled_beast <- lapply(test, 
@@ -108,6 +120,7 @@ metadata_subsampled_beast <- lapply(test,
                                       mutate(long = coalesce(collection_subdiv1long, 
                                                              collection_countrylong)) %>%
                                       mutate(across(c(lat, long), .fns = ~ as.numeric(.x))) %>%
+                                      mutate(cluster_number = str_pad(cluster_number, 4, pad = "0") %>% paste0('profile',.)) %>%
                                       select(where(~n_distinct(.) > 1)) %>%
                                       select(-c(contains('date'),
                                                 contains('subdiv'),
@@ -115,4 +128,17 @@ metadata_subsampled_beast <- lapply(test,
                                                 collection_countrylong,
                                                 #collection_original, 
                                                 #collection_tipdate
-                                      )))
+                                      ))) 
+
+
+# write to file
+
+metadatafiles_subsampled_beast <-paste('./2024Aug18/region_subsampled_beasttraits',
+                                       paste(names(aln), 'subsampled.txt',  sep = '_'),
+                                       sep = '/' )
+
+mapply(write_delim, 
+       delim = '\t',
+       quote= 'needed',
+       metadata_subsampled_beast, 
+       metadatafiles_subsampled_beast)  
