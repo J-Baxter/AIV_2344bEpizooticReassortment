@@ -1,0 +1,11 @@
+tipnames	virus_subtype	collection_regionname	collection_countryname	cluster_number	host_simplifiedhost	lat	long
+H5N4|2344b|EPI_ISL_15602898|galliformes|united_states|4_11_1_1_7_26_1_1|2022-09-13	H5N4	northern america	united states	profile0026	galliformes-domestic	47.052996209617	-109.633323124771
+H8N4|NA|EPI_ISL_6795362|anseriformes|united_states|NA|2021-07-30	H8N4	northern america	united states	profileNA	anseriformes-wild	63.9513927980493	-152.396756538795
+H5N4|NA|EPI_ISL_6795385|anseriformes|united_states|NA|2021-08-11	H5N4	northern america	united states	profileNA	anseriformes-wild	42.9905358128524	-75.6520434129946
+H10N4|NA|EPI_ISL_18338443|galliformes|united_states|NA|2023-08-29	H10N4	northern america	united states	profileNA	galliformes-wild	28.6269382846284	-82.4431243811826
+H2N4|NA|EPI_ISL_16215547|anseriformes|canada|NA|2021-08-26	H2N4	northern america	canada	profileNA	anseriformes-wild	54.9859148218572	-114.405475342745
+H8N4|NA|EPI_ISL_502674|anseriformes|france|NA|2017-08-25	H8N4	western europe	france	profileNA	anseriformes-wild	45.5190780558984	4.54715006428513
+H8N4|NA|EPI_ISL_393472|anseriformes|united_states|NA|2018-04-11	H8N4	northern america	united states	profileNA	anseriformes-wild	40.470536265191	-82.6389467524245
+H8N4|NA|EPI_ISL_381404|anseriformes|canada|NA|2017-08-13	H8N4	northern america	canada	profileNA	anseriformes-wild	54.9859148218572	-114.405475342745
+H8N4|2344b|EPI_ISL_266500|anseriformes|united_states|NA|2015-12-05	H8N4	northern america	united states	profileNA	anseriformes-wild	37.1829246180653	-119.469343089956
+H7N4|NA|EPI_ISL_294167|anseriformes|united_states|NA|2016-12-03	H7N4	northern america	united states	profileNA	anseriformes-wild	44.627499166429	-89.7126755416022

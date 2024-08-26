@@ -1,0 +1,513 @@
+tipnames	virus_subtype	collection_regionname	collection_countryname	cluster_number	host_simplifiedhost	lat	long
+H5N3|2344b|EPI_ISL_393518|NA|iran|23_13_23_2_15_21_3_14|2019-03-30	H5N3	southern asia	iran	profile0013	other-bird	32.5092139996448	54.4699733871232
+H5N8|2344b|EPI_ISL_615072|anseriformes|kazakhstan|3_2_3_1_3_2_1_2|2020-09-25	H5N8	central asia	kazakhstan	profile0002	anseriformes-domestic	51.5322283786231	64.0853293002361
+H5N8|2344b|EPI_ISL_623074|galliformes|iraq|3_2_3_1_3_2_1_2|2020-05-12	H5N8	western asia	iraq	profile0002	galliformes-domestic	35.9913317126514	42.4617230992077
+H5N8|2344b|EPI_ISL_625672|anseriformes|china|3_2_3_1_3_2_1_2|2020-10-17	H5N8	eastern asia	china	profile0002	anseriformes-wild	44.083329648604	113.188484632426
+H5N8|2344b|EPI_ISL_631824|anseriformes|south_korea|7_1_5_2_1_3_1_2|2020-10-21	H5N8	eastern asia	south korea	profile0001	anseriformes-wild	36.737850075983	127.830446360213
+H5N8|2344b|EPI_ISL_666687|anseriformes|south_korea|7_1_5_2_1_3_1_2|2020-10-24	H5N8	eastern asia	south korea	profile0001	anseriformes-wild	37.5315346337798	127.181023197189
+H5N8|2344b|EPI_ISL_708713|galliformes|japan|7_1_5_2_1_3_1_2|2020-12-01	H5N8	eastern asia	japan	profile0001	galliformes-domestic	34.217379070784	133.968927545016
+H5N8|2344b|EPI_ISL_738049|galliformes|japan|12_1_5_2_3_3_1_2|2020-12-15	H5N8	eastern asia	japan	profile0001	galliformes-domestic	34.217379070784	133.968927545016
+H5N8|2344b|EPI_ISL_738057|galliformes|japan|7_1_5_2_3_3_1_2|2020-12-18	H5N8	eastern asia	japan	profile0001	galliformes-domestic	33.9191788356518	134.242093496813
+H5N8|2344b|EPI_ISL_739687|galliformes|kazakhstan|3_2_3_1_3_2_1_2|2020-09-18	H5N8	central asia	kazakhstan	profile0002	galliformes-domestic	53.8421826489217	69.2722074369824
+H5N8|2344b|EPI_ISL_681273|galliformes|japan|7_1_5_2_1_3_1_2|2020-11-19	H5N8	eastern asia	japan	profile0001	galliformes-domestic	34.217379070784	133.968927545016
+H5N8|2344b|EPI_ISL_681281|anseriformes|japan|7_1_5_2_1_3_1_2|2020-11-16	H5N8	eastern asia	japan	profile0001	anseriformes-wild	37.5201743528051	138.914818034069
+H5N8|2344b|EPI_ISL_681283|galliformes|japan|12_1_5_2_3_3_1_2|2020-11-24	H5N8	eastern asia	japan	profile0001	galliformes-domestic	33.5256575241002	130.666678342289
+H5N8|2344b|EPI_ISL_681285|galliformes|japan|7_1_5_2_1_3_1_2|2020-11-25	H5N8	eastern asia	japan	profile0001	galliformes-domestic	35.0390049694389	134.828550655208
+H5N8|2344b|EPI_ISL_697771|anseriformes|japan|7_1_5_2_1_3_1_2|2020-10-24	H5N8	eastern asia	japan	profile0001	anseriformes-wild	43.3824165431654	142.542521870972
+H5N8|2344b|EPI_ISL_710436|galliformes|japan|12_1_5_2_3_3_1_2|2020-12-06	H5N8	eastern asia	japan	profile0001	galliformes-domestic	34.6052446200593	132.788104542609
+H5N8|2344b|EPI_ISL_710440|galliformes|japan|12_1_5_2_3_3_1_2|2020-11-30	H5N8	eastern asia	japan	profile0001	galliformes-domestic	32.1919114758892	131.298614512671
+H5N8|2344b|EPI_ISL_710452|galliformes|japan|12_1_5_2_3_3_1_2|2020-12-05	H5N8	eastern asia	japan	profile0001	galliformes-domestic	34.3169016713112	135.871480614117
+H5N8|2344b|EPI_ISL_718114|galliformes|japan|12_1_5_2_3_3_1_2|2020-12-09	H5N8	eastern asia	japan	profile0001	galliformes-domestic	33.2003954700371	131.433742894646
+H5N8|2344b|EPI_ISL_718116|galliformes|japan|12_1_5_2_3_3_1_2|2020-12-10	H5N8	eastern asia	japan	profile0001	galliformes-domestic	34.8921234580739	133.826171708594
+H5N8|2344b|EPI_ISL_718121|galliformes|japan|12_1_5_2_3_3_1_2|2020-12-09	H5N8	eastern asia	japan	profile0001	galliformes-domestic	33.9113994398813	135.506030353599
+H5N8|2344b|EPI_ISL_732931|galliformes|japan|12_1_5_2_3_3_1_2|2020-12-15	H5N8	eastern asia	japan	profile0001	galliformes-domestic	33.4223902999559	133.365333188149
+H5N8|2344b|EPI_ISL_732938|galliformes|japan|12_1_5_2_3_3_1_2|2020-12-13	H5N8	eastern asia	japan	profile0001	galliformes-domestic	32.1919114758892	131.298614512671
+H5N8|2344b|EPI_ISL_732944|galliformes|japan|12_1_5_2_3_3_1_2|2020-12-12	H5N8	eastern asia	japan	profile0001	galliformes-domestic	35.2154079352044	136.13796072496
+H5N8|2344b|EPI_ISL_1041121|anseriformes|japan|3_2_3_1_3_2_1_2|2021-01-23	H5N8	eastern asia	japan	profile0002	anseriformes-wild	35.5094511865639	140.198261340312
+H5N8|2344b|EPI_ISL_1041133|galliformes|japan|3_2_3_1_3_2_1_2|2021-02-08	H5N8	eastern asia	japan	profile0002	galliformes-domestic	33.9191788356518	134.242093496813
+H5N8|2344b|EPI_ISL_1041172|accipitriformes|japan|1_1_7_2_3_3_1_2|2021-02-10	H5N8	eastern asia	japan	profile0001	other-bird	36.6374969915777	137.269020761504
+H5N8|2344b|EPI_ISL_1041173|accipitriformes|japan|1_1_7_2_3_3_1_2|2021-02-10	H5N8	eastern asia	japan	profile0001	other-bird	36.6374969915777	137.269020761504
+H5N8|2344b|EPI_ISL_1081353|anseriformes|japan|3_2_3_1_3_2_1_2|2021-02-14	H5N8	eastern asia	japan	profile0002	anseriformes-wild	36.6894768729176	139.818920628006
+H5N8|2344b|EPI_ISL_1184508|galliformes|japan|1_1_7_2_3_3_1_2|2021-02-24	H5N8	eastern asia	japan	profile0001	galliformes-domestic	32.1919114758892	131.298614512671
+H5N8|2344b|EPI_ISL_1184509|galliformes|japan|1_1_7_2_3_3_1_2|2021-02-24	H5N8	eastern asia	japan	profile0001	galliformes-domestic	32.1919114758892	131.298614512671
+H5N8|2344b|EPI_ISL_1184510|galliformes|japan|1_1_7_2_3_3_1_2|2021-02-24	H5N8	eastern asia	japan	profile0001	galliformes-domestic	32.1919114758892	131.298614512671
+H5N8|2344b|EPI_ISL_1184511|galliformes|japan|1_1_7_2_3_3_1_2|2021-02-24	H5N8	eastern asia	japan	profile0001	galliformes-domestic	32.1919114758892	131.298614512671
+H5N8|2344b|EPI_ISL_5260419|anseriformes|china|3_2_3_1_3_2_1_2|2021-03-02	H5N8	eastern asia	china	profile0002	anseriformes-wild	23.33624359406	113.398153372919
+H5N8|2344b|EPI_ISL_5260420|anseriformes|china|3_2_3_1_3_2_1_2|2021-02-01	H5N8	eastern asia	china	profile0002	anseriformes-wild	23.82591453975	108.782865094166
+H5N8|2344b|EPI_ISL_5260444|anseriformes|china|3_2_3_1_3_2_1_2|2021-03-09	H5N8	eastern asia	china	profile0002	anseriformes-wild	27.6016362656629	115.709570895796
+H5N8|2344b|EPI_ISL_5260448|anseriformes|china|3_2_3_1_3_2_1_2|2021-03-19	H5N8	eastern asia	china	profile0002	anseriformes-wild	27.5978523947888	111.713471439142
+H5N8|2344b|EPI_ISL_5260450|anseriformes|china|3_2_3_1_3_2_1_2|2021-03-09	H5N8	eastern asia	china	profile0002	anseriformes-wild	29.1745873279179	120.086382279697
+H5N8|2344b|EPI_ISL_5260457|anseriformes|china|1_1_7_2_3_3_1_2|2021-01-23	H5N8	eastern asia	china	profile0001	anseriformes-wild	36.3536638777003	118.136153809721
+H5N8|2344b|EPI_ISL_5260467|podicipediformes|china|3_2_3_1_3_2_1_2|2021-06-05	H5N8	eastern asia	china	profile0002	other-bird	35.1531910315733	108.845281415025
+H5N8|2344b|EPI_ISL_5260468|podicipediformes|china|3_2_3_1_3_2_1_2|2021-06-15	H5N8	eastern asia	china	profile0002	other-bird	37.2602231520297	106.161545856493
+H5N8|2344b|EPI_ISL_5260469|anseriformes|china|3_2_3_1_3_2_1_2|2021-01-26	H5N8	eastern asia	china	profile0002	anseriformes-wild	32.9645721858222	119.470797338049
+H5N8|2344b|EPI_ISL_6829536|galliformes|japan|3_2_3_1_3_2_1_2|2021-11-14	H5N8	eastern asia	japan	profile0002	galliformes-domestic	30.9949222722596	130.419711465505
+H5N6|2344b|EPI_ISL_6914131|galliformes|china|16_8_10_1_8_6_1_8|2021-06-10	H5N6	eastern asia	china	profile0008	galliformes-domestic	30.0551333912638	107.864488420692
+H5N8|2344b|EPI_ISL_7381103|anseriformes|china|3_14_3_1_3_2_1_2|2021-03	H5N8	eastern asia	china	profile0014	anseriformes-wild	36.3536638777003	118.136153809721
+H5N8|2344b|EPI_ISL_7381115|anseriformes|china|3_2_3_1_3_2_1_2|2021-06	H5N8	eastern asia	china	profile0002	anseriformes-wild	41.2987124958383	122.600275282862
+H5N8|2344b|EPI_ISL_7381183|anseriformes|china|3_2_3_1_16_2_1_2|2021-04	H5N8	eastern asia	china	profile0002	anseriformes-wild	36.3536638777003	118.136153809721
+H5N8|2344b|EPI_ISL_7381448|galliformes|china|3_2_3_1_3_2_1_9|2021-07	H5N8	eastern asia	china	profile0002	galliformes-domestic	23.82591453975	108.782865094166
+H5N6|2344b|EPI_ISL_16208999|primates|china|3_15_3_1_11_7_1_8|2021-09-19	H5N6	eastern asia	china	profile0015	human	23.33624359406	113.398153372919
+H5N8|2344b|EPI_ISL_759853|galliformes|japan|7_1_5_2_3_3_1_2|2020-12-23	H5N8	eastern asia	japan	profile0001	galliformes-domestic	35.5094511865639	140.198261340312
+H5N8|2344b|EPI_ISL_854603|galliformes|japan|7_1_5_2_3_3_1_2|2021-01-01	H5N8	eastern asia	japan	profile0001	galliformes-domestic	35.7777527627362	137.055033768037
+H5N8|2344b|EPI_ISL_854608|galliformes|japan|12_1_5_2_3_3_1_2|2021-01-12	H5N8	eastern asia	japan	profile0001	galliformes-domestic	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_977582|anseriformes|china|3_2_3_1_3_2_1_2|2020-12-29	H5N8	eastern asia	china	profile0002	anseriformes-wild	40.1838367941588	116.40878248942
+H5N8|2344b|EPI_ISL_985179|anseriformes|south_korea|7_1_5_2_1_3_1_2|2020-11-26	H5N8	eastern asia	south korea	profile0001	anseriformes-wild	35.7159281817874	127.140659781938
+H5N8|2344b|EPI_ISL_985180|galliformes|south_korea|7_1_5_2_1_3_1_2|2020-12-01	H5N8	eastern asia	south korea	profile0001	galliformes-domestic	36.3474789243827	128.748576389097
+H5N8|2344b|EPI_ISL_985181|anseriformes|south_korea|1_1_7_2_3_3_1_5|2020-12-04	H5N8	eastern asia	south korea	profile0001	anseriformes-wild	34.8733358026855	126.897223705092
+H5N8|2344b|EPI_ISL_985183|galliformes|south_korea|12_1_5_2_3_3_1_2|2020-12-07	H5N8	eastern asia	south korea	profile0001	galliformes-wild	36.737850075983	127.830446360213
+H5N8|2344b|EPI_ISL_985184|anseriformes|south_korea|3_2_3_1_3_2_1_2|2020-12-08	H5N8	eastern asia	south korea	profile0002	anseriformes-wild	34.8733358026855	126.897223705092
+H5N8|2344b|EPI_ISL_985185|galliformes|south_korea|1_1_7_2_3_3_1_5|2020-12-08	H5N8	eastern asia	south korea	profile0001	galliformes-wild	37.5315346337798	127.181023197189
+H5N8|2344b|EPI_ISL_985186|anseriformes|south_korea|7_1_5_2_1_3_1_2|2020-12-09	H5N8	eastern asia	south korea	profile0001	anseriformes-wild	34.8733358026855	126.897223705092
+H5N8|2344b|EPI_ISL_985189|anseriformes|south_korea|1_1_7_2_3_3_1_2|2020-12-11	H5N8	eastern asia	south korea	profile0001	anseriformes-wild	34.8733358026855	126.897223705092
+H5N8|2344b|EPI_ISL_985190|anseriformes|south_korea|1_9_5_2_3_3_1_2|2020-12-11	H5N8	eastern asia	south korea	profile0009	anseriformes-wild	34.8733358026855	126.897223705092
+H5N8|2344b|EPI_ISL_985192|galliformes|south_korea|12_1_5_2_3_3_1_2|2020-12-14	H5N8	eastern asia	south korea	profile0001	galliformes-domestic	35.7159281817874	127.140659781938
+H5N8|2344b|EPI_ISL_985195|galliformes|south_korea|1_1_7_2_3_3_1_5|2020-12-16	H5N8	eastern asia	south korea	profile0001	galliformes-domestic	37.5315346337798	127.181023197189
+H5N8|2344b|EPI_ISL_985199|galliformes|south_korea|3_2_3_1_3_2_1_2|2020-12-22	H5N8	eastern asia	south korea	profile0002	galliformes-domestic	37.5315346337798	127.181023197189
+H5N8|2344b|EPI_ISL_985200|anseriformes|south_korea|1_1_7_2_3_3_1_5|2020-12-22	H5N8	eastern asia	south korea	profile0001	anseriformes-wild	36.737850075983	127.830446360213
+H5N8|2344b|EPI_ISL_985202|anseriformes|south_korea|12_1_5_2_3_3_1_2|2020-12-23	H5N8	eastern asia	south korea	profile0001	anseriformes-wild	35.7159281817874	127.140659781938
+H5N8|2344b|EPI_ISL_985203|anseriformes|south_korea|12_1_5_2_3_3_1_2|2020-12-23	H5N8	eastern asia	south korea	profile0001	anseriformes-wild	34.8733358026855	126.897223705092
+H5N8|2344b|EPI_ISL_985204|anseriformes|south_korea|7_1_5_2_3_3_1_2|2020-12-23	H5N8	eastern asia	south korea	profile0001	anseriformes-wild	34.8733358026855	126.897223705092
+H5N8|2344b|EPI_ISL_985208|anseriformes|south_korea|1_1_7_2_3_3_1_5|2020-12-27	H5N8	eastern asia	south korea	profile0001	anseriformes-wild	35.7159281817874	127.140659781938
+H5N8|2344b|EPI_ISL_985209|galliformes|south_korea|1_1_7_2_3_3_1_5|2020-12-28	H5N8	eastern asia	south korea	profile0001	galliformes-domestic	37.5315346337798	127.181023197189
+H5N8|2344b|EPI_ISL_985210|galliformes|south_korea|1_1_7_2_3_3_1_5|2020-12-28	H5N8	eastern asia	south korea	profile0001	galliformes-domestic	37.5315346337798	127.181023197189
+H5N8|2344b|EPI_ISL_985211|anseriformes|south_korea|3_2_3_1_3_2_1_2|2020-12-28	H5N8	eastern asia	south korea	profile0002	anseriformes-wild	35.7159281817874	127.140659781938
+H5N8|2344b|EPI_ISL_985233|anseriformes|japan|7_1_5_2_3_3_1_2|2021-02-08	H5N8	eastern asia	japan	profile0001	anseriformes-wild	37.5201743528051	138.914818034069
+H5N8|2344b|EPI_ISL_1009679|anseriformes|south_korea|7_1_5_2_3_3_1_2|2020-12-28	H5N8	eastern asia	south korea	profile0001	anseriformes-wild	36.5298116066164	126.847825775926
+H5N8|2344b|EPI_ISL_1009681|galliformes|south_korea|12_1_5_2_3_3_1_2|2020-12-29	H5N8	eastern asia	south korea	profile0001	galliformes-domestic	36.5298116066164	126.847825775926
+H5N8|2344b|EPI_ISL_1009687|galliformes|south_korea|3_2_3_1_3_2_1_2|2020-12-31	H5N8	eastern asia	south korea	profile0002	galliformes-wild	36.3474789243827	128.748576389097
+H5N8|2344b|EPI_ISL_1009690|galliformes|south_korea|3_2_3_1_3_2_1_2|2021-01-04	H5N8	eastern asia	south korea	profile0002	galliformes-domestic	36.5298116066164	126.847825775926
+H5N8|2344b|EPI_ISL_1009694|anseriformes|south_korea|3_2_3_1_3_2_1_2|2021-01-09	H5N8	eastern asia	south korea	profile0002	anseriformes-wild	35.3225325644814	128.261669154089
+H5N8|2344b|EPI_ISL_1009695|anseriformes|south_korea|7_1_5_2_1_3_1_2|2020-11-03	H5N8	eastern asia	south korea	profile0001	anseriformes-wild	36.5298116066164	126.847825775926
+H5N8|2344b|EPI_ISL_1009697|NA|south_korea|12_1_5_2_3_3_1_2|2020-11-23	H5N8	eastern asia	south korea	profile0001	other-bird	35.7159281817874	127.140659781938
+H5N8|2344b|EPI_ISL_1009700|anseriformes|south_korea|12_1_5_2_3_3_1_2|2020-11-26	H5N8	eastern asia	south korea	profile0001	anseriformes-wild	37.5315346337798	127.181023197189
+H5N8|2344b|EPI_ISL_1009706|NA|south_korea|1_1_7_2_3_3_1_5|2020-12-02	H5N8	eastern asia	south korea	profile0001	other-bird	36.3474789243827	128.748576389097
+H5N8|2344b|EPI_ISL_1009707|NA|south_korea|3_2_3_1_3_2_1_2|2020-12-14	H5N8	eastern asia	south korea	profile0002	other-bird	36.737850075983	127.830446360213
+H5N8|2344b|EPI_ISL_1009709|NA|south_korea|3_2_3_1_3_2_1_2|2020-12-16	H5N8	eastern asia	south korea	profile0002	other-bird	33.3869876346889	126.553618799527
+H5N8|2344b|EPI_ISL_1009710|anseriformes|south_korea|3_2_3_1_3_2_1_2|2020-11-17	H5N8	eastern asia	south korea	profile0002	anseriformes-wild	33.3869876346889	126.553618799527
+H5N8|2344b|EPI_ISL_1273437|galliformes|japan|12_1_5_2_3_3_1_2|2021-03-13	H5N8	eastern asia	japan	profile0001	galliformes-domestic	36.6894768729176	139.818920628006
+H5N8|2344b|EPI_ISL_1273438|galliformes|japan|12_1_5_2_3_3_1_2|2021-03-13	H5N8	eastern asia	japan	profile0001	galliformes-domestic	36.6894768729176	139.818920628006
+H5N8|2344b|EPI_ISL_1273439|galliformes|japan|12_1_5_2_3_3_1_2|2021-03-13	H5N8	eastern asia	japan	profile0001	galliformes-domestic	36.6894768729176	139.818920628006
+H5N2|2344b|EPI_ISL_1760455|anseriformes|china|11_9_6_2_5_18_1_2|2020-11-10	H5N2	eastern asia	china	profile0009	anseriformes-wild	37.5496375119255	112.274268590565
+H5N8|2344b|EPI_ISL_2820465|anseriformes|china|7_1_5_2_1_3_1_2|2020-10-16	H5N8	eastern asia	china	profile0001	anseriformes-wild	37.2602231520297	106.161545856493
+H5N8|2344b|EPI_ISL_2820504|anseriformes|china|7_1_5_2_1_3_1_2|2020-10-16	H5N8	eastern asia	china	profile0001	anseriformes-wild	37.2602231520297	106.161545856493
+H5N6|2344b|EPI_ISL_3090099|primates|china|16_8_10_1_8_6_1_8|2021-07-03	H5N6	eastern asia	china	profile0008	human	30.6066264180489	102.711402322843
+H5N6|2344b|EPI_ISL_3770740|primates|china|19_8_11_1_8_9_1_9|2021-07-14	H5N6	eastern asia	china	profile0008	human	23.82591453975	108.782865094166
+H5N8|2344b|EPI_ISL_4061712|anseriformes|japan|7_1_5_2_1_3_1_1|2021-02-17	H5N8	eastern asia	japan	profile0001	anseriformes-wild	38.446036231103	140.92583944453
+H5N8|2344b|EPI_ISL_4061713|anseriformes|japan|7_1_5_2_3_3_1_2|2021-02-08	H5N8	eastern asia	japan	profile0001	anseriformes-wild	37.3790195184946	140.222918340857
+H5N8|2344b|EPI_ISL_4061714|accipitriformes|japan|7_1_5_2_3_3_1_2|2021-02-03	H5N8	eastern asia	japan	profile0001	other-bird	43.3824165431654	142.542521870972
+H5N8|2344b|EPI_ISL_4061715|falconiformes|japan|7_1_5_3_1_3_1_2|2021-01-28	H5N8	eastern asia	japan	profile0001	other-bird	43.3824165431654	142.542521870972
+H5N8|2344b|EPI_ISL_5863641|anseriformes|united_states|3_2_3_1_3_2_1_2|2020-10-09	H5N8	northern america	united states	profile0002	anseriformes-wild	32.6403385373358	-83.4405725551842
+H5N3|2344b|EPI_ISL_5863749|anseriformes|united_states|3_2_3_1_3_25_1_2|2020-10-20	H5N3	northern america	united states	profile0002	anseriformes-wild	32.6403385373358	-83.4405725551842
+H5N6|2344b|EPI_ISL_6757629|anseriformes|china|21_16_16_1_8_10_1_9|2021-03	H5N6	eastern asia	china	profile0016	anseriformes-wild	23.33624359406	113.398153372919
+H5N6|2344b|EPI_ISL_6760430|anseriformes|china|16_17_10_1_8_6_1_8|2021-07	H5N6	eastern asia	china	profile0017	anseriformes-wild	30.6066264180489	102.711402322843
+H5N6|2344b|EPI_ISL_6760682|galliformes|china|16_8_10_1_8_6_1_8|2021-07	H5N6	eastern asia	china	profile0008	galliformes-domestic	30.6066264180489	102.711402322843
+H5N6|2344b|EPI_ISL_6760686|galliformes|china|26_18_24_1_17_10_1_16|2021-06	H5N6	eastern asia	china	profile0018	galliformes-domestic	39.5182972347816	116.100714730353
+H5N6|2344b|EPI_ISL_6772736|galliformes|china|21_6_16_1_8_10_1_9|2021-08	H5N6	eastern asia	china	profile0006	galliformes-domestic	23.33624359406	113.398153372919
+H5N6|2344b|EPI_ISL_6772737|galliformes|china|21_6_16_1_8_10_1_9|2021-08	H5N6	eastern asia	china	profile0006	galliformes-domestic	23.33624359406	113.398153372919
+H5N6|2344b|EPI_ISL_6772738|galliformes|china|21_6_16_1_8_10_1_9|2021-08	H5N6	eastern asia	china	profile0006	galliformes-domestic	23.33624359406	113.398153372919
+H5N6|2344b|EPI_ISL_6772739|galliformes|china|21_6_16_1_8_10_1_9|2021-08	H5N6	eastern asia	china	profile0006	galliformes-domestic	23.33624359406	113.398153372919
+H5N6|2344b|EPI_ISL_6772759|galliformes|china|21_6_16_1_8_10_1_9|2021-08	H5N6	eastern asia	china	profile0006	galliformes-domestic	23.33624359406	113.398153372919
+H5N6|2344b|EPI_ISL_6772898|anseriformes|china|3_2_3_1_3_7_1_2|2021-08	H5N6	eastern asia	china	profile0002	anseriformes-wild	23.33624359406	113.398153372919
+H5N8|2344b|EPI_ISL_7379464|anseriformes|china|3_2_3_1_3_2_1_2|2021-01	H5N8	eastern asia	china	profile0002	anseriformes-wild	30.6066264180489	102.711402322843
+H5N8|2344b|EPI_ISL_7379509|anseriformes|china|3_12_3_1_3_2_1_2|2021-01	H5N8	eastern asia	china	profile0012	anseriformes-wild	23.33624359406	113.398153372919
+H5N8|2344b|EPI_ISL_7380253|anseriformes|china|3_12_3_1_3_2_1_2|2021-02	H5N8	eastern asia	china	profile0012	anseriformes-wild	32.9645721858222	119.470797338049
+H5N6|2344b|EPI_ISL_7457654|galliformes|china|3_2_3_1_3_7_1_2|2021-08	H5N6	eastern asia	china	profile0002	galliformes-domestic	23.33624359406	113.398153372919
+H5N8|2344b|EPI_ISL_1273441|accipitriformes|japan|7_1_5_2_3_3_1_2|2021-03-03	H5N8	eastern asia	japan	profile0001	other-bird	36.6894768729176	139.818920628006
+H5N8|2344b|EPI_ISL_1240997|accipitriformes|japan|7_1_5_2_3_3_1_2|2021-03-03	H5N8	eastern asia	japan	profile0001	other-bird	36.6894768729176	139.818920628006
+H5N8|2344b|EPI_ISL_2932619|anseriformes|kazakhstan|3_2_3_1_3_2_1_2|2020-09-23	H5N8	central asia	kazakhstan	profile0002	anseriformes-wild	51.7623557428944	69.9739209295215
+H5N8|2344b|EPI_ISL_978915|anseriformes|japan|3_2_3_1_3_2_1_2|2021-02-01	H5N8	eastern asia	japan	profile0002	anseriformes-wild	36.3027610877484	140.318971903473
+H5N8|2344b|EPI_ISL_2555542|anseriformes|china|3_2_3_1_3_2_1_2|2020-11-12	H5N8	eastern asia	china	profile0002	anseriformes-wild	30.9806813015582	112.277189482252
+H5N8|2344b|EPI_ISL_1241004|strigiformes|japan|7_1_5_2_3_3_1_2|2021-02-16	H5N8	eastern asia	japan	profile0001	other-bird	36.6894768729176	139.818920628006
+H5N8|2344b|EPI_ISL_1273440|galliformes|japan|12_1_5_2_3_3_1_2|2021-03-13	H5N8	eastern asia	japan	profile0001	galliformes-domestic	36.6894768729176	139.818920628006
+H5N8|2344b|EPI_ISL_978907|galliformes|japan|12_1_5_2_3_3_1_2|2021-01-22	H5N8	eastern asia	japan	profile0001	galliformes-domestic	36.6374969915777	137.269020761504
+H5N8|2344b|EPI_ISL_978905|galliformes|japan|3_2_3_1_3_2_1_2|2021-01-30	H5N8	eastern asia	japan	profile0002	galliformes-domestic	32.1919114758892	131.298614512671
+H5N8|2344b|EPI_ISL_978901|galliformes|japan|7_1_5_2_3_3_1_2|2021-02-01	H5N8	eastern asia	japan	profile0001	galliformes-domestic	36.3027610877484	140.318971903473
+H5N8|2344b|EPI_ISL_978900|galliformes|japan|7_1_5_2_3_3_1_2|2021-02-01	H5N8	eastern asia	japan	profile0001	galliformes-domestic	36.3027610877484	140.318971903473
+H5N8|2344b|EPI_ISL_1822599|anseriformes|china|3_2_3_1_3_2_1_2|2020-11-10	H5N8	eastern asia	china	profile0002	anseriformes-wild	37.5496375119255	112.274268590565
+H5N1|2344b|EPI_ISL_8215689|anseriformes|china|2_6_1_1_1_1_1_1|2021-05-20	H5N1	eastern asia	china	profile0006	anseriformes-wild	31.7354796576819	88.2546629070738
+H5N1|2344b|EPI_ISL_8215688|anseriformes|china|2_6_1_1_1_1_1_1|2021-05-20	H5N1	eastern asia	china	profile0006	anseriformes-wild	31.7354796576819	88.2546629070738
+H5N8|2344b|EPI_ISL_8215662|anseriformes|china|3_2_3_1_3_2_1_2|2021-05-17	H5N8	eastern asia	china	profile0002	anseriformes-wild	31.7354796576819	88.2546629070738
+H5N8|2344b|EPI_ISL_8215663|charadriiformes|china|3_2_3_1_3_2_1_2|2021-05-17	H5N8	eastern asia	china	profile0002	charadriiformes-wild	31.7354796576819	88.2546629070738
+H5N1|2344b|EPI_ISL_11633614|anseriformes|china|2_1_1_1_1_1_1_1|2021-12-20	H5N1	eastern asia	china	profile0001	anseriformes-wild	30.9806813015582	112.277189482252
+H5N8|2344b|EPI_ISL_13632084|galliformes|kazakhstan|3_2_3_1_3_2_1_2|2020-08-01	H5N8	central asia	kazakhstan	profile0002	galliformes-domestic	44.9554808695858	77.9603747475348
+H5N1|2344b|EPI_ISL_14070455|carnivora|japan|2_1_1_1_1_1_1_1|2022-04-01	H5N1	eastern asia	japan	profile0001	mammal	43.3824165431654	142.542521870972
+H5N8|2344b|EPI_ISL_14775517|anseriformes|china|3_2_3_1_3_2_1_2|2021-01	H5N8	eastern asia	china	profile0002	anseriformes-wild	39.5182972347816	116.100714730353
+H5N8|2344b|EPI_ISL_14823646|anseriformes|china|3_2_3_1_3_2_1_2|2020-11-08	H5N8	eastern asia	china	profile0002	anseriformes-wild	33.8761853651454	113.614527263456
+H5N8|2344b|EPI_ISL_14835974|anseriformes|china|3_2_3_1_3_2_1_2|2020-11-13	H5N8	eastern asia	china	profile0002	anseriformes-wild	33.8761853651454	113.614527263456
+H5N2|2344b|EPI_ISL_15732741|passeriformes|japan|18_1_2_1_1_18_1_1|2022-10-28	H5N2	eastern asia	japan	profile0001	other-bird	43.3824165431654	142.542521870972
+H5N6|2344b|EPI_ISL_8517997|environment|china|19_8_11_1_8_9_1_9|2021-12-23	H5N6	eastern asia	china	profile0008	environment	29.1745873279179	120.086382279697
+H5N6|2344b|EPI_ISL_8517998|environment|china|19_8_11_1_8_9_1_9|2021-12-23	H5N6	eastern asia	china	profile0008	environment	29.1745873279179	120.086382279697
+H5N6|2344b|EPI_ISL_11208193|anseriformes|china|3_2_3_1_3_10_1_9|2021-10-19	H5N6	eastern asia	china	profile0002	anseriformes-wild	23.82591453975	108.782865094166
+H5N6|2344b|EPI_ISL_11208194|anseriformes|china|3_19_3_1_3_9_1_9|2021-10-18	H5N6	eastern asia	china	profile0019	anseriformes-wild	23.82591453975	108.782865094166
+H5N6|2344b|EPI_ISL_11208195|anseriformes|china|19_8_11_1_8_9_1_9|2021-12-02	H5N6	eastern asia	china	profile0008	anseriformes-wild	26.8128279303549	106.867407716617
+H5N6|2344b|EPI_ISL_11208196|anseriformes|china|3_8_3_1_11_7_1_8|2021-12-01	H5N6	eastern asia	china	profile0008	anseriformes-wild	27.5978523947888	111.713471439142
+H5N6|2344b|EPI_ISL_11208197|anseriformes|china|19_8_11_1_8_9_1_9|2021-12-01	H5N6	eastern asia	china	profile0008	anseriformes-wild	27.5978523947888	111.713471439142
+H5N6|2344b|EPI_ISL_11208198|anseriformes|china|16_8_10_1_8_6_1_8|2021-11-02	H5N6	eastern asia	china	profile0008	anseriformes-wild	24.9645779206387	101.495556215566
+H5N6|2344b|EPI_ISL_11208199|anseriformes|china|19_8_11_1_8_9_1_9|2021-12-03	H5N6	eastern asia	china	profile0008	anseriformes-wild	29.1745873279179	120.086382279697
+H5N6|2344b|EPI_ISL_11208200|anseriformes|china|3_8_3_1_11_7_1_8|2021-12-08	H5N6	eastern asia	china	profile0008	anseriformes-wild	23.33624359406	113.398153372919
+H5N1|2344b|EPI_ISL_12174843|passeriformes|japan|2_1_1_1_1_1_1_1|2022-03-29	H5N1	eastern asia	japan	profile0001	other-bird	43.3824165431654	142.542521870972
+H5N1|2344b|EPI_ISL_12572652|galliformes|china|3_1_3_1_3_14_1_2|2022-03-03	H5N1	eastern asia	china	profile0001	galliformes-domestic	31.8128943962267	117.235219497068
+H5N1|2344b|EPI_ISL_12572653|galliformes|china|3_1_3_1_3_14_1_2|2021-12-07	H5N1	eastern asia	china	profile0001	galliformes-domestic	27.6016362656629	115.709570895796
+H5N1|2344b|EPI_ISL_12572654|anseriformes|china|2_6_1_1_6_1_1_1|2021-12-08	H5N1	eastern asia	china	profile0006	anseriformes-wild	23.33624359406	113.398153372919
+H5N1|2344b|EPI_ISL_12572657|anseriformes|china|3_1_3_1_3_14_1_2|2021-11-27	H5N1	eastern asia	china	profile0001	anseriformes-wild	30.9806813015582	112.277189482252
+H5N1|2344b|EPI_ISL_12572658|anseriformes|china|3_1_3_1_3_14_1_2|2022-01-10	H5N1	eastern asia	china	profile0001	anseriformes-wild	30.9806813015582	112.277189482252
+H5N1|2344b|EPI_ISL_12572659|anseriformes|china|2_6_1_1_6_1_1_1|2022-01-10	H5N1	eastern asia	china	profile0006	anseriformes-wild	30.9806813015582	112.277189482252
+H5N1|2344b|EPI_ISL_12572661|anseriformes|china|2_6_1_1_6_1_1_1|2022-02-22	H5N1	eastern asia	china	profile0006	anseriformes-wild	26.8128279303549	106.867407716617
+H5N1|2344b|EPI_ISL_12572662|anseriformes|china|1_1_1_1_1_1_1_1|2022-01-05	H5N1	eastern asia	china	profile0001	anseriformes-wild	27.5978523947888	111.713471439142
+H5N1|2344b|EPI_ISL_12572663|columbiformes|china|3_1_3_1_3_14_1_2|2021-12-08	H5N1	eastern asia	china	profile0001	other-bird	27.6016362656629	115.709570895796
+H5N1|2344b|EPI_ISL_12572664|anseriformes|china|2_1_1_1_1_1_1_1|2021-11-25	H5N1	eastern asia	china	profile0001	anseriformes-wild	39.5182972347816	116.100714730353
+H5N1|2344b|EPI_ISL_13243698|anseriformes|bangladesh|1_1_1_1_1_1_1_1|2021-12-22	H5N1	southern asia	bangladesh	profile0001	anseriformes-wild	23.8299093538119	90.2865403636969
+H5N8|2344b|EPI_ISL_14874401|galliformes|kazakhstan|3_2_3_1_3_2_1_2|2020-08-01	H5N8	central asia	kazakhstan	profile0002	galliformes-domestic	48.3645677524915	67.2060737287064
+H5N8|2344b|EPI_ISL_15435500|gruiformes|china|3_2_3_1_3_2_1_2|2021-01-21	H5N8	eastern asia	china	profile0002	other-bird	24.9645779206387	101.495556215566
+H5N1|2344b|EPI_ISL_15647835|anseriformes|south_korea|4_3_1_1_2_1_1_3|2022-10-19	H5N1	eastern asia	south korea	profile0003	anseriformes-wild	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_15923322|falconiformes|japan|2_6_1_1_6_1_1_1|2022-09-25	H5N1	eastern asia	japan	profile0006	other-bird	35.4153490493937	139.338928797101
+H5N1|2344b|EPI_ISL_15943002|anseriformes|south_korea|1_6_6_1_5_1_1_5|2022-11-17	H5N1	eastern asia	south korea	profile0006	anseriformes-wild	36.5298116066164	126.847825775926
+H5N1|2344b|EPI_ISL_15943015|NA|south_korea|1_6_6_1_5_1_1_5|2022-11-07	H5N1	eastern asia	south korea	profile0006	other-bird	36.5298116066164	126.847825775926
+H5N8|2344b|EPI_ISL_16209048|anseriformes|cambodia|17_1_6_1_5_2_1_10|2021-09-16	H5N8	south-eastern asia	cambodia	profile0001	anseriformes-wild	12.7097809911859	104.914484966688
+H5N6|2344b|EPI_ISL_8518268|galliformes|china|19_8_11_1_8_9_1_9|2021-12-23	H5N6	eastern asia	china	profile0008	galliformes-domestic	29.1745873279179	120.086382279697
+H5N8|2344b|EPI_ISL_11504587|galliformes|vietnam|3_2_3_1_3_2_1_9|2021-12-01	H5N8	south-eastern asia	vietnam	profile0002	galliformes-domestic	21.8383841621594	106.620963954319
+H5N1|2344b|EPI_ISL_12749687|galliformes|israel|2_1_1_1_1_1_1_1|2021-10-12	H5N1	western asia	israel	profile0001	galliformes-domestic	32.8188711917581	35.3874708538776
+H5N8|2344b|EPI_ISL_13295077|anseriformes|cambodia|17_1_6_1_5_2_1_10|2021-09-16	H5N8	south-eastern asia	cambodia	profile0001	anseriformes-wild	11.5628991220328	104.865149801284
+H5N8|2344b|EPI_ISL_13295078|anseriformes|cambodia|17_1_6_1_5_2_1_10|2021-10-15	H5N8	south-eastern asia	cambodia	profile0001	anseriformes-wild	11.423085577617	105.017943157818
+H5N1|2344b|EPI_ISL_15944667|anseriformes|south_korea|1_1_7_1_5_1_1_5|2022-11-21	H5N1	eastern asia	south korea	profile0001	anseriformes-wild	36.341057964317	127.784630688405
+H5N8|2344b|EPI_ISL_14770166|anseriformes|china|12_1_5_2_3_3_1_2|2020-11-23	H5N8	eastern asia	china	profile0001	anseriformes-wild	36.3536638777003	118.136153809721
+H5N8|2344b|EPI_ISL_14770164|gruiformes|china|3_2_3_1_3_2_1_2|2020-12-31	H5N8	eastern asia	china	profile0002	other-bird	36.3536638777003	118.136153809721
+H5N8|2344b|EPI_ISL_16215736|galliformes|china|3_2_3_1_3_2_1_2|2020-12	H5N8	eastern asia	china	profile0002	galliformes-domestic	36.6848135465548	103.513718494908
+H5N1|2344b|EPI_ISL_15576617|anseriformes|japan|2_6_1_1_6_1_1_1|2022-10-08	H5N1	eastern asia	japan	profile0006	anseriformes-wild	43.3824165431654	142.542521870972
+H5N8|2344b|EPI_ISL_13295170|anseriformes|cambodia|17_1_6_1_5_2_1_10|2021-11-16	H5N8	south-eastern asia	cambodia	profile0001	anseriformes-wild	10.94029429079	104.816210680991
+H5N8|2344b|EPI_ISL_13295139|anseriformes|cambodia|17_1_6_1_5_2_1_10|2021-09-16	H5N8	south-eastern asia	cambodia	profile0001	anseriformes-wild	11.5628991220328	104.865149801284
+H5N1|2344b|EPI_ISL_16388458|anseriformes|japan|11_7_6_1_5_1_1_6|2022-11-23	H5N1	eastern asia	japan	profile0007	anseriformes-wild	39.7462736711545	140.408009328053
+H5N8|2344b|EPI_ISL_16405650|environment|japan|7_1_13_2_1_3_1_2|2020-11-09	H5N8	eastern asia	japan	profile0001	environment	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_16405651|environment|japan|7_6_13_2_1_3_1_2|2020-11-09	H5N8	eastern asia	japan	profile0006	environment	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_16405652|environment|japan|7_6_5_2_1_3_1_2|2020-11-09	H5N8	eastern asia	japan	profile0006	environment	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_16405654|environment|japan|7_1_13_2_1_3_1_2|2020-11-09	H5N8	eastern asia	japan	profile0001	environment	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_16405655|environment|japan|7_1_5_2_1_3_1_2|2020-11-16	H5N8	eastern asia	japan	profile0001	environment	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_16405658|environment|japan|7_1_5_2_1_3_1_2|2020-11-16	H5N8	eastern asia	japan	profile0001	environment	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_16405661|environment|japan|7_1_13_2_1_3_1_2|2020-11-23	H5N8	eastern asia	japan	profile0001	environment	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_16405667|environment|japan|7_9_5_2_1_3_1_2|2020-11-30	H5N8	eastern asia	japan	profile0009	environment	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_16405669|environment|japan|7_1_21_2_1_3_1_2|2020-11-30	H5N8	eastern asia	japan	profile0001	environment	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_16405671|environment|japan|7_9_5_2_1_3_1_2|2020-12-07	H5N8	eastern asia	japan	profile0009	environment	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_16405672|environment|japan|7_6_13_2_3_3_1_2|2020-12-07	H5N8	eastern asia	japan	profile0006	environment	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_16405673|environment|japan|7_1_5_2_3_3_1_2|2020-12-07	H5N8	eastern asia	japan	profile0001	environment	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_16405674|environment|japan|7_6_5_2_1_3_1_2|2020-12-07	H5N8	eastern asia	japan	profile0006	environment	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_16405677|environment|japan|7_1_5_2_1_3_1_2|2020-12-21	H5N8	eastern asia	japan	profile0001	environment	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_16405678|environment|japan|7_1_5_2_3_3_1_2|2020-12-21	H5N8	eastern asia	japan	profile0001	environment	30.9949222722596	130.419711465505
+H5N6|2344b|EPI_ISL_16466440|primates|china|3_8_3_1_11_7_1_8|2022-11-11	H5N6	eastern asia	china	profile0008	human	27.5978523947888	111.713471439142
+H5N1|2344b|EPI_ISL_17371283|anseriformes|indonesia|2_6_1_1_6_1_1_1|2022-04-04	H5N1	south-eastern asia	indonesia	profile0006	anseriformes-wild	-2.99309303653839	115.439680623362
+H5N1|2344b|EPI_ISL_17638448|galliformes|japan|11_7_6_1_5_1_1_6|2023-04-06	H5N1	eastern asia	japan	profile0007	galliformes-domestic	43.3824165431654	142.542521870972
+H5N8|2344b|EPI_ISL_17655583|environment|japan|3_2_3_1_3_2_1_2|2021-11-22	H5N8	eastern asia	japan	profile0002	environment	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_17655601|environment|japan|3_2_3_1_3_2_1_2|2021-12-06	H5N8	eastern asia	japan	profile0002	environment	30.9949222722596	130.419711465505
+H5N1|2344b|EPI_ISL_17655676|environment|japan|2_6_1_1_6_1_1_1|2021-12-20	H5N1	eastern asia	japan	profile0006	environment	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_17655678|environment|japan|3_2_3_1_3_2_1_12|2022-01-10	H5N8	eastern asia	japan	profile0002	environment	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_17760581|anseriformes|cambodia|17_1_6_1_5_2_1_10|2021-09-16	H5N8	south-eastern asia	cambodia	profile0001	anseriformes-wild	12.7097809911859	104.914484966688
+H5N8|2344b|EPI_ISL_17760584|anseriformes|cambodia|17_1_6_1_5_2_1_10|2021-11-16	H5N8	south-eastern asia	cambodia	profile0001	anseriformes-wild	12.7097809911859	104.914484966688
+H5N8|2344b|EPI_ISL_17805814|environment|japan|7_1_5_2_3_3_1_2|2020-12-21	H5N8	eastern asia	japan	profile0001	environment	37.3996665395305	137.574137168765
+H5N8|2344b|EPI_ISL_17805816|environment|japan|7_6_5_2_1_3_1_2|2020-12-07	H5N8	eastern asia	japan	profile0006	environment	37.3996665395305	137.574137168765
+H5N8|2344b|EPI_ISL_17805822|NA|japan|12_1_5_2_3_3_1_2|2021-02-01	H5N8	eastern asia	japan	profile0001	other-bird	37.3996665395305	137.574137168765
+H5N8|2344b|EPI_ISL_17805824|environment|japan|7_1_5_2_3_3_1_2|2020-12-07	H5N8	eastern asia	japan	profile0001	environment	37.3996665395305	137.574137168765
+H5N8|2344b|EPI_ISL_17805828|environment|japan|7_1_5_2_1_3_1_2|2020-12-07	H5N8	eastern asia	japan	profile0001	environment	37.3996665395305	137.574137168765
+H5N8|2344b|EPI_ISL_17805841|environment|japan|7_9_5_2_1_3_1_2|2020-11-30	H5N8	eastern asia	japan	profile0009	environment	37.3996665395305	137.574137168765
+H5N8|2344b|EPI_ISL_17805845|environment|japan|7_1_5_2_1_3_1_2|2020-12-21	H5N8	eastern asia	japan	profile0001	environment	37.3996665395305	137.574137168765
+H5N8|2344b|EPI_ISL_17805848|environment|japan|7_1_13_2_1_3_1_2|2020-11-09	H5N8	eastern asia	japan	profile0001	environment	37.3996665395305	137.574137168765
+H5N8|2344b|EPI_ISL_17805853|environment|japan|7_6_5_2_1_3_1_2|2020-11-09	H5N8	eastern asia	japan	profile0006	environment	37.3996665395305	137.574137168765
+H5N8|2344b|EPI_ISL_17805857|environment|japan|7_1_13_2_1_3_1_2|2020-11-09	H5N8	eastern asia	japan	profile0001	environment	37.3996665395305	137.574137168765
+H5N8|2344b|EPI_ISL_17805861|environment|japan|7_1_13_2_1_3_1_2|2020-11-23	H5N8	eastern asia	japan	profile0001	environment	37.3996665395305	137.574137168765
+H5N8|2344b|EPI_ISL_17805874|environment|japan|7_6_13_2_3_3_1_2|2020-12-07	H5N8	eastern asia	japan	profile0006	environment	37.3996665395305	137.574137168765
+H5N8|2344b|EPI_ISL_17805886|NA|japan|7_1_5_2_3_3_1_2|2021-02-05	H5N8	eastern asia	japan	profile0001	other-bird	37.3996665395305	137.574137168765
+H5N8|2344b|EPI_ISL_17805894|environment|japan|7_9_5_2_1_3_1_2|2020-12-07	H5N8	eastern asia	japan	profile0009	environment	37.3996665395305	137.574137168765
+H5N8|2344b|EPI_ISL_17805905|anseriformes|japan|3_2_3_1_3_2_1_2|2021-01-16	H5N8	eastern asia	japan	profile0002	anseriformes-wild	37.3996665395305	137.574137168765
+H5N8|2344b|EPI_ISL_17805910|environment|japan|7_6_13_2_1_3_1_2|2020-11-09	H5N8	eastern asia	japan	profile0006	environment	37.3996665395305	137.574137168765
+H5N8|2344b|EPI_ISL_17805918|environment|japan|7_1_21_2_1_3_1_2|2020-11-30	H5N8	eastern asia	japan	profile0001	environment	37.3996665395305	137.574137168765
+H5N1|2344b|EPI_ISL_17851883|galliformes|japan|2_6_1_1_6_1_1_1|2022-12-01	H5N1	eastern asia	japan	profile0006	galliformes-domestic	35.3595547900768	133.863177571414
+H5N1|2344b|EPI_ISL_16698060|galliformes|japan|2_1_2_1_1_1_1_1|2022-11-07	H5N1	eastern asia	japan	profile0001	galliformes-domestic	43.3824165431654	142.542521870972
+H5N1|2344b|EPI_ISL_16698546|accipitriformes|japan|2_1_1_1_1_1_1_1|2022-10-21	H5N1	eastern asia	japan	profile0001	other-bird	37.5201743528051	138.914818034069
+H5N8|2344b|EPI_ISL_16718460|accipitriformes|japan|12_1_5_2_3_3_1_2|2021-02-01	H5N8	eastern asia	japan	profile0001	other-bird	30.9949222722596	130.419711465505
+H5N1|2344b|EPI_ISL_16955798|charadriiformes|japan|2_1_1_1_1_1_1_1|2022-11-16	H5N1	eastern asia	japan	profile0001	charadriiformes-wild	43.3824165431654	142.542521870972
+H5N1|2344b|EPI_ISL_17075747|primates|china|1_1_1_1_1_1_1_1|2023-02-10	H5N1	eastern asia	china	profile0001	human	32.9645721858222	119.470797338049
+H5N1|2344b|EPI_ISL_17075759|primates|china|1_1_1_1_1_1_1_1|2023-02-10	H5N1	eastern asia	china	profile0001	human	32.9645721858222	119.470797338049
+H5N1|2344b|EPI_ISL_17267427|passeriformes|japan|1_1_12_1_1_1_1_1|2022-12-12	H5N1	eastern asia	japan	profile0001	other-bird	43.3824165431654	142.542521870972
+H5N1|2344b|EPI_ISL_17316489|passeriformes|japan|1_1_12_1_1_1_1_1|2023-03-13	H5N1	eastern asia	japan	profile0001	other-bird	43.3824165431654	142.542521870972
+H5N1|2344b|EPI_ISL_17317372|passeriformes|japan|1_1_12_1_1_1_1_1|2022-12-18	H5N1	eastern asia	japan	profile0001	other-bird	43.3824165431654	142.542521870972
+H5N1|2344b|EPI_ISL_17606815|anseriformes|south_korea|2_6_1_1_6_1_1_1|2021-11-09	H5N1	eastern asia	south korea	profile0006	anseriformes-wild	35.7159281817874	127.140659781938
+H5N1|2344b|EPI_ISL_17606819|anseriformes|south_korea|2_6_1_1_6_1_1_1|2021-11-10	H5N1	eastern asia	south korea	profile0006	anseriformes-wild	36.737850075983	127.830446360213
+H5N1|2344b|EPI_ISL_17606826|galliformes|south_korea|2_6_1_1_6_1_1_1|2021-12-05	H5N1	eastern asia	south korea	profile0006	galliformes-domestic	34.8733358026855	126.897223705092
+H5N1|2344b|EPI_ISL_17606828|anseriformes|south_korea|2_1_6_1_5_1_1_1|2021-12-13	H5N1	eastern asia	south korea	profile0001	anseriformes-wild	34.8733358026855	126.897223705092
+H5N1|2344b|EPI_ISL_17606829|anseriformes|south_korea|2_1_6_1_5_1_1_1|2021-12-13	H5N1	eastern asia	south korea	profile0001	anseriformes-wild	34.8733358026855	126.897223705092
+H5N1|2344b|EPI_ISL_17606830|galliformes|south_korea|2_6_1_1_6_1_1_1|2021-12-14	H5N1	eastern asia	south korea	profile0006	galliformes-domestic	36.5298116066164	126.847825775926
+H5N1|2344b|EPI_ISL_17606833|galliformes|south_korea|2_6_1_1_6_1_1_1|2021-12-17	H5N1	eastern asia	south korea	profile0006	galliformes-wild	37.5315346337798	127.181023197189
+H5N1|2344b|EPI_ISL_17606835|galliformes|south_korea|2_6_1_1_6_1_1_1|2021-12-23	H5N1	eastern asia	south korea	profile0006	galliformes-domestic	36.5605294196904	127.258813990513
+H5N1|2344b|EPI_ISL_17606837|anseriformes|south_korea|2_1_1_1_6_1_1_1|2021-12-29	H5N1	eastern asia	south korea	profile0001	anseriformes-wild	34.8733358026855	126.897223705092
+H5N1|2344b|EPI_ISL_17606844|anseriformes|south_korea|2_1_6_1_5_1_1_1|2022-01-25	H5N1	eastern asia	south korea	profile0001	anseriformes-wild	35.7159281817874	127.140659781938
+H5N1|2344b|EPI_ISL_17606845|anseriformes|south_korea|2_1_1_1_6_1_1_1|2022-01-29	H5N1	eastern asia	south korea	profile0001	anseriformes-wild	35.7159281817874	127.140659781938
+H5N1|2344b|EPI_ISL_17606846|galliformes|south_korea|2_1_1_1_6_1_1_1|2022-01-30	H5N1	eastern asia	south korea	profile0001	galliformes-domestic	36.5298116066164	126.847825775926
+H5N1|2344b|EPI_ISL_17606850|galliformes|south_korea|2_1_6_1_5_1_1_1|2022-02-04	H5N1	eastern asia	south korea	profile0001	galliformes-domestic	35.7159281817874	127.140659781938
+H5N1|2344b|EPI_ISL_17606853|galliformes|south_korea|2_1_1_1_6_1_1_1|2022-02-07	H5N1	eastern asia	south korea	profile0001	galliformes-domestic	37.5315346337798	127.181023197189
+H5N1|2344b|EPI_ISL_17606854|galliformes|south_korea|1_1_1_1_1_1_1_1|2022-02-07	H5N1	eastern asia	south korea	profile0001	galliformes-domestic	35.7159281817874	127.140659781938
+H5N1|2344b|EPI_ISL_17606856|galliformes|south_korea|2_1_1_1_6_1_1_1|2022-02-08	H5N1	eastern asia	south korea	profile0001	galliformes-wild	36.5298116066164	126.847825775926
+H5N1|2344b|EPI_ISL_17606859|galliformes|south_korea|2_1_1_1_6_1_1_1|2022-02-13	H5N1	eastern asia	south korea	profile0001	galliformes-domestic	36.5298116066164	126.847825775926
+H5N1|2344b|EPI_ISL_17606860|galliformes|south_korea|2_1_1_1_6_1_1_1|2022-02-12	H5N1	eastern asia	south korea	profile0001	galliformes-domestic	36.737850075983	127.830446360213
+H5N1|2344b|EPI_ISL_17606861|anseriformes|south_korea|1_1_1_1_1_1_1_1|2022-02-18	H5N1	eastern asia	south korea	profile0001	anseriformes-wild	36.5298116066164	126.847825775926
+H5N1|2344b|EPI_ISL_17606862|anseriformes|south_korea|2_1_1_1_6_1_1_1|2022-02-21	H5N1	eastern asia	south korea	profile0001	anseriformes-wild	35.3225325644814	128.261669154089
+H5N1|2344b|EPI_ISL_17606863|anseriformes|south_korea|1_1_1_1_1_1_1_1|2022-03-02	H5N1	eastern asia	south korea	profile0001	anseriformes-wild	34.8733358026855	126.897223705092
+H5N1|2344b|EPI_ISL_17606864|galliformes|south_korea|2_1_1_1_6_1_1_1|2022-04-07	H5N1	eastern asia	south korea	profile0001	galliformes-domestic	35.3225325644814	128.261669154089
+H5N1|2344b|EPI_ISL_17766057|carnivora|japan|1_1_12_1_1_1_1_1|2023-04-12	H5N1	eastern asia	japan	profile0001	mammal	43.3824165431654	142.542521870972
+H5N1|2344b|EPI_ISL_17949987|anseriformes|japan|1_6_6_1_5_1_1_1|2022-11-26	H5N1	eastern asia	japan	profile0006	anseriformes-wild	36.6374969915777	137.269020761504
+H5N1|2344b|EPI_ISL_17949986|passeriformes|japan|11_7_6_1_5_1_1_6|2023-02-07	H5N1	eastern asia	japan	profile0007	other-bird	37.5201743528051	138.914818034069
+H5N1|2344b|EPI_ISL_17949961|passeriformes|japan|11_7_6_1_5_1_1_6|2023-03-10	H5N1	eastern asia	japan	profile0007	other-bird	35.4153490493937	139.338928797101
+H5N6|2344b|EPI_ISL_18000337|primates|china|19_8_11_1_8_9_1_9|2022-02-27	H5N6	eastern asia	china	profile0008	human	27.6016362656629	115.709570895796
+H5N1|2344b|EPI_ISL_18007230|passeriformes|japan|1_1_12_1_1_1_1_1|2023-04-18	H5N1	eastern asia	japan	profile0001	other-bird	43.3824165431654	142.542521870972
+H5N1|2344b|EPI_ISL_18007232|passeriformes|japan|11_7_6_1_5_1_1_6|2023-03-24	H5N1	eastern asia	japan	profile0007	other-bird	37.5201743528051	138.914818034069
+H5N6|2344b|EPI_ISL_18058053|anseriformes|china|3_2_3_1_3_7_1_2|2021-03-12	H5N6	eastern asia	china	profile0002	anseriformes-wild	36.3536638777003	118.136153809721
+H5N6|2344b|EPI_ISL_18058054|anseriformes|china|3_2_3_1_3_7_1_2|2021-03-12	H5N6	eastern asia	china	profile0002	anseriformes-wild	36.3536638777003	118.136153809721
+H5N6|2344b|EPI_ISL_18058055|anseriformes|china|16_8_10_1_8_6_1_8|2021-05-01	H5N6	eastern asia	china	profile0008	anseriformes-wild	30.6066264180489	102.711402322843
+H5N6|2344b|EPI_ISL_18058056|anseriformes|china|16_8_10_1_8_6_1_8|2021-05-01	H5N6	eastern asia	china	profile0008	anseriformes-wild	30.6066264180489	102.711402322843
+H5N6|2344b|EPI_ISL_18090351|carnivora|china|3_1_22_1_11_20_1_8|2023-04-01	H5N6	eastern asia	china	profile0001	mammal	36.6848135465548	103.513718494908
+H5N1|2344b|EPI_ISL_18130247|passeriformes|japan|11_7_6_1_5_1_1_6|2023-01-05	H5N1	eastern asia	japan	profile0007	other-bird	35.9972673234424	139.347759410476
+H5N1|2344b|EPI_ISL_18245272|falconiformes|south_korea|1_1_1_1_1_1_1_1|2022-10-16	H5N1	eastern asia	south korea	profile0001	other-bird	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245273|anseriformes|south_korea|1_6_6_1_5_1_1_5|2022-10-17	H5N1	eastern asia	south korea	profile0006	anseriformes-wild	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245275|environment|south_korea|1_6_6_1_5_1_1_5|2022-11-02	H5N1	eastern asia	south korea	profile0006	environment	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245277|environment|south_korea|9_1_7_1_5_1_1_5|2022-11-09	H5N1	eastern asia	south korea	profile0001	environment	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245279|environment|south_korea|1_1_1_1_1_1_1_1|2022-11-09	H5N1	eastern asia	south korea	profile0001	environment	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245282|strigiformes|south_korea|1_7_1_1_9_1_1_1|2022-11-15	H5N1	eastern asia	south korea	profile0007	other-bird	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245283|environment|south_korea|1_6_6_1_5_1_1_5|2022-11-13	H5N1	eastern asia	south korea	profile0006	environment	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245286|environment|south_korea|1_7_6_1_5_1_1_6|2022-11-15	H5N1	eastern asia	south korea	profile0007	environment	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245288|anseriformes|south_korea|9_1_7_1_5_1_1_1|2022-11-21	H5N1	eastern asia	south korea	profile0001	anseriformes-wild	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245292|anseriformes|south_korea|11_7_1_1_6_1_1_1|2022-11-18	H5N1	eastern asia	south korea	profile0007	anseriformes-wild	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245293|gruiformes|south_korea|2_6_6_1_5_1_1_6|2022-11-18	H5N1	eastern asia	south korea	profile0006	other-bird	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245294|environment|south_korea|20_7_6_1_3_1_1_1|2022-11-16	H5N1	eastern asia	south korea	profile0007	environment	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245296|anseriformes|south_korea|9_1_7_1_5_1_1_1|2022-11-22	H5N1	eastern asia	south korea	profile0001	anseriformes-wild	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245297|environment|south_korea|1_1_7_1_5_1_1_5|2022-11-21	H5N1	eastern asia	south korea	profile0001	environment	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245301|charadriiformes|south_korea|11_7_6_1_5_1_1_6|2022-11-25	H5N1	eastern asia	south korea	profile0007	charadriiformes-wild	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245302|anseriformes|south_korea|1_1_7_1_5_1_1_5|2022-11-24	H5N1	eastern asia	south korea	profile0001	anseriformes-wild	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245304|anseriformes|south_korea|20_1_7_1_5_1_1_1|2022-11-25	H5N1	eastern asia	south korea	profile0001	anseriformes-wild	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245305|gruiformes|south_korea|9_9_13_1_5_1_1_5|2022-11-26	H5N1	eastern asia	south korea	profile0009	other-bird	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245312|anseriformes|south_korea|11_7_6_1_5_1_1_6|2022-12-02	H5N1	eastern asia	south korea	profile0007	anseriformes-wild	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245317|environment|south_korea|11_1_13_1_5_1_1_5|2022-12-07	H5N1	eastern asia	south korea	profile0001	environment	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245338|anseriformes|south_korea|11_1_6_1_5_1_1_6|2022-12-28	H5N1	eastern asia	south korea	profile0001	anseriformes-wild	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245343|environment|south_korea|11_7_6_1_5_1_1_6|2023-01-02	H5N1	eastern asia	south korea	profile0007	environment	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245347|pelecaniformes|south_korea|1_1_7_1_5_1_1_5|2023-01-07	H5N1	eastern asia	south korea	profile0001	other-bird	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245349|anseriformes|south_korea|11_7_6_1_5_1_1_6|2023-01-09	H5N1	eastern asia	south korea	profile0007	anseriformes-wild	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245360|pelecaniformes|south_korea|1_1_7_1_5_1_1_1|2023-01-13	H5N1	eastern asia	south korea	profile0001	other-bird	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245368|falconiformes|south_korea|1_1_7_1_5_1_1_5|2023-01-27	H5N1	eastern asia	south korea	profile0001	other-bird	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245369|accipitriformes|south_korea|20_1_2_1_5_1_1_6|2023-01-06	H5N1	eastern asia	south korea	profile0001	other-bird	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245376|strigiformes|south_korea|11_7_6_1_5_1_1_1|2023-02-07	H5N1	eastern asia	south korea	profile0007	other-bird	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245377|anseriformes|south_korea|2_6_1_1_6_1_1_6|2023-02-13	H5N1	eastern asia	south korea	profile0006	anseriformes-wild	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245383|anseriformes|south_korea|11_7_6_1_5_1_1_1|2023-03-07	H5N1	eastern asia	south korea	profile0007	anseriformes-wild	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18066450|passeriformes|japan|1_1_7_1_5_1_1_1|2023-01-06	H5N1	eastern asia	japan	profile0001	other-bird	32.1919114758892	131.298614512671
+H5N1|2344b|EPI_ISL_18066451|anseriformes|japan|1_1_12_1_1_1_1_1|2023-02-09	H5N1	eastern asia	japan	profile0001	anseriformes-wild	36.6894768729176	139.818920628006
+H5N1|2344b|EPI_ISL_18066452|anseriformes|japan|11_7_6_1_5_1_1_6|2023-02-17	H5N1	eastern asia	japan	profile0007	anseriformes-wild	38.446036231103	140.92583944453
+H5N1|2344b|EPI_ISL_18066453|passeriformes|japan|1_1_12_1_1_1_1_1|2023-02-17	H5N1	eastern asia	japan	profile0001	other-bird	33.5256575241002	130.666678342289
+H5N1|2344b|EPI_ISL_18066454|gruiformes|japan|11_7_6_1_5_1_1_6|2023-02-23	H5N1	eastern asia	japan	profile0007	other-bird	35.1841142139823	139.539494434755
+H5N1|2344b|EPI_ISL_18066455|accipitriformes|japan|11_7_6_1_5_1_1_6|2023-01-07	H5N1	eastern asia	japan	profile0007	other-bird	35.0217368950931	138.336873302
+H5N1|2344b|EPI_ISL_18066456|passeriformes|japan|11_7_6_1_5_1_1_6|2023-02-20	H5N1	eastern asia	japan	profile0007	other-bird	36.6894768729176	139.818920628006
+H5N1|2344b|EPI_ISL_18066457|passeriformes|japan|11_7_6_1_5_1_1_6|2023-02-06	H5N1	eastern asia	japan	profile0007	other-bird	33.5256575241002	130.666678342289
+H5N6|2344b|EPI_ISL_18231283|anseriformes|laos|16_8_10_1_8_6_1_8|2022-07-13	H5N6	south-eastern asia	laos	profile0008	anseriformes-wild	18.4826189425148	103.803936160825
+H5N6|2344b|EPI_ISL_18231284|anseriformes|laos|16_8_10_1_8_6_1_8|2022-07-13	H5N6	south-eastern asia	laos	profile0008	anseriformes-wild	18.4826189425148	103.803936160825
+H5N6|2344b|EPI_ISL_18231287|galliformes|laos|16_8_10_1_8_6_1_8|2022-07-13	H5N6	south-eastern asia	laos	profile0008	galliformes-domestic	18.4826189425148	103.803936160825
+H5N6|2344b|EPI_ISL_18231288|environment|laos|16_8_10_1_8_6_1_8|2022-07-26	H5N6	south-eastern asia	laos	profile0008	environment	18.4826189425148	103.803936160825
+H5N1|2344b|EPI_ISL_18509892|environment|japan|2_1_1_1_1_1_1_1|2023-11-07	H5N1	eastern asia	japan	profile0001	environment	30.9949222722596	130.419711465505
+H5N1|2344b|EPI_ISL_18640911|anseriformes|japan|2_1_1_1_1_1_1_1|2023-11-23	H5N1	eastern asia	japan	profile0001	anseriformes-wild	38.446036231103	140.92583944453
+H5N1|2344b|EPI_ISL_18102701|carnivora|south_korea|11_7_6_1_5_1_1_6|2023-07-04	H5N1	eastern asia	south korea	profile0007	mammal	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18241797|anseriformes|vietnam|11_7_6_1_5_1_1_6|2023-06-05	H5N1	south-eastern asia	vietnam	profile0007	anseriformes-wild	16.5422416723933	106.354375350692
+H5N1|2344b|EPI_ISL_18241798|anseriformes|vietnam|11_7_6_1_5_1_1_6|2023-06-04	H5N1	south-eastern asia	vietnam	profile0007	anseriformes-wild	21.8383841621594	106.620963954319
+H5N1|2344b|EPI_ISL_18242686|pelecaniformes|south_korea|1_1_7_1_5_1_1_1|2023-03-06	H5N1	eastern asia	south korea	profile0001	other-bird	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18284461|galliformes|japan|2_1_2_1_1_1_1_1|2022-10-28	H5N1	eastern asia	japan	profile0001	galliformes-domestic	43.3824165431654	142.542521870972
+H5N1|2344b|EPI_ISL_18284463|galliformes|japan|1_1_7_1_5_1_1_5|2022-11-13	H5N1	eastern asia	japan	profile0001	galliformes-domestic	35.0390049694389	134.828550655208
+H5N1|2344b|EPI_ISL_18284464|galliformes|japan|1_1_1_1_1_1_1_1|2022-11-04	H5N1	eastern asia	japan	profile0001	galliformes-domestic	36.3027610877484	140.318971903473
+H5N1|2344b|EPI_ISL_18284465|galliformes|japan|1_1_7_1_1_1_1_5|2022-11-01	H5N1	eastern asia	japan	profile0001	galliformes-domestic	34.217379070784	133.968927545016
+H5N1|2344b|EPI_ISL_18284466|galliformes|japan|2_6_1_1_6_1_1_1|2022-10-28	H5N1	eastern asia	japan	profile0006	galliformes-domestic	34.8921234580739	133.826171708594
+H5N1|2344b|EPI_ISL_18284467|anseriformes|japan|1_1_7_1_5_1_1_5|2022-11-11	H5N1	eastern asia	japan	profile0001	anseriformes-wild	33.9113994398813	135.506030353599
+H5N1|2344b|EPI_ISL_18284468|galliformes|japan|11_7_6_1_5_1_1_6|2022-12-05	H5N1	eastern asia	japan	profile0007	galliformes-domestic	35.0354821249241	137.211818235863
+H5N1|2344b|EPI_ISL_18284469|galliformes|japan|11_1_13_1_5_1_1_5|2022-11-22	H5N1	eastern asia	japan	profile0001	galliformes-domestic	34.217379070784	133.968927545016
+H5N1|2344b|EPI_ISL_18284470|galliformes|japan|20_9_13_1_5_1_1_1|2022-11-20	H5N1	eastern asia	japan	profile0009	galliformes-domestic	32.1919114758892	131.298614512671
+H5N1|2344b|EPI_ISL_18284471|galliformes|japan|2_1_1_1_5_1_1_18|2022-11-18	H5N1	eastern asia	japan	profile0001	galliformes-domestic	37.5201743528051	138.914818034069
+H5N1|2344b|EPI_ISL_18284472|anseriformes|japan|11_7_6_1_5_1_1_6|2022-11-26	H5N1	eastern asia	japan	profile0007	anseriformes-wild	35.5094511865639	140.198261340312
+H5N1|2344b|EPI_ISL_18284473|galliformes|japan|9_1_7_1_5_1_1_1|2022-12-16	H5N1	eastern asia	japan	profile0001	galliformes-domestic	34.6052446200593	132.788104542609
+H5N1|2344b|EPI_ISL_18284474|anseriformes|japan|1_6_6_1_5_1_1_5|2022-12-20	H5N1	eastern asia	japan	profile0006	anseriformes-wild	34.8921234580739	133.826171708594
+H5N1|2344b|EPI_ISL_18284475|galliformes|japan|11_1_13_1_5_1_1_5|2022-12-21	H5N1	eastern asia	japan	profile0001	galliformes-domestic	32.1919114758892	131.298614512671
+H5N2|2344b|EPI_ISL_18284476|galliformes|japan|18_1_2_1_1_18_1_1|2023-01-17	H5N2	eastern asia	japan	profile0001	galliformes-domestic	33.2003954700371	131.433742894646
+H5N1|2344b|EPI_ISL_18284477|galliformes|japan|2_1_12_1_1_1_1_1|2023-03-14	H5N1	eastern asia	japan	profile0001	galliformes-domestic	39.5914074346158	141.361222721758
+H5N1|2344b|EPI_ISL_18284478|galliformes|japan|9_1_7_1_5_1_1_5|2023-02-01	H5N1	eastern asia	japan	profile0001	galliformes-wild	35.9972673234424	139.347759410476
+H5N1|2344b|EPI_ISL_18373220|anseriformes|south_korea|2_6_1_1_6_1_1_1|2021-12-01	H5N1	eastern asia	south korea	profile0006	anseriformes-wild	34.8733358026855	126.897223705092
+H5N1|2344b|EPI_ISL_18373223|anseriformes|south_korea|2_6_1_1_6_1_1_1|2021-12-07	H5N1	eastern asia	south korea	profile0006	anseriformes-wild	36.341057964317	127.784630688405
+H5N8|2344b|EPI_ISL_18373230|anseriformes|south_korea|3_1_3_1_9_2_1_2|2022-01-23	H5N8	eastern asia	south korea	profile0001	anseriformes-wild	35.1998148648435	129.058707832454
+H5N1|2344b|EPI_ISL_18373232|anseriformes|south_korea|2_6_1_1_6_1_1_1|2022-01-25	H5N1	eastern asia	south korea	profile0006	anseriformes-wild	35.3225325644814	128.261669154089
+H5N1|2344b|EPI_ISL_18373239|anseriformes|south_korea|2_6_1_1_6_1_1_1|2022-02-04	H5N1	eastern asia	south korea	profile0006	anseriformes-wild	33.3869876346889	126.553618799527
+H5N1|2344b|EPI_ISL_18373240|anseriformes|south_korea|1_1_1_1_1_1_1_1|2022-02-10	H5N1	eastern asia	south korea	profile0001	anseriformes-wild	37.5315346337798	127.181023197189
+H5N1|2344b|EPI_ISL_18373242|anseriformes|south_korea|2_1_1_1_6_1_1_1|2022-02-10	H5N1	eastern asia	south korea	profile0001	anseriformes-wild	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18373245|anseriformes|south_korea|2_1_1_1_6_1_1_1|2022-02-21	H5N1	eastern asia	south korea	profile0001	anseriformes-wild	37.7229050838193	128.302550984135
+H5N1|2344b|EPI_ISL_18373247|gruiformes|south_korea|2_1_1_1_6_1_1_1|2022-02-25	H5N1	eastern asia	south korea	profile0001	other-bird	37.5315346337798	127.181023197189
+H5N1|2344b|EPI_ISL_18373250|anseriformes|south_korea|2_1_1_1_6_1_1_1|2022-03-04	H5N1	eastern asia	south korea	profile0001	anseriformes-wild	37.551873748691	126.991783883801
+H5N1|2344b|EPI_ISL_18373254|anseriformes|south_korea|2_1_1_1_6_1_1_1|2022-03-04	H5N1	eastern asia	south korea	profile0001	anseriformes-wild	37.7229050838193	128.302550984135
+H5N1|2344b|EPI_ISL_18373264|environment|south_korea|14_1_12_1_6_1_1_1|2021-12-22	H5N1	eastern asia	south korea	profile0001	environment	35.1998148648435	129.058707832454
+H5N1|2344b|EPI_ISL_18438033|anseriformes|indonesia|2_6_1_4_6_1_1_1|2023-07-24	H5N1	south-eastern asia	indonesia	profile0006	anseriformes-wild	-2.99309303653839	115.439680623362
+H5N1|2344b|EPI_ISL_18472603|gruiformes|japan|11_7_7_1_5_1_1_12|2022-11-06	H5N1	eastern asia	japan	profile0007	other-bird	30.9949222722596	130.419711465505
+H5N1|2344b|EPI_ISL_18472731|environment|japan|9_1_7_1_5_1_1_5|2022-11-01	H5N1	eastern asia	japan	profile0001	environment	30.9949222722596	130.419711465505
+H5N1|2344b|EPI_ISL_18472732|environment|japan|1_1_1_1_5_1_1_5|2022-11-02	H5N1	eastern asia	japan	profile0001	environment	30.9949222722596	130.419711465505
+H5N1|2344b|EPI_ISL_18472733|environment|japan|11_7_6_1_5_1_1_5|2022-11-03	H5N1	eastern asia	japan	profile0007	environment	30.9949222722596	130.419711465505
+H5N1|2344b|EPI_ISL_18472734|environment|japan|11_7_6_1_5_1_1_6|2022-11-03	H5N1	eastern asia	japan	profile0007	environment	30.9949222722596	130.419711465505
+H5N1|2344b|EPI_ISL_18472735|environment|japan|11_7_6_1_5_1_1_5|2022-11-04	H5N1	eastern asia	japan	profile0007	environment	30.9949222722596	130.419711465505
+H5N1|2344b|EPI_ISL_18472736|environment|japan|9_1_7_1_5_1_1_5|2022-11-04	H5N1	eastern asia	japan	profile0001	environment	30.9949222722596	130.419711465505
+H5N1|2344b|EPI_ISL_18561232|galliformes|laos|2_9_1_1_6_1_1_1|2023-05-16	H5N1	south-eastern asia	laos	profile0009	galliformes-domestic	18.4826189425148	103.803936160825
+H5N1|2344b|EPI_ISL_18603584|anseriformes|japan|2_1_1_1_1_1_1_1|2023-11-13	H5N1	eastern asia	japan	profile0001	anseriformes-wild	34.8921234580739	133.826171708594
+H5N1|2344b|EPI_ISL_18634688|environment|japan|11_9_2_1_13_1_1_1|2023-11-27	H5N1	eastern asia	japan	profile0009	environment	30.9949222722596	130.419711465505
+H5N1|2344b|EPI_ISL_18651570|environment|japan|2_1_1_1_1_1_1_1|2023-12-04	H5N1	eastern asia	japan	profile0001	environment	30.9949222722596	130.419711465505
+H5N6|2344b|EPI_ISL_18718559|anseriformes|china|3_1_22_1_11_20_1_8|2023-09	H5N6	eastern asia	china	profile0001	anseriformes-wild	36.6848135465548	103.513718494908
+H5N1|2344b|EPI_ISL_18472642|gruiformes|japan|9_1_7_1_5_1_1_5|2022-11-14	H5N1	eastern asia	japan	profile0001	other-bird	30.9949222722596	130.419711465505
+H5N1|2344b|EPI_ISL_18472626|gruiformes|japan|9_1_7_1_5_1_1_5|2022-11-10	H5N1	eastern asia	japan	profile0001	other-bird	30.9949222722596	130.419711465505
+H5N1|2344b|EPI_ISL_18472621|gruiformes|japan|2_6_1_1_6_1_1_12|2022-11-10	H5N1	eastern asia	japan	profile0006	other-bird	30.9949222722596	130.419711465505
+H5N1|2344b|EPI_ISL_18472619|gruiformes|japan|9_1_1_1_5_1_1_5|2022-11-09	H5N1	eastern asia	japan	profile0001	other-bird	30.9949222722596	130.419711465505
+H5N1|2344b|EPI_ISL_18472599|gruiformes|japan|11_1_6_1_5_1_1_5|2022-11-05	H5N1	eastern asia	japan	profile0001	other-bird	30.9949222722596	130.419711465505
+H5N1|2344b|EPI_ISL_18472598|gruiformes|japan|1_1_7_1_5_1_1_5|2022-11-05	H5N1	eastern asia	japan	profile0001	other-bird	30.9949222722596	130.419711465505
+H5N1|2344b|EPI_ISL_18472589|gruiformes|japan|9_1_7_1_5_1_1_5|2022-11-01	H5N1	eastern asia	japan	profile0001	other-bird	30.9949222722596	130.419711465505
+H5N5|2344b|EPI_ISL_18876660|falconiformes|japan|2_1_1_1_1_30_1_1|2024-01-16	H5N5	eastern asia	japan	profile0001	other-bird	32.6075249455977	130.744475418209
+H5N6|2344b|EPI_ISL_18740267|falconiformes|japan|20_7_7_1_9_7_1_1|2023-12-06	H5N6	eastern asia	japan	profile0007	other-bird	33.2869210491497	130.115721531206
+H5N1|2344b|EPI_ISL_18934847|anseriformes|kazakhstan|1_1_2_1_1_1_1_1|2024-01-09	H5N1	central asia	kazakhstan	profile0001	anseriformes-wild	44.0931225073232	53.9425249800918
+H5N1|2344b|EPI_ISL_18898050|anseriformes|kazakhstan|1_6_2_1_1_1_1_1|2024-01-05	H5N1	central asia	kazakhstan	profile0006	anseriformes-wild	48.3645677524915	67.2060737287064
+H5N1|2344b|EPI_ISL_18938648|environment|japan|11_1_13_1_5_1_1_5|2022-12-20	H5N1	eastern asia	japan	profile0001	environment	35.3595547900768	133.863177571414
+H5N5|2344b|EPI_ISL_19055420|passeriformes|japan|2_1_6_1_1_4_1_1|2024-03-01	H5N5	eastern asia	japan	profile0001	other-bird	39.5914074346158	141.361222721758
+H5N5|2344b|EPI_ISL_19055419|passeriformes|japan|2_1_6_1_1_4_1_1|2024-02-29	H5N5	eastern asia	japan	profile0001	other-bird	39.5914074346158	141.361222721758
+H5N1|2344b|EPI_ISL_19055104|passeriformes|japan|2_1_1_1_1_1_1_1|2024-03-28	H5N1	eastern asia	japan	profile0001	other-bird	43.3824165431654	142.542521870972
+H5N5|2344b|EPI_ISL_19055087|passeriformes|japan|2_1_6_1_1_4_1_1|2024-03-16	H5N5	eastern asia	japan	profile0001	other-bird	43.3824165431654	142.542521870972
+H5N1|2344b|EPI_ISL_19033212|passeriformes|japan|2_1_1_1_1_1_1_1|2024-02-10	H5N1	eastern asia	japan	profile0001	other-bird	34.6205522932733	135.507247825506
+H5N1|2344b|EPI_ISL_19033211|passeriformes|japan|2_1_1_1_1_1_1_1|2024-02-13	H5N1	eastern asia	japan	profile0001	other-bird	36.7670275494778	136.768878950914
+H5N1|2344b|EPI_ISL_18983997|NA|bangladesh|9_1_6_1_5_1_1_1|2023-01-26	H5N1	southern asia	bangladesh	profile0001	other-bird	23.8299093538119	90.2865403636969
+H5N1|2344b|EPI_ISL_18979789|accipitriformes|japan|2_1_1_1_1_1_1_1|2023-12-14	H5N1	eastern asia	japan	profile0001	other-bird	35.0390049694389	134.828550655208
+H5N5|2344b|EPI_ISL_18968550|passeriformes|japan|2_1_6_1_1_4_1_1|2024-02-13	H5N5	eastern asia	japan	profile0001	other-bird	43.3824165431654	142.542521870972
+H5N1|2344b|EPI_ISL_18876663|passeriformes|japan|2_1_1_1_1_1_1_1|2024-01-26	H5N1	eastern asia	japan	profile0001	other-bird	43.3824165431654	142.542521870972
+H5N1|2344b|EPI_ISL_18740020|accipitriformes|japan|2_1_1_1_1_1_1_1|2023-11-23	H5N1	eastern asia	japan	profile0001	other-bird	35.7777527627362	137.055033768037
+H5N1|2344b|EPI_ISL_19071019|galliformes|japan|2_1_1_1_1_1_1_1|2024-03-11	H5N1	eastern asia	japan	profile0001	galliformes-domestic	34.6052446200593	132.788104542609
+H5N1|2344b|EPI_ISL_19066774|anseriformes|bangladesh|11_7_6_1_5_1_1_6|2023-09-09	H5N1	southern asia	bangladesh	profile0007	anseriformes-wild	23.8299093538119	90.2865403636969
+H5N1|2344b|EPI_ISL_19066772|anseriformes|bangladesh|9_1_1_1_1_1_1_1|2023-08-19	H5N1	southern asia	bangladesh	profile0001	anseriformes-wild	23.8299093538119	90.2865403636969
+H5N1|2344b|EPI_ISL_19066763|anseriformes|bangladesh|11_7_6_1_5_1_1_6|2023-08-19	H5N1	southern asia	bangladesh	profile0007	anseriformes-wild	23.8299093538119	90.2865403636969
+H5N1|2344b|EPI_ISL_19066762|anseriformes|bangladesh|11_7_6_1_5_1_1_6|2023-09-09	H5N1	southern asia	bangladesh	profile0007	anseriformes-wild	23.8299093538119	90.2865403636969
+H5N1|2344b|EPI_ISL_19066757|anseriformes|bangladesh|11_7_6_1_5_1_1_13|2023-09-09	H5N1	southern asia	bangladesh	profile0007	anseriformes-wild	23.8299093538119	90.2865403636969
+H5N1|2344b|EPI_ISL_19066756|anseriformes|bangladesh|11_7_6_1_5_1_1_13|2023-09-09	H5N1	southern asia	bangladesh	profile0007	anseriformes-wild	23.8299093538119	90.2865403636969
+H5N1|2344b|EPI_ISL_19066754|anseriformes|bangladesh|11_7_6_1_5_1_1_6|2023-09-09	H5N1	southern asia	bangladesh	profile0007	anseriformes-wild	23.8299093538119	90.2865403636969
+H5N1|2344b|EPI_ISL_19066753|anseriformes|bangladesh|11_7_6_1_5_1_1_6|2023-09-09	H5N1	southern asia	bangladesh	profile0007	anseriformes-wild	23.8299093538119	90.2865403636969
+H5N1|2344b|EPI_ISL_18935785|anseriformes|japan|2_1_1_1_1_1_1_1|2023-12-02	H5N1	eastern asia	japan	profile0001	anseriformes-wild	35.3595547900768	133.863177571414
+H5N1|2344b|EPI_ISL_18819960|anseriformes|south_korea|2_1_1_1_1_1_1_1|2023-12-03	H5N1	eastern asia	south korea	profile0001	anseriformes-wild	36.341057964317	127.784630688405
+H5N6|2344b|EPI_ISL_18819959|anseriformes|south_korea|20_7_7_1_9_7_1_1|2023-12-03	H5N6	eastern asia	south korea	profile0007	anseriformes-wild	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18819797|anseriformes|south_korea|2_1_1_1_1_1_1_1|2023-12-20	H5N1	eastern asia	south korea	profile0001	anseriformes-wild	34.8733358026855	126.897223705092
+H5N1|2344b|EPI_ISL_18979788|accipitriformes|japan|2_1_1_1_1_1_1_1|2023-08-31	H5N1	eastern asia	japan	profile0001	other-bird	34.5068087755592	136.375162284716
+H5N5|2344b|EPI_ISL_18838019|passeriformes|japan|2_1_6_1_1_4_1_1|2023-12-19	H5N5	eastern asia	japan	profile0001	other-bird	43.3824165431654	142.542521870972
+H5N5|2344b|EPI_ISL_18837770|passeriformes|japan|2_1_6_1_1_4_1_1|2023-12-19	H5N5	eastern asia	japan	profile0001	other-bird	43.3824165431654	142.542521870972
+H5N1|2344b|EPI_ISL_18938650|anseriformes|japan|1_6_6_1_5_1_1_5|2022-11-21	H5N1	eastern asia	japan	profile0006	anseriformes-wild	32.1919114758892	131.298614512671
+H5N1|2344b|EPI_ISL_19061458|galliformes|philippines|11_7_6_1_5_1_1_6|2022-07-08	H5N1	south-eastern asia	philippines	profile0007	galliformes-domestic	15.6173123206103	121.022612729206
+H5N1|2344b|EPI_ISL_19057794|galliformes|philippines|11_7_6_1_5_1_1_6|2022-07-08	H5N1	south-eastern asia	philippines	profile0007	galliformes-domestic	15.6173123206103	121.022612729206
+H5N6|2344b|EPI_ISL_18853651|anseriformes|south_korea|20_7_7_1_9_7_1_1|2023-12-22	H5N6	eastern asia	south korea	profile0007	anseriformes-wild	36.341057964317	127.784630688405
+H5N6|2344b|EPI_ISL_18853650|anseriformes|south_korea|20_7_7_1_9_7_1_1|2023-12-21	H5N6	eastern asia	south korea	profile0007	anseriformes-wild	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_19035743|anseriformes|south_korea|2_1_1_1_1_1_1_1|2023-12-26	H5N1	eastern asia	south korea	profile0001	anseriformes-wild	33.3869876346889	126.553618799527
+H5N6|2344b|EPI_ISL_china_1|galliformes|china|19_8_11_1_8_6_1_9|2022-02-28	H5N6	eastern asia	china	profile0008	galliformes-domestic	36.3536638777003	118.136153809721
+H5N8|2344b|EPI_ISL_china_2|galliformes|china|3_2_3_1_3_2_1_2|2021-05-31	H5N8	eastern asia	china	profile0002	galliformes-domestic	31.8128943962267	117.235219497068
+H5N2|2344b|EPI_ISL_china_7|anseriformes|china|3_6_3_1_12_12_1_2|2022-01-26	H5N2	eastern asia	china	profile0006	anseriformes-wild	27.5978523947888	111.713471439142
+H5N2|2344b|EPI_ISL_china_8|anseriformes|china|3_6_3_1_12_12_1_2|2021-12-29	H5N2	eastern asia	china	profile0006	anseriformes-wild	27.5978523947888	111.713471439142
+H5N2|2344b|EPI_ISL_china_9|anseriformes|china|3_6_3_1_12_12_1_1|2022-01-26	H5N2	eastern asia	china	profile0006	anseriformes-wild	27.5978523947888	111.713471439142
+H5N2|2344b|EPI_ISL_china_10|anseriformes|china|3_6_3_1_12_12_1_2|2022-01-26	H5N2	eastern asia	china	profile0006	anseriformes-wild	27.5978523947888	111.713471439142
+H5N2|2344b|EPI_ISL_china_11|anseriformes|china|3_6_3_1_12_12_1_2|2022-01-26	H5N2	eastern asia	china	profile0006	anseriformes-wild	27.5978523947888	111.713471439142
+H5N2|2344b|EPI_ISL_china_12|anseriformes|china|3_6_3_1_12_12_1_2|2022-01-26	H5N2	eastern asia	china	profile0006	anseriformes-wild	27.5978523947888	111.713471439142
+H5N2|2344b|EPI_ISL_china_13|anseriformes|china|3_6_3_1_12_12_1_2|2022-01-26	H5N2	eastern asia	china	profile0006	anseriformes-wild	27.5978523947888	111.713471439142
+H5N1|2344b|EPI_ISL_china_18|anseriformes|china|11_7_6_1_5_1_1_6|2023-01-01	H5N1	eastern asia	china	profile0007	anseriformes-wild	29.1745873279179	120.086382279697
+H5N1|2344b|EPI_ISL_8599974|anseriformes|china|2_6_1_1_6_1_1_1|2021-11-15	H5N1	eastern asia	china	profile0006	anseriformes-wild	29.1745873279179	120.086382279697
+H5N1|2344b|EPI_ISL_8599973|anseriformes|china|1_1_1_1_1_1_1_1|2021-11-03	H5N1	eastern asia	china	profile0001	anseriformes-wild	40.1838367941588	116.40878248942
+H5N1|2344b|EPI_ISL_8599972|anseriformes|china|1_1_1_1_1_1_1_1|2021-11-03	H5N1	eastern asia	china	profile0001	anseriformes-wild	40.1838367941588	116.40878248942
+H5N1|2344b|EPI_ISL_china_31|charadriiformes|china|1_1_1_1_1_1_1_1|2022-06-20	H5N1	eastern asia	china	profile0001	charadriiformes-wild	35.7553973024078	96.0028538289268
+H5N1|2344b|EPI_ISL_china_32|anseriformes|china|1_1_6_1_1_1_1_1|2022-06-18	H5N1	eastern asia	china	profile0001	anseriformes-wild	35.7553973024078	96.0028538289268
+H5N1|2344b|EPI_ISL_china_37|anseriformes|china|1_1_1_1_1_1_1_1|2022-06-18	H5N1	eastern asia	china	profile0001	anseriformes-wild	35.7553973024078	96.0028538289268
+H5N1|2344b|EPI_ISL_china_2023088|anseriformes|china|1_1_1_1_1_1_1_1|2021-11-28	H5N1	eastern asia	china	profile0001	anseriformes-wild	30.9806813015582	112.277189482252
+H5N1|2344b|EPI_ISL_china_20230826|anseriformes|china|1_1_1_1_1_1_1_1|2021-11-23	H5N1	eastern asia	china	profile0001	anseriformes-wild	30.9806813015582	112.277189482252
+H5N1|2344b|EPI_ISL_china_20230831|anseriformes|china|2_1_1_1_1_1_1_1|2021-10-20	H5N1	eastern asia	china	profile0001	anseriformes-wild	37.2602231520297	106.161545856493
+H5N1|2344b|EPI_ISL_china_20230835|anseriformes|china|2_6_1_1_6_1_1_1|2021-10-08	H5N1	eastern asia	china	profile0006	anseriformes-wild	44.083329648604	113.188484632426
+H5N1|2344b|EPI_ISL_china_20230838|anseriformes|china|2_6_1_1_6_1_1_1|2021-10-16	H5N1	eastern asia	china	profile0006	anseriformes-wild	44.083329648604	113.188484632426
+H5N1|2344b|EPI_ISL_china_20230841|galliformes|china|1_1_1_1_1_1_1_1|2021-12-20	H5N1	eastern asia	china	profile0001	galliformes-domestic	44.083329648604	113.188484632426
+H5N1|2344b|EPI_ISL_china_20230847|anseriformes|china|2_6_1_1_6_1_1_1|2021-12-02	H5N1	eastern asia	china	profile0006	anseriformes-wild	33.8761853651454	113.614527263456
+H5N1|2344b|EPI_ISL_china_20230848|anseriformes|china|1_1_1_1_1_1_1_1|2021-12-02	H5N1	eastern asia	china	profile0001	anseriformes-wild	33.8761853651454	113.614527263456
+H5N1|2344b|EPI_ISL_china_20230854|suliformes|china|1_1_1_1_1_1_1_1|2021-12-01	H5N1	eastern asia	china	profile0001	other-bird	31.8128943962267	117.235219497068
+H5N8|2344b|EPI_ISL_17086225|environment|japan|NA|2020-11-11	H5N8	eastern asia	japan	profileNA	environment	34.217379070784	133.968927545016
+H6N6|2344b|EPI_ISL_2825296|galliformes|china|NA|2018-04-10	H6N6	eastern asia	china	profileNA	galliformes-domestic	26.8128279303549	106.867407716617
+H3N2|2344b|EPI_ISL_15723965|environment|china|NA|2021-03-18	H3N2	eastern asia	china	profileNA	environment	27.5978523947888	111.713471439142
+H3N2|2344b|EPI_ISL_15723977|environment|china|NA|2022-01-25	H3N2	eastern asia	china	profileNA	environment	26.075276028757	117.983759853528
+H6N3|2344b|EPI_ISL_400278|anseriformes|russia|NA|2019-10-12	H6N3	eastern asia	russia	profileNA	anseriformes-wild	53.5593936765214	109.267398204686
+H7N7|2344b|EPI_ISL_1081358|anseriformes|russia|NA|2020-08-13	H7N7	eastern asia	russia	profileNA	anseriformes-wild	65.9630539564133	129.222962873484
+H4N6|2344b|EPI_ISL_7622863|anseriformes|belgium|NA|2020-09-19	H4N6	western europe	belgium	profileNA	anseriformes-wild	50.64017310615	4.66939027974939
+H6N1|2344b|EPI_ISL_462612|anseriformes|china|NA|2019-11-19	H6N1	eastern asia	china	profileNA	anseriformes-wild	31.8128943962267	117.235219497068
+H6N2|2344b|EPI_ISL_1184525|anseriformes|russia|NA|2020-10-06	H6N2	eastern asia	russia	profileNA	anseriformes-wild	45.1678631698995	134.68956869269
+H5N8|2344b|EPI_ISL_17086334|galliformes|japan|NA|2020-12-12	H5N8	eastern asia	japan	profileNA	galliformes-domestic	33.4223902999559	133.365333188149
+H5N1|2344b|EPI_ISL_15063425|galliformes|japan|NA|2021-12-07	H5N1	eastern asia	japan	profileNA	galliformes-domestic	35.9972673234424	139.347759410476
+H5N1|2344b|EPI_ISL_18133185|galliformes|united_states|4_3_1_1_2_1_1_3|2022-04-11	H5N1	northern america	united states	profile0003	galliformes-domestic	46.3193148536411	-94.1968042401401
+H5N1|2344b|EPI_ISL_18132762|galliformes|united_states|4_3_1_1_2_1_1_3|2022-03-21	H5N1	northern america	united states	profile0003	galliformes-domestic	44.4440561554676	-100.227146799835
+H5N1|2344b|EPI_ISL_18132418|anseriformes|united_states|4_3_1_1_2_1_1_3|2022-04-14	H5N1	northern america	united states	profile0003	anseriformes-wild	46.3193148536411	-94.1968042401401
+H5N1|2344b|EPI_ISL_18132388|accipitriformes|united_states|4_3_1_1_2_1_1_3|2022-04-06	H5N1	northern america	united states	profile0003	other-bird	47.4503665532251	-100.466131733191
+H5N1|2344b|EPI_ISL_16831319|galliformes|japan|NA|2022-03-25	H5N1	eastern asia	japan	profileNA	galliformes-domestic	38.446036231103	140.92583944453
+H5N1|2344b|EPI_ISL_16831114|passeriformes|japan|NA|2022-04-06	H5N1	eastern asia	japan	profileNA	other-bird	37.3996665395305	137.574137168765
+H6N1|2344b|EPI_ISL_237137|anseriformes|japan|NA|2013-11-01	H6N1	eastern asia	japan	profileNA	anseriformes-wild	33.2869210491497	130.115721531206
+H6N2|2344b|EPI_ISL_205145|NA|china|NA|2015-01-01	H6N2	eastern asia	china	profileNA	other-bird	39.5182972347816	116.100714730353
+H10N5|2344b|EPI_ISL_181611|anseriformes|china|NA|2013-12-08	H10N5	eastern asia	china	profileNA	anseriformes-wild	27.6016362656629	115.709570895796
+H6N1|2344b|EPI_ISL_378633|anseriformes|china|NA|2013-12-01	H6N1	eastern asia	china	profileNA	anseriformes-wild	29.1745873279179	120.086382279697
+H6N6|2344b|EPI_ISL_17104351|environment|china|NA|2018-08-13	H6N6	eastern asia	china	profileNA	environment	19.1951323393038	109.744444609968
+H6N6|2344b|EPI_ISL_697002|anseriformes|china|NA|2017-07-02	H6N6	eastern asia	china	profileNA	anseriformes-wild	23.33624359406	113.398153372919
+H3N6|2344b|EPI_ISL_16390404|environment|japan|NA|2020-12-14	H3N6	eastern asia	japan	profileNA	environment	30.9949222722596	130.419711465505
+H6N2|2344b|EPI_ISL_4071037|anseriformes|south_korea|NA|2019-11-06	H6N2	eastern asia	south korea	profileNA	anseriformes-wild	36.341057964317	127.784630688405
+H3N8|2344b|EPI_ISL_1041164|anseriformes|russia|NA|2020-09-08	H3N8	eastern asia	russia	profileNA	anseriformes-wild	49.8612119692892	143.6915952198
+H9N2|2344b|EPI_ISL_1760456|anseriformes|china|NA|2020-11-10	H9N2	eastern asia	china	profileNA	anseriformes-wild	37.5496375119255	112.274268590565
+H10N7|2344b|EPI_ISL_13985202|charadriiformes|china|NA|2019-04-26	H10N7	eastern asia	china	profileNA	charadriiformes-wild	41.2987124958383	122.600275282862
+H10N7|2344b|EPI_ISL_13985205|charadriiformes|china|NA|2019-04-26	H10N7	eastern asia	china	profileNA	charadriiformes-wild	41.2987124958383	122.600275282862
+H9N3|2344b|EPI_ISL_239414|anseriformes|japan|NA|2015-11-19	H9N3	eastern asia	japan	profileNA	anseriformes-wild	35.8463400502504	136.223501059008
+H5N3|2344b|EPI_ISL_237155|anseriformes|japan|NA|2015-12-01	H5N3	eastern asia	japan	profileNA	anseriformes-wild	34.2014554471662	131.573572432414
+NA|2344b|EPI_ISL_4072263|anseriformes|united_states|NA|2016-10-01	NA	northern america	united states	profileNA	anseriformes-wild	63.9513927980493	-152.396756538795
+H1N2|2344b|EPI_ISL_239395|anseriformes|japan|NA|2016-10-18	H1N2	eastern asia	japan	profileNA	anseriformes-wild	35.0354821249241	137.211818235863
+H5N1|2344b|EPI_ISL_15063426|galliformes|japan|NA|2021-12-12	H5N1	eastern asia	japan	profileNA	galliformes-domestic	40.7809617343859	140.828641268451
+H5N1|2344b|EPI_ISL_15063423|galliformes|japan|NA|2021-11-17	H5N1	eastern asia	japan	profileNA	galliformes-domestic	35.0390049694389	134.828550655208
+H6N1|2344b|EPI_ISL_9955427|anseriformes|bangladesh|NA|2021-01-10	H6N1	southern asia	bangladesh	profileNA	anseriformes-wild	23.8299093538119	90.2865403636969
+H3N8|2344b|EPI_ISL_237128|anseriformes|japan|NA|2015-11-01	H3N8	eastern asia	japan	profileNA	anseriformes-wild	35.0694619009051	132.550118774326
+H3N6|2344b|EPI_ISL_158814|anseriformes|vietnam|NA|2013-11-04	H3N6	south-eastern asia	vietnam	profileNA	anseriformes-wild	16.5422416723933	106.354375350692
+H1N2|2344b|EPI_ISL_327462|anseriformes|china|NA|2017-06-03	H1N2	eastern asia	china	profileNA	anseriformes-wild	23.82591453975	108.782865094166
+H5N8|2344b|EPI_ISL_4030493|environment|japan|NA|2020-12-09	H5N8	eastern asia	japan	profileNA	environment	35.3595547900768	133.863177571414
+H5N6|2344b|EPI_ISL_372813|anseriformes|china|NA|2016-04-16	H5N6	eastern asia	china	profileNA	anseriformes-wild	36.6848135465548	103.513718494908
+H5N6|2344b|EPI_ISL_256497|anseriformes|japan|NA|2016-12-19	H5N6	eastern asia	japan	profileNA	anseriformes-wild	43.3824165431654	142.542521870972
+H5N6|2344b|EPI_ISL_14749474|anseriformes|china|NA|2016-11-29	H5N6	eastern asia	china	profileNA	anseriformes-wild	31.1960430849676	121.454488171451
+H5N6|2344b|EPI_ISL_18231308|anseriformes|laos|NA|2022-07-13	H5N6	south-eastern asia	laos	profileNA	anseriformes-wild	18.4826189425148	103.803936160825
+H7N9|2344b|EPI_ISL_1495970|galliformes|china|NA|2021-02-10	H7N9	eastern asia	china	profileNA	galliformes-domestic	24.9645779206387	101.495556215566
+H7N9|2344b|EPI_ISL_378716|galliformes|china|NA|2017-05-14	H7N9	eastern asia	china	profileNA	galliformes-domestic	39.5182972347816	116.100714730353
+H7N9|2344b|EPI_ISL_379672|galliformes|china|NA|2017-06-06	H7N9	eastern asia	china	profileNA	galliformes-domestic	44.083329648604	113.188484632426
+H7N9|2344b|EPI_ISL_379669|galliformes|china|NA|2017-05-20	H7N9	eastern asia	china	profileNA	galliformes-domestic	39.3084611497379	117.332287743785
+H7N9|2344b|EPI_ISL_276783|galliformes|china|NA|2017-05-05	H7N9	eastern asia	china	profileNA	galliformes-domestic	36.3536638777003	118.136153809721
+H7N9|2344b|EPI_ISL_269516|primates|china|NA|2017-05-13	H7N9	eastern asia	china	profileNA	human	39.5182972347816	116.100714730353
+H4N6|2344b|EPI_ISL_4071308|anseriformes|mongolia|NA|2018-09-10	H4N6	eastern asia	mongolia	profileNA	anseriformes-wild	46.9660284560213	103.138307461425
+H4N6|2344b|EPI_ISL_280495|anseriformes|china|NA|2016-04-01	H4N6	eastern asia	china	profileNA	anseriformes-wild	40.1838367941588	116.40878248942
+H3N2|2344b|EPI_ISL_15723342|environment|china|NA|2016-06-27	H3N2	eastern asia	china	profileNA	environment	30.6066264180489	102.711402322843
+H5N6|2344b|EPI_ISL_6780544|anseriformes|vietnam|NA|2017-11-14	H5N6	south-eastern asia	vietnam	profileNA	anseriformes-wild	21.2469577052491	107.28314604976
+H5N8|2344b|EPI_ISL_15063428|environment|japan|NA|2021-11-10	H5N8	eastern asia	japan	profileNA	environment	39.7462736711545	140.408009328053
+H5N1|2344b|EPI_ISL_17527101|passeriformes|japan|NA|2023-01-28	H5N1	eastern asia	japan	profileNA	other-bird	37.3996665395305	137.574137168765
+H5N1|2344b|EPI_ISL_18132953|accipitriformes|united_states|2_1_1_1_1_1_1_1|2022-04-27	H5N1	northern america	united states	profile0001	other-bird	63.9513927980493	-152.396756538795
+H8N4|2344b|EPI_ISL_389728|anseriformes|china|NA|2017-11-06	H8N4	eastern asia	china	profile0001	anseriformes-wild	31.1960430849676	121.454488171451
+H6N1|2344b|EPI_ISL_278511|anseriformes|china|NA|2016-11-28	H6N1	eastern asia	china	profile0001	anseriformes-wild	30.9806813015582	112.277189482252
+H6N2|2344b|EPI_ISL_363761|NA|china|NA|2017-01-18	H6N2	eastern asia	china	profile0001	other-bird	27.5978523947888	111.713471439142
+H5N7|2344b|EPI_ISL_295495|anseriformes|china|NA|2016-12-28	H5N7	eastern asia	china	profile0001	anseriformes-wild	33.8761853651454	113.614527263456
+H5N8|2344b|EPI_ISL_4105052|anseriformes|japan|NA|2020-01-01	H5N8	eastern asia	japan	profile0001	anseriformes-wild	37.5201743528051	138.914818034069
+H5N8|2344b|EPI_ISL_17086335|environment|japan|NA|2020-12-19	H5N8	eastern asia	japan	profile0001	environment	33.9191788356518	134.242093496813
+H5N8|2344b|EPI_ISL_17086336|galliformes|japan|NA|2021-01-02	H5N8	eastern asia	japan	profile0001	galliformes-domestic	35.7777527627362	137.055033768037
+H5N8|2344b|EPI_ISL_17086340|galliformes|japan|NA|2021-02-02	H5N8	eastern asia	japan	profile0001	galliformes-domestic	36.3027610877484	140.318971903473
+H5N8|2344b|EPI_ISL_503361|galliformes|slovakia|NA|2020-01-03	H5N8	eastern europe	slovakia	profile0001	galliformes-domestic	48.7152910172137	19.4731651408513
+H5N8|2344b|EPI_ISL_402134|galliformes|poland|7_1_5_2_1_3_1_2|2019-12-30	H5N8	eastern europe	poland	profile0001	galliformes-domestic	51.2170859712694	22.9017240742201
+H5N8|2344b|EPI_ISL_17086333|environment|japan|NA|2020-12-12	H5N8	eastern asia	japan	profileNA	environment	35.2154079352044	136.13796072496
+H5N8|2344b|EPI_ISL_17086227|environment|japan|NA|2020-11-25	H5N8	eastern asia	japan	profileNA	environment	33.5256575241002	130.666678342289
+H5N8|2344b|EPI_ISL_17086343|anseriformes|japan|NA|2020-12-03	H5N8	eastern asia	japan	profileNA	anseriformes-wild	33.9113994398813	135.506030353599
+H5N8|2344b|EPI_ISL_17086344|falconiformes|japan|NA|2020-12-04	H5N8	eastern asia	japan	profileNA	other-bird	34.8921234580739	133.826171708594
+H5N8|2344b|EPI_ISL_17086339|galliformes|japan|NA|2021-01-23	H5N8	eastern asia	japan	profileNA	galliformes-domestic	36.6374969915777	137.269020761504
+H5N8|2344b|EPI_ISL_17086231|environment|japan|NA|2020-12-07	H5N8	eastern asia	japan	profileNA	environment	34.6052446200593	132.788104542609
+H5N8|2344b|EPI_ISL_15613493|anseriformes|japan|NA|2021-01-24	H5N8	eastern asia	japan	profileNA	anseriformes-wild	32.1919114758892	131.298614512671
+H5N8|2344b|EPI_ISL_17086230|environment|japan|NA|2020-12-06	H5N8	eastern asia	japan	profileNA	environment	34.3169016713112	135.871480614117
+H5N8|2344b|EPI_ISL_17086353|environment|japan|NA|2021-03-13	H5N8	eastern asia	japan	profileNA	environment	36.6894768729176	139.818920628006
+H6N2|2344b|EPI_ISL_1184535|anseriformes|russia|NA|2020-09-06	H6N2	eastern asia	russia	profileNA	anseriformes-wild	53.3792739842877	127.864757823425
+H6N1|2344b|EPI_ISL_397334|anseriformes|china|NA|2017-01-19	H6N1	eastern asia	china	profileNA	anseriformes-wild	32.9645721858222	119.470797338049
+H4N1|2344b|EPI_ISL_18455199|environment|china|NA|2022-03-10	H4N1	eastern asia	china	profileNA	environment	30.0551333912638	107.864488420692
+H5N8|2344b|EPI_ISL_17086355|environment|japan|NA|2021-02-14	H5N8	eastern asia	japan	profileNA	environment	36.1299846593869	138.044001511612
+H5N8|2344b|EPI_ISL_17086351|galliformes|japan|NA|2021-02-11	H5N8	eastern asia	japan	profileNA	galliformes-domestic	35.5094511865639	140.198261340312
+H5N1|2344b|EPI_ISL_18245816|anseriformes|poland|2_6_1_1_6_1_1_1|2022-04-07	H5N1	eastern europe	poland	profile0006	anseriformes-wild	53.857820060305	20.8226086933633
+H10N7|2344b|EPI_ISL_1005678|anseriformes|russia|NA|2020-08-29	H10N7	central asia	russia	profileNA	anseriformes-wild	55.2762232202593	79.7845914423443
+H4N6|2344b|EPI_ISL_403716|anseriformes|russia|NA|2019-09-29	H4N6	eastern europe	russia	profileNA	anseriformes-wild	43.0199724243525	46.8879064209307
+H5N1|2344b|EPI_ISL_18445705|anseriformes|france|1_1_1_1_1_1_1_1|2022-01-24	H5N1	western europe	france	profile0001	anseriformes-wild	46.5103009447381	2.5780749353201
+H5N1|2344b|EPI_ISL_18071580|anseriformes|russia|2_1_1_1_1_1_1_1|2022-10-09	H5N1	eastern asia	russia	profile0001	anseriformes-wild	62.6868529209353	153.842446406978
+H5N1|2344b|EPI_ISL_14571443|anseriformes|germany|NA|2021-10-30	H5N1	western europe	germany	profileNA	anseriformes-domestic	54.1814850326718	9.81577342948134

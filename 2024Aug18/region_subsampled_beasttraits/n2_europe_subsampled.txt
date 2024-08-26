@@ -1,0 +1,42 @@
+tipnames	virus_subtype	collection_regionname	collection_countryname	cluster_number	host_simplifiedhost	lat	long
+H5N2|2344b|EPI_ISL_16839585|NA|south_korea|NA|2018-01-05	H5N2	eastern asia	south korea	profileNA	other-bird	36.341057964317	127.784630688405
+H4N2|2344b|EPI_ISL_503356|anseriformes|mongolia|NA|2019-09-20	H4N2	eastern asia	mongolia	profileNA	anseriformes-wild	46.9660284560213	103.138307461425
+H6N2|NA|EPI_ISL_252465|anseriformes|india|NA|2014-11-01	H6N2	southern asia	india	profileNA	anseriformes-wild	22.2417444721501	79.3532012780795
+H6N2|2344b|EPI_ISL_244552|anseriformes|china|NA|2014-12-22	H6N2	eastern asia	china	profileNA	anseriformes-wild	36.6848135465548	103.513718494908
+H3N2|2344b|EPI_ISL_337398|anseriformes|russia|NA|2018-09-15	H3N2	eastern asia	russia	profileNA	anseriformes-wild	53.5593936765214	109.267398204686
+NA|NA|EPI_ISL_387337|anseriformes|vietnam|NA|2016-03-08	NA	south-eastern asia	vietnam	profileNA	anseriformes-wild	16.5422416723933	106.354375350692
+H12N2|2344b|EPI_ISL_247287|environment|china|NA|2015-11-19	H12N2	eastern asia	china	profileNA	environment	27.6016362656629	115.709570895796
+H6N2|NA|EPI_ISL_252814|anseriformes|china|NA|2015-11-21	H6N2	eastern asia	china	profileNA	anseriformes-wild	30.9806813015582	112.277189482252
+H4N2|NA|EPI_ISL_80762|anseriformes|china|NA|2009-01-01	H4N2	eastern asia	china	profileNA	anseriformes-wild	27.5978523947888	111.713471439142
+H6N2|NA|EPI_ISL_24785|charadriiformes|russia|NA|2006-01-01	H6N2	eastern europe	russia	profileNA	charadriiformes-wild	55.6406420692902	37.6789932871434
+H5N2|NA|EPI_ISL_30664|anseriformes|japan|NA|2005-01-01	H5N2	eastern asia	japan	profileNA	anseriformes-wild	36.3027610877484	140.318971903473
+H5N2|NA|EPI_ISL_30875|anseriformes|china|NA|2005-01-01	H5N2	eastern asia	china	profileNA	anseriformes-wild	32.9645721858222	119.470797338049
+H5N2|NA|EPI_ISL_30874|anseriformes|china|NA|2005-01-01	H5N2	eastern asia	china	profileNA	anseriformes-wild	32.9645721858222	119.470797338049
+H6N2|NA|EPI_ISL_378285|anseriformes|china|NA|2013-10-01	H6N2	eastern asia	china	profileNA	anseriformes-wild	44.083329648604	113.188484632426
+NA|NA|EPI_ISL_376200|anseriformes|netherlands|NA|2013-04-08	NA	western europe	netherlands	profileNA	anseriformes-wild	52.2573048104135	5.56251311224367
+H6N2|NA|EPI_ISL_144394|anseriformes|sweden|NA|2009-10-03	H6N2	northern europe	sweden	profileNA	anseriformes-wild	62.374013544985	16.2835241791686
+H5N2|NA|EPI_ISL_507001|anseriformes|france|NA|2017-03-09	H5N2	western europe	france	profileNA	anseriformes-wild	46.5103009447381	2.5780749353201
+H5N2|NA|EPI_ISL_176755|anseriformes|netherlands|NA|2014-01-08	H5N2	western europe	netherlands	profileNA	anseriformes-wild	51.9374604216783	4.46477045234472
+H5N2|NA|EPI_ISL_63510|anseriformes|russia|NA|2007-09-01	H5N2	central asia	russia	profileNA	anseriformes-wild	52.6127855839347	82.5936122038562
+H2N2|NA|EPI_ISL_122028|anseriformes|sweden|NA|2006-11-05	H2N2	northern europe	sweden	profileNA	anseriformes-wild	62.374013544985	16.2835241791686
+H5N2|2344b|EPI_ISL_3161847|anseriformes|china|NA|2019-01-15	H5N2	eastern asia	china	profileNA	anseriformes-wild	33.8761853651454	113.614527263456
+H3N2|NA|EPI_ISL_9951289|anseriformes|bangladesh|NA|2021-01-04	H3N2	southern asia	bangladesh	profileNA	anseriformes-wild	23.8299093538119	90.2865403636969
+H5N2|2344b|EPI_ISL_1005680|anseriformes|russia|3_9_6_1_5_23_1_2|2020-08-29	H5N2	central asia	russia	profile0023	anseriformes-wild	55.2762232202593	79.7845914423443
+H3N2|2344b|EPI_ISL_1041175|anseriformes|russia|NA|2020-08-29	H3N2	central asia	russia	profileNA	anseriformes-wild	56.0596108837778	73.3669499849514
+H9N2|2344b|EPI_ISL_316596|anseriformes|italy|NA|2017-08-05	H9N2	southern europe	italy	profileNA	anseriformes-wild	42.7080607219025	12.208345049127
+H9N2|2344b|EPI_ISL_338280|anseriformes|russia|NA|2018-09-17	H9N2	central asia	russia	profileNA	anseriformes-wild	58.4840286166373	82.1830897425335
+H9N2|2344b|EPI_ISL_17978927|anseriformes|poland|NA|2020-09-18	H9N2	eastern europe	poland	profileNA	anseriformes-wild	52.1141994014432	19.4236724631525
+H6N2|2344b|EPI_ISL_15585747|galliformes|united_kingdom|NA|2022-10-19	H6N2	northern europe	united kingdom	profileNA	galliformes-domestic	54.0438440515314	-2.78687513666638
+H5N2|2344b|EPI_ISL_10434072|anseriformes|germany|10_1_2_1_1_15_1_1|2022-01-29	H5N2	western europe	germany	profile0015	anseriformes-wild	48.5335196122676	9.04442576424602
+H5N2|2344b|EPI_ISL_10434073|anseriformes|germany|10_1_2_1_1_15_1_1|2022-01-30	H5N2	western europe	germany	profile0015	anseriformes-wild	48.5335196122676	9.04442576424602
+H5N2|2344b|EPI_ISL_11922807|galliformes|poland|10_1_2_1_1_15_1_1|2022-02-28	H5N2	eastern europe	poland	profile0015	galliformes-domestic	52.1141994014432	19.4236724631525
+H5N2|2344b|EPI_ISL_16253342|anseriformes|netherlands|10_6_2_1_1_15_1_1|2022-11-23	H5N2	western europe	netherlands	profile0015	anseriformes-wild	51.9374604216783	4.46477045234472
+H4N2|2344b|EPI_ISL_189688|anseriformes|united_states|NA|2011-11-07	H4N2	northern america	united states	profileNA	anseriformes-wild	32.6403385373358	-83.4405725551842
+H5N2|2344b|EPI_ISL_503969|galliformes|bulgaria|1_1_18_2_5_19_1_5|2020-02-21	H5N2	eastern europe	bulgaria	profile0019	galliformes-domestic	42.7584172195881	25.2179149681535
+H5N2|2344b|EPI_ISL_603231|galliformes|bulgaria|1_1_18_2_5_19_1_5|2020-03-02	H5N2	eastern europe	bulgaria	profile0019	galliformes-domestic	42.2564257629518	24.8255765075979
+H6N2|NA|EPI_ISL_88223|anseriformes|zambia|NA|2008-06-01	H6N2	eastern africa	zambia	profileNA	anseriformes-wild	-13.454509992155	27.8242304701367
+H5N2|NA|EPI_ISL_174893|anseriformes|bulgaria|NA|2011-10-22	H5N2	eastern europe	bulgaria	profileNA	anseriformes-domestic	42.7584172195881	25.2179149681535
+H5N2|NA|EPI_ISL_174896|anseriformes|bulgaria|NA|2011-11-21	H5N2	eastern europe	bulgaria	profileNA	anseriformes-domestic	42.7584172195881	25.2179149681535
+H12N2|NA|EPI_ISL_218647|phoenicopteriformes|kenya|NA|2008-06-28	H12N2	eastern africa	kenya	profileNA	other-bird	0.552434287641427	37.8458110066486
+H7N2|NA|EPI_ISL_174476|anseriformes|france|NA|2009-01-01	H7N2	western europe	france	profileNA	anseriformes-wild	45.5190780558984	4.54715006428513
+H9N2|NA|EPI_ISL_28844|anseriformes|japan|NA|2008-01-01	H9N2	eastern asia	japan	profileNA	anseriformes-wild	43.3824165431654	142.542521870972

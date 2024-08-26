@@ -1,0 +1,81 @@
+tipnames	collection_regionname	collection_countryname	cluster_number	host_simplifiedhost	lat	long
+H5N1|2344b|EPI_ISL_16013752|pelecaniformes|venezuela|5_1_1_1_2_1_1_3|2022-11-25	south america	venezuela	profile0001	other-bird	8.89363259762319	-64.4049370136296
+H5N1|2344b|EPI_ISL_17777527|charadriiformes|peru|4_3_1_1_2_1_1_3|2023-03-16	south america	peru	profile0001	charadriiformes-wild	-12.0179113235961	-76.9049187829412
+H5N1|2344b|EPI_ISL_17777529|suliformes|peru|4_3_1_1_2_1_1_3|2023-03-17	south america	peru	profile0001	other-bird	-11.9545824923705	-77.1360367031896
+H5N1|2344b|EPI_ISL_17777532|carnivora|peru|4_3_1_1_2_1_1_3|2023-03-07	south america	peru	profile0001	mammal	-17.644827527273	-70.2791288812849
+H5N1|2344b|EPI_ISL_16891402|charadriiformes|chile|4_3_1_1_2_1_1_3|2022-12-02	south america	chile	profile0001	charadriiformes-wild	-36.352932692973	-71.0631434301439
+H5N1|2344b|EPI_ISL_17099964|pelecaniformes|peru|4_3_1_1_2_1_1_3|2022-12-01	south america	peru	profile0001	other-bird	-14.2339783641518	-75.5762320808058
+H5N1|2344b|EPI_ISL_17353507|galliformes|ecuador|4_3_1_1_2_1_1_3|2022-11-08	south america	ecuador	profile0001	galliformes-domestic	-1.58721983309051	-79.1068925338894
+H5N1|2344b|EPI_ISL_17353508|galliformes|colombia|5_4_9_1_2_1_1_1|2022-11-13	south america	colombia	profile0009	galliformes-domestic	5.93194075736459	-76.9341377836413
+H5N1|2344b|EPI_ISL_17353510|galliformes|colombia|4_3_1_1_2_1_1_3|2022-11-26	south america	colombia	profile0001	galliformes-domestic	8.35147117483191	-75.7978121726542
+H5N1|2344b|EPI_ISL_17353838|galliformes|colombia|4_3_1_1_2_1_1_3|2022-11-18	south america	colombia	profile0001	galliformes-domestic	10.2313388378974	-74.2577076184347
+H5N1|2344b|EPI_ISL_17468386|primates|chile|4_3_1_1_2_1_1_3|2023-03-24	south america	chile	profile0001	human	-23.5276504572593	-69.1155261199782
+H5N1|2344b|EPI_ISL_17885872|galliformes|chile|4_3_1_1_2_1_1_3|2023-03-12	south america	chile	profile0001	galliformes-domestic	-34.4357789812144	-71.0464648196043
+H5N1|2344b|EPI_ISL_17885876|galliformes|chile|4_3_1_1_2_1_1_3|2023-03-08	south america	chile	profile0001	galliformes-domestic	-36.6455443686508	-71.9757909721378
+H5N1|2344b|EPI_ISL_17885915|pelecaniformes|chile|4_3_1_1_2_1_1_3|2023-01-24	south america	chile	profile0001	other-bird	-34.4357789812144	-71.0464648196043
+H5N1|2344b|EPI_ISL_17885924|pelecaniformes|chile|4_3_1_1_2_1_1_3|2022-12-30	south america	chile	profile0001	other-bird	-27.3880384326825	-69.902133937498
+H5N1|2344b|EPI_ISL_17885928|pelecaniformes|chile|4_3_1_1_2_1_1_3|2022-12-16	south america	chile	profile0001	other-bird	-23.5276504572593	-69.1155261199782
+H5N1|2344b|EPI_ISL_17885942|pelecaniformes|chile|4_3_1_1_2_1_1_3|2022-12-09	south america	chile	profile0001	other-bird	-20.1723893841755	-69.3557535441909
+H5N1|2344b|EPI_ISL_17885948|sphenisciformes|chile|4_3_1_1_2_1_1_3|2023-02-28	south america	chile	profile0001	other-bird	-30.6129967369273	-70.8586891785209
+H5N1|2344b|EPI_ISL_17885949|galliformes|chile|4_3_1_1_2_1_1_3|2023-03-07	south america	chile	profile0001	galliformes-domestic	-38.6482992883006	-72.2753909310813
+H5N1|2344b|EPI_ISL_17885955|charadriiformes|chile|4_3_1_1_2_1_1_3|2022-12-24	south america	chile	profile0001	charadriiformes-wild	-18.4968307906384	-69.6296363253853
+H5N1|2344b|EPI_ISL_17885958|galliformes|chile|4_3_1_1_2_1_1_3|2023-02-28	south america	chile	profile0001	galliformes-domestic	-38.6482992883006	-72.2753909310813
+H5N1|2344b|EPI_ISL_17885973|charadriiformes|chile|4_3_1_1_2_1_1_3|2023-02-23	south america	chile	profile0001	charadriiformes-wild	-35.6204383329149	-71.4454635697529
+H5N1|2344b|EPI_ISL_17973443|NA|ecuador|4_3_1_1_2_1_1_3|2023-01-11	south america	ecuador	profile0001	other-bird	-0.751243186649703	-80.1366162194134
+H5N1|2344b|EPI_ISL_18130622|charadriiformes|brazil|4_3_1_1_2_1_1_3|2023-06-21	south america	brazil	profile0001	charadriiformes-wild	-19.5709250592315	-40.6652075301607
+H5N1|2344b|EPI_ISL_18310958|anseriformes|uruguay|4_3_1_1_2_1_1_3|2023-02-18	south america	uruguay	profile0001	anseriformes-wild	-32.7868641942882	-56.0254606768188
+H5N1|2344b|EPI_ISL_18310960|anseriformes|uruguay|4_3_1_1_2_1_1_3|2023-04-16	south america	uruguay	profile0001	anseriformes-domestic	-32.7868641942882	-56.0254606768188
+H5N1|2344b|EPI_ISL_18497946|anseriformes|peru|4_3_1_1_2_1_1_3|2023-09-26	south america	peru	profile0001	anseriformes-wild	-6.35291743430401	-79.8242308836425
+H5N1|2344b|EPI_ISL_18760060|galliformes|chile|4_3_1_1_2_1_1_3|2023-03-20	south america	chile	profile0001	galliformes-domestic	-33.6042434852213	-70.6268454043396
+H5N1|2344b|EPI_ISL_18760061|pelecaniformes|chile|4_3_1_1_2_1_1_3|2023-02-13	south america	chile	profile0001	other-bird	-37.4998667272625	-72.3949210324733
+H5N1|2344b|EPI_ISL_18760069|carnivora|chile|4_3_1_1_2_1_1_3|2023-03-19	south america	chile	profile0001	mammal	-32.7895224923796	-71.3992840580514
+H5N1|2344b|EPI_ISL_18755251|suliformes|brazil|4_3_1_1_2_1_1_3|2023-06-03	south america	brazil	profile0001	other-bird	-22.1966758001859	-42.6576662414631
+H5N1|2344b|EPI_ISL_18698459|anseriformes|argentina|4_3_1_1_2_1_1_3|2023-02-11	south america	argentina	profile0001	anseriformes-wild	-23.3179610327965	-65.7649952758448
+H5N1|2344b|EPI_ISL_18698466|galliformes|argentina|4_3_1_1_2_1_1_3|2023-02-19	south america	argentina	profile0001	galliformes-domestic	-32.1223499660356	-63.8001999960292
+H5N1|2344b|EPI_ISL_18698497|galliformes|argentina|4_3_1_1_2_1_1_3|2023-03-04	south america	argentina	profile0001	galliformes-domestic	-30.6720306872131	-60.9357621538365
+H5N1|2344b|EPI_ISL_18698504|galliformes|argentina|4_3_1_1_2_1_1_3|2023-03-16	south america	argentina	profile0001	galliformes-domestic	-37.1255727771995	-65.4470299288487
+H5N1|2344b|EPI_ISL_18698510|galliformes|argentina|4_3_1_1_2_1_1_3|2023-04-03	south america	argentina	profile0001	galliformes-domestic	-40.4108256408088	-67.2098045960294
+H5N1|2344b|EPI_ISL_18698512|galliformes|argentina|4_3_1_1_2_1_1_3|2023-04-19	south america	argentina	profile0001	galliformes-domestic	-34.6107738098794	-68.5833000873727
+H5N1|2344b|EPI_ISL_18698513|galliformes|argentina|4_3_1_1_2_1_1_3|2023-04-17	south america	argentina	profile0001	galliformes-domestic	-48.7713269135881	-69.8913370290236
+H5N1|2344b|EPI_ISL_18698514|galliformes|argentina|4_3_1_1_2_1_1_3|2023-04-19	south america	argentina	profile0001	galliformes-domestic	-43.7868223025616	-68.511663809735
+H5N1|2344b|EPI_ISL_18698515|anseriformes|argentina|4_3_1_1_2_1_1_3|2023-04-19	south america	argentina	profile0001	anseriformes-wild	-28.7729566425108	-57.7999491192661
+H5N1|2344b|EPI_ISL_18698518|galliformes|argentina|4_3_1_1_2_1_1_3|2023-05-01	south america	argentina	profile0001	galliformes-domestic	-26.3828503765305	-60.7777509441554
+H5N1|2344b|EPI_ISL_18698520|galliformes|argentina|4_3_1_1_2_1_1_3|2023-05-05	south america	argentina	profile0001	galliformes-domestic	-38.6247364397998	-70.1087540238136
+H5N1|2344b|EPI_ISL_18698524|galliformes|argentina|4_3_1_1_2_1_1_3|2023-05-18	south america	argentina	profile0001	galliformes-domestic	-32.0397430287849	-59.2023932092603
+H5N1|2344b|EPI_ISL_18698529|galliformes|argentina|4_3_1_1_2_1_1_3|2023-07-26	south america	argentina	profile0001	galliformes-domestic	-24.2949333512188	-64.8055879616535
+H5N1|2344b|EPI_ISL_18698730|galliformes|argentina|4_3_1_1_2_1_1_3|2023-03-04	south america	argentina	profile0001	galliformes-domestic	-36.6626557465889	-60.5480821834678
+H5N1|2344b|EPI_ISL_18698731|galliformes|argentina|4_3_1_1_2_1_1_3|2023-03-09	south america	argentina	profile0001	galliformes-domestic	-33.7527938244466	-66.0339496041068
+H5N1|2344b|EPI_ISL_18698732|galliformes|argentina|4_3_1_1_2_1_1_3|2023-05-03	south america	argentina	profile0001	galliformes-domestic	-24.8937176371018	-59.949649967252
+H5N1|2344b|EPI_ISL_18265321|carnivora|peru|4_3_1_1_2_1_1_3|2023-02-07	south america	peru	profile0001	mammal	-9.12690950582405	-74.3967035676846
+H5N1|2344b|EPI_ISL_18439562|charadriiformes|united_states|4_3_1_1_2_1_1_3|2023-10-08	northern america	united states	profile0001	charadriiformes-wild	32.6403385373358	-83.4405725551842
+H5N1|2344b|EPI_ISL_18439563|charadriiformes|united_states|4_3_1_1_2_1_1_3|2023-10-08	northern america	united states	profile0001	charadriiformes-wild	32.6403385373358	-83.4405725551842
+H5N1|2344b|EPI_ISL_18439564|charadriiformes|united_states|4_3_1_1_2_1_1_3|2023-10-08	northern america	united states	profile0001	charadriiformes-wild	32.6403385373358	-83.4405725551842
+H5N1|2344b|EPI_ISL_18698754|carnivora|argentina|4_3_1_1_2_1_1_3|2023-08-08	south america	argentina	profile0001	mammal	-54.3319371060893	-67.4125966256164
+H5N1|2344b|EPI_ISL_16854396|pelecaniformes|venezuela|NA|2022-11-25	south america	venezuela	profile0001	other-bird	7.13172612392755	-66.1349690012146
+H5N1|2344b|EPI_ISL_16854404|pelecaniformes|venezuela|NA|2022-11-25	south america	venezuela	profile0001	other-bird	7.13172612392755	-66.1349690012146
+H5N1|2344b|EPI_ISL_16013753|pelecaniformes|venezuela|NA|2022-11-25	south america	venezuela	profile0001	other-bird	7.13172612392755	-66.1349690012146
+H5N1|2344b|EPI_ISL_18107019|anseriformes|united_states|5_1_1_1_2_1_1_3|2022-09-22	northern america	united states	profile0001	anseriformes-wild	31.0706065513525	-91.9998874220998
+H5N1|2344b|EPI_ISL_18107018|anseriformes|united_states|5_1_1_1_2_1_1_3|2022-09-22	northern america	united states	profile0001	anseriformes-wild	31.0706065513525	-91.9998874220998
+H5N1|2344b|EPI_ISL_18107049|anseriformes|united_states|2_1_1_1_1_1_1_1|2022-01-31	northern america	united states	profile0001	anseriformes-wild	35.859232079721	-86.3497234635721
+H5N1|2344b|EPI_ISL_18107047|anseriformes|united_states|2_1_1_1_1_1_1_1|2022-01-25	northern america	united states	profile0001	anseriformes-wild	35.859232079721	-86.3497234635721
+H5N1|2344b|EPI_ISL_18107046|anseriformes|united_states|2_1_1_1_1_1_1_1|2022-01-25	northern america	united states	profile0001	anseriformes-wild	35.859232079721	-86.3497234635721
+H5N1|2344b|EPI_ISL_18107041|anseriformes|united_states|2_1_1_1_1_1_1_1|2022-01-25	northern america	united states	profile0001	anseriformes-wild	35.859232079721	-86.3497234635721
+H5N1|2344b|EPI_ISL_18107035|anseriformes|united_states|2_1_1_1_1_1_1_1|2022-01-25	northern america	united states	profile0001	anseriformes-wild	35.859232079721	-86.3497234635721
+H5N1|2344b|EPI_ISL_18107021|anseriformes|united_states|2_1_1_1_1_1_1_1|2022-01-25	northern america	united states	profile0001	anseriformes-wild	35.859232079721	-86.3497234635721
+H5N1|2344b|EPI_ISL_18107050|anseriformes|united_states|2_1_1_1_1_1_1_1|2022-01-31	northern america	united states	profile0001	anseriformes-wild	35.859232079721	-86.3497234635721
+H5N1|2344b|EPI_ISL_18107030|anseriformes|united_states|2_1_1_1_1_1_1_1|2022-01-25	northern america	united states	profile0001	anseriformes-wild	35.859232079721	-86.3497234635721
+H5N1|2344b|EPI_ISL_17885921|pelecaniformes|chile|NA|2023-01-09	south america	chile	profileNA	other-bird	-35.6204383329149	-71.4454635697529
+H5N1|2344b|EPI_ISL_17885925|pelecaniformes|chile|NA|2022-12-30	south america	chile	profileNA	other-bird	-27.3880384326825	-69.902133937498
+H5N1|2344b|EPI_ISL_16891401|pelecaniformes|chile|NA|2022-12-02	south america	chile	profileNA	other-bird	-36.352932692973	-71.0631434301439
+H5N1|2344b|EPI_ISL_17050892|pelecaniformes|chile|NA|2022-12-06	south america	chile	profileNA	other-bird	-36.352932692973	-71.0631434301439
+H5N1|2344b|EPI_ISL_16249730|galliformes|peru|NA|2022-11-29	south america	peru	profileNA	galliformes-domestic	-9.12690950582405	-74.3967035676846
+H5N1|2344b|EPI_ISL_17885975|carnivora|chile|NA|2023-03-07	south america	chile	profileNA	mammal	-20.1723893841755	-69.3557535441909
+H5N1|2344b|EPI_ISL_17885985|pelecaniformes|chile|NA|2023-01-21	south america	chile	profileNA	other-bird	-32.7895224923796	-71.3992840580514
+H5N1|2344b|EPI_ISL_17885971|pelecaniformes|chile|NA|2022-12-20	south america	chile	profileNA	other-bird	-23.5276504572593	-69.1155261199782
+H5N1|2344b|EPI_ISL_17777531|carnivora|peru|NA|2023-03-07	south america	peru	profileNA	mammal	-9.12690950582405	-74.3967035676846
+H5N1|2344b|EPI_ISL_16249681|galliformes|peru|NA|2022-11-28	south america	peru	profileNA	galliformes-domestic	-9.12690950582405	-74.3967035676846
+H5N1|2344b|EPI_ISL_18107024|anseriformes|united_states|5_4_9_1_2_1_1_1|2022-09-17	northern america	united states	profile0009	anseriformes-wild	46.3193148536411	-94.1968042401401
+H5N1|2344b|EPI_ISL_17851880|galliformes|united_states|5_4_9_1_2_1_1_1|2022-11-03	northern america	united states	profile0009	galliformes-domestic	40.470536265191	-82.6389467524245
+H5N1|2344b|EPI_ISL_17851860|galliformes|united_states|5_4_9_1_2_1_1_1|2022-08-31	northern america	united states	profile0009	galliformes-wild	40.470536265191	-82.6389467524245
+H5N1|2344b|EPI_ISL_17851876|galliformes|united_states|5_4_9_1_2_1_1_1|2022-11-03	northern america	united states	profile0009	galliformes-domestic	40.470536265191	-82.6389467524245
+H5N1|2344b|EPI_ISL_17394090|anseriformes|canada|5_4_9_1_2_1_1_1|2022-08-19	northern america	canada	profile0009	anseriformes-wild	54.7409130620601	-97.4886310680955

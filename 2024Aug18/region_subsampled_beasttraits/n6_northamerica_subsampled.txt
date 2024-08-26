@@ -1,0 +1,24 @@
+tipnames	virus_subtype	collection_countryname	cluster_number	host_simplifiedhost	lat	long
+H5N6|2344b|EPI_ISL_17964973|accipitriformes|united_states|5_4_9_1_2_29_1_1|2023-05-08	H5N6	united states	profile0029	other-bird	46.3193148536411	-94.1968042401401
+H4N6|2344b|EPI_ISL_4061556|anseriformes|canada|NA|2020-09-02	H4N6	canada	profileNA	anseriformes-wild	54.9859148218572	-114.405475342745
+H4N6|NA|EPI_ISL_381400|anseriformes|canada|NA|2017-08-13	H4N6	canada	profileNA	anseriformes-wild	54.9859148218572	-114.405475342745
+H4N6|NA|EPI_ISL_381388|anseriformes|canada|NA|2017-08-12	H4N6	canada	profileNA	anseriformes-wild	54.9859148218572	-114.405475342745
+H4N6|NA|EPI_ISL_381375|anseriformes|canada|NA|2017-08-12	H4N6	canada	profileNA	anseriformes-wild	54.9859148218572	-114.405475342745
+H4N6|NA|EPI_ISL_381373|anseriformes|canada|NA|2017-08-12	H4N6	canada	profileNA	anseriformes-wild	54.9859148218572	-114.405475342745
+H4N6|NA|EPI_ISL_328365|anseriformes|canada|NA|2017-08-12	H4N6	canada	profileNA	anseriformes-wild	54.9859148218572	-114.405475342745
+H4N6|NA|EPI_ISL_328337|anseriformes|canada|NA|2017-08-12	H4N6	canada	profileNA	anseriformes-wild	54.9859148218572	-114.405475342745
+H4N6|NA|EPI_ISL_328379|anseriformes|canada|NA|2017-08-12	H4N6	canada	profileNA	anseriformes-wild	54.9859148218572	-114.405475342745
+H4N6|NA|EPI_ISL_328359|anseriformes|canada|NA|2017-08-12	H4N6	canada	profileNA	anseriformes-wild	54.9859148218572	-114.405475342745
+H4N6|NA|EPI_ISL_328346|anseriformes|canada|NA|2017-08-12	H4N6	canada	profileNA	anseriformes-wild	54.9859148218572	-114.405475342745
+H4N6|NA|EPI_ISL_328325|anseriformes|canada|NA|2017-08-12	H4N6	canada	profileNA	anseriformes-wild	54.9859148218572	-114.405475342745
+H4N6|NA|EPI_ISL_328305|anseriformes|canada|NA|2017-08-12	H4N6	canada	profileNA	anseriformes-wild	54.9859148218572	-114.405475342745
+H4N6|NA|EPI_ISL_328330|anseriformes|canada|NA|2017-08-12	H4N6	canada	profileNA	anseriformes-wild	54.9859148218572	-114.405475342745
+H4N6|NA|EPI_ISL_328287|anseriformes|canada|NA|2017-08-12	H4N6	canada	profileNA	anseriformes-wild	54.9859148218572	-114.405475342745
+NA|2344b|EPI_ISL_328309|anseriformes|canada|NA|2017-08-12	NA	canada	profileNA	anseriformes-wild	54.9859148218572	-114.405475342745
+H4N6|NA|EPI_ISL_328370|anseriformes|canada|NA|2017-08-12	H4N6	canada	profileNA	anseriformes-wild	54.9859148218572	-114.405475342745
+H4N6|NA|EPI_ISL_328378|anseriformes|canada|NA|2017-08-12	H4N6	canada	profileNA	anseriformes-wild	54.9859148218572	-114.405475342745
+H4N6|NA|EPI_ISL_328375|anseriformes|canada|NA|2017-08-12	H4N6	canada	profileNA	anseriformes-wild	54.9859148218572	-114.405475342745
+H4N6|NA|EPI_ISL_328381|anseriformes|canada|NA|2017-08-12	H4N6	canada	profileNA	anseriformes-wild	54.9859148218572	-114.405475342745
+H4N6|NA|EPI_ISL_376343|anseriformes|united_states|NA|2017-09-09	H4N6	united states	profileNA	anseriformes-wild	38.3563815994258	-92.4583278415207
+H4N6|NA|EPI_ISL_501683|anseriformes|united_states|NA|2018-07-01	H4N6	united states	profileNA	anseriformes-wild	40.470536265191	-82.6389467524245
+NA|2344b|EPI_ISL_701662|anseriformes|united_states|NA|2018-11-13	NA	united states	profileNA	anseriformes-wild	44.627499166429	-89.7126755416022
