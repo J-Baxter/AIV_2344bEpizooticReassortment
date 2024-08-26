@@ -11,12 +11,13 @@ writeLines(shell,
 
 
 
-treefiles <- list.files('./2024Aug18/reassortant_subsampled_beasttraits/')
+xmlfiles <- list.files('./2024Aug18/region_subsampled_beasttraits/', pattern = '.xml')
+treefiles <- list.files('./2024Aug18/region_subsampled_alignments/', pattern = '.xml')
 s
 shell <- paste0('python3 GetEmpiricalXML.py ',
-                treefiles,
+                xmlfiles,
                 ' ',
-                gsub('_traits.xml$', '_relaxLn_constant_2000.trees', treefiles))
+                unique(gsub('_\\d.xml$', '_1000.trees', treefiles)))
 
 writeLines(shell,
-           './2024Aug18/reassortant_subsampled_beasttraits/getempirical.sh')
+           './2024Aug18/region_subsampled_beasttraits/getempirical.sh')
