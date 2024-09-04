@@ -8,7 +8,8 @@ metadata <- read_csv('2024-08-19_meta.csv')
 
 aln_files <- list.files(path = './2024Aug18/reassortant_alignments',
                         pattern = 'fasta',
-                        full.names = T)
+                        full.names = T) %>%
+  .[grepl('71521312|54912111|16211111',.)]
 
 aln <- lapply(aln_files ,
               read.dna, 
