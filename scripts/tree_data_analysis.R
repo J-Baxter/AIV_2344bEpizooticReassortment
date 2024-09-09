@@ -98,47 +98,47 @@ combined_data %>%
   theme_minimal() 
 
 
+################### Plot 2: Region MRCA ################### 
+combined_data %>%
+  mutate(collection_regionname = case_when(grepl('europe', collection_regionname) ~ 'europe',
+                            grepl('africa', collection_regionname) ~ 'africa',
+                            grepl('asia', collection_regionname) ~ 'asia',
+                            grepl('(central|northern) america', collection_regionname) ~ 'central & northern america',
+                            .default = collection_regionname
+                            )) %>%
+  filter(!is.na(collection_regionname)) %>%
+  ggplot(aes(x = collection_regionname,
+             fill = group2)) +
 
-#### persistence time distributions by country ####
-region_persistencetime <- RegionalTre_mrca_stats_disp_jumps_combined %>%
-  select(c(data_name,
-           youngestTip.time,
-           TMRCA,
-           Rcode)) %>%
-  left_join(summary_reassortant_metadata_20240902,
-            by = join_by(Rcode == cluster_profile)) %>%
-  select(c(data_name,
-           TMRCA,
-           Rcode,
-           Length_Between_First_Last_Sample,
-           youngestTip.time,
-           group2)) %>%
-  rename(cluster_group = group2) %>%
-  separate_wider_delim(data_name, '_', names = c('segment', 'region')) %>%
-  mutate(segment = gsub('n[:0-9:]', 'nx', segment)) %>%
-  filter(cluster_group != 'dominant')
-
-
-ggplot(dominant_persistencetime) +
   # Geom objects
-  geom_linerange(aes(x = cluster_profile,
-                     ymin = youngestTip.time-Length_Between_First_Last_Sample, 
-                     ymax = youngestTip.time,
-                     colour = segment), 
-                 linewidth = 1.5, 
-                 position = position_dodge(width = 0.75)) +
-  
-  geom_linerange(aes(x = cluster_profile,
-                     ymin = TMRCA, 
-                     ymax = youngestTip.time,
-                     colour = segment), 
-                 linewidth = 2, 
-                 alpha = 0.5,
-                 position = position_dodge(width = 0.75)) +
+  geom_bar(position = "fill") +
+  scale_y_continuous('Proportion of Reassortants') +
+
   # Scales
-  scale_x_discrete('Reassortant Profile')+
-  scale_y_continuous()+
-  scale_colour_uchicago(palette = 'light') +
-  coord_flip() + 
-  #facet_grid(rows = vars(segment)) + 
+  scale_x_discrete('Region of Origin')+
+  scale_fill_brewer('Reassortant Class' ,
+                    palette = 'Blues') +
+
+  # Graphical
+  facet_grid(rows = vars(segment)) + 
+  theme_minimal() 
+
+
+################### Plot 2: Host MRCA ################### 
+combined_data %>%
+  filter(!is.na(host_simplifiedhost)) %>%
+  ggplot(aes(x = host_simplifiedhost,
+             fill = group2)) +
+  
+  # Geom objects
+  geom_bar(position = "fill") +
+  scale_y_continuous('Proportion of Reassortants') +
+  
+  # Scales
+  scale_x_discrete('Region of Origin')+
+  scale_fill_brewer('Host' ,
+                    palette = 'Blues') +
+  
+  # Graphical
+  facet_grid(rows = vars(segment)) + 
   theme_minimal() 
