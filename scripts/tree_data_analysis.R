@@ -99,6 +99,7 @@ combined_data <- combined_data %>%
 
 combined_data %>%
   filter(group2 == 'dominant') %>%
+  mutate(cluster_profile = gsub('_', '', cluster_profile)) %>%
   ggplot() +
   
   # Geom objects
@@ -140,20 +141,21 @@ combined_data %>%
              fill = group2)) +
 
   # Geom objects
-  geom_bar(position = "fill") +
+  geom_bar(position = position_stack(reverse = T)) +
   scale_y_continuous('Proportion of Reassortants') +
 
   # Scales
-  scale_x_discrete('Region of Origin')+
-  scale_fill_brewer('Reassortant Class' ,
-                    palette = 'Blues') +
+  scale_x_discrete('Region of Origin', labels = function(x) str_wrap(x, width = 20) %>% str_to_title())+
+  scale_fill_brewer('Reassortant Class', direction = -1) +
+
+  
 
   # Graphical
   facet_grid(rows = vars(segment)) + 
   theme_minimal() 
 
 
-################### Plot 2: Host MRCA ################### 
+################### Plot 2: Host MRCA - in progress ################### 
 combined_data %>%
   filter(!is.na(host_simplifiedhost)) %>%
   ggplot(aes(x = host_simplifiedhost,
@@ -164,10 +166,74 @@ combined_data %>%
   scale_y_continuous('Proportion of Reassortants') +
   
   # Scales
-  scale_x_discrete('Region of Origin')+
+  scale_x_discrete('Host of Origin',
+                   labels = function(x) str_wrap(x, width = 20) %>% str_to_title())+
   scale_fill_brewer('Host' ,
                     palette = 'Blues') +
   
   # Graphical
   facet_grid(rows = vars(segment)) + 
+  theme_minimal() 
+
+
+################### Plot 3:  Evo-rate density plot (all) ################### 
+
+combined_data %>%
+  ggplot(aes(x = evoRate,
+             fill = group2,
+             y = after_stat(scaled),
+             colour = group2)) +
+  
+  # Geom objects
+  geom_density(alpha = 0.7) +
+  scale_y_continuous('Probability Density') +
+  
+  # Scales
+  scale_x_continuous('Evolutionary Rate')+
+  scale_fill_brewer('Reassortant Class', direction = -1) +
+  scale_colour_brewer('Reassortant Class', direction = -1) +
+  
+  
+  
+  
+  # Graphical
+  #facet_grid(rows = vars(segment)) + 
+  theme_minimal() 
+
+
+################### Plot 4:  Evo-rate plot (dominant) ################### 
+
+combined_data %>%
+  filter(cluster_profile %in% c("3_2_3_1_3_2_1_2",
+                                "2_1_1_1_1_1_1_1",
+                                "1_1_1_1_1_1_1_1",
+                                "2_1_2_1_1_1_1_1",
+                                "1_1_2_1_1_1_1_1",
+                                "1_6_2_1_1_1_1_1",
+                                "1_1_4_1_4_1_1_4",
+                                "2_6_1_1_6_1_1_1",
+                                "2_1_6_1_1_4_1_1",
+                                "7_1_5_2_1_3_1_2",
+                                "4_3_1_1_2_1_1_3",
+                                "5_1_1_1_2_1_1_3",
+                                "5_4_9_1_2_1_1_1")) %>%
+  
+  ggplot() +
+  
+  # Geom objects
+  geom_point(aes(x = cluster_profile,
+                 y = evoRate),
+             position = position_jitter()) + 
+  
+  # Scales
+  scale_y_continuous('Evolutionary Rate')+
+  scale_x_discrete('Cluster Profile') + 
+  scale_fill_brewer('Reassortant Class', direction = -1) +
+  scale_colour_brewer('Reassortant Class', direction = -1) +
+  
+  
+  
+  
+  # Graphical
+  #facet_grid(rows = vars(segment)) + 
   theme_minimal() 
