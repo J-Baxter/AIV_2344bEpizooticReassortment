@@ -66,6 +66,35 @@ combined_data <- RegionalTre_mrca_stats_disp_jumps_combined %>%
   relocate(cluster_profile, segment)
 
 
+################### Import Evolutionary Rates from Reassortant log files ################### 
+reassortant_log_path <- c(list.files('./2024Aug18/reassortant_subsampled_outputs/plain_log',
+                                     full.names = T),
+                          list.files('./2024Aug18/11111111A/outputs/plain_log',
+                                     full.names = T))
+
+
+imported_logs <- lapply(reassortant_log_path, readLog) %>%
+  lapply(., getHPDMedian) %>%
+  lapply(., function(x) x['ucld.mean',]) %>%
+  bind_rows() %>%
+  mutate(key = gsub('.*plain_log/|_subsampled.*', '', reassortant_log_path)) %>%
+  mutate(key = gsub('n[:0-9:]', 'nx', key)) %>%
+  rename(evoRate = med,
+         evoRate_95lower = lower,
+         evoRate_95upper = upper) 
+
+
+
+################### Combine all data ################### 
+combined_data <- combined_data %>%
+  unite(key, segment, cluster_profile, remove = F) %>%
+  mutate(key = str_remove_all(key, '(?<=_\\d)_')) %>%
+  rows_patch(.,
+             imported_logs,
+             by = 'key',
+             unmatched = 'ignore')
+
+
 ################### Plot 1: 'Persistence Plot' for Dominant Reassortants ################### 
 
 combined_data %>%
