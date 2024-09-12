@@ -24,6 +24,11 @@ library(bayesplot)
 
 ########################################### IMPORT DATA ############################################
 
+combined_data <- read_csv()
+
+
+########################################### FORMAT DATA ############################################
+
 model_data <- combined_data %>%
   
   # select variables of interes
@@ -43,8 +48,18 @@ model_data <- combined_data %>%
                   weighted_diff_coeff  = 0)) %>%
 
   
-################################### INITIAL EXPLANANTORY MODELS ####################################
+################################### INITIAL EXPLORATORY MODELS #####################################
+# Plot logged data to show zero/non-zero segregation
 
+model_data %>%
+  ggplot() +
+  geom_histogram(aes(x = log1p(weighted_diff_coeff), fill = weighted_diff_coeff>0)) +
+  scale_fill_brewer(palette = 'Dark2', 'Is Zero') +
+  scale_x_continuous('Weighted Diffusion Coefficient') +
+  theme_minimal()
+
+
+# OLS model of 
 
 
 
@@ -85,62 +100,35 @@ n <- sample(1:nrow(diffusionmodel1_priorpreds), 50)
 color_scheme_set("green")
 ppc_dens_overlay(y = log1p(model_data$weighted_diff_coeff),
                  yrep = log1p(diffusionmodel1_priorpreds[1:10,]))
+
+
 # Fit Model
-
-
-# Posterior Predictive Checks
-
-
-# Posterior Predictive Checks
-
-
-# Extract Marginal/Conditional Effects
-
-
-
-
-model_hurdle <- 
-
-
-
-# logged Data
-model_data %>%
-  ggplot() +
-  geom_histogram(aes(x = log1p(weighted_diff_coeff), fill = weighted_diff_coeff>0)) +
-  scale_fill_brewer(palette = 'Dark2', 'Is Zero') +
-  scale_x_continuous('Weighted Diffusion Coefficient') +
-  theme_minimal()
-
-
-# prior predictive checks hurdle model
-model_hurdle_priorpredictive <- brms::brm(
-  bf(weighted_diff_coeff ~ host_simplifiedhost,
+diffusionmodel1_fit <- brm(
+  bf(weighted_diff_coeff ~ collection_regionname,
      hu ~ 1),
   data = model_data,
   family = hurdle_lognormal(),
-  sample_prior = "yes",
-  chains = 2,
-  cores = 2, 
-  iter = 2000,
-  warmup= 200,
-  seed =123
+  chains = CHAINS,
+  cores = CORES, 
+  iter = ITER,
+  warmup = BURNIN,
+  seed = SEED#,
+  #opencl = opencl(c(0, 0)) # Enables GPU accelerated computation, remove if not applicable
 )
 
-pred <- posterior_predict(model_hurdle_priorpredictive)
+
+# Posterior Predictive Checks
+diffusionmodel1_posteriorpreds <- posterior_predict(diffusionmodel1_fit)
+n <- sample(1:nrow(diffusionmodel1_posteriorpreds), 50)
 
 color_scheme_set("green")
 ppc_dens_overlay(y = log1p(model_data$weighted_diff_coeff),
-                 yrep = log1p(pred[1:50,]))
+                 yrep = log1p(diffusionmodel1_posteriorpreds[1:10,]))
 
-ppc_dens_overlay()
 
-tidy(model_hurdle)
+# Extract Model Terms and Marginal/Conditional Effects
+diffusionmodel1_fit_tidy <- tidy(model_hurdle)
 
-pred <- posterior_predict(model_hurdle)
-
-color_scheme_set("green")
-ppc_dens_overlay(y = log1p(model_data$weighted_diff_coeff),
-                 yrep = log1p(pred[1:10,]))
 
 ####################################################################################################
 ####################################################################################################
