@@ -11,6 +11,8 @@
 # 5. persistence time in domestic birds
 # 6. total number of species jumps
 
+# This script implements a workflow for a zero-inflated lognormal model. Initial exploratory analysis 
+# is conducted using OLS regression, thereafter progressing to Bayesian analysis using BRMS.
 
 ########################################## DEPENDENCIES ############################################
 library(brms)
@@ -50,11 +52,39 @@ model_data <- combined_data %>%
 ####################################### START BRMS PIPELINE ########################################
 
 # Set Priors
+diffusionmodel1_priors <- c()
+
+
+# Set MCMC Options
+CHAINS <- 4
+CORES <- 4
+ITER <- 4000
+BURNIN <- ITER/10 # Discard 10% burn in from each chain
+SEED <- 4472
 
 
 # Prior Predictive Checks 
+diffusionmodel1_priorpredictive <- brm(
+  bf(weighted_diff_coeff ~ collection_regionname,
+     hu ~ 1),
+  data = model_data,
+  family = hurdle_lognormal(),
+  sample_prior = "yes",
+  chains = CHAINS,
+  cores = CORES, 
+  iter = ITER,
+  warmup = BURNIN,
+  seed = SEED#,
+  #opencl = opencl(c(0, 0)) # Enables GPU accelerated computation, remove if not applicable
+  )
 
 
+diffusionmodel1_priorpreds <- posterior_predict(diffusionmodel1_priorpredictive)
+n <- sample(1:nrow(diffusionmodel1_priorpreds), 50)
+
+color_scheme_set("green")
+ppc_dens_overlay(y = log1p(model_data$weighted_diff_coeff),
+                 yrep = log1p(diffusionmodel1_priorpreds[1:10,]))
 # Fit Model
 
 
@@ -69,17 +99,7 @@ model_data <- combined_data %>%
 
 
 
-model_hurdle <- brms::brm(
-  bf(weighted_diff_coeff ~ group2,
-     hu ~ 1),
-  data = model_data,
-  family = hurdle_lognormal(),
-  chains = 2,
-  iter = 5000,
-  warmup= 500,
-  seed =123
-)
-  mutate(log_weighted_diff_coeff = log1p(weighted_diff_coeff))
+model_hurdle <- 
 
 
 
