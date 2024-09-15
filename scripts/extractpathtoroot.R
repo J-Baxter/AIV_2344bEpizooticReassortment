@@ -125,6 +125,12 @@ reassortant_trees <- list.files('./2024Aug18/reassortant_subsampled_outputs/trai
                                 full.names = T) %>%
   lapply(., read.beast)
 
+region_trees <- list.files('./2024Aug18/region_subsampled_outputs/traits_mcc',
+                           full.names = T) %>%
+  lapply(., read.beast)
+
+test_tree <- region_trees[[1]]
+
 
 ############################################## RUN ################################################
 persistence_dataframe <- lapply(reassortant_trees, HostPersistence) %>%
