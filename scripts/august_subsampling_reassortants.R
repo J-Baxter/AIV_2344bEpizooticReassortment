@@ -83,8 +83,9 @@ metadata_subsampled_1 <- metadata_prep  %>%
   ) %>%
   
   # Sample first and last sequence from reassortant
-  slice(which(collection_date == max(collection_date, na.rm = T) | collection_date == min(collection_date, na.rm = T)), .preserve = T) %>%
-  group_by(collection_date, add) %>%
+  slice(which(collection_date == max(collection_date, na.rm = T) | collection_date == min(collection_date, na.rm = T)), 
+        .preserve = T) %>%
+  group_by(collection_date, .add = TRUE) %>%
   slice_sample(n = 1) %>%
   ungroup() %>%
   
@@ -94,11 +95,10 @@ metadata_subsampled_1 <- metadata_prep  %>%
   setNames(names(metadata_per_alignment))
 
 
+####################################################################################################
 # sample according to location
 metadata_subsampled_2 <- metadata_prep %>%
   group_by(label, 
-           #group,
-           #host_order, 
            cluster_profile,
            best_location_code
   ) %>%
@@ -111,14 +111,12 @@ metadata_subsampled_2 <- metadata_prep %>%
   setNames(names(metadata_per_alignment))
 
 
-
+####################################################################################################
 # sample according to host
 metadata_subsampled_3 <- metadata_prep %>%
   group_by(label, 
-           #group,
            host_simplifiedhost, 
-           cluster_profile#,
-           #best_location_code
+           cluster_profile
   ) %>%
   slice_sample(n = 1) %>%
   ungroup() %>%
