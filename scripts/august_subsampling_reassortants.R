@@ -4,7 +4,7 @@ source('./scripts/FindIdenticalSeqs.R')
 
 ####################################################################################################
 # Import metadata and alignments
-metadata <- read_csv('2024-08-19_meta.csv')
+metadata <- read_csv('2024-09-09_meta.csv')
 
 aln_files <- list.files(path = './2024Aug18/reassortant_alignments',
                         pattern = 'fasta',
