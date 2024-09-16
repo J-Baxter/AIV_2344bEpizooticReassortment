@@ -143,6 +143,8 @@ alignments_subsampled <- mapply(function(x,y) x[str_extract(rownames(x), "EPI_IS
                                 aln,
                                 metadata_subsampled,
                                 SIMPLIFY = FALSE) 
+
+
 ####################################################################################################
 #BEAST traits
 metadata_subsampled_beast <- lapply(metadata_subsampled, 
@@ -173,7 +175,7 @@ metadata_subsampled_beast <- lapply(metadata_subsampled,
 
 
 
-alignmentfiles_subsampled <- paste('./2024Aug18/reassortant_subsampled_alignments',
+alignmentfiles_subsampled <- paste('./2024Sept16/reassortant_subsampled_alignments',
                                    paste(names(aln), 'subsampled.fasta', sep = '_'),
                                    sep = '/' )
 
@@ -183,7 +185,7 @@ mapply(ape::write.dna,
        format = 'fasta')
 
 
-metadatafiles_subsampled_beast <-paste('./2024Aug18/reassortant_subsampled_traits',
+metadatafiles_subsampled_beast <-paste('./2024Sept16/reassortant_subsampled_traits',
                                        paste(names(aln), 'subsampled.txt',  sep = '_'),
                                        sep = '/' )
 
