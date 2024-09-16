@@ -100,6 +100,7 @@ metadata_subsampled_1 <- metadata_prep  %>%
 metadata_subsampled_2 <- metadata_prep %>%
   group_by(label, 
            cluster_profile,
+           collection_datemonth,
            best_location_code
   ) %>%
   slice_sample(n = 1) %>%
@@ -115,8 +116,9 @@ metadata_subsampled_2 <- metadata_prep %>%
 # sample according to host
 metadata_subsampled_3 <- metadata_prep %>%
   group_by(label, 
+           cluster_profile,
+           collection_datemonth,
            host_simplifiedhost, 
-           cluster_profile
   ) %>%
   slice_sample(n = 1) %>%
   ungroup() %>%
