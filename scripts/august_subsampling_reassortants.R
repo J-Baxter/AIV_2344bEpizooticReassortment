@@ -204,15 +204,15 @@ mapply(write_delim,
 
 cmds <- paste0("./beastgen -date_order -1 -date_prefix \\| -date_precision -D '",
                'fileName=',
-               gsub('.fasta$|.*beastsubsample/', '', alignmentfiles_subsampled), 
+               gsub('.fasta$|.*beastsubsample/|./2024Sept16/reassortant_subsampled_alignments/', '', alignmentfiles_subsampled), 
                '_relaxLn_constant', '_1',
                "' flu_constanttemplate ",
-               gsub('.*beastsubsample/|./2024Aug18/reassortant_subsampled_alignments/', '', alignmentfiles_subsampled),
+               gsub('.*beastsubsample/|./2024Sept16/reassortant_subsampled_alignments/', '', alignmentfiles_subsampled),
                ' ',
-               gsub('.fasta|.*beastsubsample/|./2024Aug18/reassortant_subsampled_alignments/', '', alignmentfiles_subsampled),
+               gsub('.fasta|.*beastsubsample/|./2024Sept16/reassortant_subsampled_alignments/', '', alignmentfiles_subsampled),
                '_relaxLn_constant', '.xml')
 
-write_lines(cmds,  paste('./2024Aug18/reassortant_subsampled_alignments', 
+write_lines(cmds,  paste('./2024Sept16', 
                          'beastgen.sh',
                          sep = '/' ))
 
