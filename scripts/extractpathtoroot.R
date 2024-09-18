@@ -135,15 +135,17 @@ test_clusters <- str_split_i(test_tree@phylo$tip.label, '\\|', 6)
 test_ace <- ace(test_clusters, test_tree@phylo, model = 'ER', type = 'discrete')$lik.anc
 
 test_nodeID <- apply(test_ace, 1, function(x) names(x)[which.max(x)]) %>%
-  as_tibble(rownames = 'node') %>%
+  as_tibble(rownames = 'node') %>% pull(value) %>% unique()
   mutate(node = as.integer(node))
 
-region_trees[[1]]  %>%
+m <- region_trees[[1]]  %>%
+  as_tibble() %>%
   filter(height == 0) %>%
   pull(label) %>%
   str_extract(.,  "(?<=\\|)\\d{4}(?![[:lower:]]).*$") %>%
-  ymd() %>
-  decimal_date() %>% max(na.rm = T)
+  ymd() %>%
+  decimal_date() %>% 
+  max(na.rm = T)
 
 test_reassortanttmcra <- region_trees[[1]] %>% 
   as_tibble() %>%
@@ -152,7 +154,8 @@ test_reassortanttmcra <- region_trees[[1]] %>%
   group_by(value) %>%
   slice_max(height) %>%
   ungroup() %>%
-  select(node, contains('height'), value)
+  select(node, contains('height'), value) %>%
+  mutate(mrca = m - as.numeric(height_median))
 ############################################## RUN ################################################
 persistence_dataframe <- lapply(reassortant_trees, HostPersistence) %>%
   
