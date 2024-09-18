@@ -61,7 +61,7 @@ ImputeCladeandCluster <- function(metadata, alignment, ordered = FALSE){
 
 
 # import alignments
-aln_files <- list.files('./2024Aug18/region_subsampled_alignments',
+aln_files <- list.files('./2024Sept16/reassortant_subsampled_alignments',
                         pattern = '.fasta',
                         full.names = T)
 
@@ -72,7 +72,7 @@ names(aln) <- str_split_i(aln_files, '/', 4) %>%
 
 
 # import metadata
-data <- read_csv('2024-08-19_meta.csv')
+data <- read_csv('2024-09-09_meta.csv')
 
 
 # create subsampled dataframes
@@ -105,7 +105,7 @@ mapply(function(alignment, data) all(rownames(alignment) %in% data$tipnames),
 
 
 # output to txt file
-metadata_subsampled_beast <- lapply(test, 
+metadata_subsampled_beast <- lapply(metadata_per_alignment, 
                                     function(x) x %>% 
                                       select(c(tipnames,
                                                virus_subtype, 
@@ -113,14 +113,14 @@ metadata_subsampled_beast <- lapply(test,
                                                collection_countryname,
                                                ends_with('long'),
                                                ends_with('lat'),
-                                               cluster_number,
+                                               #cluster_number,
                                                host_simplifiedhost)) %>%
                                       mutate(lat = coalesce(collection_subdiv1lat, 
                                                             collection_countrylat)) %>%
                                       mutate(long = coalesce(collection_subdiv1long, 
                                                              collection_countrylong)) %>%
                                       mutate(across(c(lat, long), .fns = ~ as.numeric(.x))) %>%
-                                      mutate(cluster_number = str_pad(cluster_number, 4, pad = "0") %>% paste0('profile',.)) %>%
+                                      #mutate(cluster_number = str_pad(cluster_number, 4, pad = "0") %>% paste0('profile',.)) %>%
                                       select(where(~n_distinct(.) > 1)) %>%
                                       select(-c(contains('date'),
                                                 contains('subdiv'),
@@ -133,7 +133,7 @@ metadata_subsampled_beast <- lapply(test,
 
 # write to file
 
-metadatafiles_subsampled_beast <-paste('./2024Aug18/region_subsampled_beasttraits',
+metadatafiles_subsampled_beast <-paste('./2024Sept16/reassortant_subsampled_traits',
                                        paste(names(aln), 'subsampled.txt',  sep = '_'),
                                        sep = '/' )
 
