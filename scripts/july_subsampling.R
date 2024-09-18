@@ -261,12 +261,12 @@ cmds <- paste0("./beastgen -date_order -1 -date_prefix . -date_precision  -D ",
                str_trim(format(treeprior, nsmall = 1)),
                ',fileName=',
                gsub('.prior', '', names(treeprior)), 
-               '_relaxLn_Skygrid', treeprior, '-', treeprior*4, '_1',
+               '_relaxLn_Skygrid', treeprior, '-', treeprior*4, '_2',
                "' skygridtemplate ",
                alignmentfiles_subsampled,
                ' ',
                gsub('.prior', '', names(treeprior)), 
-               '_relaxLn_Skygrid', treeprior, '-', treeprior*4, '_1', '.xml')
+               '_relaxLn_Skygrid', treeprior, '-', treeprior*4, '_2', '.xml')
 
 write_lines(cmds,  paste('.',
                          '2024Sept16', 
