@@ -129,9 +129,30 @@ region_trees <- list.files('./2024Aug18/region_subsampled_outputs/traits_mcc',
                            full.names = T) %>%
   lapply(., read.beast)
 
-test_tree <- region_trees[[1]]
+test_tree <- region_trees[[1]] %>% as_tibble()
 
+test_clusters <- str_split_i(test_tree@phylo$tip.label, '\\|', 6) 
+test_ace <- ace(test_clusters, test_tree@phylo, model = 'ER', type = 'discrete')$lik.anc
 
+test_nodeID <- apply(test_ace, 1, function(x) names(x)[which.max(x)]) %>%
+  as_tibble(rownames = 'node') %>%
+  mutate(node = as.integer(node))
+
+region_trees[[1]]  %>%
+  filter(height == 0) %>%
+  pull(label) %>%
+  str_extract(.,  "(?<=\\|)\\d{4}(?![[:lower:]]).*$") %>%
+  ymd() %>
+  decimal_date() %>% max(na.rm = T)
+
+test_reassortanttmcra <- region_trees[[1]] %>% 
+  as_tibble() %>%
+  arrange(node) %>%
+  left_join(test_nodeID) %>%
+  group_by(value) %>%
+  slice_max(height) %>%
+  ungroup() %>%
+  select(node, contains('height'), value)
 ############################################## RUN ################################################
 persistence_dataframe <- lapply(reassortant_trees, HostPersistence) %>%
   
