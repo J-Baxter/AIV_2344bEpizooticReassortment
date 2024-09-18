@@ -135,7 +135,8 @@ test_clusters <- str_split_i(test_tree@phylo$tip.label, '\\|', 6)
 test_ace <- ace(test_clusters, test_tree@phylo, model = 'ER', type = 'discrete')$lik.anc
 
 test_nodeID <- apply(test_ace, 1, function(x) names(x)[which.max(x)]) %>%
-  as_tibble(rownames = 'node') %>% pull(value) %>% unique()
+  as_tibble(rownames = 'node') %>% 
+  rename(., cluster_profile = value) %>%
   mutate(node = as.integer(node))
 
 m <- region_trees[[1]]  %>%
@@ -147,15 +148,49 @@ m <- region_trees[[1]]  %>%
   decimal_date() %>% 
   max(na.rm = T)
 
-test_reassortanttmcra <- region_trees[[1]] %>% 
-  as_tibble() %>%
-  arrange(node) %>%
-  left_join(test_nodeID) %>%
-  group_by(value) %>%
-  slice_max(height) %>%
-  ungroup() %>%
-  select(node, contains('height'), value) %>%
-  mutate(mrca = m - as.numeric(height_median))
+
+GetReassortantMRCAs <- function(treedata){
+  # Set dependencies
+  require(ape)
+  require(treeio)
+  stopifnot('Input object must be a treedata object' = class(treedata) == 'treedata')
+  
+  # Format treedata object as tibble, format quantitative traits as 
+  # numeric vectors
+  tree_tibble <- as_tibble(treedata) %>%
+    mutate(across(c(branch.length,
+                    height,
+                    height_median,
+                    length,
+                    length_median),
+                  .fns = ~ as.numeric(.x))) 
+  
+  test_reassortanttmcra <- tree_tibble %>%
+    select(node, 
+           contains('height'), 
+           label) %>%
+    
+    # Extract reassortant types
+    mutate(cluster_profile = str_split_i(label, '\\|', 6)) %>%
+    
+    # filter dominant reassortants
+    
+    
+    arrange(node) %>%
+    rows_update(.,test_nodeID) %>%
+    #left_join(test_nodeID) %>%
+    group_by(cluster_profile) %>%
+    slice_max(height) %>%
+    ungroup() %>%
+    #select(node, contains('height'), value) %>%
+    # mutate(mrca = m - as.numeric(height_median)) %>%
+    select(cluster_profile, node)
+}
+
+
+# Check with Lu re: calculation of TMRCAs for each reassortant
+#oops <- test_reassortanttmcra %>%
+  #left_join(RegionalTre_mrca_stats_disp_combined %>% filter(data_name == 'ha_africa') %>% select(contains('Rcode'), TMRCA), by = join_by(cluster_profile == Rcode))
 ############################################## RUN ################################################
 persistence_dataframe <- lapply(reassortant_trees, HostPersistence) %>%
   
