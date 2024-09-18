@@ -86,12 +86,12 @@ alignments_subsampled <- lapply(selected_genomes_unique,
 
 ####################################################################################################
 # export all fasta for alignment and manual editing
-alignmentfiles_subsampled <- paste('./2024Sept16/global_strictdownsample',
+alignmentfiles_subsampled <- paste('./global_strictdownsample',
                                    paste(segments, 'global.fasta', sep = '_'),
                                    sep = '/' )
 
 mapply(ape::write.dna, 
-       alignments_subsampled, 
-       alignmentfiles_subsampled ,
+       alignments_subsampled[-3], 
+       alignmentfiles_subsampled[-3],
        format = 'fasta')
 
