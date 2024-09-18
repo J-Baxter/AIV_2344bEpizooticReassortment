@@ -1,0 +1,54 @@
+tipnames	collection_regionname	collection_countryname	host_simplifiedhost	lat	long
+H5N1|2344b|EPI_ISL_11633616|anseriformes|china|1_1_1_1_1_1_1_1|2021-12-20	eastern asia	china	anseriformes-wild	30.9806813015582	112.277189482252
+H5N1|2344b|EPI_ISL_11798572|anseriformes|denmark|1_1_1_1_1_1_1_1|2021-10-13	northern europe	denmark	anseriformes-wild	55.3568797999445	9.45020901930698
+H5N1|2344b|EPI_ISL_11922809|galliformes|poland|1_1_1_1_1_1_1_1|2022-02-18	eastern europe	poland	galliformes-domestic	52.1141994014432	19.4236724631525
+H5N1|2344b|EPI_ISL_12572662|anseriformes|china|1_1_1_1_1_1_1_1|2022-01-05	eastern asia	china	anseriformes-wild	27.5978523947888	111.713471439142
+H5N1|2344b|EPI_ISL_13243350|anseriformes|bangladesh|1_1_1_1_1_1_1_1|2022-03-09	southern asia	bangladesh	anseriformes-wild	23.8299093538119	90.2865403636969
+H5N1|2344b|EPI_ISL_14493135|ciconiiformes|netherlands|1_1_1_1_1_1_1_1|2022-06-03	western europe	netherlands	other-bird	51.5616727876811	5.19541346074046
+H5N1|2344b|EPI_ISL_14918892|galliformes|south_africa|1_1_1_1_1_1_1_1|2021-06-30	southern africa	south africa	galliformes-domestic	-28.7220063412643	30.7367833141436
+H5N1|2344b|EPI_ISL_14933916|galliformes|south_africa|1_1_1_1_1_1_1_1|2021-07-29	southern africa	south africa	galliformes-domestic	-28.7220063412643	30.7367833141436
+H5N1|2344b|EPI_ISL_14934317|galliformes|south_africa|1_1_1_1_1_1_1_1|2021-07-30	southern africa	south africa	galliformes-domestic	-28.7220063412643	30.7367833141436
+H5N1|2344b|EPI_ISL_14934318|galliformes|south_africa|1_1_1_1_1_1_1_1|2021-08-09	southern africa	south africa	galliformes-domestic	-28.7220063412643	30.7367833141436
+H5N1|2344b|EPI_ISL_14934883|galliformes|south_africa|1_1_1_1_1_1_1_1|2021-09-07	southern africa	south africa	galliformes-domestic	-28.7220063412643	30.7367833141436
+H5N1|2344b|EPI_ISL_14934884|galliformes|south_africa|1_1_1_1_1_1_1_1|2021-09-08	southern africa	south africa	galliformes-domestic	-28.7220063412643	30.7367833141436
+H5N1|2344b|EPI_ISL_15647834|anseriformes|south_korea|1_1_1_1_1_1_1_1|2022-10-17	eastern asia	south korea	anseriformes-wild	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_15647836|anseriformes|south_korea|1_1_1_1_1_1_1_1|2022-10-10	eastern asia	south korea	anseriformes-wild	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_15647837|anseriformes|south_korea|1_1_1_1_1_1_1_1|2022-02-05	eastern asia	south korea	anseriformes-wild	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_15852625|galliformes|south_africa|1_1_1_1_1_1_1_1|2022-01-24	southern africa	south africa	galliformes-domestic	-26.1053974962555	28.126943330491
+H5N1|2344b|EPI_ISL_15853010|ciconiiformes|south_africa|1_1_1_1_1_1_1_1|2022-02-08	southern africa	south africa	other-bird	-26.1053974962555	28.126943330491
+H5N1|2344b|EPI_ISL_15853438|galliformes|south_africa|1_1_1_1_1_1_1_1|2022-02-22	southern africa	south africa	galliformes-domestic	-26.1053974962555	28.126943330491
+H5N1|2344b|EPI_ISL_15853935|galliformes|south_africa|1_1_1_1_1_1_1_1|2022-09-18	southern africa	south africa	galliformes-domestic	-28.7220063412643	30.7367833141436
+H5N1|2344b|EPI_ISL_17075747|primates|china|1_1_1_1_1_1_1_1|2023-02-10	eastern asia	china	human	32.9645721858222	119.470797338049
+H5N1|2344b|EPI_ISL_17075759|primates|china|1_1_1_1_1_1_1_1|2023-02-10	eastern asia	china	human	32.9645721858222	119.470797338049
+H5N1|2344b|EPI_ISL_17414669|falconiformes|china|1_1_1_1_1_1_1_1|2022-10-09	eastern asia	china	other-bird	40.1838367941588	116.40878248942
+H5N1|2344b|EPI_ISL_17606861|anseriformes|south_korea|1_1_1_1_1_1_1_1|2022-02-18	eastern asia	south korea	anseriformes-wild	36.5298116066164	126.847825775926
+H5N1|2344b|EPI_ISL_17606863|anseriformes|south_korea|1_1_1_1_1_1_1_1|2022-03-02	eastern asia	south korea	anseriformes-wild	34.8733358026855	126.897223705092
+H5N1|2344b|EPI_ISL_18133466|anseriformes|united_states|1_1_1_1_1_1_1_1|2022-01-29	northern america	united states	anseriformes-wild	35.5562842108177	-79.3865256785998
+H5N1|2344b|EPI_ISL_18245272|falconiformes|south_korea|1_1_1_1_1_1_1_1|2022-10-16	eastern asia	south korea	other-bird	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245274|environment|south_korea|1_1_1_1_1_1_1_1|2022-11-01	eastern asia	south korea	environment	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245276|pelecaniformes|south_korea|1_1_1_1_1_1_1_1|2022-11-06	eastern asia	south korea	other-bird	36.341057964317	127.784630688405
+H5N1|2344b|EPI_ISL_18245812|NA|poland|1_1_1_1_1_1_1_1|2021-12-20	eastern europe	poland	other-bird	52.3269678786096	17.250141052842
+H5N1|2344b|EPI_ISL_18284464|galliformes|japan|1_1_1_1_1_1_1_1|2022-11-04	eastern asia	japan	galliformes-domestic	36.3027610877484	140.318971903473
+H5N1|2344b|EPI_ISL_18373238|anseriformes|south_korea|1_1_1_1_1_1_1_1|2022-02-07	eastern asia	south korea	anseriformes-wild	35.7159281817874	127.140659781938
+H5N1|2344b|EPI_ISL_18373240|anseriformes|south_korea|1_1_1_1_1_1_1_1|2022-02-10	eastern asia	south korea	anseriformes-wild	37.5315346337798	127.181023197189
+H5N1|2344b|EPI_ISL_18373252|environment|south_korea|1_1_1_1_1_1_1_1|2022-03-03	eastern asia	south korea	environment	35.7159281817874	127.140659781938
+H5N1|2344b|EPI_ISL_18445705|anseriformes|france|1_1_1_1_1_1_1_1|2022-01-24	western europe	france	anseriformes-wild	46.5103009447381	2.5780749353201
+H5N1|2344b|EPI_ISL_18458065|anseriformes|poland|1_1_1_1_1_1_1_1|2021-11-16	eastern europe	poland	anseriformes-wild	52.1141994014432	19.4236724631525
+H5N1|2344b|EPI_ISL_18927384|galliformes|united_kingdom|1_1_1_1_1_1_1_1|2024-02-14	northern europe	united kingdom	galliformes-domestic	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_18983934|anseriformes|bangladesh|1_1_1_1_1_1_1_1|2021-12-22	southern asia	bangladesh	anseriformes-wild	23.8299093538119	90.2865403636969
+H5N1|2344b|EPI_ISL_6761022|anseriformes|netherlands|1_1_1_1_1_1_1_1|2021-11-09	western europe	netherlands	anseriformes-wild	52.083727924893	5.16763788059654
+H5N1|2344b|EPI_ISL_8599973|anseriformes|china|1_1_1_1_1_1_1_1|2021-11-03	eastern asia	china	anseriformes-wild	40.1838367941588	116.40878248942
+H5N1|2344b|EPI_ISL_8799317|charadriiformes|netherlands|1_1_1_1_1_1_1_1|2021-12-24	western europe	netherlands	charadriiformes-wild	52.0617180422494	5.94466833784019
+H5N1|2344b|EPI_ISL_china_20230812|anseriformes|china|1_1_1_1_1_1_1_1|2021-11-16	eastern asia	china	anseriformes-wild	30.9806813015582	112.277189482252
+H5N1|2344b|EPI_ISL_china_20230841|galliformes|china|1_1_1_1_1_1_1_1|2021-12-20	eastern asia	china	galliformes-domestic	44.083329648604	113.188484632426
+H5N1|2344b|EPI_ISL_china_20230842|anseriformes|china|1_1_1_1_1_1_1_1|2021-11-25	eastern asia	china	anseriformes-wild	44.083329648604	113.188484632426
+H5N1|2344b|EPI_ISL_china_20230848|anseriformes|china|1_1_1_1_1_1_1_1|2021-12-02	eastern asia	china	anseriformes-wild	33.8761853651454	113.614527263456
+H5N1|2344b|EPI_ISL_china_20230849|anseriformes|china|1_1_1_1_1_1_1_1|2021-11-26	eastern asia	china	anseriformes-wild	33.8761853651454	113.614527263456
+H5N1|2344b|EPI_ISL_china_2023085|anseriformes|china|1_1_1_1_1_1_1_1|2021-11-04	eastern asia	china	anseriformes-wild	30.9806813015582	112.277189482252
+H5N1|2344b|EPI_ISL_china_20230854|suliformes|china|1_1_1_1_1_1_1_1|2021-12-01	eastern asia	china	other-bird	31.8128943962267	117.235219497068
+H5N1|2344b|EPI_ISL_china_28|podicipediformes|china|1_1_1_1_1_1_1_1|2022-07-21	eastern asia	china	other-bird	35.7553973024078	96.0028538289268
+H5N1|2344b|EPI_ISL_china_30|charadriiformes|china|1_1_1_1_1_1_1_1|2022-07-23	eastern asia	china	charadriiformes-wild	35.7553973024078	96.0028538289268
+H5N1|2344b|EPI_ISL_china_31|charadriiformes|china|1_1_1_1_1_1_1_1|2022-06-20	eastern asia	china	charadriiformes-wild	35.7553973024078	96.0028538289268
+H5N1|2344b|EPI_ISL_china_36|anseriformes|china|1_1_1_1_1_1_1_1|2022-06-18	eastern asia	china	anseriformes-wild	35.7553973024078	96.0028538289268
+H5N1|2344b|EPI_ISL_china_38|anseriformes|china|1_1_1_1_1_1_1_1|2022-06-18	eastern asia	china	anseriformes-wild	35.7553973024078	96.0028538289268
+H5N1|2344b|EPI_ISL_china_43|charadriiformes|china|1_1_1_1_1_1_1_1|2022-07-21	eastern asia	china	charadriiformes-wild	35.7553973024078	96.0028538289268

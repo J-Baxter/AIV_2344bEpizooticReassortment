@@ -1,0 +1,317 @@
+tipnames	collection_regionname	collection_countryname	host_simplifiedhost	lat	long
+H5N8|2344b|EPI_ISL_1009687|galliformes|south_korea|3_2_3_1_3_2_1_2|2020-12-31	eastern asia	south korea	galliformes-wild	36.3474789243827	128.748576389097
+H5N8|2344b|EPI_ISL_1009688|galliformes|south_korea|3_2_3_1_3_2_1_2|2021-01-01	eastern asia	south korea	galliformes-domestic	34.8733358026855	126.897223705092
+H5N8|2344b|EPI_ISL_1009689|galliformes|south_korea|3_2_3_1_3_2_1_2|2021-01-03	eastern asia	south korea	galliformes-domestic	36.5298116066164	126.847825775926
+H5N8|2344b|EPI_ISL_1009691|anseriformes|south_korea|3_2_3_1_3_2_1_2|2021-01-04	eastern asia	south korea	anseriformes-wild	35.7159281817874	127.140659781938
+H5N8|2344b|EPI_ISL_1009692|anseriformes|south_korea|3_2_3_1_3_2_1_2|2021-01-05	eastern asia	south korea	anseriformes-wild	36.737850075983	127.830446360213
+H5N8|2344b|EPI_ISL_1009693|galliformes|south_korea|3_2_3_1_3_2_1_2|2021-01-08	eastern asia	south korea	galliformes-domestic	37.5315346337798	127.181023197189
+H5N8|2344b|EPI_ISL_1009694|anseriformes|south_korea|3_2_3_1_3_2_1_2|2021-01-09	eastern asia	south korea	anseriformes-wild	35.3225325644814	128.261669154089
+H5N8|2344b|EPI_ISL_1009698|anseriformes|south_korea|3_2_3_1_3_2_1_2|2020-11-25	eastern asia	south korea	anseriformes-wild	37.5315346337798	127.181023197189
+H5N8|2344b|EPI_ISL_1009707|NA|south_korea|3_2_3_1_3_2_1_2|2020-12-14	eastern asia	south korea	other-bird	36.737850075983	127.830446360213
+H5N8|2344b|EPI_ISL_1009709|NA|south_korea|3_2_3_1_3_2_1_2|2020-12-16	eastern asia	south korea	other-bird	33.3869876346889	126.553618799527
+H5N8|2344b|EPI_ISL_1009710|anseriformes|south_korea|3_2_3_1_3_2_1_2|2020-11-17	eastern asia	south korea	anseriformes-wild	33.3869876346889	126.553618799527
+H5N8|2344b|EPI_ISL_1033030|galliformes|czechia|3_2_3_1_3_2_1_2|2021-02-03	eastern europe	czechia	galliformes-domestic	49.9006406346158	16.1892997029385
+H5N8|2344b|EPI_ISL_1033124|anseriformes|czechia|3_2_3_1_3_2_1_2|2021-02-04	eastern europe	czechia	anseriformes-wild	49.0928166218663	14.4391547985202
+H5N8|2344b|EPI_ISL_1038924|primates|russia|3_2_3_1_3_2_1_2|2020-12-12	eastern europe	russia	human	47.1064465901659	47.3587677312838
+H5N8|2344b|EPI_ISL_1039239|galliformes|russia|3_2_3_1_3_2_1_2|2020-12-12	eastern europe	russia	galliformes-domestic	47.1064465901659	47.3587677312838
+H5N8|2344b|EPI_ISL_1041131|galliformes|japan|3_2_3_1_3_2_1_2|2021-02-10	eastern asia	japan	galliformes-domestic	35.5094511865639	140.198261340312
+H5N8|2344b|EPI_ISL_1041135|galliformes|japan|3_2_3_1_3_2_1_2|2021-02-08	eastern asia	japan	galliformes-domestic	33.9191788356518	134.242093496813
+H5N8|2344b|EPI_ISL_1041149|anseriformes|japan|3_2_3_1_3_2_1_2|2021-01-23	eastern asia	japan	anseriformes-wild	35.5094511865639	140.198261340312
+H5N8|2344b|EPI_ISL_1046889|galliformes|netherlands|3_2_3_1_3_2_1_2|2021-02-19	western europe	netherlands	galliformes-domestic	51.5616727876811	5.19541346074046
+H5N8|2344b|EPI_ISL_1048238|falconiformes|netherlands|3_2_3_1_3_2_1_2|2020-12-17	western europe	netherlands	other-bird	52.5811544669078	4.87272777813315
+H5N8|2344b|EPI_ISL_1080480|anseriformes|czechia|3_2_3_1_3_2_1_2|2021-02-14	eastern europe	czechia	anseriformes-wild	50.7015712481419	14.9927241891218
+H5N8|2344b|EPI_ISL_1081353|anseriformes|japan|3_2_3_1_3_2_1_2|2021-02-14	eastern asia	japan	anseriformes-wild	36.6894768729176	139.818920628006
+H5N8|2344b|EPI_ISL_1093426|charadriiformes|sweden|3_2_3_1_3_2_1_2|2021-02-07	northern europe	sweden	charadriiformes-wild	55.9474024317265	13.595146733816
+H5N8|2344b|EPI_ISL_1095365|anseriformes|sweden|3_2_3_1_3_2_1_2|2021-02-07	northern europe	sweden	anseriformes-wild	56.2754954629495	15.2029498652564
+H5N8|2344b|EPI_ISL_1095450|anseriformes|sweden|3_2_3_1_3_2_1_2|2021-02-01	northern europe	sweden	anseriformes-wild	55.9474024317265	13.595146733816
+H5N8|2344b|EPI_ISL_1114725|anseriformes|japan|3_2_3_1_3_2_1_2|2021-01-16	eastern asia	japan	anseriformes-wild	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_1114741|galliformes|italy|3_2_3_1_3_2_1_2|2020-10-17	southern europe	italy	galliformes-domestic	41.979336323661	12.7721450906831
+H5N8|2344b|EPI_ISL_1114748|galliformes|russia|3_2_3_1_3_2_1_2|2020-10-25	eastern europe	russia	galliformes-domestic	47.725861660493	41.3470662241277
+H5N8|2344b|EPI_ISL_1114751|galliformes|russia|3_2_3_1_3_2_1_2|2020-12-11	eastern europe	russia	galliformes-domestic	44.927089080414	43.4103582512603
+H5N8|2344b|EPI_ISL_1114754|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-12-31	western europe	netherlands	anseriformes-wild	51.5616727876811	5.19541346074046
+H5N8|2344b|EPI_ISL_1114758|galliformes|russia|3_2_3_1_3_2_1_2|2021-01-29	eastern europe	russia	galliformes-domestic	47.725861660493	41.3470662241277
+H5N8|2344b|EPI_ISL_1114763|galliformes|russia|3_2_3_1_3_2_1_2|2021-01-05	central asia	russia	galliformes-domestic	65.951077439978	95.3658732364833
+H5N8|2344b|EPI_ISL_1123353|anseriformes|united_kingdom|3_2_3_1_3_2_1_2|2020-12-27	northern europe	united kingdom	anseriformes-wild	54.0438440515314	-2.78687513666638
+H5N8|2344b|EPI_ISL_1139014|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-10-27	western europe	netherlands	anseriformes-wild	52.0617180422494	5.94466833784019
+H5N8|2344b|EPI_ISL_1139019|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-10-28	western europe	netherlands	anseriformes-wild	52.083727924893	5.16763788059654
+H5N8|2344b|EPI_ISL_1139022|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-10-29	western europe	netherlands	anseriformes-wild	53.1100430768808	5.84863928632393
+H5N8|2344b|EPI_ISL_1139029|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-11-03	western europe	netherlands	anseriformes-wild	52.5811544669078	4.87272777813315
+H5N8|2344b|EPI_ISL_1139037|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-10-31	western europe	netherlands	anseriformes-wild	51.9374604216783	4.46477045234472
+H5N8|2344b|EPI_ISL_1139040|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-11-02	western europe	netherlands	anseriformes-wild	52.8629285667789	6.62382060282334
+H5N8|2344b|EPI_ISL_1139090|accipitriformes|netherlands|3_2_3_1_3_2_1_2|2020-11-12	western europe	netherlands	other-bird	51.5616727876811	5.19541346074046
+H5N8|2344b|EPI_ISL_1139091|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-11-10	western europe	netherlands	anseriformes-wild	53.1100430768808	5.84863928632393
+H5N8|2344b|EPI_ISL_1139098|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-11-10	western europe	netherlands	anseriformes-wild	52.0617180422494	5.94466833784019
+H5N8|2344b|EPI_ISL_1139099|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-11-13	western europe	netherlands	anseriformes-wild	51.4517197034959	3.83526799798383
+H5N8|2344b|EPI_ISL_1139105|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-10-26	western europe	netherlands	anseriformes-wild	52.5811544669078	4.87272777813315
+H5N8|2344b|EPI_ISL_1139165|charadriiformes|netherlands|3_2_3_1_3_2_1_2|2020-11-26	western europe	netherlands	charadriiformes-wild	52.083727924893	5.16763788059654
+H5N8|2344b|EPI_ISL_1139166|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-11-24	western europe	netherlands	anseriformes-wild	52.4448999895994	6.44900146928843
+H5N8|2344b|EPI_ISL_1139172|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-11-26	western europe	netherlands	anseriformes-wild	51.9374604216783	4.46477045234472
+H5N8|2344b|EPI_ISL_11402307|galliformes|united_kingdom|3_2_3_1_3_2_1_2|2021-02-06	northern europe	united kingdom	galliformes-domestic	54.0438440515314	-2.78687513666638
+H5N8|2344b|EPI_ISL_11406400|passeriformes|united_kingdom|3_2_3_1_3_2_1_2|2021-03-28	northern europe	united kingdom	other-bird	54.0438440515314	-2.78687513666638
+H5N8|2344b|EPI_ISL_11406449|galliformes|united_kingdom|3_2_3_1_3_2_1_2|2021-03-28	northern europe	united kingdom	galliformes-wild	54.0438440515314	-2.78687513666638
+H5N8|2344b|EPI_ISL_1180234|anseriformes|czechia|3_2_3_1_3_2_1_2|2021-01-24	eastern europe	czechia	anseriformes-wild	49.0928166218663	14.4391547985202
+H5N8|2344b|EPI_ISL_12176843|galliformes|kosovo|3_2_3_1_3_2_1_2|2021-10-11	southern europe	kosovo	galliformes-domestic	42.5708562510164	20.8773751977042
+H5N8|2344b|EPI_ISL_12176844|galliformes|kosovo|3_2_3_1_3_2_1_2|2021-10-18	southern europe	kosovo	galliformes-wild	42.5708562510164	20.8773751977042
+H5N8|2344b|EPI_ISL_12176847|galliformes|kosovo|3_2_3_1_3_2_1_2|2021-11-05	southern europe	kosovo	galliformes-domestic	42.5708562510164	20.8773751977042
+H5N8|2344b|EPI_ISL_12176852|galliformes|kosovo|3_2_3_1_3_2_1_2|2022-01-19	southern europe	kosovo	galliformes-domestic	42.5708562510164	20.8773751977042
+H5N8|2344b|EPI_ISL_12176853|galliformes|kosovo|3_2_3_1_3_2_1_2|2021-06-14	southern europe	kosovo	galliformes-domestic	42.5708562510164	20.8773751977042
+H5N8|2344b|EPI_ISL_12176854|galliformes|kosovo|3_2_3_1_3_2_1_2|2022-02-15	southern europe	kosovo	galliformes-domestic	42.5708562510164	20.8773751977042
+H5N8|2344b|EPI_ISL_12176855|galliformes|kosovo|3_2_3_1_3_2_1_2|2022-03-01	southern europe	kosovo	galliformes-domestic	42.5708562510164	20.8773751977042
+H5N8|2344b|EPI_ISL_12176932|galliformes|albania|3_2_3_1_3_2_1_2|2022-03-01	southern europe	albania	galliformes-domestic	41.1330587421492	20.0646630993931
+H5N8|2344b|EPI_ISL_1240717|accipitriformes|sweden|3_2_3_1_3_2_1_2|2021-02-21	northern europe	sweden	other-bird	57.1855292476939	16.1305148015024
+H5N8|2344b|EPI_ISL_1279262|anseriformes|croatia|3_2_3_1_3_2_1_2|2021-03-01	southern europe	croatia	anseriformes-wild	45.1789051758503	18.8780624838969
+H5N8|2344b|EPI_ISL_1295638|anseriformes|norway|3_2_3_1_3_2_1_2|2021-01-26	northern europe	norway	anseriformes-wild	63.9836330810339	12.3044196327525
+H5N8|2344b|EPI_ISL_1295639|galliformes|norway|3_2_3_1_3_2_1_2|2020-11-30	northern europe	norway	galliformes-domestic	63.9836330810339	12.3044196327525
+H5N8|2344b|EPI_ISL_1307720|accipitriformes|sweden|3_2_3_1_3_2_1_2|2021-03-02	northern europe	sweden	other-bird	57.4990622714119	14.4340296449519
+H5N8|2344b|EPI_ISL_13175608|galliformes|sweden|3_2_3_1_3_2_1_2|2021-02-23	northern europe	sweden	galliformes-domestic	57.5128828372686	18.541723046906
+H5N8|2344b|EPI_ISL_13175667|galliformes|sweden|3_2_3_1_3_2_1_2|2021-02-24	northern europe	sweden	galliformes-wild	55.9474024317265	13.595146733816
+H5N8|2344b|EPI_ISL_13369742|anseriformes|united_kingdom|3_2_3_1_3_2_1_2|2021-11-07	northern europe	united kingdom	anseriformes-wild	54.0438440515314	-2.78687513666638
+H5N8|2344b|EPI_ISL_13632084|galliformes|kazakhstan|3_2_3_1_3_2_1_2|2020-08-01	central asia	kazakhstan	galliformes-domestic	44.9554808695858	77.9603747475348
+H5N8|2344b|EPI_ISL_1386249|accipitriformes|sweden|3_2_3_1_3_2_1_2|2021-03-16	northern europe	sweden	other-bird	57.5128828372686	18.541723046906
+H5N8|2344b|EPI_ISL_1399231|galliformes|czechia|3_2_3_1_3_2_1_2|2021-02-18	eastern europe	czechia	galliformes-domestic	49.4071187835784	15.6903483593844
+H5N8|2344b|EPI_ISL_1399234|galliformes|czechia|3_2_3_1_3_2_1_2|2021-02-27	eastern europe	czechia	galliformes-domestic	49.5901077813144	13.2328532454248
+H5N8|2344b|EPI_ISL_1399238|anseriformes|czechia|3_2_3_1_3_2_1_2|2021-02-22	eastern europe	czechia	anseriformes-wild	50.0636978575423	14.4763649175255
+H5N8|2344b|EPI_ISL_1399239|anseriformes|czechia|3_2_3_1_3_2_1_2|2021-02-23	eastern europe	czechia	anseriformes-wild	49.7786245115919	17.190355445158
+H5N8|2344b|EPI_ISL_1399240|anseriformes|czechia|3_2_3_1_3_2_1_2|2021-03-02	eastern europe	czechia	anseriformes-wild	49.9969098943343	14.5545810187162
+H5N8|2344b|EPI_ISL_1399244|anseriformes|czechia|3_2_3_1_3_2_1_2|2021-03-04	eastern europe	czechia	anseriformes-wild	49.7786245115919	17.190355445158
+H5N8|2344b|EPI_ISL_1399245|anseriformes|czechia|3_2_3_1_3_2_1_2|2021-03-06	eastern europe	czechia	anseriformes-wild	49.8368899304208	17.9578982609586
+H5N8|2344b|EPI_ISL_1420637|anseriformes|latvia|3_2_3_1_3_2_1_2|2021-02-04	northern europe	latvia	anseriformes-wild	56.9214336659281	21.9832067017723
+H5N8|2344b|EPI_ISL_14770162|gruiformes|china|3_2_3_1_3_2_1_2|2020-12-31	eastern asia	china	other-bird	36.3536638777003	118.136153809721
+H5N8|2344b|EPI_ISL_14770163|gruiformes|china|3_2_3_1_3_2_1_2|2020-12-31	eastern asia	china	other-bird	36.3536638777003	118.136153809721
+H5N8|2344b|EPI_ISL_14770172|anseriformes|china|3_2_3_1_3_2_1_2|2020-11-13	eastern asia	china	anseriformes-wild	36.3536638777003	118.136153809721
+H5N8|2344b|EPI_ISL_14775517|anseriformes|china|3_2_3_1_3_2_1_2|2021-01	eastern asia	china	anseriformes-wild	39.5182972347816	116.100714730353
+H5N8|2344b|EPI_ISL_14822356|anseriformes|china|3_2_3_1_3_2_1_2|2021-03-11	eastern asia	china	anseriformes-wild	37.2602231520297	106.161545856493
+H5N8|2344b|EPI_ISL_14823424|anseriformes|china|3_2_3_1_3_2_1_2|2020-10-30	eastern asia	china	anseriformes-wild	33.8761853651454	113.614527263456
+H5N8|2344b|EPI_ISL_14836080|anseriformes|china|3_2_3_1_3_2_1_2|2020-11-16	eastern asia	china	anseriformes-wild	33.8761853651454	113.614527263456
+H5N8|2344b|EPI_ISL_14874401|galliformes|kazakhstan|3_2_3_1_3_2_1_2|2020-08-01	central asia	kazakhstan	galliformes-domestic	48.3645677524915	67.2060737287064
+H5N8|2344b|EPI_ISL_15435511|gruiformes|china|3_2_3_1_3_2_1_2|2021-01-21	eastern asia	china	other-bird	24.9645779206387	101.495556215566
+H5N8|2344b|EPI_ISL_1575130|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-11-06	western europe	netherlands	anseriformes-wild	51.9374604216783	4.46477045234472
+H5N8|2344b|EPI_ISL_1575131|charadriiformes|netherlands|3_2_3_1_3_2_1_2|2020-11-06	western europe	netherlands	charadriiformes-wild	51.9374604216783	4.46477045234472
+H5N8|2344b|EPI_ISL_16215736|galliformes|china|3_2_3_1_3_2_1_2|2020-12	eastern asia	china	galliformes-domestic	36.6848135465548	103.513718494908
+H5N8|2344b|EPI_ISL_1665254|anseriformes|italy|3_2_3_1_3_2_1_2|2021-01-13	eastern europe	romania	anseriformes-wild	45.8353861913577	24.9959408037042
+H5N8|2344b|EPI_ISL_1665256|anseriformes|slovakia|3_2_3_1_3_2_1_2|2021-01-08	eastern europe	slovakia	anseriformes-wild	48.7020478211848	21.2707899575187
+H5N8|2344b|EPI_ISL_1665257|anseriformes|austria|3_2_3_1_3_2_1_2|2021-02-04	western europe	austria	anseriformes-wild	48.2718646696418	15.7529218938467
+H5N8|2344b|EPI_ISL_1665259|anseriformes|austria|3_2_3_1_3_2_1_2|2021-02-01	western europe	austria	anseriformes-wild	48.2089421257604	16.3790253882177
+H5N8|2344b|EPI_ISL_1665263|anseriformes|slovenia|3_2_3_1_3_2_1_2|2020-11-17	southern europe	slovenia	anseriformes-wild	46.124137393352	14.813678667363
+H5N8|2344b|EPI_ISL_1665266|anseriformes|slovenia|3_2_3_1_3_2_1_2|2020-12-10	southern europe	slovenia	anseriformes-wild	46.124137393352	14.813678667363
+H5N8|2344b|EPI_ISL_1697181|galliformes|czechia|3_2_3_1_3_2_1_2|2021-03-29	eastern europe	czechia	galliformes-domestic	50.3852537596798	15.8661896036913
+H5N8|2344b|EPI_ISL_1697183|galliformes|czechia|3_2_3_1_3_2_1_2|2021-04-06	eastern europe	czechia	galliformes-domestic	50.5294097303953	13.8509106160886
+H5N8|2344b|EPI_ISL_1697184|galliformes|czechia|3_2_3_1_3_2_1_2|2021-04-06	eastern europe	czechia	galliformes-domestic	49.5901077813144	13.2328532454248
+H5N8|2344b|EPI_ISL_1697186|anseriformes|czechia|3_2_3_1_3_2_1_2|2021-04-06	eastern europe	czechia	anseriformes-wild	50.3852537596798	15.8661896036913
+H5N8|2344b|EPI_ISL_1697187|galliformes|czechia|3_2_3_1_3_2_1_2|2021-04-03	eastern europe	czechia	galliformes-domestic	50.0636978575423	14.4763649175255
+H5N8|2344b|EPI_ISL_1697188|galliformes|czechia|3_2_3_1_3_2_1_2|2021-04-01	eastern europe	czechia	galliformes-domestic	49.8368899304208	17.9578982609586
+H5N8|2344b|EPI_ISL_1697194|galliformes|czechia|3_2_3_1_3_2_1_2|2021-03-12	eastern europe	czechia	galliformes-domestic	49.2395239668424	17.7694110590927
+H5N8|2344b|EPI_ISL_1697195|anseriformes|czechia|3_2_3_1_3_2_1_2|2021-03-19	eastern europe	czechia	anseriformes-wild	49.9006406346158	16.1892997029385
+H5N8|2344b|EPI_ISL_17088884|anseriformes|china|3_2_3_1_3_2_1_2|2021-01-29	eastern asia	china	anseriformes-wild	29.1745873279179	120.086382279697
+H5N8|2344b|EPI_ISL_1719909|anseriformes|lithuania|3_2_3_1_3_2_1_2|2021-02-26	northern europe	lithuania	anseriformes-wild	54.8294557942269	25.2490386107757
+H5N8|2344b|EPI_ISL_1719912|anseriformes|lithuania|3_2_3_1_3_2_1_2|2021-03-19	northern europe	lithuania	anseriformes-wild	54.8294557942269	25.2490386107757
+H5N8|2344b|EPI_ISL_1719913|galliformes|bulgaria|3_2_3_1_3_2_1_2|2021-02-01	eastern europe	bulgaria	galliformes-domestic	43.4863324718956	24.6106292568625
+H5N8|2344b|EPI_ISL_1719914|anseriformes|bulgaria|3_2_3_1_3_2_1_2|2021-02-04	eastern europe	bulgaria	anseriformes-domestic	43.4863324718956	24.6106292568625
+H5N8|2344b|EPI_ISL_17414604|NA|nigeria|3_2_3_1_3_2_1_2|2021-02-12	western africa	nigeria	other-bird	9.20979731798597	9.54756607799562
+H5N8|2344b|EPI_ISL_17414606|NA|nigeria|3_2_3_1_3_2_1_2|2021-02-25	western africa	nigeria	other-bird	9.20979731798597	9.54756607799562
+H5N8|2344b|EPI_ISL_1760447|anseriformes|china|3_2_3_1_3_2_1_2|2020-11-10	eastern asia	china	anseriformes-wild	35.1531910315733	108.845281415025
+H5N8|2344b|EPI_ISL_17655578|environment|japan|3_2_3_1_3_2_1_2|2021-11-22	eastern asia	japan	environment	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_17655581|environment|japan|3_2_3_1_3_2_1_2|2021-11-22	eastern asia	japan	environment	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_17655601|environment|japan|3_2_3_1_3_2_1_2|2021-12-06	eastern asia	japan	environment	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_17805905|anseriformes|japan|3_2_3_1_3_2_1_2|2021-01-16	eastern asia	japan	anseriformes-wild	37.3996665395305	137.574137168765
+H5N8|2344b|EPI_ISL_18012466|galliformes|china|3_2_3_1_3_2_1_2|2021-11-09	eastern asia	china	galliformes-wild	39.5182972347816	116.100714730353
+H5N8|2344b|EPI_ISL_18112121|galliformes|united_kingdom|3_2_3_1_3_2_1_2|2021-01-26	northern europe	united kingdom	galliformes-wild	52.3299411115892	-3.76558183366802
+H5N8|2344b|EPI_ISL_18361537|galliformes|denmark|3_2_3_1_3_2_1_2|2021-04-24	northern europe	denmark	galliformes-wild	55.3568797999445	9.45020901930698
+H5N8|2344b|EPI_ISL_18361625|anseriformes|denmark|3_2_3_1_3_2_1_2|2022-01-03	northern europe	denmark	anseriformes-wild	56.2490598335433	9.39675377639095
+H5N8|2344b|EPI_ISL_18443659|anseriformes|denmark|3_2_3_1_3_2_1_2|2021-12-13	northern europe	denmark	anseriformes-wild	56.2490598335433	9.39675377639095
+H5N8|2344b|EPI_ISL_18443661|galliformes|denmark|3_2_3_1_3_2_1_2|2022-01-06	northern europe	denmark	galliformes-domestic	56.2490598335433	9.39675377639095
+H5N8|2344b|EPI_ISL_18458051|galliformes|lithuania|3_2_3_1_3_2_1_2|2021-04-30	northern europe	lithuania	galliformes-domestic	55.332528278146	23.9147651507013
+H5N8|2344b|EPI_ISL_18458052|galliformes|lithuania|3_2_3_1_3_2_1_2|2021-05-03	northern europe	lithuania	galliformes-domestic	55.332528278146	23.9147651507013
+H5N8|2344b|EPI_ISL_18953085|anseriformes|denmark|3_2_3_1_3_2_1_2|2020-11-04	northern europe	denmark	anseriformes-wild	55.9512996898935	10.0707816763207
+H5N8|2344b|EPI_ISL_1941351|anseriformes|czechia|3_2_3_1_3_2_1_2|2021-04-18	eastern europe	czechia	anseriformes-wild	50.3852537596798	15.8661896036913
+H5N8|2344b|EPI_ISL_1941581|anseriformes|czechia|3_2_3_1_3_2_1_2|2021-03-13	eastern europe	czechia	anseriformes-wild	49.5901077813144	13.2328532454248
+H5N8|2344b|EPI_ISL_1941582|galliformes|czechia|3_2_3_1_3_2_1_2|2021-04-08	eastern europe	czechia	galliformes-domestic	49.0928166218663	14.4391547985202
+H5N8|2344b|EPI_ISL_2081527|carnivora|united_kingdom|3_2_3_1_3_2_1_2|2020-12-08	northern europe	united kingdom	mammal	54.0438440515314	-2.78687513666638
+H5N8|2344b|EPI_ISL_2111625|anseriformes|poland|3_2_3_1_3_2_1_2|2021-02-15	eastern europe	poland	anseriformes-wild	54.1541828653429	17.9878737941344
+H5N8|2344b|EPI_ISL_2113493|anseriformes|poland|3_2_3_1_3_2_1_2|2021-03-03	eastern europe	poland	anseriformes-wild	54.1541828653429	17.9878737941344
+H5N8|2344b|EPI_ISL_2172517|accipitriformes|netherlands|3_2_3_1_3_2_1_2|2021-01-05	western europe	netherlands	other-bird	53.1100430768808	5.84863928632393
+H5N8|2344b|EPI_ISL_2172522|accipitriformes|netherlands|3_2_3_1_3_2_1_2|2021-01-10	western europe	netherlands	other-bird	52.5811544669078	4.87272777813315
+H5N8|2344b|EPI_ISL_2172523|charadriiformes|netherlands|3_2_3_1_3_2_1_2|2021-01-18	western europe	netherlands	charadriiformes-wild	51.9374604216783	4.46477045234472
+H5N8|2344b|EPI_ISL_2172526|accipitriformes|netherlands|3_2_3_1_3_2_1_2|2021-02-21	western europe	netherlands	other-bird	52.0617180422494	5.94466833784019
+H5N8|2344b|EPI_ISL_2172529|anseriformes|netherlands|3_2_3_1_3_2_1_2|2021-01-30	western europe	netherlands	anseriformes-wild	52.0617180422494	5.94466833784019
+H5N8|2344b|EPI_ISL_2172531|anseriformes|netherlands|3_2_3_1_3_2_1_2|2021-02-21	western europe	netherlands	anseriformes-wild	52.5811544669078	4.87272777813315
+H5N8|2344b|EPI_ISL_2172533|accipitriformes|netherlands|3_2_3_1_3_2_1_2|2021-03-04	western europe	netherlands	other-bird	52.0617180422494	5.94466833784019
+H5N8|2344b|EPI_ISL_2177398|galliformes|netherlands|3_2_3_1_3_2_1_2|2021-04-07	western europe	netherlands	galliformes-domestic	52.5811544669078	4.87272777813315
+H5N8|2344b|EPI_ISL_2227275|galliformes|netherlands|3_2_3_1_3_2_1_2|2021-05-21	western europe	netherlands	galliformes-domestic	51.0391095671615	4.2420548599892
+H5N8|2344b|EPI_ISL_2234810|charadriiformes|italy|3_2_3_1_3_2_1_2|2021-01-28	southern europe	italy	charadriiformes-wild	42.7080607219025	12.208345049127
+H5N8|2344b|EPI_ISL_2234812|anseriformes|france|3_2_3_1_3_2_1_2|2021-01-27	western europe	france	anseriformes-wild	45.5190780558984	4.54715006428513
+H5N8|2344b|EPI_ISL_2234814|falconiformes|france|3_2_3_1_3_2_1_2|2020-11-20	western europe	france	other-bird	45.5190780558984	4.54715006428513
+H5N8|2344b|EPI_ISL_2234819|anseriformes|italy|3_2_3_1_3_2_1_2|2021-01-19	eastern europe	romania	anseriformes-wild	45.8353861913577	24.9959408037042
+H5N8|2344b|EPI_ISL_2234820|accipitriformes|italy|3_2_3_1_3_2_1_2|2021-01-22	eastern europe	romania	other-bird	45.8353861913577	24.9959408037042
+H5N8|2344b|EPI_ISL_2402938|galliformes|czechia|3_2_3_1_3_2_1_2|2021-05-17	eastern europe	czechia	galliformes-domestic	49.9969098943343	14.5545810187162
+H5N8|2344b|EPI_ISL_2681044|galliformes|italy|3_2_3_1_3_2_1_2|2021-05-05	eastern europe	romania	galliformes-domestic	46.6088558389042	24.6960646182533
+H5N8|2344b|EPI_ISL_2685842|anseriformes|china|3_2_3_1_3_2_1_2|2020-11-04	eastern asia	china	anseriformes-wild	30.9806813015582	112.277189482252
+H5N8|2344b|EPI_ISL_2815336|anseriformes|china|3_2_3_1_3_2_1_2|2020-10-11	eastern asia	china	anseriformes-wild	37.2602231520297	106.161545856493
+H5N8|2344b|EPI_ISL_2932600|anseriformes|kazakhstan|3_2_3_1_3_2_1_2|2020-09-01	central asia	kazakhstan	anseriformes-wild	44.9554808695858	77.9603747475348
+H5N8|2344b|EPI_ISL_2932617|passeriformes|kazakhstan|3_2_3_1_3_2_1_2|2020-09-15	central asia	kazakhstan	other-bird	53.8421826489217	69.2722074369824
+H5N8|2344b|EPI_ISL_2932683|galliformes|kazakhstan|3_2_3_1_3_2_1_2|2020-10-09	central asia	kazakhstan	galliformes-domestic	53.8421826489217	69.2722074369824
+H5N8|2344b|EPI_ISL_3026043|charadriiformes|sweden|3_2_3_1_3_2_1_2|2021-06-17	northern europe	sweden	charadriiformes-wild	57.5128828372686	18.541723046906
+H5N8|2344b|EPI_ISL_3102056|galliformes|bulgaria|3_2_3_1_3_2_1_2|2021-04-23	eastern europe	bulgaria	galliformes-domestic	41.8489090866177	25.942302613522
+H5N8|2344b|EPI_ISL_3102057|galliformes|bulgaria|3_2_3_1_3_2_1_2|2021-04-26	eastern europe	bulgaria	galliformes-domestic	42.2564257629518	24.8255765075979
+H5N8|2344b|EPI_ISL_3102058|galliformes|bulgaria|3_2_3_1_3_2_1_2|2021-05-05	eastern europe	bulgaria	galliformes-domestic	42.2564257629518	24.8255765075979
+H5N8|2344b|EPI_ISL_3102068|galliformes|poland|3_2_3_1_3_2_1_2|2021-04-28	eastern europe	poland	galliformes-domestic	52.3411657327183	21.0998506797105
+H5N8|2344b|EPI_ISL_3102070|ciconiiformes|poland|3_2_3_1_3_2_1_2|2021-05-02	eastern europe	poland	other-bird	52.3411657327183	21.0998506797105
+H5N8|2344b|EPI_ISL_3102071|galliformes|poland|3_2_3_1_3_2_1_2|2021-04-16	eastern europe	poland	galliformes-domestic	52.3411657327183	21.0998506797105
+H5N8|2344b|EPI_ISL_3102080|galliformes|austria|3_2_3_1_3_2_1_2|2021-04-27	western europe	austria	galliformes-domestic	48.1371934331394	13.9653618911462
+H5N8|2344b|EPI_ISL_3102082|anseriformes|italy|3_2_3_1_3_2_1_2|2021-04-08	eastern europe	romania	anseriformes-wild	45.3454976758826	29.3277400515515
+H5N8|2344b|EPI_ISL_3127850|anseriformes|sweden|3_2_3_1_3_2_1_2|2021-03-29	northern europe	sweden	anseriformes-wild	60.9480775654018	14.3747945686103
+H5N8|2344b|EPI_ISL_3128522|anseriformes|sweden|3_2_3_1_3_2_1_2|2021-04-06	northern europe	sweden	anseriformes-wild	58.2955067014075	12.8595382920252
+H5N8|2344b|EPI_ISL_3128523|pelecaniformes|greece|3_2_3_1_3_2_1_2|2021-03-22	southern europe	greece	other-bird	40.9283505289806	23.8878976832222
+H5N8|2344b|EPI_ISL_3128524|galliformes|kosovo|3_2_3_1_3_2_1_2|2021-05-31	southern europe	kosovo	galliformes-wild	42.2921134818528	21.1153262409808
+H5N8|2344b|EPI_ISL_3128526|galliformes|kosovo|3_2_3_1_3_2_1_2|2021-05-31	southern europe	kosovo	galliformes-domestic	42.912769066854	20.7913344545068
+H5N8|2344b|EPI_ISL_3128528|galliformes|kosovo|3_2_3_1_3_2_1_2|2021-06-03	southern europe	kosovo	galliformes-domestic	42.2921134818528	21.1153262409808
+H5N8|2344b|EPI_ISL_3128532|galliformes|kosovo|3_2_3_1_3_2_1_2|2021-06-01	southern europe	kosovo	galliformes-domestic	42.2389795413595	20.7297102658013
+H5N8|2344b|EPI_ISL_3128533|galliformes|albania|3_2_3_1_3_2_1_2|2021-05-31	southern europe	albania	galliformes-domestic	41.1330587421492	20.0646630993931
+H5N8|2344b|EPI_ISL_3128534|galliformes|albania|3_2_3_1_3_2_1_2|2021-06-04	southern europe	albania	galliformes-domestic	41.1330587421492	20.0646630993931
+H5N8|2344b|EPI_ISL_3135931|anseriformes|hungary|3_2_3_1_3_2_1_2|2021-03-08	eastern europe	hungary	anseriformes-wild	46.4291346697431	20.2330085562192
+H5N8|2344b|EPI_ISL_3138567|accipitriformes|sweden|3_2_3_1_3_2_1_2|2021-03-25	northern europe	sweden	other-bird	58.2955067014075	12.8595382920252
+H5N8|2344b|EPI_ISL_3138618|anseriformes|sweden|3_2_3_1_3_2_1_2|2021-04-15	northern europe	sweden	anseriformes-wild	60.9480775654018	14.3747945686103
+H5N8|2344b|EPI_ISL_3143953|accipitriformes|sweden|3_2_3_1_3_2_1_2|2021-04-04	northern europe	sweden	other-bird	55.9474024317265	13.595146733816
+H5N8|2344b|EPI_ISL_3314946|accipitriformes|sweden|3_2_3_1_3_2_1_2|2021-03-17	northern europe	sweden	other-bird	55.9474024317265	13.595146733816
+H5N8|2344b|EPI_ISL_3319859|anseriformes|sweden|3_2_3_1_3_2_1_2|2021-07-19	northern europe	sweden	anseriformes-wild	57.5128828372686	18.541723046906
+H5N8|2344b|EPI_ISL_3950066|anseriformes|sweden|3_2_3_1_3_2_1_2|2021-08-26	northern europe	sweden	anseriformes-wild	59.0743595934023	16.6929745153277
+H5N8|2344b|EPI_ISL_4061483|galliformes|nigeria|3_2_3_1_3_2_1_2|2021-03-01	western africa	nigeria	galliformes-domestic	9.58907159716497	8.08769036750384
+H5N8|2344b|EPI_ISL_4061490|galliformes|nigeria|3_2_3_1_3_2_1_2|2021-02-25	western africa	nigeria	galliformes-domestic	9.58907159716497	8.08769036750384
+H5N8|2344b|EPI_ISL_4069778|anseriformes|egypt|3_2_3_1_3_2_1_2|2019-02-27	northern africa	egypt	anseriformes-wild	26.5331366423868	29.7934978487062
+H5N8|2344b|EPI_ISL_4070847|galliformes|egypt|3_2_3_1_3_2_1_2|2019-06-25	northern africa	egypt	galliformes-domestic	26.5331366423868	29.7934978487062
+H5N8|2344b|EPI_ISL_4396748|galliformes|belgium|3_2_3_1_3_2_1_2|2021-08-30	western europe	belgium	galliformes-domestic	51.0391095671615	4.2420548599892
+H5N8|2344b|EPI_ISL_4805852|carnivora|germany|3_2_3_1_3_2_1_2|2021-08-18	western europe	germany	mammal	54.1814850326718	9.81577342948134
+H5N8|2344b|EPI_ISL_5049590|galliformes|luxembourg|3_2_3_1_3_2_1_2|2021-09-03	western europe	luxembourg	galliformes-domestic	49.6868212553332	6.34949296820615
+H5N8|2344b|EPI_ISL_5058090|charadriiformes|germany|3_2_3_1_3_2_1_2|2020-11-02	western europe	germany	charadriiformes-wild	53.5463325421189	10.020950289547
+H5N8|2344b|EPI_ISL_5061890|anseriformes|germany|3_2_3_1_3_2_1_2|2020-11-18	western europe	germany	anseriformes-domestic	54.1814850326718	9.81577342948134
+H5N8|2344b|EPI_ISL_5062078|charadriiformes|germany|3_2_3_1_3_2_1_2|2020-11-06	western europe	germany	charadriiformes-wild	54.1814850326718	9.81577342948134
+H5N8|2344b|EPI_ISL_5062851|charadriiformes|germany|3_2_3_1_3_2_1_2|2020-11-02	western europe	germany	charadriiformes-wild	53.7551744161606	12.5509509363277
+H5N8|2344b|EPI_ISL_5064971|galliformes|germany|3_2_3_1_3_2_1_2|2020-12-26	western europe	germany	galliformes-domestic	52.7642105761026	9.16783937293005
+H5N8|2344b|EPI_ISL_5067957|anseriformes|germany|3_2_3_1_3_2_1_2|2021-01-04	western europe	germany	anseriformes-domestic	52.7642105761026	9.16783937293005
+H5N8|2344b|EPI_ISL_5095336|anseriformes|germany|3_2_3_1_3_2_1_2|2020-12-17	western europe	germany	anseriformes-wild	52.7642105761026	9.16783937293005
+H5N8|2344b|EPI_ISL_5095645|galliformes|germany|3_2_3_1_3_2_1_2|2021-01-26	western europe	germany	galliformes-domestic	53.7551744161606	12.5509509363277
+H5N8|2344b|EPI_ISL_5095650|galliformes|germany|3_2_3_1_3_2_1_2|2021-01-30	western europe	germany	galliformes-domestic	52.4686720071996	13.4043192497063
+H5N8|2344b|EPI_ISL_5098142|anseriformes|germany|3_2_3_1_3_2_1_2|2021-01-18	western europe	germany	anseriformes-wild	49.9110600051883	7.45203480158582
+H5N8|2344b|EPI_ISL_5098144|anseriformes|germany|3_2_3_1_3_2_1_2|2021-02-01	western europe	germany	anseriformes-domestic	53.7551744161606	12.5509509363277
+H5N8|2344b|EPI_ISL_5098153|anseriformes|germany|3_2_3_1_3_2_1_2|2020-11-19	western europe	germany	anseriformes-wild	52.7642105761026	9.16783937293005
+H5N8|2344b|EPI_ISL_5098158|galliformes|germany|3_2_3_1_3_2_1_2|2021-02-15	western europe	germany	galliformes-domestic	52.4686720071996	13.4043192497063
+H5N8|2344b|EPI_ISL_5099367|galliformes|germany|3_2_3_1_3_2_1_2|2021-02-07	western europe	germany	galliformes-domestic	48.9386109033625	11.4278546586472
+H5N8|2344b|EPI_ISL_5100056|galliformes|germany|3_2_3_1_3_2_1_2|2021-02-28	western europe	germany	galliformes-domestic	52.7642105761026	9.16783937293005
+H5N8|2344b|EPI_ISL_5102130|galliformes|germany|3_2_3_1_3_2_1_2|2021-03-01	western europe	germany	galliformes-domestic	51.4777551092159	7.5539349720828
+H5N8|2344b|EPI_ISL_5102136|galliformes|germany|3_2_3_1_3_2_1_2|2021-03-02	western europe	germany	galliformes-domestic	48.9386109033625	11.4278546586472
+H5N8|2344b|EPI_ISL_5102449|accipitriformes|germany|3_2_3_1_3_2_1_2|2020-10-29	western europe	germany	other-bird	54.1814850326718	9.81577342948134
+H5N8|2344b|EPI_ISL_5115614|galliformes|germany|3_2_3_1_3_2_1_2|2021-02-26	western europe	germany	galliformes-domestic	52.5015246825321	13.4019638192194
+H5N8|2344b|EPI_ISL_5115617|anseriformes|germany|3_2_3_1_3_2_1_2|2021-03-04	western europe	germany	anseriformes-domestic	54.1814850326718	9.81577342948134
+H5N8|2344b|EPI_ISL_5115621|galliformes|germany|3_2_3_1_3_2_1_2|2021-03-04	western europe	germany	galliformes-domestic	53.7551744161606	12.5509509363277
+H5N8|2344b|EPI_ISL_5115956|galliformes|germany|3_2_3_1_3_2_1_2|2021-03-05	western europe	germany	galliformes-domestic	52.7642105761026	9.16783937293005
+H5N8|2344b|EPI_ISL_5115968|galliformes|germany|3_2_3_1_3_2_1_2|2021-03-04	western europe	germany	galliformes-domestic	52.4686720071996	13.4043192497063
+H5N8|2344b|EPI_ISL_5116063|anseriformes|germany|3_2_3_1_3_2_1_2|2021-02-26	western europe	germany	anseriformes-wild	50.5991757228504	9.0260509036638
+H5N8|2344b|EPI_ISL_5116172|anseriformes|germany|3_2_3_1_3_2_1_2|2021-03-02	western europe	germany	anseriformes-wild	50.5991757228504	9.0260509036638
+H5N8|2344b|EPI_ISL_5126214|strigiformes|germany|3_2_3_1_3_2_1_2|2021-03-10	western europe	germany	other-bird	52.0090264158216	11.7027467770331
+H5N8|2344b|EPI_ISL_5143583|galliformes|germany|3_2_3_1_3_2_1_2|2021-03-24	western europe	germany	galliformes-domestic	50.9034036811626	11.0265393979066
+H5N8|2344b|EPI_ISL_5143586|galliformes|germany|3_2_3_1_3_2_1_2|2021-03-24	western europe	germany	galliformes-domestic	51.0528694457593	13.3447264729352
+H5N8|2344b|EPI_ISL_5144529|anseriformes|germany|3_2_3_1_3_2_1_2|2021-03-20	western europe	germany	anseriformes-domestic	52.7642105761026	9.16783937293005
+H5N8|2344b|EPI_ISL_5145796|anseriformes|germany|3_2_3_1_3_2_1_2|2021-07-20	western europe	germany	anseriformes-wild	52.7642105761026	9.16783937293005
+H5N8|2344b|EPI_ISL_5146171|galliformes|germany|3_2_3_1_3_2_1_2|2021-03-29	western europe	germany	galliformes-domestic	48.5335196122676	9.04442576424602
+H5N8|2344b|EPI_ISL_5260418|anseriformes|china|3_2_3_1_3_2_1_2|2021-01-25	eastern asia	china	anseriformes-wild	40.1838367941588	116.40878248942
+H5N8|2344b|EPI_ISL_5260419|anseriformes|china|3_2_3_1_3_2_1_2|2021-03-02	eastern asia	china	anseriformes-wild	23.33624359406	113.398153372919
+H5N8|2344b|EPI_ISL_5260422|anseriformes|china|3_2_3_1_3_2_1_2|2021-02-01	eastern asia	china	anseriformes-wild	23.82591453975	108.782865094166
+H5N8|2344b|EPI_ISL_5260435|anseriformes|china|3_2_3_1_3_2_1_2|2021-04-22	eastern asia	china	anseriformes-wild	33.8761853651454	113.614527263456
+H5N8|2344b|EPI_ISL_5260444|anseriformes|china|3_2_3_1_3_2_1_2|2021-03-09	eastern asia	china	anseriformes-wild	27.6016362656629	115.709570895796
+H5N8|2344b|EPI_ISL_5260445|anseriformes|china|3_2_3_1_3_2_1_2|2021-04-27	eastern asia	china	anseriformes-wild	39.5182972347816	116.100714730353
+H5N8|2344b|EPI_ISL_5260446|anseriformes|china|3_2_3_1_3_2_1_2|2021-05-11	eastern asia	china	anseriformes-wild	23.82591453975	108.782865094166
+H5N8|2344b|EPI_ISL_5260448|anseriformes|china|3_2_3_1_3_2_1_2|2021-03-19	eastern asia	china	anseriformes-wild	27.5978523947888	111.713471439142
+H5N8|2344b|EPI_ISL_5260449|anseriformes|china|3_2_3_1_3_2_1_2|2021-03-24	eastern asia	china	anseriformes-wild	32.9645721858222	119.470797338049
+H5N8|2344b|EPI_ISL_5260450|anseriformes|china|3_2_3_1_3_2_1_2|2021-03-09	eastern asia	china	anseriformes-wild	29.1745873279179	120.086382279697
+H5N8|2344b|EPI_ISL_5260451|anseriformes|china|3_2_3_1_3_2_1_2|2021-04-13	eastern asia	china	anseriformes-wild	41.2987124958383	122.600275282862
+H5N8|2344b|EPI_ISL_5260452|anseriformes|china|3_2_3_1_3_2_1_2|2021-01-20	eastern asia	china	anseriformes-wild	23.33624359406	113.398153372919
+H5N8|2344b|EPI_ISL_5260456|anseriformes|china|3_2_3_1_3_2_1_2|2021-02-22	eastern asia	china	anseriformes-wild	36.3536638777003	118.136153809721
+H5N8|2344b|EPI_ISL_5260462|anseriformes|china|3_2_3_1_3_2_1_2|2020-11-10	eastern asia	china	anseriformes-wild	37.5496375119255	112.274268590565
+H5N8|2344b|EPI_ISL_5260464|gruiformes|china|3_2_3_1_3_2_1_2|2021-01-23	eastern asia	china	other-bird	36.3536638777003	118.136153809721
+H5N8|2344b|EPI_ISL_5260467|podicipediformes|china|3_2_3_1_3_2_1_2|2021-06-05	eastern asia	china	other-bird	35.1531910315733	108.845281415025
+H5N8|2344b|EPI_ISL_5260468|podicipediformes|china|3_2_3_1_3_2_1_2|2021-06-15	eastern asia	china	other-bird	37.2602231520297	106.161545856493
+H5N8|2344b|EPI_ISL_5260469|anseriformes|china|3_2_3_1_3_2_1_2|2021-01-26	eastern asia	china	anseriformes-wild	32.9645721858222	119.470797338049
+H5N8|2344b|EPI_ISL_5863650|anseriformes|united_states|3_2_3_1_3_2_1_2|2020-12-29	northern america	united states	anseriformes-wild	32.6403385373358	-83.4405725551842
+H5N8|2344b|EPI_ISL_5863929|anseriformes|united_states|3_2_3_1_3_2_1_2|2020-10-12	northern america	united states	anseriformes-wild	32.6403385373358	-83.4405725551842
+H5N8|2344b|EPI_ISL_5865417|anseriformes|united_states|3_2_3_1_3_2_1_2|2020-10-02	northern america	united states	anseriformes-domestic	32.6403385373358	-83.4405725551842
+H5N8|2344b|EPI_ISL_5865695|anseriformes|united_states|3_2_3_1_3_2_1_2|2020-09-29	northern america	united states	anseriformes-wild	32.6403385373358	-83.4405725551842
+H5N8|2344b|EPI_ISL_603136|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-10-16	western europe	netherlands	anseriformes-wild	52.2573048104135	5.56251311224367
+H5N8|2344b|EPI_ISL_614401|anseriformes|kazakhstan|3_2_3_1_3_2_1_2|2020-09-23	central asia	kazakhstan	anseriformes-wild	51.7623557428944	69.9739209295215
+H5N8|2344b|EPI_ISL_615065|anseriformes|kazakhstan|3_2_3_1_3_2_1_2|2020-09-22	central asia	kazakhstan	anseriformes-domestic	51.5322283786231	64.0853293002361
+H5N8|2344b|EPI_ISL_615072|anseriformes|kazakhstan|3_2_3_1_3_2_1_2|2020-09-25	central asia	kazakhstan	anseriformes-domestic	51.5322283786231	64.0853293002361
+H5N8|2344b|EPI_ISL_615073|anseriformes|kazakhstan|3_2_3_1_3_2_1_2|2020-09-19	central asia	kazakhstan	anseriformes-domestic	53.8421826489217	69.2722074369824
+H5N8|2344b|EPI_ISL_623074|galliformes|iraq|3_2_3_1_3_2_1_2|2020-05-12	western asia	iraq	galliformes-domestic	35.9913317126514	42.4617230992077
+H5N8|2344b|EPI_ISL_625672|anseriformes|china|3_2_3_1_3_2_1_2|2020-10-17	eastern asia	china	anseriformes-wild	44.083329648604	113.188484632426
+H5N8|2344b|EPI_ISL_637098|anseriformes|russia|3_2_3_1_3_2_1_2|2020-07-31	central asia	russia	anseriformes-wild	54.4531161547399	60.406021972363
+H5N8|2344b|EPI_ISL_644129|anseriformes|russia|3_2_3_1_3_2_1_2|2020-08-17	central asia	russia	anseriformes-wild	56.0596108837778	73.3669499849514
+H5N8|2344b|EPI_ISL_644146|galliformes|russia|3_2_3_1_3_2_1_2|2020-08-06	central asia	russia	galliformes-domestic	54.4531161547399	60.406021972363
+H5N8|2344b|EPI_ISL_644159|anseriformes|russia|3_2_3_1_3_2_1_2|2020-08-17	central asia	russia	anseriformes-wild	56.0596108837778	73.3669499849514
+H5N8|2344b|EPI_ISL_654824|anseriformes|russia|3_2_3_1_3_2_1_2|2020-09-15	eastern europe	russia	anseriformes-wild	51.5994582882348	46.8369479833559
+H5N8|2344b|EPI_ISL_654829|anseriformes|russia|3_2_3_1_3_2_1_2|2020-09-03	central asia	russia	anseriformes-wild	56.0596108837778	73.3669499849514
+H5N8|2344b|EPI_ISL_654833|galliformes|russia|3_2_3_1_3_2_1_2|2020-09-08	central asia	russia	galliformes-domestic	54.4531161547399	60.406021972363
+H5N8|2344b|EPI_ISL_654837|galliformes|russia|3_2_3_1_3_2_1_2|2020-08-27	central asia	russia	galliformes-domestic	55.4734051858522	64.8219230597649
+H5N8|2344b|EPI_ISL_661178|anseriformes|russia|3_2_3_1_3_2_1_2|2020-09-10	central asia	russia	anseriformes-wild	57.6472366156513	69.1218349161945
+H5N8|2344b|EPI_ISL_666890|galliformes|croatia|3_2_3_1_3_2_1_2|2020-11-17	southern europe	croatia	galliformes-domestic	46.0941050136215	16.8104817428003
+H5N8|2344b|EPI_ISL_667810|galliformes|france|3_2_3_1_3_2_1_2|2020-11-10	western europe	france	galliformes-domestic	42.1497137840693	9.10513916746533
+H5N8|2344b|EPI_ISL_668456|falconiformes|sweden|3_2_3_1_3_2_1_2|2020-11-10	northern europe	sweden	other-bird	55.9474024317265	13.595146733816
+H5N8|2344b|EPI_ISL_6829497|gruiformes|japan|3_2_3_1_3_2_1_2|2021-11-19	eastern asia	japan	other-bird	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_710504|galliformes|united_kingdom|3_2_3_1_3_2_1_2|2020-11-28	northern europe	united kingdom	galliformes-domestic	54.0438440515314	-2.78687513666638
+H5N8|2344b|EPI_ISL_710505|galliformes|united_kingdom|3_2_3_1_3_2_1_2|2020-12-02	northern europe	united kingdom	galliformes-domestic	54.0438440515314	-2.78687513666638
+H5N8|2344b|EPI_ISL_710508|anseriformes|united_kingdom|3_2_3_1_3_2_1_2|2020-10-30	northern europe	united kingdom	anseriformes-wild	54.0438440515314	-2.78687513666638
+H5N8|2344b|EPI_ISL_710539|galliformes|netherlands|3_2_3_1_3_2_1_2|2020-12-06	western europe	netherlands	galliformes-domestic	53.1100430768808	5.84863928632393
+H5N8|2344b|EPI_ISL_711058|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-12-02	western europe	netherlands	anseriformes-wild	52.083727924893	5.16763788059654
+H5N8|2344b|EPI_ISL_718223|anseriformes|sweden|3_2_3_1_3_2_1_2|2020-11-15	northern europe	sweden	anseriformes-wild	57.5128828372686	18.541723046906
+H5N8|2344b|EPI_ISL_7349517|anseriformes|china|3_2_3_1_3_2_1_2|2021-01	eastern asia	china	anseriformes-wild	30.6066264180489	102.711402322843
+H5N8|2344b|EPI_ISL_7379463|anseriformes|china|3_2_3_1_3_2_1_2|2021-01	eastern asia	china	anseriformes-wild	33.8761853651454	113.614527263456
+H5N8|2344b|EPI_ISL_7380623|anseriformes|china|3_2_3_1_3_2_1_2|2021-03	eastern asia	china	anseriformes-wild	36.3536638777003	118.136153809721
+H5N8|2344b|EPI_ISL_7381026|galliformes|china|3_2_3_1_3_2_1_2|2021-03	eastern asia	china	galliformes-domestic	41.2987124958383	122.600275282862
+H5N8|2344b|EPI_ISL_7381115|anseriformes|china|3_2_3_1_3_2_1_2|2021-06	eastern asia	china	anseriformes-wild	41.2987124958383	122.600275282862
+H5N8|2344b|EPI_ISL_7381397|anseriformes|china|3_2_3_1_3_2_1_2|2021-05	eastern asia	china	anseriformes-wild	36.3536638777003	118.136153809721
+H5N8|2344b|EPI_ISL_7381423|anseriformes|china|3_2_3_1_3_2_1_2|2021-07	eastern asia	china	anseriformes-wild	36.3536638777003	118.136153809721
+H5N8|2344b|EPI_ISL_7381695|anseriformes|china|3_2_3_1_3_2_1_2|2021-08	eastern asia	china	anseriformes-wild	23.33624359406	113.398153372919
+H5N8|2344b|EPI_ISL_739684|anseriformes|russia|3_2_3_1_3_2_1_2|2020-09-15	central asia	russia	anseriformes-wild	55.2762232202593	79.7845914423443
+H5N8|2344b|EPI_ISL_739688|galliformes|russia|3_2_3_1_3_2_1_2|2020-09-22	central asia	russia	galliformes-domestic	55.2762232202593	79.7845914423443
+H5N8|2344b|EPI_ISL_7590312|anseriformes|belgium|3_2_3_1_3_2_1_2|2021-01-11	western europe	belgium	anseriformes-wild	50.3127973408239	5.0143267931739
+H5N8|2344b|EPI_ISL_7597827|podicipediformes|belgium|3_2_3_1_3_2_1_2|2020-11-24	western europe	belgium	other-bird	51.0391095671615	4.2420548599892
+H5N8|2344b|EPI_ISL_7623789|galliformes|belgium|3_2_3_1_3_2_1_2|2021-07-12	western europe	belgium	galliformes-domestic	51.0391095671615	4.2420548599892
+H5N8|2344b|EPI_ISL_7624142|galliformes|belgium|3_2_3_1_3_2_1_2|2021-09-09	western europe	belgium	galliformes-domestic	50.3127973408239	5.0143267931739
+H5N8|2344b|EPI_ISL_775251|falconiformes|netherlands|3_2_3_1_3_2_1_2|2020-12-13	western europe	netherlands	other-bird	51.0391095671615	4.2420548599892
+H5N8|2344b|EPI_ISL_775253|anseriformes|netherlands|3_2_3_1_3_2_1_2|2020-12-15	western europe	netherlands	anseriformes-wild	52.0617180422494	5.94466833784019
+H5N8|2344b|EPI_ISL_775266|charadriiformes|netherlands|3_2_3_1_3_2_1_2|2020-12-17	western europe	netherlands	charadriiformes-wild	52.5266976905946	5.60009163363913
+H5N8|2344b|EPI_ISL_775267|galliformes|netherlands|3_2_3_1_3_2_1_2|2021-01-04	western europe	netherlands	galliformes-domestic	51.5616727876811	5.19541346074046
+H5N8|2344b|EPI_ISL_7778753|strigiformes|estonia|3_2_3_1_3_2_1_2|2021-09-19	northern europe	estonia	other-bird	58.6717397518952	25.5522615433491
+H5N8|2344b|EPI_ISL_7778760|anseriformes|estonia|3_2_3_1_3_2_1_2|2021-03-04	northern europe	estonia	anseriformes-wild	58.6717397518952	25.5522615433491
+H5N8|2344b|EPI_ISL_7778762|galliformes|estonia|3_2_3_1_3_2_1_2|2021-02-18	northern europe	estonia	galliformes-domestic	58.6717397518952	25.5522615433491
+H5N8|2344b|EPI_ISL_7778764|accipitriformes|finland|3_2_3_1_3_2_1_2|2021-07-01	northern europe	finland	other-bird	64.2398144022788	26.1623842060791
+H5N8|2344b|EPI_ISL_7778767|anseriformes|finland|3_2_3_1_3_2_1_2|2021-08-01	northern europe	finland	anseriformes-wild	64.2398144022788	26.1623842060791
+H5N8|2344b|EPI_ISL_7778769|galliformes|finland|3_2_3_1_3_2_1_2|2021-01-01	northern europe	finland	galliformes-wild	64.2398144022788	26.1623842060791
+H5N8|2344b|EPI_ISL_7778771|galliformes|finland|3_2_3_1_3_2_1_2|2021-02-01	northern europe	finland	galliformes-wild	64.2398144022788	26.1623842060791
+H5N8|2344b|EPI_ISL_7778777|anseriformes|norway|3_2_3_1_3_2_1_2|2021-06-21	northern europe	norway	anseriformes-wild	63.9836330810339	12.3044196327525
+H5N8|2344b|EPI_ISL_7778778|anseriformes|norway|3_2_3_1_3_2_1_2|2021-06-23	northern europe	norway	anseriformes-wild	63.9836330810339	12.3044196327525
+H5N8|2344b|EPI_ISL_7778779|anseriformes|norway|3_2_3_1_3_2_1_2|2021-07-01	northern europe	norway	anseriformes-wild	63.9836330810339	12.3044196327525
+H5N8|2344b|EPI_ISL_813979|falconiformes|ireland|3_2_3_1_3_2_1_2|2020-11	northern europe	ireland	other-bird	53.1625189533631	-8.16313556364258
+H5N8|2344b|EPI_ISL_8215654|anseriformes|china|3_2_3_1_3_2_1_2|2021-05-15	eastern asia	china	anseriformes-wild	31.7354796576819	88.2546629070738
+H5N8|2344b|EPI_ISL_8215658|anseriformes|china|3_2_3_1_3_2_1_2|2021-05-15	eastern asia	china	anseriformes-wild	31.7354796576819	88.2546629070738
+H5N8|2344b|EPI_ISL_8215663|charadriiformes|china|3_2_3_1_3_2_1_2|2021-05-17	eastern asia	china	charadriiformes-wild	31.7354796576819	88.2546629070738
+H5N8|2344b|EPI_ISL_826285|anseriformes|sweden|3_2_3_1_3_2_1_2|2020-12-09	northern europe	sweden	anseriformes-wild	55.9474024317265	13.595146733816
+H5N8|2344b|EPI_ISL_832205|galliformes|sweden|3_2_3_1_3_2_1_2|2021-01-10	northern europe	sweden	galliformes-domestic	55.9474024317265	13.595146733816
+H5N8|2344b|EPI_ISL_9250718|galliformes|belgium|3_2_3_1_3_2_1_2|2021-08-31	western europe	belgium	galliformes-domestic	50.3127973408239	5.0143267931739
+H5N8|2344b|EPI_ISL_977582|anseriformes|china|3_2_3_1_3_2_1_2|2020-12-29	eastern asia	china	anseriformes-wild	40.1838367941588	116.40878248942
+H5N8|2344b|EPI_ISL_977595|anseriformes|china|3_2_3_1_3_2_1_2|2020-12-31	eastern asia	china	anseriformes-wild	37.5496375119255	112.274268590565
+H5N8|2344b|EPI_ISL_978897|galliformes|japan|3_2_3_1_3_2_1_2|2021-02-05	eastern asia	japan	galliformes-domestic	35.5094511865639	140.198261340312
+H5N8|2344b|EPI_ISL_978902|galliformes|japan|3_2_3_1_3_2_1_2|2021-01-30	eastern asia	japan	galliformes-domestic	32.1919114758892	131.298614512671
+H5N8|2344b|EPI_ISL_978903|galliformes|japan|3_2_3_1_3_2_1_2|2021-01-30	eastern asia	japan	galliformes-domestic	32.1919114758892	131.298614512671
+H5N8|2344b|EPI_ISL_978915|anseriformes|japan|3_2_3_1_3_2_1_2|2021-02-01	eastern asia	japan	anseriformes-wild	36.3027610877484	140.318971903473
+H5N8|2344b|EPI_ISL_984673|anseriformes|denmark|3_2_3_1_3_2_1_2|2020-11-04	northern europe	denmark	anseriformes-wild	55.3568797999445	9.45020901930698
+H5N8|2344b|EPI_ISL_984693|anseriformes|denmark|3_2_3_1_3_2_1_2|2020-11-07	northern europe	denmark	anseriformes-wild	55.2791973821106	11.7026524381832
+H5N8|2344b|EPI_ISL_984694|anseriformes|denmark|3_2_3_1_3_2_1_2|2020-11-09	northern europe	denmark	anseriformes-wild	57.0522607274982	9.67257639647962
+H5N8|2344b|EPI_ISL_984695|galliformes|denmark|3_2_3_1_3_2_1_2|2020-11-15	northern europe	denmark	galliformes-domestic	56.2490598335433	9.39675377639095
+H5N8|2344b|EPI_ISL_985196|anseriformes|south_korea|3_2_3_1_3_2_1_2|2020-12-16	eastern asia	south korea	anseriformes-wild	34.8733358026855	126.897223705092
+H5N8|2344b|EPI_ISL_985197|anseriformes|south_korea|3_2_3_1_3_2_1_2|2020-12-20	eastern asia	south korea	anseriformes-wild	37.5315346337798	127.181023197189
+H5N8|2344b|EPI_ISL_985206|galliformes|south_korea|3_2_3_1_3_2_1_2|2020-12-25	eastern asia	south korea	galliformes-domestic	36.5298116066164	126.847825775926
+H5N8|2344b|EPI_ISL_985211|anseriformes|south_korea|3_2_3_1_3_2_1_2|2020-12-28	eastern asia	south korea	anseriformes-wild	35.7159281817874	127.140659781938
+H5N8|2344b|EPI_ISL_985230|galliformes|japan|3_2_3_1_3_2_1_2|2021-02-06	eastern asia	japan	galliformes-domestic	32.1919114758892	131.298614512671
+H5N8|2344b|EPI_ISL_996003|galliformes|united_kingdom|3_2_3_1_3_2_1_2|2021-01-05	northern europe	united kingdom	galliformes-domestic	54.0438440515314	-2.78687513666638
+H5N8|2344b|EPI_ISL_china_2|galliformes|china|3_2_3_1_3_2_1_2|2021-05-31	eastern asia	china	galliformes-domestic	31.8128943962267	117.235219497068
+H5N8|2344b|EPI_ISL_china_3|galliformes|china|3_2_3_1_3_2_1_2|2021-06-26	eastern asia	china	galliformes-domestic	31.8128943962267	117.235219497068
+H5N8|2344b|EPI_ISL_china_5|galliformes|china|3_2_3_1_3_2_1_2|2021-06-26	eastern asia	china	galliformes-domestic	31.8128943962267	117.235219497068
