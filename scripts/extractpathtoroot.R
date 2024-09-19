@@ -7,6 +7,7 @@
 library(treeio)
 library(ape)
 library(tidyverse)
+library(parallel)
 
 # Function infers tip-to-root paths for each tip, and the 'time' (time-scaled branch lengths)
 # spent in each reassortant state 
@@ -76,7 +77,8 @@ HostPersistence <- function(tbl_tree){
                     'branch.length',
                     'host_simplifiedhost',
                     'reassortant'))) %>%
-    group_by(cluster_profile, tip) %>%
+    group_by(cluster_profile, 
+             tip) %>%
     mutate(host_change = cumsum(host_simplifiedhost != lag(host_simplifiedhost, 
                                                            def = first(host_simplifiedhost)))) %>%
     ungroup() %>%
@@ -102,6 +104,7 @@ HostPersistence <- function(tbl_tree){
 }
 
 
+# 
 GetReassortantMRCAs <- function(treedata){
   # Set dependencies
   require(ape)
@@ -188,6 +191,17 @@ GetReassortantMRCAs <- function(treedata){
 }
 
 
+# From tidytree package code
+itself <- function(.data, .node) {
+  if (is.numeric(.node)) {
+    i <- which(.data$node == .node)
+  } else {
+    i <- which(.data$label == .node)
+  }
+  
+  ## .data[which(.data$node == .node | .data$label == .node), ]
+  return(.data[i, ])
+}
 ############################################# DATA ################################################
 # Import MCC trees (reassortant)
 reassortant_trees <- list.files('./2024Aug18/reassortant_subsampled_outputs/traits_mcc',
@@ -210,7 +224,7 @@ region_trees <- list.files('./2024Aug18/region_subsampled_outputs/traits_mcc',
 
 
 # Extract reassortant common ancestor from region trees
-ncpus = parallel::detectCores()-2
+ncpus = detectCores()-2
 cl = makeCluster(ncpus)
 
 reassortant_mrca <- mclapply(region_trees,  
