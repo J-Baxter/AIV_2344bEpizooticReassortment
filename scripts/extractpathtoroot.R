@@ -16,7 +16,7 @@ HostPersistence <- function(tbl_tree){
   require(ape)
   require(treeio)
   require(tidyverse)
-  stopifnot('Input object must be a treedata object' = class(treedata) == "tbl_tree")
+  #stopifnot('Input object must be a tbl_tree object' = class(treedata) == "tbl_tree")
   
   # Format treedata object as tibble, format quantitative traits as 
   # numeric vectors
@@ -50,33 +50,33 @@ HostPersistence <- function(tbl_tree){
     # start path with only tips (ie labelled nodes)
     filter(!is.na(label))  %>%
     rename(tip = node) %>%
+    mutate(cluster_profile = str_extract(label, '\\d_\\d_\\d_\\d_\\d_\\d_\\d_\\d')) %>%
+    rename(tip = node) %>%
     
     # include values of interst (node (tip) ID, height, host and reassortant)
-    select(tip) %>%
+    select(any_of(c('tip',
+                    'cluster_profile'))) %>%
     
     # For each node (tip), extract the node-path back to the root
     rowwise() %>%
-
-    mutate(path = list(bind_rows(ancestor(.data = tbl_tree, 
-                                          .node = tip), 
-                                 itself(.data = tbl_tree, 
-                                        .node = tip)))) %>%  
+    
+    # check the following works
+    mutate(path = list(bind_rows(ancestor(.data = tree_tibble, .node = 1), 
+                                 itself(.data = tree_tibble, .node = 1)))) %>% #list(tibble(node = ape::nodepath(treedata@phylo, tip, root_id)))
     as_tibble() %>% # cancel out rowwise()
+    filter(!is.na(cluster_profile)) %>%
+    
     unnest(path) %>%
     
     select(any_of(c('tip', 
+                    'cluster_profile',
                     'node',
                     'parent',
                     'height_median',
                     'branch.length',
                     'host_simplifiedhost',
-                    'reassortant')))  %>%
-    
-    # calculate decimal dates from node heights
-    #mutate(date = most_recent_tipdate - height_median) %>%
-    
-    # for each tip, determine whether the host state changes at each node along path to root
-    group_by(tip) %>%
+                    'reassortant'))) %>%
+    group_by(cluster_profile, tip) %>%
     mutate(host_change = cumsum(host_simplifiedhost != lag(host_simplifiedhost, 
                                                            def = first(host_simplifiedhost)))) %>%
     ungroup() %>%
@@ -84,7 +84,8 @@ HostPersistence <- function(tbl_tree){
     # sum branch lengths for contiguous periods in the same host
     # ie. we do not combine time spent in the same host, interdispersed by a different host class
     summarise(persistence_host = sum(branch.length, na.rm = TRUE), 
-              .by = c(tip, 
+              .by = c(cluster_profile,
+                      tip, 
                       host_simplifiedhost,
                       host_change)) %>%
     
@@ -240,8 +241,46 @@ reassortant_mrca_nodoms <- reassortant_mrca %>%
 
 
 # infer subtrees for each reassortant within each region
-reassortant_subtrees <-  reassortant_mrca_nodoms %>%
+
+ExtractReassortantSubtrees <- function(reassortant_anc, 
+                                       treedata){
+  tbl_tree <- as_tibble(treedata)
   
+  cluster_profile <- reassortant_anc %>%
+    pull(cluster_profile)
+  
+  out <- reassortant_anc %>%
+    rename(anc_node = node) %>%
+    rowwise() %>%
+    mutate(tree_tibble = list(offspring(tbl_tree, 
+                                        anc_node, 
+                                        self_include = T))) %>%
+    unnest(tree_tibble) %>%
+    select(-anc_node) %>%
+    group_split(cluster_profile, .keep = FALSE) %>%
+    lapply(., as.treedata) %>%
+    lapply(., as_tibble) %>%
+    setNames(cluster_profile)
+  
+  return(out)
+}
+
+
+n <- list.files('./2024Aug18/region_subsampled_outputs/traits_mcc',
+                full.names = T) %>%
+  str_split_i(., '\\/', 5) %>%
+  gsub('_subsampled_traits_mcc.tree', '', .)
+
+reassortant_subtrees <-  mapply(function(x,y){return(tryCatch(ExtractReassortantSubtrees(x,y), 
+                                                            error=function(e) NULL))},
+                                reassortant_mrca_nodoms,
+                                region_trees,
+                                SIMPLIFY = F) %>%
+  set_names(n)
+  
+
+
+persistence_dataframe_2 <- lapply(reassortant_subtrees, HostPersistence) 
 
 ############################################## RUN ################################################
 persistence_dataframe <- lapply(reassortant_trees, HostPersistence) %>%
