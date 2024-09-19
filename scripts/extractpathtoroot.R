@@ -129,24 +129,15 @@ region_trees <- list.files('./2024Aug18/region_subsampled_outputs/traits_mcc',
                            full.names = T) %>%
   lapply(., read.beast)
 
-test_tree <- region_trees[[1]] %>% as_tibble()
 
-test_clusters <- str_split_i(test_tree@phylo$tip.label, '\\|', 6) 
-test_ace <- ace(test_clusters, test_tree@phylo, model = 'ER', type = 'discrete')$lik.anc
-
-test_nodeID <- apply(test_ace, 1, function(x) names(x)[which.max(x)]) %>%
-  as_tibble(rownames = 'node') %>% 
-  rename(., cluster_profile = value) %>%
-  mutate(node = as.integer(node))
-
-m <- region_trees[[1]]  %>%
-  as_tibble() %>%
-  filter(height == 0) %>%
-  pull(label) %>%
-  str_extract(.,  "(?<=\\|)\\d{4}(?![[:lower:]]).*$") %>%
-  ymd() %>%
-  decimal_date() %>% 
-  max(na.rm = T)
+#m <- region_trees[[1]]  %>%
+  #as_tibble() %>%
+  #filter(height == 0) %>%
+  #pull(label) %>%
+  #str_extract(.,  "(?<=\\|)\\d{4}(?![[:lower:]]).*$") %>%
+  #ymd() %>%
+  #decimal_date() %>% 
+  #max(na.rm = T)
 
 
 GetReassortantMRCAs <- function(treedata){
@@ -165,32 +156,106 @@ GetReassortantMRCAs <- function(treedata){
                     length_median),
                   .fns = ~ as.numeric(.x))) 
   
+  # format phylo object
+  tree <- treedata@phylo
+  
+  tree$edge.length <-ifelse(tree$edge.length < 0,
+                               0.0001, 
+                               tree$edge.length)
+  
+  # Extract the cluster profiles from tipnames
+  cluster_profiles <- str_split_i(tree$tip.label, '\\|', 6) 
+  
+  # Maximum likelihood ancestral state reconstruction for cluster_profile
+  anc_state <- ace(cluster_profiles,
+                  tree,
+                  model = 'ER', 
+                  type = 'discrete')
+  
+  # extract likelihood for each state and each node
+  lik_anc <- anc_state$lik.anc
+  
+  # infer most likely state at each node 
+  anc_cluster <- apply(lik_anc,
+                       1,
+                       function(x) names(x)[which.max(x)]) %>%
+    
+    #format output
+    enframe(., 
+            name = 'node', 
+            value = 'cluster_profile') %>%
+    mutate(node = as.integer(node))
+  
+  
   test_reassortanttmcra <- tree_tibble %>%
     select(node, 
            contains('height'), 
-           label) %>%
+           label,
+           parent) %>%
     
-    # Extract reassortant types
+    # Extract reassortant types and sort by node order
     mutate(cluster_profile = str_split_i(label, '\\|', 6)) %>%
-    
-    # filter dominant reassortants
-    
-    
     arrange(node) %>%
-    rows_update(.,test_nodeID) %>%
-    #left_join(test_nodeID) %>%
+    
+    # Update with ancestral states
+    rows_update(.,
+                anc_cluster) %>%
+    
+    # Group by cluster and identify eldest node
     group_by(cluster_profile) %>%
-    slice_max(height) %>%
+    
+    # If only one example in group, then take height of parent node instead of tip date
+    mutate(node = case_when(n() == 1 ~ parent, 
+                            TRUE ~ node)) %>%
+    
+    mutate(across(starts_with('height'),
+                  .fns = ~ case_when(n() == 1 ~ NA,
+                                     TRUE~ .x))) %>%
+    rows_patch(tree_tibble %>% 
+                 select(node,
+                        contains('height')), 
+               unmatched = 'ignore') %>%
+    
+    # Sample tallest (ie oldest) node for each reassortant
+    slice_max(height_median) %>%
     ungroup() %>%
-    #select(node, contains('height'), value) %>%
-    # mutate(mrca = m - as.numeric(height_median)) %>%
-    select(cluster_profile, node)
+    select(cluster_profile, node) 
+  
+  
+  return(test_reassortanttmcra)
 }
 
+library(parallel)
 
-# Check with Lu re: calculation of TMRCAs for each reassortant
-#oops <- test_reassortanttmcra %>%
-  #left_join(RegionalTre_mrca_stats_disp_combined %>% filter(data_name == 'ha_africa') %>% select(contains('Rcode'), TMRCA), by = join_by(cluster_profile == Rcode))
+ncpus = parallel::detectCores()-2
+cl = makeCluster(ncpus)
+
+
+reassortant_mrca <- mclapply(region_trees,  
+                           function (x){return(tryCatch(GetReassortantMRCAs(x), 
+                                                        error=function(e) NULL))})
+
+reassortant_mrca_nodoms <- reassortant_mrca %>%
+  lapply(., function(x)
+    return(tryCatch(x %>% 
+                      filter(!cluster_profile %in% c(
+                        "3_2_3_1_3_2_1_2",
+                        "2_1_1_1_1_1_1_1",
+                        "1_1_1_1_1_1_1_1",
+                        "2_1_2_1_1_1_1_1",
+                        "1_1_2_1_1_1_1_1",
+                        "1_6_2_1_1_1_1_1",
+                        "2_6_1_1_6_1_1_1",
+                        "2_1_6_1_1_4_1_1",
+                        "7_1_5_2_1_3_1_2",
+                        "4_3_1_1_2_1_1_3",
+                        "5_1_1_1_2_1_1_3",
+                        "5_4_9_1_2_1_1_1",
+                        'NA')), 
+                    error=function(e) NULL)))
+
+
+stopCluster(cl)
 ############################################## RUN ################################################
 persistence_dataframe <- lapply(reassortant_trees, HostPersistence) %>%
   
