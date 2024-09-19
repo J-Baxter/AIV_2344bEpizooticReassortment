@@ -10,63 +10,43 @@ library(tidyverse)
 
 # Function infers tip-to-root paths for each tip, and the 'time' (time-scaled branch lengths)
 # spent in each reassortant state 
-HostPersistence <- function(treedata){
+HostPersistence <- function(tbl_tree){
   
   # Set dependencies
   require(ape)
   require(treeio)
-  stopifnot('Input object must be a treedata object' = class(treedata) == 'treedata')
+  require(tidyverse)
+  stopifnot('Input object must be a treedata object' = class(treedata) == "tbl_tree")
   
   # Format treedata object as tibble, format quantitative traits as 
   # numeric vectors
-  tree_tibble <- as_tibble(treedata) %>%
+  tbl_tree %<>%
     mutate(across(c(branch.length,
                     height,
                     height_median,
                     length,
                     length_median),
-                  .fns = ~ as.numeric(.x))) #%>%
+                  .fns = ~ as.numeric(.x)))
+  
+  #%>%
   #{if(!'cluster_profile' %in% colnames(.)) mutate(.,cluster_profile = str_extract(label, '\\d_\\d_\\d_\\d_\\d_\\d_\\d_\\d'))} 
   
   # Extract most recent tipdate and convert to decimal 
-  most_recent_tipdate <- tree_tibble %>%
-    filter(height == 0) %>%
-    pull(label) %>%
-    str_extract(.,  "(?<=\\|)\\d{4}(?![[:lower:]]).*$") %>%
-    ymd() %>%
-    decimal_date()
+  #most_recent_tipdate <- tree_tibble %>%
+    #filter(height == 0) %>%
+    #pull(label) %>%
+    #str_extract(.,  "(?<=\\|)\\d{4}(?![[:lower:]]).*$") %>%
+    #ymd() %>%
+    #decimal_date()
   
-  # Extract the root ID
-  root_id <- tree_tibble %>%
-    slice_max(., height) %>%
-    pull(node)
-  #select(any_of(c('cluster_profile', 'node'))) %>%
-  #rename(cluster_root = node)
   
-  # Infer required groupings for pipeline - reassortant should be used where applicable
-  if('cluster_profile' %in% colnames(tree_tibble)){
-    groups <- list(
-      c('tip', 
-        'cluster_profile'),
-      c('tip', 
-        'cluster_profile', 
-        'host_simplifiedhost',
-        'host_change'),
-      c('cluster_profile',
-        'host_simplifiedhost')
-    )
-  }else{
-    groups <- list(
-      'tip',
-      c('tip', 
-        'host_simplifiedhost',
-        'host_change'),
-      'host_simplifiedhost'
-    )
-  }
-  
-  # 
-  out <- tree_tibble %>%
+  out <- tbl_tree %>%
+    mutate(across(c(branch.length,
+                    height,
+                    height_median,
+                    length,
+                    length_median),
+                  .fns = ~ as.numeric(.x))) %>%
     # start path with only tips (ie labelled nodes)
     filter(!is.na(label))  %>%
     rename(tip = node) %>%
@@ -76,26 +56,27 @@ HostPersistence <- function(treedata){
     
     # For each node (tip), extract the node-path back to the root
     rowwise() %>%
-    mutate(path = list(tibble(node = ape::nodepath(treedata@phylo, tip, root_id)))) %>%
+
+    mutate(path = list(bind_rows(ancestor(.data = tbl_tree, 
+                                          .node = tip), 
+                                 itself(.data = tbl_tree, 
+                                        .node = tip)))) %>%  
     as_tibble() %>% # cancel out rowwise()
     unnest(path) %>%
     
-    # For each tip-path, join the median height, branch length and host
-    left_join(x = . ,
-              y = tree_tibble %>%
-                select(any_of(c('node',
-                                'parent',
-                                'height_median',
-                                'branch.length',
-                                'host_simplifiedhost',
-                                'reassortant'))),
-              by = join_by(node == node)) %>%
+    select(any_of(c('tip', 
+                    'node',
+                    'parent',
+                    'height_median',
+                    'branch.length',
+                    'host_simplifiedhost',
+                    'reassortant')))  %>%
     
     # calculate decimal dates from node heights
     #mutate(date = most_recent_tipdate - height_median) %>%
     
     # for each tip, determine whether the host state changes at each node along path to root
-    group_by(groups[[1]]) %>%
+    group_by(tip) %>%
     mutate(host_change = cumsum(host_simplifiedhost != lag(host_simplifiedhost, 
                                                            def = first(host_simplifiedhost)))) %>%
     ungroup() %>%
@@ -103,41 +84,21 @@ HostPersistence <- function(treedata){
     # sum branch lengths for contiguous periods in the same host
     # ie. we do not combine time spent in the same host, interdispersed by a different host class
     summarise(persistence_host = sum(branch.length, na.rm = TRUE), 
-              .by = groups[[2]]) %>%
+              .by = c(tip, 
+                      host_simplifiedhost,
+                      host_change)) %>%
     
     
     # calculate total, maximum and median persistence times for each host class for each reassortant 
     summarise(persistence_host_median = median(persistence_host),
               persistence_host_max = max(persistence_host),
               persistence_host_sum = sum(persistence_host),
-              .by = groups[[3]])
+              .by = host_simplifiedhost)
   
   
   return(out)
   
 }
-
-
-
-############################################# DATA ################################################
-# Import MCC trees (reassortant)
-reassortant_trees <- list.files('./2024Aug18/reassortant_subsampled_outputs/traits_mcc',
-                                full.names = T) %>%
-  lapply(., read.beast)
-
-region_trees <- list.files('./2024Aug18/region_subsampled_outputs/traits_mcc',
-                           full.names = T) %>%
-  lapply(., read.beast)
-
-
-#m <- region_trees[[1]]  %>%
-  #as_tibble() %>%
-  #filter(height == 0) %>%
-  #pull(label) %>%
-  #str_extract(.,  "(?<=\\|)\\d{4}(?![[:lower:]]).*$") %>%
-  #ymd() %>%
-  #decimal_date() %>% 
-  #max(na.rm = T)
 
 
 GetReassortantMRCAs <- function(treedata){
@@ -160,17 +121,17 @@ GetReassortantMRCAs <- function(treedata){
   tree <- treedata@phylo
   
   tree$edge.length <-ifelse(tree$edge.length < 0,
-                               0.0001, 
-                               tree$edge.length)
+                            0.0001, 
+                            tree$edge.length)
   
   # Extract the cluster profiles from tipnames
   cluster_profiles <- str_split_i(tree$tip.label, '\\|', 6) 
   
   # Maximum likelihood ancestral state reconstruction for cluster_profile
   anc_state <- ace(cluster_profiles,
-                  tree,
-                  model = 'ER', 
-                  type = 'discrete')
+                   tree,
+                   model = 'ER', 
+                   type = 'discrete')
   
   # extract likelihood for each state and each node
   lik_anc <- anc_state$lik.anc
@@ -225,16 +186,39 @@ GetReassortantMRCAs <- function(treedata){
   return(test_reassortanttmcra)
 }
 
-library(parallel)
 
+############################################# DATA ################################################
+# Import MCC trees (reassortant)
+reassortant_trees <- list.files('./2024Aug18/reassortant_subsampled_outputs/traits_mcc',
+                                full.names = T) %>%
+  lapply(., read.beast)
+
+region_trees <- list.files('./2024Aug18/region_subsampled_outputs/traits_mcc',
+                           full.names = T) %>%
+  lapply(., read.beast)
+
+
+#m <- region_trees[[1]]  %>%
+  #as_tibble() %>%
+  #filter(height == 0) %>%
+  #pull(label) %>%
+  #str_extract(.,  "(?<=\\|)\\d{4}(?![[:lower:]]).*$") %>%
+  #ymd() %>%
+  #decimal_date() %>% 
+  #max(na.rm = T)
+
+
+# Extract reassortant common ancestor from region trees
 ncpus = parallel::detectCores()-2
 cl = makeCluster(ncpus)
-
 
 reassortant_mrca <- mclapply(region_trees,  
                            function (x){return(tryCatch(GetReassortantMRCAs(x), 
                                                         error=function(e) NULL))})
 
+stopCluster(cl)
+
+# exclude dominant (ie multi-continent) reassortants
 reassortant_mrca_nodoms <- reassortant_mrca %>%
   lapply(., function(x)
     return(tryCatch(x %>% 
@@ -255,7 +239,10 @@ reassortant_mrca_nodoms <- reassortant_mrca %>%
                     error=function(e) NULL)))
 
 
-stopCluster(cl)
+# infer subtrees for each reassortant within each region
+reassortant_subtrees <-  reassortant_mrca_nodoms %>%
+  
+
 ############################################## RUN ################################################
 persistence_dataframe <- lapply(reassortant_trees, HostPersistence) %>%
   
