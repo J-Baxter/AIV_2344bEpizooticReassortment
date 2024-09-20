@@ -122,3 +122,6 @@ combined_data <- combined_data %>%
   left_join(.,
             y = reassortant_stratifiedpersistence) %>%
   select(-contains('+'))
+
+
+write_csv(combined_data, './2024Aug18/treedata_extractions/2024-09-20_combined_data.csv')
