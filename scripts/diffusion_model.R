@@ -41,11 +41,23 @@ model_data <- combined_data %>%
     persist.time,
     collection_regionname,
     host_simplifiedhost,
-    count_cross_species) %>%
+    count_cross_species,
+    starts_with('median'),
+    starts_with('max')) %>%
   
   # Substitute NA values in diffusion coefficient with 0
   replace_na(list(original_diff_coeff = 0,
-                  weighted_diff_coeff  = 0)) %>%
+                  weighted_diff_coeff = 0,
+                  `median_galliformes-domestic` = 0,
+                  `median_other-bird` = 0,
+                  `median_anseriformes-wild` = 0,
+                  `median_galliformes-wild` = 0,
+                  median_environment = 0,
+                  median_mammal = 0,
+                  `median_charadriiformes-wild` = 0,
+                  median_human = 0,
+                  `median_anseriformes-domestic` = 0)) %>%
+  rename_with(~gsub('-', '_', .x))
 
   
 ################################### INITIAL EXPLORATORY MODELS #####################################
@@ -80,7 +92,7 @@ SEED <- 4472
 
 # Prior Predictive Checks 
 diffusionmodel1_priorpredictive <- brm(
-  bf(weighted_diff_coeff ~ collection_regionname,
+  bf(weighted_diff_coeff ~ collection_regionname + median_anseriformes_wild,
      hu ~ 1),
   data = model_data,
   family = hurdle_lognormal(),
@@ -95,7 +107,6 @@ diffusionmodel1_priorpredictive <- brm(
 
 
 diffusionmodel1_priorpreds <- posterior_predict(diffusionmodel1_priorpredictive)
-n <- sample(1:nrow(diffusionmodel1_priorpreds), 50)
 
 color_scheme_set("green")
 ppc_dens_overlay(y = log1p(model_data$weighted_diff_coeff),
