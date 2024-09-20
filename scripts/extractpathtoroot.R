@@ -131,7 +131,7 @@ HostPersistence2 <- function(treedata, region_tree = FALSE){
   out <- tbl_pathtoancestor %>%
     group_by(tip) %>%
     
-    filter(cluster_profile %in% str_split_i(label, '\\|', 6)) %>% # need to check that tip == 
+    filter(cluster_profile %in% str_split_i(label, '\\|', 6)) %>% ########### need to check that tip == 
     
     # If only one node/tip in group, then add parent node
     group_modify(~ {
@@ -196,7 +196,7 @@ region_trees <- list.files('./2024Aug18/region_subsampled_outputs/traits_mcc',
 ncpus = detectCores()-2
 cl = makeCluster(ncpus)
 
-tibl_majorminorpersistence <- mclapply(region_trees,  
+tbl_majorminorpersistence <- mclapply(region_trees,  
                                        function (x){return(tryCatch(HostPersistence2(x, region_tree = TRUE), 
                                                                     error=function(e) NULL))}) %>%
   # Set names for each tree extraction
@@ -205,10 +205,26 @@ tibl_majorminorpersistence <- mclapply(region_trees,
   
   # concatenate to a single dataframe and separate segment and reassortant
   bind_rows(., .id = 'tree') %>%
-  separate_wider_delim(tree, '_', names = c('segment', 'region'))
+  separate_wider_delim(tree, '_', names = c('segment', 'region'))%>% 
+  
+  # remove dominant cluster profiles
+  filter(!cluster_profile %in% c("3_2_3_1_3_2_1_2",
+                                "2_1_1_1_1_1_1_1",
+                                "1_1_1_1_1_1_1_1",
+                                "1_1_1_1_1_1_1_1A",
+                                "2_1_2_1_1_1_1_1",
+                                "1_1_2_1_1_1_1_1",
+                                "1_6_2_1_1_1_1_1",
+                                "1_1_4_1_4_1_1_4",
+                                "2_6_1_1_6_1_1_1",
+                                "2_1_6_1_1_4_1_1",
+                                "7_1_5_2_1_3_1_2",
+                                "4_3_1_1_2_1_1_3",
+                                "5_1_1_1_2_1_1_3",
+                                "5_4_9_1_2_1_1_1"))
 
 
-tibl_dominant_persistence <- mclapply(reassortant_trees,  
+tbl_dominant_persistence <- mclapply(reassortant_trees,  
                                        function (x){return(tryCatch(HostPersistence2(x), 
                                                                     error=function(e) NULL))}) %>%
   # Set names for each tree extraction
@@ -221,3 +237,15 @@ tibl_dominant_persistence <- mclapply(reassortant_trees,
 
 
 stopCluster(cl)
+
+
+############################################## WRITE ################################################
+tbl_combined <- tbl_majorminorpersistence %>%
+  select(-region) %>%
+  bind_rows(tbl_dominant_persistence %>% select(-reassortant))
+
+write_csv(tbl_combined, './2024Aug18/treedata_extractions/reassortant_stratifiedpersistence.csv')
+
+############################################## END #################################################
+####################################################################################################
+####################################################################################################
