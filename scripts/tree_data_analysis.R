@@ -55,7 +55,7 @@ combined_data <- RegionalTre_mrca_stats_disp_jumps_combined %>%
   bind_rows(domainantTre_mrca_stats_disp_jumps_combined) %>%
   # bind summary table
   left_join(
-    summary_reassortant_metadata_20240902 %>%
+    summary_reassortant_metadata_20240904 %>%
       select(c(
         cluster_profile,
         col2,
