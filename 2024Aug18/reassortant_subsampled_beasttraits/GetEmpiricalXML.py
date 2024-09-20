@@ -10,8 +10,6 @@
 
 # NB: requires python 3.9 or later
 
-# Copyright (c) 2024 James Baxter under GNU GENERAL PUBLIC LICENSE Version 3
-
 # import modules
 import xml.etree.ElementTree as ET
 import argparse
