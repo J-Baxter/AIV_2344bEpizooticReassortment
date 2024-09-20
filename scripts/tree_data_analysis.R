@@ -98,13 +98,27 @@ imported_logs <- lapply(reassortant_log_path, readLog) %>%
   )
 
 
+################### Import Evolutionary Rates from Reassortant log files ###################
+reassortant_stratifiedpersistence %<>%
+  rename_with(.fn = ~gsub('persistence_host_|_simplifiedhost', '', .x)) %>%
+  pivot_wider(names_from = host,
+              values_from = c(median, max, sum),
+              names_sep = '_',
+              values_fn = median) #requires debugging
 
 ################### Combine all data ###################
 combined_data <- combined_data %>%
   unite(key, segment, cluster_profile, remove = F) %>%
-  mutate(key = str_remove_all(key, "(?<=_\\d)_")) %>%
+  mutate(key = str_remove_all(key, "(?<=_\\d{1,2})_")) %>%
+  
+  
   rows_patch(.,
     imported_logs,
     by = "key",
     unmatched = "ignore"
-  )
+  ) %>%
+  # join reassortant-stratified host persistence time
+   
+  left_join(.,
+            y = reassortant_stratifiedpersistence) %>%
+  select(-contains('+'))
