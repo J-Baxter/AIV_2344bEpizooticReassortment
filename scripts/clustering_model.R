@@ -29,6 +29,8 @@ combined_data <- read_csv()
 
 ########################################### FORMAT DATA ############################################
 
+########################################### FORMAT DATA ############################################
+
 model_data <- combined_data %>%
   
   # select variables of interes
@@ -41,14 +43,26 @@ model_data <- combined_data %>%
     persist.time,
     collection_regionname,
     host_simplifiedhost,
-    count_cross_species) %>%
+    count_cross_species,
+    starts_with('median'),
+    starts_with('max')) %>%
   
   # Substitute NA values in diffusion coefficient with 0
   replace_na(list(original_diff_coeff = 0,
-                  weighted_diff_coeff  = 0)) %>%
+                  weighted_diff_coeff = 0,
+                  `median_galliformes-domestic` = 0,
+                  `median_other-bird` = 0,
+                  `median_anseriformes-wild` = 0,
+                  `median_galliformes-wild` = 0,
+                  median_environment = 0,
+                  median_mammal = 0,
+                  `median_charadriiformes-wild` = 0,
+                  median_human = 0,
+                  `median_anseriformes-domestic` = 0)) %>%
+  rename_with(~gsub('-', '_', .x))
   
   
-  ################################### INITIAL EXPLORATORY MODELS #####################################
+  ################################### INITIAL EXPLORATORY PLOTS #####################################
 # Plot logged data to show zero/non-zero segregation
 
 model_data %>%
@@ -64,11 +78,19 @@ model_data %>%
 
 
 
-####################################### START BRMS PIPELINE ########################################
+####################################### START KCLUST PIPELINE ########################################
 
-# Set Priors
-diffusionmodel1_priors <- c()
+model_data_nolabel <- model_data %>%
+  select(-c(group2,
+            cluster_profile))
 
+kclusts <- tibble(k = 1:9) %>%
+  mutate(
+    kclust = map(l, ~kmeans(model_data, .x)),
+    tidied = map(kclust, tidy),
+    glanced = map(kclust, glance),
+    augmented = map(kclust, augment, model_data)
+  )
 
 # Set MCMC Options
 CHAINS <- 4
