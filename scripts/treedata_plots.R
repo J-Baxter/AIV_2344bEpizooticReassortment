@@ -44,8 +44,8 @@ combined_data %>%
              fill = group2)) +
   
   # Geom objects
-  geom_bar(position = position_stack(reverse = T)) +
-  scale_y_continuous('Number of Reassortants') +
+  geom_bar(position = "fill") +
+  scale_y_continuous('Number of Reassortants', labels = scales::percent) +
   
   # Scales
   scale_x_discrete('Region of Origin', labels = function(x) str_wrap(x, width = 20) %>% str_to_title())+
