@@ -60,17 +60,17 @@ model_data <- combined_data %>%
   rename_with(~gsub('-', '_', .x))
 
 
+
 ################################### PLOT HOST ANCESTOR #####################################
+
 combined_data %>%
   mutate(collection_regionname = case_when(grepl('europe', collection_regionname) ~ 'europe',
                                            grepl('africa', collection_regionname) ~ 'africa',
                                            grepl('asia', collection_regionname) ~ 'asia',
                                            grepl('(central|northern) america', collection_regionname) ~ 'central & northern america',
-                                           .default = collection_regionname
-  )) %>%
+                                           .default = collection_regionname )) %>%
   filter(!is.na(collection_regionname)) %>% 
   filter(!grepl('\\+', host_simplifiedhost)) %>%
-  gsub()
   ggplot(aes(x = collection_regionname,
              fill = host_simplifiedhost)) +
   
@@ -87,8 +87,10 @@ combined_data %>%
   # Graphical
   facet_grid(rows = vars(segment)) + 
   theme_minimal() 
+  
 
 
+  
 
 #######################################  Plot 2: Region MRCA  ########################################
 combined_data %>%
@@ -119,67 +121,19 @@ combined_data %>%
 
 
 
-# Set Priors
-diffusionmodel1_priors <- c()
+model_data <- combined_data %>%
+    select(c(collection_regionname,
+             segment,
+             host_simplifiedhost)) %>%
+  filter(!grepl('\\+', host_simplifiedhost)) %>%
+  mutate(prop_host = nrow(.)) %>%
+  group_by(collection_regionname, segment, host_simplifiedhost) %>%
+  summarise(prop_host = n()/prop_host)
 
+glm()
 
-# Set MCMC Options
-CHAINS <- 4
-CORES <- 4
-ITER <- 4000
-BURNIN <- ITER/10 # Discard 10% burn in from each chain
-SEED <- 4472
+  
 
-
-# Prior Predictive Checks 
-diffusionmodel1_priorpredictive <- brm(
-  bf(weighted_diff_coeff ~ collection_regionname + median_anseriformes_wild,
-     hu ~ 1),
-  data = model_data,
-  family = hurdle_lognormal(),
-  sample_prior = "yes",
-  chains = CHAINS,
-  cores = CORES, 
-  iter = ITER,
-  warmup = BURNIN,
-  seed = SEED#,
-  #opencl = opencl(c(0, 0)) # Enables GPU accelerated computation, remove if not applicable
-)
-
-
-diffusionmodel1_priorpreds <- posterior_predict(diffusionmodel1_priorpredictive)
-
-color_scheme_set("green")
-ppc_dens_overlay(y = log1p(model_data$weighted_diff_coeff),
-                 yrep = log1p(diffusionmodel1_priorpreds[1:10,]))
-
-
-# Fit Model
-diffusionmodel1_fit <- brm(
-  bf(weighted_diff_coeff ~ collection_regionname,
-     hu ~ 1),
-  data = model_data,
-  family = hurdle_lognormal(),
-  chains = CHAINS,
-  cores = CORES, 
-  iter = ITER,
-  warmup = BURNIN,
-  seed = SEED#,
-  #opencl = opencl(c(0, 0)) # Enables GPU accelerated computation, remove if not applicable
-)
-
-
-# Posterior Predictive Checks
-diffusionmodel1_posteriorpreds <- posterior_predict(diffusionmodel1_fit)
-n <- sample(1:nrow(diffusionmodel1_posteriorpreds), 50)
-
-color_scheme_set("green")
-ppc_dens_overlay(y = log1p(model_data$weighted_diff_coeff),
-                 yrep = log1p(diffusionmodel1_posteriorpreds[1:10,]))
-
-
-# Extract Model Terms and Marginal/Conditional Effects
-diffusionmodel1_fit_tidy <- tidy(model_hurdle)
 
 
 ####################################################################################################
