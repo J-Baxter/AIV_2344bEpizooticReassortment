@@ -51,7 +51,7 @@ HostPersistence <- function(tbl_tree){
     # start path with only tips (ie labelled nodes)
     filter(!is.na(label))  %>%
     rename(tip = node) %>%
-    mutate(cluster_profile = str_extract(label, '\\d_\\d_\\d_\\d_\\d_\\d_\\d_\\d')) %>%
+    mutate(cluster_profile = str_split_i(label, '\\|', 6)) %>%
     rename(tip = node) %>%
     
     # include values of interst (node (tip) ID, height, host and reassortant)
@@ -62,8 +62,8 @@ HostPersistence <- function(tbl_tree){
     rowwise() %>%
     
     # check the following works
-    mutate(path = list(bind_rows(ancestor(.data = tree_tibble, .node = 1), 
-                                 itself(.data = tree_tibble, .node = 1)))) %>% #list(tibble(node = ape::nodepath(treedata@phylo, tip, root_id)))
+    mutate(path = list(bind_rows(ancestor(.data = tree_tibble, .node = tip), 
+                                 itself(.data = tree_tibble, .node = tip)))) %>% #list(tibble(node = ape::nodepath(treedata@phylo, tip, root_id)))
     as_tibble() %>% # cancel out rowwise()
     filter(!is.na(cluster_profile)) %>%
     
