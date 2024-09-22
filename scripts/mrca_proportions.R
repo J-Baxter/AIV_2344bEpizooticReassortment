@@ -15,7 +15,6 @@
 # is conducted using OLS regression, thereafter progressing to Bayesian analysis using BRMS.
 
 ########################################## DEPENDENCIES ############################################
-library(brms)
 library(broom)
 library(broom.mixed)
 library(tidybayes)
@@ -61,7 +60,7 @@ model_data <- combined_data %>%
 
 
 
-################################### PLOT HOST ANCESTOR #####################################
+################################### Ancestral host ~ Region #####################################
 
 combined_data %>%
   mutate(collection_regionname = case_when(grepl('europe', collection_regionname) ~ 'europe',
@@ -91,8 +90,32 @@ combined_data %>%
 
 
   
+props <- combined_data %>%
+  select(c(collection_regionname,
+           segment,
+           host_simplifiedhost,
+           group2)) %>%
+  filter(!grepl('\\+', host_simplifiedhost)) %>%
+  mutate(collection_regionname = case_when(grepl('europe', collection_regionname) ~ 'europe',
+                                           grepl('africa', collection_regionname) ~ 'africa',
+                                           grepl('asia', collection_regionname) ~ 'asia',
+                                           grepl('(central|northern) america', collection_regionname) ~ 'central & northern america',
+                                           .default = collection_regionname
+  )) %>%
+  group_by(collection_regionname, segment) %>%
+  group_by(host_simplifiedhost, .add = TRUE) %>%
+  summarise(prop = n())  %>%
+  filter(segment == 'ha') %>%
+  ungroup()%>%
+  select(-segment) %>%
+  mutate(prop = as.numeric(prop)) %>%
+  pivot_wider(values_from = prop, names_from = host_simplifiedhost) %>%  # Mood to columns
+  replace_na(., list(major = 0)) %>%
+  pivot_longer(., -collection_regionname, names_to = 'host_simplifiedhost', values_to = 'prop')
 
-#######################################  Plot 2: Region MRCA  ########################################
+
+MASS::loglm(prop ~ host_simplifiedhost + collection_regionname, props)
+#######################################  Reassortant Class ~ Region  ########################################
 combined_data %>%
   mutate(collection_regionname = case_when(grepl('europe', collection_regionname) ~ 'europe',
                                            grepl('africa', collection_regionname) ~ 'africa',
@@ -124,15 +147,44 @@ combined_data %>%
 model_data <- combined_data %>%
     select(c(collection_regionname,
              segment,
-             host_simplifiedhost)) %>%
+             host_simplifiedhost,
+             group2)) %>%
   filter(!grepl('\\+', host_simplifiedhost)) %>%
-  mutate(prop_host = nrow(.)) %>%
-  group_by(collection_regionname, segment, host_simplifiedhost) %>%
-  summarise(prop_host = n()/prop_host)
+  mutate(collection_regionname = case_when(grepl('europe', collection_regionname) ~ 'europe',
+                                           grepl('africa', collection_regionname) ~ 'africa',
+                                           grepl('asia', collection_regionname) ~ 'asia',
+                                           grepl('(central|northern) america', collection_regionname) ~ 'central & northern america',
+                                           .default = collection_regionname
+  )) %>%
+  mutate(dominant_binary = if_else(group2 == 'dominant', 1, 0),
+         segment_binary = if_else(segment %in%  c('ha', 'nx'), 1, 0))
 
-glm()
+props <- combined_data %>%
+  select(c(collection_regionname,
+           segment,
+           host_simplifiedhost,
+           group2)) %>%
+  filter(!grepl('\\+', host_simplifiedhost)) %>%
+  mutate(collection_regionname = case_when(grepl('europe', collection_regionname) ~ 'europe',
+                                           grepl('africa', collection_regionname) ~ 'africa',
+                                           grepl('asia', collection_regionname) ~ 'asia',
+                                           grepl('(central|northern) america', collection_regionname) ~ 'central & northern america',
+                                           .default = collection_regionname
+  )) %>%
+  group_by(collection_regionname, segment) %>%
+  group_by(group2, .add = TRUE) %>%
+  summarise(prop = n())  %>%
+  filter(segment == 'ha') %>%
+  ungroup()%>%
+  select(-segment) %>%
+  mutate(prop = as.numeric(prop)) %>%
+  pivot_wider(values_from = prop, names_from = group2) %>%  # Mood to columns
+  replace_na(., list(major = 0)) %>%
+  pivot_longer(., -collection_regionname, names_to = 'group2', values_to = 'prop')
 
-  
+
+MASS::loglm(prop ~ group2 + collection_regionname, props)
+
 
 
 
