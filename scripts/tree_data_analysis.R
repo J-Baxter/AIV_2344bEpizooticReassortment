@@ -46,10 +46,10 @@ combined_data <- RegionalTre_mrca_stats_disp_jumps_combined %>%
   select(-c(
     cluster_number,
     collection_countryname,
-    virus_subtype,
+
     prob_cluster_number,
     prob_collection_countryname,
-    prob_virus_subtype
+
   )) %>%
   # bind results from dominant trees
   bind_rows(domainantTre_mrca_stats_disp_jumps_combined) %>%
@@ -64,6 +64,7 @@ combined_data <- RegionalTre_mrca_stats_disp_jumps_combined %>%
       )),
     by = join_by(Rcode == cluster_profile)
   ) %>%
+  
   # split labels to extract segments
   separate_wider_delim(data_name, "_", names = c("segment", "deprecated")) %>%
   mutate(cluster_profile = case_when(deprecated == "11111111A" & Rcode == "1_1_1_1_1_1_1_1" ~ "1_1_1_1_1_1_1_1A",
