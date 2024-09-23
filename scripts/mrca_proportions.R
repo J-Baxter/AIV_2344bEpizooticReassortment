@@ -24,7 +24,11 @@ library(bayesplot)
 ########################################### IMPORT DATA ############################################
 
 combined_data <- read_csv('./2024Aug18/treedata_extractions/2024-09-20_combined_data.csv')
-
+host_colour <- read_csv('./colour_schemes/hostType_cols.csv')
+region_colour <- read_csv('./colour_schemes/regionType_cols.csv')
+riskgroup_colour <- read_csv('./colour_schemes/riskgroup_cols.csv') %>%
+  mutate(group2 = c('major', 'minor', 'dominant'))
+subtype_colour <- read_csv('./colour_schemes/SubType_cols.csv')
 
 ########################################### FORMAT DATA ############################################
 
@@ -62,7 +66,7 @@ model_data <- combined_data %>%
 
 ################################### Ancestral host ~ Region #####################################
 
-combined_data %>%
+plot_data <- combined_data %>%
   mutate(collection_regionname = case_when(grepl('europe', collection_regionname) ~ 'europe',
                                            grepl('africa', collection_regionname) ~ 'africa',
                                            grepl('asia', collection_regionname) ~ 'asia',
@@ -70,8 +74,11 @@ combined_data %>%
                                            .default = collection_regionname )) %>%
   filter(!is.na(collection_regionname)) %>% 
   filter(!grepl('\\+', host_simplifiedhost)) %>%
-  ggplot(aes(x = collection_regionname,
-             fill = host_simplifiedhost)) +
+  left_join(host_colour, by = join_by(host_simplifiedhost == Name))
+
+ggplot(aes(x = collection_regionname,
+           fill = host_simplifiedhost), 
+       data = plot_data) +
   
   # Geom objects
   geom_bar(position = "fill") +
@@ -79,13 +86,17 @@ combined_data %>%
   
   # Scales
   scale_x_discrete('Region of Origin', labels = function(x) str_wrap(x, width = 20) %>% str_to_title())+
-  scale_fill_brewer('Reassortant Class', direction = -1) +
   
-  
-  
+  scale_fill_manual(
+    'Host of Origin',
+    values = host_colour %>% pull(Trait, name = Name), 
+    labels = host_colour %>% pull(Name)) +
+
   # Graphical
   facet_grid(rows = vars(segment)) + 
-  theme_minimal() 
+  theme_minimal() +
+  theme(legend.position = 'bottom') +
+  guides(fill=guide_legend(nrow=3,byrow=TRUE))
   
 
 
@@ -133,16 +144,35 @@ combined_data %>%
   
   # Scales
   scale_x_discrete('Region of Origin', labels = function(x) str_wrap(x, width = 20) %>% str_to_title())+
-  scale_fill_brewer('Reassortant Class', direction = -1) +
-  
+  scale_fill_manual(
+    'Reassortant Class',
+    values = riskgroup_colour %>% pull(Trait, name = group2))  +
+
   
   
   # Graphical
   facet_grid(rows = vars(segment)) + 
+  theme_minimal() +
+  theme(legend.position = 'bottom')
+
+
+
+ggplot(aes(x = collection_regionname,
+           fill = host_simplifiedhost), 
+       data = plot_data) +
+  
+  # Geom objects
+  geom_bar(position = "fill") +
+  scale_y_continuous('Number of Reassortants', labels = scales::percent) +
+  
+  # Scales
+  scale_x_discrete('Region of Origin', labels = function(x) str_wrap(x, width = 20) %>% str_to_title())+
+  
+ 
+  
+  # Graphical
+  facet_grid(rows = vars(segment)) + 
   theme_minimal() 
-
-
-
 
 model_data <- combined_data %>%
     select(c(collection_regionname,
