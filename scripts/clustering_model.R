@@ -33,9 +33,6 @@ summary_data <- read_csv('./2024Aug18/treedata_extractions/summary_reassortant_m
 # import colour schemes
 host_colour <- read_csv('./colour_schemes/hostType_cols.csv')
 region_colour <- read_csv('./colour_schemes/regionType_cols.csv')
-riskgroup_colour <- read_csv('./colour_schemes/riskgroup_cols.csv') %>%
-  mutate(kclust = c(1,2, 3),
-         group2 = c('major', 'minor', 'dominant'))
 subtype_colour <- read_csv('./colour_schemes/SubType_cols.csv')
 
 ########################################### FORMAT DATA ############################################
@@ -140,7 +137,7 @@ kclust_updated_data <- combined_data %>%
             starts_with('collection_regionname'))) 
 
 
-####################################### START KCLUST PIPELINE ########################################
+####################################### SUMMARY DATA KCLUST ########################################
 set.seed(4472)
 kclust_nophylo <- tibble(k = 1:20) %>%
   mutate(
@@ -163,7 +160,8 @@ clusterings_nophylo <-
   unnest(cols = c(glanced))
 
 
-###################################################################################################
+####################################### SUMMARY DATA PERMUTATIONS ########################################
+
 # data + labels
 
 # data points used for clustering and cluster_profiles
@@ -229,7 +227,7 @@ lookup_clusters <- assignments_nophylo %>%
   rename(original_cluster = .cluster)
 
 
-
+####################################### SUMMARY DATA ARI ########################################
 # Ari - adjusted rand index
 # The Rand Index computes a similarity measure between two clusterings by considering all pairs 
 # of samples and counting pairs that are assigned in the same or different clusters in the predicted 
@@ -267,6 +265,10 @@ ari_summary <- ari %>%
 #scale_y_continuous('Total within-cluster sum of squares') +
 #scale_x_continuous('K', breaks = seq(1,20, by = 1))
 
+####################################### SUMMARY DATA PLOTS ########################################
+riskgroup_colour <- read_csv('./colour_schemes/riskgroup_cols.csv') %>%
+  mutate(kclust = c(1,2, 3),
+         group2 = c('minor', 'major', 'dominant'))
 
 plt_1a <- assignments_nophylo %>%
   filter(k == 3) %>%
@@ -310,7 +312,8 @@ plt_1b <- ggplot(ari_summary)+
 cowplot::plot_grid(plt_1a, plt_1b, ncol = 2, align = 'h', axis = 'tb')
 
  
-###################################################################################################
+####################################### PHYLO + SUMMARY DATA KCLUST ########################################
+
 # Now repeat for phylo data
 
 kclusts <- tibble(k = 1:20) %>%
@@ -330,9 +333,7 @@ clusterings <-  kclusts %>%
   unnest(cols = c(glanced))
 
 
-###################### permutation tests ####################
-
-
+####################################### PHYLO + SUMMARY DATA PERMUTATIONS #######################################
 # data points used for clustering and cluster_profiles
 labelled_phylo <- assignments %>%
   filter(k == 3) %>%
@@ -387,6 +388,7 @@ permuted_clusterings_phylo <- permuted_phylo  %>%
   unnest(cols = c(glanced))
 
 
+####################################### PHYLO + SUMMARY DATA ARI ########################################
 # was cluster assignment correct according to baseline kmeans?
 lookup_clusters <- assignments %>%
   filter(k == 3) %>%
@@ -416,9 +418,11 @@ ari_summary <- ari %>%
             upper_ci = mean(importance) + 1.96 * sd(importance) / sqrt(n()),  # Upper 95% CI
             .by = c(var))
 
+
+####################################### PHYLO + SUMMARY DATA PLOTS ########################################
 riskgroup_colour <- read_csv('./colour_schemes/riskgroup_cols.csv') %>%
-  mutate(kclust = c(3,2, 1),
-         group2 = c('major', 'minor', 'dominant'))
+  mutate(kclust = c(3,1,2),
+         group2 = c( 'minor', 'major','dominant'))
 
 plt_2a <- assignments %>%
   filter(k == 3) %>%
@@ -466,6 +470,75 @@ plt_2b <- ggplot(ari_summary %>% arrange(desc(mean_importance)) %>% head(n = 10)
 
 cowplot::plot_grid(plt_2a, plt_2b, ncol = 2, align = 'h', axis = 'tb')
 
+
+####################################### ALL DATA CONTINGENCY TBL ########################################
+assignments %>%
+  filter(k == 3) %>%
+  select(c(cluster_profile, .cluster)) %>%
+  left_join(assignments_nophylo %>%
+              filter(k == 3) %>%
+              select(c(cluster_profile, .cluster)), by = join_by(cluster_profile)) %>%
+  select(-cluster_profile) %>%
+  ftable()
+
+
+####################################### Silhouettes ########################################
+# Calculate the mean intra-cluster distance (a) and the mean nearest-cluster 
+# distance (b) for each sample. The Silhouette Coefficient for a sample is (b - a) / max(a, b)
+
+sil_nophlyo <- cluster::silhouette(assignments_nophylo %>%
+                             filter(k == 3) %>% pull(.cluster) %>%
+                             as.integer(),
+                           assignments_nophylo %>%
+                             filter(k == 3) %>%
+                             select(-c(k, kclust, tidied, glanced, cluster_profile, .cluster,group2)) %>% as.matrix() %>% dist()) %>%
+  .[, 1:3] %>%
+  as_tibble() %>%
+  mutate(data = 'Summary Data') %>%
+  mutate(cluster = case_when(cluster == 1 ~ 'major', 
+                             cluster == 2 ~ 'minor',
+                             cluster == 3 ~ 'dominant',
+                             ))
+
+
+
+
+sil <- cluster::silhouette(assignments %>%
+                    filter(k == 3) %>% pull(.cluster) %>%
+                                              as.integer(),
+                  assignments %>%
+                    filter(k == 3) %>%
+                    select(-c(k, kclust, tidied, glanced, cluster_profile, .cluster)) %>% as.matrix() %>% dist()
+                    ) %>%
+  .[, 1:3] %>%
+  as_tibble() %>%
+  mutate(data = 'All Data') %>%
+  mutate(cluster = case_when(cluster == 3 ~ 'major', 
+                             cluster == 2 ~  'dominant',
+                             cluster == 1 ~ 'minor'
+  ))
+
+
+riskgroup_colour <- read_csv('./colour_schemes/riskgroup_cols.csv') %>%
+  mutate(kclust = c(3,1,2),
+         group2 = c( 'minor', 'major','dominant'))
+
+#a negative silhouette score for a point does not necessarily mean a "wrong" assignment, it 
+# just means that the point is on average closer to points in another cluster than to points 
+# in its own cluster
+
+bind_rows(sil,
+          sil_nophlyo) %>%
+  ggplot(aes(x = sil_width, fill = cluster)) +
+  geom_density( colour = NA, alpha = 0.8) +
+  scale_fill_manual(values = c('major' = '#1f77b4',
+                               'minor' = '#2ca02c',
+                               'dominant' = '#FF0000')) +
+  facet_grid(cols = vars(data)) +
+  scale_x_continuous('Silhouette Width')+
+  scale_y_continuous('Probability Density') + 
+  theme_minimal(base_size = 18) +
+  theme(legend.position = 'bottom')
 
 ### facet pca plot for different clusters
 #assignments %>%
