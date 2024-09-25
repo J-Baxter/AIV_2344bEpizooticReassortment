@@ -20,6 +20,7 @@ library(broom.mixed)
 library(tidyverse)
 library(recipes)
 library(rsample)
+library(mclust)
 
 
 ########################################### IMPORT DATA ############################################
@@ -143,10 +144,10 @@ kclust_updated_data <- combined_data %>%
 set.seed(4472)
 kclust_nophylo <- tibble(k = 1:20) %>%
   mutate(
-    kclust = map(k, ~stats::kmeans(kclust_nophylo_data %>% select(-c(group2,cluster_profile)), .x)),
-    tidied = map(kclust, tidy),
-    glanced = map(kclust, glance),
-    augmented = map(kclust, augment, kclust_nophylo_data)
+    kclust = purrr::map(k, ~kmeans(kclust_nophylo_data %>% select(-c(group2,cluster_profile)), .x)),
+    tidied = purrr::map(kclust, tidy),
+    glanced = purrr::map(kclust, glance),
+    augmented = purrr::map(kclust, augment, kclust_nophylo_data)
   )
 
 clusters_nophylo <- 
@@ -191,7 +192,7 @@ names(kclust_permutations) <- colnames(labelled_nophylo)
 kclust_permutations %<>% 
   bind_rows(., .id = 'permuted_var') %>%
   unite(id, permuted_var, id)  %>%
-  mutate(data = map(splits, ~ analysis(.x))) %>%
+  mutate(data = purrr::map(splits, ~ analysis(.x))) %>%
   select(-splits) %>%
   unnest(data) 
 
@@ -202,9 +203,9 @@ permuted_nophylo <- kclust_permutations %>%
   #select(-cluster_profile) %>%
   nest(., .by = id) %>%
   mutate(
-    kclust = map(data,  ~select(.x , -cluster_profile) %>% kmeans(3)),
-    tidied = map(kclust, tidy),
-    glanced = map(kclust, glance),
+    kclust = purrr::map(data,  ~select(.x , -cluster_profile) %>% kmeans(3)),
+    tidied = purrr::map(kclust, tidy),
+    glanced = purrr::map(kclust, glance),
     augmented = map2(kclust, data, augment)
   ) 
   
@@ -314,10 +315,10 @@ cowplot::plot_grid(plt_1a, plt_1b, ncol = 2, align = 'h', axis = 'tb')
 
 kclusts <- tibble(k = 1:20) %>%
   mutate(
-    kclust = map(k, ~kmeans(kclust_updated_data %>% select(-cluster_profile) %>%drop_na(), .x)),
-    tidied = map(kclust, tidy),
-    glanced = map(kclust, glance),
-    augmented = map(kclust, augment, kclust_updated_data %>%drop_na()))
+    kclust = purrr::map(k, ~kmeans(kclust_updated_data %>% select(-cluster_profile) %>%drop_na(), .x)),
+    tidied = purrr::map(kclust, tidy),
+    glanced = purrr::map(kclust, glance),
+    augmented = purrr::map(kclust, augment, kclust_updated_data %>%drop_na()))
 
 clusters <- kclusts %>%
   unnest(cols = c(tidied))
@@ -357,7 +358,7 @@ names(kclust_permutations) <- colnames(labelled_phylo)
 kclust_permutations %<>% 
   bind_rows(., .id = 'permuted_var') %>%
   unite(id, permuted_var, id)  %>%
-  mutate(data = map(splits, ~ analysis(.x))) %>%
+  mutate(data = purrr::map(splits, ~ analysis(.x))) %>%
   select(-splits) %>%
   unnest(data) 
 
@@ -368,9 +369,9 @@ permuted_phylo <- kclust_permutations %>%
   #select(-cluster_profile) %>%
   nest(., .by = id) %>%
   mutate(
-    kclust = map(data,  ~select(.x , -cluster_profile) %>% kmeans(3)),
-    tidied = map(kclust, tidy),
-    glanced = map(kclust, glance),
+    kclust = purrr::map(data,  ~select(.x , -cluster_profile) %>% kmeans(3)),
+    tidied = purrr::map(kclust, tidy),
+    glanced = purrr::map(kclust, glance),
     augmented = map2(kclust, data, augment)
   ) 
 
