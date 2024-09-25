@@ -19,6 +19,7 @@ library(broom)
 library(broom.mixed)
 library(tidyverse)
 library(recipes)
+library(rsample)
 
 
 ########################################### IMPORT DATA ############################################
@@ -32,7 +33,7 @@ summary_data <- read_csv('./2024Aug18/treedata_extractions/summary_reassortant_m
 host_colour <- read_csv('./colour_schemes/hostType_cols.csv')
 region_colour <- read_csv('./colour_schemes/regionType_cols.csv')
 riskgroup_colour <- read_csv('./colour_schemes/riskgroup_cols.csv') %>%
-  mutate(kclust = c(2,1, 3),
+  mutate(kclust = c(1,2, 3),
          group2 = c('major', 'minor', 'dominant'))
 subtype_colour <- read_csv('./colour_schemes/SubType_cols.csv')
 
@@ -80,16 +81,13 @@ kclust_updated_data <- combined_data %>%
   select(
     segment,
     cluster_profile,
-    group2,
     weighted_diff_coeff,
-    original_diff_coeff,
     evoRate,
     persist.time,
     collection_regionname,
     host_simplifiedhost,
     count_cross_species,
-    starts_with('median'),
-    starts_with('max')
+    starts_with('median')
     ) %>%
   
   
@@ -110,32 +108,42 @@ kclust_updated_data <- combined_data %>%
   slice_sample(n=1) %>%
   ungroup() %>%
   
+  # pivot wider so one row/reassortant
+  pivot_wider(names_from = segment,
+              values_from = c(where(is.double), collection_regionname, host_simplifiedhost)) %>%
+  
   # start tidymodels
   recipe(~ .) %>% 
   
+  #drop na
+  step_naomit(everything()) %>%
+  
   # normalise numeric vectors
+  step_zv(everything()) %>%
   step_normalize(all_numeric()) %>% 
   
   # create dummy variables for categorical predictors
-  step_dummy(collection_regionname, one_hot = TRUE) %>%
-  step_dummy(host_simplifiedhost, one_hot = TRUE) %>%
-  step_dummy(segment, one_hot = TRUE) %>%
+  step_dummy(starts_with('collection_regionname'), one_hot = TRUE) %>%
+  step_dummy(starts_with('host_simplifiedhost'), one_hot = TRUE) %>%
   
   # run tidymodels recipe
   prep() %>%
   bake(NULL) %>%
   
+
+  
   # exclude columns not to be used
   left_join(kclust_nophylo_data %>% select(-starts_with('group')), by = join_by(cluster_profile)) %>%
-  select(-c(cluster_profile, original_diff_coeff, starts_with('median'))) %>%
-  drop_na() 
+  select(-c(starts_with('median'),
+            starts_with('host_simplifiedhost'),
+            starts_with('collection_regionname'))) 
 
 
 ####################################### START KCLUST PIPELINE ########################################
 set.seed(4472)
 kclust_nophylo <- tibble(k = 1:20) %>%
   mutate(
-    kclust = map(k, ~kmeans(kclust_nophylo_data %>% select(-c(group2, cluster_profile)), .x)),
+    kclust = map(k, ~stats::kmeans(kclust_nophylo_data %>% select(-c(group2,cluster_profile)), .x)),
     tidied = map(kclust, tidy),
     glanced = map(kclust, glance),
     augmented = map(kclust, augment, kclust_nophylo_data)
@@ -153,40 +161,13 @@ clusterings_nophylo <-
   kclust_nophylo %>%
   unnest(cols = c(glanced))
 
-clustersnophylo_plot <- assignments_nophylo %>%
-  filter(k == 4) %>%
-  select(-c(kclust, tidied, glanced)) %>%
-  recipe(~ .) %>%
-  step_pca(all_numeric(), -k, num_comp = 2) %>%  # Perform PCA (e.g., 2 components)
-  prep() %>%
-  bake(NULL)%>%
-  ggplot(., aes(x = PC1, y = PC2)) +
-  geom_point(aes(colour = .cluster), size = 4, alpha = 0.8) + 
-  theme_minimal(base_size = 20) + 
-  scale_color_manual(
-    'K-Means Clusters',
-    values = riskgroup_colour %>% pull(Trait, name = kclust), 
-    labels = riskgroup_colour %>% pull(group2, name = kclust)) +
-  theme(legend.position = 'bottom',
-        legend.box = "vertical")            #
-
-
-ggplot(clusterings_nophylo, aes(k, tot.withinss)) +
-  geom_line() +
-  geom_point() +
-  theme_minimal() +
-  scale_y_continuous('Total within-cluster sum of squares') +
-  scale_x_continuous('K', breaks = seq(1,20, by = 1))
-
-
-
 
 ###################################################################################################
 # data + labels
 
 # data points used for clustering and cluster_profiles
 labelled_nophylo <- assignments_nophylo %>%
-  filter(k == 4) %>%
+  filter(k == 3) %>%
   select(-c(group2,
             kclust,
             tidied,
@@ -247,89 +228,257 @@ lookup_clusters <- assignments_nophylo %>%
   rename(original_cluster = .cluster)
 
 
-test <- permuted_assignments_nophylo %>%
+ari <- permuted_assignments_nophylo %>%
   select(c(cluster_profile,
            .cluster,
            id)) %>%
-  left_join(lookup, by = join_by(cluster_profile)) %>%
+  left_join(lookup_clusters, 
+            by = join_by(cluster_profile)) %>%
   mutate(across(ends_with('cluster'), .fns = ~as.integer(.x))) %>%
-  mutate(is_correct = case_when(.cluster == original_cluster ~ 1,
-                                .cluster != original_cluster ~ 0)) %>%
   separate_wider_delim(id, delim = regex('_(?!.*_)'), 
                        names = c('var', 'permutation')) %>%
-  summarise(prop_correct = mean(is_correct),
-            .by = c(var, permutation))
+  group_by(var, permutation) %>%
+  mutate(ari = mclust::adjustedRandIndex(original_cluster, .cluster) )%>%
+  summarise(ari = mean(ari)) %>%
+  ungroup()
+
+ari_summary <- ari %>%
+  mutate(importance = 1 - ari) %>% # Higher impact means lower ARI score
+  summarise(mean_importance = mean(importance),
+            lower_ci = mean(importance) - 1.96 * sd(importance) / sqrt(n()),  # Lower 95% CI
+            upper_ci = mean(importance) + 1.96 * sd(importance) / sqrt(n()),  # Upper 95% CI
+            .by = c(var))
 
 
 
 
+#ggplot(clusterings_nophylo, aes(k, tot.withinss)) +
+# geom_line() +
+# geom_point() +
+#theme_minimal() +
+#scale_y_continuous('Total within-cluster sum of squares') +
+#scale_x_continuous('K', breaks = seq(1,20, by = 1))
 
-# 
-########
 
-kclusts <- tibble(k = 1:20) %>%
-  mutate(
-    kclust = map(k, ~kmeans(kclust_updated_data %>% select(-group2), .x)),
-    tidied = map(kclust, tidy),
-    glanced = map(kclust, glance),
-    augmented = map(kclust, augment, kclust_updated_data)
-  )
-
-clusters <- 
-  kclusts %>%
-  unnest(cols = c(tidied))
-
-assignments <- 
-  kclusts %>% 
-  unnest(cols = c(augmented))
-
-clusterings <- 
-  kclusts %>%
-  unnest(cols = c(glanced))
-
-assignments %>%
-  filter(k %in% seq(from = 3, to = 6)) %>%
-  select(-c(kclust, tidied, glanced)) %>%
-  group_split(k, .keep = TRUE) %>%
-  map(function(df) {
-    # 2. Apply PCA to each group separately
-    df %>%
-      recipe(~ .) %>%
-      step_pca(all_numeric(), -k, num_comp = 2) %>%  # Perform PCA (e.g., 2 components)
-      prep() %>%
-      bake(NULL)
-  }) %>%
-  bind_rows() %>%
-  ggplot(., aes(x = PC1, y = PC2)) +
-  geom_point(aes(colour = .cluster, shape = group2), size = 4, alpha = 0.8) + 
-  theme_minimal(base_size = 20) +
-  facet_wrap(~ k)
-
-clustersphylo_plot <- assignments %>%
-  filter(k ==3) %>%
+plt_1a <- assignments_nophylo %>%
+  filter(k == 3) %>%
   select(-c(kclust, tidied, glanced)) %>%
   recipe(~ .) %>%
   step_pca(all_numeric(), -k, num_comp = 2) %>%  # Perform PCA (e.g., 2 components)
   prep() %>%
   bake(NULL)%>%
   ggplot(., aes(x = PC1, y = PC2)) +
-  geom_point(aes(colour = .cluster, shape = group2), alpha = 0.8) + 
-  scale_shape('Pre-Assigned Classification') + 
-  scale_color_discrete('K-Means Clusters') +
-  theme_minimal() +
-  theme(legend.position = 'bottom') +               # Stack legends vertically
-  guides(
-    color = guide_legend(order = 1),             # Ensure color legend is first
-    shape = guide_legend(order = 2)              # Shape legend is second
-  )
+  geom_point(aes(colour = .cluster), size = 4, alpha = 0.8) + 
+  theme_minimal(base_size = 20) + 
+  scale_color_manual(
+    'K-Means Clusters',
+    values = riskgroup_colour %>% pull(Trait, name = kclust), 
+    labels = riskgroup_colour %>% pull(group2, name = kclust)) +
+  theme(legend.position = 'bottom',
+        legend.box = "vertical")            #
 
 
 
-assignments %>%
+
+plt_1b <- ggplot(ari_summary)+
+  geom_point(aes(x = var, y = mean_importance), size = 4) +
+  geom_linerange(aes(x = var, ymin = lower_ci, ymax = upper_ci), linewidth = 1.5) + 
+  
+  scale_x_discrete('Variable',
+                   labels = c('host_richness' = 'Host richness',
+                              'if_mammal' = 'Mammals' ,
+                              'Length_Between_First_Last_Sample' = 'Time between samples',
+                              'max_distance_km' = 'Maximum distance',
+                              'Num_Sequence' = 'Number of sequences',
+                              'number_Conti' = 'Number of Continents') %>%
+                     str_wrap(., width = 15)) +
+  scale_y_continuous(
+    'Variable Importance') +
+  coord_cartesian(ylim = c(0,1)) +
+  theme_minimal(base_size = 20) +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+
+
+cowplot::plot_grid(plt_1a, plt_1b, ncol = 2, align = 'h', axis = 'tb')
+
+ 
+###################################################################################################
+# Now repeat for phylo data
+
+kclusts <- tibble(k = 1:20) %>%
+  mutate(
+    kclust = map(k, ~kmeans(kclust_updated_data %>% select(-cluster_profile) %>%drop_na(), .x)),
+    tidied = map(kclust, tidy),
+    glanced = map(kclust, glance),
+    augmented = map(kclust, augment, kclust_updated_data %>%drop_na()))
+
+clusters <- kclusts %>%
+  unnest(cols = c(tidied))
+
+assignments <- kclusts %>% 
+  unnest(cols = c(augmented))
+
+clusterings <-  kclusts %>%
+  unnest(cols = c(glanced))
+
+
+###################### permutation tests ####################
+
+
+# data points used for clustering and cluster_profiles
+labelled_phylo <- assignments %>%
   filter(k == 3) %>%
-  select(.cluster, group2) %>%
-  summarise(n = n(), .by = c(.cluster, group2)) %>%
-  pivot_wider(names_from = 'group2', values_from = 'n')
+  select(-c( kclust,
+            tidied,
+            glanced,
+            k,
+            .cluster)) 
+
+
+
+# generate permutations for all columns (except 1 - the cluster profile label)
+kclust_permutations <- list()
+
+for (i in 2:ncol(labelled_phylo)){
+  kclust_permutations[[i]] <- labelled_phylo %>%
+    permutations(permute = all_of(i), times = 10)
+}
+
+names(kclust_permutations) <- colnames(labelled_phylo)
+
+# bind together permutaed data in a single dataframe, and nest
+kclust_permutations %<>% 
+  bind_rows(., .id = 'permuted_var') %>%
+  unite(id, permuted_var, id)  %>%
+  mutate(data = map(splits, ~ analysis(.x))) %>%
+  select(-splits) %>%
+  unnest(data) 
+
+
+
+# execute kmeans on nested data (ie one run of kmeans per permuted dataset)
+permuted_phylo <- kclust_permutations %>%
+  #select(-cluster_profile) %>%
+  nest(., .by = id) %>%
+  mutate(
+    kclust = map(data,  ~select(.x , -cluster_profile) %>% kmeans(3)),
+    tidied = map(kclust, tidy),
+    glanced = map(kclust, glance),
+    augmented = map2(kclust, data, augment)
+  ) 
+
+
+# extract results
+permuted_clusters_phylo <- permuted_phylo  %>%
+  unnest(cols = c(tidied)) 
+
+permuted_assignments_phylo <- permuted_phylo  %>% 
+  unnest(cols = c(augmented)) 
+
+permuted_clusterings_phylo <- permuted_phylo  %>%
+  unnest(cols = c(glanced))
+
+
+# was cluster assignment correct according to baseline kmeans?
+lookup_clusters <- assignments %>%
+  filter(k == 3) %>%
+  select(c(cluster_profile,
+           .cluster)) %>%
+  rename(original_cluster = .cluster)
+
+
+ari <- permuted_assignments_phylo %>%
+  select(c(cluster_profile,
+           .cluster,
+           id)) %>%
+  left_join(lookup_clusters, 
+            by = join_by(cluster_profile)) %>%
+  mutate(across(ends_with('cluster'), .fns = ~as.integer(.x))) %>%
+  separate_wider_delim(id, delim = regex('_(?!.*_)'), 
+                       names = c('var', 'permutation')) %>%
+  group_by(var, permutation) %>%
+  mutate(ari = mclust::adjustedRandIndex(original_cluster, .cluster) )%>%
+  summarise(ari = mean(ari)) %>%
+  ungroup()
+
+ari_summary <- ari %>%
+  mutate(importance = 1 - ari) %>% # Higher impact means lower ARI score
+  summarise(mean_importance = mean(importance),
+            lower_ci = mean(importance) - 1.96 * sd(importance) / sqrt(n()),  # Lower 95% CI
+            upper_ci = mean(importance) + 1.96 * sd(importance) / sqrt(n()),  # Upper 95% CI
+            .by = c(var))
+
+riskgroup_colour <- read_csv('./colour_schemes/riskgroup_cols.csv') %>%
+  mutate(kclust = c(3,2, 1),
+         group2 = c('major', 'minor', 'dominant'))
+
+plt_2a <- assignments %>%
+  filter(k == 3) %>%
+  select(-c(kclust, tidied, glanced)) %>%
+  recipe(~ .) %>%
+  step_pca(all_numeric(), -k, num_comp = 2) %>%  # Perform PCA (e.g., 2 components)
+  prep() %>%
+  bake(NULL)%>%
+  ggplot(., aes(x = PC1, y = PC2)) +
+  geom_point(aes(colour = .cluster), size = 4, alpha = 0.8) + 
+  theme_minimal(base_size = 20) + 
+  scale_color_manual(
+    'K-Means Clusters',
+    values = riskgroup_colour %>% pull(Trait, name = kclust), 
+    labels = riskgroup_colour %>% pull(group2, name = kclust)) +
+  theme(legend.position = 'bottom',
+        legend.box = "vertical")            #
+
+
+
+
+plt_2b <- ggplot(ari_summary %>% arrange(desc(mean_importance)) %>% head(n = 10))+
+  geom_point(aes(x = var, y = mean_importance), size = 4) +
+  geom_linerange(aes(x = var, ymin = lower_ci, ymax = upper_ci), linewidth = 1.5) + 
+  
+  scale_x_discrete('Variable',
+                   labels = c('if_mammal' = 'Mammals' ,
+                              'weighted_diff_coeff_nx' = 'NX diffusion coefficient',
+                              'weighted_diff_coeff_pb1' = 'PB1 diffusion coefficient',
+                              'weighted_diff_coeff_pb2' = 'PB2 diffusion coefficient',
+                              'evoRate_pb1' = 'PB1 ER',
+                              'evoRate_ha' = 'HA ER',
+                              'evoRate_pa' = 'PA ER',
+                              'evoRate_nx' = 'NX ERe',
+                              'count_cross_species_pb1' = 'PB1 species jumps',
+                              'number_Conti' = 'Number of continents') %>%
+                     str_wrap(., width = 15)
+                   ) +
+  scale_y_continuous(
+    'Variable Importance') +
+  coord_cartesian(ylim = c(0,0.5)) +
+  theme_minimal(base_size = 20) +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+
+
+cowplot::plot_grid(plt_2a, plt_2b, ncol = 2, align = 'h', axis = 'tb')
+
+
+### facet pca plot for different clusters
+#assignments %>%
+  #filter(k %in% seq(from = 3, to = 6)) %>%
+  #select(-c(kclust, tidied, glanced)) %>%
+  #group_split(k, .keep = TRUE) %>%
+  #map(function(df) {
+    # 2. Apply PCA to each group separately
+   # df %>%
+     # recipe(~ .) %>%
+     # step_pca(all_numeric(), -k, num_comp = 2) %>%  # Perform PCA (e.g., 2 components)
+     # prep() %>%
+     # bake(NULL)
+ # }) %>%
+ # bind_rows() %>%
+ # ggplot(., aes(x = PC1, y = PC2)) +
+  #geom_point(aes(colour = .cluster, shape = group2), size = 4, alpha = 0.8) + 
+  #theme_minimal(base_size = 20) +
+ # facet_wrap(~ k)
+
+
 
 # Elbow plot
 ggplot(clusterings, aes(k, tot.withinss)) +
