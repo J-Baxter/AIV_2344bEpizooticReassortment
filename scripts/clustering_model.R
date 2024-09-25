@@ -228,6 +228,13 @@ lookup_clusters <- assignments_nophylo %>%
   rename(original_cluster = .cluster)
 
 
+
+# Ari - adjusted rand index
+# The Rand Index computes a similarity measure between two clusterings by considering all pairs 
+# of samples and counting pairs that are assigned in the same or different clusters in the predicted 
+# and true clusterings. The raw RI score is then “adjusted for chance” into the ARI score using the
+# following scheme: ARI = (RI - Expected_RI) / (max(RI) - Expected_RI)
+
 ari <- permuted_assignments_nophylo %>%
   select(c(cluster_profile,
            .cluster,
