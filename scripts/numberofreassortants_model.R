@@ -61,12 +61,19 @@ ggplot(grouped_lines) +
     #labels = riskgroup_colour %>% pull(group2)) +
   theme_minimal()  +
   theme(legend.position = 'bottom')
-####################################### START BRMS PIPELINE ########################################
 
+
+######################################## DEFINE FORMULA ############################################
+formula_y1 <- bf(n_reassortants ~ collection_regionname, family = zero_inflated_negbinomial())
+formula_y2 <- bf(group2 ~ collection_regionname, family = categorical())
+
+
+####################################### DEFINE PRIORS ########################################
 # Set Priors
 diffusionmodel1_priors <- c()
 
 
+####################################### SET MCMC OPTION ########################################
 # Set MCMC Options
 CHAINS <- 4
 CORES <- 4
@@ -76,8 +83,9 @@ SEED <- 4472
 
 
 # Prior Predictive Checks 
-formula_y1 <- bf(n_reassortants ~ collection_regionname, family = zero_inflated_negbinomial())
-formula_y2 <- bf(group2 ~ collection_regionname, family = categorical())
+
+
+###################################### PRIOR PREDICTIVE SIM ########################################
 
 # Multivariate model - no correlation
 multivar_model <- brm(
@@ -93,6 +101,8 @@ multivar_model <- brm(
 )
 
 
+############################################ FIT MODEL #############################################
+
 fit_year <- brm(
   mvbind(n_reassortants, group2) ~ 1 + collection_regionname + (1|collection_year),  # Multivariate outcome
   family = list(zero_inflated_negbinomial(), categorical()),  # Count and class families
@@ -106,6 +116,14 @@ fit_year <- brm(
 )
 
 
+
+# CONVERGENCE CHECK 
+
+
+# POSTERIOR PREDICTIVE CHECKS
+
+
+##################################### PREDICTIONS AND EFFECTS ######################################
 
 # Marginal probability density of the number of unique reassortants/region
 # ie, irrespective of class
@@ -154,7 +172,7 @@ ggplot(class_prob, aes(x = collection_regionname, colour = .category, y = .epred
   theme(legend.position = 'bottom')
 
 
-#### Contrasts ####
+##################################### PAIRWISE COMPARISONS ######################################
 fit_year %>% 
   emmeans(., ~ collection_regionname ,
           epred = TRUE,
@@ -172,6 +190,9 @@ joint_prob <- count_prob %>%
 
 
 
+
+
+############################################### PLOTS ############################################
 
 
 numberreassortants_priorpredictive <- brm(
