@@ -15,6 +15,7 @@
 # is conducted using OLS regression, thereafter progressing to Bayesian analysis using BRMS.
 
 ########################################## DEPENDENCIES ############################################
+library(tidyverse)
 library(brms)
 library(broom)
 library(broom.mixed)
@@ -73,21 +74,24 @@ diffusion_data <- combined_data %>%
                             collection_month %in% c(3,4,5)  ~ 'migrating_north', 
                             collection_month %in% c(6,7,8)  ~ 'breeding', 
                             collection_month %in% c(9,10,11)  ~ 'migrating_south'
-                            ))
+                            ), 
+         season_binary = case_when(grepl('migrating', season)  ~ 'migrating', 
+                                   grepl('overwintering|breeding', season)  ~ 'stationary' ) ) %>%
+  mutate(collection_year = date_decimal(TMRCA) %>% format(., "%Y") %>% as.factor())
 
   
 ################################### INITIAL EXPLORATORY MODELS #####################################
 # Plot logged data to show zero/non-zero segregation
 
-model_data %>%
+diffusion_data %>%
   ggplot() +
   geom_histogram(aes(x = log1p(weighted_diff_coeff), fill = weighted_diff_coeff>0)) +
   scale_fill_brewer(palette = 'Dark2', 'Is Zero') +
-  scale_x_continuous('Weighted Diffusion Coefficient') +
-  theme_minimal()
+  scale_x_continuous(name = bquote('Weighted Diffusion Coefficient (' * Km^2 ~ Year^-1 * ')')) +
+  scale_y_continuous(name = 'Count') +
+  theme_minimal(base_size = 18) +
+  theme(legend.position = 'none')
 
-
-# OLS model of 
 
 ######################################## DEFINE FORMULA ############################################
 # We assume a hurdle lognormal model, in which the hurdle process is determined the season in which 
@@ -95,7 +99,7 @@ model_data %>%
 # in anseriformes and charadriiformes. Both model components are conditional on segment from which 
 # the measurement is taken and region of origin
 
-diffusion_formula <- bf(weighted_diff_coeff ~ 1 + host_richness + median_anseriformes_wild +  median_charadriiformes_wild + 
+diffusion_formula <- bf(weighted_diff_coeff ~ 1 + host_richness + season + (median_anseriformes_wild +  median_charadriiformes_wild|collection_year) + 
                           (1|segment + collection_regionname),
                         hu ~ 1 +  season + (1|segment + collection_regionname))
 ####################################### DEFINE PRIORS ########################################
@@ -147,13 +151,12 @@ plot_priorpredictive
 
 ############################################ FIT MODEL #############################################
 diffusionmodel1_fit <- brm(
-  bf(weighted_diff_coeff ~ 1 + host_richness + median_anseriformes_wild + median_charadriiformes_wild + (1|segment + collection_regionname),
-     hu ~ 1 + season + (1|segment + collection_regionname)),
+  diffusion_formula,
   data = diffusion_data,
   family = hurdle_lognormal(),
   chains = CHAINS,
   cores = CORES, 
-  threads = 2, 
+  #threads = 2, 
   iter = ITER,
   warmup = BURNIN,
   seed = SEED,
