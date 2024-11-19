@@ -357,7 +357,7 @@ mapply(write_delim,
 
 treeprior <- lapply(metadata_subsampled, function(x) x %>% filter(!is.na(collection_date)) %>% summarise(prior = (max(decimal_date(ymd(collection_date)), na.rm = T) - min(decimal_date(ymd(collection_date)), na.rm = T)))) %>% unlist() %>% ceiling()
 
-cmds <- paste0("./beastgen -date_order -1 -date_prefix . -date_precision  -D ",
+cmds <- paste0("./beastgen -date_order -1 -date_prefix \\| -date_precision  -D ",
                "'skygrid_PopSize=",
                treeprior*4,
                ",skygrid_numGridPoints=",
@@ -366,13 +366,13 @@ cmds <- paste0("./beastgen -date_order -1 -date_prefix . -date_precision  -D ",
                str_trim(format(treeprior, nsmall = 1)),
                ',fileName=',
                gsub('.prior', '', names(treeprior)), 
-               '_relaxLn_Skygrid', treeprior, '-', treeprior*4, '_1',
+               '_relaxLn_Skygrid', treeprior, '-', treeprior*4, '_2',
                "' flu_skygridtemplate ",
                gsub('2024Nov18\\/' ,'' , alignmentfiles_subsampled),
                ' ',
                ' ./region_subsampled/',
                gsub('.prior', '', names(treeprior)), 
-               '_relaxLn_Skygrid', treeprior, '-', treeprior*4, '_1', '.xml')
+               '_relaxLn_Skygrid', treeprior, '-', treeprior*4, '_2', '.xml')
 
 write_lines(cmds,  paste('.',
                          '2024Nov18', 
