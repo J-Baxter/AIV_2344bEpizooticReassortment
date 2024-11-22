@@ -1,0 +1,35 @@
+tipnames	virus_subtype	collection_regionname	cluster_profile	host_simplifiedhost	lat	long
+H5N1|2344b|EPI_ISL_18132490|anseriformes|united_states|5_1_1_1_2_1_1_3|2022-04-05	H5N1	northern america	5_1_1_1_2_1_1_3	anseriformes-wild	47.4503665532251	-100.466131733191
+H5N1|2344b|EPI_ISL_17964948|galliformes|united_states|5_1_1_1_2_1_1_3|2023-04-20	H5N1	northern america	5_1_1_1_2_1_1_3	galliformes-domestic	39.3065823475906	-111.670337174242
+H5N1|2344b|EPI_ISL_18133012|galliformes|united_states|5_1_1_1_2_1_1_3|2022-04-07	H5N1	northern america	5_1_1_1_2_1_1_3	galliformes-domestic	38.9977049752839	-105.547739783632
+H5N1|2344b|EPI_ISL_18133401|anseriformes|united_states|5_1_1_1_2_1_1_3|2022-04-26	H5N1	northern america	5_1_1_1_2_1_1_3	anseriformes-wild	38.9977049752839	-105.547739783632
+H5N1|2344b|EPI_ISL_16171456|galliformes|united_states|5_1_1_1_2_1_1_3|2022-04-23	H5N1	northern america	5_1_1_1_2_1_1_3	galliformes-domestic	39.9052340570169	-86.2873458441382
+H5N1|2344b|EPI_ISL_16271814|anseriformes|united_states|5_1_1_1_2_1_1_3|2022-12-01	H5N1	northern america	5_1_1_1_2_1_1_3	anseriformes-wild	32.7803923972971	-86.8295163641906
+H5N1|2344b|EPI_ISL_17964849|strigiformes|united_states|5_1_1_1_2_1_1_3|2023-02-06	H5N1	northern america	5_1_1_1_2_1_1_3	other-bird	38.9977049752839	-105.547739783632
+H5N1|2344b|EPI_ISL_16297141|galliformes|united_states|5_1_1_1_2_1_1_3|2022-10-18	H5N1	northern america	5_1_1_1_2_1_1_3	galliformes-domestic	28.6269382846284	-82.4431243811826
+H5N1|2344b|EPI_ISL_17373142|accipitriformes|united_states|5_1_1_1_2_1_1_3|2022-12-05	H5N1	northern america	5_1_1_1_2_1_1_3	other-bird	38.4941000350806	-98.3790702772394
+H5N1|2344b|EPI_ISL_18107018|anseriformes|united_states|5_1_1_1_2_1_1_3|2022-09-22	H5N1	northern america	5_1_1_1_2_1_1_3	anseriformes-wild	31.0706065513525	-91.9998874220998
+H5N1|2344b|EPI_ISL_17373072|anseriformes|united_states|5_1_1_1_2_1_1_3|2022-11-01	H5N1	northern america	5_1_1_1_2_1_1_3	anseriformes-wild	35.5562842108177	-79.3865256785998
+H5N1|2344b|EPI_ISL_16271854|galliformes|united_states|5_1_1_1_2_1_1_3|2022-11-08	H5N1	northern america	5_1_1_1_2_1_1_3	galliformes-domestic	47.4503665532251	-100.466131733191
+H5N1|2344b|EPI_ISL_16297367|anseriformes|united_states|5_1_1_1_2_1_1_3|2022-10-07	H5N1	northern america	5_1_1_1_2_1_1_3	anseriformes-wild	31.4721370523578	-99.3297472206491
+H5N1|2344b|EPI_ISL_16271822|galliformes|united_states|5_1_1_1_2_1_1_3|2022-11-16	H5N1	northern america	5_1_1_1_2_1_1_3	galliformes-domestic	45.3675354819537	-69.2414491669595
+H5N1|2344b|EPI_ISL_16271846|galliformes|united_states|5_1_1_1_2_1_1_3|2022-11-03	H5N1	northern america	5_1_1_1_2_1_1_3	galliformes-domestic	42.9905358128524	-75.6520434129946
+H5N1|2344b|EPI_ISL_16271819|galliformes|united_states|5_1_1_1_2_1_1_3|2022-11-17	H5N1	northern america	5_1_1_1_2_1_1_3	galliformes-domestic	44.4440561554676	-100.227146799835
+H5N1|2344b|EPI_ISL_16271827|rheiformes|united_states|5_1_1_1_2_1_1_3|2022-11-14	H5N1	northern america	5_1_1_1_2_1_1_3	other-bird	34.2752608160835	-111.660302645327
+H5N1|2344b|EPI_ISL_16271833|galliformes|united_states|5_1_1_1_2_1_1_3|2022-11-23	H5N1	northern america	5_1_1_1_2_1_1_3	galliformes-domestic	44.4440561554676	-100.227146799835
+H5N1|2344b|EPI_ISL_16271852|galliformes|united_states|5_1_1_1_2_1_1_3|2022-11-15	H5N1	northern america	5_1_1_1_2_1_1_3	galliformes-domestic	28.6269382846284	-82.4431243811826
+H5N1|2344b|EPI_ISL_16297350|galliformes|united_states|5_1_1_1_2_1_1_3|2022-10-11	H5N1	northern america	5_1_1_1_2_1_1_3	galliformes-domestic	39.3065823475906	-111.670337174242
+H5N1|2344b|EPI_ISL_16297362|anseriformes|united_states|5_1_1_1_2_1_1_3|2022-10-11	H5N1	northern america	5_1_1_1_2_1_1_3	anseriformes-wild	35.5885677024552	-97.4929108164984
+H5N1|2344b|EPI_ISL_16297369|galliformes|united_states|5_1_1_1_2_1_1_3|2022-10-06	H5N1	northern america	5_1_1_1_2_1_1_3	galliformes-domestic	44.4440561554676	-100.227146799835
+H5N1|2344b|EPI_ISL_16297373|galliformes|united_states|5_1_1_1_2_1_1_3|2022-10-07	H5N1	northern america	5_1_1_1_2_1_1_3	galliformes-domestic	28.6269382846284	-82.4431243811826
+H5N1|2344b|EPI_ISL_16297374|anseriformes|united_states|5_1_1_1_2_1_1_3|2022-10-07	H5N1	northern america	5_1_1_1_2_1_1_3	anseriformes-wild	35.5885677024552	-97.4929108164984
+H5N1|2344b|EPI_ISL_17036173|anseriformes|united_states|5_1_1_1_2_1_1_3|2022-11-20	H5N1	northern america	5_1_1_1_2_1_1_3	anseriformes-wild	44.4440561554676	-100.227146799835
+H5N1|2344b|EPI_ISL_17471576|accipitriformes|united_states|5_1_1_1_2_1_1_3|2022-12-02	H5N1	northern america	5_1_1_1_2_1_1_3	other-bird	38.4941000350806	-98.3790702772394
+H5N1|2344b|EPI_ISL_18107019|anseriformes|united_states|5_1_1_1_2_1_1_3|2022-09-22	H5N1	northern america	5_1_1_1_2_1_1_3	anseriformes-wild	31.0706065513525	-91.9998874220998
+H5N1|2344b|EPI_ISL_18132906|accipitriformes|united_states|5_1_1_1_2_1_1_3|2022-04-22	H5N1	northern america	5_1_1_1_2_1_1_3	other-bird	46.3193148536411	-94.1968042401401
+H5N1|2344b|EPI_ISL_17964846|accipitriformes|méxico|5_1_1_1_2_1_1_3|2023-02-04	H5N1	central america	5_1_1_1_2_1_1_3	other-bird	23.9274859580315	-102.19466032098
+H5N1|2344b|EPI_ISL_17964857|accipitriformes|united_states|5_1_1_1_2_1_1_3|2023-02-11	H5N1	northern america	5_1_1_1_2_1_1_3	other-bird	42.9905358128524	-75.6520434129946
+H5N1|2344b|EPI_ISL_17964895|accipitriformes|united_states|5_1_1_1_2_1_1_3|2023-03-03	H5N1	northern america	5_1_1_1_2_1_1_3	other-bird	39.3065823475906	-111.670337174242
+H5N1|2344b|EPI_ISL_17964925|accipitriformes|united_states|5_1_1_1_2_1_1_3|2023-03-23	H5N1	northern america	5_1_1_1_2_1_1_3	other-bird	39.3299769859071	-116.631680741834
+H5N1|2344b|EPI_ISL_16013752|pelecaniformes|venezuela|5_1_1_1_2_1_1_3|2022-11-25	H5N1	south america	5_1_1_1_2_1_1_3	other-bird	8.89363259762319	-64.4049370136296
+NA	NA	NA	NA	NA	NA	NA

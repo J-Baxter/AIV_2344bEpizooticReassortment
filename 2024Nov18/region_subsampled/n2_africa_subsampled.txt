@@ -1,0 +1,14 @@
+tipnames	virus_subtype	collection_regionname	cluster_profile	host_simplifiedhost	lat	long
+H5N2|2344b|EPI_ISL_17414667|galliformes|nigeria|2_1_1_1_1_28_6_1|2021-12-28	H5N2	western africa	2_1_1_1_1_28_6_1	galliformes-domestic	10.7743712595196	9.98774039325803
+H9N2|2344b|EPI_ISL_8387680|galliformes|morocco|NA|2016-01-25	H9N2	northern africa	NA	galliformes-domestic	31.8293937185367	-6.35032719129954
+H9N2|NA|EPI_ISL_14768080|galliformes|nigeria|NA|2019-08-04	H9N2	western africa	NA	galliformes-domestic	9.58907159716497	8.08769036750384
+H9N2|2344b|EPI_ISL_697632|galliformes|morocco|NA|2016-12-01	H9N2	northern africa	NA	galliformes-domestic	31.8293937185367	-6.35032719129954
+H9N2|2344b|EPI_ISL_4072315|galliformes|benin|NA|2019-06-11	H9N2	western africa	NA	galliformes-domestic	9.64834530386091	2.33970693359707
+H9N2|NA|EPI_ISL_14768085|galliformes|nigeria|NA|2019-07-26	H9N2	western africa	NA	galliformes-domestic	9.58907159716497	8.08769036750384
+H9N2|NA|EPI_ISL_14768092|galliformes|nigeria|NA|2019-07-20	H9N2	western africa	NA	galliformes-domestic	9.58907159716497	8.08769036750384
+H9N2|NA|EPI_ISL_14768078|galliformes|nigeria|NA|2019-08-02	H9N2	western africa	NA	galliformes-domestic	9.58907159716497	8.08769036750384
+H9N2|2344b|EPI_ISL_282421|galliformes|burkina_faso|NA|2017-01-01	H9N2	western africa	NA	galliformes-domestic	12.2773783178266	-1.75266049543
+H9N2|NA|EPI_ISL_14768081|galliformes|nigeria|NA|2019-07-19	H9N2	western africa	NA	galliformes-domestic	9.58907159716497	8.08769036750384
+H9N2|NA|EPI_ISL_14768096|galliformes|nigeria|NA|2019-07-05	H9N2	western africa	NA	galliformes-wild	9.58907159716497	8.08769036750384
+H9N2|NA|EPI_ISL_14768084|galliformes|nigeria|NA|2019-07-05	H9N2	western africa	NA	galliformes-domestic	9.58907159716497	8.08769036750384
+NA	NA	NA	NA	NA	NA	NA
