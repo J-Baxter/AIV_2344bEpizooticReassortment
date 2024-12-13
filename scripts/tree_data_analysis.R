@@ -76,27 +76,26 @@ combined_data <- RegionalTre_mrca_stats_disp_jumps_combined %>%
 
 
 ################### Import Evolutionary Rates from Reassortant log files ###################
-reassortant_log_path <- c(
-  list.files("./2024Aug18/reassortant_subsampled_outputs/plain_log",
-    full.names = T
-  ),
-  list.files("./2024Aug18/11111111A/outputs/plain_log",
-    full.names = T
-  )
-)
+reassortant_log_path <- list.files("./2024Nov18/plain_tree",
+                                   pattern = '.log',
+                                   full.names = T)
+
 
 
 imported_logs <- lapply(reassortant_log_path, readLog) %>%
   lapply(., getHPDMedian) %>%
-  lapply(., function(x) x["ucld.mean", ]) %>%
-  bind_rows() %>%
-  mutate(key = gsub(".*plain_log/|_subsampled.*", "", reassortant_log_path)) %>%
-  mutate(key = gsub("n[:0-9:]", "nx", key)) %>%
-  rename(
-    evoRate = med,
-    evoRate_95lower = lower,
-    evoRate_95upper = upper
-  )
+  lapply(., function(x) as_tibble(x, rownames = 'parameter') %>% filter(parameter %in% c("ucld.mean", "age.root."))) %>%
+  setNames(gsub(".*plain_tree/|_subsampled.*", "", reassortant_log_path)) %>%
+  bind_rows(.id = 'key') %>%
+  mutate(key = gsub("n[:0-9:]", "nx", key),
+         parameter = gsub('age\\.root\\.', 'TMRCA', parameter) %>%
+           gsub('ucld\\.mean', 'evoRate', .)) %>%
+  rename(`95lower` = lower,
+         `95upper` = upper) %>%
+  pivot_wider(names_from = parameter,
+              values_from = c('95lower', 'med', '95upper'),
+              names_glue =  "{parameter}_{.value}") %>%
+  rename_with(.fn = ~gsub('_med', '', .x) , .cols = contains('med'))
 
 
 ################### Import Evolutionary Rates from Reassortant log files ###################
@@ -113,8 +112,8 @@ combined_data <- combined_data %>%
   mutate(key = str_remove_all(key, "(?<=_\\d{1,2})_")) %>%
   
   
-  rows_patch(.,
-    imported_logs,
+  rows_update(.,
+    imported_logs %>% dplyr::select(- c(TMRCA_95lower , TMRCA_95upper)),
     by = "key",
     unmatched = "ignore"
   ) %>%
