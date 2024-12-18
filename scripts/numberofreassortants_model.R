@@ -140,6 +140,7 @@ posteriorpredictive <-pp_check(countmodel_fit, ndraws = 500)
 
 
 # Misc evaluations
+#print(prior_summary(countmodel_fit), show_df = FALSE)
 performance(countmodel_fit) # tibble output of model metrics including R2, ELPD, LOOIC, RMSE
 plot(countmodel_fit) # default output plot of brms showing posterior distributions of
 prior_summary(countmodel_fit) #obtain dataframe of priors used in model.
@@ -151,12 +152,57 @@ posteriorpredictive_nreassortants <-pp_check(countmodel_fit, ndraws = 500, resp 
 
 
 # Posterior Predictions and Marginal Effects 
+# Marginal probability of N reassortants / year (no stratification)
+countmodel_fit %>%
+  epred_draws(newdata = count_data %>%
+                select(collection_regionname) %>%
+                distinct(),
+              resp = "nreassortants",
+              re_formula = NA)
+
+pp_samples <- posterior_predict(countmodel_fit)
 
 
-# Marginal probability of X reassortants / year (no stratification)
+test <- expand_grid(n = 1:10) %>%
+  rowwise() %>%
+  mutate(p = list(rowMeans(pp_samples == n))) %>%
+  as_tibble() %>%
+  unnest_longer(p) %>%
+  mutate(n = as.character(n)) 
+
+ggplot(test) +
+  geom_bar()
+
+countmodel_fit %>%
+  spread_draws(`b_*`)
+
+test <- countmodel_fit %>%
+  add_predicted_draws(newdata = count_data %>%
+                select(collection_regionname) %>%
+                distinct(),
+                #ndraws = 100,
+                value = 'n',
+              resp = "nreassortants",
+              re_formula = NA) %>%
+  group_by(n, `.draw`, collection_regionname)%>%
+  summarise(p = n()/nrow(.)) %>%
+  ungroup() %>%
+  #filter(n < 11) %>%
+  mutate(n = as.character(n)) %>%
+  
+  summarise(median = median(p), .by = n) 
+  group_by(n) %>%
+  
+  point_interval(.width = 0.95, .point = median, .interval = hdi)
 
 
-# Marginal probability of X reassortants / year ~ 1|Region
+
+ggplot(test) +
+  geom_bar(aes(y = median(p), x = n, stat))
+
+
+
+# Marginal probability of N reassortants / year ~ 1|Region
 
 
 # Marginal effect of region
