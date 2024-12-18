@@ -79,12 +79,12 @@ diffusion_data <- combined_data %>%
                                       host_richness)),
             by = join_by(cluster_profile)) %>%
   
-  # season (breeding, migrating_north, migrating_south, overwintering)
+  # season (breeding, migrating_spring, migrating_autumn, overwintering)
   mutate(collection_month = date_decimal(TMRCA) %>% format(., "%m") %>% as.integer(),
          season = case_when(collection_month %in% c(12,1,2) ~ 'overwintering', 
-                            collection_month %in% c(3,4,5)  ~ 'migrating_north', 
+                            collection_month %in% c(3,4,5)  ~ 'migrating_spring', # Rename to spring migration
                             collection_month %in% c(6,7,8)  ~ 'breeding', 
-                            collection_month %in% c(9,10,11)  ~ 'migrating_south'
+                            collection_month %in% c(9,10,11)  ~ 'migrating_autumn' # Rename to autumn migration
          ))
 
 
@@ -345,7 +345,7 @@ plt_mcmc <-mcmc_diffusion %>%
   filter(Iteration > 400) %>%
   mutate(Parameter = factor(Parameter,
                             levels = c("b_Intercept", "b_hu_Intercept", "b_median_anseriformes_wild",
-                                       "b_median_charadriiformes_wild", "b_hu_seasonmigrating_north", "b_hu_seasonmigrating_south",
+                                       "b_median_charadriiformes_wild", "b_hu_seasonmigrating_spring", "b_hu_seasonmigrating_autumn",
                                        "b_hu_seasonoverwintering", "sd_collection_regionname__Intercept",
                                        "sd_segment__Intercept", "sd_collection_regionname__hu_Intercept", 
                                        "sd_segment__hu_Intercept", "sigma"),
@@ -353,8 +353,8 @@ plt_mcmc <-mcmc_diffusion %>%
                                        expression(paste(beta['hu'])),
                                        expression(paste(beta['anseriformes'])),
                                        expression(paste(beta['charadriiformes'])),
-                                       expression(paste(beta['hu_seasonmigrating_north'])),
-                                       expression(paste(beta['hu_seasonmigrating_south'])),
+                                       expression(paste(beta['hu_seasonmigrating_spring'])),
+                                       expression(paste(beta['hu_seasonmigrating_autumn'])),
                                        expression(paste(beta['hu_seasonoverwinterin'])),
                                        expression(paste(sigma['collection_regionname'])),
                                        expression(paste(sigma[mu])),
@@ -449,14 +449,14 @@ plt_params <- ggplot() +
                 alpha = 0.5) +
   
   stat_function(fun = dnorm,
-                data = tibble(parameter = "b_seasonmigrating_north"),
+                data = tibble(parameter = "b_seasonmigrating_spring"),
                 args = list(mean = 0, sd = 3),
                 fill = '#d95f02',
                 geom = 'area',
                 alpha = 0.5) +
   
   stat_function(fun = dnorm,
-                data = tibble(parameter = "b_seasonmigrating_south"),
+                data = tibble(parameter = "b_seasonmigrating_autumn"),
                 args = list(mean = 0, sd = 3),
                 fill = '#d95f02',
                 geom = 'area',
@@ -470,14 +470,14 @@ plt_params <- ggplot() +
                 alpha = 0.5) +
   
   stat_function(fun = dnorm,
-                data = tibble(parameter = "b_hu_seasonmigrating_north"),
+                data = tibble(parameter = "b_hu_seasonmigrating_spring"),
                 args = list(mean = 0, sd = 3),
                 fill = '#d95f02',
                 geom = 'area',
                 alpha = 0.5) +
   
   stat_function(fun = dnorm,
-                data = tibble(parameter = "b_hu_seasonmigrating_south"),
+                data = tibble(parameter = "b_hu_seasonmigrating_autumn"),
                 args = list(mean = 0, sd = 3),
                 fill = '#d95f02',
                 geom = 'area',
