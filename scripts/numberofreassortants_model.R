@@ -1,70 +1,95 @@
 ####################################################################################################
 ####################################################################################################
-# The aim of this model is to determine whether reassortants emerging from some regions are more
-# likely and more severe than those from others
+## Script name: Number and Class of Reassortants Model
+##
+## Purpose of script: to determine whether reassortants emerging from some regions are more
+## likely and more severe than those from others. Variables of interest interest include: region of
+## origin, persistence time (persistence time increases uncertainty), number of sequences per region
+##
+## This script implements a workflow for a multivariate negative binomial model. 
+##
+## Date created: 2024-xx-xx
+##
+##
+########################################## SYSTEM OPTIONS ##########################################
+#options(scipen = 6, digits = 7) 
+memory.limit(30000000) 
 
-# variables of interest include: 
-# 1. region of origin
-# 3. persistence time (persistence time increases uncertainty)
-# 4. number of sequences per region
-# 5. diveresity measure?
-
-# This script implements a workflow for a negative binomial model. 
-
+  
 ########################################## DEPENDENCIES ############################################
+# Packages
+library(tidyverse)
+library(magrittr)
 library(brms)
 library(broom)
 library(broom.mixed)
 library(tidybayes)
 library(bayesplot)
+library(emmeans)
+library(marginaleffects)
+library(magrittr)
+library(ggmcmc)
 
 
-########################################### IMPORT DATA ############################################
-
-combined_data <- read_csv()
+# User functions
 
 
-########################################### FORMAT DATA ############################################
+############################################## DATA ################################################
+combined_data <- read_csv('./2024Aug18/treedata_extractions/2024-09-20_combined_data.csv')
 
+
+############################################## MAIN ################################################
+# Data pre-processing
 count_data <- combined_data %>%
   filter(segment == 'ha') %>%
-  mutate(collection_monthyear = date_decimal(TMRCA) %>% format(., "%Y-%m")) %>%
-  mutate(collection_regionname = case_when(grepl('europe', collection_regionname) ~ 'europe',
-                                           grepl('africa', collection_regionname) ~ 'africa',
-                                           grepl('asia', collection_regionname) ~ 'asia',
-                                           grepl('(central|northern) america', collection_regionname) ~ 'central & northern america',
-                                           .default = collection_regionname
-  )) %>%
+  mutate(collection_monthyear = date_decimal(TMRCA) %>% 
+           format(., "%Y-%m")) %>%
+  mutate(collection_regionname = case_when(grepl('europe', 
+                                                 collection_regionname) ~ 'europe',
+                                           grepl('africa',
+                                                 collection_regionname) ~ 'africa',
+                                           grepl('asia', 
+                                                 collection_regionname) ~ 'asia',
+                                           grepl('(central|northern) america', 
+                                                 collection_regionname) ~ 'central & northern america',
+                                           .default = collection_regionname)) %>%
   filter(!is.na(collection_regionname)) %>%
-  select(collection_regionname, collection_monthyear, cluster_profile, group2) %>% # include all month-years over collection period to generate zer countr
+  select(collection_regionname,
+         collection_monthyear, 
+         cluster_profile,
+         group2) %>% # include all month-years over collection period to generate zer countr
   summarise(n_reassortants = n_distinct(cluster_profile), 
-            .by = c(collection_monthyear, collection_regionname, group2)) %>%
+            .by = c(collection_monthyear,
+                    collection_regionname,
+                    group2)) %>%
   mutate(collection_monthyear = ym(collection_monthyear)) %>%
   group_by(collection_regionname, group2) %>%
-  complete(collection_monthyear = seq(min(collection_monthyear), max(collection_monthyear), by = "month")) %>% 
+  complete(collection_monthyear = seq(min(collection_monthyear),
+                                      max(collection_monthyear),
+                                      by = "month")) %>% 
   replace_na(list(n_reassortants = 0)) %>%
   ungroup() %>%
-  mutate(collection_year = collection_monthyear %>% format(., "%Y") %>% as.integer()) %>%
-  summarise(n_reassortants = sum(n_reassortants), .by = c(collection_year, collection_regionname , group2)) %>%
+  mutate(collection_year = collection_monthyear %>%
+           format(., "%Y") %>% 
+           as.integer()) %>%
+  summarise(n_reassortants = sum(n_reassortants), 
+            .by = c(collection_year,
+                    collection_regionname, 
+                    group2)) %>%
   arrange(collection_year) 
-  
 
 
-ggplot(grouped_lines) +
-  geom_bar(aes(x = collection_monthyear, y = n_reassortants, fill = group2), stat = 'identity') + 
-  facet_grid(rows = vars(collection_regionname),  labeller = labeller(collection_regionname = label_wrap_gen(10))) +
-  scale_y_continuous(breaks = seq(0,14, by = 2), 'Number of Reassortants')+
-  scale_x_date('Resassortant MRCA') +
-  scale_fill_manual(
-    'Reassortant Class',
-    values = riskgroup_colour %>% pull(Trait, name = group2)) +
-    #labels = riskgroup_colour %>% pull(group2)) +
-  theme_minimal()  +
-  theme(legend.position = 'bottom')
-####################################### START BRMS PIPELINE ########################################
+# Model Formula
+count_formula <- bf(mvbind(n_reassortants, group2) ~ 1 + collection_regionname + (1|collection_year))
 
-# Set Priors
-diffusionmodel1_priors <- c()
+
+# Define Priors
+countmodel_priors <- get_prior(count_formula,
+                               data = count_data,
+                               family = list(zero_inflated_negbinomial(), categorical())) 
+
+
+countmodel_priors$prior[c(1:6,11:14,19:22)] <- "normal(0,5)"
 
 
 # Set MCMC Options
@@ -73,39 +98,96 @@ CORES <- 4
 ITER <- 4000
 BURNIN <- ITER/10 # Discard 10% burn in from each chain
 SEED <- 4472
+THREADS <- 2
 
 
 # Prior Predictive Checks 
-formula_y1 <- bf(n_reassortants ~ collection_regionname, family = zero_inflated_negbinomial())
-formula_y2 <- bf(group2 ~ collection_regionname, family = categorical())
-
-# Multivariate model - no correlation
-multivar_model <- brm(
-  formula_y1 + formula_y2,  # Joint model formula
-  data = grouped_lines,           # Dataframe containing y1, y2, x1, x2
-  chains = CHAINS,
-  cores = CORES, 
-  iter = ITER,
-  warmup = BURNIN,
-  seed = SEED,
-  sample_prior = "yes",
-  control = list(adapt_delta = 0.95)
-)
-
-
-fit_year <- brm(
-  mvbind(n_reassortants, group2) ~ 1 + collection_regionname + (1|collection_year),  # Multivariate outcome
+# Note that due to weakly informative priors, the prior predictive checks reveal little about the 
+# ability of our priors to describe the data. 
+countmodel_priorpredictive <- brm(
+  count_formula,  # Multivariate outcome
   family = list(zero_inflated_negbinomial(), categorical()),  # Count and class families
   data = count_data,           # Dataframe containing y1, y2, x1, x2
   chains = CHAINS,
   cores = CORES, 
+  threads = THREADS,
+  iter = ITER,
+  warmup = BURNIN,
+  seed = SEED,
+  sample_prior = "only",
+  control = list(adapt_delta = 0.95)
+)
+
+
+# Fit model to data
+countmodel_fit <- brm(
+  count_formula,  # Multivariate outcome
+  family = list(zero_inflated_negbinomial(), categorical()),  # Count and class families
+  data = count_data,           # Dataframe containing y1, y2, x1, x2
+  prior = count_priors,
+  chains = CHAINS,
+  threads = THREADS, 
+  cores = CORES, 
   iter = ITER,
   warmup = BURNIN,
   seed = SEED,
   control = list(adapt_delta = 0.95)
 )
 
+# Post-fitting diagnostics (including inspection of ESS, Rhat and posterior predictive)
+tidy_countmodel_fit <- tidy(countmodel_fit)
+posteriorpredictive <-pp_check(countmodel_fit, ndraws = 500)
 
+
+# Misc evaluations
+performance(countmodel_fit) # tibble output of model metrics including R2, ELPD, LOOIC, RMSE
+plot(countmodel_fit) # default output plot of brms showing posterior distributions of
+prior_summary(countmodel_fit) #obtain dataframe of priors used in model.
+
+mcmc_countmodel_fit <- ggs(countmodel_fit) # Warning message In custom.sort(D$Parameter) : NAs introduced by coercion
+
+posteriorpredictive_group <-pp_check(countmodel_fit, ndraws = 500, resp = 'group2')
+posteriorpredictive_nreassortants <-pp_check(countmodel_fit, ndraws = 500, resp = 'nreassortants')
+
+
+# Posterior Predictions and Marginal Effects 
+
+
+# Marginal probability of X reassortants / year (no stratification)
+
+
+# Marginal probability of X reassortants / year ~ 1|Region
+
+
+# Marginal effect of region
+
+
+# Marginal class probability  
+
+
+# Marginal class probabilty ~ 1| Region
+
+
+# Joint Probability
+
+
+# Joint Probability ~ 1|Region
+
+
+# Marginal effect of region
+
+
+
+
+############################################## WRITE ###############################################
+
+
+
+
+############################################## END #################################################
+####################################################################################################
+####################################################################################################
+# Deprecated
 
 # Marginal probability density of the number of unique reassortants/region
 # ie, irrespective of class
@@ -170,102 +252,3 @@ joint_prob <- count_prob %>%
             suffix = c("_count", "_class")) %>%
   mutate(joint_epred = .epred_count * .epred_class)
 
-
-
-
-
-numberreassortants_priorpredictive <- brm(
-  n_reassortants|trunc(lb = 1) ~ 1 + collection_regionname,
-  data = grouped_lines,
-  family = negbinomial(), 
-  chains = CHAINS,
-  cores = CORES, 
-  iter = ITER,
-  warmup = BURNIN,
-  seed = SEED,
-  sample_prior = "yes",
-  control = list(adapt_delta = 0.95)
-)
-
-color_scheme_set("green")
-plot_priorpredictive <- pp_check(fit_year, ndraws = 100) + 
-  theme_minimal()
-
-plot_priorpredictive$data %<>%
-  mutate(value = log1p(value))
-
-plot_priorpredictive
-
-color_scheme_set("red")
-fit_priorpredictive <- pp_check(fit_year, ndraws = 100, resp = 'nreassortants') + 
-  theme_minimal()
-
-
-
-fit_priorpredictive$data %<>%
-  mutate(value = log1p(value))
-
-fit_priorpredictive
-
-# Fit Model
-diffusionmodel1_fit <- brm(
-  n_reassortants ~ n_sequences + collection.region.name,
-  data = grouped_lines,
-  family = negbinomial(),
-  chains = CHAINS,
-  cores = CORES, 
-  iter = ITER,
-  warmup = BURNIN,
-  seed = SEED#,
-  #opencl = opencl(c(0, 0)) # Enables GPU accelerated computation, remove if not applicable
-)
-
-
-# Posterior Predictive Checks
-diffusionmodel1_posteriorpreds <- posterior_predict(diffusionmodel1_fit)
-n <- sample(1:nrow(diffusionmodel1_posteriorpreds), 50)
-
-color_scheme_set("green")
-ppc_dens_overlay(y = log1p(model_data$weighted_diff_coeff),
-                 yrep = log1p(diffusionmodel1_posteriorpreds[1:10,]))
-
-
-# Extract Model Terms and Marginal/Conditional Effects
-diffusionmodel1_fit_tidy <- tidy(model_hurdle)
-
-
-####################################################################################################
-####################################################################################################
-
-#deprecated 
-bayes_mod <- 
-cbind.data.frame(collection.region.name = c('europe', 'asia', 'america', 'africa'), n_sequences = 100) %>%
-  as_tibble()%>%
-  add_epred_draws(bayes_mod, ndraws = 100) %>%
-  ggplot(.,  aes(x = .epred, y = collection.region.name)) +
-  stat_halfeye() +
-  theme_minimal()
-
-
-cbind.data.frame(collection.region.name = c('europe', 'asia', 'america', 'africa'), n_sequences = 100) %>%
-  as_tibble()%>%
-  add_epred_draws(bayes_mod, ndraws = 100) %>%
-  mean_hdi()
-
-
-bayes_mod %>%
-  emmeans(~ collection.region.name,
-          at = list(collection.region.name =  c('europe', 'asia', 'america', 'africa')),
-          re_formula = NA) %>%
-  contrast(method = 'revpairwise', ref= 'asia', type = 'response') %>%
-  gather_emmeans_draws() %>%
-  mutate(`.value` = exp(`.value`)) %>% mean_hdi()
-
-ggplot(., aes(x = `.value`, y = contrast, fill = contrast)) + 
-  stat_halfeye(point_interval = mean_hdi,.width = c(.90, .95))
-
-reassortant_metadata_formatted %>%
-  mutate(collection.date = ymd(collection.date)) %>%
-  ggplot(aes(x = collection.date, y = collection.region.name, fill = as.factor(cluster.genome)))+
-  geom_density()+
-  facet_wrap(.~collection.region.name)
