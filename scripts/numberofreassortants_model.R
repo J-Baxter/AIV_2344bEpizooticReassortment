@@ -61,26 +61,26 @@ count_data <- combined_data %>%
   summarise(n_reassortants = n_distinct(cluster_profile), 
             .by = c(collection_monthyear,
                     collection_regionname,
-                    group2)) %>%
-  mutate(collection_monthyear = ym(collection_monthyear)) %>%
-  group_by(collection_regionname, group2) %>%
-  complete(collection_monthyear = seq(min(collection_monthyear),
-                                      max(collection_monthyear),
-                                      by = "month")) %>% 
-  replace_na(list(n_reassortants = 0)) %>%
-  ungroup() %>%
+                    group2))  %>%
   mutate(collection_year = collection_monthyear %>%
-           format(., "%Y") %>% 
-           as.integer()) %>%
+           paste0('-01') %>%
+           ymd() %>%
+           decimal_date() %>%
+           round(., digits = 1))  %>%
   summarise(n_reassortants = sum(n_reassortants), 
-            .by = c(collection_year,
-                    collection_regionname, 
-                    group2)) %>%
+            .by = c(collection_year,collection_regionname, group2)) %>%
+
   arrange(collection_year) 
 
 
 # Model Formula
-count_formula <- bf(mvbind(n_reassortants, group2) ~ 1 + collection_regionname + (1|collection_year))
+bf1 <- bf(n_reassortants|resp_trunc(lb = 1) ~ 1 + collection_regionname + (collection_regionname|collection_year),
+          family = poisson())
+
+bf2 <- bf(group2 ~ 1 + collection_regionname + (collection_regionname|collection_year), 
+          family = categorical())
+
+count_formula <- mvbf(bf1, bf2)
 
 
 # Define Priors
@@ -106,7 +106,6 @@ THREADS <- 2
 # ability of our priors to describe the data. 
 countmodel_priorpredictive <- brm(
   count_formula,  # Multivariate outcome
-  family = list(zero_inflated_negbinomial(), categorical()),  # Count and class families
   data = count_data,           # Dataframe containing y1, y2, x1, x2
   chains = CHAINS,
   cores = CORES, 
@@ -122,7 +121,6 @@ countmodel_priorpredictive <- brm(
 # Fit model to data
 countmodel_fit <- brm(
   count_formula,  # Multivariate outcome
-  family = list(zero_inflated_negbinomial(), categorical()),  # Count and class families
   data = count_data,           # Dataframe containing y1, y2, x1, x2
   prior = count_priors,
   chains = CHAINS,
@@ -136,7 +134,7 @@ countmodel_fit <- brm(
 
 # Post-fitting diagnostics (including inspection of ESS, Rhat and posterior predictive)
 tidy_countmodel_fit <- tidy(countmodel_fit)
-posteriorpredictive <-pp_check(countmodel_fit, ndraws = 500)
+#posteriorpredictive <-pp_check(countmodel_fit, ndraws = 500)
 
 
 # Misc evaluations
@@ -153,53 +151,25 @@ posteriorpredictive_nreassortants <-pp_check(countmodel_fit, ndraws = 500, resp 
 
 # Posterior Predictions and Marginal Effects 
 # Marginal probability of N reassortants / year (no stratification)
-countmodel_fit %>%
-  epred_draws(newdata = count_data %>%
-                select(collection_regionname) %>%
-                distinct(),
-              resp = "nreassortants",
-              re_formula = NA)
+n_reassortant_preds <- jointmodel_temp %>% 
+  predicted_draws(newdata = no_zeros %>%
+                    select(collection_regionname) %>%
+                    distinct(),
+                  resp = "nreassortants",
+                  value = 'n',
+                  re_formula = NA) 
 
-pp_samples <- posterior_predict(countmodel_fit)
-
-
-test <- expand_grid(n = 1:10) %>%
-  rowwise() %>%
-  mutate(p = list(rowMeans(pp_samples == n))) %>%
-  as_tibble() %>%
-  unnest_longer(p) %>%
-  mutate(n = as.character(n)) 
-
-ggplot(test) +
-  geom_bar()
-
-countmodel_fit %>%
-  spread_draws(`b_*`)
-
-test <- countmodel_fit %>%
-  add_predicted_draws(newdata = count_data %>%
-                select(collection_regionname) %>%
-                distinct(),
-                #ndraws = 100,
-                value = 'n',
-              resp = "nreassortants",
-              re_formula = NA) %>%
-  group_by(n, `.draw`, collection_regionname)%>%
-  summarise(p = n()/nrow(.)) %>%
-  ungroup() %>%
-  #filter(n < 11) %>%
+test <- n_reassortant_preds %>%
   mutate(n = as.character(n)) %>%
-  
-  summarise(median = median(p), .by = n) 
-  group_by(n) %>%
-  
-  point_interval(.width = 0.95, .point = median, .interval = hdi)
-
-
+  group_by( collection_regionname) %>%
+  count(n) %>%
+  reframe(freq = nn/sum(nn), n= n) %>%
+  ungroup() 
 
 ggplot(test) +
-  geom_bar(aes(y = median(p), x = n, stat))
-
+  geom_bar(aes(x = n, y= freq), stat = 'identity') + 
+  facet_grid(cols = vars(collection_regionname)) +
+  theme_minimal()
 
 
 # Marginal probability of N reassortants / year ~ 1|Region
