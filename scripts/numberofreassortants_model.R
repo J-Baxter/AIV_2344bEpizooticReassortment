@@ -150,7 +150,8 @@ posteriorpredictive_nreassortants <-pp_check(countmodel_fit, ndraws = 500, resp 
 
 
 # Posterior Predictions and Marginal Effects 
-# Marginal probability of N reassortants / year (no stratification)
+# Marginal probability of N reassortants / region 
+# posterior probabilities of n reassortants for an 'average' year, stratified by country
 n_reassortant_preds <- jointmodel_temp %>% 
   predicted_draws(newdata = no_zeros %>%
                     select(collection_regionname) %>%
@@ -171,6 +172,9 @@ ggplot(test) +
   facet_grid(cols = vars(collection_regionname)) +
   theme_minimal()
 
+# Required outputs: Pre/post epizootic, marginal effect of region (ie how many more reassortants in a vs b),
+# 
+
 
 # Marginal probability of N reassortants / year ~ 1|Region
 
@@ -185,7 +189,14 @@ ggplot(test) +
 
 
 # Joint Probability
-
+jointmodel_temp %>% 
+  predicted_draws(newdata = no_zeros %>%
+                    select(collection_regionname) %>%
+                    distinct(),
+                  #resp = "nreassortants",
+                  value = 'n',
+                  re_formula = NA) %>%
+  pull(\)
 
 # Joint Probability ~ 1|Region
 
