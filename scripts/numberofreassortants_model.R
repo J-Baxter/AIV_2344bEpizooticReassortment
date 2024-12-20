@@ -40,6 +40,29 @@ combined_data <- read_csv('./2024Aug18/treedata_extractions/2024-09-20_combined_
 
 ############################################## MAIN ################################################
 # Data pre-processing
+
+numberofsequence_data <- read_csv('./2024-09-09_meta.csv') %>%
+  select(c(collection_datemonth,
+           collection_regionname,
+           cluster_profile)) %>%
+  drop_na(collection_datemonth) %>%
+  mutate(collection_regionname = case_when(grepl('europe', 
+                                                 collection_regionname) ~ 'europe',
+                                           grepl('africa',
+                                                 collection_regionname) ~ 'africa',
+                                           grepl('asia', 
+                                                 collection_regionname) ~ 'asia',
+                                           grepl('(central|northern) america', 
+                                                 collection_regionname) ~ 'central & northern america',
+                                           .default = collection_regionname)) %>%
+  mutate(collection_year = 
+           paste0(collection_datemonth, '-01') %>%
+           ymd() %>%
+           decimal_date() %>%
+           round(digits = 1)) %>%
+  summarise(n = n(), .by = c(collection_year, collection_regionname))
+  
+
 count_data <- combined_data %>%
   filter(segment == 'ha') %>%
   mutate(collection_monthyear = date_decimal(TMRCA) %>% 
@@ -70,14 +93,15 @@ count_data <- combined_data %>%
   summarise(n_reassortants = sum(n_reassortants), 
             .by = c(collection_year,collection_regionname, group2)) %>%
 
-  arrange(collection_year) 
+  arrange(collection_year) %>%
+  left_join(numberofsequence_data)
 
 
 # Model Formula
-bf1 <- bf(n_reassortants|resp_trunc(lb = 1) ~ 1 + collection_regionname + (collection_regionname|collection_year),
+bf1 <- bf(n_reassortants|resp_trunc(lb = 1) ~ 1 + collection_regionname + (1|collection_year),
           family = poisson())
 
-bf2 <- bf(group2 ~ 1 + collection_regionname + (collection_regionname|collection_year), 
+bf2 <- bf(group2 ~ 1 + collection_regionname + (1|collection_year), 
           family = categorical())
 
 count_formula <- mvbf(bf1, bf2)
@@ -107,6 +131,7 @@ THREADS <- 2
 countmodel_priorpredictive <- brm(
   count_formula,  # Multivariate outcome
   data = count_data,           # Dataframe containing y1, y2, x1, x2
+  prior = countmodel_priors,
   chains = CHAINS,
   cores = CORES, 
   threads = THREADS,
@@ -122,7 +147,7 @@ countmodel_priorpredictive <- brm(
 countmodel_fit <- brm(
   count_formula,  # Multivariate outcome
   data = count_data,           # Dataframe containing y1, y2, x1, x2
-  prior = count_priors,
+  prior = countmodel_priors,
   chains = CHAINS,
   threads = THREADS, 
   cores = CORES, 
@@ -151,8 +176,11 @@ posteriorpredictive_nreassortants <-pp_check(countmodel_fit, ndraws = 500, resp 
 
 # Posterior Predictions and Marginal Effects 
 # Marginal probability of N reassortants / region 
-# posterior probabilities of n reassortants for an 'average' year, stratified by country
-n_reassortant_preds <- jointmodel_temp %>% 
+
+
+# posterior probabilities of n reassortants stratified by country
+# while ignoring any  deviations of the intercept or slope
+n_reassortant_preds <- countmodel_fit %>% 
   predicted_draws(newdata = no_zeros %>%
                     select(collection_regionname) %>%
                     distinct(),
@@ -172,6 +200,59 @@ ggplot(test) +
   facet_grid(cols = vars(collection_regionname)) +
   theme_minimal()
 
+
+# posterior probability of class reassortants in an average year
+# while ignoring any  deviations of the intercept or slope
+
+countmodel_fit %>% 
+  predicted_draws(newdata = no_zeros %>%
+                    select(collection_regionname) %>%
+                    distinct(),
+                  resp = "group2",
+                  value = 'class',
+                  re_formula = NA) %>%
+  group_by(collection_regionname) %>%
+  count(class) %>%
+  reframe(freq = n/sum(n), class = class) %>%
+  ungroup() %>%
+  ggplot() +
+  geom_bar(aes(x = class, y= freq), stat = 'identity') + 
+  facet_grid(cols = vars(collection_regionname)) +
+  theme_minimal()
+
+countmodel_fit %>% 
+  epred_draws(newdata = no_zeros %>%
+                select(collection_regionname) %>%
+                distinct(),
+              resp = "nreassortants",
+              value = 'n',
+              re_formula = NA) %>%
+  ggplot( aes(x = n, y = collection_regionname, height = after_stat(density))) + 
+  geom_density_ridges(scale = 0.95, draw_baseline = FALSE)
+
+
+class_preds <- countmodel_fit %>% 
+  epred_draws(newdata = no_zeros %>%
+                    select(collection_regionname) %>%
+                    distinct(),
+                  resp = "group2",
+                  value = 'p',
+                  re_formula = NA) 
+
+median_hdci(class_preds) 
+
+ggplot(class_preds) + 
+  geom_density_ridges(aes(x = p,
+                          y = collection_regionname, 
+                          fill = .category,
+                          colour = .category),
+                      alpha = 0.5, 
+                      rel_min_height = 0.01,
+                      scale=0.8)+
+  theme_minimal() + 
+  scale_x_continuous(limits = c(0,1))
+
+ 
 # Required outputs: Pre/post epizootic, marginal effect of region (ie how many more reassortants in a vs b),
 # 
 
@@ -189,14 +270,8 @@ ggplot(test) +
 
 
 # Joint Probability
-jointmodel_temp %>% 
-  predicted_draws(newdata = no_zeros %>%
-                    select(collection_regionname) %>%
-                    distinct(),
-                  #resp = "nreassortants",
-                  value = 'n',
-                  re_formula = NA) %>%
-  pull(\)
+
+
 
 # Joint Probability ~ 1|Region
 
@@ -218,7 +293,7 @@ jointmodel_temp %>%
 
 # Marginal probability density of the number of unique reassortants/region
 # ie, irrespective of class
-count_prob <- fit_year %>% 
+count_prob <- jointmodel_temp %>% 
   epred_draws(newdata = count_data %>%
                 select(collection_regionname) %>%
                 distinct(),resp = "nreassortants",
@@ -242,7 +317,7 @@ ggplot(count_prob, aes(x = .epred, fill = collection_regionname , y = collection
 
 # Marginal probability of reassortant class/region
 # ie, irrespective of number
-class_prob <- fit_year %>% 
+class_prob <- jointmodel_temp %>% 
   epred_draws(newdata = count_data %>%
                 select(collection_regionname) %>%
                 distinct(),resp = "group2",
