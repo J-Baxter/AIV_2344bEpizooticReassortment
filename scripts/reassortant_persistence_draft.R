@@ -1,6 +1,6 @@
 library(tidyverse)
 
-summary_data <- read_csv('2024-06-05_reassortant_summary.csv')
+summary_data <- read_csv('2024Aug18/treedata_extractions/2024-09-20_combined_data.csv')
 metadata_date <- lapply(metadatafiles, read_csv, col_types = cols(collection_tipdate = col_character())) %>%
   lapply(. , function(x) x %>% filter(!is.na(cluster_profile)) %>% select(isolate_id, collection_date, cluster_profile)) %>%
   bind_rows() %>%
@@ -34,3 +34,26 @@ ggplot(summary_dataplus) +
   geom_histogram(aes(x = Length_Between_First_Last_Sample)) +
   facet_grid(rows = vars(Continent_of_Earliest_Date),
              scales = 'free_y') 
+
+
+
+read_csv('2024Aug18/treedata_extractions/2024-09-20_combined_data.csv') %>%
+  select(c(evoRate, persist.time, group2, collection_regionname, segment)) %>%
+  #filter(segment %in% c('ha', 'pb2')) %>%
+  mutate(collection_regionname = case_when(grepl('europe', 
+                                                 collection_regionname) ~ 'europe',
+                                           grepl('africa',
+                                                 collection_regionname) ~ 'africa',
+                                           grepl('asia', 
+                                                 collection_regionname) ~ 'asia',
+                                           grepl('(central|northern) america', 
+                                                 collection_regionname) ~ 'central & northern america',
+                                           .default = collection_regionname)) %>%
+  ggplot()+
+  geom_point(aes(x = evoRate, y = persist.time, colour = group2)) + 
+  #facet_wrap(~ collection_regionname) + 
+  facet_wrap(~ segment) + 
+  theme_minimal(base_size = 8)+
+  scale_colour_brewer(palette = 'Set1')+
+  scale_x_continuous('Evolutionary Rate', limits = c(0, 0.01)) +
+  scale_y_continuous('Persistence Time')
