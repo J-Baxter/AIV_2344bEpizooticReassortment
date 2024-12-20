@@ -64,8 +64,7 @@ ggplot(grouped_lines) +
 
 
 ######################################## DEFINE FORMULA ############################################
-formula_y1 <- bf(n_reassortants ~ collection_regionname, family = zero_inflated_negbinomial())
-formula_y2 <- bf(group2 ~ collection_regionname, family = categorical())
+nor_formula <- mvbind(n_reassortants, group2) ~ 1 + collection_regionname + (1|collection_year)
 
 
 ####################################### DEFINE PRIORS ########################################
@@ -104,7 +103,7 @@ multivar_model <- brm(
 ############################################ FIT MODEL #############################################
 
 fit_year <- brm(
-  mvbind(n_reassortants, group2) ~ 1 + collection_regionname + (1|collection_year),  # Multivariate outcome
+  nor_formula,  # Multivariate outcome
   family = list(zero_inflated_negbinomial(), categorical()),  # Count and class families
   data = count_data,           # Dataframe containing y1, y2, x1, x2
   chains = CHAINS,
@@ -124,6 +123,11 @@ fit_year <- brm(
 
 
 ##################################### PREDICTIONS AND EFFECTS ######################################
+# to-do: 
+# re-plot probability of reassortant class output
+# update plot ( col scheme) for number of reassortants/region -done
+# joint probability of class & reassortants (similar to thompson et al plot?)
+
 
 # Marginal probability density of the number of unique reassortants/region
 # ie, irrespective of class
@@ -138,17 +142,23 @@ count_prob %>%
 
 ggplot(count_prob, aes(x = .epred, fill = collection_regionname , y = collection_regionname)) +
   stat_halfeye() +
-  theme_minimal() + 
+  theme_minimal(base_size = 18) + 
   scale_x_continuous('Number of Unique Reassortants/Year') +
   
   # Scales
   scale_y_discrete('Region of Origin', labels = function(x) str_wrap(x, width = 20) %>% str_to_title())+
-  scale_colour_manual(
-    'Reassortant Class',
-    values = region_colour %>% pull(Trait, name = Name))  +
+  scale_fill_manual(
+    values = c("africa" = "#CC2929CC", 
+               "asia" = "#ABCC29CC", 
+               "europe" = "#29CC6ACC", 
+               "central & northern america" = "#296ACCCC"))  +
   theme(legend.position = 'none') + 
   coord_cartesian(xlim = c(0,10))
 
+
+
+
+scale_fill_manual()
 # Marginal probability of reassortant class/region
 # ie, irrespective of number
 class_prob <- fit_year %>% 
@@ -158,6 +168,22 @@ class_prob <- fit_year %>%
               re_formula = NA)
 class_prob %>% 
   median_hdi(.epred)
+
+
+ggplot(class_prob, aes(x = .epred, colour = .category , y = collection_regionname)) +
+  stat_halfeye(position = position_dodge()) +
+  theme_minimal(base_size = 18) + 
+  scale_x_continuous('Posterior Probability of Reassortant Class') +
+  
+  # Scales
+  scale_y_discrete('Region of Origin', labels = function(x) str_wrap(x, width = 20) %>% str_to_title())+
+  scale_colour_manual(
+    'Reassortant Class',
+    values =   c('minor'  =  "#2ca02c",
+                 'major' = "#1f77b4",
+                 'dominant' = "#FF0000" )) +
+  theme(legend.position = 'bottom')
+
 
 ggplot(class_prob, aes(x = collection_regionname, colour = .category, y = .epred)) +
   geom_boxplot() +
@@ -172,6 +198,21 @@ ggplot(class_prob, aes(x = collection_regionname, colour = .category, y = .epred
   theme(legend.position = 'bottom')
 
 
+# joint predict
+pred_count <- posterior_epred(fit_year, resp = "nreassortants") #SxN matrix = S is the number of posterior draws, N is the number of observations
+pred_class <- posterior_epred(fit_year, resp = "group2")
+
+class_1_probs <- pred_class[, , 1]  # Extract probabilities for class 2 across all draws and observations
+class_2_probs <- pred_class[, , 2]  # Extract probabilities for class 2 across all draws and observations
+class_3_probs <- pred_class[, , 3]  # Extract probabilities for class 2 across all draws and observations
+count_n_probs <- pred_count         # Use all predicted counts for all observations <- this is wrong?
+
+# Element-wise multiplication for all rows (posterior draws) and columns (observations)
+joint_probs_class1 <- count_n_probs * class_1_probs
+joint_probs_class2 <- count_n_probs * class_2_probs
+joint_probs_class3 <- count_n_probs * class_3_probs
+
+
 ##################################### PAIRWISE COMPARISONS ######################################
 fit_year %>% 
   emmeans(., ~ collection_regionname ,
@@ -180,7 +221,12 @@ fit_year %>%
   filter(rep.meas == 'nreassortants') %>%
   contrast(method = 'revpairwise')
 
-
+fit_year %>%
+  emmeans(.,~collection_regionname,
+          epred = TRUE,
+          resp = 'group2')%>%
+  contrast(method = "revpairwise",
+           type = 'response')
 
 joint_prob <- count_prob %>%
   left_join(class_prob, 
@@ -283,7 +329,9 @@ bayes_mod %>%
   mutate(`.value` = exp(`.value`)) %>% mean_hdi()
 
 ggplot(., aes(x = `.value`, y = contrast, fill = contrast)) + 
-  stat_halfeye(point_interval = mean_hdi,.width = c(.90, .95))
+  stat_halfeye(point_interval = mean_hdi,.width = c(.90, .95)) +
+   +
+  theme_minimal(base_size = 18) 
 
 reassortant_metadata_formatted %>%
   mutate(collection.date = ymd(collection.date)) %>%

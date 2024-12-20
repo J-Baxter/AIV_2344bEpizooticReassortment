@@ -77,7 +77,10 @@ diffusion_data <- combined_data %>%
                             ), 
          season_binary = case_when(grepl('migrating', season)  ~ 'migrating', 
                                    grepl('overwintering|breeding', season)  ~ 'stationary' ) ) %>%
-  mutate(collection_year = date_decimal(TMRCA) %>% format(., "%Y") %>% as.factor())
+  mutate(collection_year = date_decimal(TMRCA) %>% format(., "%Y") %>% as.factor()) %>%
+  drop_na(collection_regionname,
+          segment, 
+          collection_year)
 
   
 ################################### INITIAL EXPLORATORY MODELS #####################################
@@ -87,7 +90,7 @@ diffusion_data %>%
   ggplot() +
   geom_histogram(aes(x = log1p(weighted_diff_coeff), fill = weighted_diff_coeff>0)) +
   scale_fill_brewer(palette = 'Dark2', 'Is Zero') +
-  scale_x_continuous(name = bquote('Weighted Diffusion Coefficient (' * Km^2 ~ Year^-1 * ')')) +
+  scale_x_continuous(name = bquote('Log Weighted Diffusion Coefficient (' * km^2 ~ Year^-1 * ')')) +
   scale_y_continuous(name = 'Count') +
   theme_minimal(base_size = 18) +
   theme(legend.position = 'none')
@@ -99,9 +102,61 @@ diffusion_data %>%
 # in anseriformes and charadriiformes. Both model components are conditional on segment from which 
 # the measurement is taken and region of origin
 
-diffusion_formula <- bf(weighted_diff_coeff ~ 1 + host_richness + season + (median_anseriformes_wild +  median_charadriiformes_wild|collection_year) + 
-                          (1|segment + collection_regionname),
-                        hu ~ 1 +  season + (1|segment + collection_regionname))
+diffusion_formula <- bf(weighted_diff_coeff ~ 1 + host_richness + season + median_anseriformes_wild +  median_charadriiformes_wild + 
+                          (1|segment + collection_regionname + collection_year),
+                        hu ~ 1 +  season + (1|segment + collection_regionname + collection_year)) #how to uncorrelate wrt collection year only?
+
+
+conditions <- expand_grid(collection_year = unique(diffusion_data$collection_year),
+                          collection_regionname = unique(diffusion_data$collection_regionname),
+                          segment = 'ha') |> 
+  mutate(cond__ = paste0(collection_year , ": ", collection_regionname))
+
+cond_charad <- conditional_effects(diffusionmodel1_fit,
+                    effects = "median_charadriiformes_wild",
+                    conditions = conditions,
+                    re_formula = NULL,
+                    plot = FALSE) 
+cond_charad %>%
+  .[[1]] %>%
+  as_tibble() %>%
+  filter(collection_year %in% c(2018,2019,2020,2021,2022,2023)) %>%
+  ggplot() +
+  geom_line(aes(x = median_charadriiformes_wild, y = log1p(estimate__), colour = collection_year)) + 
+  geom_ribbon(aes(x = median_charadriiformes_wild, ymin = log1p(lower__), ymax = log1p(upper__), fill = collection_year), alpha = 0.1) +
+  facet_wrap(.~collection_regionname, 
+             labeller = as_labeller(c('africa' = 'Africa',
+                                      'asia' = 'Asia',
+                                      'central & northern america' = 'Central & Northern America',
+                                      'europe' = 'Europe'))) +
+  theme_minimal() +
+  scale_y_continuous(name =  bquote('Log Weighted Diffusion Coefficient (' * km^2 ~ Year^-1 * ')')) +
+  scale_x_continuous('Median persistence time in Charadriiformes') +
+  scale_fill_brewer(palette = 'Dark2', 'MRCA Year')
+
+cond_charad %>%
+  .[[1]] %>%
+  as_tibble() %>%
+  filter(collection_year %in% c(2018,2019,2020,2021,2022,2023)) %>%
+  ggplot() +
+  geom_line(aes(x = median_charadriiformes_wild, y = log1p(estimate__), colour = collection_regionname)) + 
+  geom_ribbon(aes(x = median_charadriiformes_wild, ymin = log1p(lower__), ymax = log1p(upper__), fill = collection_regionname), alpha = 0.1) +
+  facet_wrap(.~collection_year) +
+  theme_minimal(base_size = 18) +
+  scale_y_continuous(name =  bquote('Log Weighted Diffusion Coefficient (' * km^2 ~ Year^-1 * ')')) +
+  scale_x_continuous('Median persistence time in Charadriiformes') +
+  scale_fill_manual('Origin Region',
+    values = c("africa" = "#CC2929CC", 
+               "asia" = "#ABCC29CC", 
+               "europe" = "#29CC6ACC", 
+               "central & northern america" = "#296ACCCC")) +
+  scale_colour_manual('Origin Region',
+    values = c("africa" = "#CC2929CC", 
+               "asia" = "#ABCC29CC", 
+               "europe" = "#29CC6ACC", 
+               "central & northern america" = "#296ACCCC")) +
+  theme(legend.position = 'bottom')
+
 ####################################### DEFINE PRIORS ########################################
 
 # Set Priors
@@ -124,14 +179,13 @@ SEED <- 4472
 # Prior Predictive Checks 
 
 diffusionmodel1_prior <- brm(
-  ,
   data = diffusion_data,
   family = hurdle_lognormal(),
   sample_prior = "yes",
   chains = CHAINS,
   cores = CORES, 
-  iter = ITER,
-  warmup = BURNIN,
+  iter = 2000,
+  warmup = 200,
   seed = SEED,
   control = list(adapt_delta = 0.95)
   )
@@ -150,30 +204,32 @@ plot_priorpredictive
 
 
 ############################################ FIT MODEL #############################################
-diffusionmodel1_fit <- brm(
-  diffusion_formula,
-  data = diffusion_data,
-  family = hurdle_lognormal(),
-  chains = CHAINS,
-  cores = CORES, 
-  #threads = 2, 
-  iter = ITER,
-  warmup = BURNIN,
-  seed = SEED,
-  control = list(adapt_delta = 0.99))
+  diffusionmodel1_fit <- brm(
+    diffusion_formula,
+    data = diffusion_data,
+    family = hurdle_lognormal(),
+    chains = CHAINS,
+    cores = CORES, 
+    #threads = 2, 
+    iter = 2000,
+    warmup = 200,
+    seed = SEED,
+    control = list(adapt_delta = 0.99,
+                   max_treedepth = 12))
 
 # CONVERGENCE CHECK 
 
 
 # POSTERIOR PREDICTIVE CHECKS
 color_scheme_set('red')
-plot_posteriorpredictive <- pp_check(diffusionmodel1_fit, ndraws = 100) + 
-  theme_minimal()
+plot_posteriorpredictive <- pp_check(diffusionmodel1_fit, ndraws = 100)
 
 plot_posteriorpredictive$data %<>%
   mutate(value = log1p(value))
 
-plot_posteriorpredictive
+plot_posteriorpredictive +
+  scale_x_continuous(name =  bquote('Log Weighted Diffusion Coefficient (' * km^2 ~ Year^-1 * ')')) +
+  theme_minimal(base_size = 18)
 
 
 ##################################### PREDICTIONS AND EFFECTS ######################################
@@ -250,6 +306,7 @@ anseriformeswild_marginal_response <-  diffusionmodel1_fit %>%
            at = list(median_anseriformes_wild = seq(1, 5, 1)))
 
 
+
 ##################################### PAIRWISE COMPARISONS ######################################
 
 # pair wise comparisons of season on probability of diffusion coefficient == 0
@@ -265,8 +322,8 @@ diffusionmodel1_fit %>%
 
 # Conditional effect of MRCA season on the probability that a reassortant is observed to spread at all
 # (ie hurdle component)
-plot(conditional_effects(diffusionmodel1_fit, dpar = "hu"), plot = FALSE)[[4]]$data %>%
-  ggplot(aes(x = effect1__, y = estimate__)) +
+plt_1a <- conditional_effects(diffusionmodel1_fit, dpar = "hu", plot = FALSE)[[2]] %>%
+  ggplot(aes(x = effect1__, y = 1-estimate__)) +
   geom_point(size = 3) +
   geom_linerange(aes(ymin = 1-lower__, ymax = 1-upper__, x = effect1__)) +
   scale_y_continuous('Predicted probability that diffusion coefficient > 0') + 
@@ -278,9 +335,24 @@ plot(conditional_effects(diffusionmodel1_fit, dpar = "hu"), plot = FALSE)[[4]]$d
   theme_minimal(base_size = 18) 
 
 
+#
+plt_1b <- conditional_effects(diffusionmodel1_fit, dpar = "mu", plot = FALSE)[[2]] %>%
+  ggplot(aes(x = effect1__, y = estimate__)) +
+  geom_point(size = 3) +
+  geom_linerange(aes(ymin = lower__, ymax = upper__, x = effect1__)) +
+  scale_y_continuous(name =  bquote('Log Weighted Diffusion Coefficient (' * km^2 ~ Year^-1 * ')')) +
+  scale_x_discrete('Season of MRCA',
+                   labels = c('breeding' = 'Breeding',
+                              'migrating_north' = 'Spring Migration',
+                              'migrating_south' = 'Autumn Migration',
+                              'overwintering' = 'Overwintering')) +
+  theme_minimal(base_size = 18) 
+
+ cowplot::plot_grid(plt_1a, plt_1b, align = 'hv', ncol = 2)
+
 # Conditional effect of median persistence time (anser and charadriformes) and host richness on
 # the diffusion coefficient
-plot(conditional_effects(diffusionmodel1_fit, dpar = "mu"), plot = FALSE)[-4] %>%
+ conditional_effects(diffusionmodel1_fit, dpar = "mu", plot = FALSE, re_formula = )[[4]]  %>%
   lapply(., function(x)x$data) %>%
   bind_rows(, .id = 'var') %>%
   #filter(var != 'median_anseriformes_wild')  %>%
