@@ -1,0 +1,15 @@
+tipnames	virus_subtype	collection_regionname	host_simplifiedhost	lat	long
+H2N3|NA|EPI_ISL_189729|anseriformes|united_states|NA|2012-12-22	H2N3	western asia	anseriformes-wild	42.1814661108868	43.5363301752474
+H14N3|2344b|EPI_ISL_400267|anseriformes|russia|NA|2019-09-07	H14N3	central asia	anseriformes-wild	55.2762232202593	79.7845914423443
+H7N3|2344b|EPI_ISL_331289|anseriformes|russia|NA|2018-01-23	H7N3	eastern europe	anseriformes-wild	43.0199724243525	46.8879064209307
+H5N3|2344b|EPI_ISL_240673|anseriformes|russia|NA|2014-09-10	H5N3	central asia	anseriformes-wild	55.2762232202593	79.7845914423443
+H2N3|2344b|EPI_ISL_267293|anseriformes|united_states|NA|2012-12-22	H2N3	northern america	anseriformes-wild	32.6403385373358	-83.4405725551842
+H7N3|NA|EPI_ISL_327473|anseriformes|mongolia|NA|2017-09-01	H7N3	eastern asia	anseriformes-wild	46.9660284560213	103.138307461425
+H7N3|2344b|EPI_ISL_387965|anseriformes|egypt|NA|2016-03-17	H7N3	northern africa	anseriformes-wild	26.5331366423868	29.7934978487062
+H10N3|2344b|EPI_ISL_206694|anseriformes|mongolia|NA|2015-08-31	H10N3	eastern asia	anseriformes-wild	46.9660284560213	103.138307461425
+H10N3|NA|EPI_ISL_1096150|environment|china|NA|2015-11-19	H10N3	eastern asia	environment	27.6016362656629	115.709570895796
+NA|NA|EPI_ISL_387335|anseriformes|vietnam|NA|2016-02-10	NA	south-eastern asia	anseriformes-wild	16.5422416723933	106.354375350692
+H7N3|2344b|EPI_ISL_706194|anseriformes|south_korea|NA|2019-03-15	H7N3	eastern asia	anseriformes-wild	36.341057964317	127.784630688405
+H1N3|2344b|EPI_ISL_339038|anseriformes|russia|NA|2018-09-06	H1N3	central asia	anseriformes-wild	55.2762232202593	79.7845914423443
+H2N3|NA|EPI_ISL_333089|anseriformes|bangladesh|NA|2017-01-23	H2N3	southern asia	anseriformes-wild	23.8299093538119	90.2865403636969
+NA	NA	NA	NA	NA	NA

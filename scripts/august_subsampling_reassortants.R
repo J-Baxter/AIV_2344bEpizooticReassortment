@@ -3,9 +3,15 @@ library(tidyverse)
 source('./scripts/FindIdenticalSeqs.R')
 
 ####################################################################################################
-# Import metadata and alignments
-metadata <- read_csv('2024-09-09_meta.csv')
+# Import metadata 
+metadata <- read_csv('2024-09-09_meta.csv') %>%
+  
+  # Separate1_1_1_1_1_1_1_1 into A and B clades
+  mutate(cluster_profile  = case_when(grepl('asia', collection_regionname) & cluster_profile == '1_1_1_1_1_1_1_1' ~ paste0(cluster_profile, 'A'), 
+                                      !grepl('asia', collection_regionname) & cluster_profile == '1_1_1_1_1_1_1_1' ~ paste0(cluster_profile, 'B'), 
+                                      .default = cluster_profile))
 
+# Import alignments
 aln_files <- list.files(path = './2024Aug18/reassortant_alignments',
                         pattern = 'fasta',
                         full.names = T) 
@@ -19,12 +25,33 @@ names(aln) <- str_split_i(aln_files, '/', 4) %>%
   gsub('h5_|.fasta', '', .) 
 
 
+# Split 1_1_1_1_1_1_1_1 into two separate alignments
+temp_11111111 <- lapply(aln[grepl( '_11111111$', names(aln))],
+                        function(x) list(x[str_extract(rownames(x), "EPI_ISL_(china_){0,1}\\d+[^.|]*") %in% (metadata %>%
+                                                                                                               filter(cluster_profile == '1_1_1_1_1_1_1_1A') %>%
+                                                                                                               pull(isolate_id)),], 
+                                         x[str_extract(rownames(x), "EPI_ISL_(china_){0,1}\\d+[^.|]*") %in% (metadata %>% 
+                                                                                                               filter(cluster_profile == '1_1_1_1_1_1_1_1B') %>%
+                                                                                                               pull(isolate_id)),])) %>%
+  lapply(., setNames, c('A', 'B')) %>%
+  list_flatten(., name_spec = "{outer}{inner}")
+
+# join split alignments and remove old
+aln %<>% 
+  .[!grepl( '_11111111$', names(aln))] %>%
+  c(., temp_11111111) %>%
+  .[order(names(.))]
+
+# check all sequences in metadata
+aln %<>%
+  lapply(., function(x) x[str_extract(rownames(x), "EPI_ISL_(china_){0,1}\\d+[^.|]*") %in% metadata$isolate_id,])
+
+# split metadata by alignment
 metadata_per_alignment <- lapply(aln, function(x) metadata %>% 
                                    filter(isolate_id %in% str_extract(rownames(x), "EPI_ISL_(china_){0,1}\\d+[^.|]*")))
 
-names(metadata_per_alignment ) <- str_split_i(aln_files, '/', 4) %>%
-  gsub('h5_|.fasta', '', .) 
 
+# sanity check 
 all(unlist(lapply(aln, nrow)) == unlist(lapply(metadata_per_alignment, nrow)))
 
 ####################################################################################################
@@ -40,7 +67,57 @@ seqstoremove <- read_csv('./2024Jul12/reassortant_iqtree/dropsequences.csv') %>%
 
 
 
+
 ####################################################################################################
+# Identify duplicate sequences from alignment
+groups <- lapply(aln, GroupSequences, snp_threshold = 2)%>%
+  bind_rows(., .id = 'label') %>%
+  mutate(isolate_id = str_extract(tipnames, "EPI_ISL_(china_){0,1}\\d+[^.|]*"))
+
+
+
+# 40 largest countries by land mass
+large_countries <- c('russia',
+                     'canada',
+                     'china',
+                     'united states',
+                     'brazil',
+                     'australia',
+                     'india',
+                     'argentina',
+                     'kazakhstan',
+                     'algeria',
+                     'saudi arabia',
+                     'méxico',
+                     'indonesia',
+                     'sudan',
+                     'libya',
+                     'iran',
+                     'mongolia',
+                     'peru',
+                     'chad',
+                     'niger',
+                     'angola',
+                     'mali',
+                     'south africa',
+                     'colombia',
+                     'Ethiopia',
+                     'Bolivia' ,
+                     'Mauritania',
+                     'Egypt',
+                     'Tanzania' ,
+                     'Nigeria' ,
+                     'Venezuela' ,
+                     'Pakistan' ,
+                     'Namibia' ,
+                     'Mozambique' ,
+                     'Turkey',
+                     'Chile' ,
+                     'Zambia' ,
+                     'Myanmar')
+       
+                     
+ ####################################################################################################
 # Subsample - strict
 metadata_prep <- metadata_per_alignment %>%
   bind_rows(., .id = 'label') %>%
@@ -52,13 +129,19 @@ metadata_prep <- metadata_per_alignment %>%
   filter(host_simplifiedhost != 'unknown') %>%
   select(-drop_temporal) %>%
   
+  # join identical sequence groupings
+  left_join(groups %>% select(-tipnames), 
+            by = join_by(label, 
+                         isolate_id)) %>%
+  
   # only 2344b
   filter(clade == '2344b' | is.na(clade)) %>%
   
   # create groupings
   mutate(across(contains('collection'), .fns = ~ gsub('^NA$', NA, .x))) %>% 
-  mutate(best_location_code = coalesce(collection_subdiv1code,
-                                       collection_countrycode)) %>%
+  mutate(best_location_code = case_when(collection_countryname %in% large_countries ~ coalesce(collection_subdiv1code,
+                                                                                                collection_countrycode),
+         .default  = collection_countrycode)) %>%
   
   # Sample one virus in each segment that has unique combination of location, host family, 
   # reasssortment, and sequence identity (viruses in the same group are identical)
@@ -72,7 +155,8 @@ metadata_prep <- metadata_per_alignment %>%
                             collection_countrycode == 'IRN' ~ 'drop',
                             .default = 'keep')) %>%
   filter(todrop == 'keep') %>%
-  ungroup()
+  ungroup() %>%
+  select(-c(6,34,35))
 
 
 ####################################################################################################
@@ -90,7 +174,7 @@ metadata_subsampled_1 <- metadata_prep  %>%
   ungroup() %>%
   
   # as list
-  group_split(label, .keep = FALSE) %>%
+  group_split(label, .keep =  FALSE) %>%
   as.list() %>%
   setNames(names(metadata_per_alignment))
 
@@ -100,7 +184,7 @@ metadata_subsampled_1 <- metadata_prep  %>%
 metadata_subsampled_2 <- metadata_prep %>%
   group_by(label, 
            cluster_profile,
-           collection_datemonth,
+           sequence_group,
            best_location_code
   ) %>%
   slice_sample(n = 1) %>%
@@ -117,11 +201,13 @@ metadata_subsampled_2 <- metadata_prep %>%
 metadata_subsampled_3 <- metadata_prep %>%
   group_by(label, 
            cluster_profile,
-           collection_datemonth,
-           host_simplifiedhost, 
-  ) %>%
+           sequence_group) %>% 
+  slice(which(host_class == 'mammalia'), 
+        .preserve = T) %>%
   slice_sample(n = 1) %>%
   ungroup() %>%
+  
+  full_join(tibble(label = names(metadata_per_alignment))) %>%
   
   # as list
   group_split(label, .keep = FALSE) %>%
@@ -175,17 +261,16 @@ metadata_subsampled_beast <- lapply(metadata_subsampled,
 
 
 
-alignmentfiles_subsampled <- paste('./2024Sept16/reassortant_subsampled_alignments',
+alignmentfiles_subsampled <- paste('./2024Nov18/reassortant_subsampled',
                                    paste(names(aln), 'subsampled.fasta', sep = '_'),
                                    sep = '/' )
 
-mapply(ape::write.dna, 
+mapply(ape::write.FASTA, 
        alignments_subsampled, 
-       alignmentfiles_subsampled ,
-       format = 'fasta')
+       alignmentfiles_subsampled )
 
 
-metadatafiles_subsampled_beast <-paste('./2024Sept16/reassortant_subsampled_traits',
+metadatafiles_subsampled_beast <-paste('./2024Nov18/reassortant_subsampled',
                                        paste(names(aln), 'subsampled.txt',  sep = '_'),
                                        sep = '/' )
 
@@ -204,16 +289,16 @@ mapply(write_delim,
 
 cmds <- paste0("./beastgen -date_order -1 -date_prefix \\| -date_precision -D '",
                'fileName=',
-               gsub('.fasta$|.*beastsubsample/|./2024Sept16/reassortant_subsampled_alignments/', '', alignmentfiles_subsampled), 
-               '_relaxLn_constant', '_1',
+               gsub('.fasta$|.*beastsubsample/|./2024Nov18/reassortant_subsampled/', '', alignmentfiles_subsampled), 
+               '_relaxLn_constant', '_2',
                "' flu_constanttemplate ",
-               gsub('.*beastsubsample/|./2024Sept16/reassortant_subsampled_alignments/', '', alignmentfiles_subsampled),
+               gsub('.*beastsubsample/|2024Nov18/', '', alignmentfiles_subsampled),
                ' ',
-               gsub('.fasta|.*beastsubsample/|./2024Sept16/reassortant_subsampled_alignments/', '', alignmentfiles_subsampled),
-               '_relaxLn_constant', '.xml')
+               gsub('.fasta|.*beastsubsample/|2024Nov18/', '', alignmentfiles_subsampled),
+               '_relaxLn_constant_2', '.xml')
 
-write_lines(cmds,  paste('./2024Sept16', 
-                         'beastgen.sh',
+write_lines(cmds,  paste('./2024Nov18', 
+                         'beastgen_reassortants.sh',
                          sep = '/' ))
 
 

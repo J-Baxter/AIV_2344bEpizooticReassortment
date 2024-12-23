@@ -1,0 +1,16 @@
+tipnames	virus_subtype	collection_regionname	cluster_profile	host_simplifiedhost	lat	long
+H5N4|2344b|EPI_ISL_15602898|galliformes|united_states|4_11_1_1_7_26_1_1|2022-09-13	H5N4	northern america	4_11_1_1_7_26_1_1	galliformes-domestic	47.052996209617	-109.633323124771
+H8N4|2344b|EPI_ISL_266500|anseriformes|united_states|NA|2015-12-05	H8N4	northern america	NA	anseriformes-wild	37.1829246180653	-119.469343089956
+H10N4|NA|EPI_ISL_18338443|galliformes|united_states|NA|2023-08-29	H10N4	northern america	NA	galliformes-wild	28.6269382846284	-82.4431243811826
+H8N4|NA|EPI_ISL_6816049|anseriformes|united_states|NA|2021-08-02	H8N4	northern america	NA	anseriformes-wild	63.9513927980493	-152.396756538795
+H2N4|NA|EPI_ISL_16215437|anseriformes|canada|NA|2021-08-26	H2N4	northern america	NA	anseriformes-wild	54.9859148218572	-114.405475342745
+H8N4|NA|EPI_ISL_502683|anseriformes|france|NA|2017-08-29	H8N4	western europe	NA	anseriformes-wild	45.5190780558984	4.54715006428513
+NA|NA|EPI_ISL_327364|anseriformes|canada|NA|2017-08-12	NA	northern america	NA	anseriformes-wild	54.9859148218572	-114.405475342745
+H10N4|NA|EPI_ISL_503784|anseriformes|united_states|NA|2019-04-03	H10N4	northern america	NA	anseriformes-wild	40.470536265191	-82.6389467524245
+NA|NA|EPI_ISL_701619|anseriformes|united_states|NA|2018-11-30	NA	northern america	NA	anseriformes-wild	44.627499166429	-89.7126755416022
+H8N4|NA|EPI_ISL_328341|anseriformes|canada|NA|2017-08-12	H8N4	northern america	NA	anseriformes-wild	54.9859148218572	-114.405475342745
+H7N4|NA|EPI_ISL_294167|anseriformes|united_states|NA|2016-12-03	H7N4	northern america	NA	anseriformes-wild	44.627499166429	-89.7126755416022
+H2N4|NA|EPI_ISL_16215551|anseriformes|canada|NA|2021-08-26	H2N4	northern america	NA	anseriformes-wild	54.9859148218572	-114.405475342745
+H5N4|NA|EPI_ISL_6795385|anseriformes|united_states|NA|2021-08-11	H5N4	northern america	NA	anseriformes-wild	42.9905358128524	-75.6520434129946
+H8N4|NA|EPI_ISL_393472|anseriformes|united_states|NA|2018-04-11	H8N4	northern america	NA	anseriformes-wild	40.470536265191	-82.6389467524245
+NA	NA	NA	NA	NA	NA	NA

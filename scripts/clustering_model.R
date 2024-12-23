@@ -105,6 +105,7 @@ kclust_updated_data <- combined_data %>%
   group_by(segment, cluster_profile) %>%
   slice_sample(n=1) %>%
   ungroup() %>%
+  filter(segment %in% c('ha', 'pb2')) %>%
   
   # pivot wider so one row/reassortant
   pivot_wider(names_from = segment,
@@ -166,7 +167,7 @@ clusterings_nophylo <-
 
 # data points used for clustering and cluster_profiles
 labelled_nophylo <- assignments_nophylo %>%
-  filter(k == 3) %>%
+  filter(k == 4) %>%
   select(-c(group2,
             kclust,
             tidied,
@@ -221,7 +222,7 @@ permuted_clusterings_nophylo <- permuted_nophylo  %>%
 
 # was cluster assignment correct according to baseline kmeans?
 lookup_clusters <- assignments_nophylo %>%
-  filter(k == 3) %>%
+  filter(k == 4) %>%
   select(c(cluster_profile,
            .cluster)) %>%
   rename(original_cluster = .cluster)
@@ -270,29 +271,47 @@ riskgroup_colour <- read_csv('./colour_schemes/riskgroup_cols.csv') %>%
   mutate(kclust = c(1,2, 3),
          group2 = c('minor', 'major', 'dominant'))
 
-plt_1a <- assignments_nophylo %>%
-  filter(k == 3) %>%
+
+# Elbow Plot for summary data 
+plt_1a <- ggplot(clusterings_nophylo, aes(k, tot.withinss)) +
+  geom_line() +
+  geom_point() +
+  theme_minimal(base_size = 8) +
+  scale_y_continuous('Total within-cluster sum of squares') +
+  scale_x_continuous('K', breaks = seq(0,20, by = 5)) + 
+  geom_vline(xintercept = 4, colour= 'darkgreen', linetype = 'dashed')
+
+
+plt_1b <- assignments_nophylo %>%
+  filter(k == 4) %>%
   select(-c(kclust, tidied, glanced)) %>%
   recipe(~ .) %>%
   step_pca(all_numeric(), -k, num_comp = 2) %>%  # Perform PCA (e.g., 2 components)
   prep() %>%
   bake(NULL)%>%
   ggplot(., aes(x = PC1, y = PC2)) +
-  geom_point(aes(colour = .cluster), size = 4, alpha = 0.8) + 
-  theme_minimal(base_size = 20) + 
-  scale_color_manual(
-    'K-Means Clusters',
-    values = riskgroup_colour %>% pull(Trait, name = kclust), 
-    labels = riskgroup_colour %>% pull(group2, name = kclust)) +
-  theme(legend.position = 'bottom',
+  geom_point(aes(colour = .cluster), size = 2, alpha = 0.8) + 
+  theme_minimal(base_size = 8) + 
+  scale_colour_brewer('K-Means Clusters',
+                      palette = 'Dark2', 
+                      labels  = c('1' = 'Minor',
+                                  '2' = 'Major A',
+                                  '3' = 'Major B', 
+                                  '4' = 'Dominant'))+
+  #scale_color_manual(
+  #  'K-Means Clusters',
+  #  values = riskgroup_colour %>% pull(Trait, name = kclust), 
+  #  labels = riskgroup_colour %>% pull(group2, name = kclust)) +
+  theme(legend.position = 'inside',
+        legend.position.inside = c(0.25,0.8),
         legend.box = "vertical")            #
 
 
 
 
-plt_1b <- ggplot(ari_summary)+
-  geom_point(aes(x = var, y = mean_importance), size = 4) +
-  geom_linerange(aes(x = var, ymin = lower_ci, ymax = upper_ci), linewidth = 1.5) + 
+plt_1c <- ggplot(ari_summary)+
+  geom_point(aes(x = var, y = mean_importance)) +
+  geom_linerange(aes(x = var, ymin = lower_ci, ymax = upper_ci)) + 
   
   scale_x_discrete('Variable',
                    labels = c('host_richness' = 'Host richness',
@@ -305,13 +324,20 @@ plt_1b <- ggplot(ari_summary)+
   scale_y_continuous(
     'Variable Importance') +
   coord_cartesian(ylim = c(0,1)) +
-  theme_minimal(base_size = 20) +
+  theme_minimal(base_size = 8) +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 
 
-cowplot::plot_grid(plt_1a, plt_1b, ncol = 2, align = 'h', axis = 'tb')
+plt_1 <- cowplot::plot_grid(plt_1a, plt_1b, plt_1c, ncol = 3, align = 'hv', axis = 'tb')
 
- 
+ggsave(
+       '~/Downloads/flu_plots/summarydata_clustering.jpeg', 
+       plt_1,
+       width = 21,
+       height = 10,
+       units =  "cm",
+       dpi = 360)
+
 ####################################### PHYLO + SUMMARY DATA KCLUST ########################################
 
 # Now repeat for phylo data
@@ -332,11 +358,18 @@ assignments <- kclusts %>%
 clusterings <-  kclusts %>%
   unnest(cols = c(glanced))
 
+ggplot(clusterings, aes(k, tot.withinss)) +
+  geom_line() +
+  geom_point() +
+  theme_minimal(base_size = 8) +
+  scale_y_continuous('Total within-cluster sum of squares') +
+  scale_x_continuous('K', breaks = seq(0,20, by = 5)) + 
+  geom_vline(xintercept = 4, colour= 'darkgreen', linetype = 'dashed')
 
 ####################################### PHYLO + SUMMARY DATA PERMUTATIONS #######################################
 # data points used for clustering and cluster_profiles
 labelled_phylo <- assignments %>%
-  filter(k == 3) %>%
+  filter(k == 4) %>%
   select(-c( kclust,
             tidied,
             glanced,
@@ -388,16 +421,17 @@ permuted_clusterings_phylo <- permuted_phylo  %>%
   unnest(cols = c(glanced))
 
 
+
 ####################################### PHYLO + SUMMARY DATA ARI ########################################
 # was cluster assignment correct according to baseline kmeans?
 lookup_clusters <- assignments %>%
-  filter(k == 3) %>%
+  filter(k == 4) %>%
   select(c(cluster_profile,
            .cluster)) %>%
   rename(original_cluster = .cluster)
 
 
-ari <- permuted_assignments_phylo %>%
+ari_phylo <- permuted_assignments_phylo %>%
   select(c(cluster_profile,
            .cluster,
            id)) %>%
@@ -411,7 +445,7 @@ ari <- permuted_assignments_phylo %>%
   summarise(ari = mean(ari)) %>%
   ungroup()
 
-ari_summary <- ari %>%
+ari_phylo_summary <- ari_phylo %>%
   mutate(importance = 1 - ari) %>% # Higher impact means lower ARI score
   summarise(mean_importance = mean(importance),
             lower_ci = mean(importance) - 1.96 * sd(importance) / sqrt(n()),  # Lower 95% CI
@@ -424,56 +458,83 @@ riskgroup_colour <- read_csv('./colour_schemes/riskgroup_cols.csv') %>%
   mutate(kclust = c(3,1,2),
          group2 = c( 'minor', 'major','dominant'))
 
-plt_2a <- assignments %>%
-  filter(k == 3) %>%
+####################################################################################################
+# Elbow Plot for summary data 
+plt_2a <- ggplot(clusterings, aes(k, tot.withinss)) +
+  geom_line() +
+  geom_point() +
+  theme_minimal(base_size = 8) +
+  scale_y_continuous('Total within-cluster sum of squares') +
+  scale_x_continuous('K', breaks = seq(0,20, by = 5)) + 
+  geom_vline(xintercept = 4, colour= 'darkgreen', linetype = 'dashed')
+
+
+plt_2b <- assignments %>%
+  filter(k == 4) %>%
   select(-c(kclust, tidied, glanced)) %>%
   recipe(~ .) %>%
   step_pca(all_numeric(), -k, num_comp = 2) %>%  # Perform PCA (e.g., 2 components)
   prep() %>%
   bake(NULL)%>%
   ggplot(., aes(x = PC1, y = PC2)) +
-  geom_point(aes(colour = .cluster), size = 4, alpha = 0.8) + 
-  theme_minimal(base_size = 20) + 
-  scale_color_manual(
-    'K-Means Clusters',
-    values = riskgroup_colour %>% pull(Trait, name = kclust), 
-    labels = riskgroup_colour %>% pull(group2, name = kclust)) +
-  theme(legend.position = 'bottom',
+  geom_point(aes(colour = .cluster), alpha = 0.8) + 
+  theme_minimal(base_size = 8) + 
+  scale_colour_brewer('K-Means Clusters',
+                      palette = 'Dark2', 
+                      labels  = c('3' = 'Minor',
+                                  '1' = 'Major A',
+                                  '4' = 'Major B', 
+                                  '2' = 'Dominant'))+
+  #scale_color_manual(
+  #  'K-Means Clusters',
+  #  values = riskgroup_colour %>% pull(Trait, name = kclust), 
+  #  labels = riskgroup_colour %>% pull(group2, name = kclust)) +
+  theme(legend.position = 'inside',
+        legend.position.inside = c(0.8,0.8),
         legend.box = "vertical")            #
 
 
 
 
-plt_2b <- ggplot(ari_summary %>% arrange(desc(mean_importance)) %>% head(n = 10))+
-  geom_point(aes(x = var, y = mean_importance), size = 4) +
-  geom_linerange(aes(x = var, ymin = lower_ci, ymax = upper_ci), linewidth = 1.5) + 
+plt_2c <- ari_phylo_summary %>%
+  filter(!var %in% ari_summary$var) %>%
+  ggplot()+
+  geom_point(aes(x = var, y = mean_importance)) +
+  geom_linerange(aes(x = var, ymin = lower_ci, ymax = upper_ci)) + 
   
   scale_x_discrete('Variable',
-                   labels = c('if_mammal' = 'Mammals' ,
-                              'weighted_diff_coeff_nx' = 'NX diffusion coefficient',
-                              'weighted_diff_coeff_pb1' = 'PB1 diffusion coefficient',
+                   labels = c('persist.time_ha' = 'HA Persistence Time' ,
+                              'persist.time_pb2' = 'PB2 Persistence Time' ,
+                              'weighted_diff_coeff_ha' = 'HA diffusion coefficient',
                               'weighted_diff_coeff_pb2' = 'PB2 diffusion coefficient',
-                              'evoRate_pb1' = 'PB1 ER',
-                              'evoRate_ha' = 'HA ER',
-                              'evoRate_pa' = 'PA ER',
-                              'evoRate_nx' = 'NX ERe',
-                              'count_cross_species_pb1' = 'PB1 species jumps',
-                              'number_Conti' = 'Number of continents') %>%
+                              'evoRate_pb2' = 'PB2 evo rate',
+                              'evoRate_ha' = 'HA evo rate',
+                              'count_cross_species_pb2' = 'PB2 species jumps',
+                              'count_cross_species_ha' = 'HA species jumps') %>%
                      str_wrap(., width = 15)
-                   ) +
+  ) +
   scale_y_continuous(
     'Variable Importance') +
-  coord_cartesian(ylim = c(0,0.5)) +
-  theme_minimal(base_size = 20) +
+  coord_cartesian(ylim = c(0,1)) +
+  theme_minimal(base_size = 8) +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 
 
-cowplot::plot_grid(plt_2a, plt_2b, ncol = 2, align = 'h', axis = 'tb')
+plt_1 <- cowplot::plot_grid(plt_2a, plt_2b, plt_2c, ncol = 3, align = 'hv', axis = 'tb')
+
+ggsave(
+  '~/Downloads/flu_plots/phylodata_clustering.jpeg', 
+  plt_1,
+  width = 21,
+  height = 10,
+  units =  "cm",
+  dpi = 360)
+
 
 
 ####################################### ALL DATA CONTINGENCY TBL ########################################
 assignments %>%
-  filter(k == 3) %>%
+  filter(k == 4) %>%
   select(c(cluster_profile, .cluster)) %>%
   left_join(assignments_nophylo %>%
               filter(k == 3) %>%
@@ -487,36 +548,37 @@ assignments %>%
 # distance (b) for each sample. The Silhouette Coefficient for a sample is (b - a) / max(a, b)
 
 sil_nophlyo <- cluster::silhouette(assignments_nophylo %>%
-                             filter(k == 3) %>% pull(.cluster) %>%
+                             filter(k == 4) %>% pull(.cluster) %>%
                              as.integer(),
                            assignments_nophylo %>%
-                             filter(k == 3) %>%
+                             filter(k == 4) %>%
                              select(-c(k, kclust, tidied, glanced, cluster_profile, .cluster,group2)) %>% as.matrix() %>% dist()) %>%
   .[, 1:3] %>%
   as_tibble() %>%
   mutate(data = 'Summary Data') %>%
-  mutate(cluster = case_when(cluster == 1 ~ 'major', 
-                             cluster == 2 ~ 'minor',
-                             cluster == 3 ~ 'dominant',
+  mutate(cluster = case_when(cluster == 1 ~ 'minor', 
+                             cluster == 2 ~ 'major a',
+                             cluster == 3 ~ 'major b',
+                             cluster == 4 ~ 'dominant',
                              ))
 
 
 
 
 sil <- cluster::silhouette(assignments %>%
-                    filter(k == 3) %>% pull(.cluster) %>%
+                    filter(k == 4) %>% pull(.cluster) %>%
                                               as.integer(),
                   assignments %>%
-                    filter(k == 3) %>%
+                    filter(k == 4) %>%
                     select(-c(k, kclust, tidied, glanced, cluster_profile, .cluster)) %>% as.matrix() %>% dist()
                     ) %>%
   .[, 1:3] %>%
   as_tibble() %>%
   mutate(data = 'All Data') %>%
-  mutate(cluster = case_when(cluster == 3 ~ 'major', 
-                             cluster == 2 ~  'dominant',
-                             cluster == 1 ~ 'minor'
-  ))
+  mutate(cluster = case_when(cluster == 3 ~ 'minor',
+                             cluster == 4 ~ 'major b',
+                             cluster == 2 ~  'major a',
+                             cluster == 1 ~ 'minor'))
 
 
 riskgroup_colour <- read_csv('./colour_schemes/riskgroup_cols.csv') %>%
@@ -531,11 +593,9 @@ bind_rows(sil,
           sil_nophlyo) %>%
   ggplot(aes(x = sil_width, fill = cluster)) +
   geom_density( colour = NA, alpha = 0.8) +
-  scale_fill_manual(values = c('major' = '#1f77b4',
-                               'minor' = '#2ca02c',
-                               'dominant' = '#FF0000')) +
+  scale_fill_brewer(palette = 'Dark2') +
   facet_grid(cols = vars(data)) +
-  scale_x_continuous('Silhouette Width')+
+  scale_x_continuous('Silhouette Score')+
   scale_y_continuous('Probability Density') + 
   theme_minimal(base_size = 18) +
   theme(legend.position = 'bottom')

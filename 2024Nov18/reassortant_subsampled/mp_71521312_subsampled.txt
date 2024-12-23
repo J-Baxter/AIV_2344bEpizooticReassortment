@@ -1,0 +1,14 @@
+tipnames	virus_subtype	collection_regionname	cluster_profile	host_simplifiedhost	lat	long
+H5N8|2344b|EPI_ISL_402134|galliformes|poland|7_1_5_2_1_3_1_2|2019-12-30	H5N8	eastern europe	7_1_5_2_1_3_1_2	galliformes-domestic	51.2170859712694	22.9017240742201
+H5N8|2344b|EPI_ISL_16405677|environment|japan|7_1_5_2_1_3_1_2|2020-12-21	H5N8	eastern asia	7_1_5_2_1_3_1_2	environment	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_2820479|anseriformes|china|7_1_5_2_1_3_1_2|2020-10-16	H5N8	eastern asia	7_1_5_2_1_3_1_2	anseriformes-wild	37.2602231520297	106.161545856493
+H5N8|2344b|EPI_ISL_405391|galliformes|czechia|7_1_5_2_1_3_1_2|2020-01-17	H5N8	eastern europe	7_1_5_2_1_3_1_2	galliformes-domestic	49.4071187835784	15.6903483593844
+H5N8|2344b|EPI_ISL_417415|galliformes|germany|7_1_5_2_1_3_1_2|2020-03-20	H5N8	western europe	7_1_5_2_1_3_1_2	galliformes-domestic	52.7642105761026	9.16783937293005
+H5N8|2344b|EPI_ISL_808250|anseriformes|hungary|7_1_5_2_1_3_1_2|2020-04-11	H5N8	eastern europe	7_1_5_2_1_3_1_2	anseriformes-wild	46.5624446150372	19.3734257652929
+H5N8|2344b|EPI_ISL_1273422|galliformes|japan|7_1_5_2_1_3_1_2|2020-11-10	H5N8	eastern asia	7_1_5_2_1_3_1_2	galliformes-domestic	34.217379070784	133.968927545016
+H5N8|2344b|EPI_ISL_985193|galliformes|south_korea|7_1_5_2_1_3_1_2|2020-12-14	H5N8	eastern asia	7_1_5_2_1_3_1_2	galliformes-domestic	36.3474789243827	128.748576389097
+H5N8|2344b|EPI_ISL_525452|anseriformes|poland|7_1_5_2_1_3_1_2|2020-02-21	H5N8	eastern europe	7_1_5_2_1_3_1_2	anseriformes-domestic	52.1141994014432	19.4236724631525
+H5N8|2344b|EPI_ISL_417414|accipitriformes|germany|7_1_5_2_1_3_1_2|2020-03-20	H5N8	western europe	7_1_5_2_1_3_1_2	other-bird	51.0528694457593	13.3447264729352
+H5N8|2344b|EPI_ISL_525448|galliformes|poland|7_1_5_2_1_3_1_2|2020-02-07	H5N8	eastern europe	7_1_5_2_1_3_1_2	galliformes-domestic	52.1141994014432	19.4236724631525
+H5N8|2344b|EPI_ISL_846584|anseriformes|hungary|7_1_5_2_1_3_1_2|2020-04-17	H5N8	eastern europe	7_1_5_2_1_3_1_2	anseriformes-wild	46.5624446150372	19.3734257652929
+NA	NA	NA	NA	NA	NA	NA

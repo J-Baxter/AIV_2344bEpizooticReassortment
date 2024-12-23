@@ -1,0 +1,14 @@
+tipnames	virus_subtype	collection_regionname	cluster_profile	host_simplifiedhost	lat	long
+H5N1|2344b|EPI_ISL_14918892|galliformes|south_africa|1_1_1_1_1_1_1_1|2021-06-30	H5N1	southern africa	1_1_1_1_1_1_1_1B	galliformes-domestic	-28.7220063412643	30.7367833141436
+H5N1|2344b|EPI_ISL_18927384|galliformes|united_kingdom|1_1_1_1_1_1_1_1|2024-02-14	H5N1	northern europe	1_1_1_1_1_1_1_1B	galliformes-domestic	54.0438440515314	-2.78687513666638
+H5N1|2344b|EPI_ISL_15852626|galliformes|south_africa|1_1_1_1_1_1_1_1|2022-01-24	H5N1	southern africa	1_1_1_1_1_1_1_1B	galliformes-domestic	-26.1053974962555	28.126943330491
+H5N1|2344b|EPI_ISL_14933916|galliformes|south_africa|1_1_1_1_1_1_1_1|2021-07-29	H5N1	southern africa	1_1_1_1_1_1_1_1B	galliformes-domestic	-28.7220063412643	30.7367833141436
+H5N1|2344b|EPI_ISL_11798572|anseriformes|denmark|1_1_1_1_1_1_1_1|2021-10-13	H5N1	northern europe	1_1_1_1_1_1_1_1B	anseriformes-wild	55.3568797999445	9.45020901930698
+H5N1|2344b|EPI_ISL_6761022|anseriformes|netherlands|1_1_1_1_1_1_1_1|2021-11-09	H5N1	western europe	1_1_1_1_1_1_1_1B	anseriformes-wild	52.083727924893	5.16763788059654
+H5N1|2344b|EPI_ISL_18445705|anseriformes|france|1_1_1_1_1_1_1_1|2022-01-24	H5N1	western europe	1_1_1_1_1_1_1_1B	anseriformes-wild	46.5103009447381	2.5780749353201
+H5N1|2344b|EPI_ISL_18245813|accipitriformes|poland|1_1_1_1_1_1_1_1|2021-12-22	H5N1	eastern europe	1_1_1_1_1_1_1_1B	other-bird	51.6035747353358	19.4163037332462
+H5N1|2344b|EPI_ISL_18133466|anseriformes|united_states|1_1_1_1_1_1_1_1|2022-01-29	H5N1	northern america	1_1_1_1_1_1_1_1B	anseriformes-wild	35.5562842108177	-79.3865256785998
+H5N1|2344b|EPI_ISL_15853010|ciconiiformes|south_africa|1_1_1_1_1_1_1_1|2022-02-08	H5N1	southern africa	1_1_1_1_1_1_1_1B	other-bird	-26.1053974962555	28.126943330491
+H5N1|2344b|EPI_ISL_8799317|charadriiformes|netherlands|1_1_1_1_1_1_1_1|2021-12-24	H5N1	western europe	1_1_1_1_1_1_1_1B	charadriiformes-wild	52.0617180422494	5.94466833784019
+H5N1|2344b|EPI_ISL_14493135|ciconiiformes|netherlands|1_1_1_1_1_1_1_1|2022-06-03	H5N1	western europe	1_1_1_1_1_1_1_1B	other-bird	51.5616727876811	5.19541346074046
+NA	NA	NA	NA	NA	NA	NA

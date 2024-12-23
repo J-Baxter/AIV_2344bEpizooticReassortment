@@ -49,7 +49,8 @@ AncestralStateReconstruction <- function(tree, trait.matrix, model = 'ER', type 
     enframe(., 
             name = 'node', 
             value = 'cluster_profile') %>%
-    mutate(node = as.integer(node))
+    mutate(node = as.integer(node),
+           cluster_profile = gsub('NA', NA_character_, cluster_profile))
   
   return(anc_state)
 }
@@ -84,7 +85,7 @@ HostPersistence2 <- function(treedata, region_tree = FALSE){
   if(region_tree){
     anc_state <- AncestralStateReconstruction(tree,
                                               reassortants)
-  } 
+    } 
   
   
   ################################### path to ancestor ################################### 
@@ -98,7 +99,7 @@ HostPersistence2 <- function(treedata, region_tree = FALSE){
     mutate(cluster_profile = str_split_i(label, '\\|', 6)) %>%
     rename(tip = node) %>%
     
-    # include values of interst (node (tip) ID, height, host and reassortant)
+    # include values of interest (node (tip) ID, height, host and reassortant)
     select(any_of(c('tip',
                     'cluster_profile'))) %>%
     #arrange(node) %>%
@@ -109,71 +110,126 @@ HostPersistence2 <- function(treedata, region_tree = FALSE){
                                  itself(.data = tbl_tree, .node = tip)))) %>% 
     as_tibble() %>% # cancel out rowwise()
     
-    filter(!is.na(cluster_profile)) %>%
+    drop_na(cluster_profile) %>%
     
     unnest(path) %>%
+    
+    select(c(tip, 
+             label,
+             node, 
+             cluster_profile,
+             height,
+             height_0.95_HPD,
+             branch.length,
+             host_simplifiedhost,
+             host_simplifiedhost.prob)) %>%
     {
       if (region_tree){
+        left_join(., anc_state %>% rename(cluster_number = cluster_profile)) 
         ##################################
         # Update with ancestral states if region tree
-        rows_update(.,
-                    anc_state) %>%
-          filter(cluster_profile != 'NA')
+      #  rows_update(.,
+       #             anc_state) %>%
+       #   filter(cluster_profile != 'NA')
         ##################################
-      } else {
-        .
+        } else {
+          .
+        }
       }
-    }
   
   ################################### summarise host persistence ################################### 
   
+  cols <- c('cluster_number' = reassortants[1])
+  tbl_pathtoancestor %<>% 
+    add_column(!!!cols[setdiff(names(cols), names(.))])
+  
   # For each tip, include only nodes that match the given tip cluster
   out <- tbl_pathtoancestor %>%
+    mutate(cluster_number = case_when(cluster_number == cluster_profile ~ cluster_number,
+                                      .default = NA_character_)) %>%
+    drop_na(cluster_number) %>%
+    select(c(tip, 
+             label,
+             node, 
+             cluster_number, 
+             height,
+             height_0.95_HPD,
+             branch.length,
+             host_simplifiedhost,
+             host_simplifiedhost.prob)) %>%
     group_by(tip) %>%
-    
-    filter(cluster_profile %in% str_split_i(label, '\\|', 6)) %>% ########### need to check that tip == 
-    
-    # If only one node/tip in group, then add parent node
-    group_modify(~ {
-      if (nrow(.x) == 1){
-        bind_rows(.x, parent(tbl_tree, .node = .x$node)) %>%
-          fill(cluster_profile, .direction = 'downup')
-      }else{
-        .x
-      }
-    }) %>%
-    ungroup() %>%
-    
-    select(any_of(c('tip', 
-                    'cluster_profile',
-                    'node',
-                    'parent',
-                    'height_median',
-                    'branch.length',
-                    'host_simplifiedhost',
-                    'reassortant'))) %>%
-    group_by(cluster_profile, 
-             tip) %>%
-    
+    #group_modify(~{
+      #if (nrow(.x) == 1){
+       # bind_rows(.x, tidytree::parent(.data = tbl_tree, .node = .x$node)) %>%
+      #    fill(cluster_number, .direction = 'downup')
+    #  }else{
+     #   .x
+     # }
+   # }) %>%
+    arrange(height, .by_group = TRUE) %>%
     mutate(host_change = cumsum(host_simplifiedhost != lag(host_simplifiedhost, 
                                                            def = first(host_simplifiedhost)))) %>%
+    group_by(host_change, .add = TRUE) %>%
+    mutate(persistence_host = sum(branch.length, na.rm = TRUE)) %>%
     ungroup() %>%
+    
+    group_by(cluster_number, host_simplifiedhost) %>%
+    summarise(persistence_host_median = median(persistence_host),
+              persistence_host_max = max(persistence_host, na.rm= TRUE),
+              persistence_host_sum = sum(persistence_host, na.rm= TRUE)) %>%
+    ungroup()
+  
+    
+    
+    
+    
+    
+   # tbl_pathtoancestor %>%
+   # group_by(tip) %>%
+    
+   # filter(cluster_profile %in% str_split_i(label, '\\|', 6)) %>% ########### need to check that tip == 
+    
+    # If only one node/tip in group, then add parent node
+   # group_modify(~ {
+    #  if (nrow(.x) == 1){
+    #    bind_rows(.x, parent(tbl_tree, .node = .x$node)) %>%
+     #     fill(cluster_profile, .direction = 'downup')
+    #  }else{
+    #    .x
+     # }
+    #}) %>%
+    #ungroup() %>%
+    
+    #select(any_of(c('tip', 
+    #                'cluster_profile',
+    #                'node',
+     #               'parent',
+     #               'height_median',
+     #               'branch.length',
+     #               'host_simplifiedhost',
+     #               'reassortant'))) %>%
+    #group_by(cluster_profile, 
+       #      tip) %>%
+    
+    #mutate(host_change = cumsum(host_simplifiedhost != lag(host_simplifiedhost, 
+    #                                                       def = first(host_simplifiedhost)))) %>%
+    #ungroup() %>%
     
     # sum branch lengths for contiguous periods in the same host
     # ie. we do not combine time spent in the same host, interdispersed by a different host class
-    summarise(persistence_host = sum(branch.length, na.rm = TRUE), 
-              .by = c(cluster_profile,
-                      tip, 
-                      host_simplifiedhost,
-                      host_change)) %>%
+   # summarise(persistence_host = sum(branch.length, na.rm = TRUE), 
+     #         .by = c(cluster_profile,
+       #               tip, 
+      #                host_simplifiedhost,
+        #              host_change)) %>%
     
     
     # calculate total, maximum and median persistence times for each host class for each reassortant 
-    summarise(persistence_host_median = median(persistence_host),
-              persistence_host_max = max(persistence_host),
-              persistence_host_sum = sum(persistence_host),
-              .by = c(cluster_profile,
-                      host_simplifiedhost))
+   # summarise(persistence_host_median = median(persistence_host),
+    #          persistence_host_max = max(persistence_host),
+    #          persistence_host_sum = sum(persistence_host),
+     #         .by = c(cluster_profile,
+      #                host_simplifiedhost))
   
   return(out)
   
@@ -193,19 +249,17 @@ region_trees <- list.files('./2024Aug18/region_subsampled_outputs/traits_mcc',
 
 
 ############################################## RUN ################################################
-ncpus = detectCores()-2
-cl = makeCluster(ncpus)
 
-tbl_majorminorpersistence <- mclapply(region_trees,  
-                                       function (x){return(tryCatch(HostPersistence2(x, region_tree = TRUE), 
-                                                                    error=function(e) NULL))}) %>%
+
+tbl_majorminorpersistence <- mclapply(region_trees[-19], HostPersistence2, region_tree = TRUE,mc.cores = 12) %>%
   # Set names for each tree extraction
-  set_names(list.files('./2024Aug18/region_subsampled_outputs/traits_mcc') %>% 
+  set_names(list.files('./2024Aug18/region_subsampled_outputs/traits_mcc')[-19] %>% 
               gsub('_subsampled.*', '', .)) %>%
   
   # concatenate to a single dataframe and separate segment and reassortant
   bind_rows(., .id = 'tree') %>%
   separate_wider_delim(tree, '_', names = c('segment', 'region'))%>% 
+  rename(cluster_profile = cluster_number) %>%
   
   # remove dominant cluster profiles
   filter(!cluster_profile %in% c("3_2_3_1_3_2_1_2",
@@ -223,10 +277,12 @@ tbl_majorminorpersistence <- mclapply(region_trees,
                                 "5_1_1_1_2_1_1_3",
                                 "5_4_9_1_2_1_1_1"))
 
+test4 <- tbl_majorminorpersistence %>%
+  group_by(cluster_profile, host_simplifiedhost) %>%
+  slice_min(persistence_host_median)
 
-tbl_dominant_persistence <- mclapply(reassortant_trees,  
-                                       function (x){return(tryCatch(HostPersistence2(x), 
-                                                                    error=function(e) NULL))}) %>%
+tbl_dominant_persistence <- mclapply(reassortant_trees, HostPersistence2, mc.cores = 12
+                                      ) %>%
   # Set names for each tree extraction
   set_names(list.files('./2024Aug18/reassortant_subsampled_outputs/traits_mcc') %>% 
               gsub('_subsampled.*', '', .)) %>%
@@ -242,7 +298,10 @@ stopCluster(cl)
 ############################################## WRITE ################################################
 tbl_combined <- tbl_majorminorpersistence %>%
   select(-region) %>%
-  bind_rows(tbl_dominant_persistence %>% select(-reassortant))
+  bind_rows(tbl_dominant_persistence %>% select(-reassortant)) %>%
+  mutate(cluster_profile = coalesce(cluster_profile, cluster_number)) %>%
+  dplyr::select(-cluster_number) %>%
+  mutate(across(starts_with('persistence'), .fns = ~ ifelse(.x < 0, 0, .x)))
 
 write_csv(tbl_combined, './2024Aug18/treedata_extractions/reassortant_stratifiedpersistence.csv')
 

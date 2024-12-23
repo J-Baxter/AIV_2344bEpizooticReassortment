@@ -1,0 +1,33 @@
+tipnames	virus_subtype	collection_regionname	cluster_profile	host_simplifiedhost	lat	long
+H5N8|2344b|EPI_ISL_402134|galliformes|poland|7_1_5_2_1_3_1_2|2019-12-30	H5N8	eastern europe	7_1_5_2_1_3_1_2	galliformes-domestic	51.2170859712694	22.9017240742201
+H5N8|2344b|EPI_ISL_16405677|environment|japan|7_1_5_2_1_3_1_2|2020-12-21	H5N8	eastern asia	7_1_5_2_1_3_1_2	environment	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_17805873|environment|japan|7_1_5_2_1_3_1_2|2020-11-30	H5N8	eastern asia	7_1_5_2_1_3_1_2	environment	37.3996665395305	137.574137168765
+H5N8|2344b|EPI_ISL_666687|anseriformes|south_korea|7_1_5_2_1_3_1_2|2020-10-24	H5N8	eastern asia	7_1_5_2_1_3_1_2	anseriformes-wild	37.5315346337798	127.181023197189
+H5N8|2344b|EPI_ISL_1273422|galliformes|japan|7_1_5_2_1_3_1_2|2020-11-10	H5N8	eastern asia	7_1_5_2_1_3_1_2	galliformes-domestic	34.217379070784	133.968927545016
+H5N8|2344b|EPI_ISL_2820259|anseriformes|china|7_1_5_2_1_3_1_2|2020-10-15	H5N8	eastern asia	7_1_5_2_1_3_1_2	anseriformes-wild	37.2602231520297	106.161545856493
+H5N8|2344b|EPI_ISL_985180|galliformes|south_korea|7_1_5_2_1_3_1_2|2020-12-01	H5N8	eastern asia	7_1_5_2_1_3_1_2	galliformes-domestic	36.3474789243827	128.748576389097
+H5N8|2344b|EPI_ISL_17805826|environment|japan|7_1_5_2_1_3_1_2|2020-11-30	H5N8	eastern asia	7_1_5_2_1_3_1_2	environment	37.3996665395305	137.574137168765
+H5N8|2344b|EPI_ISL_17805870|environment|japan|7_1_5_2_1_3_1_2|2020-11-30	H5N8	eastern asia	7_1_5_2_1_3_1_2	environment	37.3996665395305	137.574137168765
+H5N8|2344b|EPI_ISL_17805849|environment|japan|7_1_5_2_1_3_1_2|2020-11-30	H5N8	eastern asia	7_1_5_2_1_3_1_2	environment	37.3996665395305	137.574137168765
+H5N8|2344b|EPI_ISL_16405670|environment|japan|7_1_5_2_1_3_1_2|2020-12-07	H5N8	eastern asia	7_1_5_2_1_3_1_2	environment	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_410291|galliformes|germany|7_1_5_2_1_3_1_2|2020-02-06	H5N8	western europe	7_1_5_2_1_3_1_2	galliformes-domestic	48.5335196122676	9.04442576424602
+H5N8|2344b|EPI_ISL_804043|anseriformes|hungary|7_1_5_2_1_3_1_2|2020-04-07	H5N8	eastern europe	7_1_5_2_1_3_1_2	anseriformes-wild	46.5624446150372	19.3734257652929
+H5N8|2344b|EPI_ISL_525442|galliformes|poland|7_1_5_2_1_3_1_2|2020-01-09	H5N8	eastern europe	7_1_5_2_1_3_1_2	galliformes-domestic	52.1141994014432	19.4236724631525
+H5N8|2344b|EPI_ISL_525464|anseriformes|poland|7_1_5_2_1_3_1_2|2020-02-26	H5N8	eastern europe	7_1_5_2_1_3_1_2	anseriformes-domestic	52.1141994014432	19.4236724631525
+H5N8|2344b|EPI_ISL_985179|anseriformes|south_korea|7_1_5_2_1_3_1_2|2020-11-26	H5N8	eastern asia	7_1_5_2_1_3_1_2	anseriformes-wild	35.7159281817874	127.140659781938
+H5N8|2344b|EPI_ISL_985186|anseriformes|south_korea|7_1_5_2_1_3_1_2|2020-12-09	H5N8	eastern asia	7_1_5_2_1_3_1_2	anseriformes-wild	34.8733358026855	126.897223705092
+H5N8|2344b|EPI_ISL_1009705|anseriformes|south_korea|7_1_5_2_1_3_1_2|2020-12-01	H5N8	eastern asia	7_1_5_2_1_3_1_2	anseriformes-wild	36.5298116066164	126.847825775926
+H5N8|2344b|EPI_ISL_2820262|anseriformes|china|7_1_5_2_1_3_1_2|2020-10-16	H5N8	eastern asia	7_1_5_2_1_3_1_2	anseriformes-wild	37.2602231520297	106.161545856493
+H5N8|2344b|EPI_ISL_418266|galliformes|czechia|7_1_5_2_1_3_1_2|2020-02-17	H5N8	eastern europe	7_1_5_2_1_3_1_2	galliformes-domestic	49.9006406346158	16.1892997029385
+H5N8|2344b|EPI_ISL_525441|galliformes|poland|7_1_5_2_1_3_1_2|2020-01-02	H5N8	eastern europe	7_1_5_2_1_3_1_2	galliformes-domestic	51.2170859712694	22.9017240742201
+H5N8|2344b|EPI_ISL_525447|galliformes|poland|7_1_5_2_1_3_1_2|2020-01-28	H5N8	eastern europe	7_1_5_2_1_3_1_2	galliformes-domestic	52.1141994014432	19.4236724631525
+H5N8|2344b|EPI_ISL_525450|anseriformes|poland|7_1_5_2_1_3_1_2|2020-02-20	H5N8	eastern europe	7_1_5_2_1_3_1_2	anseriformes-domestic	52.1141994014432	19.4236724631525
+H5N8|2344b|EPI_ISL_405391|galliformes|czechia|7_1_5_2_1_3_1_2|2020-01-17	H5N8	eastern europe	7_1_5_2_1_3_1_2	galliformes-domestic	49.4071187835784	15.6903483593844
+H5N8|2344b|EPI_ISL_417415|galliformes|germany|7_1_5_2_1_3_1_2|2020-03-20	H5N8	western europe	7_1_5_2_1_3_1_2	galliformes-domestic	52.7642105761026	9.16783937293005
+H5N8|2344b|EPI_ISL_419239|anseriformes|hungary|7_1_5_2_1_3_1_2|2020-01-10	H5N8	eastern europe	7_1_5_2_1_3_1_2	anseriformes-wild	47.1703761996839	19.3977670199114
+H5N8|2344b|EPI_ISL_419312|anseriformes|germany|7_1_5_2_1_3_1_2|2020-03-26	H5N8	western europe	7_1_5_2_1_3_1_2	anseriformes-wild	51.0528694457593	13.3447264729352
+H5N8|2344b|EPI_ISL_419314|galliformes|germany|7_1_5_2_1_3_1_2|2020-03-27	H5N8	western europe	7_1_5_2_1_3_1_2	galliformes-domestic	52.0090264158216	11.7027467770331
+H5N8|2344b|EPI_ISL_833485|anseriformes|hungary|7_1_5_2_1_3_1_2|2020-04-14	H5N8	eastern europe	7_1_5_2_1_3_1_2	anseriformes-wild	46.4291346697431	20.2330085562192
+H5N8|2344b|EPI_ISL_846584|anseriformes|hungary|7_1_5_2_1_3_1_2|2020-04-17	H5N8	eastern europe	7_1_5_2_1_3_1_2	anseriformes-wild	46.5624446150372	19.3734257652929
+H5N8|2344b|EPI_ISL_846585|galliformes|hungary|7_1_5_2_1_3_1_2|2020-05-13	H5N8	eastern europe	7_1_5_2_1_3_1_2	galliformes-domestic	46.5624446150372	19.3734257652929
+NA	NA	NA	NA	NA	NA	NA

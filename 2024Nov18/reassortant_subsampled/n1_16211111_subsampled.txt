@@ -1,0 +1,12 @@
+tipnames	virus_subtype	collection_regionname	cluster_profile	host_simplifiedhost	lat	long
+H5N1|2344b|EPI_ISL_18729430|accipitriformes|netherlands|1_6_2_1_1_1_1_1|2023-03-14	H5N1	western europe	1_6_2_1_1_1_1_1	other-bird	51.9374604216783	4.46477045234472
+H5N1|2344b|EPI_ISL_19000790|accipitriformes|sweden|1_6_2_1_1_1_1_1|2024-02-09	H5N1	northern europe	1_6_2_1_1_1_1_1	other-bird	56.2754954629495	15.2029498652564
+H5N1|2344b|EPI_ISL_18750748|falconiformes|belgium|1_6_2_1_1_1_1_1|2023-12-10	H5N1	western europe	1_6_2_1_1_1_1_1	other-bird	51.0391095671615	4.2420548599892
+H5N1|2344b|EPI_ISL_18526630|charadriiformes|germany|1_6_2_1_1_1_1_1|2023-11-03	H5N1	western europe	1_6_2_1_1_1_1_1	charadriiformes-wild	51.0533277435649	10.373650933319
+H5N1|2344b|EPI_ISL_18953067|galliformes|denmark|1_6_2_1_1_1_1_1|2024-02-04	H5N1	northern europe	1_6_2_1_1_1_1_1	galliformes-domestic	55.9512996898935	10.0707816763207
+H5N1|2344b|EPI_ISL_18592418|suliformes|united_kingdom|1_6_2_1_1_1_1_1|2023-11-01	H5N1	northern europe	1_6_2_1_1_1_1_1	other-bird	56.7931587491509	-4.20419908814114
+H5N1|2344b|EPI_ISL_18729429|anseriformes|netherlands|1_6_2_1_1_1_1_1|2023-11-27	H5N1	western europe	1_6_2_1_1_1_1_1	anseriformes-wild	51.9374604216783	4.46477045234472
+H5N1|2344b|EPI_ISL_18956171|anseriformes|romania|1_6_2_1_1_1_1_1|2023-12-15	H5N1	eastern europe	1_6_2_1_1_1_1_1	anseriformes-wild	45.8353861913577	24.9959408037042
+H5N1|2344b|EPI_ISL_18898050|anseriformes|kazakhstan|1_6_2_1_1_1_1_1|2024-01-05	H5N1	central asia	1_6_2_1_1_1_1_1	anseriformes-wild	48.3645677524915	67.2060737287064
+H5N1|2344b|EPI_ISL_18824185|galliformes|france|1_6_2_1_1_1_1_1|2024-01-10	H5N1	western europe	1_6_2_1_1_1_1_1	galliformes-domestic	46.5103009447381	2.5780749353201
+NA	NA	NA	NA	NA	NA	NA

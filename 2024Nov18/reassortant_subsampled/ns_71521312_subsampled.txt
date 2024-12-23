@@ -1,0 +1,15 @@
+tipnames	virus_subtype	collection_regionname	cluster_profile	host_simplifiedhost	lat	long
+H5N8|2344b|EPI_ISL_402134|galliformes|poland|7_1_5_2_1_3_1_2|2019-12-30	H5N8	eastern europe	7_1_5_2_1_3_1_2	galliformes-domestic	51.2170859712694	22.9017240742201
+H5N8|2344b|EPI_ISL_17805845|environment|japan|7_1_5_2_1_3_1_2|2020-12-21	H5N8	eastern asia	7_1_5_2_1_3_1_2	environment	37.3996665395305	137.574137168765
+H5N8|2344b|EPI_ISL_2815374|anseriformes|china|7_1_5_2_1_3_1_2|2020-10-15	H5N8	eastern asia	7_1_5_2_1_3_1_2	anseriformes-wild	37.2602231520297	106.161545856493
+H5N8|2344b|EPI_ISL_16405666|environment|japan|7_1_5_2_1_3_1_2|2020-11-30	H5N8	eastern asia	7_1_5_2_1_3_1_2	environment	30.9949222722596	130.419711465505
+H5N8|2344b|EPI_ISL_985180|galliformes|south_korea|7_1_5_2_1_3_1_2|2020-12-01	H5N8	eastern asia	7_1_5_2_1_3_1_2	galliformes-domestic	36.3474789243827	128.748576389097
+H5N8|2344b|EPI_ISL_681286|galliformes|japan|7_1_5_2_1_3_1_2|2020-11-04	H5N8	eastern asia	7_1_5_2_1_3_1_2	galliformes-domestic	34.217379070784	133.968927545016
+H5N8|2344b|EPI_ISL_17805826|environment|japan|7_1_5_2_1_3_1_2|2020-11-30	H5N8	eastern asia	7_1_5_2_1_3_1_2	environment	37.3996665395305	137.574137168765
+H5N8|2344b|EPI_ISL_405391|galliformes|czechia|7_1_5_2_1_3_1_2|2020-01-17	H5N8	eastern europe	7_1_5_2_1_3_1_2	galliformes-domestic	49.4071187835784	15.6903483593844
+H5N8|2344b|EPI_ISL_410291|galliformes|germany|7_1_5_2_1_3_1_2|2020-02-06	H5N8	western europe	7_1_5_2_1_3_1_2	galliformes-domestic	48.5335196122676	9.04442576424602
+H5N8|2344b|EPI_ISL_419220|galliformes|hungary|7_1_5_2_1_3_1_2|2020-01-09	H5N8	eastern europe	7_1_5_2_1_3_1_2	galliformes-domestic	47.1703761996839	19.3977670199114
+H5N8|2344b|EPI_ISL_525464|anseriformes|poland|7_1_5_2_1_3_1_2|2020-02-26	H5N8	eastern europe	7_1_5_2_1_3_1_2	anseriformes-domestic	52.1141994014432	19.4236724631525
+H5N8|2344b|EPI_ISL_833487|galliformes|hungary|7_1_5_2_1_3_1_2|2020-04-19	H5N8	eastern europe	7_1_5_2_1_3_1_2	galliformes-wild	46.5624446150372	19.3734257652929
+H5N8|2344b|EPI_ISL_985186|anseriformes|south_korea|7_1_5_2_1_3_1_2|2020-12-09	H5N8	eastern asia	7_1_5_2_1_3_1_2	anseriformes-wild	34.8733358026855	126.897223705092
+NA	NA	NA	NA	NA	NA	NA
