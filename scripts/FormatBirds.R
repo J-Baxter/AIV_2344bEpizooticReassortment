@@ -151,8 +151,8 @@ FormatCharadriiformes <- function(x){
     'scolopacidae sp.' = 'sandpiper',
     'shorebird sp.' = 	'^shorebird$|charadriiformes sp\\.|^seabird$',
     'royal tern' = 'royal tern|thalasseus maximus',
-    'black-legged kittiwake' = 'black[- ]legged kittiwake|rissa tridactyla' 
-    
+    'black-legged kittiwake' = 'black[- ]legged kittiwake|rissa tridactyla' ,
+    "pallas's gull" = "pallas['’]s gull|ichthyaetus ichthyaetus"
     
   )
   
@@ -368,7 +368,7 @@ FormatPodicipediformes <- function(x){
   podicipediformes <- c("grebe sp." = "podicipedidae sp\\.|grebe sp\\.|^grebe$",
                         "great crested grebe" = "podiceps cristatus|((great ){0,1}crested|(g c)) grebe",
                         "little grebe" = "tachybaptus ruficollis|little grebe",
-                        "eared grebe" = "podiceps nigricollis|eared grebe")
+                        "eared grebe" = "podiceps nigricollis|eared grebe|black[ -]necked grebe")
   
   for (i in 1:length(podicipediformes)){
     if(any(grepl(podicipediformes[[i]], x))){
