@@ -49,12 +49,15 @@ birds <- read_csv('bird_taxonomy.csv')
 
 # Format Metadata and Name sequences
 # Vars to include: date, lat-long + region, altitude (continuous + binned), host species
-sequence_name_data <- cag_alns %>%
+sequence_name_key <- cag_alns %>%
   lapply(., names) %>%
   unlist() %>%
-  str_replace_all(., '_$|\\)|_(?=Lake)', '') %>% # remove trailing _
-  str_replace_all(., '/|__| |\\(', '_') %>%
-  as_tibble_col(column_name = 'temp') %>%
+  as_tibble_col(column_name = 'original_name') %>%
+  mutate(temp =   str_replace_all(original_name, '_$|\\)|_(?=Lake)', '') %>% # remove trailing _
+           str_replace_all(., '/|__| |\\(', '_'))
+
+sequence_name_data <- sequence_name_key %>%
+  select(temp) %>%
   distinct() %>%
   separate_wider_delim(temp, delim = '_', too_few = 'align_end', names_sep = '_',cols_remove = F) %>%
   mutate(across(starts_with('temp'), .fn = ~ gsub('^A$', NA_character_, .x))) %>%
@@ -96,7 +99,8 @@ temp <- cag_data %>%
   
   mutate(location_query =   gsub('*[tT]umuji.*|*dongpaozi north.*', 'Tumuji Nature Reserve, China', location_query) %>% # Note this is inferred
            gsub('[bB]ird [iI]sland', 'Niaodao Scenic Spot',.)%>% # Note this is inferred
-           gsub('[Hh]ada [Bb]each', 'Shadao',.)) %>%
+           gsub('Sanshui Factory', '',.)%>% # Note this is an approximation. I (JB) cannot find the exact location
+           gsub('[Hh]ada [Bb]each', 'Shadao',.)) %>%  # Note this is inferred
   as_tibble() %>%
 
     # geocode to obtain lat-lon coordinates
@@ -173,11 +177,46 @@ out <- temp_3 %>%
          collection_subdiv2 = NAME_2,
          collection_subdiv2_hanzi = NL_NAME_2) %>%
   
+  mutate(unique_id = coalesce(sequence_isolate, sequence_id),
+         tipdate = coalesce(as.character(collection_date), collection_year)) %>%
+  
+  mutate(tipnames = paste(virus_subtype, 
+                           '2344b',
+                          unique_id,
+                           host_order,
+                           tolower(collection_country),
+                           NA,
+                          tipdate,
+                           sep = '|')) %>%
+  select(-c(unique_id, tipdate)) %>%
+  rename(old_tipnames = sequence_name) %>%
+  relocate(tipnames)
+  
 # make new tipnames
 
+data_with_old_names <- sequence_name_key %>%
+  left_join(out, by = join_by(temp == old_tipnames)) %>%
+  distinct()
+
+named_alignments <- lapply(cag_alns,  function(x) setNames(x, data_with_old_names %>% 
+                                                             filter(original_name %in% names(x)) %>%
+                                                             pull(tipnames)))
+
+
 ############################################## WRITE ################################################
+cag_data <- read_csv('./new_data/cag_data_2023Dec23.csv')%>%
+  mutate(collection_year= year(collection_date) %>% as.character())
 
+out_filenames <- list.files('./new_data',
+                       pattern = '.fas',
+                       full.names = T) %>%
+  gsub('\\.fas$', '_formatted.fasta',.)
 
+mapply(write.FASTA,
+       named_alignments,
+       out_filenames )
+
+write_csv(out, './new_data/cag_data_2025Jan06.csv')
 ############################################## END ################################################
 ####################################################################################################
 ####################################################################################################
