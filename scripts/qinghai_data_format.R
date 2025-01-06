@@ -24,8 +24,10 @@ library(elevatr)
 library(ape)
 library(lubridate)
 library(auk)
+library(sf)
 
 # User functions
+source('./scripts/FormatBirds.R')
 
 ############################################## DATA ################################################
 
@@ -36,7 +38,13 @@ cag_alns <- list.files('./new_data/',
                        pattern = '.fas',
                        full.names = T) %>%
   lapply(., read.FASTA)
-  
+
+
+# external data (shapefile and bird taxonomy)
+china_level2 <- read_sf('./new_data/gadm41_CHN_shp/gadm41_CHN_2.shp')
+birds <- read_csv('bird_taxonomy.csv')
+
+
 ############################################## MAIN ################################################
 
 # Format Metadata and Name sequences
@@ -52,7 +60,10 @@ sequence_name_data <- cag_alns %>%
   mutate(across(starts_with('temp'), .fn = ~ gsub('^A$', NA_character_, .x))) %>%
   unite(host, temp_1, temp_2, temp_3, temp_4, na.rm = T, sep = ' ') %>%
   mutate(temp_7 = gsub('-.*', '', temp_7),
-         temp_5 = gsub('QinghaiLake', 'Qinghai Lake', temp_5)) %>%
+         temp_5 = gsub('QinghaiLake', 'Qinghai Lake', temp_5) %>%
+           gsub('[tT]umuji|dongpaozi north', 'Tumuji Nature Reserve', .) %>% # Note this is inferred
+           gsub('[bB]ird [iI]sland', 'Niaodao Scenic Spot',.)%>% # Note this is inferred
+           gsub('[Hh]ada [Bb]each', 'Shadao',.)) %>% # Note this is inferred
   rename(sequence_name = temp_temp,
          collection_region =temp_5,
          sequence_id = temp_6,
@@ -82,6 +93,10 @@ temp <- cag_data %>%
            str_to_lower() %>%
            str_replace_all('  ', ' ') %>%
            str_c(' china')) %>%
+  
+  mutate(location_query =   gsub('*[tT]umuji.*|*dongpaozi north.*', 'Tumuji Nature Reserve, China', location_query) %>% # Note this is inferred
+           gsub('[bB]ird [iI]sland', 'Niaodao Scenic Spot',.)%>% # Note this is inferred
+           gsub('[Hh]ada [Bb]each', 'Shadao',.)) %>%
   as_tibble() %>%
 
     # geocode to obtain lat-lon coordinates
@@ -94,23 +109,71 @@ temp <- cag_data %>%
   # obtain elevations for inferred coordinates
   rowwise() %>%
   get_elev_point(prj = 4326, src = "aws") %>%
-  select(-elev_units) %>%
+  #select(-elev_units) %>%
+  #as_tibble()
+  #st_as_sf(coords = c('lon', 'lat'), crs = 4326) %>% 
+  st_join(.,
+        china_level2 , 
+        join = st_within, 
+        # left = FALSE,
+        largest = TRUE) %>%
+  
+  # Set deprecated levels as NA (ie where we only have the province level location to start)
+  mutate(across(ends_with('_2'), .fns = ~ case_when(collection_region == NAME_1 & is.na(collection_location) ~ NA_character_, 
+                                                    .default = .x))) %>% 
   as_tibble()
+  
+  
+
+
 
   # group bird species into orders
-temp_3 <- temp_2 %>%
+temp_3 <- temp %>%
+  rowwise() %>%
+  mutate(primary_com_name = FormatBirds(tolower(host))) %>%
+  left_join(birds) %>%
+  
+  # cut elevation into classes
+  mutate(elevation_class = cut(elevation,
+                             breaks = c(0, 500, 2000, 3000, 5500, Inf),
+                             labels = c('sea-level', 'low', 'medium', 'high', 'extreme')))
   
   
-  # format dates 
   
-
-
-
-
-# Filter those for which we have all segments available (ie full genomes)
-
-
-# 
+# drop deprecated columns and tidy
+out <- temp_3 %>%
+  dplyr::select(sequence_isolate,
+                sequence_id,
+                virus_subtype,
+                collection_date,
+                collection_year,
+                primary_com_name,
+                sci_name,
+                order,
+                family,
+                class,
+                COUNTRY,
+                NAME_1,
+                NL_NAME_1,
+                NAME_2,
+                NL_NAME_2,
+                geometry,
+                elevation,
+                elevation_class,
+                sequence_name) %>%
+  rename(
+         host_commonname = primary_com_name,
+         host_sciname = sci_name,
+         host_order = order,
+         host_family = family,
+         host_class =  class,
+         collection_country = COUNTRY,
+         collection_subdiv1 = NAME_1,
+         collection_subdiv1_hanzi = NL_NAME_1,
+         collection_subdiv2 = NAME_2,
+         collection_subdiv2_hanzi = NL_NAME_2) %>%
+  
+# make new tipnames
 
 ############################################## WRITE ################################################
 
