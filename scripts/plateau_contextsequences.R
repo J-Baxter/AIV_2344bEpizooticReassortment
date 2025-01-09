@@ -94,7 +94,7 @@ ReNameAlignment2 <- function(alignment, data){
   return(alignment)
 }
 
-data$new_tipnames[data$isolate_id %in% x]
+#data$new_tipnames[data$isolate_id %in% x]
 
 
 ############################################## DATA ################################################
@@ -179,16 +179,38 @@ pb2_alignment <- ReNameAlignment2(pb2_alignment, all_meta) %>% as.matrix()
 
 
 ############################################## MAIN ################################################
-ha_groups <-GroupSequences(ha_alignment, snp_threshold = 5) %>%
+ha_groups <-GroupSequences(ha_alignment, snp_threshold = 3) %>%
   mutate(isolate_id = str_extract(tipnames, "EPI_ISL_(china_){0,1}\\d+[^.|]*"))
 
-pb2_groups <-  GroupSequences(pb2_alignment, snp_threshold = 5) %>%
+pb2_groups <-  GroupSequences(pb2_alignment, snp_threshold = 8) %>%
   mutate(isolate_id = str_extract(tipnames, "EPI_ISL_(china_){0,1}\\d+[^.|]*"))
 
+
+pb2_generalcontext <- pb2_groups %>% 
+  mutate(sequence_group = as.factor(sequence_group)) %>%
+  group_by(sequence_group) %>%
+  slice_sample(n = 1) %>%
+  ungroup()
+
+ha_generalcontext <-ha_groups %>% 
+  mutate(sequence_group = as.factor(sequence_group)) %>%
+  group_by(sequence_group) %>%
+  slice_sample(n = 1) %>%
+  ungroup()
+
+pb2_generalcontext_aln <- pb2_alignment[rownames(pb2_alignment) %in% pb2_generalcontext$tipnames,]
+ha_generalcontext_aln <- ha_alignment[rownames(ha_alignment) %in% ha_generalcontext$tipnames,]
+
+
+pb2_generalcontextwithqinghai_aln <- rbind(pb2_generalcontext_aln, qinghai_pb2) 
+ha_generalcontextwithqinghai_aln <- rbind(ha_generalcontext_aln, qinghai_ha)
 ############################################## WRITE ###############################################
 
+write.FASTA(pb2_generalcontextwithqinghai_aln, 
+            './new_data/2025Jan09_qinghaigeneral_pb2.fasta')
 
-
+write.FASTA(ha_generalcontextwithqinghai_aln, 
+            './new_data/2025Jan09_qinghaigeneral_ha.fasta')
 
 ############################################## END #################################################
 ####################################################################################################
