@@ -32,7 +32,7 @@ library(magrittr)
 library(ggmcmc)
 
 # User functions
-
+source('./scripts/figure_scripts/plot_settings.R')
 
 ############################################## DATA ################################################
 combined_data <- read_csv('./2024Aug18/treedata_extractions/2024-09-20_combined_data.csv')
@@ -85,7 +85,14 @@ diffusion_data <- combined_data %>%
                             collection_month %in% c(3,4,5)  ~ 'migrating_spring', # Rename to spring migration
                             collection_month %in% c(6,7,8)  ~ 'breeding', 
                             collection_month %in% c(9,10,11)  ~ 'migrating_autumn' # Rename to autumn migration
-         ))
+         )) %>%
+  
+  select(weighted_diff_coeff, 
+         median_anseriformes_wild,
+         median_charadriiformes_wild,
+         segment, 
+         collection_regionname, 
+         season)
 
 
 
@@ -95,9 +102,9 @@ diffusion_data <- combined_data %>%
 # in anseriformes and charadriiformes. Both model components are conditional on segment from which 
 # the measurement is taken and region of origin
 
-diffusion_formula <- bf(weighted_diff_coeff ~ 1 + median_anseriformes_wild +  median_charadriiformes_wild + 
-                          (1|segment+ collection_regionname),
-                        hu ~ 1 +  season +(1|segment + collection_regionname))
+diffusion_formula <- bf(weighted_diff_coeff ~ 1 + median_anseriformes_wild +  median_charadriiformes_wild + collection_regionname + 
+                          (1|segment),
+                        hu ~ 1 + collection_regionname +  season +(1|segment ))
 
 
 # Define Priors
@@ -105,9 +112,9 @@ diffusionmodel1_priors <- get_prior(diffusion_formula,
                                     data = diffusion_data,
                                     family = hurdle_lognormal()) 
 
-diffusionmodel1_priors$prior[c(1,11)] <- "normal(0,5)"
+diffusionmodel1_priors$prior[c(1,12)] <- "normal(0,5)"
 
-diffusionmodel1_priors$prior[9] <- "student_t(3, 0, 3)"
+#diffusionmodel1_priors$prior[9] <- "student_t(3, 0, 3)"
 #diffusionmodel1_priors
 
 
@@ -185,7 +192,8 @@ predict_hu_season <- diffusionmodel1_fit %>%
           at = list(continent = unique(diffusion_data$season)),
           #epred = TRUE, 
           dpar = "hu",
-          re_formula = NA, regrid = "response",
+          re_formula = NA, 
+          regrid = "response",
           allow_new_levels = TRUE)
 
 # Print estimates as 1-x, to infer P(X>=1)
@@ -207,17 +215,20 @@ diffusionmodel1_fit %>%
 
 
 ## 3. Prediction for region groups 
-regional_average <- diffusionmodel1_fit %>%
-  emmeans(~ 1 + collection_regionname,
+predict_hu_continent <- diffusionmodel1_fit %>%
+  emmeans(~ collection_regionname,
           var = "weighted_diff_coeff",
           at = list(continent = unique(diffusion_data$collection_regionname)),
           # epred = TRUE, 
           dpar = "hu",
-          re_formula = ~ 1|collection_regionname , regrid = "response",
+          re_formula = NA , 
+          regrid = "response",
           allow_new_levels = TRUE)
 
 # Print estimates as 1-x, to infer P(X>=1)
-regional_average %>% as_tibble() %>% mutate(across(where(is.numeric), .fns = ~ 1 -.x))
+predict_hu_continent %>% 
+  as_tibble() %>%
+  mutate(across(where(is.numeric), .fns = ~ 1 -.x))
 
 # Pairwise Contrast
 diffusionmodel1_fit %>%
@@ -285,6 +296,12 @@ diffusionmodel1_fit %>%
            # epred = TRUE, 
            dpar = "mu", regrid= "response") 
 
+diffusionmodel1_fit %>%
+  emtrends(~ median_anseriformes_wild,
+           var = "median_anseriformes_wild",
+           at = list(median_anseriformes_wild = seq(0, 6, by = 0.5)),
+           # epred = TRUE, 
+           dpar = "mu", regrid= "response") 
 
 # Combined mixture model (ie HU + MU)
 
@@ -297,13 +314,50 @@ diffusionmodel1_fit %>%
 plt_diffusiondata <- diffusion_data %>%
   ggplot() +
   geom_histogram(aes(x = log1p(weighted_diff_coeff), 
-                     fill = weighted_diff_coeff>0)) +
-  scale_fill_brewer(palette = 'Dark2', 'Is Zero') +
-  scale_x_continuous('Log Weighted Diffusion Coefficient') +
-  scale_y_continuous('Count') + 
-  theme_minimal(base_size = 8) + 
-  theme(legend.position = 'inside',
-        legend.position.inside = c(0.8,0.8))
+                     fill = weighted_diff_coeff>0,
+                     colour = weighted_diff_coeff>0,
+                     y = after_stat(density)), 
+                   binwidth = 0.5,
+                 alpha = 0.7) +
+  scale_fill_brewer(palette = 'Set1', 'Is Zero') +
+  scale_colour_brewer(palette = 'Set1', 'Is Zero') +
+  scale_x_continuous('Log1p Weighted Diffusion Coefficient' , expand = c(0.01,0.01)) +
+  scale_y_continuous('Probability Density',expand = c(0,0)) + 
+  global_theme + 
+  theme(legend.position = 'none')
+
+# Plot Persistence distribuions
+plt_anseriformespersistence <- diffusion_data %>%
+  ggplot() +
+  geom_histogram(aes(x = median_anseriformes_wild,
+                     y = after_stat(density)), 
+                 binwidth = 0.2,
+               fill = host_colours['anseriformes-wild'],
+               colour = host_colours['anseriformes-wild'],
+               alpha = 0.7) +
+  scale_x_continuous('Persistence in wild Anseriformes', 
+                     expand = c(0.05,0.05), 
+                     breaks = seq(from = 0, to = 10, by = 2)) +
+  scale_y_continuous('Probability Density',expand = c(0,0)) + 
+  coord_cartesian(xlim = c(0, 10))  +
+  global_theme + 
+  theme(legend.position = 'none')
+
+plt_charadriiformespersistence <- diffusion_data %>%
+  ggplot() +
+  geom_histogram(aes(x = median_charadriiformes_wild,
+                     y = after_stat(density)),
+                 binwidth = 0.2,
+               fill = host_colours['charadriiformes-wild'],
+               colour = host_colours['charadriiformes-wild'],
+               alpha = 0.7) +
+  scale_x_continuous('Persistence in wild Charadriiformes', 
+                     expand = c(0.05,0.05), 
+                     breaks = seq(from = 0, to = 6, by = 2)) +
+  scale_y_continuous('Probability Density',expand = c(0,0)) + 
+  coord_cartesian(xlim = c(0, 6))  +
+  global_theme + 
+  theme(legend.position = 'none')
 
 
 # Plot Posterior Predictive Check
@@ -327,7 +381,6 @@ plt_posteriorpredictive <- plot_posteriorpredictive$data  %>%
                       labels  = c(expression(italic('y')['rep']),
                                   expression(italic('y')))) + 
   
-  l
 guides(alpha= 'none', 
        colour=guide_legend()) + 
   scale_x_continuous('Weighted Diffusion Coefficient') + 
@@ -534,14 +587,17 @@ plt_params <- ggplot() +
 plt_hu_season <- predict_hu_season %>%
   gather_emmeans_draws() %>%
   ggplot(aes(x  = 1-.value,
+             y = season,
              fill = season)) +
-  stat_halfeye(alpha = 0.5) +
-  scale_fill_brewer(palette = 'Set1') +
-  scale_x_continuous('p(Weighted Diffusion Coefficient > 0)') + 
-  scale_y_continuous('Probability Density') + 
-  theme_minimal(base_size = 8) + 
-  theme(legend.position = 'inside',
-        legend.position.inside = c(0.8,0.8))
+  stat_halfeye(slab_alpha = 0.7) +
+  scale_fill_brewer(palette = 'GnBu') +
+  scale_x_continuous('P(Weighted Diffusion Coefficient > 0)') + 
+  scale_y_discrete('Season',
+                   labels = c('overwintering' = 'Overwintering',
+                              'migrating_spring' = 'Spring Migration',
+                              'migrating_autumn' = 'Autumn Migration',
+                              'breeding' = 'Breeding')) + 
+  global_theme 
 
 
 # Posterior Prediction HU ~ 1|Region
@@ -550,12 +606,13 @@ plt_hu_region <- regional_average %>%
   ggplot(aes(x  = 1-.value,
              y = collection_regionname, 
              fill = collection_regionname)) +
-  stat_halfeye() +
-  scale_fill_brewer(palette = 'Dark2') +
-  scale_x_continuous('p(Weighted Diffusion Coefficient > 0)') + 
-  scale_y_discrete('Region', 
-                   labels = function(x) str_wrap(x, width = 10)) + 
-  theme_minimal(base_size = 8) + 
+  stat_halfeye(slab_alpha = 0.7) +
+  #scale_fill_brewer(palette = 'Dark2') +
+  scale_fill_manual(values = region_colours) + 
+  scale_x_continuous('P(Weighted Diffusion Coefficient > 0)') + 
+  scale_y_discrete('Continent', 
+                   labels = function(x) str_to_title(x) %>% str_wrap(., width = 10)) + 
+  global_theme + 
   theme(legend.position = 'none')
 
 
