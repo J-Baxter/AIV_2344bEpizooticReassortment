@@ -96,6 +96,7 @@ ggsave('~/Downloads/supfig_originbyregion.jpeg',
 
 
 plt_s2a <- combined_data %>% 
+  mutate(host_simplifiedhost = gsub('\\+.*', '', host_simplifiedhost)) %>%
   select(host_simplifiedhost, segment) %>%
   mutate(segment = factor(segment, levels = c('pb2', 'pb1', 'pa', 'ha', 'np', 'nx', 'mp', 'ns'))) %>%
  
@@ -117,7 +118,8 @@ plt_s2a <- combined_data %>%
              labeller = labeller(segment = toupper),
              nrow = 2) +
   global_theme+ 
-  theme(legend.position = 'none')
+  theme(legend.position = 'none',
+        axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 
 temp <- combined_data %>% 
   select(host_simplifiedhost, segment, cluster_profile) %>%
