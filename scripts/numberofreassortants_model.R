@@ -40,12 +40,34 @@ combined_data <- read_csv('./2024Aug18/treedata_extractions/2024-09-20_combined_
 
 ############################################## MAIN ################################################
 # Data pre-processing
+h5_hpai_counts <- read_csv('./2025Jan17_faoHPAI.csv') %>%
+  filter(grepl('Avian', Disease) & grepl('H5N', Serotype)) %>%
+  mutate(Region = case_when(grepl('Europe', 
+                                  Region ) ~ 'europe',
+                            grepl('Africa',
+                                  Region ) ~ 'africa',
+                            grepl('Asia', 
+                                  Region ) ~ 'asia',
+                            grepl('America', 
+                                  Region ) ~ 'central & northern america',
+                            .default = Region )) %>%
+  mutate(Observation.date = dmy(Observation.date) %>% format.Date('%Y-%m')) %>%
+  filter(Observation.date > '2016-12-31') %>%
+  drop_na(Observation.date) %>%
+  summarise(n_cases = n(), .by = c(Region, Observation.date)) %>%
+  arrange(Observation.date) %>%
+  rename(collection_monthyear = Observation.date,
+         collection_regionname = Region)
+  
+
 
 numberofsequence_data <- read_csv('./2024-09-09_meta.csv') %>%
-  select(c(collection_datemonth,
+  filter(grepl('[hH]5', virus_subtype)) %>%
+  rename(collection_monthyear = collection_datemonth) %>%
+  select(c(collection_monthyear,
            collection_regionname,
            cluster_profile)) %>%
-  drop_na(collection_datemonth) %>%
+  drop_na(collection_monthyear) %>%
   mutate(collection_regionname = case_when(grepl('europe', 
                                                  collection_regionname) ~ 'europe',
                                            grepl('africa',
@@ -55,12 +77,47 @@ numberofsequence_data <- read_csv('./2024-09-09_meta.csv') %>%
                                            grepl('(central|northern) america', 
                                                  collection_regionname) ~ 'central & northern america',
                                            .default = collection_regionname)) %>%
-  mutate(collection_year = 
-           paste0(collection_datemonth, '-01') %>%
-           ymd() %>%
-           decimal_date() %>%
-           round(digits = 1)) %>%
-  summarise(n = n(), .by = c(collection_year, collection_regionname))
+  #mutate(collection_year = 
+           #paste0(collection_datemonth, '-01') %>%
+          # ymd() %>%
+           #decimal_date() %>%
+           #round(digits = 1)) %>%
+  summarise(n_sequences = n(), .by = c(collection_monthyear, collection_regionname))
+
+
+counts <- h5_hpai_counts %>%
+  full_join(numberofsequence_data) %>%
+  replace_na(list(n_case = 0, n_sequences = 0))
+
+# Stratified by region (for supplementary)
+counts %>%
+  filter(collection_regionname %in% c('europe', 'asia','central & northern america','africa')) %>%
+  pivot_longer(starts_with('n_'), names_to = 'var', values_to = 'value') %>%
+  mutate(collection_monthyear = ym(collection_monthyear)) %>%
+  filter(collection_monthyear > '2017-01-01') %>%
+  ggplot(aes(x=collection_monthyear, y= value, colour = var)) + 
+  geom_bar(aes(x = ym(collection_monthyear), y = n_reassortants*30), stat = 'identity', data = count_data %>% filter(collection_monthyear > '2017-01-01'), inherit.aes = FALSE) + 
+  geom_point(size =1) +
+  geom_line(aes(group = var)) +
+  facet_grid(rows = vars(collection_regionname)) + 
+  scale_x_date()  +
+  scale_y_continuous(sec.axis = sec_axis( trans=~./30, name="Reassortment")) +
+  global_theme
+
+# Global (for supplementary)
+counts %>%
+  filter(collection_regionname %in% c('europe', 'asia','central & northern america','africa')) %>%
+  pivot_longer(starts_with('n_'), names_to = 'var', values_to = 'value') %>%
+  summarise(value = sum(value), .by =  c(collection_monthyear, var)) %>%
+  mutate(collection_monthyear = ym(collection_monthyear)) %>%
+  filter(collection_monthyear > '2017-01-01') %>%
+  ggplot(aes(x=collection_monthyear, y= value, colour = var)) + 
+  geom_bar(aes(x = ym(collection_monthyear), y = n_reassortants*30), stat = 'identity', data = count_data %>% filter(collection_monthyear > '2017-01-01'), inherit.aes = FALSE) + 
+  geom_point(size =1) +
+  geom_line(aes(group = var)) +
+  scale_x_date()  +
+  scale_y_continuous(sec.axis = sec_axis( trans=~./30, name="Reassortment"))+
+  global_theme
 
 
 count_data <- combined_data %>%
@@ -85,16 +142,16 @@ count_data <- combined_data %>%
             .by = c(collection_monthyear,
                     collection_regionname,
                     group2))  %>%
-  mutate(collection_year = collection_monthyear %>%
-           paste0('-01') %>%
-           ymd() %>%
-           decimal_date() %>%
-           round(., digits = 1))  %>%
+  #mutate(collection_year = collection_monthyear %>%
+         #  paste0('-01') %>%
+          # ymd() %>%
+           #decimal_date() %>%
+           #round(., digits = 1))  %>%
   summarise(n_reassortants = sum(n_reassortants), 
-            .by = c(collection_year,collection_regionname, group2)) %>%
+            .by = c(collection_monthyear,collection_regionname, group2)) %>%
   
-  arrange(collection_year) %>%
-  left_join(numberofsequence_data)
+  #arrange(collection_year) %>%
+  left_join(counts)
 
 
 # Model Formula
