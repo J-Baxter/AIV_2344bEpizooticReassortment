@@ -64,6 +64,7 @@ diffusion_data <- combined_data %>%
   
   # Substitute NA values in diffusion coefficient with 0
   mutate(across(where(is.double), .fns = ~ replace_na(.x, 0))) %>%
+  drop_na(collection_regionname) %>%
   
   rename_with(~gsub('-', '_', .x)) %>%
   mutate(collection_regionname = case_when(grepl('europe', collection_regionname) ~ 'europe',
@@ -72,6 +73,8 @@ diffusion_data <- combined_data %>%
                                            grepl('(central|northern) america', collection_regionname) ~ 'central & northern america',
                                            .default = collection_regionname
   )) %>%
+  
+  mutate(collection_regionname = factor(collection_regionname, levels = c('asia', 'africa', 'europe', 'central & northern america'))) %>%
   filter(!grepl('\\+', host_simplifiedhost)) %>%
   
   # join host richness
