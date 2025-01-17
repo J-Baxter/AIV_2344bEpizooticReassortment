@@ -53,7 +53,7 @@ host_colours <- c(
   'environment' = '#6a3d9a')
 
 
-#E8E1E9FF #C0A5AAFF #4D3944FF #7083A4FF #B3A2B4FF #C9CCEAFF #3B3960FF  
+'#E8E1E9FF' '#C0A5AAFF' '#4D3944FF' '#7083A4FF' '#B3A2B4FF' '#C9CCEAFF' '#3B3960FF'  
 
 #host_colours <- c(
 # 'anseriformes-domestic' = '#E8E1E9FF',
