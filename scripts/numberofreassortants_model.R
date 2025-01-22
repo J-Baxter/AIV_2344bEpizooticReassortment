@@ -279,136 +279,18 @@ performance(countmodel_mv_fit) # tibble output of model metrics including R2, EL
 plot(countmodel_mv_fit) # default output plot of brms showing posterior distributions of
 prior_summary(countmodel_mv_fit) #obtain dataframe of priors used in model.
 
-mcmc_countmodel_fit <- ggs(countmodel_fit) # Warning message In custom.sort(D$Parameter) : NAs introduced by coercion
+mcmc_countmodel_fit <- ggs(countmodel_mv_fit) # Warning message In custom.sort(D$Parameter) : NAs introduced by coercion
 
-posteriorpredictive_group <-pp_check(countmodel_fit, ndraws = 500, resp = 'reassortantclass')
-posteriorpredictive_nreassortants <-pp_check(countmodel_fit, ndraws = 500, resp = 'nreassortants')
+posteriorpredictive_group <-pp_check(countmodel_mv_fit, ndraws = 500, resp = 'reassortantclass')
+posteriorpredictive_nreassortants <-pp_check(countmodel_mv_fit, ndraws = 500, resp = 'nreassortants')
 
-
-# Posterior Predictions and Marginal Effects 
-# Marginal probability of N reassortants / region 
-
-
-# posterior probabilities of n reassortants stratified by country
-# while ignoring any  deviations of the intercept or slope
-n_reassortant_preds <- countmodel_fit %>% 
-  predicted_draws(newdata = no_zeros %>%
-                    select(collection_regionname) %>%
-                    distinct(),
-                  resp = "nreassortants",
-                  value = 'n',
-                  re_formula = NA) 
-
-test <- n_reassortant_preds %>%
-  mutate(n = as.character(n)) %>%
-  group_by( collection_regionname) %>%
-  count(n) %>%
-  reframe(freq = nn/sum(nn), n= n) %>%
-  ungroup() 
-
-ggplot(test) +
-  geom_bar(aes(x = n, y= freq), stat = 'identity') + 
-  facet_grid(cols = vars(collection_regionname)) +
-  theme_minimal()
-
-
-# posterior probability of class reassortants in an average year
-# while ignoring any  deviations of the intercept or slope
-
-countmodel_fit %>% 
-  predicted_draws(newdata = no_zeros %>%
-                    select(collection_regionname) %>%
-                    distinct(),
-                  resp = "group2",
-                  value = 'class',
-                  re_formula = NA) %>%
-  group_by(collection_regionname) %>%
-  count(class) %>%
-  reframe(freq = n/sum(n), class = class) %>%
-  ungroup() %>%
-  ggplot() +
-  geom_bar(aes(x = class, y= freq), stat = 'identity') + 
-  facet_grid(cols = vars(collection_regionname)) +
-  theme_minimal()
-
-countmodel_fit %>% 
-  epred_draws(newdata = no_zeros %>%
-                select(collection_regionname) %>%
-                distinct(),
-              resp = "nreassortants",
-              value = 'n',
-              re_formula = NA) %>%
-  ggplot( aes(x = n, y = collection_regionname, height = after_stat(density))) + 
-  geom_density_ridges(scale = 0.95, draw_baseline = FALSE)
-
-
-class_preds <- countmodel_fit %>% 
-  epred_draws(newdata = no_zeros %>%
-                select(collection_regionname) %>%
-                distinct(),
-              resp = "group2",
-              value = 'p',
-              re_formula = NA) 
-
-median_hdci(class_preds) 
-
-ggplot(class_preds) + 
-  geom_density_ridges(aes(x = p,
-                          y = collection_regionname, 
-                          fill = .category,
-                          colour = .category),
-                      alpha = 0.5, 
-                      rel_min_height = 0.01,
-                      scale=0.8)+
-  theme_minimal() + 
-  scale_x_continuous(limits = c(0,1))
-
-
-# Required outputs: Pre/post epizootic, marginal effect of region ,
-# 
-
-
-# Posterior prediction of the number and type of reassortant at 'average' parameters (global and stratified by region)
-
-
-# marginal effect of of continent on number and type of reassortant (ie how many more reassortants in a vs b)
-
-
-# reassortant 'transition' probabilities (ie based on lagged reassortant type), global and stratified by region
-
-
-# reassortant  probabilities according to time since last dominant (stratified by region)
-# Random Effects:
-
-# Year (does the probability of number and type change over each year per continent)
-
-
-
-
-# Marginal effect of region
-
-
-# Marginal class probability  
-
-
-# Marginal class probabilty ~ 1| Region
-
-
-# Joint Probability
-
-
-
-# Joint Probability ~ 1|Region
-
-
-# Marginal effect of region
 
 
 
 
 ############################################## WRITE ###############################################
-
-
+saveRDS(countmodel_mv_fit, file = './saved_models/count_model.rds')
+write_csv(count_data, './saved_models/count_data.csv')
 
 
 ############################################## END #################################################

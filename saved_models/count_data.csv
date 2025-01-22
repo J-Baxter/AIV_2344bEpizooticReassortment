@@ -1,0 +1,404 @@
+collection_regionname,collection_year,collection_month,collection_season,collection_monthyear,n_cases,n_sequences,n_reassortants,reassortant_class,joint_reassortant_class,previous_reassortant_class,time,time_since_last_dominant
+africa,1,6,breeding,2016-06,34,0,0,none,none,none,1.4153005464481794,0
+asia,1,6,breeding,2016-06,15,0,0,none,none,none,1.4153005464481794,0
+central & northern america,1,6,breeding,2016-06,0,0,0,none,none,none,1.4153005464481794,0
+europe,1,6,breeding,2016-06,6,0,0,none,none,none,1.4153005464481794,0
+africa,1,7,breeding,2016-07,23,0,0,none,none,none,1.4972677595628738,0
+asia,1,7,breeding,2016-07,115,0,0,none,none,none,1.4972677595628738,0
+central & northern america,1,7,breeding,2016-07,1,0,0,none,none,none,1.4972677595628738,0
+europe,1,7,breeding,2016-07,5,0,0,none,none,none,1.4972677595628738,0
+africa,1,8,breeding,2016-08,18,0,0,none,none,none,1.5819672131146945,0
+asia,1,8,breeding,2016-08,15,5,1,minor,minor,none,1.5819672131146945,0
+central & northern america,1,8,breeding,2016-08,1,1,0,none,none,none,1.5819672131146945,0
+europe,1,8,breeding,2016-08,3,0,0,none,none,none,1.5819672131146945,0
+africa,1,9,migrating_autumn,2016-09,11,0,0,none,none,none,1.6666666666667425,0
+asia,1,9,migrating_autumn,2016-09,11,1,0,none,none,none,1.6666666666667425,0
+central & northern america,1,9,migrating_autumn,2016-09,0,3,0,none,none,none,1.6666666666667425,0
+europe,1,9,migrating_autumn,2016-09,1,2,1,minor,minor,dominant,1.6666666666667425,0
+africa,1,10,migrating_autumn,2016-10,13,0,0,none,none,none,1.748633879781437,0
+asia,1,10,migrating_autumn,2016-10,50,5,0,none,none,none,1.748633879781437,0
+central & northern america,1,10,migrating_autumn,2016-10,0,2,0,none,none,none,1.748633879781437,0
+europe,1,10,migrating_autumn,2016-10,6,5,0,none,none,none,1.748633879781437,0
+africa,1,11,migrating_autumn,2016-11,16,0,0,none,none,none,1.8333333333332575,0
+asia,1,11,migrating_autumn,2016-11,132,15,0,none,none,none,1.8333333333332575,0
+central & northern america,1,11,migrating_autumn,2016-11,0,0,0,none,none,none,1.8333333333332575,0
+europe,1,11,migrating_autumn,2016-11,394,54,0,none,none,none,1.8333333333332575,0
+africa,1,12,overwintering,2016-12,22,3,0,none,none,none,1.9153005464481794,0
+asia,1,12,overwintering,2016-12,415,16,1,minor,minor,minor,1.9153005464481794,0
+central & northern america,1,12,overwintering,2016-12,1,2,0,none,none,none,1.9153005464481794,0
+europe,1,12,overwintering,2016-12,474,49,0,none,none,none,1.9153005464481794,0
+africa,2,1,overwintering,2017-01,61,1,0,none,none,none,2,0
+asia,2,1,overwintering,2017-01,152,25,0,none,none,none,2,0
+central & northern america,2,1,overwintering,2017-01,0,0,0,none,none,none,2,0
+europe,2,1,overwintering,2017-01,589,48,0,none,none,none,2,0
+africa,2,2,overwintering,2017-02,58,0,0,none,none,none,2.084931506849216,0
+asia,2,2,overwintering,2017-02,135,6,0,none,none,none,2.084931506849216,0
+central & northern america,2,2,overwintering,2017-02,0,0,0,none,none,none,2.084931506849216,0
+europe,2,2,overwintering,2017-02,627,15,0,none,none,none,2.084931506849216,0
+africa,2,3,migrating_spring,2017-03,77,2,0,none,none,none,2.16164383561636,0
+asia,2,3,migrating_spring,2017-03,195,7,0,none,none,none,2.16164383561636,0
+central & northern america,2,3,migrating_spring,2017-03,1,0,0,none,none,none,2.16164383561636,0
+europe,2,3,migrating_spring,2017-03,209,14,0,none,none,none,2.16164383561636,0
+africa,2,4,migrating_spring,2017-04,67,1,0,none,none,none,2.2465753424658033,0
+asia,2,4,migrating_spring,2017-04,96,2,0,none,none,none,2.2465753424658033,0
+central & northern america,2,4,migrating_spring,2017-04,0,0,0,none,none,none,2.2465753424658033,0
+europe,2,4,migrating_spring,2017-04,27,6,0,none,none,none,2.2465753424658033,0
+africa,2,5,migrating_spring,2017-05,36,2,0,none,none,none,2.328767123287662,0
+asia,2,5,migrating_spring,2017-05,16,9,0,none,none,none,2.328767123287662,0
+central & northern america,2,5,migrating_spring,2017-05,0,0,0,none,none,none,2.328767123287662,0
+europe,2,5,migrating_spring,2017-05,23,5,0,none,none,none,2.328767123287662,0
+africa,2,6,breeding,2017-06,36,1,0,none,none,none,2.413698630136878,0
+asia,2,6,breeding,2017-06,51,3,0,none,none,none,2.413698630136878,0
+central & northern america,2,6,breeding,2017-06,0,0,0,none,none,none,2.413698630136878,0
+europe,2,6,breeding,2017-06,15,1,0,none,none,none,2.413698630136878,0
+africa,2,7,breeding,2017-07,9,0,0,none,none,none,2.495890410958964,0
+asia,2,7,breeding,2017-07,26,5,0,none,none,none,2.495890410958964,0
+central & northern america,2,7,breeding,2017-07,0,0,0,none,none,none,2.495890410958964,0
+europe,2,7,breeding,2017-07,8,1,0,none,none,none,2.495890410958964,0
+africa,2,8,breeding,2017-08,44,0,0,none,none,none,2.58082191780818,0
+asia,2,8,breeding,2017-08,11,5,1,minor,minor,minor,2.58082191780818,0
+central & northern america,2,8,breeding,2017-08,0,0,0,none,none,none,2.58082191780818,0
+europe,2,8,breeding,2017-08,22,9,0,none,none,none,2.58082191780818,0
+africa,2,9,migrating_autumn,2017-09,53,0,0,none,none,none,2.6657534246576233,0
+asia,2,9,migrating_autumn,2017-09,21,0,0,none,none,none,2.6657534246576233,0
+central & northern america,2,9,migrating_autumn,2017-09,1,0,0,none,none,none,2.6657534246576233,0
+europe,2,9,migrating_autumn,2017-09,9,0,0,none,none,none,2.6657534246576233,0
+africa,2,10,migrating_autumn,2017-10,21,0,1,minor,minor,none,2.747945205479482,0
+asia,2,10,migrating_autumn,2017-10,11,10,0,none,none,none,2.747945205479482,0
+central & northern america,2,10,migrating_autumn,2017-10,3,0,0,none,none,none,2.747945205479482,0
+europe,2,10,migrating_autumn,2017-10,32,6,0,none,none,none,2.747945205479482,0
+africa,2,11,migrating_autumn,2017-11,10,0,0,none,none,none,2.832876712328698,0
+asia,2,11,migrating_autumn,2017-11,43,16,0,none,none,none,2.832876712328698,0
+central & northern america,2,11,migrating_autumn,2017-11,0,2,0,none,none,none,2.832876712328698,0
+europe,2,11,migrating_autumn,2017-11,22,4,1,major,major,minor,2.832876712328698,0
+africa,2,12,overwintering,2017-12,10,0,0,none,none,none,2.915068493150784,0
+asia,2,12,overwintering,2017-12,56,11,0,none,none,none,2.915068493150784,0
+central & northern america,2,12,overwintering,2017-12,1,0,0,none,none,none,2.915068493150784,0
+europe,2,12,overwintering,2017-12,18,13,0,none,none,none,2.915068493150784,0
+africa,3,1,overwintering,2018-01,37,3,0,none,none,none,3,0
+asia,3,1,overwintering,2018-01,73,12,0,none,none,none,3,0
+central & northern america,3,1,overwintering,2018-01,3,0,0,none,none,none,3,0
+europe,3,1,overwintering,2018-01,24,0,0,none,none,none,3,0
+africa,3,2,overwintering,2018-02,18,18,0,none,none,none,3.084931506849216,0
+asia,3,2,overwintering,2018-02,47,6,0,none,none,none,3.084931506849216,0
+central & northern america,3,2,overwintering,2018-02,0,0,0,none,none,none,3.084931506849216,0
+europe,3,2,overwintering,2018-02,37,1,0,none,none,none,3.084931506849216,0
+africa,3,3,migrating_spring,2018-03,15,0,0,none,none,none,3.16164383561636,0
+asia,3,3,migrating_spring,2018-03,45,6,0,none,none,none,3.16164383561636,0
+central & northern america,3,3,migrating_spring,2018-03,0,0,0,none,none,none,3.16164383561636,0
+europe,3,3,migrating_spring,2018-03,34,1,0,none,none,none,3.16164383561636,0
+africa,3,4,migrating_spring,2018-04,7,1,0,none,none,none,3.2465753424658033,0
+asia,3,4,migrating_spring,2018-04,18,4,0,none,none,none,3.2465753424658033,0
+central & northern america,3,4,migrating_spring,2018-04,0,0,0,none,none,none,3.2465753424658033,0
+europe,3,4,migrating_spring,2018-04,26,5,0,none,none,none,3.2465753424658033,0
+africa,3,5,migrating_spring,2018-05,4,2,1,dominant,dominant,minor,3.328767123287662,0
+asia,3,5,migrating_spring,2018-05,21,4,0,none,none,none,3.328767123287662,0
+central & northern america,3,5,migrating_spring,2018-05,1,0,0,none,none,none,3.328767123287662,0
+europe,3,5,migrating_spring,2018-05,2,0,0,none,none,none,3.328767123287662,0
+africa,3,6,breeding,2018-06,1,1,0,none,none,none,3.413698630136878,0.08493150684921602
+asia,3,6,breeding,2018-06,5,1,0,none,none,none,3.413698630136878,0
+central & northern america,3,6,breeding,2018-06,0,0,0,none,none,none,3.413698630136878,0
+europe,3,6,breeding,2018-06,2,5,0,none,none,none,3.413698630136878,0
+africa,3,7,breeding,2018-07,1,0,0,none,none,none,3.495890410958964,0.16712328767130202
+asia,3,7,breeding,2018-07,12,0,0,none,none,none,3.495890410958964,0
+central & northern america,3,7,breeding,2018-07,0,0,0,none,none,none,3.495890410958964,0
+europe,3,7,breeding,2018-07,15,11,0,none,none,none,3.495890410958964,0
+africa,3,8,breeding,2018-08,1,0,0,none,none,none,3.58082191780818,0.25205479452051804
+asia,3,8,breeding,2018-08,12,6,0,none,none,none,3.58082191780818,0
+central & northern america,3,8,breeding,2018-08,0,0,0,none,none,none,3.58082191780818,0
+europe,3,8,breeding,2018-08,7,3,0,none,none,none,3.58082191780818,0
+africa,3,9,migrating_autumn,2018-09,4,0,0,none,none,none,3.6657534246576233,0.33698630136996144
+asia,3,9,migrating_autumn,2018-09,13,0,0,none,none,none,3.6657534246576233,0
+central & northern america,3,9,migrating_autumn,2018-09,0,1,0,none,none,none,3.6657534246576233,0
+europe,3,9,migrating_autumn,2018-09,5,4,0,none,none,none,3.6657534246576233,0
+africa,3,10,migrating_autumn,2018-10,1,0,0,none,none,none,3.747945205479482,0.41917808219182007
+asia,3,10,migrating_autumn,2018-10,15,6,0,none,none,none,3.747945205479482,0
+central & northern america,3,10,migrating_autumn,2018-10,5,0,0,none,none,none,3.747945205479482,0
+europe,3,10,migrating_autumn,2018-10,8,4,0,none,none,none,3.747945205479482,0
+africa,3,11,migrating_autumn,2018-11,2,4,0,none,none,none,3.832876712328698,0.5041095890410361
+asia,3,11,migrating_autumn,2018-11,14,13,0,none,none,none,3.832876712328698,0
+central & northern america,3,11,migrating_autumn,2018-11,4,0,0,none,none,none,3.832876712328698,0
+europe,3,11,migrating_autumn,2018-11,5,0,0,none,none,none,3.832876712328698,0
+africa,3,12,overwintering,2018-12,1,1,1,minor,minor,dominant,3.915068493150784,0.5863013698631221
+asia,3,12,overwintering,2018-12,24,17,0,none,none,none,3.915068493150784,0
+central & northern america,3,12,overwintering,2018-12,2,0,0,none,none,none,3.915068493150784,0
+europe,3,12,overwintering,2018-12,1,3,1,minor,minor,major,3.915068493150784,0
+africa,4,1,overwintering,2019-01,8,2,1,minor,minor,minor,4,0.6712328767123381
+asia,4,1,overwintering,2019-01,17,3,0,none,none,none,4,0
+central & northern america,4,1,overwintering,2019-01,7,0,0,none,none,none,4,0
+europe,4,1,overwintering,2019-01,1,2,0,none,none,none,4,0
+africa,4,2,overwintering,2019-02,5,25,2,minor,minor,minor,4.084931506849216,0.7561643835615541
+asia,4,2,overwintering,2019-02,12,6,0,none,none,none,4.084931506849216,0
+central & northern america,4,2,overwintering,2019-02,6,0,0,none,none,none,4.084931506849216,0
+europe,4,2,overwintering,2019-02,0,0,0,none,none,none,4.084931506849216,0
+africa,4,3,migrating_spring,2019-03,0,5,0,none,none,none,4.16164383561636,0.832876712328698
+asia,4,3,migrating_spring,2019-03,26,8,0,none,none,none,4.16164383561636,0
+central & northern america,4,3,migrating_spring,2019-03,0,0,0,none,none,none,4.16164383561636,0
+europe,4,3,migrating_spring,2019-03,0,2,0,none,none,none,4.16164383561636,0
+africa,4,4,migrating_spring,2019-04,3,2,0,none,none,none,4.246575342465803,0.9178082191781414
+asia,4,4,migrating_spring,2019-04,11,0,0,none,none,none,4.246575342465803,0
+central & northern america,4,4,migrating_spring,2019-04,0,0,0,none,none,none,4.246575342465803,0
+europe,4,4,migrating_spring,2019-04,3,4,0,none,none,none,4.246575342465803,0
+africa,4,5,migrating_spring,2019-05,0,2,0,none,none,none,4.328767123287662,1
+asia,4,5,migrating_spring,2019-05,13,0,0,none,none,none,4.328767123287662,0
+central & northern america,4,5,migrating_spring,2019-05,4,0,0,none,none,none,4.328767123287662,0
+europe,4,5,migrating_spring,2019-05,0,0,0,none,none,none,4.328767123287662,0
+africa,4,6,breeding,2019-06,4,9,0,none,none,none,4.413698630136878,1.084931506849216
+asia,4,6,breeding,2019-06,12,0,0,none,none,none,4.413698630136878,0
+central & northern america,4,6,breeding,2019-06,6,0,0,none,none,none,4.413698630136878,0
+europe,4,6,breeding,2019-06,0,0,0,none,none,none,4.413698630136878,0
+africa,4,7,breeding,2019-07,1,2,0,none,none,none,4.495890410958964,1.167123287671302
+asia,4,7,breeding,2019-07,11,0,0,none,none,none,4.495890410958964,0
+central & northern america,4,7,breeding,2019-07,2,0,0,none,none,none,4.495890410958964,0
+europe,4,7,breeding,2019-07,0,0,0,none,none,none,4.495890410958964,0
+africa,4,8,breeding,2019-08,0,0,0,none,none,none,4.58082191780818,1.252054794520518
+asia,4,8,breeding,2019-08,13,0,0,none,none,none,4.58082191780818,0
+central & northern america,4,8,breeding,2019-08,2,0,0,none,none,none,4.58082191780818,0
+europe,4,8,breeding,2019-08,0,1,0,none,none,none,4.58082191780818,0
+africa,4,9,migrating_autumn,2019-09,2,0,0,none,none,none,4.665753424657623,1.3369863013699614
+asia,4,9,migrating_autumn,2019-09,12,5,0,none,none,none,4.665753424657623,0
+central & northern america,4,9,migrating_autumn,2019-09,0,0,0,none,none,none,4.665753424657623,0
+europe,4,9,migrating_autumn,2019-09,0,1,1,dominant,dominant,minor,4.665753424657623,0
+africa,4,10,migrating_autumn,2019-10,3,0,0,none,none,none,4.747945205479482,1.41917808219182
+asia,4,10,migrating_autumn,2019-10,4,5,0,none,none,none,4.747945205479482,0
+central & northern america,4,10,migrating_autumn,2019-10,0,0,0,none,none,none,4.747945205479482,0
+europe,4,10,migrating_autumn,2019-10,0,0,0,none,none,none,4.747945205479482,0.08219178082185863
+africa,4,11,migrating_autumn,2019-11,1,0,0,none,none,none,4.832876712328698,1.504109589041036
+asia,4,11,migrating_autumn,2019-11,14,1,0,none,none,none,4.832876712328698,0
+central & northern america,4,11,migrating_autumn,2019-11,0,0,0,none,none,none,4.832876712328698,0
+europe,4,11,migrating_autumn,2019-11,0,0,0,none,none,none,4.832876712328698,0.16712328767107465
+africa,4,12,overwintering,2019-12,0,1,0,none,none,none,4.915068493150784,1.586301369863122
+asia,4,12,overwintering,2019-12,22,0,0,none,none,none,4.915068493150784,0
+central & northern america,4,12,overwintering,2019-12,0,0,0,none,none,none,4.915068493150784,0
+europe,4,12,overwintering,2019-12,5,1,0,none,none,none,4.915068493150784,0.24931506849316065
+africa,5,1,overwintering,2020-01,1,0,0,none,none,none,5,1.6712328767123381
+asia,5,1,overwintering,2020-01,25,2,0,none,none,none,5,0
+central & northern america,5,1,overwintering,2020-01,0,0,0,none,none,none,5,0
+europe,5,1,overwintering,2020-01,32,22,0,none,none,none,5,0.3342465753423767
+africa,5,2,overwintering,2020-02,0,2,0,none,none,none,5.084699453551821,1.7559323302641587
+asia,5,2,overwintering,2020-02,62,0,0,none,none,none,5.084699453551821,0
+central & northern america,5,2,overwintering,2020-02,0,0,0,none,none,none,5.084699453551821,0
+europe,5,2,overwintering,2020-02,15,16,1,minor,dominant,dominant,5.084699453551821,0.4189460288941973
+europe,5,2,overwintering,2020-02,15,16,1,dominant,dominant,dominant,5.084699453551821,0
+africa,5,3,migrating_spring,2020-03,0,0,1,dominant,dominant,minor,5.163934426229616,0
+asia,5,3,migrating_spring,2020-03,27,0,0,none,none,none,5.163934426229616,0
+central & northern america,5,3,migrating_spring,2020-03,0,0,0,none,none,none,5.163934426229616,0
+europe,5,3,migrating_spring,2020-03,72,13,0,none,none,none,5.163934426229616,0.07923497267779567
+africa,5,4,migrating_spring,2020-04,1,2,1,dominant,dominant,dominant,5.248633879781437,0
+asia,5,4,migrating_spring,2020-04,12,0,1,major,major,minor,5.248633879781437,0
+central & northern america,5,4,migrating_spring,2020-04,0,0,0,none,none,none,5.248633879781437,0
+europe,5,4,migrating_spring,2020-04,196,23,0,none,none,none,5.248633879781437,0.1639344262296163
+africa,5,5,migrating_spring,2020-05,0,0,0,none,none,none,5.330601092896131,0.08196721311469446
+asia,5,5,migrating_spring,2020-05,4,1,0,none,none,none,5.330601092896131,0
+central & northern america,5,5,migrating_spring,2020-05,0,0,0,none,none,none,5.330601092896131,0
+europe,5,5,migrating_spring,2020-05,17,4,0,none,none,none,5.330601092896131,0.24590163934431075
+africa,5,6,breeding,2020-06,1,0,0,none,none,none,5.415300546448179,0.16666666666674246
+asia,5,6,breeding,2020-06,3,0,1,minor,major,major,5.415300546448179,0
+asia,5,6,breeding,2020-06,3,0,1,major,major,major,5.415300546448179,0
+central & northern america,5,6,breeding,2020-06,0,0,0,none,none,none,5.415300546448179,0
+europe,5,6,breeding,2020-06,5,2,1,dominant,dominant,dominant,5.415300546448179,0
+africa,5,7,breeding,2020-07,0,0,0,none,none,none,5.497267759562874,0.24863387978143692
+asia,5,7,breeding,2020-07,8,1,4,minor,minor,major,5.497267759562874,0
+central & northern america,5,7,breeding,2020-07,0,0,0,none,none,none,5.497267759562874,0
+europe,5,7,breeding,2020-07,1,0,0,none,none,none,5.497267759562874,0.08196721311469446
+africa,5,8,breeding,2020-08,0,0,0,none,none,none,5.5819672131146945,0.33333333333325754
+asia,5,8,breeding,2020-08,15,49,5,minor,dominant,minor,5.5819672131146945,0
+asia,5,8,breeding,2020-08,15,49,1,dominant,dominant,minor,5.5819672131146945,0
+central & northern america,5,8,breeding,2020-08,0,0,1,minor,minor,none,5.5819672131146945,0
+europe,5,8,breeding,2020-08,5,2,1,minor,minor,dominant,5.5819672131146945,0.16666666666651508
+africa,5,9,migrating_autumn,2020-09,0,0,0,none,none,none,5.6666666666667425,0.41803278688530554
+asia,5,9,migrating_autumn,2020-09,24,34,0,none,none,none,5.6666666666667425,0.084699453552048
+central & northern america,5,9,migrating_autumn,2020-09,0,1,0,none,none,none,5.6666666666667425,0
+europe,5,9,migrating_autumn,2020-09,32,3,2,minor,minor,minor,5.6666666666667425,0.2513661202185631
+africa,5,10,migrating_autumn,2020-10,0,0,0,none,none,none,5.748633879781437,0.5
+asia,5,10,migrating_autumn,2020-10,18,24,4,minor,minor,dominant,5.748633879781437,0.16666666666674246
+central & northern america,5,10,migrating_autumn,2020-10,1,18,0,none,none,none,5.748633879781437,0
+europe,5,10,migrating_autumn,2020-10,58,50,4,minor,minor,minor,5.748633879781437,0.33333333333325754
+africa,5,11,migrating_autumn,2020-11,1,2,0,none,none,none,5.8333333333332575,0.5846994535518206
+asia,5,11,migrating_autumn,2020-11,73,221,4,minor,minor,minor,5.8333333333332575,0.2513661202185631
+central & northern america,5,11,migrating_autumn,2020-11,1,0,0,none,none,none,5.8333333333332575,0
+europe,5,11,migrating_autumn,2020-11,535,181,3,minor,minor,minor,5.8333333333332575,0.41803278688507817
+africa,5,12,overwintering,2020-12,2,3,0,none,none,none,5.915300546448179,0.6666666666667425
+asia,5,12,overwintering,2020-12,173,193,2,minor,minor,minor,5.915300546448179,0.3333333333334849
+central & northern america,5,12,overwintering,2020-12,0,1,0,none,none,none,5.915300546448179,0
+europe,5,12,overwintering,2020-12,337,91,3,minor,minor,minor,5.915300546448179,0.5
+africa,6,1,overwintering,2021-01,5,4,0,none,none,none,6,0.7513661202185631
+asia,6,1,overwintering,2021-01,328,118,1,minor,minor,minor,6,0.41803278688530554
+central & northern america,6,1,overwintering,2021-01,0,0,0,none,none,none,6,0
+europe,6,1,overwintering,2021-01,622,103,3,minor,dominant,minor,6,0.5846994535518206
+europe,6,1,overwintering,2021-01,622,103,1,major,dominant,minor,6,0.5846994535518206
+europe,6,1,overwintering,2021-01,622,103,1,dominant,dominant,minor,6,0
+africa,6,2,overwintering,2021-02,14,19,0,none,none,none,6.084931506849216,0.8362976270677791
+asia,6,2,overwintering,2021-02,141,92,1,major,dominant,minor,6.084931506849216,0.5029642937345216
+asia,6,2,overwintering,2021-02,141,92,1,dominant,dominant,minor,6.084931506849216,0
+central & northern america,6,2,overwintering,2021-02,0,0,0,none,none,none,6.084931506849216,0
+europe,6,2,overwintering,2021-02,248,117,1,minor,minor,dominant,6.084931506849216,0.08493150684921602
+africa,6,3,migrating_spring,2021-03,20,11,0,none,none,none,6.16164383561636,0.913009955834923
+asia,6,3,migrating_spring,2021-03,43,26,1,minor,minor,dominant,6.16164383561636,0.07671232876714384
+central & northern america,6,3,migrating_spring,2021-03,0,0,0,none,none,none,6.16164383561636,0
+europe,6,3,migrating_spring,2021-03,395,167,0,none,none,none,6.16164383561636,0.16164383561635987
+africa,6,4,migrating_spring,2021-04,15,5,1,minor,minor,dominant,6.246575342465803,0.9979414626843663
+asia,6,4,migrating_spring,2021-04,18,5,1,minor,minor,minor,6.246575342465803,0.16164383561658724
+central & northern america,6,4,migrating_spring,2021-04,1,0,0,none,none,none,6.246575342465803,0
+europe,6,4,migrating_spring,2021-04,152,66,0,none,none,none,6.246575342465803,0.24657534246580326
+africa,6,5,migrating_spring,2021-05,69,32,0,none,none,none,6.328767123287662,1.080133243506225
+asia,6,5,migrating_spring,2021-05,24,26,3,minor,minor,minor,6.328767123287662,0.24383561643844587
+central & northern america,6,5,migrating_spring,2021-05,0,0,0,none,none,none,6.328767123287662,0
+europe,6,5,migrating_spring,2021-05,56,42,0,none,none,none,6.328767123287662,0.3287671232876619
+africa,6,6,breeding,2021-06,65,19,0,none,none,none,6.413698630136878,1.165064750355441
+asia,6,6,breeding,2021-06,23,6,3,minor,minor,minor,6.413698630136878,0.3287671232876619
+central & northern america,6,6,breeding,2021-06,0,0,0,none,none,none,6.413698630136878,0
+europe,6,6,breeding,2021-06,27,17,1,minor,minor,minor,6.413698630136878,0.4136986301368779
+africa,6,7,breeding,2021-07,41,14,1,minor,minor,minor,6.495890410958964,1.247256531177527
+asia,6,7,breeding,2021-07,25,4,3,minor,major,minor,6.495890410958964,0.4109589041097479
+asia,6,7,breeding,2021-07,25,4,1,major,major,minor,6.495890410958964,0.4109589041097479
+central & northern america,6,7,breeding,2021-07,0,0,1,dominant,dominant,minor,6.495890410958964,0
+europe,6,7,breeding,2021-07,26,13,2,minor,minor,minor,6.495890410958964,0.4958904109589639
+africa,6,8,breeding,2021-08,24,6,0,none,none,none,6.58082191780818,1.332188038026743
+asia,6,8,breeding,2021-08,30,3,1,minor,minor,major,6.58082191780818,0.4958904109589639
+central & northern america,6,8,breeding,2021-08,0,1,0,none,none,none,6.58082191780818,0.08493150684921602
+europe,6,8,breeding,2021-08,27,10,2,minor,minor,minor,6.58082191780818,0.5808219178081799
+africa,6,9,migrating_autumn,2021-09,38,10,0,none,none,none,6.665753424657623,1.4171195448761864
+asia,6,9,migrating_autumn,2021-09,9,16,0,none,none,none,6.665753424657623,0.5808219178084073
+central & northern america,6,9,migrating_autumn,2021-09,0,0,0,none,none,none,6.665753424657623,0.16986301369865942
+europe,6,9,migrating_autumn,2021-09,24,26,1,major,major,minor,6.665753424657623,0.6657534246576233
+africa,6,10,migrating_autumn,2021-10,47,26,0,none,none,none,6.747945205479482,1.499311325698045
+asia,6,10,migrating_autumn,2021-10,25,33,4,minor,minor,minor,6.747945205479482,0.6630136986302659
+central & northern america,6,10,migrating_autumn,2021-10,0,0,0,none,none,none,6.747945205479482,0.25205479452051804
+europe,6,10,migrating_autumn,2021-10,122,86,3,minor,minor,major,6.747945205479482,0.747945205479482
+africa,6,11,migrating_autumn,2021-11,22,10,1,minor,minor,minor,6.832876712328698,1.584242832547261
+asia,6,11,migrating_autumn,2021-11,61,84,1,minor,minor,minor,6.832876712328698,0.747945205479482
+central & northern america,6,11,migrating_autumn,2021-11,17,1,0,none,none,none,6.832876712328698,0.33698630136973406
+europe,6,11,migrating_autumn,2021-11,744,408,2,minor,minor,minor,6.832876712328698,0.832876712328698
+africa,6,12,overwintering,2021-12,36,25,0,none,none,none,6.915068493150784,1.666434613369347
+asia,6,12,overwintering,2021-12,117,91,1,minor,minor,minor,6.915068493150784,0.830136986301568
+central & northern america,6,12,overwintering,2021-12,12,8,3,minor,major,dominant,6.915068493150784,0.41917808219182007
+central & northern america,6,12,overwintering,2021-12,12,8,6,major,major,dominant,6.915068493150784,0.41917808219182007
+europe,6,12,overwintering,2021-12,715,358,2,minor,dominant,minor,6.915068493150784,0.915068493150784
+europe,6,12,overwintering,2021-12,715,358,1,dominant,dominant,minor,6.915068493150784,0
+africa,7,1,overwintering,2022-01,77,41,0,none,none,none,7,1.751366120218563
+asia,7,1,overwintering,2022-01,69,45,1,minor,minor,minor,7,0.915068493150784
+central & northern america,7,1,overwintering,2022-01,57,93,0,none,none,none,7,0.5041095890410361
+europe,7,1,overwintering,2022-01,799,159,1,minor,major,dominant,7,0.08493150684921602
+europe,7,1,overwintering,2022-01,799,159,1,major,major,dominant,7,0.08493150684921602
+africa,7,2,overwintering,2022-02,66,11,0,none,none,none,7.084931506849216,1.836297627067779
+asia,7,2,overwintering,2022-02,89,46,1,minor,minor,minor,7.084931506849216,1
+central & northern america,7,2,overwintering,2022-02,64,150,1,minor,dominant,major,7.084931506849216,0.5890410958902521
+central & northern america,7,2,overwintering,2022-02,64,150,2,dominant,dominant,major,7.084931506849216,0
+europe,7,2,overwintering,2022-02,501,123,1,minor,minor,major,7.084931506849216,0.16986301369843204
+africa,7,3,migrating_spring,2022-03,10,18,0,none,none,none,7.16164383561636,1.913009955834923
+asia,7,3,migrating_spring,2022-03,112,24,0,none,none,none,7.16164383561636,1.0767123287671438
+central & northern america,7,3,migrating_spring,2022-03,204,737,1,minor,major,dominant,7.16164383561636,0.07671232876714384
+central & northern america,7,3,migrating_spring,2022-03,204,737,1,major,major,dominant,7.16164383561636,0.07671232876714384
+europe,7,3,migrating_spring,2022-03,610,76,0,none,none,none,7.16164383561636,0.2465753424655759
+africa,7,4,migrating_spring,2022-04,8,13,0,none,none,none,7.246575342465803,1.9979414626843663
+asia,7,4,migrating_spring,2022-04,73,20,1,major,major,minor,7.246575342465803,1.1616438356165872
+central & northern america,7,4,migrating_spring,2022-04,403,1020,2,minor,minor,major,7.246575342465803,0.16164383561658724
+europe,7,4,migrating_spring,2022-04,349,51,0,none,none,none,7.246575342465803,0.3315068493150193
+africa,7,5,migrating_spring,2022-05,12,1,0,none,none,none,7.328767123287662,2.080133243506225
+asia,7,5,migrating_spring,2022-05,51,3,0,none,none,none,7.328767123287662,1.2438356164384459
+central & northern america,7,5,migrating_spring,2022-05,226,305,2,minor,minor,minor,7.328767123287662,0.24383561643844587
+europe,7,5,migrating_spring,2022-05,242,47,2,minor,minor,minor,7.328767123287662,0.4136986301368779
+africa,7,6,breeding,2022-06,13,2,0,none,none,none,7.413698630136878,2.165064750355441
+asia,7,6,breeding,2022-06,50,8,5,minor,minor,major,7.413698630136878,1.3287671232876619
+central & northern america,7,6,breeding,2022-06,75,83,2,minor,minor,minor,7.413698630136878,0.3287671232876619
+europe,7,6,breeding,2022-06,241,136,2,minor,minor,minor,7.413698630136878,0.49863013698609393
+africa,7,7,breeding,2022-07,3,2,0,none,none,none,7.495890410958964,2.247256531177527
+asia,7,7,breeding,2022-07,93,28,0,none,none,none,7.495890410958964,1.410958904109748
+central & northern america,7,7,breeding,2022-07,34,40,1,major,major,minor,7.495890410958964,0.4109589041097479
+europe,7,7,breeding,2022-07,225,77,2,minor,minor,minor,7.495890410958964,0.5808219178081799
+africa,7,8,breeding,2022-08,9,1,1,minor,minor,minor,7.58082191780818,2.332188038026743
+asia,7,8,breeding,2022-08,36,10,3,minor,minor,minor,7.58082191780818,1.495890410958964
+central & northern america,7,8,breeding,2022-08,33,42,1,minor,major,major,7.58082191780818,0.4958904109589639
+central & northern america,7,8,breeding,2022-08,33,42,1,major,major,major,7.58082191780818,0.4958904109589639
+europe,7,8,breeding,2022-08,204,60,0,none,none,none,7.58082191780818,0.665753424657396
+africa,7,9,migrating_autumn,2022-09,3,3,0,none,none,none,7.665753424657623,2.4171195448761864
+asia,7,9,migrating_autumn,2022-09,11,1,3,minor,minor,minor,7.665753424657623,1.5808219178084073
+central & northern america,7,9,migrating_autumn,2022-09,70,49,2,minor,minor,major,7.665753424657623,0.5808219178084073
+europe,7,9,migrating_autumn,2022-09,152,85,1,minor,major,minor,7.665753424657623,0.7506849315068393
+europe,7,9,migrating_autumn,2022-09,152,85,1,major,major,minor,7.665753424657623,0.7506849315068393
+africa,7,10,migrating_autumn,2022-10,7,3,0,none,none,none,7.747945205479482,2.499311325698045
+asia,7,10,migrating_autumn,2022-10,29,32,12,minor,minor,minor,7.747945205479482,1.663013698630266
+central & northern america,7,10,migrating_autumn,2022-10,85,97,4,minor,major,minor,7.747945205479482,0.6630136986302659
+central & northern america,7,10,migrating_autumn,2022-10,85,97,1,major,major,minor,7.747945205479482,0.6630136986302659
+europe,7,10,migrating_autumn,2022-10,192,167,1,minor,minor,major,7.747945205479482,0.832876712328698
+africa,7,11,migrating_autumn,2022-11,14,4,0,none,none,none,7.832876712328698,2.584242832547261
+asia,7,11,migrating_autumn,2022-11,132,215,8,minor,minor,minor,7.832876712328698,1.747945205479482
+central & northern america,7,11,migrating_autumn,2022-11,134,112,3,minor,minor,major,7.832876712328698,0.747945205479482
+europe,7,11,migrating_autumn,2022-11,185,141,0,none,none,none,7.832876712328698,0.917808219177914
+africa,7,12,overwintering,2022-12,6,6,0,none,none,none,7.915068493150784,2.666434613369347
+asia,7,12,overwintering,2022-12,122,69,2,minor,minor,minor,7.915068493150784,1.830136986301568
+central & northern america,7,12,overwintering,2022-12,188,59,1,minor,minor,minor,7.915068493150784,0.830136986301568
+europe,7,12,overwintering,2022-12,307,153,2,major,major,minor,7.915068493150784,1
+africa,8,1,overwintering,2023-01,5,6,0,none,none,none,8,2.751366120218563
+asia,8,1,overwintering,2023-01,77,59,0,none,none,none,8,1.915068493150784
+central & northern america,8,1,overwintering,2023-01,156,29,0,none,none,none,8,0.915068493150784
+europe,8,1,overwintering,2023-01,415,213,0,none,none,none,8,1.084931506849216
+africa,8,2,overwintering,2023-02,1,10,0,none,none,none,8.084931506849216,2.836297627067779
+asia,8,2,overwintering,2023-02,59,19,0,none,none,none,8.084931506849216,2
+central & northern america,8,2,overwintering,2023-02,121,59,1,minor,minor,minor,8.084931506849216,1
+europe,8,2,overwintering,2023-02,307,153,0,none,none,none,8.084931506849216,1.169863013698432
+africa,8,3,migrating_spring,2023-03,6,0,0,none,none,none,8.16164383561636,2.913009955834923
+asia,8,3,migrating_spring,2023-03,64,15,0,none,none,none,8.16164383561636,2.076712328767144
+central & northern america,8,3,migrating_spring,2023-03,52,54,0,none,none,none,8.16164383561636,1.0767123287671438
+europe,8,3,migrating_spring,2023-03,419,120,0,none,none,none,8.16164383561636,1.2465753424655759
+africa,8,4,migrating_spring,2023-04,5,5,0,none,none,none,8.246575342465803,2.9979414626843663
+asia,8,4,migrating_spring,2023-04,32,7,0,none,none,none,8.246575342465803,2.1616438356165872
+central & northern america,8,4,migrating_spring,2023-04,60,38,0,none,none,none,8.246575342465803,1.1616438356165872
+europe,8,4,migrating_spring,2023-04,184,127,0,none,none,none,8.246575342465803,1.3315068493150193
+africa,8,5,migrating_spring,2023-05,2,0,0,none,none,none,8.328767123287662,3.080133243506225
+asia,8,5,migrating_spring,2023-05,5,1,0,none,none,none,8.328767123287662,2.243835616438446
+central & northern america,8,5,migrating_spring,2023-05,49,11,1,minor,minor,minor,8.328767123287662,1.2438356164384459
+europe,8,5,migrating_spring,2023-05,439,177,0,none,none,none,8.328767123287662,1.413698630136878
+africa,8,6,breeding,2023-06,4,0,0,none,none,none,8.413698630136878,3.165064750355441
+asia,8,6,breeding,2023-06,4,9,0,none,none,none,8.413698630136878,2.328767123287662
+central & northern america,8,6,breeding,2023-06,57,4,0,none,none,none,8.413698630136878,1.3287671232876619
+europe,8,6,breeding,2023-06,295,181,2,minor,minor,major,8.413698630136878,1.498630136986094
+africa,8,7,breeding,2023-07,2,0,0,none,none,none,8.495890410958964,3.247256531177527
+asia,8,7,breeding,2023-07,8,3,0,none,none,none,8.495890410958964,2.410958904109748
+central & northern america,8,7,breeding,2023-07,33,12,0,none,none,none,8.495890410958964,1.410958904109748
+europe,8,7,breeding,2023-07,253,208,2,minor,minor,minor,8.495890410958964,1.58082191780818
+africa,8,8,breeding,2023-08,1,0,0,none,none,none,8.58082191780818,3.332188038026743
+asia,8,8,breeding,2023-08,4,12,1,minor,minor,minor,8.58082191780818,2.495890410958964
+central & northern america,8,8,breeding,2023-08,16,19,0,none,none,none,8.58082191780818,1.495890410958964
+europe,8,8,breeding,2023-08,76,71,0,none,none,none,8.58082191780818,1.665753424657396
+africa,8,9,migrating_autumn,2023-09,0,0,0,none,none,none,8.665753424657623,3.4171195448761864
+asia,8,9,migrating_autumn,2023-09,5,7,0,none,none,none,8.665753424657623,2.5808219178084073
+central & northern america,8,9,migrating_autumn,2023-09,32,9,0,none,none,none,8.665753424657623,1.5808219178084073
+europe,8,9,migrating_autumn,2023-09,34,35,0,none,none,none,8.665753424657623,1.7506849315068393
+africa,8,10,migrating_autumn,2023-10,0,0,0,none,none,none,8.747945205479482,3.499311325698045
+asia,8,10,migrating_autumn,2023-10,36,1,1,minor,minor,minor,8.747945205479482,2.663013698630266
+central & northern america,8,10,migrating_autumn,2023-10,84,111,2,minor,minor,minor,8.747945205479482,1.663013698630266
+europe,8,10,migrating_autumn,2023-10,44,37,2,minor,minor,minor,8.747945205479482,1.832876712328698
+africa,8,11,migrating_autumn,2023-11,0,0,0,none,none,none,8.832876712328698,3.584242832547261
+asia,8,11,migrating_autumn,2023-11,76,38,1,minor,minor,minor,8.832876712328698,2.747945205479482
+central & northern america,8,11,migrating_autumn,2023-11,75,177,3,minor,minor,minor,8.832876712328698,1.747945205479482
+europe,8,11,migrating_autumn,2023-11,251,65,0,none,none,none,8.832876712328698,1.917808219177914
+africa,8,12,overwintering,2023-12,1,0,0,none,none,none,8.915068493150784,3.666434613369347
+asia,8,12,overwintering,2023-12,117,35,1,minor,minor,minor,8.915068493150784,2.830136986301568
+central & northern america,8,12,overwintering,2023-12,37,19,0,none,none,none,8.915068493150784,1.830136986301568
+europe,8,12,overwintering,2023-12,184,61,0,none,none,none,8.915068493150784,2
+africa,9,1,overwintering,2024-01,2,0,0,none,none,none,9,3.751366120218563
+asia,9,1,overwintering,2024-01,60,12,0,none,none,none,9,2.915068493150784
+central & northern america,9,1,overwintering,2024-01,51,15,0,none,none,none,9,1.915068493150784
+europe,9,1,overwintering,2024-01,199,128,1,minor,minor,minor,9,2.084931506849216
+africa,9,2,overwintering,2024-02,0,0,0,none,none,none,9.08469945355182,3.8360655737703837
+asia,9,2,overwintering,2024-02,56,21,0,none,none,none,9.08469945355182,2.9997679467026046
+central & northern america,9,2,overwintering,2024-02,17,3,0,none,none,none,9.08469945355182,1.9997679467026046
+europe,9,2,overwintering,2024-02,155,136,0,none,none,none,9.08469945355182,2.1696309604010366
+africa,9,3,migrating_spring,2024-03,2,1,0,none,none,none,9.163934426229616,3.9153005464481794
+asia,9,3,migrating_spring,2024-03,53,9,0,none,none,none,9.163934426229616,3.0790029193804003
+central & northern america,9,3,migrating_spring,2024-03,50,19,0,none,none,none,9.163934426229616,2.0790029193804003
+europe,9,3,migrating_spring,2024-03,42,6,0,none,none,none,9.163934426229616,2.2488659330788323
+africa,9,4,migrating_spring,2024-04,0,0,0,none,none,none,9.248633879781437,4
+asia,9,4,migrating_spring,2024-04,32,0,0,none,none,none,9.248633879781437,3.163702372932221
+central & northern america,9,4,migrating_spring,2024-04,54,0,0,none,none,none,9.248633879781437,2.163702372932221
+europe,9,4,migrating_spring,2024-04,19,0,0,none,none,none,9.248633879781437,2.333565386630653
+africa,9,5,migrating_spring,2024-05,1,0,0,none,none,none,9.330601092896131,4.0819672131146945
+asia,9,5,migrating_spring,2024-05,14,0,0,none,none,none,9.330601092896131,3.2456695860469154
+central & northern america,9,5,migrating_spring,2024-05,73,0,0,none,none,none,9.330601092896131,2.2456695860469154
+europe,9,5,migrating_spring,2024-05,3,0,0,none,none,none,9.330601092896131,2.4155325997453474
+africa,9,6,breeding,2024-06,0,0,0,none,none,none,9.41530054644818,4.1666666666667425
+asia,9,6,breeding,2024-06,0,0,0,none,none,none,9.41530054644818,3.3303690395989634
+central & northern america,9,6,breeding,2024-06,0,0,0,none,none,none,9.41530054644818,2.3303690395989634
+europe,9,6,breeding,2024-06,0,0,0,none,none,none,9.41530054644818,2.5002320532973954
