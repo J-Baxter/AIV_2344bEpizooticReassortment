@@ -30,6 +30,7 @@ library(emmeans)
 library(marginaleffects)
 library(magrittr)
 library(ggmcmc)
+library(performance)
 
 # User functions
 source('./scripts/figure_scripts/plot_settings.R')
@@ -171,7 +172,7 @@ posteriorpredictive <-pp_check(diffusionmodel1_fit, ndraws = 500)
 
 
 # Misc evaluations
-performance(diffusionmodel1_fit) # tibble output of model metrics including R2, ELPD, LOOIC, RMSE
+# performance(diffusionmodel1_fit) # tibble output of model metrics including R2, ELPD, LOOIC, RMSE
 plot(diffusionmodel1_fit) # default output plot of brms showing posterior distributions of
 prior_summary(diffusionmodel1_fit) #obtain dataframe of priors used in model.
 
