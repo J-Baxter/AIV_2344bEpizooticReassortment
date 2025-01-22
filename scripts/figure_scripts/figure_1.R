@@ -37,6 +37,8 @@ meta <- read_csv('./2024-09-09_meta.csv')
 
 will_tree <- read.beast('./global_subsample/h52344b_ha_s1.mcc.trees')
 
+new_tree <- read.besat('./2025Jan06/globalsubsample/ha_global_subsample_traits_mcc.tree')
+
 ############################################## MAIN ################################################
 global_theme <- theme_classic(base_family = "LM Sans 10")+
   theme(
@@ -99,24 +101,6 @@ region_colours <- c('europe' = '#1b9e77',
 
 #F6E0D2FF #DFA398FF #9C6755FF #659794FF #EA967CFF #F5C98EFF #D65B5AFF #586085FF 
 
-
-# Number of Sequences ~ Continent
-#meta %>%
-  #mutate(collection_regionname = case_when(grepl('europe', collection_regionname) ~ 'europe',
-                                           #grepl('africa', collection_regionname) ~ 'africa',
-                                           #grepl('asia', collection_regionname) ~ 'asia',
-                                           #grepl('(central|northern) america', collection_regionname) ~ 'central & northern america',
-                                           #grepl('south america|southern ocean', collection_regionname) ~ 'south america',
-                                           #grepl('australia', collection_regionname) ~ 'australasia',
-                                           .#default = collection_regionname
-  #)) %>%
-  #drop_na(collection_regionname) %>%
-  #summarise(n = n(), .by = c(collection_regionname)) %>%
-  #ggplot() + 
-  #geom_bar(aes(x = collection_regionname, y = n), stat = 'identity') 
-
-
-# Number of Sequences ~ Continent (cumulatively)
 all <- meta %>%
   mutate(collection_regionname = case_when(grepl('europe', collection_regionname) ~ 'europe',
                                            grepl('africa', collection_regionname) ~ 'africa',
@@ -147,8 +131,8 @@ plt_1b <- meta %>%
   mutate(cum_sum = cumsum(n)) %>%
   ggplot() + 
   geom_area(aes(x = collection_dateyear, y = cum_sum, fill = collection_regionname)) +
-  scale_x_continuous('Cumulative Frequency', expand = c(0,0)) + 
-  scale_y_continuous('Collection Year', expand = c(0,0)) + 
+  scale_y_continuous('Cumulative Frequency', expand = c(0,0)) + 
+  scale_x_continuous('Collection Year', expand = c(0,0)) + 
   scale_fill_manual(values = region_colours) + 
   global_theme +
   theme(legend.position = 'inside',
@@ -156,23 +140,6 @@ plt_1b <- meta %>%
         legend.title = element_blank(),
         legend.justification = c("left", "top")) 
   
-
-
-
-# Number of Sequences ~ Host Type
-#meta %>%
-#  mutate(collection_regionname = case_when(grepl('europe', collection_regionname) ~ 'europe',
-#                                           grepl('africa', collection_regionname) ~ 'africa',
-#                                           grepl('asia', collection_regionname) ~ 'asia',
-#                                           grepl('(central|northern) america', collection_regionname) ~ 'central & northern america',
-#                                           grepl('south america|southern ocean', collection_regionname) ~ 'south america',
-#                                           grepl('australia', collection_regionname) ~ 'australasia',
-#                                           .default = collection_regionname
-#  )) %>%
-#  drop_na(host_simplifiedhost) %>%
-#  summarise(n = n(), .by = c(host_simplifiedhost)) %>%
-#  ggplot() + 
-#  geom_bar(aes(x = host_simplifiedhost, y = n), stat = 'identity') 
 
 
 # Number of Sequences ~ Host Type (cumulatively)
@@ -192,8 +159,8 @@ plt_1c <- meta %>%
   mutate(cum_sum = cumsum(n)) %>%
   ggplot() + 
   geom_area(aes(x = collection_dateyear, y = cum_sum, fill = host_simplifiedhost)) +
-  scale_x_continuous('Cumulative Frequency', expand = c(0,0)) + 
-  scale_y_continuous('Collection Year', expand = c(0,0)) + 
+  scale_y_continuous('Cumulative Frequency', expand = c(0,0)) + 
+  scale_x_continuous('Collection Year', expand = c(0,0)) + 
   scale_fill_manual(values = host_colours) +
   global_theme +
   theme(legend.position = 'inside',
@@ -302,11 +269,11 @@ reassortant_profiles <- meta %>%
   mutate(across(-1, .fns = ~ as.double(.x)))
 
 # Use Will's for now, to be replaced by thorney tree
-plt_1left <- will_tree %>%
+plt_1left <- new_tree %>%
   mutate(isolate_id = gsub('\\|.*','', label)) %>%
   left_join(reassortant_profiles) %>%
   
-  ggtree(mrsd = '2023-12-01 ') + 
+  ggtree(mrsd = '2024-04') + ################################# NEEDS UPDATING #####################
   theme_tree2(#base_family = "LM Sans 10",
               #plot.margin = unit(c(1,1,1,1), units = "cm"),
               axis.text.x = element_text(family = "LM Sans", size = 8),
@@ -317,30 +284,7 @@ plt_1left <- will_tree %>%
     #limits = c(2000, 2023),
     'Time',
     breaks = seq(2016, 2024, 1)) +
-  
-  # tip colour + shape = new sequences
-  #geom_tippoint(aes(colour = is.na(sequence_accession),
-                   # shape = is.na(sequence_accession)),
-                #size = 3, 
-                #alpha = 0.9) +
-  
- # geom_tiplab(aes(colour = is.na(sequence_accession)),
-              #align = TRUE, 
-             # size = 0) +
-  
-  #scale_shape_manual(values = c("TRUE" = 18),
-                     #'New Sequences',
-                    # guide = 'none') +
-  #scale_colour_manual(values = c("TRUE" = 'blue'), 
-                     # 'New Sequences',
-                     # guide = 'none') + 
-  
-  
-  # node colour to show pp support <- update to be reassortan events
-  #new_scale_colour()+
-  #geom_nodepoint(aes(colour = posterior), alpha = 0.7) +
-  #scale_color_distiller(palette = 'YlOrRd', direction = 1, 'Posterior Support',
-                      #  guide = guide_colourbar(order = 4)) + 
+
   
   geom_fruit(geom = geom_tile,
              mapping = aes(fill = PB2),
