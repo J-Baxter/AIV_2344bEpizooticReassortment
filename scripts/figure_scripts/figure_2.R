@@ -135,10 +135,10 @@ df_list <- mclapply(treefiles, function(x) x %>%
            bind_rows(),
            mc.cores = 13)
 
-names(df_list) <- gsub('.*ha_|_subsampled.*', '' ,treefiles[[i]])
+names(df_list) <- gsub('.*ha_|_subsampled.*', '' ,treefiles)
 
 host_tmrca <- df_list %>%
-  bind_rows(df_list, .id = 'cluster_profile')
+  bind_rows(., .id = 'cluster_profile')
 
 write_csv(host_tmrca, './2025Jan06/clusterprofile_host_tmrca.csv')
 host_tmrca <- read_csv('./2025Jan06/clusterprofile_host_tmrca.csv')
@@ -152,7 +152,7 @@ host_tmrca <- read_csv('./2025Jan06/clusterprofile_host_tmrca.csv')
 
     
 
-ggplot(df_list[[13]]) + 
+ggplot(df_list[[5]]) + 
   geom_density(aes(x = tmrca, fill = host_simplifiedhost, colour = host_simplifiedhost), alpha = 0.7, position = 'stack')
 
 # Phylogeography by colour
