@@ -168,157 +168,346 @@ plt_mcmc <- mcmc_diffusion %>%
 
 
 #### Plot Prior & posterior distributions of key parameters ####
-posterior_beta_draws <- as.data.frame(diffusionmodel1_fit) %>%
+posterior_beta_draws <- as.data.frame(countmodel_mv_fit) %>%
   as_tibble() %>%
   pivot_longer(., cols = everything(),
                names_to = 'parameter',
-               values_to = 'estimate') %>% filter(!grepl('lp__|lprior', parameter)) %>%
+               values_to = 'estimate') %>% 
+  filter(!grepl('lp__|lprior|^r_|^cor|^sd', parameter)) %>%
   #filter(grepl('b_', parameter)) %>%
-  mutate(draw = 'posterior')
-
-
-priors <- expand_grid(parameter = unique(posterior_beta_draws$parameter),
-                      mu = NA_real_,
-                      sigma = NA_real_,
-                      df = NA_real_) %>%
-  mutate(mean = case_when(grepl('^b', parameter) ~ 0,
-                          grepl('^sd_(segment|collection)|^sigma$', parameter) ~ 0,
-                          grepl('Intercept_hu', parameter) ~ 0),
-         sd = case_when(grepl('^b', parameter) ~ 10,
-                        grepl('^sd_(segment|collection)|^sigma$', parameter) ~ 11.7,
-                        grepl('Intercept_hu', parameter) ~ 1),
-         df = case_when(grepl('^sd_(segment|collection)|^sigma$', parameter) ~ 3),
-         dist = case_when(grepl('^b', parameter) ~ 'norm',
-                          grepl('^sd_(segment|collection)|^sigma$', parameter) ~ 'student_t',
-                          grepl('Intercept_hu', parameter) ~ 'logistic')) %>%
-  drop_na(mean) 
+  mutate(draw = 'posterior') 
 
 
 plt_params <- ggplot() + 
-  geom_histogram(data = posterior_beta_draws %>% 
-                   filter(parameter %in% priors$parameter), 
+  geom_histogram(data = posterior_beta_draws , 
                  aes(x = estimate,
                      y = after_stat(density)),
                  inherit.aes = F, 
-                 bins = 50, 
+                 binwidth = 0.1, 
                  fill = '#1b9e77') + 
   
-  stat_function(fun = dnorm,
-                data = tibble(parameter = "b_Intercept" ),
-                args = list(mean = 0, sd = 3),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
-  
-  stat_function(fun = dnorm,
-                data = tibble(parameter = "b_hu_Intercept"),
-                args = list(mean = 0, sd = 3),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
-  
-  stat_function(fun = dnorm,
-                data = tibble(parameter = "b_host_richness"),
-                args = list(mean = 0, sd = 3),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
-  
-  stat_function(fun = dnorm,
-                data = tibble(parameter = "b_median_anseriformes_wild"),
-                args = list(mean = 0, sd = 3),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
-  
-  stat_function(fun = dnorm,
-                data = tibble(parameter = "b_median_charadriiformes_wild"),
-                args = list(mean = 0, sd = 3),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
-  
-  stat_function(fun = dnorm,
-                data = tibble(parameter = "b_seasonmigrating_spring"),
-                args = list(mean = 0, sd = 3),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
-  
-  stat_function(fun = dnorm,
-                data = tibble(parameter = "b_seasonmigrating_autumn"),
-                args = list(mean = 0, sd = 3),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
-  
-  stat_function(fun = dnorm,
-                data = tibble(parameter = "b_seasonoverwintering"),
-                args = list(mean = 0, sd = 3),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
-  
-  stat_function(fun = dnorm,
-                data = tibble(parameter = "b_hu_seasonmigrating_spring"),
-                args = list(mean = 0, sd = 3),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
-  
-  stat_function(fun = dnorm,
-                data = tibble(parameter = "b_hu_seasonmigrating_autumn"),
-                args = list(mean = 0, sd = 3),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
-  
-  stat_function(fun = dnorm,
-                data = tibble(parameter = "b_hu_seasonoverwintering"),
-                args = list(mean = 0, sd = 3),
+  # Intercepts
+  stat_function(fun = dlogis,
+                data = tibble(parameter = "Intercept_zi_nreassortants" ),
+                args = list(location = 0, scale = 1),
                 fill = '#d95f02',
                 geom = 'area',
                 alpha = 0.5) +
   
   stat_function(fun = dstudent_t,
-                data = tibble(parameter = "sd_collection_regionname__Intercept"),
-                args = list(mu = 0, sigma = 5, df = 3),
+                data = tibble(parameter = "Intercept_nreassortants"),
+                args = list(mu = 3, sigma = -2.3, df = 2.5),
                 fill = '#d95f02',
                 geom = 'area',
                 alpha = 0.5) +
   
   stat_function(fun = dstudent_t,
-                data = tibble(parameter = "sd_collection_regionname__hu_Intercept"),
-                args = list(mu = 0, sigma = 5, df = 3),
+                data = tibble(parameter = "Intercept_mumajor_reassortantclass"),
+                args = list(mu = 3, sigma = 0, df = 2.5),
                 fill = '#d95f02',
                 geom = 'area',
                 alpha = 0.5) +
   
   stat_function(fun = dstudent_t,
-                data = tibble(parameter = "sd_segment__Intercept"),
-                args = list(mu = 0, sigma = 5, df = 3),
+                data = tibble(parameter = "Intercept_muminor_reassortantclass"),
+                args = list(mu = 3, sigma = 0, df = 2.5),
                 fill = '#d95f02',
                 geom = 'area',
                 alpha = 0.5) +
   
   stat_function(fun = dstudent_t,
-                data = tibble(parameter = "sd_segment__hu_Intercept"),
-                args = list(mu = 0, sigma = 5, df = 3),
+                data = tibble(parameter = "Intercept_munone_reassortantclass"),
+                args = list(mu = 3, sigma = 0, df = 2.5),
                 fill = '#d95f02',
                 geom = 'area',
                 alpha = 0.5) +
   
-  stat_function(fun = dstudent_t,
-                data = tibble(parameter = "sigma"),
-                args = list(mu = 0, sigma = 5, df = 3),
+  # Beta - number of reassortants
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_nreassortants_Intercept" ),
+                args = list(mean = 0, sd = 5),
                 fill = '#d95f02',
                 geom = 'area',
                 alpha = 0.5) +
   
-  xlim(c(-15,15)) + 
-  facet_wrap(~parameter, scales = 'free_y') +
-  theme_minimal()
-
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_nreassortants_collection_regionnameasia" ),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_nreassortants_collection_regionnamecentral&northernamerica" ),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_nreassortants_collection_regionnameeurope" ),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_nreassortants_n_cases" ),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_nreassortants_previous_reassortant_classmajor" ),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_nreassortants_previous_reassortant_classminor" ),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_nreassortants_previous_reassortant_classnone" ),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_nreassortants_collection_seasonmigrating_autumn" ),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_nreassortants_collection_seasonmigrating_spring" ),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_nreassortants_collection_seasonoverwintering" ),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_nreassortants_previous_reassortant_classnone" ),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  
+  # Beta - ZI nreassortants
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_zi_nreassortants_Intercept" ),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_zi_nreassortants_collection_regionnameasia" ),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_zi_nreassortants_collection_regionnamecentral&northernamerica" ),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_zi_nreassortants_collection_regionnameeurope" ),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_zi_nreassortants_n_cases" ),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  # Beta - reassortant class
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_mumajor_reassortantclass_Intercept" ),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_muminor_reassortantclass_Intercept" ),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_munone_reassortantclass_Intercept" ),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_mumajor_reassortantclass_collection_regionnameasia" ),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_mumajor_reassortantclass_collection_regionnamecentral&northernamerica" ),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_mumajor_reassortantclass_collection_regionnameeurope" ),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_mumajor_reassortantclass_previous_reassortant_classmajor"),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_mumajor_reassortantclass_previous_reassortant_classminor"),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_mumajor_reassortantclass_previous_reassortant_classnone"),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_muminor_reassortantclass_collection_regionnameasia" ),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_muminor_reassortantclass_collection_regionnamecentral&northernamerica" ),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_muminor_reassortantclass_collection_regionnameeurope" ),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_muminor_reassortantclass_previous_reassortant_classmajor"),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_muminor_reassortantclass_previous_reassortant_classminor"),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_muminor_reassortantclass_previous_reassortant_classnone"),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_munone_reassortantclass_collection_regionnameasia" ),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_munone_reassortantclass_collection_regionnamecentral&northernamerica" ),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_munone_reassortantclass_collection_regionnameeurope" ),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_munone_reassortantclass_previous_reassortant_classmajor"),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_munone_reassortantclass_previous_reassortant_classminor"),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_munone_reassortantclass_previous_reassortant_classnone"),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  
+  stat_function(fun = dgamma,
+                data = tibble(parameter = "shape_nreassortants"),
+                args = list(shape = 0.01, rate = 0.01),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  
+  
+  
+  xlim(c(-15,20)) + 
+  facet_wrap(~parameter, scales = 'free_y',  ncol = 4) +
+  theme_minimal(base_size = 8)
 
 ############################################## WRITE ###############################################
 
