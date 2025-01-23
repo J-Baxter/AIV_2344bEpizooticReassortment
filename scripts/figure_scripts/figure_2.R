@@ -43,17 +43,6 @@ GetRootInfo <- function(treedata){
 }
 
 
-PlotTMRCA <- function(dataframe){
-  plot <- ggplot(dataframe) + 
-    geom_density(aes(x = tmrca, fill = host_simplifiedhost, colour = host_simplifiedhost), alpha= 0.7, position = stack) + 
-    
-    scale_x_date() + 
-    scale_y_continuous()  +
-    
-    global_theme()
-  
-  return(plot)
-}
 
 
 PlotPhyloGeo <- function(tree_tbl, basemap){
@@ -142,6 +131,19 @@ host_tmrca <- df_list %>%
 
 write_csv(host_tmrca, './2025Jan06/clusterprofile_host_tmrca.csv')
 host_tmrca <- read_csv('./2025Jan06/clusterprofile_host_tmrca.csv')
+
+
+
+dominant_reassortants <- read_csv('./2024Aug18/treedata_extractions/summary_reassortant_metadata_20240904.csv') %>%
+  select(c(cluster_label,
+            cluster_profile))  %>%
+  distinct() %>% 
+  mutate(cluster_label = gsub('_.*', '', cluster_label)) %>%
+  filter(cluster_label %in% c('H5N8/2019/R7', 'H5N1/2020/R1','H5N1/2021/R1',
+                              'H5N1/2021/R3','H5N1/2022/R7',  'H5N1/2022/R12' )) %>%
+  pull(cluster_profile) %>%
+  gsub('_', '', .) %>%
+  as.double()
 ############################################## MAIN ################################################
 
 # Filter the desired reassortants
@@ -150,10 +152,39 @@ host_tmrca <- read_csv('./2025Jan06/clusterprofile_host_tmrca.csv')
 # Plot the density of TMRCA, fill by origin  host
 
 
-    
 
-ggplot(df_list[[5]]) + 
-  geom_density(aes(x = tmrca, fill = host_simplifiedhost, colour = host_simplifiedhost), alpha = 0.7, position = 'stack')
+
+host_tmrca_list <- host_tmrca %>%
+  filter(cluster_profile %in% dominant_reassortants) %>%
+  group_split(cluster_profile,  .keep = T) %>%
+  setNames(dominant_reassortants)
+
+PlotTMRCA <- function(dataframe){
+  plot <- ggplot(dataframe,
+                 aes(x  = tmrca,
+                     colour = host_simplifiedhost,
+                     #y = host_simplifiedhost,
+                     fill = host_simplifiedhost)) + 
+    geom_density(alpha = 0.7, position = 'stack') + 
+    scale_x_date('Date', 
+                 limits = ymd(c('2017-01-01', '2023-01-01')),
+                 date_breaks = "1 year",
+                 date_labels = "%Y",
+                 expand = c(0,0)) + 
+    scale_y_continuous('Probability Density', expand = c(0,0))  +
+    
+    
+    scale_fill_manual(values = host_colours) + 
+    scale_colour_manual(values = host_colours) + 
+    global_theme
+  
+  
+  
+  return(plot)
+}
+
+tmrca_plots <- lapply(host_tmrca_list, PlotTMRCA)
+
 
 # Phylogeography by colour
 map <- ne_countries(scale = "medium", returnclass = "sf")
