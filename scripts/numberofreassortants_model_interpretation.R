@@ -48,71 +48,12 @@ posteriorpredictive_reassortantclass <-pp_check(countmodel_fit, ndraws = 500, re
 posteriorpredictive_nreassortants <-pp_check(countmodel_fit, ndraws = 500, resp = 'nreassortants')
 
                                              
-# Data preprocessing (copied from diffusion_model)
-diffusion_data <- combined_data %>%
-  
-  # select variables of interes
-  select(
-    segment,
-    cluster_profile,
-    TMRCA,
-    group2,
-    weighted_diff_coeff,
-    original_diff_coeff,
-    evoRate,
-    persist.time,
-    collection_regionname,
-    host_simplifiedhost,
-    count_cross_species,
-    starts_with('median'),
-    starts_with('max')) %>%
-  
-  # Substitute NA values in diffusion coefficient with 0
-  mutate(across(where(is.double), .fns = ~ replace_na(.x, 0))) %>%
-  drop_na(collection_regionname) %>%
-  
-  rename_with(~gsub('-', '_', .x)) %>%
-  mutate(collection_regionname = case_when(grepl('europe', collection_regionname) ~ 'europe',
-                                           grepl('africa', collection_regionname) ~ 'africa',
-                                           grepl('asia', collection_regionname) ~ 'asia',
-                                           grepl('(central|northern) america', collection_regionname) ~ 'central & northern america',
-                                           .default = collection_regionname
-  )) %>%
-  
-  mutate(collection_regionname = factor(collection_regionname, levels = c('asia', 'africa', 'europe', 'central & northern america'))) %>%
-  filter(!grepl('\\+', host_simplifiedhost)) %>%
-  
-  # join host richness
-  left_join(summary_data %>% select(c(cluster_profile, 
-                                      host_richness)),
-            by = join_by(cluster_profile)) %>%
-  
-  # season (breeding, migrating_spring, migrating_autumn, overwintering)
-  mutate(collection_month = date_decimal(TMRCA) %>% format(., "%m") %>% as.integer(),
-         season = case_when(collection_month %in% c(12,1,2) ~ 'overwintering', 
-                            collection_month %in% c(3,4,5)  ~ 'migrating_spring', # Rename to spring migration
-                            collection_month %in% c(6,7,8)  ~ 'breeding', 
-                            collection_month %in% c(9,10,11)  ~ 'migrating_autumn' # Rename to autumn migration
-         )) %>%
-  
-  select(weighted_diff_coeff, 
-         median_anseriformes_wild,
-         median_charadriiformes_wild,
-         segment, 
-         collection_regionname, 
-         season)
 
 ############################################## MAIN ################################################
-scientific_10 <- function(x) {   parse(text=gsub("e\\+*", " %*% 10^", scales::scientific_format()(x)))}
-
-
-# Plot Diffusion Coefficient Distribution
 
 
 
 
-
-####################################################################################################
 # Conditional prediction draws  + Conditional marginal means stratified by continent
 
 # Required outputs: Pre/post epizootic, marginal effect of region ,
