@@ -121,7 +121,7 @@ treefiles <- c(list.files('./2024Aug18/reassortant_subsampled_outputs/traits_100
 mcc_treefiles <- c(list.files('./2024Aug18/reassortant_subsampled_outputs/traits_mcc',
                               pattern = 'ha',
                               full.names = TRUE)[-10] ,
-                   './2024Sept16/reassortant_subsampled_outputs/traits_1000trees/ha_43112113_subsampled_traits_1000.trees'))
+                   './2024Sept16/reassortant_subsampled_outputs/traits_mcc/ha_43112113_subsampled_traits_mcc.tree')
 
 
 mcc_trees <- lapply(mcc_treefiles, read.beast)
@@ -134,7 +134,13 @@ df_list <- mclapply(treefiles, function(x) x %>%
            bind_rows(),
            mc.cores = 13)
 
+names(df_list) <- gsub('.*ha_|_subsampled.*', '' ,treefiles[[i]])
 
+host_tmrca <- df_list %>%
+  bind_rows(df_list, .id = 'cluster_profile')
+
+write_csv(host_tmrca, './2025Jan06/clusterprofile_host_tmrca.csv')
+host_tmrca <- read_csv('./2025Jan06/clusterprofile_host_tmrca.csv')
 ############################################## MAIN ################################################
 
 # Filter the desired reassortants
