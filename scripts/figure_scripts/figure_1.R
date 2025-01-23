@@ -37,7 +37,7 @@ meta <- read_csv('./2024-09-09_meta.csv')
 
 will_tree <- read.beast('./global_subsample/h52344b_ha_s1.mcc.trees')
 
-new_tree <- read.besat('./2025Jan06/globalsubsample/ha_global_subsample_traits_mcc.tree')
+new_tree <- read.beast('./2025Jan06/globalsubsample/ha_global_subsample_traits_mcc.tree')
 
 ############################################## MAIN ################################################
 global_theme <- theme_classic(base_family = "LM Sans 10")+
