@@ -128,6 +128,7 @@ mcc_trees <- lapply(mcc_treefiles, read.beast)
 
 
 # Note the core requirement - this will take a long time to run in series.
+# Change to futures -> multisession/multicore if you ever wish to try this again....
 df_list <- mclapply(treefiles, function(x) x %>% 
            read.beast(.) %>% 
            lapply(., GetRootInfo) %>%
