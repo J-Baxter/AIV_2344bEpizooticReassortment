@@ -20,12 +20,12 @@ library(magrittr)
 library(brms)
 library(broom)
 library(broom.mixed)
-library(tidybayes)
+library(tidybayes) # missing
 library(bayesplot)
-library(emmeans)
-library(marginaleffects)
+library(emmeans) # missing
+library(marginaleffects) # missing
 library(magrittr)
-library(ggmcmc)
+library(ggmcmc) # missing
 
 # User functions
 scientific_10 <- function(x) {
@@ -34,7 +34,7 @@ scientific_10 <- function(x) {
 
 ############################################## DATA ################################################
 diffusionmodel1_fit <- readRDS('./saved_models/diffusion_model.rds')
-diffusion_data <- read_csv('./saved_models/diffusion_data.csv')
+diffusion_data <- read_csv('./saved_models/diffusion_model.csv')
 
 
 ############################################## MAIN ################################################
@@ -375,7 +375,8 @@ posterior_beta_draws <- as.data.frame(diffusionmodel1_fit) %>%
                names_to = 'parameter',
                values_to = 'estimate') %>% filter(!grepl('lp__|lprior', parameter)) %>%
   #filter(grepl('b_', parameter)) %>%
-  mutate(draw = 'posterior')
+  mutate(draw = 'posterior') %>%
+  filter(parameter %in% c('Intercept_hu', 'sd_segment__hu_Intercept', 'sd_segment__Intercept', 'sigma'))
 
 
 priors <- expand_grid(parameter = unique(posterior_beta_draws$parameter),
@@ -384,7 +385,8 @@ priors <- expand_grid(parameter = unique(posterior_beta_draws$parameter),
                       df = NA_real_) %>%
   mutate(mean = case_when(grepl('^b', parameter) ~ 0,
                           grepl('^sd_(segment|collection)|^sigma$', parameter) ~ 0,
-                          grepl('Intercept_hu', parameter) ~ 0),
+                          grepl('Intercept_hu', parameter) ~ 0,
+                          grepl('Intercept$', parameter) ~ 5),
          sd = case_when(grepl('^b', parameter) ~ 10,
                         grepl('^sd_(segment|collection)|^sigma$', parameter) ~ 11.7,
                         grepl('Intercept_hu', parameter) ~ 1),
@@ -397,127 +399,145 @@ priors <- expand_grid(parameter = unique(posterior_beta_draws$parameter),
 
 plt_params <- ggplot() + 
   geom_histogram(data = posterior_beta_draws %>% 
-                   filter(parameter %in% priors$parameter), 
+                   filter(parameter %in% priors$parameter) %>%
+                   filter(!grepl('^sd|^sigma$', parameter)), 
                  aes(x = estimate,
                      y = after_stat(density)),
                  inherit.aes = F, 
-                 bins = 50, 
+                 binwidth = 0.1, 
                  fill = '#1b9e77') + 
+  
+  stat_function(fun = dlogis,
+                data = tibble(parameter = "Intercept_hu" ),
+                args = list(location = 0, scale = 1),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_hu_Intercept" ),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  
+  stat_function(fun = dstudent_t,
+                data = tibble(parameter = "Intercept"),
+                args = list(mu = 3, sigma = 5.6, df = 11.7),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
   
   stat_function(fun = dnorm,
                 data = tibble(parameter = "b_Intercept" ),
-                args = list(mean = 0, sd = 3),
+                args = list(mean = 0, sd = 5),
                 fill = '#d95f02',
                 geom = 'area',
                 alpha = 0.5) +
-  
-  stat_function(fun = dnorm,
-                data = tibble(parameter = "b_hu_Intercept"),
-                args = list(mean = 0, sd = 3),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
-  
-  stat_function(fun = dnorm,
-                data = tibble(parameter = "b_host_richness"),
-                args = list(mean = 0, sd = 3),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
+
   
   stat_function(fun = dnorm,
                 data = tibble(parameter = "b_median_anseriformes_wild"),
-                args = list(mean = 0, sd = 3),
+                args = list(mean = 0, sd = 5),
                 fill = '#d95f02',
                 geom = 'area',
                 alpha = 0.5) +
   
   stat_function(fun = dnorm,
                 data = tibble(parameter = "b_median_charadriiformes_wild"),
-                args = list(mean = 0, sd = 3),
+                args = list(mean = 0, sd = 5),
                 fill = '#d95f02',
                 geom = 'area',
                 alpha = 0.5) +
   
   stat_function(fun = dnorm,
-                data = tibble(parameter = "b_seasonmigrating_spring"),
-                args = list(mean = 0, sd = 3),
+                data = tibble(parameter = "b_collection_regionnamecentral&northernamerica"),
+                args = list(mean = 0, sd = 5),
                 fill = '#d95f02',
                 geom = 'area',
                 alpha = 0.5) +
   
   stat_function(fun = dnorm,
-                data = tibble(parameter = "b_seasonmigrating_autumn"),
-                args = list(mean = 0, sd = 3),
+                data = tibble(parameter = "b_collection_regionnameeurope"),
+                args = list(mean = 0, sd = 5),
                 fill = '#d95f02',
                 geom = 'area',
                 alpha = 0.5) +
   
   stat_function(fun = dnorm,
-                data = tibble(parameter = "b_seasonoverwintering"),
-                args = list(mean = 0, sd = 3),
+                data = tibble(parameter = "b_collection_regionnameafrica"),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_hu_collection_regionnamecentral&northernamerica"),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_hu_collection_regionnameeurope"),
+                args = list(mean = 0, sd = 5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+  
+  stat_function(fun = dnorm,
+                data = tibble(parameter = "b_hu_collection_regionnameafrica"),
+                args = list(mean = 0, sd = 5),
                 fill = '#d95f02',
                 geom = 'area',
                 alpha = 0.5) +
   
   stat_function(fun = dnorm,
                 data = tibble(parameter = "b_hu_seasonmigrating_spring"),
-                args = list(mean = 0, sd = 3),
+                args = list(mean = 0, sd = 5),
                 fill = '#d95f02',
                 geom = 'area',
                 alpha = 0.5) +
   
   stat_function(fun = dnorm,
                 data = tibble(parameter = "b_hu_seasonmigrating_autumn"),
-                args = list(mean = 0, sd = 3),
+                args = list(mean = 0, sd = 5),
                 fill = '#d95f02',
                 geom = 'area',
                 alpha = 0.5) +
   
   stat_function(fun = dnorm,
                 data = tibble(parameter = "b_hu_seasonoverwintering"),
-                args = list(mean = 0, sd = 3),
+                args = list(mean = 0, sd = 5),
                 fill = '#d95f02',
                 geom = 'area',
                 alpha = 0.5) +
+
   
-  stat_function(fun = dstudent_t,
-                data = tibble(parameter = "sd_collection_regionname__Intercept"),
-                args = list(mu = 0, sigma = 5, df = 3),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
+  #stat_function(fun = dstudent_t,
+              #  data = tibble(parameter = "sd_segment__Intercept"),
+               # args = list(mu = 3, sigma = 0, df = 11.7),
+               # fill = '#d95f02',
+              #  geom = 'area',
+               # alpha = 0.5) +
   
-  stat_function(fun = dstudent_t,
-                data = tibble(parameter = "sd_collection_regionname__hu_Intercept"),
-                args = list(mu = 0, sigma = 5, df = 3),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
+  #stat_function(fun = dstudent_t,
+               # data = tibble(parameter = "sd_segment__hu_Intercept"),
+               # args = list(mu = 3, sigma = 0, df = 11.7),
+               # fill = '#d95f02',
+               # geom = 'area',
+              #  alpha = 0.5) +
   
-  stat_function(fun = dstudent_t,
-                data = tibble(parameter = "sd_segment__Intercept"),
-                args = list(mu = 0, sigma = 5, df = 3),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
-  
-  stat_function(fun = dstudent_t,
-                data = tibble(parameter = "sd_segment__hu_Intercept"),
-                args = list(mu = 0, sigma = 5, df = 3),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
-  
-  stat_function(fun = dstudent_t,
-                data = tibble(parameter = "sigma"),
-                args = list(mu = 0, sigma = 5, df = 3),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
+  #stat_function(fun = dstudent_t,
+               # data = tibble(parameter = "sigma"),
+               # args = list(mu = 3, sigma = 0, df = 11.7),
+               # fill = '#d95f02',
+               # geom = 'area',
+                #alpha = 0.5) +
   
   xlim(c(-15,15)) + 
-  facet_wrap(~parameter, scales = 'free_y') +
+  facet_wrap(~parameter, scales = 'free_y',  ncol = 3) +
   theme_minimal()
 
 
