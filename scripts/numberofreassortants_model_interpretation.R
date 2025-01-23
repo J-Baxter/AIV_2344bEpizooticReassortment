@@ -44,8 +44,14 @@ mcmc_countmodel <- ggs(countmodel_mv_fit) # Warning message In custom.sort(D$Par
 
 
 # Posterior predictive distribution
-posteriorpredictive_reassortantclass <-pp_check(countmodel_fit, ndraws = 500, resp = 'reassortantclass')
-posteriorpredictive_nreassortants <-pp_check(countmodel_fit, ndraws = 500, resp = 'nreassortants')
+posteriorpredictive_reassortantclass <-pp_check(countmodel_mv_fit, ndraws = 500, resp = 'reassortantclass')
+posteriorpredictive_nreassortants <-pp_check(countmodel_mv_fit, ndraws = 500, resp = 'nreassortants')
+
+countmodel_posteriorpredictive <- bind_rows(posteriorpredictive_nreassortants$data %>%
+  mutate(resp = 'nreassortants'),
+  posteriorpredictive_reassortantclass$data %>%
+    mutate(resp = 'reassortantclass'))
+  
 
                                              
 
@@ -98,8 +104,8 @@ posteriorpredictive_nreassortants <-pp_check(countmodel_fit, ndraws = 500, resp 
 
 
 ##### Plot Posterior Predictive Check #####
-plt_posteriorpredictive <- plot_posteriorpredictive$data  %>%
-  mutate(value = log1p(value)) %>%
+pp_a <- countmodel_posteriorpredictive  %>%
+  filter(resp == 'nreassortants') %>%
   ggplot() + 
   geom_density(aes(x = value, 
                    group= rep_id, 
@@ -120,14 +126,48 @@ plt_posteriorpredictive <- plot_posteriorpredictive$data  %>%
   
   guides(alpha= 'none', 
          colour=guide_legend()) + 
-  scale_x_continuous('Weighted Diffusion Coefficient') + 
-  scale_y_continuous('Density') + 
-  
-  theme_minimal(base_size = 8) + 
+  scale_x_continuous('Number of Reassortants',
+                     expand = c(0,0),
+  ) +
+  scale_y_continuous('Density',expand = c(0,0)) + 
+  global_theme+ 
   theme(legend.position = 'inside',
         legend.title = element_blank(),
         legend.position.inside = c(0.8, 0.6))
 
+
+pp_b <- countmodel_posteriorpredictive  %>%
+  filter(resp == 'reassortantclass') %>%
+  ggplot() + 
+  geom_density(aes(x = value, 
+                   group= rep_id, 
+                   alpha = is_y,  
+                   linewidth = is_y, 
+                   colour = is_y), 
+               key_glyph = draw_key_path) + 
+  scale_alpha_manual(values = c('FALSE' = 0.00001, 
+                                'TRUE' = 1)) + 
+  scale_linewidth_manual(values = c('FALSE' = 0.1, 
+                                    'TRUE' = 1),
+                         labels  = c(expression(italic('y')['rep']),
+                                     expression(italic('y'))))+ 
+  scale_colour_manual(values = c('FALSE' = '#cbc9e2', 
+                                 'TRUE' = '#54278f'),
+                      labels  = c(expression(italic('y')['rep']),
+                                  expression(italic('y')))) + 
+  
+  guides(alpha= 'none', 
+         colour=guide_legend()) + 
+  scale_x_continuous('Reassortant Class',
+                     expand = c(0,0),
+  ) +
+  scale_y_continuous('Density',expand = c(0,0)) + 
+  global_theme+ 
+  theme(legend.position = 'inside',
+        legend.title = element_blank(),
+        legend.position.inside = c(0.8, 0.6))
+
+cowplot::plot_grid(pp_a,  pp_b, nrow=1,align='h',axis='tb',labels='AUTO')
 
 
 #### Plot MCMC chains for Key parameters #####
