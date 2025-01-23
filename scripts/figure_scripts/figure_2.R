@@ -17,6 +17,10 @@ memory.limit(30000000)
 library(tidyverse)
 library(magrittr)
 library(beastio)
+library(sf)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(cowplot)
 
 # User functions
 GetRootInfo <- function(treedata){
@@ -43,22 +47,63 @@ GetRootInfo <- function(treedata){
 }
 
 
+PlotTMRCA <- function(dataframe){
+  plot <- ggplot(dataframe,
+                 aes(x  = tmrca,
+                     colour = host_simplifiedhost,
+                     #y = host_simplifiedhost,
+                     fill = host_simplifiedhost)) + 
+    geom_density(alpha = 0.7, position = 'stack') + 
+    scale_x_date('Date', 
+                 limits = ymd(c('2017-01-01', '2023-01-01')),
+                 date_breaks = "1 year",
+                 date_labels = "%Y",
+                 expand = c(0,0)) + 
+    scale_y_continuous('Probability Density', expand = c(0,0))  +
+    
+    
+    scale_fill_manual(values = host_colours) + 
+    scale_colour_manual(values = host_colours) + 
+    global_theme
+  
+  
+  
+  return(plot)
+}
 
 
-PlotPhyloGeo <- function(tree_tbl, basemap){
-  # Format Nodes
+PlotPhyloGeo <- function(treedata){
+  require(rnaturalearthdata)
+  require(tidytree)
+  require(sf)
+  require(tidyverse)
+  
+  
+  # load base map
+  map <- ne_countries(scale = "medium", returnclass = "sf")
+  
+  # Create tree-tibble from 
+  tree_tbl <- as_tibble(treedata)
+  
+  most_recent_date <- tree_tbl %>%
+    dplyr::select(label, height) %>%
+    slice_min(height) %>%
+    pull(label) %>%
+    str_extract(., '\\d{4}-\\d{2}-\\d{2}') %>%
+    ymd()
+  
   nodes <- tree_tbl %>%
     dplyr::select(node,height, location1, location2, host_simplifiedhost) %>%
-    mutate(year = decimal_date(ymd(most_recent_date)) - as.numeric(height)) %>%
+    mutate(year = decimal_date(most_recent_date) - as.numeric(height)) %>%
     st_as_sf(coords = c( 'location2', 'location1'), 
              crs = 4326)
   
   # Format Arrows
   arrows <-  tree_tbl %>%
     dplyr::select(node, parent, host_simplifiedhost) %>%
-    left_join(mcc_tree_tbl %>%
+    left_join(tree_tbl %>%
                 dplyr::select(node, location1, location2)) %>%
-    left_join(mcc_tree_tbl %>%
+    left_join(tree_tbl %>%
                 dplyr::select(node, location1, location2),
               by = join_by(parent== node)) %>%
     mutate(across(starts_with('location'), .fns = ~ as.numeric(.x))) %>%
@@ -68,34 +113,28 @@ PlotPhyloGeo <- function(tree_tbl, basemap){
                                    .default = location2.y))
   
   # Plot in GGplot
-  plot <- ggplot(basemap) +
+  plot <- ggplot(map) +
     geom_sf() +
     
     # Plot Branches
     geom_curve(data = arrows, aes(x = location2.x, y = location1.x,
                                   xend = location2.y, yend = location1.y,
-                                  colou r= host_simplifiedhost),
+                                  colour= host_simplifiedhost),
                lwd = 0.3,
                curvature = 0.2) + 
     
     # Plot nodes
-    geom_sf(data = nodes, shape = 21 , size = 2, aes(fill = host_simplifiedhost))+
+    geom_sf(data = nodes, shape = 21 , size = 1, aes(fill = host_simplifiedhost, colour = host_simplifiedhost))+
     
     # Set graphical scales
     scale_fill_manual(values = host_colours) + 
     scale_colour_manual(values = host_colours) +
     
-    #coord_sf(ylim = c(35,60), xlim = c(-8, 33), expand = FALSE) +
-    theme_void(base_size = 18) + 
-    global_theme() + 
+    coord_sf(ylim = c(-60, 75), xlim = c(-180, 180), expand = FALSE) +
+    theme_void() + 
     
     
-    theme(legend.background = element_rect(colour="white", fill="white"),
-          legend.position =c(.7,.1),
-          legend.title = element_text( vjust = 1),
-          legend.direction="horizontal",
-          legend.key.width  = unit(3, "lines"),
-          legend.key.height = unit(1, "lines")) 
+    theme(legend.position = 'none' ) 
   
   return(plot)
 }
@@ -109,12 +148,12 @@ treefiles <- c(list.files('./2024Aug18/reassortant_subsampled_outputs/traits_100
 
 mcc_treefiles <- c(list.files('./2024Aug18/reassortant_subsampled_outputs/traits_mcc',
                               pattern = 'ha',
-                              full.names = TRUE)[-10] ,
+                              full.names = TRUE)[-11] ,
                    './2024Sept16/reassortant_subsampled_outputs/traits_mcc/ha_43112113_subsampled_traits_mcc.tree')
 
 
 mcc_trees <- lapply(mcc_treefiles, read.beast)
-
+names(mcc_trees) <- gsub('.*ha_|_subsampled_traits_mcc.tree', '', mcc_treefiles)
 
 # Note the core requirement - this will take a long time to run in series.
 # Change to futures -> multisession/multicore if you ever wish to try this again....
@@ -150,46 +189,20 @@ dominant_reassortants <- read_csv('./2024Aug18/treedata_extractions/summary_reas
 
 
 # Plot the density of TMRCA, fill by origin  host
-
-
-
-
 host_tmrca_list <- host_tmrca %>%
   filter(cluster_profile %in% dominant_reassortants) %>%
   group_split(cluster_profile,  .keep = T) %>%
   setNames(dominant_reassortants)
 
-PlotTMRCA <- function(dataframe){
-  plot <- ggplot(dataframe,
-                 aes(x  = tmrca,
-                     colour = host_simplifiedhost,
-                     #y = host_simplifiedhost,
-                     fill = host_simplifiedhost)) + 
-    geom_density(alpha = 0.7, position = 'stack') + 
-    scale_x_date('Date', 
-                 limits = ymd(c('2017-01-01', '2023-01-01')),
-                 date_breaks = "1 year",
-                 date_labels = "%Y",
-                 expand = c(0,0)) + 
-    scale_y_continuous('Probability Density', expand = c(0,0))  +
-    
-    
-    scale_fill_manual(values = host_colours) + 
-    scale_colour_manual(values = host_colours) + 
-    global_theme
-  
-  
-  
-  return(plot)
-}
 
 tmrca_plots <- lapply(host_tmrca_list, PlotTMRCA)
 
 
-# Phylogeography by colour
-map <- ne_countries(scale = "medium", returnclass = "sf")
+# Phylogeography (colour by host)
+phylogeo <- lapply(mcc_trees[names(mcc_trees) %in% as.character(dominant_reassortants)], PlotPhyloGeo )
 
 
+phylogeo[[6]]
 
 
 ############################################## WRITE ###############################################
