@@ -127,8 +127,29 @@ PlotPhyloGeo <- function(treedata){
     geom_sf(data = nodes, shape = 21 , size = 1, aes(fill = host_simplifiedhost, colour = host_simplifiedhost))+
     
     # Set graphical scales
-    scale_fill_manual(values = host_colours) + 
-    scale_colour_manual(values = host_colours) +
+    scale_fill_manual('Host',
+                      values = host_colours,
+                      labels =  c('anseriformes-domestic' = 'Domestic Anseriformes',
+                                  'anseriformes-wild' = 'Wild Anseriformes',
+                                  'charadriiformes-wild' = 'Wild Charadriiformes',
+                                  'galliformes-domestic' = 'Domestic Galliformes',
+                                  'galliformes-wild' = 'Wild Galliformes',
+                                  'environment' = 'Environment',
+                                  'mammal' = 'Mammal',
+                                  'other-bird' = 'Other',
+                                  'human' = 'Human')) + 
+    
+    scale_colour_manual('Host',
+                        values = host_colours,
+                        labels =  c('anseriformes-domestic' = 'Domestic Anseriformes',
+                                    'anseriformes-wild' = 'Wild Anseriformes',
+                                    'charadriiformes-wild' = 'Wild Charadriiformes',
+                                    'galliformes-domestic' = 'Domestic Galliformes',
+                                    'galliformes-wild' = 'Wild Galliformes',
+                                    'environment' = 'Environment',
+                                    'mammal' = 'Mammal',
+                                    'other-bird' = 'Other',
+                                    'human' = 'Human')) +
     
     coord_sf(ylim = c(-60, 75), xlim = c(-180, 180), expand = TRUE) +
     scale_x_continuous(expand = c(0,0)) + 
@@ -151,7 +172,7 @@ treefiles <- c(list.files('./2024Aug18/reassortant_subsampled_outputs/traits_100
 mcc_treefiles <- c(list.files('./2024Aug18/reassortant_subsampled_outputs/traits_mcc',
                               pattern = 'ha',
                               full.names = TRUE)[-11] ,
-                   './2024Sept16/reassortant_subsampled_outputs/traits_mcc/ha_43112113_subsampled_traits_mcc.tree')
+                   './2024Sept16/south_america/ha_43112113_subsampled_traits_mcc.tree')
 
 
 mcc_trees <- lapply(mcc_treefiles, read.beast)
@@ -208,26 +229,35 @@ phylogeo[[6]]
 
 # align plots vertically (so that each row corresponds to a reassortant)
 
-cowplot::plot_grid(ggplot() + theme_void(),ggplot() + theme_void(),
-                   phylogeo[[1]],tmrca_plots[[1]], 
-          phylogeo[[2]], tmrca_plots[[2]],
-          phylogeo[[3]], tmrca_plots[[3]],
-          phylogeo[[4]], tmrca_plots[[4]],
-          phylogeo[[5]], tmrca_plots[[5]],
-          phylogeo[[6]], tmrca_plots[[6]],
+plot_legend <- get_plot_component(phylogeo[[4]]+theme(legend.position = 'bottom'), 'guide-box-bottom', return_all = TRUE)
+
+main <- cowplot::plot_grid(
+  ggplot() + theme_void(),ggplot() + theme_void(),
+  phylogeo[[1]],tmrca_plots[[1]], 
+  phylogeo[[2]], tmrca_plots[[2]],
+  phylogeo[[3]], tmrca_plots[[3]],
+  phylogeo[[4]], tmrca_plots[[4]],
+  phylogeo[[5]], tmrca_plots[[5]],
+  phylogeo[[6]], tmrca_plots[[6]],
           nrow = 7,
           ncol = 2,
-          rel_heights = c(0.2,1,1,1,1,1,1),
+  rel_heights = c(0.1,1,1,1,1,1,1),
           rel_widths = c(1.25,0.75),
           align = 'vh',
           axis = 'rbt',
-          labels = c('','', "11111111",'',
+          labels = c('', '', 
+                     "11111111",'',
                      "11211111" , '',
                      "11414114" , '',
                      "21111111", '', 
                      "32313212",'',
                      "43112113",''),
           vjust = -0.2)
+
+cowplot::plot_grid(main,
+                   plot_legend, 
+                   rel_heights = c(1,0.1),
+                   ncol = 1)
 
 ggsave('~/Downloads/figure2.jpeg',
        height = 30,
