@@ -100,7 +100,7 @@ temp <- cag_data %>%
   mutate(location_query =   gsub('*[tT]umuji.*|*dongpaozi north.*', 'Tumuji Nature Reserve, China', location_query) %>% # Note this is inferred
            gsub('[bB]ird [iI]sland', 'Niaodao Scenic Spot',.)%>% # Note this is inferred
            gsub('Sanshui Factory', '',.)%>% # Note this is an approximation. I (JB) cannot find the exact location
-           gsub('[Hh]ada [Bb]each', 'Shadao',.)) %>%  # Note this is inferred
+           gsub(p,.)) %>%  # Note this is inferred
   as_tibble() %>%
 
     # geocode to obtain lat-lon coordinates
