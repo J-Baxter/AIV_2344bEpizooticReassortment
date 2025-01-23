@@ -1,0 +1,1658 @@
+weighted_diff_coeff,median_anseriformes_wild,median_charadriiformes_wild,segment,collection_regionname,season
+0,0,0,mp,asia,migrating_spring
+206711.7,0.23990701938322267,0,mp,europe,migrating_autumn
+112569.2,0.04159784119424081,0,mp,europe,breeding
+503527.4,0.06245876940838713,0.15696723235732346,mp,europe,breeding
+409633.7,0.23653759302744423,0,mp,europe,migrating_autumn
+0,0.04964253772685279,0,mp,europe,migrating_autumn
+0,0.120074520124966,0,mp,europe,migrating_autumn
+0,0.1278205525477265,0,mp,europe,overwintering
+0,0.26304821584508264,0,mp,europe,migrating_autumn
+479.8216,0.19710120059337477,0,mp,europe,migrating_autumn
+10980.52,0.22587358171476613,0,mp,europe,overwintering
+185116,1.1453327687359725,0,mp,europe,overwintering
+716886,0.34017066365692017,0,mp,europe,overwintering
+185099.9,0.6435449090401413,0,mp,europe,migrating_autumn
+285694.5,1.018587778400576,0,mp,europe,migrating_autumn
+145591.3,0.03631036717806957,0.15843802309678168,mp,europe,overwintering
+0,0.09716739368985829,0,mp,europe,migrating_autumn
+0,0.05215065053250001,0,mp,europe,migrating_spring
+0,0.24936986167991115,0,mp,europe,breeding
+0,0.2706748006214852,0,mp,europe,breeding
+0,0,0,mp,europe,migrating_autumn
+245513.5,0.6025599302363833,0.20104864246511767,mp,europe,breeding
+418309.1,0.17081326393602936,0,mp,europe,migrating_autumn
+0,0.19236050969175444,0.02857326312454322,mp,europe,migrating_spring
+157773.8,0,0.38915675560157936,mp,europe,migrating_autumn
+3270.737,0,0,mp,europe,breeding
+2347.128,0,0,mp,europe,breeding
+0,0,0,mp,europe,breeding
+0,0,0.10641077702764525,mp,europe,migrating_autumn
+0,0.09712831445609817,0.161391043143718,mp,europe,overwintering
+0,0.0696726190931205,0,mp,europe,migrating_autumn
+0,0.0732806019676655,0,mp,europe,migrating_autumn
+0,0.2937756830467997,0,mp,europe,migrating_autumn
+0,0.42698472749327365,0,mp,europe,migrating_autumn
+109971.7,0.2724853022189997,0.04687865023912074,mp,asia,migrating_spring
+351015.8,0,0,mp,europe,migrating_autumn
+0,0,0.0736275461365814,mp,europe,migrating_autumn
+0,0,0,mp,europe,overwintering
+0,0,0,mp,europe,overwintering
+0,0.0519631015851969,0.10035788288981706,mp,asia,migrating_spring
+0,0.6047115380692354,0,mp,europe,overwintering
+4380.534,0.23296307139422368,0.00219630502020429,mp,asia,migrating_spring
+0,0.08302283294434964,0,mp,asia,breeding
+0,0.06551505265538005,0,mp,europe,migrating_autumn
+0,0.3135044765419899,0,mp,europe,overwintering
+0,0.11919052266030404,0,mp,asia,breeding
+203739.9,0.27992783932758325,0,mp,asia,migrating_spring
+0,0.1538831573837003,0,mp,asia,overwintering
+0,0,0,mp,europe,migrating_spring
+0,0,0.18497485976889383,mp,europe,migrating_autumn
+0,0,0.1691031108537402,mp,europe,overwintering
+419655.3,0,0.3398152219074486,mp,europe,migrating_autumn
+130747,0.5170372080976824,0.08178299271189537,mp,europe,overwintering
+5874.822,0.02706025643769827,0,mp,europe,migrating_autumn
+0,3.760149642566635,0,mp,europe,overwintering
+0,0.1929012661064089,0,mp,europe,migrating_spring
+11093.1,0,0,mp,europe,overwintering
+0,0.3718461788112677,0,mp,europe,migrating_autumn
+0,0,0,nx,europe,migrating_autumn
+0,0,0,nx,europe,migrating_autumn
+0,0,0,nx,europe,migrating_autumn
+166440.6,0,0,nx,europe,breeding
+35923.6,0,0,nx,europe,breeding
+201314.1,0,0,nx,europe,breeding
+0,0,0,nx,europe,migrating_autumn
+3110.888,0,0,nx,europe,overwintering
+0,0,0,nx,europe,migrating_autumn
+0,0,0,nx,europe,overwintering
+0,0,0,nx,europe,migrating_autumn
+0,0,0,nx,europe,migrating_spring
+299308.7,0,0,nx,europe,migrating_autumn
+0,0,0,nx,europe,overwintering
+0,0,0,nx,europe,migrating_autumn
+0,0,0,nx,europe,overwintering
+272222.7,0,0,nx,europe,breeding
+270409.4,0,0,nx,europe,breeding
+0,0,0,nx,europe,overwintering
+0,0,0,nx,europe,breeding
+140050.3,0,0,nx,europe,migrating_autumn
+6464.782,0,0,nx,europe,breeding
+5296.578,0,0,nx,europe,breeding
+0,0,0,nx,europe,breeding
+15391.21,0,0,nx,europe,breeding
+0,0,0,nx,europe,migrating_spring
+113888.1,0,0,nx,europe,migrating_autumn
+148158,0,0,nx,europe,overwintering
+93514.86,0,0,nx,europe,migrating_autumn
+184531.6,0,0,nx,europe,overwintering
+0,0,0,nx,europe,migrating_autumn
+0,0,0,nx,europe,migrating_autumn
+0,0,0,nx,europe,breeding
+0,0,0,nx,central & northern america,overwintering
+177029.6,0,0,nx,europe,breeding
+0,0,0,nx,asia,migrating_autumn
+120109.1,0,0,nx,europe,migrating_autumn
+0,0,0,nx,europe,breeding
+3051.296,0,0,nx,europe,overwintering
+127038.5,0,0,nx,europe,breeding
+80742.26,0,0,nx,europe,migrating_autumn
+187229.5,0,0,nx,europe,migrating_autumn
+171182,0,0,nx,europe,breeding
+16807.3,0,0,nx,europe,overwintering
+232449.5,0,0,nx,europe,migrating_autumn
+110407.8,0,0,nx,europe,migrating_autumn
+1617.051,0,0,nx,europe,overwintering
+155843.8,0,0,nx,europe,migrating_autumn
+0,0,0,nx,europe,migrating_spring
+0,0,0,nx,europe,migrating_spring
+8946.725,0,0,nx,asia,breeding
+2430.689,0,0,nx,europe,breeding
+79936.97,0,0,nx,europe,overwintering
+41689.63,0,0,nx,europe,overwintering
+0,0,0,nx,europe,migrating_spring
+0,0,0,nx,europe,overwintering
+0,0,0,nx,europe,overwintering
+50091.38,0,0,nx,asia,breeding
+0,0,0,nx,europe,migrating_autumn
+0,10.89242998950179,0,np,europe,migrating_spring
+0,11.610790396187992,0,np,europe,migrating_spring
+149567.1,0,0.655127087544578,np,europe,breeding
+5685.506,0,0,np,europe,overwintering
+2992.88,0,0,np,europe,overwintering
+0,9.83384079448932,0,np,asia,migrating_autumn
+31293.68,2.3527720912274805,0,np,europe,overwintering
+0,0.7054605378253207,0,np,europe,breeding
+0,0.7931317707021215,0,np,europe,breeding
+740.4561,0,0,np,europe,breeding
+12214.33,3.9787234393384967,0,np,europe,breeding
+0,5.524086574789553,0,np,europe,migrating_autumn
+18602.38,0,0,np,europe,migrating_autumn
+0,1.058792469031335,0,np,europe,overwintering
+0,0.6699660790838671,0,np,europe,overwintering
+3535.278,3.5722057450297804,0,np,europe,overwintering
+151364.2,4.057300867493506,1.8910391302653071,np,europe,overwintering
+0,0,0.973230911087212,np,europe,migrating_spring
+104984.5,0,2.9250428131581554,np,europe,breeding
+0,4.77214808785282,0,np,europe,migrating_spring
+0,3.1749561457765765,0,np,europe,migrating_autumn
+67317.95,0,2.360425905620131,np,europe,overwintering
+0,0,5.957399094392198,np,europe,breeding
+213473.4,0.14582037437145523,0,np,europe,breeding
+8409.905,3.7166851661168376,0,np,europe,migrating_autumn
+0,0,0,np,europe,overwintering
+383393,0.4280807382608476,0,np,europe,migrating_autumn
+0,0.7011205366822342,0,np,europe,migrating_autumn
+10871.32,0,0,np,europe,breeding
+14662.85,0,0,np,europe,breeding
+0,0,0,np,europe,breeding
+56439.48,3.383070954238045,0,np,europe,migrating_autumn
+54625.34,0.13363256166933546,0,np,europe,overwintering
+0,2.930694754210501,0,np,europe,migrating_spring
+507243.9,0,2.98883087323724,np,europe,migrating_autumn
+110181.9,0,0.2075518331734276,np,europe,migrating_autumn
+0,0.7816444598686516,0,np,europe,breeding
+237417.1,1.217770202904287,0,np,europe,overwintering
+192369.4,0.8359289748370191,0,np,asia,overwintering
+0,0,0.4515297432060592,np,europe,migrating_autumn
+155642.2,0.713970489609812,0.28190636999349294,np,europe,migrating_spring
+251995.4,0.3635128714778233,0,np,europe,migrating_autumn
+0,0.1807829448055962,0,np,europe,migrating_autumn
+1117825,0.332412550414773,0,np,europe,breeding
+0,0.04251470075465136,0,np,europe,overwintering
+0,0.43554122995332634,0,np,europe,breeding
+0,0.26464303611415474,0,np,europe,breeding
+50114.58,0.609565641109695,0,np,europe,migrating_autumn
+22406.76,0,0,np,asia,breeding
+36069.97,0.29291719711225106,0,np,asia,migrating_spring
+530.3482,0,0,np,europe,migrating_autumn
+0,3.9723353016811505,0,np,europe,migrating_spring
+0,0.5197942059763356,0,np,asia,migrating_autumn
+96921.76,0.13373703492707278,0,np,asia,migrating_autumn
+0,0.2267375179529587,0,np,europe,migrating_autumn
+0,0,0,np,europe,migrating_autumn
+259725.3,0.5240721690019079,0,np,europe,breeding
+109501.2,0.6453032866177075,0.06511525356355996,np,europe,migrating_autumn
+58977.36,1.0757928758295812,0,np,europe,migrating_autumn
+0,0.9611788797958808,0,np,europe,breeding
+113880.3,10.74497852747184,0,np,europe,migrating_autumn
+0,10.647628604814123,0,ns,europe,overwintering
+0,0,0,ns,europe,migrating_autumn
+0,0.437666448123867,0,ns,europe,breeding
+51424.18,0.25350326698036696,0,ns,europe,breeding
+235716.2,0.09903303369579676,0,ns,europe,breeding
+4112.698,0,0,ns,europe,overwintering
+0,0,0,ns,europe,migrating_autumn
+0,0,0,ns,europe,migrating_autumn
+0,0.23743155360809,0,ns,europe,overwintering
+53788.85,0.05635968435485239,0,ns,europe,overwintering
+69403.46,0.18066582082933635,0,ns,europe,migrating_autumn
+168562.5,0.3374673585644068,0.29024599667811657,ns,europe,migrating_autumn
+0,0.2824742781981655,0,ns,europe,migrating_autumn
+132552.2,0.11329317612700508,0,ns,asia,migrating_spring
+0,0.16712891722997725,0.07362365649320424,ns,europe,overwintering
+0,0,0,ns,europe,overwintering
+0,0.02224605612551045,0.09585298763282424,ns,europe,migrating_autumn
+25775.29,0.3246939028891944,0,ns,europe,migrating_autumn
+0,0.46055924822864824,0,ns,europe,overwintering
+0,0,0,ns,europe,migrating_spring
+5795.028,0,0,ns,europe,overwintering
+0,0.19800851998338945,0,ns,asia,breeding
+61549.64,0,0,ns,asia,breeding
+0,0.11142865586372608,0,ns,asia,breeding
+141190,0,0,ns,europe,migrating_autumn
+0,1.8880082546786736,0,ns,europe,migrating_autumn
+1655.09,0.4724179329208198,0,ns,europe,migrating_spring
+0,0.5708508088337734,0,ns,europe,overwintering
+289828.5,0,1.1214479706905962,ns,europe,overwintering
+123969.6,0,0,ns,europe,breeding
+322620.5,0.2712929504182391,0,ns,europe,migrating_spring
+175640,0.4023048365748352,0,ns,europe,migrating_autumn
+160680.9,0.8350367677598456,0,ns,europe,overwintering
+36662.01,0.3594012737731038,0,ns,europe,overwintering
+4662.793,0,0,ns,europe,breeding
+1974.355,0,0,ns,europe,migrating_spring
+145864.8,1.1033424649300656,0,ns,europe,migrating_autumn
+241506.3,0,0.5078503226396727,ns,europe,migrating_autumn
+0,0.06148117445725631,0,ns,europe,migrating_autumn
+0,0.40475340707090623,0,ns,europe,migrating_autumn
+0,0.14362018254675846,0.16983973053146784,ns,europe,overwintering
+312674.5,0.20844274562540477,0,ns,europe,migrating_autumn
+0,0.32719938363968026,0,ns,europe,breeding
+0,0.1464078260386117,0,ns,europe,breeding
+0,0.5020437453633484,0,ns,europe,breeding
+97881.67,0.0695611668972056,0.16121273505065403,ns,europe,breeding
+209130,0.3939158510666161,0,ns,europe,overwintering
+0,0.13621983459305653,0,ns,europe,migrating_autumn
+242587.6,0.19353838243034005,0,ns,europe,overwintering
+0,0.1612127350506576,0,ns,europe,overwintering
+0,0.1935383824303436,0,ns,europe,overwintering
+0,0.07616128120572085,0,ns,europe,migrating_spring
+0,0.0781349202170567,0,ns,europe,migrating_autumn
+0,0.06685459708590002,0,ns,europe,migrating_autumn
+0,0.7721958734683341,0,ns,europe,overwintering
+183380.1,0.5854746902728216,0.26956376888769285,ns,europe,breeding
+280059.9,0,0.28927210077822707,ns,europe,migrating_autumn
+0,0,0.02397433869465004,ns,europe,breeding
+191400.4,0.10419306670038608,0,ns,europe,breeding
+108386.2,0.28915927036656086,0,ns,europe,migrating_autumn
+0,0,3.825340604056727,ns,europe,migrating_autumn
+0,0,0.10801168485048152,ns,europe,overwintering
+20229.75,0,0,pa,europe,overwintering
+46395.92,0,4.260563585374618,pa,europe,migrating_autumn
+0,3.3734008468872236,0,pa,asia,migrating_autumn
+59344.15,0,0,pa,asia,breeding
+174528.4,0.1757788452062199,0,pa,europe,migrating_spring
+0,0.3509818487788525,0,pa,asia,migrating_spring
+92121.57,0.48540784942755977,0,pa,europe,migrating_autumn
+90659.85,0.13567986796232034,0,pa,europe,migrating_spring
+0,0,0,pa,europe,migrating_spring
+0,0.2907103818600305,0,pa,europe,migrating_autumn
+216010.4,0.0933791379377027,0.38254807694757353,pa,europe,migrating_spring
+11774.26,0.3508405640677985,0,pa,europe,migrating_autumn
+0,0.354797119084747,0,pa,europe,migrating_autumn
+0,0.5496576979556345,0,pa,europe,migrating_autumn
+0,0.4471480982826144,0,pa,europe,breeding
+369885.4,0.8903137935548635,0,pa,europe,breeding
+0,0.16497108801554283,0,pa,europe,migrating_autumn
+51.24422,0.17519301317907665,0,pa,europe,overwintering
+0,0.09122226766401909,0,pa,europe,migrating_spring
+6433.476,2.4435470547566496,0,pa,asia,overwintering
+28602.65,0,0,pa,europe,migrating_autumn
+58713.23,2.705642921152009,0.15703856716477205,pa,europe,overwintering
+391421.7,3.2231698002833085,0,pa,asia,migrating_autumn
+0,0.30016584105287514,2.763221746565609,pa,asia,breeding
+215969.8,2.5714589617508956,0,pa,europe,migrating_autumn
+0,3.329792627538577,0,pa,europe,breeding
+0,2.3325323535659734,0,pa,europe,breeding
+0,0,0.873438882890202,pa,europe,migrating_spring
+184663.9,0,0.5516632608794865,pa,europe,migrating_autumn
+420728.6,0,4.1322008102455925,pa,europe,overwintering
+275511.3,0.16061834503284622,0,pa,europe,migrating_autumn
+0,0.11810010874483012,0,pa,europe,overwintering
+0,1.0941591009057454,0,pa,europe,overwintering
+0,0.19861840932323105,0,pa,europe,migrating_autumn
+142888.6,1.338702021761403,0,pa,europe,breeding
+195891.8,1.1580217491924572,0,pa,europe,migrating_autumn
+88654.05,0,0.1893556170019224,pa,europe,overwintering
+174314.5,0.9606284418521084,0,pa,europe,overwintering
+0,0.2540198530746416,0,pa,europe,migrating_autumn
+2062.658,0,0,pa,europe,breeding
+818.5949,0,0,pa,europe,migrating_spring
+0,4.126517174243755,0,pa,europe,migrating_autumn
+92287.91,0.2409606505847579,0,pa,europe,migrating_autumn
+0,0.12144586971613336,0,pa,europe,overwintering
+40305.29,0.19789030269487107,0,pa,europe,overwintering
+0,0.20891382831376504,0,pa,europe,migrating_autumn
+875.6087,0.29859238511503605,0,pa,europe,migrating_autumn
+17.17344,0.5575903420465744,0,pa,europe,overwintering
+0,1.1093990767253885,0,pa,europe,migrating_spring
+215537.9,1.336796336999459,0.09854864191651204,pa,europe,breeding
+0,2.5256417542515397,0,pa,asia,migrating_spring
+0,3.5506826179816313,0,pa,asia,migrating_spring
+1944.722,0,0,pa,europe,breeding
+0,0.04799365953687662,4.139769180809115,pa,asia,breeding
+26399.62,1.358281633023406,0,pa,europe,breeding
+0,0.22838670604651412,0,pa,europe,migrating_spring
+88293.25,0,0.3699328737564276,pa,europe,migrating_autumn
+0,0,0.05628487467379628,pa,europe,migrating_spring
+1630.172,0.779665426290677,0,pa,europe,migrating_spring
+0,0,0,pa,europe,overwintering
+0,0,0,pa,europe,migrating_autumn
+0,9.884910081657369,0,pb1,europe,migrating_spring
+27133.04,0.21757587810087564,0.34064497532446936,pb1,europe,migrating_autumn
+1245.881,0,0,pb1,europe,breeding
+432.8131,0,0,pb1,europe,overwintering
+126484.2,0.3103762321716861,0,pb1,europe,migrating_autumn
+42211.25,0.8283566736533725,0,pb1,europe,breeding
+97157.42,0.03084873868663606,0,pb1,europe,overwintering
+1883.28,0.2943420216107313,0,pb1,europe,overwintering
+0,0.03840445830895689,0,pb1,europe,overwintering
+0,0.2780673295956202,0,pb1,europe,migrating_autumn
+227622.3,0,0,pb1,europe,migrating_autumn
+0,0.2138429343756183,0,pb1,europe,breeding
+42628.12,0.1140744161073215,0,pb1,europe,migrating_autumn
+0,4.118699769251982,0,pb1,europe,migrating_autumn
+765.0714,0.8169552805786182,0,pb1,europe,breeding
+0,3.336289403919194,0,pb1,asia,migrating_spring
+24045.35,0,0.2144774764739754,pb1,europe,migrating_autumn
+483727.9,0,0.5250297764298884,pb1,europe,migrating_autumn
+303872.7,0.2974373670111099,0,pb1,asia,overwintering
+204975.4,0,1.4920308396773443,pb1,europe,breeding
+273271.5,0.06266546781530913,0.1703288880197107,pb1,asia,overwintering
+207.1298,0,0,pb1,europe,overwintering
+0,2.6876195709699005,0,pb1,europe,overwintering
+69711.6,5.290691787742477,0,pb1,europe,overwintering
+0,0,3.157073020458677,pb1,asia,migrating_autumn
+79494.04,0.7324510837651061,0,pb1,europe,overwintering
+0,0.6447798508883071,0,pb1,europe,migrating_autumn
+634978.4,0.527434265554195,0,pb1,europe,overwintering
+0,0.22886140503440977,0,pb1,europe,migrating_autumn
+1316.273,0.25911229165926564,0,pb1,europe,migrating_autumn
+112.7735,0.3437487312864942,0,pb1,europe,overwintering
+0,0.5878859742480369,0,pb1,europe,migrating_spring
+0,0.31104821072939615,0,pb1,europe,migrating_autumn
+0,0.17657724007364806,0,pb1,europe,migrating_autumn
+0,0.2881621021830236,0,pb1,europe,migrating_autumn
+0,0.12994348307457138,0.3798211108532694,pb1,europe,migrating_autumn
+311273.5,0.22529171164870343,0,pb1,europe,migrating_autumn
+0,0.10893172613947044,0,pb1,europe,breeding
+0,0.12218342770929702,0.08672196990071868,pb1,europe,migrating_spring
+106496,0,0.41872967866543753,pb1,europe,migrating_autumn
+0,0,0.16596771668072563,pb1,europe,breeding
+2368.424,0,0,pb1,europe,breeding
+172029.7,0.55519410758167,0.22224469526391477,pb1,europe,breeding
+0,0.5524271376826775,0,pb1,europe,breeding
+0,0.3092493228656572,0,pb1,europe,breeding
+100480.5,0.5752418747589205,0,pb1,europe,migrating_autumn
+0,0.460016109364048,0,pb1,europe,migrating_spring
+312230.1,0.1412468550511612,0,pb1,europe,breeding
+4876.51,0,0,pb1,asia,breeding
+11635.84,0,0,pb1,europe,overwintering
+0,0.30655328063276954,4.893766878097738,pb1,asia,breeding
+0,0,0,pb1,europe,breeding
+0,0,0,pb1,europe,overwintering
+243756.3,0.08433498367079828,0,pb1,europe,breeding
+0,1.7571565071966244,0,pb1,europe,overwintering
+1236.755,0,0,pb1,europe,breeding
+0,0,0,pb1,europe,migrating_autumn
+41857.2,0,1.4306575072006975,pb1,europe,overwintering
+90160.04,0.8464444324698981,0,pb1,europe,overwintering
+90999.97,0.4932152937389862,0,pb1,europe,migrating_autumn
+67150.06,0,0.93868085771944,pb2,europe,overwintering
+247423.3,11.657384692217178,0,pb2,asia,migrating_spring
+156220.5,7.290686682428545,0,pb2,europe,migrating_autumn
+0,3.278703088745445,0,pb2,europe,migrating_spring
+143229.1,0.8606670290398002,0,pb2,europe,migrating_autumn
+0,2.9370872585141203,0,pb2,asia,migrating_autumn
+191765.2,2.09517816357657,0,pb2,europe,overwintering
+0,0,3.607625194709255,pb2,europe,breeding
+0,0,1.3657163801422456,pb2,europe,overwintering
+210596.6,0,4.9585358116363984,pb2,europe,migrating_autumn
+1209.434,1.6547176384970417,0,pb2,europe,overwintering
+0,2.2056619981733885,0,pb2,europe,breeding
+226932,0.9514934244457508,0.3740193539178147,pb2,europe,migrating_autumn
+30078.42,0,0.27395886945453185,pb2,europe,migrating_autumn
+0,0.64970343714789,0,pb2,europe,migrating_spring
+0,0.08356598480799349,0.10175823166847132,pb2,europe,overwintering
+76477.81,0,0.5111574569672133,pb2,europe,migrating_autumn
+0,0,0.12089859888229172,pb2,europe,breeding
+198048.9,0.3827707975869714,0,pb2,europe,migrating_autumn
+0,0.04695409321012533,0,pb2,europe,migrating_spring
+0,0.2743852465368395,0,pb2,europe,breeding
+0,0.33000551678912693,0,pb2,europe,breeding
+0,0.17832383007260866,0,pb2,europe,migrating_autumn
+54116.5,2.976301656835032,0,pb2,europe,breeding
+1274.608,2.3601861541918936,0,pb2,europe,breeding
+44501.17,0,0,pb2,europe,migrating_autumn
+9771.584,0,0,pb2,europe,overwintering
+85574.36,6.117111316887776,0,pb2,europe,migrating_autumn
+0,0.48807248280886206,0,pb2,asia,migrating_spring
+26988.47,0.33889339710888855,0,pb2,europe,migrating_autumn
+0,0.7007440482366363,0,pb2,asia,breeding
+68921.36,0.24780489859898935,0,pb2,europe,migrating_autumn
+468492.4,1.051501169349514,0,pb2,europe,breeding
+52122.29,0.23490270261323687,0,pb2,asia,overwintering
+841.2384,0.3275878148234632,0,pb2,europe,overwintering
+0,0.20414947988395585,0,pb2,europe,migrating_spring
+1361.296,0,0,pb2,europe,overwintering
+0,0,0,pb2,europe,migrating_autumn
+0,0.15379127954196292,0.05400485811417255,pb2,europe,migrating_autumn
+0,0.11219752584342936,0,pb2,europe,migrating_autumn
+94432.77,0.5712278629964906,0.1966763044718931,pb2,europe,migrating_autumn
+0,3.909039299663407,0,pb2,europe,overwintering
+0,5.449623894554838,0,pb2,europe,migrating_spring
+0,0.18518659353068223,0,pb2,europe,migrating_autumn
+2306.497,0,0,pb2,europe,breeding
+0,0,0,pb2,europe,breeding
+0,0,0,pb2,europe,overwintering
+4330.276,0,0,pb2,asia,breeding
+91299.14,0.08063364665667816,0.2291958883129568,pb2,europe,migrating_spring
+0,0.27004255357853957,0,pb2,europe,migrating_autumn
+0,0.22076628171019053,0,pb2,europe,migrating_autumn
+0,0.5298508770340362,0,pb2,europe,migrating_spring
+23.24717,0.49883344273663083,0,pb2,europe,migrating_spring
+107275.4,1.4414102035563623,0.30716489992919804,pb2,europe,migrating_spring
+241585.2,0.7334036142491609,0,pb2,europe,breeding
+264162.1,0.8721603568571306,0,pb2,europe,breeding
+0,1.826502954657496,0,pb2,europe,breeding
+0,6.457823597079942,0,pb2,europe,overwintering
+36337.78,0.2804453763096513,0,pb2,europe,migrating_autumn
+0,0.2141531405408248,0,ha,asia,breeding
+102223.6,0.1235659666344988,0,ha,africa,overwintering
+0,2.772513325446406,0,ha,europe,migrating_autumn
+1419.501,1.1169634210512331,0,ha,africa,migrating_autumn
+957.3652,1.1388812292703134,0,ha,africa,overwintering
+0,0,0,ha,africa,overwintering
+0,0,0,ha,africa,overwintering
+0,0,0,ha,africa,migrating_autumn
+71376.95,0.0921831036057883,0,ha,africa,breeding
+54777.86,0,0,ha,africa,breeding
+4641.445,2.379489527140258,0,ha,africa,migrating_spring
+0,0,0,ha,asia,breeding
+0,0.8070344289009574,0,ha,asia,overwintering
+0,0.08076147508479181,0,ha,asia,migrating_autumn
+0,0.03782198994085029,0,ha,asia,migrating_autumn
+30395.12,0.3726581592720288,0,ha,asia,breeding
+23058.08,0.21679529116829332,0,ha,asia,migrating_spring
+0,0.2414445351574459,0,ha,asia,migrating_autumn
+0,0,0,ha,asia,breeding
+0,0.07381810353579965,0,ha,asia,migrating_autumn
+0,0.12141692264152848,0,ha,asia,migrating_autumn
+5875.422,0.37268006035647794,0,ha,asia,migrating_autumn
+0,0,0,ha,asia,migrating_autumn
+0,0,0,ha,asia,overwintering
+0,0.02542573231697975,0,ha,asia,migrating_autumn
+0,0,0,ha,asia,overwintering
+345381.6,0.01962312004240463,0,ha,asia,migrating_autumn
+0,0.7507380480780248,0,ha,asia,migrating_autumn
+0,0,0,ha,asia,migrating_autumn
+418653.9,0.2200674657024102,0.08009561581740421,ha,asia,migrating_spring
+204406.2,0.1190944857213072,0,ha,asia,breeding
+0,0.07582477891639439,0,ha,asia,migrating_autumn
+0,0,0,ha,asia,migrating_autumn
+0,0,0,ha,asia,migrating_autumn
+39297.06,0.17752622554431507,0,ha,asia,migrating_autumn
+801343.1,0,0,ha,asia,breeding
+309204.7,0.0940525413065395,0,ha,asia,breeding
+0,0.23711660821380495,0,ha,asia,breeding
+0,0.12083219814618662,0,ha,asia,migrating_autumn
+233745.7,0.579755142379403,0,ha,asia,breeding
+0,0,0,ha,asia,migrating_autumn
+0,0,0,ha,asia,migrating_autumn
+0,0.12083219814618662,0,ha,asia,breeding
+0,0,0,ha,asia,migrating_autumn
+0,0.21323804961175696,0,ha,asia,migrating_autumn
+0,0.1443295758131402,0,ha,asia,migrating_autumn
+0,0,0,ha,asia,migrating_autumn
+208352.6,0,0,ha,asia,breeding
+261460.3,0.14624896264207798,0,ha,asia,breeding
+0,0,0,ha,asia,migrating_autumn
+0,0,0,ha,asia,migrating_autumn
+81375.47,0,0,ha,asia,migrating_autumn
+0,0,0,ha,asia,migrating_autumn
+0,0.3615121906376446,0,ha,asia,migrating_autumn
+0,0.6578640015918422,0,ha,asia,overwintering
+0,0.2941772308955537,0,ha,asia,migrating_autumn
+95784.97,0.9026711987572982,0,ha,asia,migrating_autumn
+0,0.25393524345259166,0,ha,asia,breeding
+191907.5,0.3440519400804811,0,ha,asia,overwintering
+0,0.2889375311569444,0,ha,asia,migrating_spring
+0,0.7290047100665511,0,ha,asia,breeding
+0,0,0,ha,asia,migrating_autumn
+0,0.14374406735508005,0,ha,asia,migrating_spring
+181652.5,0,0,ha,asia,breeding
+0,0,0,ha,asia,migrating_spring
+0,0.23172114783429265,0,ha,asia,migrating_spring
+0,0.3185088972926904,0,ha,asia,breeding
+0,0.439554450614188,0,ha,asia,breeding
+0,0.3927666875522444,0,ha,asia,breeding
+11867.51,0.263951166076982,0,ha,asia,overwintering
+31905.16,0.8234602894353298,0,ha,asia,migrating_autumn
+0,0.08041079090126191,0,ha,asia,migrating_spring
+1460.825,0.6030264005414034,0,ha,asia,breeding
+0,0.23381417977559416,0,ha,asia,overwintering
+60857.23,0.5844356208534296,0,ha,asia,breeding
+3395.205,0.8809562136775027,0,ha,asia,overwintering
+0,0.05647302089929207,0,ha,asia,overwintering
+0,0.2497910777727026,0,ha,central & northern america,breeding
+0,0.1165399548299586,0,ha,asia,migrating_autumn
+656478.5,0.09389054089660044,0,ha,asia,breeding
+4482792,0,0,ha,asia,breeding
+2866141,0,0,ha,asia,breeding
+0,0.13237174276386376,0,ha,asia,migrating_autumn
+231046.7,0.08640386179994408,0,ha,asia,breeding
+707350.9,0.15771475453848227,0,ha,asia,breeding
+3740694,0,0,ha,asia,breeding
+0,0.3436804665498334,0,ha,asia,migrating_autumn
+3488289,0,0,ha,asia,migrating_autumn
+18289.53,0.34545763627249126,0,ha,asia,migrating_autumn
+0,0,0,ha,asia,migrating_autumn
+0,0,0,ha,asia,migrating_autumn
+736.1139,0,0,ha,europe,overwintering
+0,3.857410733784028,0,ha,asia,overwintering
+165579.6,0.05436489675386102,0,ha,asia,breeding
+0,0,0.5206038223313574,ha,europe,overwintering
+119615.7,0,0.11833423053070646,ha,europe,overwintering
+0,0.10105368625912936,0,ha,europe,migrating_autumn
+0,0.03011567451532482,0.04751011375570258,ha,europe,migrating_autumn
+0,0,0,ha,europe,overwintering
+0,0,0,ha,europe,overwintering
+149561.4,0,0,ha,europe,migrating_autumn
+0,0.08644247472360966,0,ha,europe,migrating_autumn
+497941.9,0.02457510265484419,0.14856204805922335,ha,europe,migrating_autumn
+6330.13,0.4529497582216506,0,ha,europe,overwintering
+0,0,0,ha,europe,overwintering
+842.4498,0,0,ha,europe,overwintering
+0,0.06586230996004883,0,ha,asia,breeding
+0,0.10895808655721684,0,ha,asia,breeding
+83117.15,0.3860933445302521,0,ha,europe,migrating_autumn
+243843.2,0.3437191901475378,0,ha,europe,migrating_autumn
+219783.2,0.01176782488155403,0.18583312892816695,ha,europe,breeding
+4863.875,0.28688543163998315,0,ha,europe,overwintering
+0,0.25882895622495594,0,ha,europe,migrating_autumn
+0,0.17115772334815604,0,ha,europe,migrating_autumn
+34009.69,0.4400359813315793,0,ha,europe,overwintering
+17405.41,0.09725662433730342,0,ha,europe,migrating_autumn
+218904.4,0.3150702369426637,0,ha,europe,overwintering
+0,0.22387167165984412,0,ha,europe,breeding
+0,0.13836142438630006,0,ha,europe,migrating_autumn
+0,0.1499275040453978,0,ha,europe,migrating_autumn
+167129.8,1.0009890008689029,0,ha,europe,overwintering
+546797.5,0.21730550993993636,0,ha,europe,breeding
+140576.5,1.3203304874403985,0,ha,europe,migrating_autumn
+144336.3,0.5177215280904357,0,ha,europe,migrating_autumn
+89878.81,0,0.2542396758825465,ha,europe,overwintering
+0,0.09087520538738314,0,ha,europe,migrating_autumn
+0,0.38613026314563736,0,ha,europe,breeding
+340483.7,0.20637407369671568,0,ha,europe,migrating_autumn
+0,0.2695931892917516,0,ha,europe,breeding
+0,0.08069187243459686,0,ha,europe,breeding
+0,0.10016580417366638,0,ha,europe,overwintering
+0,0.03419626788719165,0,ha,europe,migrating_autumn
+0,0,0.07479911539179618,ha,europe,overwintering
+133356.8,0,0.3708050909422971,ha,europe,overwintering
+4813.803,0,0,ha,europe,breeding
+2376.941,0,0,ha,europe,breeding
+0,0,0.1215302723407059,ha,europe,breeding
+331.6956,0,0,ha,europe,breeding
+0,0.10638233426214994,0.01498918995710063,ha,europe,migrating_spring
+187561.1,0.5127450985829562,0.11187631300950795,ha,europe,breeding
+0,0.73090616890729,0,ha,europe,breeding
+0,0.5523384887032168,0,ha,europe,migrating_spring
+62196.95,0.11458977294040772,0,ha,europe,breeding
+0,0.0804961239186266,0.1796301698599403,ha,europe,migrating_autumn
+32288.5,0.25403243034495215,0,ha,europe,migrating_autumn
+0,0.1733306881781802,0,ha,europe,overwintering
+0,0.13709962635610173,0,ha,asia,breeding
+92922.92,0.31053609464656695,0.07015166873003187,ha,europe,migrating_autumn
+222746.8,0.17420221855718365,0,ha,europe,breeding
+9397.67,0,0,ha,europe,overwintering
+5716.812,0.4768833146116913,0,ha,europe,migrating_autumn
+0,0,0,ha,central & northern america,migrating_autumn
+1446.992,0.18171435067359232,0,ha,central & northern america,breeding
+243443.6,0,0.38366030712718224,ha,central & northern america,breeding
+0,0,0,ha,central & northern america,migrating_autumn
+28026.7,0.02397104237561986,0,ha,central & northern america,overwintering
+1292468,0.38566145852880984,0.24770534879299588,ha,central & northern america,overwintering
+1679186,0.00696639873610838,0.10166233586798867,ha,central & northern america,overwintering
+9664.642,0.11185874332476996,0,ha,central & northern america,overwintering
+0,0.08068180224552446,0,ha,central & northern america,migrating_autumn
+0,0.26082174321951346,0,ha,central & northern america,migrating_autumn
+0,0,0,ha,central & northern america,migrating_autumn
+0,0.2551663635928372,0,ha,central & northern america,migrating_spring
+1136495,0.22742274084129965,0.0741290305537019,ha,central & northern america,overwintering
+0,0.20515577785606043,0,ha,central & northern america,overwintering
+0,0,0,ha,central & northern america,breeding
+1085326,0.09066061304386852,0,ha,central & northern america,overwintering
+2026181,0.2020480879669143,0.2219494006207103,ha,central & northern america,migrating_autumn
+652265.2,0.21686435244325897,0,ha,central & northern america,migrating_autumn
+461136.3,0.12698171174886852,0,ha,central & northern america,migrating_autumn
+1609117,0.21603791533756267,0,ha,central & northern america,migrating_autumn
+1333971,0.2324187995857886,0,ha,central & northern america,migrating_autumn
+0,0,0,ha,central & northern america,overwintering
+0,0.18335967637324124,0,ha,central & northern america,migrating_autumn
+45889.27,0.48048505438982225,0,ha,central & northern america,migrating_spring
+0,0.32181767471106193,0,ha,central & northern america,breeding
+197798.3,0,0,ha,central & northern america,migrating_autumn
+25831.03,0.1506998277553242,0,ha,central & northern america,migrating_spring
+0,0.04862948663600552,0,ha,central & northern america,overwintering
+0,0.1730561757002671,0,ha,central & northern america,migrating_spring
+101502.4,0.05914908924933049,0,ha,central & northern america,migrating_autumn
+19771.12,0,0,ha,central & northern america,migrating_autumn
+924632.8,0.3745530074281116,0.09752493374902604,ha,central & northern america,overwintering
+7783.134,0.04144927480896543,0,ha,central & northern america,migrating_spring
+0,0.29582941371931737,0,ha,central & northern america,migrating_spring
+535361.8,0.3715715285385732,0.11186077070473166,ha,central & northern america,overwintering
+134.6142,0,0,ha,central & northern america,overwintering
+0,0.06663832755223575,0,ha,central & northern america,breeding
+0,0,0,ha,central & northern america,migrating_autumn
+0,0.3745530074281116,0.09752493374902604,ha,central & northern america,migrating_spring
+1323.536,0.7099050488131518,0,mp,africa,migrating_autumn
+1005.831,1.1532996622068317,0,mp,africa,overwintering
+0,0,0,mp,africa,migrating_spring
+0,3.101040205787021,0,mp,africa,migrating_autumn
+0,0,0,mp,africa,migrating_autumn
+0,0,0,mp,africa,migrating_autumn
+361145.4,0.09709522704130258,0,mp,africa,breeding
+70644.67,0,0,mp,africa,breeding
+48822.47,0.10215224963607827,0,mp,africa,migrating_spring
+210111.1,0.4649259065852993,0,mp,africa,migrating_autumn
+0,1.470875859893722,0,mp,africa,migrating_autumn
+0,0,0,mp,asia,migrating_autumn
+0,0.2511449679342004,0,mp,asia,overwintering
+1076601,0.05190956288993087,0,mp,asia,migrating_autumn
+548849.2,0.12768397472657345,0,mp,asia,breeding
+0,0,0,mp,asia,migrating_autumn
+2784824,0,0,mp,asia,migrating_autumn
+0,0,0,mp,asia,migrating_autumn
+87496.94,0.1276657434094206,0,mp,asia,migrating_autumn
+505328.5,0.11974956630805432,0,mp,asia,migrating_autumn
+0,0.05482694509801877,0,mp,asia,migrating_autumn
+0,0,0,mp,asia,migrating_autumn
+0,0.06759625913631506,0,mp,asia,overwintering
+1525149,0,0,mp,asia,migrating_autumn
+0,0.03600232046794538,0,mp,central & northern america,migrating_autumn
+0,0.2063232561355477,0,mp,asia,overwintering
+0,0.291254762984992,0,mp,asia,overwintering
+221618.4,0.22217629057893615,0,mp,asia,overwintering
+0,0,0,mp,asia,migrating_autumn
+0,0.32547373546626535,0,mp,asia,migrating_autumn
+121865.4,0.19668804375805227,0,mp,asia,migrating_autumn
+0,-0.01963658795664802,0,mp,asia,overwintering
+117407.3,0.47994783585802514,0,mp,asia,migrating_autumn
+0,0.2881218329471782,0,mp,asia,migrating_spring
+6377.815,0.2953340012566299,0,mp,asia,migrating_autumn
+0,0.06785886041810407,0,mp,asia,overwintering
+22571.32,0.27534389277998184,0,mp,asia,overwintering
+0,0.20124890030677367,0,mp,asia,breeding
+0,0.3832317461823549,0,mp,asia,migrating_spring
+44511.89,0.6471064609064694,0,mp,asia,overwintering
+269428.7,0.42822887754212857,0,mp,asia,breeding
+0,0,0,mp,asia,migrating_spring
+706668.5,0,0,mp,asia,breeding
+0,0.16881179538513447,0,mp,asia,migrating_autumn
+0,0.34748380530121104,0,mp,asia,migrating_spring
+0,0.40028024145044494,0,mp,asia,migrating_autumn
+1685995,0.11054228463475324,0,mp,asia,overwintering
+0,0.100120491445427,0,mp,asia,migrating_autumn
+21613.49,0.2091890451151519,0,mp,asia,migrating_autumn
+0,1.4738986590083138,0,mp,asia,migrating_spring
+32541.81,0.10869500879891224,0,mp,asia,breeding
+0,0,0,mp,asia,migrating_autumn
+0,0.23267905826214008,0,mp,asia,migrating_autumn
+0,0.1183759776865525,0,mp,asia,migrating_autumn
+0,0.16482016744654882,0,mp,asia,migrating_autumn
+0,0,0,mp,asia,migrating_autumn
+0,0.06795991358457876,0,mp,asia,migrating_autumn
+20932.82,0.08850136796615626,0.15006625878505475,mp,central & northern america,overwintering
+815428.8,0.2855925158018413,0.06741086481926728,mp,central & northern america,overwintering
+0,0,0,mp,asia,migrating_autumn
+622153.3,0.06282105720473918,0,mp,asia,migrating_autumn
+0,0,0,mp,asia,overwintering
+0,0,0,mp,asia,overwintering
+0,0,0,mp,asia,migrating_autumn
+953213.9,0.03210016446083941,0.1987553497177128,mp,asia,overwintering
+0,0.01814839977511972,0,mp,asia,breeding
+0,0.07309736794963051,0,mp,asia,migrating_autumn
+0,0.09640779350633188,0,mp,asia,migrating_spring
+0,0.10411785163596043,0,mp,asia,breeding
+0,0.00138824430679029,0,mp,asia,migrating_autumn
+0,0,0,mp,asia,migrating_autumn
+0,0,0,mp,asia,migrating_autumn
+0,0,0,mp,asia,overwintering
+0,0.6973954667949718,0,mp,asia,overwintering
+0,0.07977079257104247,0,mp,asia,migrating_autumn
+177281.3,0.35578454831857886,0,mp,asia,migrating_autumn
+170269.5,0.01265510481507981,0,mp,asia,migrating_spring
+0,0.03934346904999586,0,mp,asia,migrating_spring
+0,0,0,mp,asia,migrating_autumn
+0,0.13006800823570153,0,mp,asia,migrating_autumn
+0,0,0,mp,asia,migrating_autumn
+0,0,0,mp,asia,breeding
+276852,0.4949460674922097,0,mp,asia,breeding
+0,0,0,mp,asia,migrating_autumn
+329367.5,0,0,mp,asia,migrating_spring
+0,0,0,mp,asia,breeding
+0,0,0,mp,asia,migrating_autumn
+0,0.09075918123230586,0,mp,asia,migrating_autumn
+0,0.16129102361677017,0,mp,asia,migrating_autumn
+24260.31,0,0,mp,asia,migrating_autumn
+0,0,0,mp,asia,migrating_autumn
+3175285,0.14274117474052606,0,mp,asia,migrating_spring
+843503.7,0.06321639408028701,0,mp,central & northern america,migrating_spring
+2053708,0.1810573441152901,0.03428228791967092,mp,central & northern america,overwintering
+1553946,0.2855925158018413,0.06741086481926728,mp,central & northern america,overwintering
+620520.7,0.2487329985080864,0,mp,central & northern america,migrating_autumn
+0,0,0,mp,central & northern america,migrating_autumn
+0,0,0,mp,central & northern america,migrating_autumn
+93774.17,0,0.02441731021015414,mp,central & northern america,migrating_spring
+4523160,0.30424795258407866,0,mp,central & northern america,migrating_autumn
+639879.7,0.3027083363894967,0.0814490425462644,mp,central & northern america,migrating_spring
+1006055,0.08850136796615626,0.15006625878505475,mp,central & northern america,overwintering
+3965493,0.11295920555859816,0.0166697570735872,mp,central & northern america,migrating_spring
+236645.2,0.21418224206379977,0,mp,central & northern america,breeding
+0,0.1603718296239509,0,mp,central & northern america,migrating_spring
+5868.869,0,0,mp,central & northern america,overwintering
+0,0.04371119386079525,0,mp,central & northern america,overwintering
+126044.3,0.01933527810372126,0,mp,central & northern america,migrating_spring
+6954.944,0.05819040012714582,0,mp,central & northern america,breeding
+0,0,0,mp,central & northern america,migrating_autumn
+28512.19,0.03863125508284604,0,mp,central & northern america,migrating_spring
+0,0,0,mp,central & northern america,migrating_autumn
+0,0.41412307360139256,0,mp,central & northern america,migrating_spring
+0,0,0,mp,central & northern america,migrating_autumn
+0,0.04804256765759973,0,mp,central & northern america,migrating_spring
+0,0.06573243434488996,0,mp,central & northern america,migrating_spring
+0,0.1944781618257312,0,mp,central & northern america,migrating_autumn
+757130.7,0,0,mp,central & northern america,overwintering
+243765.7,0,0,mp,central & northern america,migrating_autumn
+100454.2,0.25678662674636854,0,mp,central & northern america,migrating_spring
+0,0.2793182275862216,0,mp,central & northern america,breeding
+0,0,0,mp,central & northern america,migrating_spring
+1937701,0.14257215002294,0.2062625957786528,mp,central & northern america,overwintering
+777336.4,0.10477379879649652,0,mp,central & northern america,migrating_autumn
+0,0.12595440661839563,0,mp,central & northern america,migrating_spring
+0,0.1860586302467244,0,mp,central & northern america,migrating_autumn
+17093.07,0.22776972639544055,0,mp,central & northern america,migrating_autumn
+0,0.32364606251058636,0,mp,central & northern america,migrating_autumn
+0,0,0,mp,central & northern america,migrating_spring
+0,0.08907772390350566,0,mp,central & northern america,migrating_spring
+0,0,0,mp,central & northern america,migrating_spring
+0,0.17986573140146067,0,mp,central & northern america,breeding
+0,0.08850136796615626,0.15006625878505475,mp,central & northern america,migrating_spring
+72199.74,0,0,nx,africa,migrating_autumn
+1915.93,0,0,nx,africa,breeding
+66102.69,0,0,nx,asia,migrating_autumn
+0,0,0,nx,asia,migrating_autumn
+0,0,0,nx,asia,migrating_autumn
+0,0,0,nx,asia,migrating_spring
+32297.68,0,0,nx,asia,migrating_spring
+0,0,0,nx,asia,breeding
+0,0,0,nx,asia,migrating_autumn
+5050.758,0,0,nx,asia,migrating_spring
+0,0,0,nx,asia,breeding
+0,0,0,nx,asia,breeding
+0,0,0,nx,asia,breeding
+10128.39,0,0,nx,asia,migrating_spring
+0,0,0,nx,asia,migrating_autumn
+0,0,0,nx,asia,breeding
+93885.01,0,0,nx,asia,migrating_autumn
+0,0,0,nx,asia,migrating_autumn
+0,0,0,nx,asia,breeding
+842149.9,0,0,nx,asia,migrating_spring
+0,0,0,nx,asia,migrating_autumn
+0,0,0,nx,asia,migrating_spring
+29876.72,0,0,nx,asia,breeding
+7712.46,0,0,nx,asia,migrating_spring
+0,0,0,nx,asia,migrating_autumn
+0,0,0,nx,asia,breeding
+0,0,0,nx,asia,breeding
+0,0,0,nx,asia,migrating_spring
+0,0,0,nx,asia,breeding
+0,0,0,nx,asia,breeding
+0,0,0,nx,asia,migrating_spring
+0,0,0,nx,asia,migrating_autumn
+0,0,0,nx,asia,breeding
+366418.6,0,0,nx,asia,migrating_autumn
+25163.72,0,0,nx,asia,migrating_spring
+0,0,0,nx,asia,migrating_spring
+0,0,0,nx,asia,breeding
+0,0,0,nx,asia,migrating_autumn
+0,0,0,nx,asia,migrating_autumn
+0,0,0,nx,asia,migrating_autumn
+8078.021,0,0,nx,asia,breeding
+0,0,0,nx,asia,breeding
+0,0,0,nx,asia,breeding
+787.4861,0,0,nx,asia,migrating_spring
+0,0,0,nx,central & northern america,migrating_autumn
+17701.02,0,0,nx,central & northern america,migrating_autumn
+0,0,0,nx,central & northern america,migrating_autumn
+0,0,0,nx,central & northern america,migrating_autumn
+74844.87,0,0,nx,central & northern america,breeding
+0,0,0,nx,central & northern america,migrating_autumn
+0,0,0,nx,central & northern america,migrating_spring
+7610920,0,0,nx,central & northern america,overwintering
+217456.2,0,0,nx,central & northern america,overwintering
+1068900,0,0,nx,central & northern america,overwintering
+127984.1,0,0,nx,central & northern america,overwintering
+2422466,0,0,nx,central & northern america,migrating_spring
+1916.591,0,0,nx,central & northern america,migrating_spring
+0,0,0,nx,central & northern america,migrating_spring
+871145.8,0,0,nx,central & northern america,overwintering
+0,0,0,nx,central & northern america,overwintering
+0,0,0,nx,central & northern america,migrating_spring
+14107.91,0,0,nx,central & northern america,overwintering
+0,0,0,nx,central & northern america,migrating_spring
+2577.624,0,0,nx,central & northern america,migrating_spring
+240802.6,0,0,nx,central & northern america,overwintering
+94952.69,0,0,nx,central & northern america,migrating_spring
+193524.3,0,0,nx,central & northern america,migrating_spring
+1570334,0,0,nx,central & northern america,overwintering
+1892516,0,0,nx,central & northern america,migrating_autumn
+798841.2,0,0,nx,central & northern america,migrating_autumn
+557683.7,0,0,nx,central & northern america,migrating_autumn
+0,0,0,nx,central & northern america,migrating_autumn
+215109.1,0,0,nx,central & northern america,migrating_autumn
+0,0,0,nx,central & northern america,migrating_autumn
+0,0,0,nx,central & northern america,migrating_autumn
+0,0,0,nx,central & northern america,breeding
+0,0,0,nx,central & northern america,migrating_spring
+0,0,0,nx,central & northern america,migrating_autumn
+0,0,0,nx,central & northern america,migrating_autumn
+0,0,0,nx,central & northern america,overwintering
+218933.1,0,0,nx,central & northern america,migrating_autumn
+0,0,0,nx,central & northern america,migrating_spring
+94589.61,0,0,nx,africa,breeding
+0,0,0,nx,asia,breeding
+309017.7,0,0,nx,asia,breeding
+3619.625,0,0,nx,asia,migrating_autumn
+0,0,0,nx,asia,overwintering
+0,0,0,nx,asia,breeding
+0,0,0,nx,asia,breeding
+0,0,0,nx,asia,migrating_autumn
+0,0,0,nx,asia,overwintering
+875991.8,0,0,nx,central & northern america,overwintering
+0,0,0,nx,asia,breeding
+0,0,0,nx,asia,migrating_spring
+70194.86,0,0,nx,asia,migrating_spring
+0,0,0,nx,asia,migrating_spring
+169942.8,0,0,nx,asia,migrating_autumn
+0,0,0,nx,asia,breeding
+0,0,0,nx,asia,migrating_spring
+1701.863,0,0,nx,asia,overwintering
+0,0,0,nx,asia,migrating_spring
+7426.248,0,0,nx,asia,migrating_autumn
+0,0,0,nx,asia,migrating_spring
+0,0,0,nx,asia,breeding
+41968.12,0,0,nx,asia,migrating_autumn
+41.02079,0,0,nx,asia,migrating_spring
+178732,0,0,nx,africa,migrating_autumn
+0,0,0,nx,africa,migrating_autumn
+21928.94,0,0,nx,africa,overwintering
+81169.89,0,0,nx,africa,breeding
+0,0,0,nx,africa,overwintering
+0,0,0,nx,africa,migrating_spring
+1575.651,0,0,nx,africa,breeding
+452293.6,0,0,nx,asia,migrating_autumn
+613973,0,0,nx,asia,migrating_autumn
+5834950,0,0,nx,asia,migrating_autumn
+65613.89,0,0,nx,asia,migrating_autumn
+0,0,0,nx,asia,overwintering
+8723978,0,0,nx,asia,migrating_autumn
+0,0,0,nx,asia,migrating_autumn
+677432.3,0,0,nx,asia,overwintering
+0,0,0,nx,asia,overwintering
+7307589,0,0,nx,asia,overwintering
+5861752,0,0,nx,asia,migrating_autumn
+9382014,0,0,nx,asia,migrating_autumn
+9994179,0,0,nx,asia,migrating_autumn
+0,0,0,nx,asia,migrating_autumn
+0,0,0,nx,asia,overwintering
+0,0,0,nx,asia,overwintering
+0,0,0,nx,asia,migrating_autumn
+0,0,0,nx,asia,migrating_autumn
+177868.7,0,0,nx,asia,migrating_spring
+118125.1,0,0,nx,asia,breeding
+391476.1,0.14304403537194688,0,np,africa,breeding
+0,0,0,np,asia,migrating_autumn
+0,3.798363698959868,0,np,europe,overwintering
+19621.73,2.264643593868554,0,np,africa,overwintering
+0,0,0,np,africa,migrating_autumn
+0,0,0,np,africa,breeding
+1859.149,1.2097223469484604,0,np,africa,overwintering
+267.4355,1.1086419004616523,0,np,africa,overwintering
+14330.37,0,0,np,africa,migrating_autumn
+0,0.26464303611415474,0,np,europe,migrating_autumn
+0,0,0,np,africa,migrating_autumn
+81595.47,0.3674422529269652,0,np,africa,breeding
+0,3.372618788064269,0,np,asia,overwintering
+0,1.043543450571196,0,np,asia,migrating_autumn
+142868.1,1.5351717316518432,0,np,asia,migrating_autumn
+352183.4,0.37748371794665303,0,np,asia,migrating_spring
+2366065,0,0,np,asia,migrating_autumn
+28079.34,0.4391326466727117,0,np,asia,breeding
+176153.6,0.16484341661520396,0,np,asia,breeding
+259564.3,0.3160992328536345,0,np,asia,migrating_autumn
+0,1.0942093524549217,0,np,asia,breeding
+0,0.45698839091553545,0,np,asia,migrating_spring
+0,0.26464303611415474,0,np,asia,breeding
+361600.5,0.04397023504132136,0,np,asia,migrating_autumn
+0,0,0,np,asia,breeding
+1391526,0,0,np,asia,migrating_autumn
+0,0,0,np,asia,migrating_autumn
+113034.9,0.29291719711225106,0,np,asia,migrating_spring
+0,0.03924531961938982,0,np,asia,overwintering
+0,0.13805886347159557,0,np,asia,overwintering
+33883.21,0.22905568852194236,0,np,asia,breeding
+0,0.8378581916214998,0,np,asia,migrating_autumn
+0,0.03552441350781166,0,np,asia,migrating_autumn
+0,0.3080021323066653,0,np,asia,migrating_autumn
+0,1.7702604189675668,0,np,asia,migrating_spring
+0,0.1798540323047142,0,np,asia,migrating_autumn
+0,0,0,np,asia,migrating_autumn
+0,0,0,np,asia,migrating_autumn
+2615744,0,0,np,asia,migrating_spring
+2784845,0.02815412461710709,0,np,asia,migrating_spring
+0,0,0,np,asia,migrating_autumn
+0,1.243320471671861,0,np,asia,migrating_spring
+0,0.2238025046448051,0,np,central & northern america,migrating_autumn
+165860.9,0.23240975578306244,0,np,asia,breeding
+0,0.4822505996844786,0,np,asia,breeding
+0,0.36787461762099216,0,np,asia,migrating_spring
+0,0.29531951206738327,0,np,asia,breeding
+0,0.3143916926587833,0,np,asia,migrating_autumn
+0,0.361857265430487,0,np,asia,migrating_autumn
+0,0.1934161230820468,0,np,asia,overwintering
+0,0,0,np,asia,migrating_autumn
+0,2.8958694022703337,0,np,asia,migrating_spring
+1887.308,3.503981091385077,0,np,asia,overwintering
+0,0.44273548492268944,0,np,asia,migrating_spring
+221.5617,0,0,np,asia,migrating_spring
+0,3.2590653208018754,0,np,asia,overwintering
+91296.97,3.0452022421302125,0,np,asia,overwintering
+0,0,0,np,asia,breeding
+483.5644,3.7544092412800154,0,np,asia,migrating_autumn
+0,0.1698489463224213,0,np,asia,overwintering
+1543.06,0.4275430165181806,0,np,asia,migrating_spring
+0,0,0,np,asia,breeding
+33583.37,1.59520146382493,0,np,asia,migrating_autumn
+6997,0.9985999875116924,0,np,asia,breeding
+0,0.23428881658845313,0,np,asia,migrating_autumn
+1363111,0.7149871777486521,0.06912695749967135,np,asia,migrating_spring
+0,0,0,np,asia,migrating_autumn
+0,0,0,np,asia,migrating_autumn
+3677.075,0,0,np,asia,migrating_autumn
+0,0,0,np,asia,migrating_autumn
+0,0.1950383961406139,0,np,asia,migrating_autumn
+165392.1,0.7774269788801362,0,np,asia,breeding
+0,0.2115068051263016,0,np,asia,migrating_autumn
+0,0.1016300868453044,0,np,asia,migrating_autumn
+0,0,0,np,asia,migrating_spring
+0,0,0,np,asia,migrating_autumn
+0,0,0,np,asia,migrating_autumn
+0,0,0,np,asia,migrating_autumn
+64272.88,0,0,np,asia,migrating_autumn
+0,0.26922711037192215,0,np,asia,migrating_autumn
+0,0.1522285584453691,0,np,asia,migrating_autumn
+206275.9,0,0,np,asia,breeding
+0,0,0,np,asia,migrating_autumn
+134825.2,0.3228916486553661,0,np,asia,migrating_spring
+59459.82,0.4104967647076343,0,np,asia,migrating_autumn
+119078.4,0,0,np,asia,migrating_autumn
+0,0.40749955400684,0,np,asia,migrating_autumn
+3144.673,0.6809494434030592,0,np,asia,migrating_autumn
+0,1.3284806963709457,0,np,asia,breeding
+11141.28,1.17938472988134,0,np,asia,migrating_spring
+0,3.0529368792050446,0,np,asia,overwintering
+40384.93,2.2082208675250907,0,np,asia,migrating_autumn
+0,4.003226931101287,0,np,asia,migrating_autumn
+0,0.14109187532139345,0,np,asia,migrating_autumn
+870.7445,0.02233871307435997,0,np,central & northern america,migrating_spring
+0,2.3700402172944184,0,np,central & northern america,migrating_autumn
+323443.9,0.14763411805089088,0,np,central & northern america,overwintering
+742794,0.2459506593998615,0,np,central & northern america,overwintering
+0,1.199260485755488,0,np,central & northern america,migrating_spring
+0,0,0,np,central & northern america,migrating_autumn
+5151.931,0,0,np,central & northern america,overwintering
+0,2.0543816600200113,0,np,central & northern america,overwintering
+0,0.05702789731755331,0,np,central & northern america,migrating_spring
+0,0.04606899320812729,0,np,central & northern america,migrating_spring
+37970.54,0,0.03870059987136898,np,central & northern america,migrating_autumn
+1343073,0.1954935869207688,0,np,central & northern america,migrating_autumn
+78092.89,0,0,np,central & northern america,overwintering
+794966,1.4271096791059603,0.11387435397491784,np,central & northern america,migrating_autumn
+0,0.4033701794029909,0,np,central & northern america,migrating_autumn
+0,0,0,np,central & northern america,migrating_autumn
+1677259,0.38869456282233195,0.1844305708616805,np,central & northern america,migrating_autumn
+1304441,0,0.12976891468285243,np,central & northern america,migrating_autumn
+939576.8,0.06821067797113489,0.07005926993864442,np,central & northern america,overwintering
+128374,0,0,np,central & northern america,migrating_autumn
+1139499,0.20894139891888663,0.13491670921233911,np,central & northern america,overwintering
+4867.708,0,0,np,central & northern america,overwintering
+0,0,0,np,central & northern america,migrating_autumn
+0,0.1963180761247969,0,np,central & northern america,migrating_spring
+2443.623,1.5884740067879797,0,np,central & northern america,migrating_spring
+996895,1.3958394635434497,0.08761740702467868,np,central & northern america,migrating_spring
+180151.3,0,0,np,central & northern america,migrating_autumn
+460383.4,1.5910744506416954,0,np,central & northern america,migrating_autumn
+0,0.23281435289470132,0,np,central & northern america,breeding
+1172259,0.2534550781587015,0,np,central & northern america,breeding
+981678.3,0.1712318326488509,0,np,central & northern america,overwintering
+0,0,0,np,central & northern america,migrating_autumn
+58482.05,0.11049800966931043,0,np,central & northern america,migrating_spring
+0,0.523264174591997,0,np,central & northern america,migrating_autumn
+6663.179,0.2425469248248593,0,np,central & northern america,migrating_spring
+552336.6,0,0,np,central & northern america,migrating_autumn
+0,0,0,np,central & northern america,breeding
+679143.9,0.13061205573028012,0,np,central & northern america,overwintering
+0,0.06493907417995892,0,np,central & northern america,breeding
+0,0,0,np,central & northern america,overwintering
+0,0.20894139891888663,0.13491670921233911,np,central & northern america,migrating_spring
+0,0,0,ns,africa,migrating_autumn
+1414.488,0.5552875476085593,0,ns,africa,migrating_spring
+957.4254,0.5772053558276462,0,ns,africa,overwintering
+48206.47,1.642129696552011,0,ns,africa,breeding
+0,0,0,ns,africa,overwintering
+0,2.5141062001991283,0,ns,europe,breeding
+0,0,0,ns,africa,breeding
+73346.72,0,0,ns,africa,breeding
+0,0,0,ns,africa,overwintering
+102251,0.1347602468291473,0,ns,africa,breeding
+283025.7,0.1293954174394898,0,ns,africa,migrating_autumn
+0,0,0,ns,africa,migrating_spring
+22764.63,1.8512212079361203,0,ns,asia,migrating_spring
+506094.6,0.01762332472863193,0,ns,asia,migrating_spring
+0,0,0,ns,asia,migrating_autumn
+0,0.1493290929693103,0,ns,asia,migrating_autumn
+0,0,0,ns,asia,migrating_autumn
+0,0,0,ns,asia,migrating_autumn
+0,0,0,ns,asia,breeding
+160391.4,0,0,ns,asia,breeding
+0,0,0,ns,asia,migrating_autumn
+6957.898,1.0132020238095087,0,ns,asia,breeding
+11845.18,1.0464436806410902,0,ns,asia,migrating_spring
+0,0,0,ns,asia,migrating_autumn
+0,0,0,ns,asia,migrating_autumn
+0,0,0,ns,asia,migrating_autumn
+1236376,4.162926548901982,0.11233336792296456,ns,asia,overwintering
+0,0.1742678800457682,0,ns,asia,migrating_autumn
+0,0,0,ns,asia,migrating_autumn
+0,0.28715409359946875,0,ns,asia,overwintering
+0,0.27849972182946914,0,ns,asia,overwintering
+0,3.533538614807778,0,ns,asia,breeding
+0,0,0,ns,asia,overwintering
+675.5008,4.437285574214295,0,ns,asia,migrating_autumn
+186569.5,2.155557858099499,0,ns,asia,overwintering
+0,0.2832663217201592,0,ns,asia,migrating_spring
+0,0.1641860237071917,0,ns,asia,breeding
+2621.518,2.9295461344240508,0,ns,asia,breeding
+426480.5,0.19998893140891028,0,ns,asia,breeding
+0,0.8159217002691754,0,ns,asia,migrating_spring
+0,0,0,ns,asia,breeding
+0,0,0,ns,asia,migrating_autumn
+0,0,0,ns,asia,breeding
+0,0,0,ns,asia,migrating_autumn
+0,0.536141053952754,0,ns,asia,breeding
+0,0.8326598954546967,0,ns,asia,breeding
+0,0.43156732725338287,0,ns,asia,migrating_autumn
+0,0.3688357170061849,0,ns,asia,breeding
+0,0.2561670906193285,0,ns,asia,migrating_autumn
+0,0.40526263518056993,0,ns,asia,migrating_spring
+1715062,0,0,ns,asia,migrating_autumn
+2315772,0,0,ns,asia,migrating_spring
+1900579,0,0,ns,asia,overwintering
+112628.7,0,0,ns,asia,breeding
+0,0,0,ns,asia,migrating_autumn
+290127,0.5692566499705265,0,ns,asia,overwintering
+13049.57,0.29866146732507204,0,ns,asia,migrating_spring
+255947,0.5951806366072461,0,ns,asia,breeding
+0,0.0996138415530794,0,ns,asia,breeding
+0,0.3966346984763831,0,ns,asia,migrating_autumn
+0,0.0747294115521413,0,ns,asia,migrating_autumn
+0,0.73947044289649,0,ns,asia,migrating_autumn
+0,0.1303370437147322,0,ns,asia,migrating_autumn
+0,0.25298523925513194,0,ns,asia,migrating_autumn
+58390.24,0.9945825902875,0,ns,asia,breeding
+503412.9,0.3853648072085605,0,ns,asia,breeding
+1681.371,1.3279139954266412,0,ns,asia,migrating_autumn
+0,0.1379116808170835,0,ns,asia,migrating_autumn
+0,0.21863340271622175,0,ns,asia,overwintering
+0,0.3035649095656723,0,ns,asia,overwintering
+0,0.23383564783129884,0,ns,central & northern america,migrating_autumn
+21435.42,2.430648718353794,0,ns,asia,breeding
+0,1.029197305542752,0,ns,asia,breeding
+0,0,0,ns,asia,migrating_autumn
+0,0,0,ns,asia,migrating_autumn
+0,0,0,ns,asia,breeding
+246474.9,0.6812900778014992,0,ns,asia,migrating_autumn
+0,0.9467964197287309,0,ns,asia,migrating_spring
+0,0.1387186123484625,0,ns,asia,migrating_autumn
+0,0.1387186123484625,0,ns,asia,migrating_autumn
+32615.7,0.23589741305390888,0,ns,asia,breeding
+5699.86,0.3414687025511256,0,ns,asia,breeding
+0,0.2337499191539152,0,ns,asia,migrating_autumn
+0,0.08193314097871252,0,ns,asia,breeding
+0,1.69166355585142,0,ns,asia,overwintering
+95279.66,0.4317939429901614,0,ns,asia,migrating_spring
+0,0,0,ns,asia,breeding
+2081.361,12.033368491857658,0,ns,asia,breeding
+62683.95,3.0283195127900058,0,ns,asia,overwintering
+0,0.2516735922654618,0,ns,asia,migrating_autumn
+0,0.47797608996045327,0,ns,asia,migrating_spring
+0,0.2610610604599657,0,ns,asia,breeding
+0,0.5921251148961773,0,ns,asia,breeding
+0,0.7390855231671551,0,ns,asia,migrating_autumn
+436.0146,2.3210028728308956,0,ns,asia,breeding
+994.2497,0.03664713731133418,0,ns,central & northern america,migrating_spring
+369783.9,0,0,ns,central & northern america,overwintering
+80172.09,0.1460684476504568,0,ns,central & northern america,migrating_spring
+0,0.1860489583079783,0,ns,central & northern america,migrating_autumn
+3929733,0.05336187918130264,0,ns,central & northern america,overwintering
+1400058,0.08566045265484412,0.06177763372921419,ns,central & northern america,migrating_autumn
+1086679,0.2201158771547611,0,ns,central & northern america,migrating_autumn
+805100.8,0.08711277143742358,0,ns,central & northern america,migrating_autumn
+677420.9,0.18926574837531973,0,ns,central & northern america,overwintering
+184055.4,0.04657332232242695,0,ns,central & northern america,migrating_autumn
+0,0,0,ns,central & northern america,overwintering
+0,0,0,ns,central & northern america,migrating_spring
+0,0,0,ns,central & northern america,breeding
+0,2.61679987336732,1.495375980828806,ns,central & northern america,migrating_spring
+80135.5,0.06065244695716032,0,ns,central & northern america,breeding
+52845.84,0,0.32964466033365625,ns,central & northern america,migrating_autumn
+66601.22,0,0,ns,central & northern america,overwintering
+544908.2,0.11607860324793152,0,ns,central & northern america,overwintering
+11582.41,0,0,ns,central & northern america,migrating_autumn
+0,0,0,ns,central & northern america,breeding
+845017.5,0.4284915460411014,0.1586057768905178,ns,central & northern america,migrating_autumn
+0,0.03260952274779072,0,ns,central & northern america,breeding
+2415192,0.19614594441141975,0.02586354947579039,ns,central & northern america,migrating_autumn
+0,0,0.01085076833537357,ns,central & northern america,overwintering
+0,0,0,ns,central & northern america,migrating_autumn
+13157.46,0,0,ns,central & northern america,migrating_autumn
+1208107,0.2632879250042919,0.03616362759887082,ns,central & northern america,overwintering
+2100071,0.1594159247293092,0,ns,central & northern america,migrating_autumn
+0,0,0,ns,central & northern america,migrating_autumn
+0,0.18138914525656705,0,ns,central & northern america,migrating_autumn
+0,0,0,ns,central & northern america,migrating_autumn
+0,0.11624070252594264,0,ns,central & northern america,breeding
+1165233,0.2033886785432486,0.04768766016623971,ns,central & northern america,migrating_spring
+0,0.12022012826413332,0,ns,central & northern america,migrating_spring
+122860.9,0,0,ns,central & northern america,migrating_autumn
+0,0,0,ns,central & northern america,migrating_spring
+0,0.02420027996354434,0,ns,central & northern america,migrating_spring
+0,0.14874073084034478,0,ns,central & northern america,migrating_spring
+2007.63,0.01982240908604282,0,ns,central & northern america,migrating_spring
+0,0,0,ns,central & northern america,overwintering
+169695.2,0.12504257083885406,0,pa,africa,migrating_autumn
+0,0.04488962889607961,0,pa,asia,overwintering
+0,0.05855887793780212,0,pa,asia,overwintering
+33042.46,1.5757068335505036,0,pa,africa,migrating_spring
+3702.322,1.1958324759607528,0,pa,africa,overwintering
+0,0,0,pa,africa,migrating_spring
+0,0,0,pa,africa,overwintering
+11152.74,2.0373401189109863,0,pa,africa,breeding
+0,2.626998697029451,0,pa,africa,migrating_autumn
+0,0,0,pa,africa,overwintering
+97221.4,0.29280609520089484,0,pa,africa,breeding
+35603.73,0,0,pa,africa,overwintering
+0,0.5304099369570068,0,pa,asia,overwintering
+1257.631,9.749415863654727,0,pa,asia,migrating_autumn
+0,0,0,pa,asia,migrating_spring
+0,0,0,pa,asia,breeding
+411700.2,0.02767904138229227,0,pa,asia,migrating_autumn
+2578628,0,0,pa,asia,overwintering
+0,0,0,pa,asia,breeding
+0,0,0,pa,asia,breeding
+61723.87,0,0,pa,asia,breeding
+1715575,0,0,pa,asia,migrating_autumn
+2756525,0,0,pa,asia,migrating_autumn
+1594224,0,0,pa,asia,migrating_spring
+0,0.16350004817989827,0,pa,asia,migrating_autumn
+269092.7,0.25150709843757824,0,pa,asia,migrating_spring
+2930303,0,0,pa,asia,migrating_spring
+3699215,0,0,pa,asia,migrating_autumn
+0,0.612164618281529,0,pa,asia,migrating_autumn
+0,0.5506628918190053,0,pa,asia,breeding
+495966.6,0.17798890907209142,0,pa,asia,breeding
+0,0,0,pa,asia,overwintering
+76266.68,2.3500274487713604,0,pa,asia,migrating_autumn
+0,0.4227757377373713,0,pa,asia,breeding
+0,0.27491335125164085,0,pa,asia,migrating_autumn
+24006.88,0.25983595912225255,0,pa,asia,migrating_spring
+0,0,0,pa,asia,breeding
+0,0.22749160607892804,0,pa,asia,migrating_autumn
+0,0,0,pa,asia,migrating_autumn
+0,0,0,pa,asia,migrating_autumn
+0,1.068568867374104,0,pa,asia,migrating_autumn
+0,1.8182663988989844,0,pa,asia,overwintering
+323.0291,0.8776280031520471,0,pa,asia,migrating_spring
+0,0,0,pa,asia,breeding
+0,0,0,pa,asia,migrating_autumn
+0,1.486536881762614,0,pa,asia,breeding
+0,0,0,pa,asia,breeding
+7526.445,0.10226494542552889,0.02506724594639386,pa,central & northern america,overwintering
+0,3.3734008468872236,0,pa,asia,overwintering
+0,1.0201276177000658,0,pa,asia,migrating_spring
+0,0,0,pa,asia,overwintering
+494602.6,0,0,pa,asia,breeding
+14934.11,0.5985986646043386,0,pa,asia,breeding
+317154.9,0.47010757598720687,0,pa,asia,migrating_autumn
+39103.94,2.5375982158031665,0,pa,asia,migrating_autumn
+65440.94,0,0,pa,asia,migrating_autumn
+0,0,0,pa,asia,migrating_autumn
+278807,0,0,pa,asia,migrating_spring
+103768.1,0.2521080769748334,0,pa,asia,migrating_spring
+53521.64,0.2759155125395445,0,pa,asia,migrating_autumn
+0,0,0,pa,asia,breeding
+0,0.05891556959593203,0,pa,asia,migrating_autumn
+3139.461,0.9129723293025016,0,pa,asia,migrating_autumn
+0,0.17279479812587084,0,pa,asia,overwintering
+0,0.3971052039600824,0,pa,asia,migrating_spring
+0,0.5613355892939538,0,pa,asia,migrating_spring
+0,0.8972631916255018,0,pa,asia,overwintering
+0,0.18766310058648372,0,pa,central & northern america,migrating_autumn
+0,1.2650476842841911,0,pa,asia,breeding
+0,0,0,pa,asia,migrating_autumn
+56731.01,0.8151067614631025,0,pa,asia,migrating_autumn
+0,0.4481806170343337,0,pa,asia,overwintering
+47687.07,0.3113599035872596,0,pa,asia,migrating_spring
+0,0.4224795127508969,0,pa,asia,migrating_autumn
+0,0.18044604155647548,0,pa,asia,overwintering
+18768.24,0.7521386275530944,0,pa,asia,migrating_spring
+1441683,0.19734989795138969,0,pa,asia,overwintering
+0,0.6336848488859168,0,pa,asia,migrating_spring
+47355.72,3.5506826179816313,0,pa,asia,migrating_spring
+0,0.4024608227290471,0,pa,asia,migrating_autumn
+0,0.6324820131289357,0,pa,asia,breeding
+0,1.2637162422833086,0,pa,asia,migrating_autumn
+20627.6,1.498272771707354,0,pa,asia,overwintering
+601504.9,1.4681094284277574,0.13481512153233055,pa,asia,migrating_spring
+62849.09,0.8014752359243396,0,pa,asia,breeding
+0,0,0,pa,asia,migrating_autumn
+0,0.3846174227802947,0,pa,asia,breeding
+0,0.2794604491151169,0,pa,asia,migrating_autumn
+0,0,0,pa,asia,migrating_autumn
+0,0,0,pa,asia,migrating_autumn
+0,0,0,pa,asia,migrating_autumn
+0,1.4731371449459765,0,pa,asia,migrating_spring
+34979.88,0.944903810429622,0,pa,asia,migrating_autumn
+0,3.4200504858610756,0,pa,asia,breeding
+834.9233,0,0,pa,asia,migrating_spring
+721515.2,0.228372294293294,0.24187572438754937,pa,central & northern america,overwintering
+0,0.10515143778769342,0,pa,central & northern america,migrating_spring
+0,1.1112438130576727,0,pa,central & northern america,migrating_autumn
+0,0,0,pa,central & northern america,migrating_autumn
+85738.19,0,0,pa,central & northern america,overwintering
+343323.6,10.825657692431928,0,pa,central & northern america,migrating_autumn
+835.886,0.08271497927930938,0,pa,central & northern america,migrating_spring
+395908.5,0.3767950455107254,0,pa,central & northern america,migrating_autumn
+1498373,0.10226494542552889,0.02506724594639386,pa,central & northern america,migrating_autumn
+0,0,0,pa,central & northern america,overwintering
+1676.412,0.1378547809830266,0,pa,central & northern america,migrating_spring
+0,0,0,pa,central & northern america,migrating_autumn
+36699.83,0,0.0373869262351576,pa,central & northern america,migrating_spring
+35374.18,0,0,pa,central & northern america,overwintering
+20378.56,0,0,pa,central & northern america,migrating_autumn
+0,0,0,pa,central & northern america,overwintering
+1534797,0.06529118666614853,0.13448082112195792,pa,central & northern america,overwintering
+0,0.07613785172991072,0,pa,central & northern america,migrating_spring
+2258407,0,0.01819388433137447,pa,central & northern america,overwintering
+0,0.10983220907525926,0,pa,central & northern america,migrating_spring
+205294.4,0.1871262929328328,0,pa,central & northern america,migrating_spring
+312583.3,0,0,pa,central & northern america,overwintering
+17611.76,0.19987162116747825,0,pa,central & northern america,migrating_spring
+0,0,0,pa,central & northern america,breeding
+241395.7,0,0,pa,central & northern america,migrating_autumn
+1120564,0.19334594682007025,0,pa,central & northern america,overwintering
+999795.3,0.0837960833676874,0,pa,central & northern america,migrating_autumn
+2058605,0.11161439810402209,0.23402683029390303,pa,central & northern america,migrating_autumn
+1338752,0.16052924924960266,0,pa,central & northern america,migrating_autumn
+1269493,0.14160491955524002,0,pa,central & northern america,migrating_autumn
+0,0,0,pa,central & northern america,overwintering
+2267757,0.07645925976289103,0,pa,central & northern america,migrating_spring
+0,0,0,pa,central & northern america,migrating_autumn
+0,0.05430703765064493,0,pa,central & northern america,migrating_autumn
+0,0.10971720649309802,0,pa,central & northern america,migrating_autumn
+0,0,0,pa,central & northern america,migrating_autumn
+98352.99,0.2516477296924666,0,pa,central & northern america,breeding
+486733.9,0.17820559890552268,0.07943046973667123,pa,central & northern america,overwintering
+0,0.35204547056341795,0,pa,central & northern america,breeding
+0,0,0,pa,central & northern america,overwintering
+4325.053,0,0,pb1,africa,breeding
+0,0,0,pb1,africa,migrating_autumn
+65824.56,0.13379860749986028,0,pb1,africa,migrating_spring
+0,0,0,pb1,asia,migrating_autumn
+126740.1,0.11053056321622812,0,pb1,africa,migrating_autumn
+696.7129,1.1648026048745663,0,pb1,africa,overwintering
+800.1476,1.5676387474850273,0,pb1,africa,breeding
+0,0,0,pb1,africa,migrating_spring
+0,0,0,pb1,africa,overwintering
+12851.17,2.0591480417919663,0,pb1,africa,breeding
+0,3.5909236190882368,0,pb1,europe,breeding
+0,0,0,pb1,asia,breeding
+0,4.611982044009807,0,pb1,asia,migrating_spring
+0,6.0007953739199245,0,pb1,asia,migrating_autumn
+15290.64,4.454231332676056,0,pb1,asia,breeding
+0,0.22942137424158204,0,pb1,asia,breeding
+149653.8,0.7426714955339975,0,pb1,asia,overwintering
+2353.16,2.0862767677115066,0,pb1,asia,migrating_autumn
+0,0.4805190005654616,0,pb1,asia,overwintering
+0,0,0,pb1,asia,migrating_spring
+0,7.339574426093371,0,pb1,asia,migrating_autumn
+0,0.7413669617011287,0,pb1,asia,migrating_autumn
+2233170,0,0,pb1,asia,migrating_autumn
+2887259,0,0,pb1,asia,migrating_autumn
+1390666,0,0,pb1,asia,migrating_spring
+353240.1,0.3449599862998838,0,pb1,asia,migrating_spring
+327368.9,0.3911530977596769,0,pb1,asia,migrating_autumn
+2318214,0,0,pb1,asia,migrating_autumn
+2697163,0,0,pb1,asia,migrating_autumn
+0,1.619786254268977,0,pb1,asia,migrating_spring
+0,0,0,pb1,asia,migrating_autumn
+0,0,0,pb1,asia,migrating_autumn
+0,0.5484116923626274,0,pb1,asia,migrating_autumn
+19764.94,0.6485812229535952,0,pb1,asia,migrating_spring
+0,2.654427171333211,0,pb1,asia,migrating_autumn
+0,0,0,pb1,asia,breeding
+0,0,0,pb1,asia,breeding
+445901.5,0,0,pb1,asia,migrating_autumn
+0,2.1572205499677253,0,pb1,asia,overwintering
+0,0,0,pb1,asia,migrating_autumn
+0,0,0,pb1,asia,migrating_autumn
+0,0.3776979128234714,0,pb1,central & northern america,migrating_autumn
+12917.18,0.4301536101082615,0,pb1,asia,breeding
+0,0.6011307837262265,0,pb1,asia,migrating_spring
+0,0.36085295109456617,0,pb1,asia,migrating_spring
+0,0.5866707969315534,0,pb1,asia,overwintering
+0,0.3791997709872241,0,pb1,asia,migrating_autumn
+0,0,0,pb1,asia,migrating_autumn
+463668.4,0.418139126844407,0,pb1,asia,breeding
+6547.407,5.417229411348014,0,pb1,asia,migrating_autumn
+0,0.15495390996268554,0,pb1,asia,overwintering
+650.5992,0,0,pb1,asia,migrating_spring
+8773.288,8.861035286161567,0,pb1,asia,breeding
+0,0.19702939075293813,0,pb1,asia,migrating_autumn
+0,0,0,pb1,asia,overwintering
+0,0,0,pb1,asia,migrating_spring
+83645.07,0.7389398672645555,0,pb1,asia,overwintering
+663949.1,0.5347634160896142,0.2327650213195014,pb1,asia,migrating_spring
+75369.89,0.9763627429403066,0,pb1,asia,migrating_autumn
+0,0.09816274693995196,0,pb1,asia,migrating_autumn
+87685.68,0.7771520247423176,0,pb1,asia,breeding
+0,0.31719808438852937,0,pb1,asia,breeding
+0,0,0,pb1,asia,breeding
+0,0,0,pb1,asia,breeding
+0,0,0,pb1,asia,migrating_autumn
+0,0,0,pb1,asia,migrating_spring
+0,0,0,pb1,asia,migrating_spring
+18402.93,0.34799621077061715,0,pb1,asia,migrating_autumn
+76068.97,1.5181960219600157,0,pb1,asia,breeding
+287122.3,0.10437920579890304,0,pb1,asia,breeding
+0,0,0,pb1,asia,migrating_autumn
+0,0,0,pb1,asia,migrating_autumn
+733878.3,0.24211277264515377,0,pb1,asia,migrating_autumn
+0,0,0,pb1,asia,migrating_autumn
+0,0.23203217528000408,0,pb1,asia,migrating_autumn
+107913.7,0.11749900668586122,0,pb1,asia,migrating_spring
+0,0,0,pb1,asia,migrating_autumn
+0,0.7604068887955684,0,pb1,asia,migrating_autumn
+0,0.6061138714949017,0,pb1,asia,migrating_spring
+10820.14,4.839509840708672,0,pb1,asia,breeding
+14664.43,1.6336627200714968,0,pb1,asia,migrating_autumn
+0,2.782755329941562,0,pb1,asia,migrating_spring
+0,2.1590741955175012,0,pb1,asia,breeding
+2692.358,0,0,pb1,asia,breeding
+0,0,0,pb1,asia,migrating_autumn
+0,0.2042914312800832,0,pb1,asia,migrating_autumn
+0,0.33423259310794506,0,pb1,asia,migrating_autumn
+85401.29,0,0,pb1,asia,migrating_autumn
+0,0,0,pb1,asia,migrating_autumn
+0,0.25612313870927395,0,pb1,asia,migrating_autumn
+118529.1,0,0,pb1,asia,migrating_autumn
+0,0,0,pb1,asia,overwintering
+33475.36,2.570752690230309,0,pb1,asia,overwintering
+0,1.7320396830630165,0,pb1,central & northern america,migrating_autumn
+843.0714,0.24378718588747716,0,pb1,central & northern america,migrating_spring
+0,0.2400906396401048,0,pb1,central & northern america,migrating_spring
+932858.7,0.144030529555236,0.05696009920847977,pb1,central & northern america,migrating_spring
+0,0.17671749196500208,0,pb1,central & northern america,migrating_spring
+473995.7,0.09271688461945438,0,pb1,central & northern america,overwintering
+0,0.14801916025687767,0,pb1,central & northern america,migrating_spring
+678682,0.09677818611919696,0.07680150295071897,pb1,central & northern america,overwintering
+3202835,0,0.0800070322497497,pb1,central & northern america,overwintering
+180450,0.22481087994108684,0,pb1,central & northern america,migrating_autumn
+0,0.05739759613607198,0,pb1,central & northern america,migrating_spring
+5004.335,0,0,pb1,central & northern america,overwintering
+478207.5,0.1986883764115772,0,pb1,central & northern america,migrating_spring
+286705.8,0,0.5936099331174525,pb1,central & northern america,migrating_autumn
+411067.6,0.12464462100237572,0,pb1,central & northern america,migrating_spring
+20832.39,0,0,pb1,central & northern america,migrating_spring
+0,0.9362081469259902,0,pb1,central & northern america,breeding
+336422,0,0,pb1,central & northern america,overwintering
+0,0.13169816124216285,0,pb1,central & northern america,migrating_autumn
+0,0,0,pb1,central & northern america,overwintering
+0,0,0,pb1,central & northern america,overwintering
+0,0,0,pb1,central & northern america,overwintering
+1830464,0.17206634410875754,0.1258828535655372,pb1,central & northern america,migrating_autumn
+1310895,0.07012993654836563,0,pb1,central & northern america,overwintering
+1221870,0.16978784399223912,0,pb1,central & northern america,breeding
+354852.4,0.04527799200260674,0,pb1,central & northern america,overwintering
+300523.3,0.11079555017457744,0,pb1,central & northern america,migrating_autumn
+0,0,0,pb1,central & northern america,overwintering
+689684.1,0.1857597930452215,0.30890455592384747,pb1,central & northern america,overwintering
+500162.7,0.0727830688964426,0.19507730742143803,pb1,central & northern america,overwintering
+364851.7,2.563630417703809,0,pb1,central & northern america,migrating_autumn
+0,3.9107986337749736,0,pb1,central & northern america,migrating_spring
+735.0257,0,0,pb1,central & northern america,overwintering
+40116.92,0,0,pb1,central & northern america,overwintering
+0,0,0,pb1,central & northern america,migrating_autumn
+229333.7,0.27362754048945703,0,pb1,central & northern america,migrating_autumn
+2886.245,0,0,pb1,central & northern america,overwintering
+507.6566,0.04595488918483426,0,pb1,central & northern america,migrating_spring
+101666.2,0.11533733033319038,0,pb2,africa,migrating_autumn
+0,0,0,pb2,asia,migrating_spring
+1786.896,3.538571058696599,0,pb2,africa,overwintering
+0,3.031025299801165,0,pb2,africa,migrating_autumn
+0,0,0,pb2,africa,overwintering
+8696.777,1.3563724199476184,0,pb2,africa,migrating_spring
+0,0,0,pb2,africa,overwintering
+121071.6,0.3143807548769182,0,pb2,africa,migrating_autumn
+0,0,0,pb2,africa,overwintering
+57468.71,0,0,pb2,africa,breeding
+0,0.08063364665667816,0.2291958883129568,pb2,europe,migrating_autumn
+0,0.11797043768209114,0.32087042617511585,pb2,central & northern america,overwintering
+246.3545,3.686193621661303,0,pb2,asia,overwintering
+0,2.180122245866727,0,pb2,asia,migrating_spring
+91698.88,0,0,pb2,asia,migrating_autumn
+1333080,3.0617980442733668,0.03469659417008586,pb2,asia,migrating_spring
+0,0.3678383857607983,0,pb2,asia,migrating_spring
+387980.2,0.8415033037387118,0,pb2,asia,breeding
+0,0.4870829189081647,0,pb2,asia,migrating_autumn
+0,0,0,pb2,asia,migrating_autumn
+0,0,0,pb2,asia,migrating_autumn
+0,0,0,pb2,asia,migrating_autumn
+0,0.23480637496094656,0,pb2,asia,migrating_spring
+0,0,0,pb2,asia,migrating_autumn
+0,1.740670369664997,0,pb2,asia,breeding
+352805.3,0.05555253700335783,0,pb2,asia,migrating_autumn
+0,0.18339205716118556,0,pb2,central & northern america,migrating_autumn
+0,0.4934789834066109,0,pb2,asia,migrating_autumn
+0,0.3591428262886396,0,pb2,asia,breeding
+0,0.4246370388253382,0,pb2,asia,overwintering
+92334.85,0.7140961868373239,0,pb2,asia,breeding
+0,0,0,pb2,asia,migrating_autumn
+0,0.9912777674321944,0,pb2,asia,breeding
+44131.93,0.4666737985210432,0,pb2,asia,migrating_autumn
+3618.033,0.943602167984686,0,pb2,asia,migrating_autumn
+0,0.1113037877326093,0,pb2,asia,overwintering
+16673.4,0.7905352510750099,0,pb2,asia,migrating_spring
+0,0.17078538927751907,0,pb2,asia,breeding
+34714.38,1.8622714776721168,0,pb2,asia,migrating_autumn
+0,0.3281349002727154,0,pb2,asia,overwintering
+0,0.39611685058054746,0,pb2,asia,breeding
+0,0.6014488645511946,0,pb2,asia,migrating_spring
+0,0.7785927939826536,0,pb2,asia,overwintering
+46975.14,0,0,pb2,asia,breeding
+0,0,0,pb2,asia,migrating_autumn
+12032.24,0.43530647900034225,0,pb2,asia,breeding
+0,0.16460427342478567,0,pb2,asia,migrating_autumn
+0,0.09562831903170732,0,pb2,asia,migrating_autumn
+99159.58,0.09631465256117622,0,pb2,asia,migrating_spring
+0,0.22773826476625203,0,pb2,asia,migrating_spring
+0,0,0,pb2,asia,overwintering
+13998.99,2.154574793068935,0,pb2,asia,migrating_autumn
+12054.07,0.6456692340440071,0,pb2,asia,breeding
+328734.7,0.44909648557553794,0,pb2,asia,migrating_autumn
+0,2.129708412845268,0,pb2,asia,overwintering
+2393861,0,0,pb2,asia,migrating_spring
+3164919,0,0,pb2,asia,migrating_autumn
+2642277,0,0,pb2,asia,migrating_autumn
+329295.7,0.08125862744680035,0,pb2,asia,migrating_spring
+3032895,0,0,pb2,asia,breeding
+0,0.4433152353629098,0,pb2,asia,migrating_autumn
+2611767,0,0,pb2,asia,breeding
+0,0.06769239259880067,0,pb2,asia,migrating_autumn
+1910816,0,0,pb2,asia,migrating_autumn
+0,0,0,pb2,asia,migrating_autumn
+75143.49,0.44249992094775337,0,pb2,asia,migrating_autumn
+301408.2,0,0,pb2,asia,breeding
+0,0,0,pb2,asia,migrating_autumn
+0,0,0,pb2,asia,migrating_autumn
+0,1.415710035445635,0,pb2,asia,migrating_spring
+0,0,0,pb2,asia,breeding
+0,0,0,pb2,asia,breeding
+9956.316,0.5861525794399256,0,pb2,asia,migrating_spring
+47817.18,0.2507925535957387,0,pb2,asia,migrating_spring
+0,0.06728259912873824,0,pb2,asia,breeding
+7087.29,0.3640281578986588,0,pb2,asia,migrating_autumn
+0,0,0,pb2,asia,migrating_autumn
+0,0,0,pb2,asia,migrating_autumn
+0,0.6025126501781415,0,pb2,asia,migrating_autumn
+0,1.6197417954213833,0,pb2,asia,migrating_spring
+0,0.6362004091121136,0,pb2,asia,migrating_autumn
+0,0.92878823519559,0,pb2,asia,migrating_autumn
+41420.57,1.6827757515777255,0,pb2,asia,migrating_autumn
+0,0.6493327703634364,0,pb2,asia,migrating_autumn
+0,4.222983544839337,0,pb2,asia,migrating_spring
+0,0,0,pb2,asia,overwintering
+548492.2,0,0,pb2,asia,breeding
+0,1.085913084169846,0,pb2,asia,migrating_autumn
+0,0,0,pb2,asia,migrating_autumn
+64821.5,20.196944116811895,0,pb2,asia,breeding
+2291.034,4.209119691557756,0,pb2,asia,migrating_autumn
+0,0.5051610001966296,0,pb2,asia,overwintering
+52433.07,3.180094827998587,0,pb2,asia,migrating_spring
+0,0.5079464982355901,0,pb2,asia,breeding
+33156.2,6.981357206756204,0,pb2,central & northern america,migrating_spring
+504462.5,0.11797043768209114,0.32087042617511585,pb2,central & northern america,migrating_autumn
+0,0,0,pb2,central & northern america,breeding
+392171.8,0.25423628629785,0,pb2,central & northern america,migrating_autumn
+466728.3,0.09187909475325996,0,pb2,central & northern america,overwintering
+0,0.31059024521882606,0,pb2,central & northern america,breeding
+0,0.10060470528082988,0,pb2,central & northern america,breeding
+21564.72,0.02539888275322965,0,pb2,central & northern america,migrating_spring
+172945.9,0.23493839741296796,0,pb2,central & northern america,breeding
+904.948,0,0,pb2,central & northern america,overwintering
+1154.691,0.6820667309777484,0,pb2,central & northern america,migrating_spring
+2975.303,2.4455766227224904,0,pb2,central & northern america,breeding
+565.1546,0,0,pb2,central & northern america,overwintering
+7358.847,0.06325600295617662,0,pb2,central & northern america,overwintering
+0,0,0,pb2,central & northern america,breeding
+0,13.18369886460077,0,pb2,central & northern america,breeding
+0,0,0,pb2,central & northern america,breeding
+0,8.279049099204515,0,pb2,central & northern america,overwintering
+32788.54,0,0,pb2,central & northern america,overwintering
+713801.1,0,0.03518847288570015,pb2,central & northern america,breeding
+723083.8,0.2993936496370928,0,pb2,central & northern america,migrating_autumn
+0,0.43530633643691097,0,pb2,central & northern america,breeding
+1212370,0.16311511739258222,0.3287078710244913,pb2,central & northern america,migrating_autumn
+0,0,0,pb2,central & northern america,overwintering
+816901.2,0.13359378202844496,0,pb2,central & northern america,overwintering
+260958.1,0.134621637338892,0,pb2,central & northern america,migrating_autumn
+238176.7,5.317806856582733,0,pb2,central & northern america,migrating_autumn
+318935.3,2.3573851171262312,0,pb2,central & northern america,migrating_autumn
+23850.77,0,0,pb2,central & northern america,migrating_spring
+1355640,0,0.09818556135670065,pb2,central & northern america,migrating_autumn
+517214.2,0.08097382501913586,0.15497397667470914,pb2,central & northern america,overwintering
+504124.4,0.414384476978789,0.2039519085034485,pb2,central & northern america,overwintering
+0,0.11898264229029464,0,pb2,central & northern america,migrating_spring
+0,0.5482887646862338,0,pb2,central & northern america,breeding
+0,0,0,pb2,central & northern america,migrating_autumn
+38728.21,0,0,pb2,central & northern america,overwintering
+915692.8,0.09994657190256896,0.0744650308653938,pb2,central & northern america,overwintering
+178499.5,0,0,pb2,central & northern america,overwintering
+0,0.16286569960412223,0,pb2,central & northern america,migrating_spring
+3424690,0.37192168311737905,0.4539612018463632,ha,africa,migrating_spring
+5791185,0.19539455640948145,0.2655623796621316,mp,africa,overwintering
+3057434,0,0,nx,africa,breeding
+2467689,1.3455666663317976,0.18326163936974504,np,europe,migrating_autumn
+4919106,0.40926594887837386,0.26465266955986255,ns,europe,migrating_spring
+2981958,0.7587099453329609,0.1612444400089359,pa,africa,migrating_autumn
+2255567,0.8037699209571734,0.1623784000084605,pb1,europe,migrating_autumn
+2345556,1.4480767558118457,0.28834277457118507,pb2,africa,migrating_spring
+2325405,1.7551197996745238,0.3905013895678967,ha,africa,migrating_spring
+369025.5,0,0,ha,asia,overwintering
+226951.4,0.9552480248645016,0.18093091160249264,ha,europe,overwintering
+375001.5,0.03894697541772451,1.3810959703949706,ha,europe,overwintering
+95377.92,6.299045117301651,0.4079778138743077,ha,europe,migrating_spring
+1252933,2.262689533720995,0.11052750498564824,ha,europe,overwintering
+1863694,0.32642627854468254,0.3382129462622001,ha,europe,breeding
+4792266,1.227418394245607,0,ha,asia,breeding
+1896256,2.5063361584611727,0.04894090904695014,ha,africa,migrating_spring
+2580713,0.13167019592896012,0.110378275671293,ha,central & northern america,breeding
+1349960,0.6059178459227341,0,ha,central & northern america,overwintering
+931790.5,0.03189048430518004,0,ha,central & northern america,overwintering
+2694638,0.7045190101448141,0,ha,europe,migrating_autumn
+2148606,1.7528549341129196,0.1276575217978997,mp,africa,migrating_spring
+759462.1,0,0,mp,asia,migrating_spring
+444901.8,1.5096911213500248,0.1811000046936999,mp,europe,migrating_autumn
+559406.4,0.06840799955905297,1.4942027982534198,mp,europe,breeding
+725006.1,0.9815807875144,0.03130826387408081,mp,europe,migrating_autumn
+1913006,1.6497152952714615,0.26372546214739945,mp,europe,overwintering
+1398816,0.5555009255875563,0.4191304253968804,mp,europe,overwintering
+13782643,0.5609530707655885,0,mp,asia,migrating_spring
+3724376,2.0209215656108395,0.0204110391693324,mp,africa,migrating_autumn
+2292311,0.2066018273726653,0.05803789522130687,mp,central & northern america,breeding
+1766996,0.7233821062114123,0,mp,central & northern america,overwintering
+1368759,0.6362712219640301,0,mp,central & northern america,overwintering
+3775571,0.5869402391054809,0,mp,europe,migrating_autumn
+2154548,0,0,nx,africa,migrating_spring
+407261.1,0,0,nx,asia,breeding
+231341.6,0,0,nx,europe,overwintering
+403595.5,0,0,nx,europe,overwintering
+1407653,0,0,nx,europe,overwintering
+1706306,0,0,nx,europe,overwintering
+5228761,0,0,nx,asia,migrating_spring
+2257762,0,0,nx,central & northern america,migrating_autumn
+1372403,0,0,nx,central & northern america,migrating_autumn
+904056.8,0,0,nx,central & northern america,migrating_autumn
+924514.2,0,0,nx,europe,breeding
+2474978,0,0,nx,africa,migrating_spring
+2720051,0,0,nx,europe,migrating_autumn
+3111244,1.505698801045687,0.2577236055222798,np,africa,breeding
+441851.2,0,0,np,asia,migrating_spring
+342344.9,1.1625651714776333,0.2955940834710358,np,europe,migrating_autumn
+419411.4,0.0617057257100288,1.59344936678087,np,europe,migrating_autumn
+129788.6,2.2848291365605613,0.1931854258975742,np,europe,overwintering
+888053,4.451933317114829,0.3708552118891495,np,europe,migrating_spring
+2114446,0.26423519707446586,0.15424281363451176,np,europe,breeding
+9018550,0.6020966026889703,0,np,asia,migrating_spring
+1974788,0.09352218616358687,0.03825455675706601,np,africa,overwintering
+2123255,0.1676201849589979,0.18943300739493685,np,central & northern america,migrating_spring
+1162139,0.32830902195109,0,np,central & northern america,migrating_autumn
+840525.5,0.485599841204198,0,np,central & northern america,overwintering
+3550930,0.6455414342983683,0,np,europe,migrating_autumn
+2464364,1.55523488880544,0.23013611089919672,ns,africa,breeding
+622135.9,0,0,ns,asia,migrating_spring
+339008,0.8483034929908477,0.06867205321852388,ns,europe,overwintering
+314909,0.10302461944079266,4.757148130486483,ns,europe,breeding
+570305.5,0.26186962464037,0.1085339049597927,ns,europe,breeding
+0,1.38940070449498,0.1339917345062802,ns,europe,migrating_spring
+4241780,0.13433523427850025,0.41524205436919015,ns,europe,overwintering
+8674184,0.5121307274027534,0,ns,asia,migrating_spring
+2566295,0.6737259915233658,0.02106888901834325,ns,asia,breeding
+2503917,0.14601429295755677,0.09632106098035664,ns,central & northern america,breeding
+1910423,0.138818605621698,0,ns,central & northern america,migrating_autumn
+1111458,0.15532730517469995,0,ns,central & northern america,migrating_spring
+2554320,0.09650807722640388,0,ns,europe,migrating_autumn
+2090686,1.144858532752226,0.15616206538387223,pa,africa,migrating_autumn
+333166.7,0,0,pa,asia,migrating_spring
+224025.5,0.9743365773085396,0.1553465319566234,pa,europe,overwintering
+331576.6,0.0893447429520795,1.4470276820820085,pa,europe,migrating_autumn
+527143.1,0,0.02314987192784245,pa,europe,migrating_spring
+547769.8,6.054644941481202,0.07217413348914903,pa,europe,migrating_autumn
+1818440,0.25188877034188994,0.10154313591460572,pa,europe,breeding
+7597599,0.6154722228161869,0,pa,asia,migrating_spring
+2757568,1.0598238597343923,0.03190652209516054,pa,asia,breeding
+2116487,0.12136178816734332,0.17465943525189642,pa,central & northern america,migrating_autumn
+1017747,0.23331808530687903,0,pa,central & northern america,overwintering
+1343798,0.3455449143543362,0,pa,central & northern america,migrating_spring
+2330081,0.8879567868817169,0,pa,europe,migrating_autumn
+2127358,1.3963272616070963,0.20174361630674997,pb1,africa,breeding
+464738.7,0,0,pb1,asia,migrating_spring
+229564,3.5619671197130236,0.19422577391077225,pb1,europe,breeding
+329560.9,0.06655258282251103,1.4119346992468065,pb1,europe,migrating_autumn
+49089.97,13.912885848711106,0.33313877469998876,pb1,europe,overwintering
+2016418,1.510809781233281,0.1220783754457444,pb1,europe,migrating_spring
+1410868,0,0.3137612924251747,pb1,europe,migrating_spring
+4847874,0.7324013175790883,0,pb1,asia,migrating_spring
+1812346,1.0763910336350135,0.03373649909096676,pb1,asia,migrating_autumn
+2398258,0.1226830308996052,0.11678697966385432,pb1,central & northern america,migrating_autumn
+1147087,0.6639032902961889,0,pb1,central & northern america,overwintering
+2042003,0.3483204007306582,0,pb1,central & northern america,migrating_spring
+2786867,0.6310051923493756,0,pb1,europe,migrating_autumn
+1357538,7.598304432905106,0.4123153840841023,pb2,asia,breeding
+199703,0,0,pb2,asia,migrating_autumn
+186426.6,4.760335447273431,0,pb2,europe,migrating_spring
+433833.8,0.02809351836267909,1.4993068097038778,pb2,europe,migrating_autumn
+101215.6,0.4362408903708892,0.05632419198102562,pb2,europe,migrating_spring
+775702.8,1.239756357927,0.1879733212407204,pb2,europe,migrating_spring
+1498767,0.32621069403228686,1.0638502316138303,pb2,europe,breeding
+1985935,0.7450113323607297,0,pb2,asia,overwintering
+1508578,2.118154420919504,0.06108291395828358,pb2,africa,migrating_autumn
+1813289,0.12940427372185326,0.21030173178313172,pb2,central & northern america,breeding
+1121473,0.6863519416010423,0,pb2,central & northern america,overwintering
+712397.9,0.07806255909094029,0,pb2,central & northern america,overwintering
+2731181,0.6296218714292692,0,pb2,europe,migrating_autumn
