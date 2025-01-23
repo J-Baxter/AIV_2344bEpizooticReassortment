@@ -130,7 +130,9 @@ PlotPhyloGeo <- function(treedata){
     scale_fill_manual(values = host_colours) + 
     scale_colour_manual(values = host_colours) +
     
-    coord_sf(ylim = c(-60, 75), xlim = c(-180, 180), expand = FALSE) +
+    coord_sf(ylim = c(-60, 75), xlim = c(-180, 180), expand = TRUE) +
+    scale_x_continuous(expand = c(0,0)) + 
+    scale_y_continuous(expand = c(0,0)) +
     theme_void() + 
     
     
@@ -190,10 +192,9 @@ dominant_reassortants <- read_csv('./2024Aug18/treedata_extractions/summary_reas
 
 # Plot the density of TMRCA, fill by origin  host
 host_tmrca_list <- host_tmrca %>%
-  filter(cluster_profile %in% dominant_reassortants) %>%
-  group_split(cluster_profile,  .keep = T) %>%
-  setNames(dominant_reassortants)
 
+  filter(cluster_profile %in% dominant_reassortants) %>%
+  base::split(.,f = .$cluster_profile) 
 
 tmrca_plots <- lapply(host_tmrca_list, PlotTMRCA)
 
@@ -204,6 +205,36 @@ phylogeo <- lapply(mcc_trees[names(mcc_trees) %in% as.character(dominant_reassor
 
 phylogeo[[6]]
 
+
+# align plots vertically (so that each row corresponds to a reassortant)
+
+cowplot::plot_grid(ggplot() + theme_void(),ggplot() + theme_void(),
+                   phylogeo[[1]],tmrca_plots[[1]], 
+          phylogeo[[2]], tmrca_plots[[2]],
+          phylogeo[[3]], tmrca_plots[[3]],
+          phylogeo[[4]], tmrca_plots[[4]],
+          phylogeo[[5]], tmrca_plots[[5]],
+          phylogeo[[6]], tmrca_plots[[6]],
+          nrow = 7,
+          ncol = 2,
+          rel_heights = c(0.2,1,1,1,1,1,1),
+          rel_widths = c(1.25,0.75),
+          align = 'vh',
+          axis = 'rbt',
+          labels = c('','', "11111111",'',
+                     "11211111" , '',
+                     "11414114" , '',
+                     "21111111", '', 
+                     "32313212",'',
+                     "43112113",''),
+          vjust = -0.2)
+
+ggsave('~/Downloads/figure2.jpeg',
+       height = 30,
+       width = 25,
+       units = 'cm',
+       dpi = 360
+       )
 
 ############################################## WRITE ###############################################
 
