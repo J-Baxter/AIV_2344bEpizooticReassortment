@@ -40,7 +40,7 @@ will_tree <- read.beast('./global_subsample/h52344b_ha_s1.mcc.trees')
 new_tree <- read.beast('./2025Jan06/globalsubsample/ha_global_subsample_traits_mcc.tree')
 
 ############################################## MAIN ################################################
-global_theme <- theme_classic(base_family = "LM Sans 10")+
+global_theme <- theme_classic()+
   theme(
     #text = element_text(size=10),
     axis.title.x = element_text(margin = margin(t = 10, r = 0, b = 0, l = 0), size = 10),
