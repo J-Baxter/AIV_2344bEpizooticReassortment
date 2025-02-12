@@ -110,7 +110,7 @@ averages <-  diffusionmodel1_fit %>%
           dpar = "mu",
           re_formula = NA , 
           regrid = "response",
-          #tran = "log", 
+          #tran  = "log", 
           type = "response",
           allow_new_levels = TRUE) %>%
   as_tibble() %>%
@@ -156,6 +156,16 @@ plt_5d  <- diffusionmodel1_fit %>%
 
 
 # Posterior Prediction HU ~ Season
+predict_hu_season <- diffusionmodel1_fit %>%
+  emmeans(~ season,
+          var = "weighted_diff_coeff",
+          at = list(continent = unique(diffusion_data$season)),
+          #epred = TRUE, 
+          dpar = "hu",
+          re_formula = NA, 
+          regrid = "response",
+          allow_new_levels = TRUE)
+
 plt_5e <- predict_hu_season %>%
   gather_emmeans_draws() %>%
   ggplot(aes(x  = 1-.value,
@@ -179,6 +189,17 @@ plt_5e <- predict_hu_season %>%
 
 
 # Posterior Prediction/Average HU ~ Region
+regional_average <- diffusionmodel1_fit %>%
+  emmeans(~ 1 + collection_regionname,
+          var = "weighted_diff_coeff",
+          at = list(continent = unique(diffusion_data$collection_regionname)),
+          # epred = TRUE, 
+          dpar = "mu",
+          re_formula = ~ 1|collection_regionname ,  regrid = "response",
+          tran = "log", 
+          type = "response",
+          allow_new_levels = TRUE)
+
 plt_5f <-regional_average %>%
   gather_emmeans_draws() %>%
   ggplot(aes(x  = 1-.value,
@@ -299,7 +320,7 @@ ggsave('~/Downloads/figure5.jpeg', height = 40, width = 35, units = 'cm', dpi = 
 
 
 ##### Plot Posterior Predictive Check #####
-plt_posteriorpredictive <- plot_posteriorpredictive$data  %>%
+posteriorpredictive$data  %>%
   mutate(value = log1p(value)) %>%
   ggplot() + 
   geom_density(aes(x = value, 
@@ -321,10 +342,13 @@ plt_posteriorpredictive <- plot_posteriorpredictive$data  %>%
   
   guides(alpha= 'none', 
          colour=guide_legend()) + 
-  scale_x_continuous('Weighted Diffusion Coefficient') + 
-  scale_y_continuous('Density') + 
-  
-  theme_minimal(base_size = 8) + 
+  scale_x_continuous(expression(paste('Predicted Weighted Diffusion Coefficient (',Km**2~year**-1, ')' )),
+                     breaks = log1p(c(0, 10^(seq(from = 2, to = 10, by = 4)))),
+                     labels = expression(0,  1%*%10^2,  1%*%10^6, 1%*%10^10),
+                     #limits = c(-0.01, log1p(10^9)),
+                     expand = c(0.02,0.02))+
+  scale_y_continuous('Density',expand = c(0,0)) + 
+  global_theme+ 
   theme(legend.position = 'inside',
         legend.title = element_blank(),
         legend.position.inside = c(0.8, 0.6))
