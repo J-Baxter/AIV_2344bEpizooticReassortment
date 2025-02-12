@@ -16,7 +16,8 @@ memory.limit(30000000)
 # Packages
 library(tidyverse)
 library(magrittr)
-library(beastio)
+#library(beastio)
+library(treeio)
 library(sf)
 library(rnaturalearth)
 library(rnaturalearthdata)
@@ -224,7 +225,6 @@ tmrca_plots <- lapply(host_tmrca_list, PlotTMRCA)
 phylogeo <- lapply(mcc_trees[names(mcc_trees) %in% as.character(dominant_reassortants)], PlotPhyloGeo )
 
 
-phylogeo[[6]]
 
 
 # align plots vertically (so that each row corresponds to a reassortant)
@@ -233,12 +233,12 @@ plot_legend <- get_plot_component(phylogeo[[4]]+theme(legend.position = 'bottom'
 
 main <- cowplot::plot_grid(
   ggplot() + theme_void(),ggplot() + theme_void(),
-  phylogeo[[1]],tmrca_plots[[1]], 
-  phylogeo[[2]], tmrca_plots[[2]],
-  phylogeo[[3]], tmrca_plots[[3]],
+  phylogeo[[5]],tmrca_plots[[5]], 
   phylogeo[[4]], tmrca_plots[[4]],
-  phylogeo[[5]], tmrca_plots[[5]],
+  phylogeo[[2]], tmrca_plots[[2]],
+  phylogeo[[1]], tmrca_plots[[1]],
   phylogeo[[6]], tmrca_plots[[6]],
+  phylogeo[[3]], tmrca_plots[[3]],
           nrow = 7,
           ncol = 2,
   rel_heights = c(0.1,1,1,1,1,1,1),
@@ -246,12 +246,12 @@ main <- cowplot::plot_grid(
           align = 'vh',
           axis = 'rbt',
           labels = c('', '', 
-                     "11111111",'',
-                     "11211111" , '',
-                     "11414114" , '',
-                     "21111111", '', 
-                     "32313212",'',
-                     "43112113",''),
+                     "H5N8/2019/R7",'',
+                     "H5N1/2020/R1", '', 
+                     "H5N1/2021/R1" , '',
+                     "H5N1/2021/R3",'',
+                     "H5N1/2022/R7",'',
+                     "H5N1/2022/R12" , '' ),
           vjust = -0.2)
 
 cowplot::plot_grid(main,
