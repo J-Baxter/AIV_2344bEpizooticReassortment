@@ -26,7 +26,7 @@ library(magrittr)
 
 
 ############################################## MAIN ################################################
-global_theme <- theme_classic(base_family = "LM Sans 10")+
+global_theme <- theme_classic()+
   theme(
     #text = element_text(size=10),
     axis.title.x = element_text(margin = margin(t = 10, r = 0, b = 0, l = 0), size = 10),
