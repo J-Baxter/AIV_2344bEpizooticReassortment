@@ -327,7 +327,8 @@ ggplot(count_prob, aes(x = .epred, fill = collection_regionname , y = collection
 class_prob <- jointmodel_temp %>% 
   epred_draws(newdata = count_data %>%
                 select(collection_regionname) %>%
-                distinct(),resp = "group2",
+                distinct(),
+              resp = "group2",
               re_formula = NA)
 class_prob %>% 
   median_hdi(.epred)

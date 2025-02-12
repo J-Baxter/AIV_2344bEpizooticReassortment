@@ -309,7 +309,7 @@ plt_1b <- assignments_nophylo %>%
 
 
 
-plt_1c <- ggplot(ari_summary)+
+plt_1c <- ggplot(ari_summary) +
   geom_point(aes(x = var, y = mean_importance)) +
   geom_linerange(aes(x = var, ymin = lower_ci, ymax = upper_ci)) + 
   
