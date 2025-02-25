@@ -24,6 +24,8 @@ library(cowplot)
 library(treeio)
 library(TreeTools)
 library(ggnewscale)
+library(rnaturalearth)
+library(rnaturalearthdata)
 # User functions
 
 
@@ -38,6 +40,13 @@ meta <- read_csv('./2024-09-09_meta.csv')
 will_tree <- read.beast('./global_subsample/h52344b_ha_s1.mcc.trees')
 
 new_tree <- read.beast('./2025Jan06/globalsubsample/ha_global_subsample_traits_mcc.tree')
+
+hpai_cases <- read_csv('~/Downloads/overview-raw-data_202502241440.csv') 
+woah_hpai <- read_csv('~/Downloads/Quantitative data 2025-02-25.csv')
+
+ref <- ne_countries() %>%
+  as_tibble()  %>% 
+  select(name, continent)
 
 ############################################## MAIN ################################################
 global_theme <- theme_classic()+
@@ -100,7 +109,6 @@ region_colours <- c('europe' = '#1b9e77',
 
 
 #F6E0D2FF #DFA398FF #9C6755FF #659794FF #EA967CFF #F5C98EFF #D65B5AFF #586085FF 
-
 all <- meta %>%
   mutate(collection_regionname = case_when(grepl('europe', collection_regionname) ~ 'europe',
                                            grepl('africa', collection_regionname) ~ 'africa',
@@ -113,8 +121,230 @@ all <- meta %>%
   dplyr::select(collection_regionname, collection_dateyear) %>%
   tidyr::expand(collection_regionname, collection_dateyear = full_seq(collection_dateyear,1))
 
+
+# Sequences
+sequences_month <- meta %>%  
+  drop_na(cluster_profile) %>%
+  select(starts_with('collection_date'),
+         collection_regionname) %>%
+  mutate(collection_regionname = case_when(grepl('europe', collection_regionname) ~ 'europe',
+                                           grepl('africa', collection_regionname) ~ 'africa',
+                                           grepl('asia', collection_regionname) ~ 'asia',
+                                           grepl('(central|northern) america|caribbean', collection_regionname) ~ 'central & northern america',
+                                           grepl('south america|southern ocean', collection_regionname) ~ 'south america',
+                                           grepl('australia|melanesia', collection_regionname) ~ 'australasia',
+                                           .default = collection_regionname)) %>%
+  group_by(collection_datemonth, collection_regionname) %>%
+  summarise(n_sequences = n()) %>%
+  ungroup() %>%
+  mutate(collection_datemonth = ymd(paste0(collection_datemonth, '-01'))) %>%
+  drop_na(collection_regionname,collection_datemonth)
+
+
+# Format WOAH data and estimate the minimum number of cases
+woah_minimuminferredcases <- woah_hpai %>%
+  select(Year,
+         Semester,
+         `World region`,
+         Country,
+         `Animal Category`,
+         `Serotype/Subtype/Genotype`,
+         `New outbreaks`, 
+         Susceptible, 
+         `Measuring units`,
+         Cases,
+         Deaths) %>%
   
-plt_1b <- meta %>%
+  # replace dashes with NA
+  mutate(across(!Year, ~ case_when(grepl('^-$', .x) ~ NA_character_,
+                                   .default = .x))) %>%
+  
+  # format biannual periods
+  mutate(date_start = case_when(grepl('Jan-Jun', Semester) ~ paste0(Year, '-01-01'),
+                                grepl('Jul-Dec', Semester) ~ paste0(Year, '-07-01'),
+                                .default = NA_character_),
+         date_end = case_when(grepl('Jan-Jun', Semester) ~ paste0(Year, '-06-30'),
+                              grepl('Jul-Dec', Semester) ~ paste0(Year, '-12-31'),
+                              .default = NA_character_)) %>%
+  
+  # format country for continent assignment
+  mutate(Country = case_when(Country ==  "Cote D'Ivoire" ~ "Côte d'Ivoire",
+                             Country == "Congo (Dem. Rep. of the)" ~ "Dem. Rep. Congo",
+                             Country == "China (People's Rep. of)"~ "China",
+                             Country == "Chinese Taipei" ~ "Taiwan",
+                             Country == "Korea (Dem People's Rep. of)" ~"North Korea",
+                             Country == "Korea (Rep. of)" ~"South Korea",
+                             Country == "Dominican (Rep.)" ~ "Dominican Rep.",
+                             grepl( "Falkland Islands \\(Malvinas\\)|South Georgia and the South Sandwich Islands", Country) ~ "Falkland Is.",
+                             Country ==  "Türkiye (Rep. of)" ~ "Turkey",
+                             Country == "Hong Kong" ~ 'China',                                 
+                             Country == "Bosnia and Herzegovina" ~  "Bosnia and Herz." ,                 
+                             Country == "Czech Republic" ~ "Czechia",                               
+                             Country == "Faeroe Islands" ~ "Denmark",                              
+                             Country == "Reunion" ~ 'Madagascar',                                      
+                             .default = Country))%>%
+  # Group by continent
+  left_join(ref, by = join_by(Country == name)) %>%
+  mutate(animal_category  = str_to_lower(`Animal Category`)) %>%   
+  mutate(across(any_of(c('New outbreaks', 'Susceptible', 'Cases', 'Deaths')), ~as.numeric(.x))) %>%
+  replace_na(list('New outbreaks' = 0,
+                  'Susceptible' = 0,
+                  'Cases' = 0,
+                  'Deaths' = 0)) %>%
+  
+  # Filter only H5NX
+  filter(grepl('^[Hh]5', `Serotype/Subtype/Genotype`)) %>%
+  
+  # Infer the minimum number of 'cases' This is mostly due to USA seemingly incapable of reporting
+  # their data in a similar manner to the rest of the world.
+  mutate(inferred_minimum_cases = case_when(Cases >= Deaths ~ Cases, 
+                                            Cases < Deaths ~ Deaths,
+                                            .default = Cases)) %>%
+  
+  rename(collection_regionname = continent) %>%
+  mutate(collection_regionname = str_to_lower(collection_regionname)) %>%
+  mutate(collection_regionname = case_when(grepl('europe', collection_regionname) ~ 'europe',
+                                           grepl('africa', collection_regionname) ~ 'africa',
+                                           grepl('asia', collection_regionname) ~ 'asia',
+                                           grepl('(central|northern|north) america|caribbean', collection_regionname) ~  'central & northern america',
+                                           grepl('south america|southern ocean|antarctica', collection_regionname) ~ 'south america',
+                                           grepl('australia|melanesia|oceania', collection_regionname) ~ 'australasia',
+                                           .default = collection_regionname))
+
+
+# Group WOAH minimum cases by month
+woah_minimuminferredcases_monthly <- woah_minimuminferredcases %>%
+  
+  summarise(sum_IMC = sum(inferred_minimum_cases, na.rm = TRUE), .by = c(date_start, 
+                                                                         date_end,
+                                                                         collection_regionname))  %>%
+  mutate(across(starts_with('date'), ~ymd(.x))) %>%
+  mutate(interval = interval(date_start, date_end)) %>%
+  rename(woah_cases = sum_IMC)
+
+
+# Group FAO cases by month
+fao_hpai_monthly <- fao_hpai %>% 
+  filter(pathogenicity == 'HPAI') %>%
+  filter(grepl('H5', serotype)) %>%
+  mutate(observation_month = format.Date(observation_date, 
+                                         format = '%Y-%m')) %>%
+  group_by(observation_month, 
+           collection_regionname) %>%
+  summarise(n_cases = n()) %>%
+  ungroup() %>%
+  mutate(observation_month = ymd(paste0(observation_month, '-01'))) %>%
+  filter(observation_month> ymd('2015-06-01')) %>% 
+  rename(collection_datemonth = observation_month)  %>%
+  mutate(date_start = floor_date(collection_datemonth,
+                                 unit = 'month'),
+         date_end = ceiling_date(collection_datemonth, 
+                                 unit = 'month') - days(1)) %>%
+  mutate(collection_regionname = case_when(collection_regionname == 'north and central america' ~ 'central & northern america', 
+                                           .default = collection_regionname)) %>%
+  rename(fao_cases = n_cases)
+
+
+# Join everything together and calculated scaled estimates (not used)
+all_casedata_monthly <- woah_minimuminferredcases_monthly %>%
+  interval_left_join(fao_hpai_monthly, by = c('date_start', 'date_end')) %>%
+  filter(collection_regionname.x == collection_regionname.y) %>%
+  select(-ends_with('y')) %>%
+  rename_with(~gsub('\\.x', '', .x)) %>%
+  
+  # set groupings
+  group_by(collection_regionname, interval) %>%
+  mutate(scale_factor = woah_cases/sum(fao_cases)) %>%
+  ungroup() %>%
+  rowwise() %>%
+  mutate(scaled_estimate = fao_cases*scale_factor) %>%
+  filter(!grepl('australasia', collection_regionname)) %>%
+  filter(collection_datemonth >= as_date('2019-01-01'))
+
+
+# Plot
+plt_1a <- ggplot(all_casedata_monthly) + 
+
+  geom_bar(data = sequences_month, 
+           aes(x = collection_datemonth, 
+               y = n_sequences*5000, 
+               colour = collection_regionname,
+               fill = collection_regionname), 
+           alpha = 0.7, 
+           stat = 'identity',
+           position = 'stack') +
+  
+  geom_line(aes(x = collection_datemonth, 
+                y = woah_cases, 
+                colour= collection_regionname),
+            linetype = 'dashed') +
+  
+  scale_fill_manual(values = region_colours) +
+  scale_colour_manual(values = region_colours) +
+  theme_classic() + 
+  scale_y_continuous(expand = c(0.01, 0),
+                     'Inferred Cases ((n)',
+                     sec.axis = sec_axis(transform = ~ ./5000, 
+                                         'Sequences (n)')) + 
+  
+  facet_wrap(~collection_regionname,  
+             ncol = 6,
+             scales = 'free_y') + 
+  
+  geom_text(data = cbind.data.frame(collection_regionname = unique(test_3$collection_regionname)), 
+            aes(label = str_to_title(collection_regionname)),
+            y = Inf, 
+            x = as_date('2019-01-01'), 
+            size = 4,
+            fontface = 'bold',
+            vjust = 1.5,
+            hjust = 'left') +
+  theme(
+    legend.position = 'none',
+    strip.background = element_blank(),
+    strip.text = element_blank()
+  )
+
+plt_1a
+
+
+##################################
+# Plot 1C
+sequences_host_month <- meta %>%  
+  drop_na(cluster_profile) %>%
+  select(starts_with('collection_date'),
+         host_simplifiedhost,
+         collection_regionname) %>%
+  mutate(collection_regionname = case_when(grepl('europe', collection_regionname) ~ 'europe',
+                                           grepl('africa', collection_regionname) ~ 'africa',
+                                           grepl('asia', collection_regionname) ~ 'asia',
+                                           grepl('(central|northern) america|caribbean', collection_regionname) ~ 'central & northern america',
+                                           grepl('south america|southern ocean', collection_regionname) ~ 'south america',
+                                           grepl('australia|melanesia', collection_regionname) ~ 'australasia',
+                                           .default = collection_regionname)) %>%
+  group_by(collection_datemonth, host_simplifiedhost) %>%
+  summarise(n_sequences = n()) %>%
+  ungroup() %>%
+  mutate(collection_datemonth = ymd(paste0(collection_datemonth, '-01'))) %>%
+  drop_na(host_simplifiedhost,collection_datemonth)
+
+
+ggplot() + 
+  # geom_line(aes(x = collection_datemonth, y = n_cases, colour = collection_regionname)) + 
+  
+  geom_dotplot(data = sequences_host_month, 
+           alpha = 0.7,
+           aes(x = collection_datemonth, y = n_sequences, fill = host_simplifiedhost),binaxis = "y", stackgroups = TRUE,method = "histodot") + 
+  scale_y_continuous( expand = c(0,0), 'GISAID Whole Genomes (n)') + 
+  
+  scale_x_date(limits = as_date(c('2018-05-01', '2024-05-01')), breaks = '6 month', date_labels = "%Y %b", 'Date') + 
+  scale_fill_manual(values = host_colours) +
+  scale_colour_manual(values = host_colours) +
+  theme_classic() +
+  theme(legend.position = 'none')
+
+
+plt_1b<- meta %>%
   mutate(collection_regionname = case_when(grepl('europe', collection_regionname) ~ 'europe',
                                            grepl('africa', collection_regionname) ~ 'africa',
                                            grepl('asia', collection_regionname) ~ 'asia',
@@ -134,6 +364,7 @@ plt_1b <- meta %>%
   scale_y_continuous('Cumulative Frequency', expand = c(0,0)) + 
   scale_x_continuous('Collection Year', expand = c(0,0)) + 
   scale_fill_manual(values = region_colours) + 
+  
   global_theme +
   theme(legend.position = 'inside',
         legend.position.inside = c(0.05, 0.95),
