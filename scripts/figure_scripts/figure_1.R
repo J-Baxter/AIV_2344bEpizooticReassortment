@@ -40,6 +40,7 @@ meta <- read_csv('./2024-09-09_meta.csv')
 will_tree <- read.beast('./global_subsample/h52344b_ha_s1.mcc.trees')
 
 new_tree <- read.beast('./2025Jan06/globalsubsample/ha_global_subsample_traits_mcc.tree')
+timetree <- read.newick('./2025Feb26/globalsubsample/2025-02-26_clock/rerooted.newick')
 
 hpai_cases <- read_csv('~/Downloads/overview-raw-data_202502241440.csv') 
 woah_hpai <- read_csv('~/Downloads/Quantitative data 2025-02-25.csv')
@@ -263,11 +264,13 @@ all_casedata_monthly <- woah_minimuminferredcases_monthly %>%
 
 
 # Plot
-plt_1a <- ggplot(all_casedata_monthly) + 
+plt_1a <- all_casedata_monthly %>%
+  as_tibble() %>%  filter(date_start < as_date('2024-06-01'))  %>%
+  ggplot() + 
 
   geom_bar(data = sequences_month, 
            aes(x = collection_datemonth, 
-               y = n_sequences*5000, 
+               y = n_sequences*7000, 
                colour = collection_regionname,
                fill = collection_regionname), 
            alpha = 0.7, 
@@ -283,26 +286,28 @@ plt_1a <- ggplot(all_casedata_monthly) +
   scale_colour_manual(values = region_colours) +
   theme_classic() + 
   scale_y_continuous(expand = c(0.01, 0),
-                     'Inferred Cases ((n)',
-                     sec.axis = sec_axis(transform = ~ ./5000, 
-                                         'Sequences (n)')) + 
+                     'WOAH Minimum Cases (n)',
+                     sec.axis = sec_axis(transform = ~ ./7000, 
+                                         'GISAID Whole Genomes (n)')) + 
+  scale_x_date('Date') + 
   
   facet_wrap(~collection_regionname,  
-             ncol = 6,
-             scales = 'free_y') + 
+             ncol = 6) + 
   
   geom_text(data = cbind.data.frame(collection_regionname = unique(test_3$collection_regionname)), 
-            aes(label = str_to_title(collection_regionname)),
+            aes(label = str_wrap(str_to_title(collection_regionname), width = 20)),
             y = Inf, 
             x = as_date('2019-01-01'), 
-            size = 4,
+            size = 3,
             fontface = 'bold',
-            vjust = 1.5,
+            vjust = 'top',
             hjust = 'left') +
   theme(
     legend.position = 'none',
     strip.background = element_blank(),
-    strip.text = element_blank()
+    strip.text = element_blank(),
+    axis.text = element_text(size = 8),
+    axis.title = element_text(size = 10)
   )
 
 plt_1a
@@ -329,160 +334,106 @@ sequences_host_month <- meta %>%
   drop_na(host_simplifiedhost,collection_datemonth)
 
 
-ggplot() + 
-  # geom_line(aes(x = collection_datemonth, y = n_cases, colour = collection_regionname)) + 
-  
-  geom_dotplot(data = sequences_host_month, 
-           alpha = 0.7,
-           aes(x = collection_datemonth, y = n_sequences, fill = host_simplifiedhost),binaxis = "y", stackgroups = TRUE,method = "histodot") + 
-  scale_y_continuous( expand = c(0,0), 'GISAID Whole Genomes (n)') + 
-  
-  scale_x_date(limits = as_date(c('2018-05-01', '2024-05-01')), breaks = '6 month', date_labels = "%Y %b", 'Date') + 
+plt_1c <-ggplot(sequences_host_month) + 
+  geom_stream(aes(x = collection_datemonth, 
+                  y = n_sequences, 
+                  colour = host_simplifiedhost,
+                  fill = host_simplifiedhost),
+              alpha = 0.7) + 
+  scale_x_date(limits = as_date(c('2019-01-01', '2024-05-01')), breaks = '1 year', date_labels = "%Y", 'Date') + 
   scale_fill_manual(values = host_colours) +
   scale_colour_manual(values = host_colours) +
-  theme_classic() +
-  theme(legend.position = 'none')
+  scale_y_continuous('GISAID Whole Genomes (n)' ,
+                     labels = abs,
+                     breaks = seq(-250, 250, by = 50),
+                     limits = c(-250, 250)) + 
+  theme_classic() + 
+  theme(legend.position = 'none',
+        axis.text = element_text(size = 8),
+        axis.title = element_text(size = 10))
 
 
-plt_1b<- meta %>%
+
+##################################
+# Plot 1D
+sequences_subtype_month <- meta %>%  
+  drop_na(cluster_profile) %>%
+  select(starts_with('collection_date'),
+         virus_subtype,
+         collection_regionname) %>%
   mutate(collection_regionname = case_when(grepl('europe', collection_regionname) ~ 'europe',
                                            grepl('africa', collection_regionname) ~ 'africa',
                                            grepl('asia', collection_regionname) ~ 'asia',
-                                           grepl('(central|northern) america', collection_regionname) ~ 'central & northern america',
+                                           grepl('(central|northern) america|caribbean', collection_regionname) ~ 'central & northern america',
                                            grepl('south america|southern ocean', collection_regionname) ~ 'south america',
-                                           grepl('australia', collection_regionname) ~ 'australasia',
+                                           grepl('australia|melanesia', collection_regionname) ~ 'australasia',
                                            .default = collection_regionname)) %>%
-  drop_na(collection_regionname) %>%
-  summarise(n = n(), .by = c(collection_regionname, collection_dateyear)) %>%
-  right_join(all) %>%
-  mutate(n = case_when(is.na(n) ~ 0, .default = n)) %>%
-  arrange(collection_dateyear) %>%
-  group_by(collection_regionname) %>%
-  mutate(cum_sum = cumsum(n)) %>%
-  ggplot() + 
-  geom_area(aes(x = collection_dateyear, y = cum_sum, fill = collection_regionname)) +
-  scale_y_continuous('Cumulative Frequency', expand = c(0,0)) + 
-  scale_x_continuous('Collection Year', expand = c(0,0)) + 
-  scale_fill_manual(values = region_colours) + 
-  
-  global_theme +
-  theme(legend.position = 'inside',
-        legend.position.inside = c(0.05, 0.95),
-        legend.title = element_blank(),
-        legend.justification = c("left", "top")) 
-  
+  group_by(collection_datemonth, virus_subtype) %>%
+  summarise(n_sequences = n()) %>%
+  ungroup() %>%
+  mutate(collection_datemonth = ymd(paste0(collection_datemonth, '-01'))) %>%
+  drop_na(virus_subtype,collection_datemonth)
 
 
-# Number of Sequences ~ Host Type (cumulatively)
-all <- meta %>%
-  drop_na(host_simplifiedhost) %>%
-  dplyr::select(host_simplifiedhost, collection_dateyear) %>%
-  tidyr::expand(host_simplifiedhost, collection_dateyear = full_seq(collection_dateyear,1))
+plt_1d <- ggplot(sequences_subtype_month) + 
+  geom_stream(aes(x = collection_datemonth, 
+                  y = n_sequences, 
+                  colour = virus_subtype,
+                  fill = virus_subtype),
+              alpha = 0.7) + 
+  scale_x_date(limits = as_date(c('2019-01-01', '2024-05-01')), breaks = '1 year', date_labels = "%Y", 'Date') + 
+  scale_fill_brewer(palette = 'OrRd', direction = -1) +
+  scale_colour_brewer(palette = 'OrRd', direction = -1) +
+  scale_y_continuous('GISAID Whole Genomes (n)' ,
+                     labels = abs,
+                     breaks = seq(-250, 250, by = 50),
+                     limits = c(-250, 250)) + 
+  theme_classic() + 
+  theme(legend.position = 'none',
+        axis.text = element_text(size = 8),
+        axis.title = element_text(size = 10))
 
 
-plt_1c <- meta %>%
-  drop_na(host_simplifiedhost) %>%
-  summarise(n = n(), .by = c(host_simplifiedhost, collection_dateyear)) %>%
-  right_join(all) %>%
-  mutate(n = case_when(is.na(n) ~ 0, .default = n)) %>%
-  arrange(collection_dateyear) %>%
-  group_by(host_simplifiedhost) %>%
-  mutate(cum_sum = cumsum(n)) %>%
-  ggplot() + 
-  geom_area(aes(x = collection_dateyear, y = cum_sum, fill = host_simplifiedhost)) +
-  scale_y_continuous('Cumulative Frequency', expand = c(0,0)) + 
-  scale_x_continuous('Collection Year', expand = c(0,0)) + 
-  scale_fill_manual(values = host_colours) +
-  global_theme +
-  theme(legend.position = 'inside',
-        legend.position.inside = c(0.05, 0.95),
-        legend.title = element_blank(),
-        legend.justification = c("left", "top"))
 
-
-# Reassortants ~ Time
-plt_1d <- combined_data %>% 
-  filter(segment == 'ha') %>%
-  select(TMRCA) %>%
-  drop_na(TMRCA) %>%
-  mutate(tmrca_date = date_decimal(TMRCA)) %>%
-  mutate(tmrca_yearmonth = round_date(tmrca_date, 'month') %>% as_date(.)) %>%
-  ggplot() + 
-  geom_bar(aes(x = tmrca_yearmonth)) +
-  scale_x_date('Collection Year', expand = c(0,0), limits = as_date(c('2016-01-01','2024-06-01'))) + 
-  scale_y_continuous('Frequency', expand = c(0,0)) + 
-  global_theme
-
-
-# Reassortants ~ Continent (TMRCA)
-plt_1e <- combined_data %>% 
-  filter(segment == 'ha') %>%
-  select(collection_regionname) %>%
-  mutate(collection_regionname = case_when(grepl('europe', collection_regionname) ~ 'europe',
-                                           grepl('africa', collection_regionname) ~ 'africa',
-                                           grepl('asia', collection_regionname) ~ 'asia',
-                                           grepl('(central|northern) america', collection_regionname) ~ 'central & northern america',
-                                           grepl('south america|southern ocean', collection_regionname) ~ 'south america',
-                                           grepl('australia', collection_regionname) ~ 'australasia',
-                                           .default = collection_regionname)) %>%
-  drop_na(collection_regionname) %>%
-  summarise(n = n(), .by = c(collection_regionname)) %>%
-  ggplot() + 
-  geom_bar(aes(x = collection_regionname, y = n, fill = collection_regionname), stat = 'identity') +
-  scale_fill_manual(values = region_colours) + 
-  scale_x_discrete('Earliest Region', expand = c(0.15,0.1),labels = c('europe' = 'EUR',
-                                                                      'africa' = 'AFR',
-                                                                      'asia' = 'ASIA',
-                                                                      'central & northern america' = 'AMR')) + 
-  scale_y_continuous('Frequency', expand = c(0,0)) + 
-  global_theme+ 
-  theme(legend.position = 'none')
-  
-
-
-# Reassortants ~ Host Type (TMRCA)
-plt_1f <- summary_data %>% 
-  mutate(Host_of_Earliest_Sample_Date = case_when(grepl('Anseriformes domestic', Host_of_Earliest_Sample_Date) ~ 'anseriformes-domestic',
-                                                  grepl('Anseriformes wild', Host_of_Earliest_Sample_Date) ~ 'anseriformes-wild',
-                                                  grepl('Avian other', Host_of_Earliest_Sample_Date) ~ 'other-bird',
-                                                grepl('Charadriiformes', Host_of_Earliest_Sample_Date) ~ 'charadriiformes-wild',
-                                                grepl('Environment', Host_of_Earliest_Sample_Date) ~ 'environment',
-                                                grepl('Galliformes', Host_of_Earliest_Sample_Date) ~ 'galliformes-domestic',
-                                                grepl('Mammal', Host_of_Earliest_Sample_Date) ~ 'mammal',
-                                                .default = Host_of_Earliest_Sample_Date
-  )) %>%
-  drop_na(Host_of_Earliest_Sample_Date) %>%
-  summarise(n = n(), .by = c(Host_of_Earliest_Sample_Date)) %>%
-  ggplot() + 
-  geom_bar(aes(x = Host_of_Earliest_Sample_Date, y = n, fill = Host_of_Earliest_Sample_Date), stat = 'identity') +
-  scale_fill_manual(values = host_colours) + 
-  scale_x_discrete('Earliest Host', expand = c(0.1,0.1) ,labels = c('anseriformes-domestic' = 'ANS-dom',
-                                                                    'anseriformes-wild' = 'ANS-wild',
-                                                                    'charadriiformes-wild' = 'CHAR-wild',
-                                                                    'galliformes-domestic' = 'GAL-dom',
-                                                                    'galliformes-wild' = 'GAL-wild',
-                                                                    'environment' = 'ENV',
-                                                                    'mammal' = 'MAM',
-                                                                    'other-bird' = 'OTHER')) + 
-  scale_y_continuous('Frequency', expand = c(0,0)) + 
-  global_theme + 
-  theme(legend.position = 'none')
-
+##################################
 # Combine to make right panel
-plt_1rightplots <- align_plots(plt_1d, plt_1e, plt_1b, align = 'v', axis = 'l')
+legend  <- cowplot::get_legend(plt_1c + theme(legend.position = 'right',
+                                              legend.justification = c(0.5,1),
+                                              legend.text = element_text(size = 8),
+                                              legend.title = element_text(size = 10)))
+legend1 <- cowplot::get_legend(plt_1d + theme(legend.position = 'right',
+                                              legend.justification = c(0.5,1),
+                                              legend.text = element_text(size = 8),
+                                              legend.title = element_text(size = 10)))
+combineLegend <- cowplot::plot_grid(
+  legend,
+  legend1,
+  align = 'v',
+  axis = 't',
+  ncol= 2)
 
-plt_1rightupper <- plot_grid(plt_1rightplots[[3]],  plt_1c, 
-                             labels = c('B', 'C'), 
-                             label_size = 12)
 
-plt_1rightlower <- plot_grid(plt_1rightplots[[2]], plt_1f,
-                             labels = c('E', 'F'),
-                             label_size = 12)
 
-plt_1right <- plot_grid(plt_1rightupper, plt_1rightplots[[1]], plt_1rightlower,
-                        labels = c('', 'D', ''), 
-                        label_size = 12,
-                        ncol = 1)
+plt_1rightplots <- align_plots(plt_1a, plt_1c, plt_1d, align = 'h', axis = 'r')
+
+plt_1rightpanel <- plot_grid(
+                             plt_1rightplots[[2]],  
+                             plt_1rightplots[[3]], 
+                             combineLegend,
+                             labels = c( 'C', 'D', ''), 
+                             nrow = 3,
+                             label_size = 10)
+
+plt_1lower <- plot_grid(plt_1left, plt_1rightpanel,
+                             labels = c('B', ''),
+                        ncol = 2,
+                        label_size = 10)
+
+plt_1 <- plot_grid(plt_1rightplots[[1]], plt_1lower,
+                        labels = c('A', ''), 
+                   rel_heights = c(0.25, 1),
+                        label_size = 10,
+                        nrow = 2)
 
 
 
@@ -500,15 +451,17 @@ reassortant_profiles <- meta %>%
   mutate(across(-1, .fns = ~ as.double(.x)))
 
 # Use Will's for now, to be replaced by thorney tree
-plt_1left <- new_tree %>%
-  mutate(isolate_id = gsub('\\|.*','', label)) %>%
+plt_1left <- timetree %>%
+  as.treedata() %>%
+  mutate(isolate_id = str_extract(label, "EPI_ISL_(china_){0,1}\\d+[^.|]*")) %>%
+ # mutate(date = str_extract(label, "\\d{4}-.*")) %>%
   left_join(reassortant_profiles) %>%
   
-  ggtree(mrsd = '2024-04') + ################################# NEEDS UPDATING #####################
+  ggtree(mrsd = "2024-03-18") + ################################# NEEDS UPDATING #####################
   theme_tree2(#base_family = "LM Sans 10",
               #plot.margin = unit(c(1,1,1,1), units = "cm"),
-              axis.text.x = element_text(family = "LM Sans", size = 8),
-              axis.title.x = element_text(family = "LM Sans", size = 9)
+              axis.text = element_text(size = 8),
+              axis.title = element_text(size = 10)
               ) +
   
   scale_x_continuous(
@@ -524,7 +477,7 @@ plt_1left <- new_tree %>%
             #pwidth = 1.2,
              #offset = 0.03
              ) + 
-  scale_fill_paletteer_c("ggthemes::Red")+
+  scale_fill_paletteer_c("ggthemes::Red") +
   #scale_fill_distiller(palette = 'Greys', direction  = 1) + 
   
   new_scale_fill()+
