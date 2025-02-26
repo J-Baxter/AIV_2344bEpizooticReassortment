@@ -97,6 +97,7 @@ ha_global_subsample <- all_meta %>%
   filter(grepl('H5', virus_subtype)) %>% 
   filter(isolate_id %in% str_extract(names(temp), "EPI_ISL_(china_){0,1}\\d+[^.|]*")) %>%
   filter(clade  == '2344b') %>%
+  drop_na(cluster_profile) %>%
   group_by(collection_datemonth, collection_regionname, cluster_profile) %>% 
   slice_sample(n = 1) 
 
@@ -166,21 +167,20 @@ renamed_pb2_alignment <- ReNameAlignment2(pb2_selected_genomes, pb2_global_subsa
 
 
 
-
 ############################################## WRITE ################################################
-write.FASTA(renamed_ha_alignment, './2025Jan06/globalsubsample/ha_global_subsample.fasta')
-write.FASTA(renamed_pb2_alignment, './2025Jan06/globalsubsample/pb2_global_subsample.fasta')
+write.FASTA(renamed_ha_alignment, './2025Feb26/globalsubsample/ha_global_subsample.fasta')
+write.FASTA(renamed_pb2_alignment, './2025Feb26/globalsubsample/pb2_global_subsample.fasta')
 
 
 write_delim(pb2_global_subsample %>% ungroup()%>% select(new_tipnames, lat, long) %>% rename(tipnames = new_tipnames),
             delim = '\t',
             quote= 'needed',
-            './2025Jan06/globalsubsample/pb2_global_subsample_traits.txt')
+            './2025Feb26/globalsubsample/pb2_global_subsample_traits.txt')
 
 write_delim(ha_global_subsample %>% ungroup() %>% select(new_tipnames, lat, long) %>% rename(tipnames = new_tipnames),
             delim = '\t',
             quote= 'needed',
-            './2025Jan06/globalsubsample/ha_global_subsample_traits.txt')
+            './2025Feb26/globalsubsample/ha_global_subsample_traits.txt')
 ############################################## END ################################################
 ####################################################################################################
 ####################################################################################################
