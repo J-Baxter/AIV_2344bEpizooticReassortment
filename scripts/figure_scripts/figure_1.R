@@ -37,10 +37,7 @@ summary_data <- read_csv('./2024Aug18/treedata_extractions/summary_reassortant_m
 
 meta <- read_csv('./2024-09-09_meta.csv') 
 
-will_tree <- read.beast('./global_subsample/h52344b_ha_s1.mcc.trees')
-
-new_tree <- read.beast('./2025Jan06/globalsubsample/ha_global_subsample_traits_mcc.tree')
-timetree <- read.newick('./2025Feb26/globalsubsample/2025-02-26_clock/rerooted.newick')
+new_tree <- read.beast('./2025Feb26/globalsubsample/ha_global_SRD06_relaxLn_constant_mcc.tree')
 
 hpai_cases <- read_csv('~/Downloads/overview-raw-data_202502241440.csv') 
 woah_hpai <- read_csv('~/Downloads/Quantitative data 2025-02-25.csv')
@@ -341,12 +338,12 @@ plt_1c <-ggplot(sequences_host_month) +
                   fill = host_simplifiedhost),
               alpha = 0.7) + 
   scale_x_date(limits = as_date(c('2019-01-01', '2024-05-01')), breaks = '1 year', date_labels = "%Y", 'Date') + 
-  scale_fill_manual(values = host_colours) +
-  scale_colour_manual(values = host_colours) +
+  scale_fill_manual('Host Order', values = host_colours) +
+  scale_colour_manual('Host Order', values = host_colours) +
   scale_y_continuous('GISAID Whole Genomes (n)' ,
                      labels = abs,
-                     breaks = seq(-250, 250, by = 50),
-                     limits = c(-250, 250)) + 
+                     breaks = seq(-225, 225, by = 75),
+                     limits = c(-230, 230)) + 
   theme_classic() + 
   theme(legend.position = 'none',
         axis.text = element_text(size = 8),
@@ -382,12 +379,12 @@ plt_1d <- ggplot(sequences_subtype_month) +
                   fill = virus_subtype),
               alpha = 0.7) + 
   scale_x_date(limits = as_date(c('2019-01-01', '2024-05-01')), breaks = '1 year', date_labels = "%Y", 'Date') + 
-  scale_fill_brewer(palette = 'OrRd', direction = -1) +
-  scale_colour_brewer(palette = 'OrRd', direction = -1) +
+  scale_fill_brewer('Subtype', palette = 'OrRd', direction = -1) +
+  scale_colour_brewer('Subtype', palette = 'OrRd', direction = -1) +
   scale_y_continuous('GISAID Whole Genomes (n)' ,
                      labels = abs,
-                     breaks = seq(-250, 250, by = 50),
-                     limits = c(-250, 250)) + 
+                     breaks = seq(-225, 225, by = 75),
+                     limits = c(-230, 230)) + 
   theme_classic() + 
   theme(legend.position = 'none',
         axis.text = element_text(size = 8),
@@ -396,6 +393,128 @@ plt_1d <- ggplot(sequences_subtype_month) +
 
 
 ##################################
+
+
+
+
+# Tree Panel
+# A time-scaled MCC tree of HA
+# column geoms for reassortant profile
+# node = red for inferred changes
+reassortant_profiles <- meta %>% 
+  dplyr::select(isolate_id, cluster_profile) %>%
+  drop_na(cluster_profile) %>%
+  separate_wider_delim(cluster_profile, '_', 
+                       names = c('PB2', 'PB1', 'PA', 'HA', 'NP', 'N', 'M', 'NS')) %>%
+  mutate(across(-1, .fns = ~ as.double(.x)))
+
+plt_1left <- new_tree %>%
+  mutate(isolate_id = str_extract(label, "EPI_ISL_(china_){0,1}\\d+[^.|]*")) %>%
+ # mutate(date = str_extract(label, "\\d{4}-.*")) %>%
+  left_join(reassortant_profiles) %>%
+  
+  ggtree(mrsd = "2024-03-18") + 
+  theme_tree2(#base_family = "LM Sans 10",
+              #plot.margin = unit(c(1,1,1,1), units = "cm"),
+              axis.text.x = element_text(size = 8),
+              axis.title.x = element_text(size = 10)
+              ) +
+  
+  scale_x_continuous(
+    #limits = c(2000, 2023),
+    'Time',
+    breaks = seq(2016, 2024, 1)) +
+
+  
+  geom_fruit(geom = geom_tile,
+             mapping = aes(fill = PB2),
+             #width = 4,
+             #colour = "white",
+            #pwidth = 1.2,
+             #offset = 0.03
+             ) + 
+  #scale_fill_distiller(palette = 'Blues', direction = -1)
+  #scale_fill_paletteer_c("ggthemes::Red") +
+  scale_fill_distiller(palette = 'GnBu', direction  = 1) + 
+  
+  new_scale_fill()+
+  geom_fruit(geom = geom_tile,
+             mapping = aes(fill = PB1),
+             #width = 4,
+             #colour = "white",
+             #pwidth = 1.2,
+              offset = 0.03
+  ) + 
+  #scale_fill_paletteer_c("ggthemes::Orange")+
+  scale_fill_distiller(palette = 'GnBu', direction  = 1) + 
+  
+  new_scale_fill()+
+  geom_fruit(geom = geom_tile,
+             mapping = aes(fill = PA),
+             #width = 4,
+            # colour = "white",
+             #pwidth = 1.2,
+             offset = 0.03
+  ) + 
+  #scale_fill_paletteer_c("ggthemes::Orange-Gold")+
+  scale_fill_distiller(palette = 'GnBu', direction  = 1) + 
+  
+  new_scale_fill()+
+  geom_fruit(geom = geom_tile,
+             mapping = aes(fill = HA),
+             #width = 4,
+            # colour = "white",
+             #pwidth = 1.2,
+             offset = 0.03
+  ) + 
+  #scale_fill_paletteer_c("ggthemes::Green-Gold")+
+  scale_fill_distiller(palette = 'GnBu', direction  = 1) + 
+  
+  new_scale_fill()+
+  geom_fruit(geom = geom_tile,
+             mapping = aes(fill = N),
+             #width = 4,
+             #colour = "white",
+             #pwidth = 1.2,
+             offset = 0.03
+  ) + 
+  #scale_fill_paletteer_c("ggthemes::Green")+
+  scale_fill_distiller(palette = 'GnBu', direction  = 1) + 
+  
+  new_scale_fill()+
+  geom_fruit(geom = geom_tile,
+             mapping = aes(fill = NP),
+             #width = 4,
+            # colour = "white",
+             #pwidth = 1.2,
+             offset = 0.03
+  ) + 
+  #scale_fill_paletteer_c("ggthemes::Blue-Green Sequential")+
+  scale_fill_distiller(palette = 'GnBu', direction  = 1) + 
+  new_scale_fill()+
+  geom_fruit(geom = geom_tile,
+             mapping = aes(fill = N),
+             #width = 4,
+            # colour = "white",
+             #pwidth = 1.2,
+             offset = 0.03
+  ) + 
+  #scale_fill_paletteer_c("ggthemes::Blue")+
+  scale_fill_distiller(palette = 'GnBu', direction  = 1) + 
+  
+  new_scale_fill()+
+  geom_fruit(geom = geom_tile,
+             mapping = aes(fill = NS),
+             #width = 4,
+            # colour = "white",
+             #pwidth = 1.2,
+             offset = 0.03
+  ) + 
+  #scale_fill_paletteer_c("ggthemes::Purple")+
+  scale_fill_distiller(palette = 'GnBu', direction  = 1) + 
+  theme(legend.position = 'none' )
+
+
 # Combine to make right panel
 legend  <- cowplot::get_legend(plt_1c + theme(legend.position = 'right',
                                               legend.justification = c(0.5,1),
@@ -413,161 +532,32 @@ combineLegend <- cowplot::plot_grid(
   ncol= 2)
 
 
-
+###### COMBINE
 plt_1rightplots <- align_plots(plt_1a, plt_1c, plt_1d, align = 'h', axis = 'r')
 
 plt_1rightpanel <- plot_grid(
-                             plt_1rightplots[[2]],  
-                             plt_1rightplots[[3]], 
-                             combineLegend,
-                             labels = c( 'C', 'D', ''), 
-                             nrow = 3,
-                             label_size = 10)
+  plt_1rightplots[[2]],  
+  plt_1rightplots[[3]], 
+  combineLegend,
+  labels = c( 'C', 'D', ''), 
+  nrow = 3,
+  label_size = 10)
 
 plt_1lower <- plot_grid(plt_1left, plt_1rightpanel,
-                             labels = c('B', ''),
+                        labels = c('B', ''),
                         ncol = 2,
                         label_size = 10)
 
 plt_1 <- plot_grid(plt_1rightplots[[1]], plt_1lower,
-                        labels = c('A', ''), 
+                   labels = c('A', ''), 
                    rel_heights = c(0.25, 1),
-                        label_size = 10,
-                        nrow = 2)
+                   label_size = 10,
+                   nrow = 2)
 
 
-
-
-
-# Tree Panel
-# A time-scaled MCC tree of HA
-# column geoms for reassortant profile
-# node = red for inferred changes
-reassortant_profiles <- meta %>% 
-  dplyr::select(isolate_id, cluster_profile) %>%
-  drop_na(cluster_profile) %>%
-  separate_wider_delim(cluster_profile, '_', 
-                       names = c('PB2', 'PB1', 'PA', 'HA', 'NP', 'N', 'M', 'NS')) %>%
-  mutate(across(-1, .fns = ~ as.double(.x)))
-
-# Use Will's for now, to be replaced by thorney tree
-plt_1left <- timetree %>%
-  as.treedata() %>%
-  mutate(isolate_id = str_extract(label, "EPI_ISL_(china_){0,1}\\d+[^.|]*")) %>%
- # mutate(date = str_extract(label, "\\d{4}-.*")) %>%
-  left_join(reassortant_profiles) %>%
-  
-  ggtree(mrsd = "2024-03-18") + ################################# NEEDS UPDATING #####################
-  theme_tree2(#base_family = "LM Sans 10",
-              #plot.margin = unit(c(1,1,1,1), units = "cm"),
-              axis.text = element_text(size = 8),
-              axis.title = element_text(size = 10)
-              ) +
-  
-  scale_x_continuous(
-    #limits = c(2000, 2023),
-    'Time',
-    breaks = seq(2016, 2024, 1)) +
-
-  
-  geom_fruit(geom = geom_tile,
-             mapping = aes(fill = PB2),
-             #width = 4,
-             #colour = "white",
-            #pwidth = 1.2,
-             #offset = 0.03
-             ) + 
-  scale_fill_paletteer_c("ggthemes::Red") +
-  #scale_fill_distiller(palette = 'Greys', direction  = 1) + 
-  
-  new_scale_fill()+
-  geom_fruit(geom = geom_tile,
-             mapping = aes(fill = PB1),
-             #width = 4,
-             #colour = "white",
-             #pwidth = 1.2,
-              offset = 0.03
-  ) + 
-  scale_fill_paletteer_c("ggthemes::Orange")+
-  #scale_fill_distiller(palette = 'Greys', direction  = 1) + 
-  
-  new_scale_fill()+
-  geom_fruit(geom = geom_tile,
-             mapping = aes(fill = PA),
-             #width = 4,
-            # colour = "white",
-             #pwidth = 1.2,
-             offset = 0.03
-  ) + 
-  scale_fill_paletteer_c("ggthemes::Orange-Gold")+
-  #scale_fill_distiller(palette = 'Greys', direction  = 1) + 
-  
-  new_scale_fill()+
-  geom_fruit(geom = geom_tile,
-             mapping = aes(fill = HA),
-             #width = 4,
-            # colour = "white",
-             #pwidth = 1.2,
-             offset = 0.03
-  ) + 
-  scale_fill_paletteer_c("ggthemes::Green-Gold")+
-  #scale_fill_distiller(palette = 'Greys', direction  = 1) + 
-  
-  new_scale_fill()+
-  geom_fruit(geom = geom_tile,
-             mapping = aes(fill = N),
-             #width = 4,
-             #colour = "white",
-             #pwidth = 1.2,
-             offset = 0.03
-  ) + 
-  scale_fill_paletteer_c("ggthemes::Green")+
-  #scale_fill_distiller(palette = 'Greys', direction  = 1) + 
-  
-  new_scale_fill()+
-  geom_fruit(geom = geom_tile,
-             mapping = aes(fill = NP),
-             #width = 4,
-            # colour = "white",
-             #pwidth = 1.2,
-             offset = 0.03
-  ) + 
-  scale_fill_paletteer_c("ggthemes::Blue-Green Sequential")+
-  #scale_fill_distiller(palette = 'Greys', direction  = 1) + 
-  new_scale_fill()+
-  geom_fruit(geom = geom_tile,
-             mapping = aes(fill = N),
-             #width = 4,
-            # colour = "white",
-             #pwidth = 1.2,
-             offset = 0.03
-  ) + 
-  scale_fill_paletteer_c("ggthemes::Blue")+
-  #scale_fill_distiller(palette = 'Greys', direction  = 1) + 
-  
-  new_scale_fill()+
-  geom_fruit(geom = geom_tile,
-             mapping = aes(fill = NS),
-             #width = 4,
-            # colour = "white",
-             #pwidth = 1.2,
-             offset = 0.03
-  ) + 
-  scale_fill_paletteer_c("ggthemes::Purple")+
-  #scale_fill_distiller(palette = 'Greys', direction  = 1) + 
-  theme(legend.position = 'none' )
-
-
-plt_1 <- plot_grid(plt_1left,
-                   plt_1right, 
-                        labels = c('A', ''), 
-                   label_size = 12,
-                   rel_widths = c(0.8, 1),
-                        ncol = 2)
-plt_1
 ############################################## WRITE ###############################################
 
-ggsave('~/Downloads/figure1.jpeg', height = 30, width = 40, units = 'cm', dpi = 360)
+ggsave('~/Downloads/figure1_new.jpeg', height = 30, width = 25, units = 'cm', dpi = 360)
 
 
 
