@@ -36,7 +36,7 @@ region_colours <- c('europe' = '#1b9e77',
                     'south america' ='#e6ab02')
 
 # Cumulative number of reassortants
-combined_data %>% 
+plt_2a <- combined_data %>% 
   select(cluster_profile, collection_regionname, TMRCA) %>%
   mutate(tmrca_date = date_decimal(TMRCA) %>% as_date()) %>%
   filter(tmrca_date >= as_date('2019-01-01')) %>%
@@ -52,7 +52,7 @@ combined_data %>%
   group_by(collection_regionname) %>%
   mutate(cum_sum = cumsum(n))  %>%
   ggplot() + 
-  geom_line(aes(x = tmrca_date, y = cum_sum, colour = collection_regionname)) + 
+  geom_line(aes(x = tmrca_date, y = cum_sum, colour = collection_regionname), size = 1) + 
   scale_colour_manual('Continent', values = region_colours, labels = str_to_title) +
   scale_y_continuous('Reassortans (Cumulative)', expand = c(0.01, 0)) + 
   scale_x_date('Date', expand = c(0.01, 0)) +
@@ -60,8 +60,8 @@ combined_data %>%
   theme(legend.position = 'none')
 
 
-combined_data# 'Diversity' -  the exponent of Shannon entropy 
-h5_diversity_sliding_window %>%
+# 'Diversity' -  the exponent of Shannon entropy 
+plt_2b <- h5_diversity_sliding_window %>%
   filter(! continent %in%  c('South America', 'Antarctica')) %>%
   mutate(continent = str_to_lower(continent) %>%
            case_when(grepl('north america', .) ~ 'central & northern america',
@@ -79,9 +79,12 @@ h5_diversity_sliding_window %>%
   theme(legend.position = 'none')
 
 
+# Genetic distance between reassortants
 
+# Combine
 
-
+plt_2 <- cowplot::plot_grid(plt_2a, plt_2b, nrow = 1, labels = 'AUTO', align = 'v', axis = 'tb')
+plt_2
 ############################################## WRITE ###############################################
 
 
