@@ -173,12 +173,14 @@ treefiles <- c(list.files('./2024Aug18/reassortant_subsampled_outputs/traits_100
 mcc_treefiles <- c(list.files('./2024Aug18/reassortant_subsampled_outputs/traits_mcc',
                               pattern = 'ha',
                               full.names = TRUE)[-11] ,
-                   './2024Sept16/south_america/ha_43112113_subsampled_traits_mcc.tree')
+                  )
 
 
 mcc_trees <- lapply(mcc_treefiles, read.beast)
 names(mcc_trees) <- gsub('.*ha_|_subsampled_traits_mcc.tree', '', mcc_treefiles)
+n <- names(mcc_trees) 
 
+names(mcc_trees) <- n
 # Note the core requirement - this will take a long time to run in series.
 # Change to futures -> multisession/multicore if you ever wish to try this again....
 df_list <- mclapply(treefiles, function(x) x %>% 
@@ -225,8 +227,19 @@ tmrca_plots <- lapply(host_tmrca_list, PlotTMRCA)
 phylogeo <- lapply(mcc_trees[names(mcc_trees) %in% as.character(dominant_reassortants)], PlotPhyloGeo )
 
 
+phylogeo[[6]]
 
 
+north_america_ha <- read.beast('./2024Aug18/region_subsampled_outputs/traits_mcc/ha_northamerica_subsampled_traits_mcc.tree')
+mooflu_data <- as_tibble(north_america_ha) %>% 
+  select(label, height, host_simplifiedhost, location1, location2) %>%  mutate(across(c(location1, location2, height), .fns = ~as.numeric(.x)))
+
+mooflu <- tree_subset(north_america_ha, 622)  
+
+ south_america <- read.beast( '~/Downloads/ha_43112113_subsampled_traits_mcc(1).tree')
+
+PlotPhyloGeo(south_america)  +  coord_sf(ylim = c(-60, 75), xlim = c(-150, -30), expand = TRUE)
+phylogeo[[10]] 
 # align plots vertically (so that each row corresponds to a reassortant)
 
 plot_legend <- get_plot_component(phylogeo[[4]]+theme(legend.position = 'bottom'), 'guide-box-bottom', return_all = TRUE)
