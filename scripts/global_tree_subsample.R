@@ -172,12 +172,12 @@ write.FASTA(renamed_ha_alignment, './2025Feb26/globalsubsample/ha_global_subsamp
 write.FASTA(renamed_pb2_alignment, './2025Feb26/globalsubsample/pb2_global_subsample.fasta')
 
 
-write_delim(pb2_global_subsample %>% ungroup()%>% select(new_tipnames, lat, long) %>% rename(tipnames = new_tipnames),
+write_delim(pb2_global_subsample %>% ungroup()%>% select(new_tipnames, lat, long, host_simplifiedhost) %>% rename(tipnames = new_tipnames),
             delim = '\t',
             quote= 'needed',
             './2025Feb26/globalsubsample/pb2_global_subsample_traits.txt')
 
-write_delim(ha_global_subsample %>% ungroup() %>% select(new_tipnames, lat, long) %>% rename(tipnames = new_tipnames),
+write_delim(ha_global_subsample %>% ungroup() %>% select(new_tipnames, lat, long, host_simplifiedhost) %>% rename(tipnames = new_tipnames),
             delim = '\t',
             quote= 'needed',
             './2025Feb26/globalsubsample/ha_global_subsample_traits.txt')
