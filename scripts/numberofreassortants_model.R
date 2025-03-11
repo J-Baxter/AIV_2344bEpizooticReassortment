@@ -62,158 +62,110 @@ combined_data <- read_csv('./2024Aug18/treedata_extractions/2024-09-20_combined_
 
 ############################################## MAIN ################################################
 # Data pre-processing
-
-# Total number of reported H5 Highly Pathogenic Avian Influenza
-# (Source: https://empres-i.apps.fao.org/diseases)
-
-h5_hpai_counts <- read_csv('./2025Jan17_faoHPAI.csv') %>%
-  filter(grepl('Avian', Disease) & grepl('H5N', Serotype)) %>%
-  rename(collection_monthyear = Observation.date,
-         collection_regionname = Region) %>%
-  FormatContinent() %>%
-  mutate(collection_monthyear = dmy(collection_monthyear) %>% format.Date('%Y-%m')) %>%
-  filter(collection_monthyear > '2016-05-31' & collection_monthyear < '2024-05-01') %>%
-  drop_na(collection_monthyear, collection_regionname) %>%
-  summarise(n_cases = n(), .by = c(collection_regionname, collection_monthyear)) %>%
-  arrange(collection_monthyear)
-
-
-# Number of sequences 
-numberofsequence_data <- read_csv('./2024-09-09_meta.csv') %>%
-  filter(grepl('[hH]5', virus_subtype)) %>%
-  rename(collection_monthyear = collection_datemonth) %>%
-  filter(collection_date > '2016-05-31') %>%
-  select(c(collection_monthyear,
-           collection_regionname,
-           cluster_profile)) %>%
-  drop_na(collection_monthyear) %>%
-  FormatContinent() %>%
-  arrange(collection_regionname, ym(collection_monthyear)) %>%
-  summarise(n_sequences = n(), 
-            .by = c(collection_monthyear, collection_regionname))
-
-# Number and TMRCA of reassortants as inferred from our phylodynamic analysis
-reassortant_counts <- combined_data %>%
+# Data pre-processing
+data_processed <- data %>%
   
-  # restrict to HA for now
-  filter(segment == 'ha') %>%
-  mutate(collection_monthyear = date_decimal(TMRCA) %>% 
-           format(., "%Y-%m")) %>%
-
-  filter(!is.na(collection_regionname)) %>%
-  select(collection_regionname,
-         collection_monthyear, 
-         cluster_profile,
-         group2) %>% # include all month-years over collection period to generate zer countr
-  summarise(n_reassortants = n_distinct(cluster_profile), 
-            .by = c(collection_monthyear,
-                    collection_regionname,
-                    group2
-            ))  %>%
-  
-  # within each continent...
-  arrange(collection_regionname, collection_monthyear) %>%
-  group_by(collection_regionname) %>%
-  
-  
-  # Get the class of t-1 reassortant
-  pivot_wider(names_from = group2, values_from = n_reassortants) %>%
-
-  mutate(joint_reassortant_class = case_when(
-    minor > 0 & is.na(major) & is.na(dominant) ~ 'minor',
-    is.na(minor) & major > 0 & is.na(dominant) ~ 'major',
-    is.na(minor)  & is.na(major) & dominant > 0 ~ 'dominant',
-    minor > 0 & major > 0 & is.na(dominant) ~ 'minor_major',
-    is.na(minor) & major > 0 & dominant > 0 ~ 'major_dominant',
-    minor > 0 & is.na(major) & dominant > 0 ~ 'minor_dominant',
-    minor > 0 & major > 0 & dominant > 0 ~ 'minor_major_dominant',
-    .default = NA)) %>%
-  
-  fill(joint_reassortant_class, .direction = 'down') %>%
-  mutate(previous_reassortant_class = lag(joint_reassortant_class)) %>%
-  
-  pivot_longer(cols = c(minor, major,  dominant), 
-               names_to = 'reassortant_class',
-               values_to = 'n_reassortants',
-               values_drop_na = TRUE)
-
-
-count_data <- expand_grid(collection_monthyear = seq.Date(from = ym('2016-06'),
-                                                          to =  ym('2024-06'),
-                                                          by = "month"),
-                          collection_regionname = unique(reassortant_counts$collection_regionname)) %>%
-  mutate(collection_monthyear = format.Date(collection_monthyear, "%Y-%m")) %>%
-  
-  left_join(reassortant_counts) %>%
-  left_join(numberofsequence_data) %>%
-  left_join(h5_hpai_counts) %>%
-  
-  
-  separate_wider_delim(collection_monthyear, '-', names = c('collection_year', 'collection_month'),   cols_remove = FALSE) %>%
-  mutate(across(c('collection_month', 'collection_year'), .fns = ~ as.double(.x))) %>%
-  mutate(time = ym(collection_monthyear) %>% decimal_date()) %>%
-  
-  # within each continent...
-  group_by(collection_regionname) %>%
-  
-  
-  # And infer the time since the last dominant reassortant
-  mutate(last_dominant = if_else(grepl('dominant', reassortant_class), time, NA)) %>%
-  fill(last_dominant) %>%
-  mutate(time_since_last_dominant = as.numeric(time - last_dominant)) %>%
-  
-  # Classify tmrca month according to breeding season
-  mutate(collection_season = case_when(collection_month %in% c(12,1,2) ~ 'overwintering', 
-                                       collection_month %in% c(3,4,5)  ~ 'migrating_spring', # Rename to spring migration
-                                       collection_month %in% c(6,7,8)  ~ 'breeding', 
-                                       collection_month %in% c(9,10,11)  ~ 'migrating_autumn' # Rename to autumn migration
-  )) %>%
-  
-  # select variables
-  ungroup(collection_regionname) %>%
-  select(collection_regionname,
-         collection_year,
-         collection_month,
-         collection_season, 
-         collection_monthyear,
-         n_cases,
-         n_sequences,
-         n_reassortants,
-         reassortant_class,
-         joint_reassortant_class,
-         previous_reassortant_class,
-         time,
-         time_since_last_dominant,
-  ) %>%
-  
+  # remove reassortant classes
+  select(-c(ends_with('class'), time_since_last_dominant)) %>%
   
   # scaling
-  mutate(across(c(time, collection_year), .fns = ~ subtract(.x, 2015))) %>%
+  mutate(across(c(collection_dec, collection_year), .fns = ~ subtract(.x, 2015))) %>%
   
   # set default NA values
-  replace_na(list(n_cases = 0, 
+  replace_na(list(woah_cases = 0, 
+                  woah_susceptibles = 0,
+                  woah_deaths = 0,
                   n_sequences = 0,
                   n_reassortants = 0,
                   time_since_last_dominant = 0, # this may be quite a strong assumption (accidentally)
-                  reassortant_class = 'none',
-                  last_reassortant_class = 'none',
-                  joint_reassortant_class = 'none',
-                  previous_reassortant_class = 'none'
-  )) 
+                  minor = 0,
+                  major = 0,
+                  dominant = 0)) %>%
+  
+  mutate(across(starts_with('woah'), ~log1p(.x), .names = "{.col}_log1p")) %>%
+  mutate(n_sequences = log1p(n_sequences)) %>%
+  #rename_with(~gsub('_', '-' ,.x)) %>%
+  
+  filter(collection_regionname != 'south america')
 
 
 
-# Model Formula
-bf1 <- bf(n_reassortants ~ collection_regionname + n_cases  +  collection_season + previous_reassortant_class + (1 + collection_regionname + collection_month|collection_year),
-          zi ~ collection_regionname + n_cases  + (1 + collection_regionname + collection_month|collection_year),
-          family = zero_inflated_negbinomial())
+# Model: hierachical count/detection model. 
+# 1) count  -> the 'true' reassortant process, predicted by ecological variables
+# 2) detection -> the probability that of true reassortants are observed
+
+# First try with poisson
+model_poisson <- brm(
+  bf(n_reassortants ~  collection_regionname + woah_susceptibles_log1p +  collection_season ),
+  data = data_processed,
+  family = poisson(),
+  chains = 4, iter = 4000, 
+  backend = "cmdstanr", 
+  refresh = 0
+)
 
 
+model_negbinom <- brm(
+  bf(n_reassortants ~ collection_regionname + woah_susceptibles_log1p +  collection_season ),
+  data = data_processed,
+  family = negbinomial(),
+  chains = 4, 
+  iter = 4000, 
+  backend = "cmdstanr",
+  refresh = 0
+)
 
-bf2 <- bf(reassortant_class ~  collection_regionname + previous_reassortant_class + (1 + collection_regionname + collection_month|collection_year), 
-          family = categorical(link  = 'logit'))
-count_formula <- mvbf(bf1, bf2)
+model_zi_pois <- brm(
+  bf(n_reassortants ~  collection_regionname + woah_susceptibles_log1p +  collection_season ),
+  data = data_processed,
+  family = zero_inflated_poisson(),
+  chains = 4, 
+  cores = 4,
+  iter = 4000, 
+  backend = "cmdstanr",
+  refresh = 0
+)
 
+model_zi_negbinom <- brm(
+  bf(n_reassortants ~  collection_regionname + woah_susceptibles_log1p +  collection_season  ),
+  data = data_processed,
+  family = zero_inflated_negbinomial(),
+  chains = 4, 
+  cores = 4,
+  iter = 4000, 
+  backend = "cmdstanr",
+  refresh = 0
+)
+
+pp_check(model_poisson, ndraws = 100, type = 'bars')
+model_performance(model_poisson)
+
+pp_check(model_negbinom, ndraws = 100, type = 'bars')
+model_performance(model_negbinom)
+
+pp_check(model_zi_pois, ndraws = 100, type = 'bars')
+model_performance(model_zi_pois)
+
+pp_check(model_zi_negbinom, ndraws = 100, type = 'bars')
+model_performance(model_zi_pois)
+
+
+model_zi_pois_full <- brm(
+  bf(n_reassortants ~ 0 + collection_regionname + (collection_regionname|collection_year/collection_season) ,
+     zi ~ 1  + (collection_regionname|collection_year/collection_season)),
+  data = data_processed,
+  family = zero_inflated_poisson(),
+  chains = 4, 
+  cores = 4,
+  iter = 4000, 
+  backend = "cmdstanr",
+  refresh = 0
+)
+
+
+pp_check(model_zi_pois_full, ndraws = 100, type = 'bars')
+model_performance(model_zi_pois_full)
+###################################################################################################
 
 # Define Priors
 mv <- mvbf(bf1, bf2)
