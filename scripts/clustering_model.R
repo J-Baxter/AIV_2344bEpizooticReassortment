@@ -85,7 +85,9 @@ kclust_updated_data <- combined_data %>%
     collection_regionname,
     host_simplifiedhost,
     count_cross_species,
-    starts_with('median')
+    `median_galliformes-domestic`,
+    `median_anseriformes-wild`,
+    `median_charadriiformes-wild`
     ) %>%
   
   
@@ -105,7 +107,7 @@ kclust_updated_data <- combined_data %>%
   group_by(segment, cluster_profile) %>%
   slice_sample(n=1) %>%
   ungroup() %>%
-  filter(segment %in% c('ha', 'pb2')) %>%
+  filter(segment =='ha') %>%
   
   # pivot wider so one row/reassortant
   pivot_wider(names_from = segment,
@@ -133,8 +135,7 @@ kclust_updated_data <- combined_data %>%
   
   # exclude columns not to be used
   left_join(kclust_nophylo_data %>% select(-starts_with('group')), by = join_by(cluster_profile)) %>%
-  select(-c(starts_with('median'),
-            starts_with('host_simplifiedhost'),
+  select(-c(starts_with('host_simplifiedhost'),
             starts_with('collection_regionname'))) 
 
 
@@ -167,7 +168,7 @@ clusterings_nophylo <-
 
 # data points used for clustering and cluster_profiles
 labelled_nophylo <- assignments_nophylo %>%
-  filter(k == 4) %>%
+  filter(k == 3) %>%
   select(-c(group2,
             kclust,
             tidied,
@@ -279,33 +280,40 @@ plt_1a <- ggplot(clusterings_nophylo, aes(k, tot.withinss)) +
   theme_minimal(base_size = 8) +
   scale_y_continuous('Total within-cluster sum of squares') +
   scale_x_continuous('K', breaks = seq(0,20, by = 5)) + 
-  geom_vline(xintercept = 4, colour= 'darkgreen', linetype = 'dashed')
+  geom_vline(xintercept = 3, colour= 'darkgreen', linetype = 'dashed')
 
 
 plt_1b <- assignments_nophylo %>%
-  filter(k == 4) %>%
+  filter(k == 3) %>%
   select(-c(kclust, tidied, glanced)) %>%
   recipe(~ .) %>%
   step_pca(all_numeric(), -k, num_comp = 2) %>%  # Perform PCA (e.g., 2 components)
   prep() %>%
   bake(NULL)%>%
+  left_join(meta %>% select(cluster_profile, cluster_label) %>% distinct() %>% drop_na()) %>%
   ggplot(., aes(x = PC1, y = PC2)) +
-  geom_point(aes(colour = .cluster), size = 2, alpha = 0.8) + 
-  theme_minimal(base_size = 8) + 
-  scale_colour_brewer('K-Means Clusters',
-                      palette = 'Dark2', 
-                      labels  = c('1' = 'Minor',
-                                  '2' = 'Major A',
-                                  '3' = 'Major B', 
-                                  '4' = 'Dominant'))+
-  #scale_color_manual(
-  #  'K-Means Clusters',
-  #  values = riskgroup_colour %>% pull(Trait, name = kclust), 
-  #  labels = riskgroup_colour %>% pull(group2, name = kclust)) +
-  theme(legend.position = 'inside',
-        legend.position.inside = c(0.25,0.8),
-        legend.box = "vertical")            #
+  geom_point(aes(colour = .cluster, alpha = ifelse(cluster_label %in% c('H5N1/2022/R7_NAmerica', 
+                                                                        'H5N1/2020/R1_Europe', 
+                                                                        'H5N8/2019/R7_Africa', 
+                                                                        'H5N1/2021/R3_Europe', 
+                                                                        'H5N1/2022/R12_Europe',
+                                                                        'H5N1/2021/R1_Europe',
+                                                                        'H5N1/2023/R29_NAmerica'), '1', '0')), size = 2) + 
+  geom_text(aes(label=ifelse(cluster_label %in% c('H5N1/2022/R7_NAmerica', 
+                                                  'H5N1/2020/R1_Europe', 
+                                                  'H5N8/2019/R7_Africa', 
+                                                  'H5N1/2021/R3_Europe', 
+                                                  'H5N1/2022/R12_Europe',
+                                                  'H5N1/2021/R1_Europe',
+                                                  'H5N1/2023/R29_NAmerica'), cluster_label,""), 
+                colour = .cluster), hjust = 0, nudge_x = 0.08, nudge_y = -0.1, size = 2) +
 
+  scale_colour_brewer('K-Means Clusters',
+                      palette = 'Set1')+
+  scale_alpha_manual(values = c('1' = 1, '0' = 0.3)) + 
+  theme_minimal(base_size = 8) + 
+  theme(legend.position = 'none')
+        
 
 
 
@@ -328,13 +336,13 @@ plt_1c <- ggplot(ari_summary) +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 
 
-plt_1 <- cowplot::plot_grid(plt_1a, plt_1b, plt_1c, ncol = 3, align = 'hv', axis = 'tb')
+plt_1 <- cowplot::plot_grid( plt_1b, plt_1c, align = 'hv', axis = 'tb')
 
 ggsave(
        '~/Downloads/flu_plots/summarydata_clustering.jpeg', 
        plt_1,
-       width = 21,
-       height = 10,
+       width = 24,
+       height = 12,
        units =  "cm",
        dpi = 360)
 
@@ -425,7 +433,7 @@ permuted_clusterings_phylo <- permuted_phylo  %>%
 ####################################### PHYLO + SUMMARY DATA ARI ########################################
 # was cluster assignment correct according to baseline kmeans?
 lookup_clusters <- assignments %>%
-  filter(k == 4) %>%
+  filter(k == 3) %>%
   select(c(cluster_profile,
            .cluster)) %>%
   rename(original_cluster = .cluster)
@@ -466,32 +474,41 @@ plt_2a <- ggplot(clusterings, aes(k, tot.withinss)) +
   theme_minimal(base_size = 8) +
   scale_y_continuous('Total within-cluster sum of squares') +
   scale_x_continuous('K', breaks = seq(0,20, by = 5)) + 
-  geom_vline(xintercept = 4, colour= 'darkgreen', linetype = 'dashed')
+  geom_vline(xintercept = 3, colour= 'darkgreen', linetype = 'dashed')
 
 
 plt_2b <- assignments %>%
-  filter(k == 4) %>%
+  filter(k == 3) %>%
   select(-c(kclust, tidied, glanced)) %>%
   recipe(~ .) %>%
   step_pca(all_numeric(), -k, num_comp = 2) %>%  # Perform PCA (e.g., 2 components)
   prep() %>%
   bake(NULL)%>%
+  left_join(meta %>% select(cluster_profile, cluster_label) %>% distinct() %>% drop_na()) %>%
+  
   ggplot(., aes(x = PC1, y = PC2)) +
-  geom_point(aes(colour = .cluster), alpha = 0.8) + 
-  theme_minimal(base_size = 8) + 
+  geom_point(aes(colour = .cluster, alpha = ifelse(cluster_label %in% c('H5N1/2022/R7_NAmerica', 
+                                                                        'H5N1/2020/R1_Europe', 
+                                                                        'H5N8/2019/R7_Africa', 
+                                                                        'H5N1/2021/R3_Europe', 
+                                                                        'H5N1/2022/R12_Europe',
+                                                                        'H5N1/2021/R1_Europe',
+                                                                        'H5N1/2023/R29_NAmerica'), '1', '0')), size = 2) + 
+  geom_text(aes(label=ifelse(cluster_label %in% c('H5N1/2022/R7_NAmerica', 
+                                                  'H5N1/2020/R1_Europe', 
+                                                  'H5N8/2019/R7_Africa', 
+                                                  'H5N1/2021/R3_Europe', 
+                                                  'H5N1/2022/R12_Europe',
+                                                  'H5N1/2021/R1_Europe',
+                                                  'H5N1/2023/R29_NAmerica'), cluster_label,""), 
+                colour = .cluster), hjust = 0, nudge_x = -1.8, nudge_y = -0.15, size = 2) +
+  
   scale_colour_brewer('K-Means Clusters',
-                      palette = 'Dark2', 
-                      labels  = c('3' = 'Minor',
-                                  '1' = 'Major A',
-                                  '4' = 'Major B', 
-                                  '2' = 'Dominant'))+
-  #scale_color_manual(
-  #  'K-Means Clusters',
-  #  values = riskgroup_colour %>% pull(Trait, name = kclust), 
-  #  labels = riskgroup_colour %>% pull(group2, name = kclust)) +
-  theme(legend.position = 'inside',
-        legend.position.inside = c(0.8,0.8),
-        legend.box = "vertical")            #
+                      palette = 'Set1')+
+  scale_alpha_manual(values = c('1' = 1, '0' = 0.3)) + 
+  theme_minimal(base_size = 8) + 
+  theme(legend.position = 'none')
+
 
 
 
@@ -520,13 +537,13 @@ plt_2c <- ari_phylo_summary %>%
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 
 
-plt_1 <- cowplot::plot_grid(plt_2a, plt_2b, plt_2c, ncol = 3, align = 'hv', axis = 'tb')
+plt_2 <- cowplot::plot_grid( plt_2b, plt_2c, ncol = 1, align = 'hv', axis = 'tb')
 
 ggsave(
   '~/Downloads/flu_plots/phylodata_clustering.jpeg', 
-  plt_1,
-  width = 21,
-  height = 10,
+  plt_2,
+  height = 21,
+  width = 10,
   units =  "cm",
   dpi = 360)
 
