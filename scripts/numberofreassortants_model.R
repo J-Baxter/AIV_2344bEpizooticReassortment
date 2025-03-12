@@ -165,7 +165,7 @@ model_zi_pois_full <- brm(
 
 pp_check(model_zi_pois_full, ndraws = 100, type = 'bars')
 model_performance(model_zi_pois_full)
-###################################################################################################
+###################################################
 
 # Define Priors
 mv <- mvbf(bf1, bf2)
