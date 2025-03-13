@@ -85,7 +85,8 @@ diffusion_data <- combined_data %>%
   
   # season (breeding, migrating_spring, migrating_autumn, overwintering)
   mutate(collection_month = date_decimal(TMRCA) %>% format(., "%m") %>% as.integer(),
-         season = case_when(collection_month %in% c(12,1,2) ~ 'overwintering', 
+         collection_year = date_decimal(TMRCA) %>% format(., "%Y") %>% as.integer(),
+         collection_season = case_when(collection_month %in% c(12,1,2) ~ 'overwintering', 
                             collection_month %in% c(3,4,5)  ~ 'migrating_spring', # Rename to spring migration
                             collection_month %in% c(6,7,8)  ~ 'breeding', 
                             collection_month %in% c(9,10,11)  ~ 'migrating_autumn' # Rename to autumn migration
@@ -96,7 +97,10 @@ diffusion_data <- combined_data %>%
          median_charadriiformes_wild,
          segment, 
          collection_regionname, 
-         season)
+         collection_year,
+         collection_season) %>%
+  
+  filter(weighted_diff_coeff > 0)
 
 
 
@@ -106,15 +110,18 @@ diffusion_data <- combined_data %>%
 # in anseriformes and charadriiformes. Both model components are conditional on segment from which 
 # the measurement is taken and region of origin
 
-diffusion_formula <- bf(weighted_diff_coeff ~ 1 + median_anseriformes_wild +  median_charadriiformes_wild + collection_regionname + 
-                          (1|segment),
-                        hu ~ 1 + collection_regionname +  season +(1|segment ))
+#diffusion_formula <- bf(weighted_diff_coeff ~ 1 + median_anseriformes_wild +  median_charadriiformes_wild + collection_regionname + 
+                       #   (1|segment),
+                       # hu ~ 1 + collection_regionname +  season +(1|segment ))
+
+diffusion_formula <- bf(weighted_diff_coeff|trunc(lb=0) ~ 1 + median_anseriformes_wild +  median_charadriiformes_wild + collection_regionname + (1|segment) + (collection_regionname|collection_year/collection_season))
+diffusion_formula <- bf(weighted_diff_coeff|trunc(lb=0) ~ 1 + median_anseriformes_wild +  median_charadriiformes_wild + collection_regionname + (1|segment) )
 
 
 # Define Priors
 diffusionmodel1_priors <- get_prior(diffusion_formula,
                                     data = diffusion_data,
-                                    family = hurdle_lognormal()) 
+                                    family = lognormal()) 
 
 diffusionmodel1_priors$prior[c(1,12)] <- "normal(0,5)"
 
@@ -141,9 +148,9 @@ diffusionmodel1_prior <- brm(
   family = hurdle_lognormal(),
   prior = diffusionmodel1_priors,
   sample_prior = "only",
-  chains = CHAINS,
+  chains = 2,
   threads = 2, 
-  cores = CORES, 
+  cores = 2, 
   iter = ITER,
   warmup = BURNIN,
   seed = SEED,
@@ -155,11 +162,12 @@ diffusionmodel1_prior <- brm(
 diffusionmodel1_fit <- brm(
   diffusion_formula,
   data = diffusion_data,
-  prior = diffusionmodel1_priors,
-  family = hurdle_lognormal(),
-  chains = CHAINS,
-  cores = CORES, 
+  #prior = diffusionmodel1_priors,
+  family = lognormal(),
+  chains = 2,
+  cores = 2, 
   threads = 2, 
+  backend = "cmdstanr",
   iter = ITER,
   warmup = BURNIN,
   seed = SEED,

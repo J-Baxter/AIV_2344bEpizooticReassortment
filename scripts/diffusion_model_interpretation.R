@@ -48,21 +48,26 @@ plt_5a <- diffusion_data %>%
                      fill = weighted_diff_coeff>0,
                      colour = weighted_diff_coeff>0,
                      y = after_stat(density)), 
-                 binwidth = 0.5,
+                 binwidth = 0.4,
                  alpha = 0.7) +
   scale_fill_brewer(palette = 'Accent', 'Is Zero') +
   scale_colour_brewer(palette = 'Accent', 'Is Zero') +
   #scale_x_continuous('Log1p Weighted Diffusion Coefficient' , expand = c(0.01,0.01)) +
   scale_x_continuous(expression(paste('Weighted Diffusion Coefficient (',Km**2~year**-1, ')' )),
-                     breaks = log1p(c(0, 10^(seq(from = 1, to = 7, by = 2)))),
-                     labels = expression(0,  1%*%10^1,  1%*%10^3, 1%*%10^5,  1%*%10^7),
+                     breaks = log1p(c(0, 10^(seq(from = 2, to = 10, by = 4)))),
+                     labels = expression(0,  1%*%10^2,  1%*%10^6, 1%*%10^10),
+                     limits = c(-0.01, log1p(10^10.5)),
                      expand = c(0.02,0.02))+
   
   scale_y_continuous('Probability Density',expand = c(0,0)) + 
   global_theme + 
   theme(legend.position = 'none')
 
-
+scale_x_continuous(expression(paste('Predicted Weighted Diffusion Coefficient (',Km**2~year**-1, ')' )),
+                   breaks = log1p(c(0, 10^(seq(from = 2, to = 10, by = 4)))),
+                   labels = expression(0,  1%*%10^2,  1%*%10^6, 1%*%10^10),
+                   #limits = c(-0.01, log1p(10^9)),
+                   expand = c(0.02,0.02))
 
 # Plot Persistence distribuions
 plt_5b <- diffusion_data %>%
@@ -118,7 +123,7 @@ averages <-  diffusionmodel1_fit %>%
 
 plt_5d  <- diffusionmodel1_fit %>%
   predicted_draws(newdata = expand_grid(collection_regionname = unique(as.character(diffusion_data$collection_regionname)),
-                                        season = unique(diffusion_data$season)) %>%
+                                        collection_season = unique(diffusion_data$collection_season)) %>%
                     drop_na() %>%
                     
                     mutate(median_anseriformes_wild = median(diffusion_data$median_anseriformes_wild),
@@ -145,7 +150,7 @@ plt_5d  <- diffusionmodel1_fit %>%
                 colour = collection_regionname),
             parse = T,
             x = 17.5, 
-            y = 0.6,
+            y = 0.1,
             size = 2.5,
             data = averages) + 
   global_theme + 
@@ -306,17 +311,19 @@ plt_5h <-diffusionmodel1_fit %>%
 
 
 # Combine plots together
-plt5_lh <- align_plots(plt_5a, plt_5d, plt_5e, plt_5g,align = 'v', axis = 'l')
+#plt5_lh <- align_plots(plt_5a, plt_5d, plt_5e, plt_5g,align = 'v', axis = 'l')
+plt5_lh <- align_plots(plt_5a, plt_5d, plt_5g,align = 'v', axis = 'l')
 
 
 plt5_top <- plot_grid(plt5_lh[[1]], plt_5b, plt_5c, align = 'h', nrow = 1, axis = 'tb', labels = 'AUTO')
-plt5_bottom <- plot_grid(plt5_lh[[3]], plt_5f, plt5_lh[[4]], plt_5h, align = 'hv', ncol = 2, nrow = 2, axis = 'tblr', labels = c('E', 'F', 'G', 'H'))
+#plt5_bottom <- plot_grid(plt5_lh[[3]], plt_5f, plt5_lh[[4]], plt_5h, align = 'hv', ncol = 2, nrow = 2, axis = 'tblr', labels = c('E', 'F', 'G', 'H'))
+plt5_bottom <- plot_grid( plt5_lh[[3]], plt_5h, align = 'hv', ncol = 2, axis = 'tblr', labels = c('E', 'F'))
 
 
 plt5 <- plot_grid(plt5_top, plt5_lh[[2]], plt5_bottom, labels = c('', 'D', ''), nrow = 3, rel_heights = c(1,1,2))
 plt5
 
-ggsave('~/Downloads/figure5.jpeg', height = 40, width = 35, units = 'cm', dpi = 360)
+ggsave('~/Downloads/flu_plots/figure5.jpeg', height = 40, width = 35, units = 'cm', dpi = 360)
 
 
 ##### Plot Posterior Predictive Check #####
