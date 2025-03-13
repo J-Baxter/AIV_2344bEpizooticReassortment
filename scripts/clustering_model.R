@@ -336,13 +336,13 @@ plt_1c <- ggplot(ari_summary) +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 
 
-plt_1 <- cowplot::plot_grid( plt_1b, plt_1c, align = 'hv', axis = 'tb')
+plt_1 <- cowplot::plot_grid( plt_1b, plt_1c, ncol = 1, align = 'hv', axis = 'tb')
 
 ggsave(
        '~/Downloads/flu_plots/summarydata_clustering.jpeg', 
        plt_1,
-       width = 24,
-       height = 12,
+       height = 24,
+       width = 12,
        units =  "cm",
        dpi = 360)
 
@@ -510,6 +510,7 @@ plt_2b <- assignments %>%
   theme(legend.position = 'none')
 
 
+cluster.stats(d = NULL, clustering, al.clustering = NULL)
 
 
 
