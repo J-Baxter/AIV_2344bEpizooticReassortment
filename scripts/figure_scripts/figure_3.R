@@ -99,7 +99,9 @@ FormatPhyloGeo <- function(mcc_file, posterior_file){
   # Format Nodes
   nodes_sf <- tree_tbl %>%
     dplyr::select(node,height_median, location1, location2, host_simplifiedhost, label) %>%
-    mutate(year = most_recent_date - as.numeric(height_median)) %>%
+    mutate(height_median= as.numeric(height_median))
+    replace_na(list(height_median = 0)) %>%
+    mutate(year = most_recent_date - height_median) %>%
     
     # Convert to POINT & set coordinate system
     st_as_sf(coords = c( 'location2', 'location1'), 
@@ -185,12 +187,14 @@ PlotPhyloGeo <- function(phylogeo_list){
     
     # Set graphical scales - must be fixed
     scale_fill_viridis_c('Year',
-                         breaks=c(2019, 2020,2021,2022,2023,2024),
+                         limits = c(2018, 2024.4),
+                         #breaks=c(2019, 2020,2021,2022,2023,2024),
                          direction = -1,
                          option = 'C')+
     
     scale_colour_viridis_c('Year',
-                           breaks=c(2019, 2020,2021,2022,2023,2024),
+                           limits = c(2018, 2024.4),
+                           #breaks=c(2019, 2020,2021,2022,2023,2024),
                            direction = -1,
                            option = 'C')+
     
@@ -242,10 +246,11 @@ posterior_treefiles <- c( treefiles[sapply(dominant_reassortants, function(x) wh
 # Phylogeography (colour by node date)
 formatted_phylogeos <- mapply(FormatPhyloGeo, 
                               mcc_treefiles,
-                              posterior_treefiles)
+                              posterior_treefiles,
+                              SIMPLIFY = FALSE)
 
-
-
+test <- FormatPhyloGeo(mcc_treefiles[3], posterior_treefiles[3])
+lapply(formatted_phylogeos, PlotPhyloGeo)
 
 #north_america_ha <- read.beast('./2024Aug18/region_subsampled_outputs/traits_mcc/ha_northamerica_subsampled_traits_mcc.tree')
 #mooflu_data <- as_tibble(north_america_ha) %>% 
