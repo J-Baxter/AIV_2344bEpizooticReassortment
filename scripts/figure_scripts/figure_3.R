@@ -73,19 +73,18 @@ PlotTMRCA <- function(dataframe){
 }
 
 
-PlotPhyloGeo <- function(treedata){
+FormatPhyloGeo <- function(mcc_file, posterior_file){
   require(rnaturalearthdata)
   require(tidytree)
   require(sf)
   require(tidyverse)
+  require(seraphim)
   
   
-  # load base map
-  map <- ne_countries(scale = "medium", returnclass = "sf")
+  mcc_tree <- read.beast(mcc_file)
+  tree_tbl <- as_tibble(mcc_tree)
   
-  # Create tree-tibble from 
-  tree_tbl <- as_tibble(treedata)
-  
+  # Guess most_recent_date
   most_recent_date <- tree_tbl %>%
     dplyr::select(label, height) %>%
     slice_min(height) %>%
@@ -93,15 +92,68 @@ PlotPhyloGeo <- function(treedata){
     str_extract(., '\\d{4}-\\d{2}-\\d{2}') %>%
     ymd()
   
-  nodes <- tree_tbl %>%
-    dplyr::select(node,height, location1, location2, host_simplifiedhost) %>%
+  # Scan posterior tree file
+  allTrees <- scan(file = posterior_file,
+                   what = '',
+                   sep = '\n',
+                   quiet = T)
+  
+  
+  localTreesDirectory = "./temp_tree_dir/"
+  do.call(file.remove, list(list.files("./temp_tree_dir/", full.names = TRUE)))
+  
+  burnIn <- 0
+  randomSampling <- TRUE
+  nberOfTreesToSample <- 100
+  mostRecentSamplingDatum <- decimal_date(most_recent_date%>% ymd())
+  coordinateAttributeName <- "location"
+  treeExtractions(localTreesDirectory,
+                  allTrees,
+                  burnIn, 
+                  randomSampling, 
+                  nberOfTreesToSample, 
+                  mostRecentSamplingDatum,
+                  coordinateAttributeName,
+                  nberOfCores = 6)
+  
+  mcc_tab <- mccExtractions(readAnnotatedNexus(TREEFILE), mostRecentSamplingDatum)
+  
+  # Step 4: Estimating the HPD region for each time slice ----
+  nberOfExtractionFiles <- nberOfTreesToSample
+  prob <- 0.95
+  precision <- 0.08 # time interval that will be used to define the successive time slices
+  startDatum <- min(mcc_tab[,"startYear"])
+  
+  
+  # Format Polygons
+  polygons <- suppressWarnings(spreadGraphic2(localTreesDirectory, 
+                                              nberOfExtractionFiles,
+                                              prob, 
+                                              startDatum, 
+                                              precision))
+  
+  # Conver polgons to GEOMETRY, set coordinate system and add values
+  polygons_sf <- lapply(polygons, st_as_sf)  %>%
+    bind_rows() %>%
+    pivot_longer(cols = starts_with('2'), names_to = 'year', values_to = 'value') %>%
+    filter(value == 1) %>%
+    mutate(year = as.numeric(year)) %>%
+    dplyr::select(-value) %>%
+    st_set_crs(4326) 
+  
+  
+  # Format Nodes
+  nodes_sf <- tree_tbl %>%
+    dplyr::select(node,height, location1, location2, host_simplifiedhost, label) %>%
     mutate(year = decimal_date(most_recent_date) - as.numeric(height)) %>%
+    
+    # Convert to POINT & set coordinate system
     st_as_sf(coords = c( 'location2', 'location1'), 
              crs = 4326)
   
   # Format Arrows
   arrows <-  tree_tbl %>%
-    dplyr::select(node, parent, host_simplifiedhost) %>%
+    dplyr::select(node, parent) %>%
     left_join(tree_tbl %>%
                 dplyr::select(node, location1, location2)) %>%
     left_join(tree_tbl %>%
@@ -111,96 +163,81 @@ PlotPhyloGeo <- function(treedata){
     mutate(location1.y = case_when(location1.y == location1.x ~ location1.y + 0.00000001, 
                                    .default = location1.y),
            location2.y = case_when(location2.y == location2.x ~ location2.y + 0.00000001,
-                                   .default = location2.y))
+                                   .default = location2.y)) %>%
+    rename(start_lat = location1.x,
+           start_lon = location2.x,
+           end_lat = location1.y,
+           end_lon = location2.y)
   
-  # Plot in GGplot
-  plot <- ggplot(map) +
-    geom_sf() +
+  arrows_sf <- arrows %>%
+    rowid_to_column(var = 'id') %>%
+    pivot_longer(starts_with(c('start', 'end')),
+                 names_to = c("type", ".value"),
+                 names_sep = "_") %>%
     
-    # Plot Branches
-    geom_curve(data = arrows, aes(x = location2.x, y = location1.x,
-                                  xend = location2.y, yend = location1.y,
-                                  colour= host_simplifiedhost),
-               lwd = 0.3,
-               curvature = 0.2) + 
+    # Convert coordinate data to sf POINT
+    st_as_sf( coords = c("lon", "lat"),
+              crs = 4326) %>%
     
-    # Plot nodes
-    geom_sf(data = nodes, shape = 21 , size = 1, aes(fill = host_simplifiedhost, colour = host_simplifiedhost))+
+    # Convert POINT geometry to MULTIPOINT, then LINESTRING
+    group_by(id) %>% 
+    summarise(do_union = FALSE) %>% 
+    st_cast("LINESTRING") %>% 
     
-    # Set graphical scales
-    scale_fill_manual('Host',
-                      values = host_colours,
-                      labels =  c('anseriformes-domestic' = 'Domestic Anseriformes',
-                                  'anseriformes-wild' = 'Wild Anseriformes',
-                                  'charadriiformes-wild' = 'Wild Charadriiformes',
-                                  'galliformes-domestic' = 'Domestic Galliformes',
-                                  'galliformes-wild' = 'Wild Galliformes',
-                                  'environment' = 'Environment',
-                                  'mammal' = 'Mammal',
-                                  'other-bird' = 'Other',
-                                  'human' = 'Human')) + 
+    # Convert rhumb lines to great circles
+    st_segmentize(units::set_units(20, km)) %>%
     
-    scale_colour_manual('Host',
-                        values = host_colours,
-                        labels =  c('anseriformes-domestic' = 'Domestic Anseriformes',
-                                    'anseriformes-wild' = 'Wild Anseriformes',
-                                    'charadriiformes-wild' = 'Wild Charadriiformes',
-                                    'galliformes-domestic' = 'Domestic Galliformes',
-                                    'galliformes-wild' = 'Wild Galliformes',
-                                    'environment' = 'Environment',
-                                    'mammal' = 'Mammal',
-                                    'other-bird' = 'Other',
-                                    'human' = 'Human')) +
-    
-    coord_sf(ylim = c(-60, 75), xlim = c(-180, 180), expand = TRUE) +
-    scale_x_continuous(expand = c(0,0)) + 
-    scale_y_continuous(expand = c(0,0)) +
-    theme_void() + 
-    
-    
-    theme(legend.position = 'none' ) 
+    # Wrap dateline correctly
+    st_wrap_dateline()
   
-  return(plot)
+  
+  out <- list(polygons = polygons_sf,
+              arrows = arrows_sf,
+              nodes = nodes_sf)
+  
+  
+  return(out)
 }
+
+
+
 ############################################## DATA ################################################
 
 # read in cross-continental tree files
 treefiles <- c(list.files('./2024Aug18/reassortant_subsampled_outputs/traits_1000trees',
                         pattern = 'ha',
-                        full.names = TRUE)[-10] ,
-               './2024Sept16/reassortant_subsampled_outputs/traits_1000trees/ha_43112113_subsampled_traits_1000.trees')
+                        full.names = TRUE))
 
 mcc_treefiles <- c(list.files('./2024Aug18/reassortant_subsampled_outputs/traits_mcc',
                               pattern = 'ha',
-                              full.names = TRUE)[-11] ,
-                  )
+                              full.names = TRUE))
 
 
 mcc_trees <- lapply(mcc_treefiles, read.beast)
 names(mcc_trees) <- gsub('.*ha_|_subsampled_traits_mcc.tree', '', mcc_treefiles)
-n <- names(mcc_trees) 
+#n <- names(mcc_trees) 
 
-names(mcc_trees) <- n
+#names(mcc_trees) <- n
 # Note the core requirement - this will take a long time to run in series.
 # Change to futures -> multisession/multicore if you ever wish to try this again....
-df_list <- mclapply(treefiles, function(x) x %>% 
-           read.beast(.) %>% 
-           lapply(., GetRootInfo) %>%
-           bind_rows(),
-           mc.cores = 13)
+#df_list <- mclapply(treefiles, function(x) x %>% 
+ #          read.beast(.) %>% 
+#           lapply(., GetRootInfo) %>%
+#           bind_rows(),
+#           mc.cores = 13)
+#
+#names(df_list) <- gsub('.*ha_|_subsampled.*', '' ,treefiles)
 
-names(df_list) <- gsub('.*ha_|_subsampled.*', '' ,treefiles)
+#host_tmrca <- df_list %>%
+ # bind_rows(., .id = 'cluster_profile')
 
-host_tmrca <- df_list %>%
-  bind_rows(., .id = 'cluster_profile')
-
-write_csv(host_tmrca, './2025Jan06/clusterprofile_host_tmrca.csv')
-host_tmrca <- read_csv('./2025Jan06/clusterprofile_host_tmrca.csv')
+#write_csv(host_tmrca, './2025Jan06/clusterprofile_host_tmrca.csv')
+#host_tmrca <- read_csv('./2025Jan06/clusterprofile_host_tmrca.csv')
 
 
 
 dominant_reassortants <- read_csv('./2024Aug18/treedata_extractions/summary_reassortant_metadata_20240904.csv') %>%
-  select(c(cluster_label,
+  dplyr::select(c(cluster_label,
             cluster_profile))  %>%
   distinct() %>% 
   mutate(cluster_label = gsub('_.*', '', cluster_label)) %>%
@@ -215,16 +252,22 @@ dominant_reassortants <- read_csv('./2024Aug18/treedata_extractions/summary_reas
 
 
 # Plot the density of TMRCA, fill by origin  host
-host_tmrca_list <- host_tmrca %>%
+#host_tmrca_list <- host_tmrca %>%
 
-  filter(cluster_profile %in% dominant_reassortants) %>%
-  base::split(.,f = .$cluster_profile) 
+ # filter(cluster_profile %in% dominant_reassortants) %>%
+  #base::split(.,f = .$cluster_profile) 
 
-tmrca_plots <- lapply(host_tmrca_list, PlotTMRCA)
+#tmrca_plots <- lapply(host_tmrca_list, PlotTMRCA)
 
 
 # Phylogeography (colour by host)
-phylogeo <- lapply(mcc_trees[names(mcc_trees) %in% as.character(dominant_reassortants)], PlotPhyloGeo )
+phylogeo <- mapply(PlotPhyloGeo, 
+                   mcc_treefiles[sapply(dominant_reassortants, function(x) which(grepl(x, mcc_treefiles)))][-1],
+                   treefiles[sapply(dominant_reassortants, function(x) which(grepl(x, treefiles)))][-1],
+                   )
+  
+  
+  lapply(, PlotPhyloGeo )
 
 
 phylogeo[[6]]
