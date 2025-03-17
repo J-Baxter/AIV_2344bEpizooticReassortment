@@ -37,21 +37,22 @@ FormatPhyloGeo <- function(mcc_file, posterior_file){
   
   # Guess most_recent_date
   most_recent_date <- tree_tbl %>%
-    dplyr::select(label, height_median) %>%
-    slice_min(height_median) %>%
+    slice_min(height_median, n = 1, with_ties = FALSE) %>%
     pull(label) %>%
     str_extract(., '\\d{4}-\\d{2}-\\d{2}') %>%
     ymd() %>%
-    decimal_date()
+    decimal_date() %>%
+    unique()
+  
   
   # Extract TMRCA
   start_date <- tree_tbl %>%
-    dplyr::select(label, height_median) %>%
-    slice_max(height_median) %>% 
+    slice_max(height_median, n = 1, with_ties = FALSE) %>% 
     pull(height_median) %>% 
     as.numeric() %>% 
     subtract(most_recent_date,.)
-  
+  print(start_date)
+
   # Scan posterior tree file
   allTrees <- scan(file = posterior_file,
                    what = '',
