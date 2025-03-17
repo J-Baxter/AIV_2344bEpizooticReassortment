@@ -24,55 +24,6 @@ library(rnaturalearthdata)
 library(cowplot)
 
 # User functions
-GetRootInfo <- function(treedata){
-  
-  root_to_tip_distances <- adephylo::distRoot(treedata@phylo) %>%
-    as_tibble(rownames = 'label')
-  
-  root_height <- root_to_tip_distances %>%
-    mutate(tipdate = str_extract(label, '\\d{4}-\\d{2}-\\d{2}') %>%
-             ymd()) %>%
-    slice_max(tipdate) %>%
-    select(-label) %>%
-    mutate(tmrca = date(tipdate - dyears(value)))
-  
-  root_state <- as_tibble(treedata) %>%
-    filter(parent == node) %>%
-    pull(host_simplifiedhost)
-  
-  out <- root_height %>%
-    mutate(host_simplifiedhost = root_state) %>%
-    select(-c(value, tipdate))
-  
-  return(out)
-}
-
-
-PlotTMRCA <- function(dataframe){
-  plot <- ggplot(dataframe,
-                 aes(x  = tmrca,
-                     colour = host_simplifiedhost,
-                     #y = host_simplifiedhost,
-                     fill = host_simplifiedhost)) + 
-    geom_density(alpha = 0.7, position = 'stack') + 
-    scale_x_date('Date', 
-                 limits = ymd(c('2017-01-01', '2023-01-01')),
-                 date_breaks = "1 year",
-                 date_labels = "%Y",
-                 expand = c(0,0)) + 
-    scale_y_continuous('Probability Density', expand = c(0,0))  +
-    
-    
-    scale_fill_manual(values = host_colours) + 
-    scale_colour_manual(values = host_colours) + 
-    global_theme
-  
-  
-  
-  return(plot)
-}
-
-
 FormatPhyloGeo <- function(mcc_file, posterior_file){
   require(rnaturalearthdata)
   require(tidytree)
@@ -80,17 +31,26 @@ FormatPhyloGeo <- function(mcc_file, posterior_file){
   require(tidyverse)
   require(seraphim)
   
-  
+  # Import tree data
   mcc_tree <- read.beast(mcc_file)
   tree_tbl <- as_tibble(mcc_tree)
   
   # Guess most_recent_date
   most_recent_date <- tree_tbl %>%
-    dplyr::select(label, height) %>%
-    slice_min(height) %>%
+    dplyr::select(label, height_median) %>%
+    slice_min(height_median) %>%
     pull(label) %>%
     str_extract(., '\\d{4}-\\d{2}-\\d{2}') %>%
-    ymd()
+    ymd() %>%
+    decimal_date()
+  
+  # Extract TMRCA
+  start_date <- tree_tbl %>%
+    dplyr::select(label, height_median) %>%
+    slice_max(height_median) %>% 
+    pull(height_median) %>% 
+    as.numeric() %>% 
+    subtract(most_recent_date,.)
   
   # Scan posterior tree file
   allTrees <- scan(file = posterior_file,
@@ -105,32 +65,25 @@ FormatPhyloGeo <- function(mcc_file, posterior_file){
   burnIn <- 0
   randomSampling <- TRUE
   nberOfTreesToSample <- 100
-  mostRecentSamplingDatum <- decimal_date(most_recent_date%>% ymd())
+  #mostRecentSamplingDatum <- most_recent_date
   coordinateAttributeName <- "location"
   treeExtractions(localTreesDirectory,
                   allTrees,
                   burnIn, 
                   randomSampling, 
                   nberOfTreesToSample, 
-                  mostRecentSamplingDatum,
+                  most_recent_date,
                   coordinateAttributeName,
-                  nberOfCores = 6)
-  
-  mcc_tab <- mccExtractions(readAnnotatedNexus(TREEFILE), mostRecentSamplingDatum)
+                  nberOfCores = 8)
   
   # Step 4: Estimating the HPD region for each time slice ----
-  nberOfExtractionFiles <- nberOfTreesToSample
-  prob <- 0.95
-  precision <- 0.08 # time interval that will be used to define the successive time slices
-  startDatum <- min(mcc_tab[,"startYear"])
-  
   
   # Format Polygons
   polygons <- suppressWarnings(spreadGraphic2(localTreesDirectory, 
-                                              nberOfExtractionFiles,
-                                              prob, 
-                                              startDatum, 
-                                              precision))
+                                              nberOfExtractionFiles = nberOfTreesToSample,
+                                              prob = 0.95, 
+                                              startDatum = start_date, 
+                                              precision = 0.08))
   
   # Conver polgons to GEOMETRY, set coordinate system and add values
   polygons_sf <- lapply(polygons, st_as_sf)  %>%
@@ -144,15 +97,15 @@ FormatPhyloGeo <- function(mcc_file, posterior_file){
   
   # Format Nodes
   nodes_sf <- tree_tbl %>%
-    dplyr::select(node,height, location1, location2, host_simplifiedhost, label) %>%
-    mutate(year = decimal_date(most_recent_date) - as.numeric(height)) %>%
+    dplyr::select(node,height_median, location1, location2, host_simplifiedhost, label) %>%
+    mutate(year = most_recent_date - as.numeric(height_median)) %>%
     
     # Convert to POINT & set coordinate system
     st_as_sf(coords = c( 'location2', 'location1'), 
              crs = 4326)
   
   # Format Arrows
-  arrows <-  tree_tbl %>%
+  edges <-  tree_tbl %>%
     dplyr::select(node, parent) %>%
     left_join(tree_tbl %>%
                 dplyr::select(node, location1, location2)) %>%
@@ -169,7 +122,7 @@ FormatPhyloGeo <- function(mcc_file, posterior_file){
            end_lat = location1.y,
            end_lon = location2.y)
   
-  arrows_sf <- arrows %>%
+  edges_sf <- edges %>%
     rowid_to_column(var = 'id') %>%
     pivot_longer(starts_with(c('start', 'end')),
                  names_to = c("type", ".value"),
@@ -192,7 +145,7 @@ FormatPhyloGeo <- function(mcc_file, posterior_file){
   
   
   out <- list(polygons = polygons_sf,
-              arrows = arrows_sf,
+              edges = edges_sf,
               nodes = nodes_sf)
   
   
@@ -200,40 +153,69 @@ FormatPhyloGeo <- function(mcc_file, posterior_file){
 }
 
 
+PlotPhyloGeo <- function(phylogeo_list){
+  polygons_sf <- phylogeo_list[['polygons']]
+  edges_sf <- phylogeo_list[['edges']]
+  nodes_sf <- phylogeo_list[['nodes']]
+  
+  # load base map
+  map <- ne_countries(scale = "medium", returnclass = "sf")
+  
+  # Plot in GGplot
+  plot <- ggplot() +
+    geom_sf(data = map) +
+    
+    # Plot HPD polygons
+    geom_sf(data = polygons_sf, 
+            aes(fill = year), 
+            lwd = 0, 
+            alpha = 0.08) + 
+    
+    # Plot Branches
+    geom_sf(data = edges_sf,
+            lwd = 0.2) + 
+    
+    # Plot nodes
+    geom_sf(data = nodes_sf,
+            size = 1.5, 
+            aes(fill = year, colour = year, shape = is.na(label)))+
+    
+    scale_shape_manual(values = c(19,1)) + 
+    
+    # Set graphical scales - must be fixed
+    scale_fill_viridis_c('Year',
+                         breaks=c(2019, 2020,2021,2022,2023,2024),
+                         direction = -1,
+                         option = 'C')+
+    
+    scale_colour_viridis_c('Year',
+                           breaks=c(2019, 2020,2021,2022,2023,2024),
+                           direction = -1,
+                           option = 'C')+
+    
+    coord_sf(ylim = c(-60, 75),
+             xlim = c(-180, 180),
+             expand = TRUE) +
+    
+    scale_x_continuous(expand = c(0,0)) + 
+    scale_y_continuous(expand = c(0,0)) +
+    
+    theme_void() + 
+    theme(legend.position = 'none' ) 
+  
+  return(plot)
+}
 
 ############################################## DATA ################################################
 
 # read in cross-continental tree files
-treefiles <- c(list.files('./2024Aug18/reassortant_subsampled_outputs/traits_1000trees',
+treefiles <- list.files('./2024Aug18/reassortant_subsampled_outputs/traits_1000trees',
                         pattern = 'ha',
-                        full.names = TRUE))
+                        full.names = TRUE)
 
-mcc_treefiles <- c(list.files('./2024Aug18/reassortant_subsampled_outputs/traits_mcc',
+mcc_treefiles <-list.files('./2024Aug18/reassortant_subsampled_outputs/traits_mcc',
                               pattern = 'ha',
-                              full.names = TRUE))
-
-
-mcc_trees <- lapply(mcc_treefiles, read.beast)
-names(mcc_trees) <- gsub('.*ha_|_subsampled_traits_mcc.tree', '', mcc_treefiles)
-#n <- names(mcc_trees) 
-
-#names(mcc_trees) <- n
-# Note the core requirement - this will take a long time to run in series.
-# Change to futures -> multisession/multicore if you ever wish to try this again....
-#df_list <- mclapply(treefiles, function(x) x %>% 
- #          read.beast(.) %>% 
-#           lapply(., GetRootInfo) %>%
-#           bind_rows(),
-#           mc.cores = 13)
-#
-#names(df_list) <- gsub('.*ha_|_subsampled.*', '' ,treefiles)
-
-#host_tmrca <- df_list %>%
- # bind_rows(., .id = 'cluster_profile')
-
-#write_csv(host_tmrca, './2025Jan06/clusterprofile_host_tmrca.csv')
-#host_tmrca <- read_csv('./2025Jan06/clusterprofile_host_tmrca.csv')
-
+                              full.names = TRUE)
 
 
 dominant_reassortants <- read_csv('./2024Aug18/treedata_extractions/summary_reassortant_metadata_20240904.csv') %>%
@@ -246,59 +228,48 @@ dominant_reassortants <- read_csv('./2024Aug18/treedata_extractions/summary_reas
   pull(cluster_profile) %>%
   gsub('_', '', .) %>%
   as.double()
+
+mcc_treefiles <-  c(mcc_treefiles[sapply(dominant_reassortants, function(x) which(grepl(x, mcc_treefiles)))][-1],
+                    '~/Downloads/ha_43112113_subsampled_traits_mcc(1).tree')
+
+posterior_treefiles <- c( treefiles[sapply(dominant_reassortants, function(x) which(grepl(x, treefiles)))][-1],
+                          '~/Downloads/ha_43112113_subsampled_traits_1000.trees')
+
+
 ############################################## MAIN ################################################
 
-# Filter the desired reassortants
+# Phylogeography (colour by node date)
+formatted_phylogeos <- mapply(FormatPhyloGeo, 
+                              mcc_treefiles,
+                              posterior_treefiles)
 
 
-# Plot the density of TMRCA, fill by origin  host
-#host_tmrca_list <- host_tmrca %>%
-
- # filter(cluster_profile %in% dominant_reassortants) %>%
-  #base::split(.,f = .$cluster_profile) 
-
-#tmrca_plots <- lapply(host_tmrca_list, PlotTMRCA)
 
 
-# Phylogeography (colour by host)
-phylogeo <- mapply(PlotPhyloGeo, 
-                   mcc_treefiles[sapply(dominant_reassortants, function(x) which(grepl(x, mcc_treefiles)))][-1],
-                   treefiles[sapply(dominant_reassortants, function(x) which(grepl(x, treefiles)))][-1],
-                   )
-  
-  
-  lapply(, PlotPhyloGeo )
+#north_america_ha <- read.beast('./2024Aug18/region_subsampled_outputs/traits_mcc/ha_northamerica_subsampled_traits_mcc.tree')
+#mooflu_data <- as_tibble(north_america_ha) %>% 
+ # select(label, height, host_simplifiedhost, location1, location2) %>%  mutate(across(c(location1, location2, height), .fns = ~as.numeric(.x)))
 
+#mooflu <- tree_subset(north_america_ha, 622)  
 
-phylogeo[[6]]
+#south_america <- read.beast( '~/Downloads/ha_43112113_subsampled_traits_mcc(1).tree')
 
+#PlotPhyloGeo(south_america)  +  coord_sf(ylim = c(-60, 75), xlim = c(-150, -30), expand = TRUE)
 
-north_america_ha <- read.beast('./2024Aug18/region_subsampled_outputs/traits_mcc/ha_northamerica_subsampled_traits_mcc.tree')
-mooflu_data <- as_tibble(north_america_ha) %>% 
-  select(label, height, host_simplifiedhost, location1, location2) %>%  mutate(across(c(location1, location2, height), .fns = ~as.numeric(.x)))
-
-mooflu <- tree_subset(north_america_ha, 622)  
-
- south_america <- read.beast( '~/Downloads/ha_43112113_subsampled_traits_mcc(1).tree')
-
-PlotPhyloGeo(south_america)  +  coord_sf(ylim = c(-60, 75), xlim = c(-150, -30), expand = TRUE)
-phylogeo[[10]] 
 # align plots vertically (so that each row corresponds to a reassortant)
 
 plot_legend <- get_plot_component(phylogeo[[4]]+theme(legend.position = 'bottom'), 'guide-box-bottom', return_all = TRUE)
 
 main <- cowplot::plot_grid(
   ggplot() + theme_void(),ggplot() + theme_void(),
-  phylogeo[[5]],tmrca_plots[[5]], 
-  phylogeo[[4]], tmrca_plots[[4]],
-  phylogeo[[2]], tmrca_plots[[2]],
-  phylogeo[[1]], tmrca_plots[[1]],
-  phylogeo[[6]], tmrca_plots[[6]],
-  phylogeo[[3]], tmrca_plots[[3]],
-          nrow = 7,
-          ncol = 2,
+  phylogeo[[5]],
+  phylogeo[[4]], 
+  phylogeo[[2]], 
+  phylogeo[[1]], 
+  phylogeo[[6]], 
+  phylogeo[[3]], 
+  nrow = 7,
   rel_heights = c(0.1,1,1,1,1,1,1),
-          rel_widths = c(1.25,0.75),
           align = 'vh',
           axis = 'rbt',
           labels = c('', '', 
