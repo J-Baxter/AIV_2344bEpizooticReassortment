@@ -38,8 +38,7 @@ summary_data <- read_csv('./2024Aug18/treedata_extractions/summary_reassortant_m
 
 meta <- read_csv('./2024-09-09_meta.csv') 
 
-mcc_tree <- read.beast('./2025Feb26/globalsubsample/ha_global_SRD06_relaxLn_constant_mcc.tree')
-ca_tree <- read.beast('./2025Feb26/globalsubsample/ha_global_SRD06_relaxLn_constant')
+new_tree <- read.beast('./2025Feb26/globalsubsample/ha_global_SRD06_relaxLn_constant_mcc.tree')
 
 hpai_cases <- read_csv('~/Downloads/overview-raw-data_202502241440.csv') 
 woah_hpai <- read_csv('~/Downloads/Quantitative data 2025-02-25.csv')
@@ -305,8 +304,45 @@ drop_na(n_reassortants) %>%
         legend.title = element_text(size = 10),
         legend.position.inside = c(0.01,1),
         legend.background = element_blank())
-##################################
 
+
+##################################
+# reassortant MRCA (will run for 10-20 mins)
+traits <- new_tree@phylo$tip.label %>%
+  str_extract(., "(\\d_)+[^.|]*") 
+
+new_tree@phylo$edge.length <- ifelse(new_tree@phylo$edge.length < 0, 0, new_tree@phylo$edge.length)
+
+ace_test <- ace(traits,
+                new_tree@phylo,
+                type = 'discrete',
+                method = 'ML',
+                model = 'ARD')
+
+ace_test$lik.anc
+
+
+# extract likelihood for each state and each node
+anc_lik <- ace_test$lik.anc
+
+# infer most likely state at each node and 
+anc_state <- apply(anc_lik,
+                   1,
+                   function(x) names(x)[which.max(x)]) %>%
+  #format output
+  enframe(., 
+          name = 'node', 
+          value = 'cluster_profile') %>%
+  mutate(node = as.integer(node))
+
+
+mrca_nodes <- anc_state %>%
+  left_join(as_tibble(new_tree) %>% dplyr::select(node, height_median)) %>%
+  group_by(cluster_profile) %>%
+  slice_max(height_median, n =1, with_ties = FALSE) %>%
+  ungroup() %>%
+  mutate(tmrca_node = '1') %>%
+  dplyr::select(-height_median)
 
 
 
