@@ -26,6 +26,8 @@ library(emmeans) # missing
 library(marginaleffects) # missing
 library(magrittr)
 library(ggmcmc) # missing
+library(bayestestR)
+library(modelbased)
 
 # User functions
 scientific_10 <- function(x) {
@@ -161,68 +163,68 @@ plt_5d  <- diffusionmodel1_fit %>%
 
 
 # Posterior Prediction HU ~ Season
-predict_hu_season <- diffusionmodel1_fit %>%
-  emmeans(~ season,
-          var = "weighted_diff_coeff",
-          at = list(continent = unique(diffusion_data$season)),
+#predict_hu_season <- diffusionmodel1_fit %>%
+  #emmeans(~ season,
+          #var = "weighted_diff_coeff",
+          #at = list(continent = unique(diffusion_data$season)),
           #epred = TRUE, 
-          dpar = "hu",
-          re_formula = NA, 
-          regrid = "response",
-          allow_new_levels = TRUE)
+         # dpar = "hu",
+          #re_formula = NA, 
+         # regrid = "response",
+         # allow_new_levels = TRUE)
 
-plt_5e <- predict_hu_season %>%
-  gather_emmeans_draws() %>%
-  ggplot(aes(x  = 1-.value,
-             y = season,
-             slab_colour = season,
-             slab_fill = season)) +
-  stat_halfeye(slab_alpha = 0.7,
-               p_limits = c(0.001, 0.999),
-               point_interval = "median_hdi",
-               linewidth = 1.5,
-               .width =  0.95) +
-  scale_colour_manual(values = c('#E8E1E9FF', '#C0A5AAFF', '#4D3944FF', '#7083A4FF'), aesthetics = 'slab_colour') +
-  scale_fill_manual(values = c('#E8E1E9FF', '#C0A5AAFF', '#4D3944FF', '#7083A4FF'), aesthetics = 'slab_fill') +
-  scale_x_continuous('P(Weighted Diffusion Coefficient > 0)') + 
-  scale_y_discrete('Season',
-                   labels = c('overwintering' = 'Overwintering',
-                              'migrating_spring' = 'Spring Migration',
-                              'migrating_autumn' = 'Autumn Migration',
-                              'breeding' = 'Breeding')) + 
-  global_theme 
+#plt_5e <- predict_hu_season %>%
+  #gather_emmeans_draws() %>%
+ # ggplot(aes(x  = 1-.value,
+       #      y = season,
+           #  slab_colour = season,
+           #  slab_fill = season)) +
+ # stat_halfeye(slab_alpha = 0.7,
+         #      p_limits = c(0.001, 0.999),
+         #      point_interval = "median_hdi",
+         #      linewidth = 1.5,
+         #      .width =  0.95) +
+ # scale_colour_manual(values = c('#E8E1E9FF', '#C0A5AAFF', '#4D3944FF', '#7083A4FF'), aesthetics = 'slab_colour') +
+  #scale_fill_manual(values = c('#E8E1E9FF', '#C0A5AAFF', '#4D3944FF', '#7083A4FF'), aesthetics = 'slab_fill') +
+ # scale_x_continuous('P(Weighted Diffusion Coefficient > 0)') + 
+  #scale_y_discrete('Season',
+              #     labels = c('overwintering' = 'Overwintering',
+                 #             'migrating_spring' = 'Spring Migration',
+                 #             'migrating_autumn' = 'Autumn Migration',
+                 #             'breeding' = 'Breeding')) + 
+  #global_theme 
 
 
 # Posterior Prediction/Average HU ~ Region
-regional_average <- diffusionmodel1_fit %>%
-  emmeans(~ 1 + collection_regionname,
-          var = "weighted_diff_coeff",
-          at = list(continent = unique(diffusion_data$collection_regionname)),
+#regional_average <- diffusionmodel1_fit %>%
+  #emmeans(~ 1 + collection_regionname,
+         # var = "weighted_diff_coeff",
+         # at = list(continent = unique(diffusion_data$collection_regionname)),
           # epred = TRUE, 
-          dpar = "mu",
-          re_formula = ~ 1|collection_regionname ,  regrid = "response",
-          tran = "log", 
-          type = "response",
-          allow_new_levels = TRUE)
+          #dpar = "mu",
+          #re_formula = ~ 1|collection_regionname ,  regrid = "response",
+         # tran = "log", 
+         # type = "response",
+          #allow_new_levels = TRUE)
 
-plt_5f <-regional_average %>%
-  gather_emmeans_draws() %>%
-  ggplot(aes(x  = 1-.value,
-             y = collection_regionname, 
-             slab_colour = collection_regionname,
-             slab_fill = collection_regionname)) +
-  stat_halfeye(slab_alpha = 0.7,
-               p_limits = c(0.001, 0.999),
-               point_interval = "median_hdi",
-               linewidth = 1.5,
-               .width =  0.95) +
-  scale_fill_manual(values = region_colours, aesthetics = 'slab_fill') +
-  scale_colour_manual(values = region_colours, aesthetics = 'slab_colour') + 
-  scale_x_continuous('P(Weighted Diffusion Coefficient > 0)') + 
-  scale_y_discrete('Continent', 
-                   labels = function(x) str_to_title(x) %>% str_wrap(., width = 10)) + 
-  global_theme + 
-  theme(legend.position = 'none')
+#plt_5f <-regional_average %>%
+ # gather_emmeans_draws() %>%
+ # ggplot(aes(x  = 1-.value,
+   #          y = collection_regionname, 
+   #          slab_colour = collection_regionname,
+   #          slab_fill = collection_regionname)) +
+  #stat_halfeye(slab_alpha = 0.7,
+    #           p_limits = c(0.001, 0.999),
+     #          point_interval = "median_hdi",
+     #          linewidth = 1.5,
+     #          .width =  0.95) +
+  #scale_fill_manual(values = region_colours, aesthetics = 'slab_fill') +
+  #scale_colour_manual(values = region_colours, aesthetics = 'slab_colour') + 
+  #scale_x_continuous('P(Weighted Diffusion Coefficient > 0)') + 
+  #scale_y_discrete('Continent', 
+   #                labels = function(x) str_to_title(x) %>% str_wrap(., width = 10)) + 
+  #global_theme + 
+  #theme(legend.position = 'none')
 
 
 # average marginal effect of anseriformes/ charadriiformes
@@ -276,11 +278,32 @@ plt_5g <- bind_rows(diffusionmodel1_fit %>%
 
 # Marginal effect of continent on MU
 # Results are averaged over the levels of: season
+continent_emm <- diffusionmodel1_fit %>%
+  emmeans(~ collection_regionname,
+          #dpar = "mu",
+          epred = TRUE)
 
+
+diffusionmodel_rg <- ref_grid(diffusionmodel)
+diffusionmodel_prior_rg <- ref_grid(diffusionmodel1_priors)
+
+bayesfactor_parameters(diffusionmodel2_fit, verbose = FALSE)
+
+bayestestR::bayesfactor_parameters(pairs(continent_emm), prior = pairs(diffusionmodel1_priors))
+
+
+
+group_diff <- emmeans(diffusionmodel1_fit, pairwise ~ collection_regionname, data = diffusion_data)
+model = unupdate(diffusionmodel1_fit)
+# pass the original model via prior
+bayesfactor_parameters(group_diff)
+
+estimate_contrasts(diffusionmodel1_fit, 
+                   test = "bf")
 
 plt_5h <-diffusionmodel1_fit %>%
   emmeans(~ collection_regionname,
-          dpar = "mu",
+          #dpar = "mu",
           epred = TRUE) %>% 
   contrast(method = "revpairwise") %>% 
   gather_emmeans_draws() %>%
