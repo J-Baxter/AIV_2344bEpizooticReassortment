@@ -26,6 +26,7 @@ library(TreeTools)
 library(ggnewscale)
 library(rnaturalearth)
 library(rnaturalearthdata)
+library(ggstream)
 # User functions
 
 
@@ -37,7 +38,8 @@ summary_data <- read_csv('./2024Aug18/treedata_extractions/summary_reassortant_m
 
 meta <- read_csv('./2024-09-09_meta.csv') 
 
-new_tree <- read.beast('./2025Feb26/globalsubsample/ha_global_SRD06_relaxLn_constant_mcc.tree')
+mcc_tree <- read.beast('./2025Feb26/globalsubsample/ha_global_SRD06_relaxLn_constant_mcc.tree')
+ca_tree <- read.beast('./2025Feb26/globalsubsample/ha_global_SRD06_relaxLn_constant')
 
 hpai_cases <- read_csv('~/Downloads/overview-raw-data_202502241440.csv') 
 woah_hpai <- read_csv('~/Downloads/Quantitative data 2025-02-25.csv')
@@ -107,167 +109,31 @@ region_colours <- c('europe' = '#1b9e77',
 
 
 #F6E0D2FF #DFA398FF #9C6755FF #659794FF #EA967CFF #F5C98EFF #D65B5AFF #586085FF 
-all <- meta %>%
-  mutate(collection_regionname = case_when(grepl('europe', collection_regionname) ~ 'europe',
-                                           grepl('africa', collection_regionname) ~ 'africa',
-                                           grepl('asia', collection_regionname) ~ 'asia',
-                                           grepl('(central|northern) america', collection_regionname) ~ 'central & northern america',
-                                           grepl('south america|southern ocean', collection_regionname) ~ 'south america',
-                                           grepl('australia', collection_regionname) ~ 'australasia',
-                                           .default = collection_regionname)) %>%
-  drop_na(collection_regionname) %>%
-  dplyr::select(collection_regionname, collection_dateyear) %>%
-  tidyr::expand(collection_regionname, collection_dateyear = full_seq(collection_dateyear,1))
-
-
-# Sequences
-sequences_month <- meta %>%  
-  drop_na(cluster_profile) %>%
-  select(starts_with('collection_date'),
-         collection_regionname) %>%
-  mutate(collection_regionname = case_when(grepl('europe', collection_regionname) ~ 'europe',
-                                           grepl('africa', collection_regionname) ~ 'africa',
-                                           grepl('asia', collection_regionname) ~ 'asia',
-                                           grepl('(central|northern) america|caribbean', collection_regionname) ~ 'central & northern america',
-                                           grepl('south america|southern ocean', collection_regionname) ~ 'south america',
-                                           grepl('australia|melanesia', collection_regionname) ~ 'australasia',
-                                           .default = collection_regionname)) %>%
-  group_by(collection_datemonth, collection_regionname) %>%
-  summarise(n_sequences = n()) %>%
-  ungroup() %>%
-  mutate(collection_datemonth = ymd(paste0(collection_datemonth, '-01'))) %>%
-  drop_na(collection_regionname,collection_datemonth)
 
 
 # Format WOAH data and estimate the minimum number of cases
-woah_minimuminferredcases <- woah_hpai %>%
-  select(Year,
-         Semester,
-         `World region`,
-         Country,
-         `Animal Category`,
-         `Serotype/Subtype/Genotype`,
-         `New outbreaks`, 
-         Susceptible, 
-         `Measuring units`,
-         Cases,
-         Deaths) %>%
-  
-  # replace dashes with NA
-  mutate(across(!Year, ~ case_when(grepl('^-$', .x) ~ NA_character_,
-                                   .default = .x))) %>%
-  
-  # format biannual periods
-  mutate(date_start = case_when(grepl('Jan-Jun', Semester) ~ paste0(Year, '-01-01'),
-                                grepl('Jul-Dec', Semester) ~ paste0(Year, '-07-01'),
-                                .default = NA_character_),
-         date_end = case_when(grepl('Jan-Jun', Semester) ~ paste0(Year, '-06-30'),
-                              grepl('Jul-Dec', Semester) ~ paste0(Year, '-12-31'),
-                              .default = NA_character_)) %>%
-  
-  # format country for continent assignment
-  mutate(Country = case_when(Country ==  "Cote D'Ivoire" ~ "Côte d'Ivoire",
-                             Country == "Congo (Dem. Rep. of the)" ~ "Dem. Rep. Congo",
-                             Country == "China (People's Rep. of)"~ "China",
-                             Country == "Chinese Taipei" ~ "Taiwan",
-                             Country == "Korea (Dem People's Rep. of)" ~"North Korea",
-                             Country == "Korea (Rep. of)" ~"South Korea",
-                             Country == "Dominican (Rep.)" ~ "Dominican Rep.",
-                             grepl( "Falkland Islands \\(Malvinas\\)|South Georgia and the South Sandwich Islands", Country) ~ "Falkland Is.",
-                             Country ==  "Türkiye (Rep. of)" ~ "Turkey",
-                             Country == "Hong Kong" ~ 'China',                                 
-                             Country == "Bosnia and Herzegovina" ~  "Bosnia and Herz." ,                 
-                             Country == "Czech Republic" ~ "Czechia",                               
-                             Country == "Faeroe Islands" ~ "Denmark",                              
-                             Country == "Reunion" ~ 'Madagascar',                                      
-                             .default = Country))%>%
-  # Group by continent
-  left_join(ref, by = join_by(Country == name)) %>%
-  mutate(animal_category  = str_to_lower(`Animal Category`)) %>%   
-  mutate(across(any_of(c('New outbreaks', 'Susceptible', 'Cases', 'Deaths')), ~as.numeric(.x))) %>%
-  replace_na(list('New outbreaks' = 0,
-                  'Susceptible' = 0,
-                  'Cases' = 0,
-                  'Deaths' = 0)) %>%
-  
-  # Filter only H5NX
-  filter(grepl('^[Hh]5', `Serotype/Subtype/Genotype`)) %>%
-  
-  # Infer the minimum number of 'cases' This is mostly due to USA seemingly incapable of reporting
-  # their data in a similar manner to the rest of the world.
-  mutate(inferred_minimum_cases = case_when(Cases >= Deaths ~ Cases, 
-                                            Cases < Deaths ~ Deaths,
-                                            .default = Cases)) %>%
-  
-  rename(collection_regionname = continent) %>%
-  mutate(collection_regionname = str_to_lower(collection_regionname)) %>%
-  mutate(collection_regionname = case_when(grepl('europe', collection_regionname) ~ 'europe',
-                                           grepl('africa', collection_regionname) ~ 'africa',
-                                           grepl('asia', collection_regionname) ~ 'asia',
-                                           grepl('(central|northern|north) america|caribbean', collection_regionname) ~  'central & northern america',
-                                           grepl('south america|southern ocean|antarctica', collection_regionname) ~ 'south america',
-                                           grepl('australia|melanesia|oceania', collection_regionname) ~ 'australasia',
-                                           .default = collection_regionname))
 
-
-# Group WOAH minimum cases by month
-woah_minimuminferredcases_monthly <- woah_minimuminferredcases %>%
-  
-  summarise(sum_IMC = sum(inferred_minimum_cases, na.rm = TRUE), .by = c(date_start, 
-                                                                         date_end,
-                                                                         collection_regionname))  %>%
-  mutate(across(starts_with('date'), ~ymd(.x))) %>%
-  mutate(interval = interval(date_start, date_end)) %>%
-  rename(woah_cases = sum_IMC)
-
-
-# Group FAO cases by month
-fao_hpai_monthly <- fao_hpai %>% 
-  filter(pathogenicity == 'HPAI') %>%
-  filter(grepl('H5', serotype)) %>%
-  mutate(observation_month = format.Date(observation_date, 
-                                         format = '%Y-%m')) %>%
-  group_by(observation_month, 
-           collection_regionname) %>%
-  summarise(n_cases = n()) %>%
-  ungroup() %>%
-  mutate(observation_month = ymd(paste0(observation_month, '-01'))) %>%
-  filter(observation_month> ymd('2015-06-01')) %>% 
-  rename(collection_datemonth = observation_month)  %>%
-  mutate(date_start = floor_date(collection_datemonth,
-                                 unit = 'month'),
-         date_end = ceiling_date(collection_datemonth, 
-                                 unit = 'month') - days(1)) %>%
-  mutate(collection_regionname = case_when(collection_regionname == 'north and central america' ~ 'central & northern america', 
-                                           .default = collection_regionname)) %>%
-  rename(fao_cases = n_cases)
-
-
-# Join everything together and calculated scaled estimates (not used)
-all_casedata_monthly <- woah_minimuminferredcases_monthly %>%
-  interval_left_join(fao_hpai_monthly, by = c('date_start', 'date_end')) %>%
-  filter(collection_regionname.x == collection_regionname.y) %>%
-  select(-ends_with('y')) %>%
-  rename_with(~gsub('\\.x', '', .x)) %>%
-  
   # set groupings
-  group_by(collection_regionname, interval) %>%
-  mutate(scale_factor = woah_cases/sum(fao_cases)) %>%
-  ungroup() %>%
-  rowwise() %>%
-  mutate(scaled_estimate = fao_cases*scale_factor) %>%
-  filter(!grepl('australasia', collection_regionname)) %>%
-  filter(collection_datemonth >= as_date('2019-01-01'))
+  #group_by(collection_regionname, interval) %>%
+ # mutate(scale_factor = woah_cases/sum(fao_cases)) %>%
+ # ungroup() %>%
+ # rowwise() %>%
+ # mutate(scaled_estimate = fao_cases*scale_factor) %>%
+ # filter(!grepl('australasia', collection_regionname)) %>%
+ # filter(collection_datemonth >= as_date('2019-01-01'))
 
 
 # Plot
-plt_1a <- all_casedata_monthly %>%
-  as_tibble() %>%  filter(date_start < as_date('2024-06-01'))  %>%
+plt_1a <- data %>%
+  as_tibble() %>%  
+  filter(collection_datemonth > as_date('2018-06-01'))  %>%
+  mutate(across(where(is.numeric), .fns = ~replace_na(.x, 0))) %>%
+  
   ggplot() + 
-
+  
   geom_bar(data = sequences_month, 
            aes(x = collection_datemonth, 
-               y = n_sequences*7000, 
+               y = n_sequences*20000, 
                colour = collection_regionname,
                fill = collection_regionname), 
            alpha = 0.7, 
@@ -275,7 +141,7 @@ plt_1a <- all_casedata_monthly %>%
            position = 'stack') +
   
   geom_line(aes(x = collection_datemonth, 
-                y = woah_cases, 
+                y = woah_susceptibles, 
                 colour= collection_regionname),
             linetype = 'dashed') +
   
@@ -283,15 +149,18 @@ plt_1a <- all_casedata_monthly %>%
   scale_colour_manual(values = region_colours) +
   theme_classic() + 
   scale_y_continuous(expand = c(0.01, 0),
-                     'WOAH Minimum Cases (n)',
-                     sec.axis = sec_axis(transform = ~ ./7000, 
+                     'WOAH Susceptibles (n)',
+                     sec.axis = sec_axis(transform = ~ ./20000, 
                                          'GISAID Whole Genomes (n)')) + 
-  scale_x_date('Date') + 
+  scale_x_date(limits = as_date(c('2019-01-01', '2024-05-01')),
+               breaks = '2 year', 
+               date_labels = "%Y", 'Date',
+               expand = c(0,0)) + 
   
   facet_wrap(~collection_regionname,  
              ncol = 6) + 
   
-  geom_text(data = cbind.data.frame(collection_regionname = unique(test_3$collection_regionname)), 
+  geom_text(data = cbind.data.frame(collection_regionname = unique(all_casedata_monthly$collection_regionname)), 
             aes(label = str_wrap(str_to_title(collection_regionname), width = 20)),
             y = Inf, 
             x = as_date('2019-01-01'), 
@@ -306,6 +175,7 @@ plt_1a <- all_casedata_monthly %>%
     axis.text = element_text(size = 8),
     axis.title = element_text(size = 10)
   )
+
 
 plt_1a
 
@@ -337,7 +207,10 @@ plt_1c <-ggplot(sequences_host_month) +
                   colour = host_simplifiedhost,
                   fill = host_simplifiedhost),
               alpha = 0.7) + 
-  scale_x_date(limits = as_date(c('2019-01-01', '2024-05-01')), breaks = '1 year', date_labels = "%Y", 'Date') + 
+  scale_x_date(limits = as_date(c('2016-01-01', '2024-05-01')),
+               breaks = '1 year', 
+               date_labels = "%Y", 'Date',
+               expand = c(0,0)) + 
   scale_fill_manual('Host Order', values = host_colours) +
   scale_colour_manual('Host Order', values = host_colours) +
   scale_y_continuous('GISAID Whole Genomes (n)' ,
@@ -345,9 +218,14 @@ plt_1c <-ggplot(sequences_host_month) +
                      breaks = seq(-225, 225, by = 75),
                      limits = c(-230, 230)) + 
   theme_classic() + 
-  theme(legend.position = 'none',
-        axis.text = element_text(size = 8),
-        axis.title = element_text(size = 10))
+  theme(axis.text = element_text(size = 8),
+        axis.title = element_text(size = 10),
+        legend.position = 'inside',
+        legend.justification.inside = c(0, 1),
+        legend.text = element_text(size = 8),
+        legend.title = element_text(size = 10),
+        legend.position.inside = c(0.01,1),
+        legend.background = element_blank())
 
 
 
@@ -378,7 +256,10 @@ plt_1d <- ggplot(sequences_subtype_month) +
                   colour = virus_subtype,
                   fill = virus_subtype),
               alpha = 0.7) + 
-  scale_x_date(limits = as_date(c('2019-01-01', '2024-05-01')), breaks = '1 year', date_labels = "%Y", 'Date') + 
+  scale_x_date(limits = as_date(c('2016-01-01', '2024-05-01')),
+               breaks = '1 year', 
+               date_labels = "%Y", 'Date',
+               expand = c(0,0)) + 
   scale_fill_brewer('Subtype', palette = 'OrRd', direction = -1) +
   scale_colour_brewer('Subtype', palette = 'OrRd', direction = -1) +
   scale_y_continuous('GISAID Whole Genomes (n)' ,
@@ -386,12 +267,44 @@ plt_1d <- ggplot(sequences_subtype_month) +
                      breaks = seq(-225, 225, by = 75),
                      limits = c(-230, 230)) + 
   theme_classic() + 
-  theme(legend.position = 'none',
+  theme(
         axis.text = element_text(size = 8),
-        axis.title = element_text(size = 10))
+        axis.title = element_text(size = 10),
+        legend.position = 'inside',
+        legend.text = element_text(size = 8),
+        legend.title = element_text(size = 10),
+        legend.justification.inside = c(0, 1),
+        legend.position.inside = c(0.01,1),
+        legend.background = element_blank())
 
 
-
+plt_1e <- data %>%
+drop_na(n_reassortants) %>%
+  ggplot() + 
+  geom_histogram(aes(x = collection_datemonth, 
+                     fill = collection_regionname, 
+                     colour = collection_regionname),
+                 bins = 45,
+                 alpha = 0.7)  +
+  scale_x_date(limits = as_date(c('2016-01-01', '2024-05-01')),
+               breaks = '1 year', 
+               date_labels = "%Y", 'Date',
+               expand = c(0,0)) + 
+  
+  scale_y_continuous('Count',expand = c(0,0)) +
+  scale_fill_manual('Continent' ,values = region_colours,
+                    labels = str_to_title) +
+  scale_colour_manual('Continent' , values = region_colours,
+                      labels = str_to_title) +
+  global_theme + 
+  theme(axis.text = element_text(size = 8),
+        axis.title = element_text(size = 10),
+        legend.position = 'inside',
+        legend.justification.inside = c(0, 1),
+        legend.text = element_text(size = 8),
+        legend.title = element_text(size = 10),
+        legend.position.inside = c(0.01,1),
+        legend.background = element_blank())
 ##################################
 
 
@@ -408,10 +321,24 @@ reassortant_profiles <- meta %>%
                        names = c('PB2', 'PB1', 'PA', 'HA', 'NP', 'N', 'M', 'NS')) %>%
   mutate(across(-1, .fns = ~ as.double(.x)))
 
+shading_intervals <- seq(2015, 2023, by = 2)
+shading_intervals_end <- c(shading_intervals[-1] - 1, 2024)
+
+continent <- meta %>% 
+  dplyr::select(isolate_id, collection_regionname) %>%
+  mutate(collection_regionname = case_when(grepl('europe', collection_regionname) ~ 'europe',
+                                           grepl('africa', collection_regionname) ~ 'africa',
+                                           grepl('asia', collection_regionname) ~ 'asia',
+                                           grepl('(central|northern) america|caribbean', collection_regionname) ~ 'central & northern america',
+                                           grepl('south america|southern ocean', collection_regionname) ~ 'south america',
+                                           grepl('australia|melanesia', collection_regionname) ~ 'australasia',
+                                           .default = collection_regionname))
 plt_1left <- new_tree %>%
   mutate(isolate_id = str_extract(label, "EPI_ISL_(china_){0,1}\\d+[^.|]*")) %>%
  # mutate(date = str_extract(label, "\\d{4}-.*")) %>%
   left_join(reassortant_profiles) %>%
+  left_join(continent) %>%
+  left_join(mrca_nodes) %>%
   
   ggtree(mrsd = "2024-03-18") + 
   theme_tree2(#base_family = "LM Sans 10",
@@ -421,10 +348,35 @@ plt_1left <- new_tree %>%
               ) +
   
   scale_x_continuous(
-    #limits = c(2000, 2023),
-    'Time',
-    breaks = seq(2016, 2024, 1)) +
-
+   # limits = c(2014.9, Inf),
+    'Time (Years)',
+    breaks = seq(2015, 2024, 1)) +
+  
+  
+  annotate("rect", 
+           xmin = shading_intervals, 
+           xmax = shading_intervals_end, 
+           ymin = -Inf, ymax = Inf, alpha = 0.2, fill = "grey") +
+  
+  #geom_nodepoint(aes(colour = tmrca_node,
+                   #  shape = tmrca_node)) +
+ # scale_shape_manual(values = c("1" = 18),
+                     #guide = 'none') +
+  #scale_colour_manual(values = c("1" = 'red'), 
+                     # guide = 'none') + 
+  #new_scale_colour()+
+  
+  
+  geom_tippoint(aes(fill = collection_regionname,
+                    colour = collection_regionname),
+                shape = 21,
+                size = 0.75, 
+                alpha = 0.9) +
+  scale_fill_manual(values = region_colours) +
+  scale_colour_manual(values = region_colours) +
+  new_scale_fill()+
+  new_scale_colour()+
+  
   
   geom_fruit(geom = geom_tile,
              mapping = aes(fill = PB2),
@@ -433,9 +385,9 @@ plt_1left <- new_tree %>%
             #pwidth = 1.2,
              #offset = 0.03
              ) + 
-  #scale_fill_distiller(palette = 'Blues', direction = -1)
+  #scale_fill_distiller(palette = 'Purples', direction = -1)
   #scale_fill_paletteer_c("ggthemes::Red") +
-  scale_fill_distiller(palette = 'GnBu', direction  = 1) + 
+  scale_fill_distiller(palette = 'Purples', direction  = 1) + 
   
   new_scale_fill()+
   geom_fruit(geom = geom_tile,
@@ -446,7 +398,7 @@ plt_1left <- new_tree %>%
               offset = 0.03
   ) + 
   #scale_fill_paletteer_c("ggthemes::Orange")+
-  scale_fill_distiller(palette = 'GnBu', direction  = 1) + 
+  scale_fill_distiller(palette = 'Purples', direction  = 1) + 
   
   new_scale_fill()+
   geom_fruit(geom = geom_tile,
@@ -457,7 +409,7 @@ plt_1left <- new_tree %>%
              offset = 0.03
   ) + 
   #scale_fill_paletteer_c("ggthemes::Orange-Gold")+
-  scale_fill_distiller(palette = 'GnBu', direction  = 1) + 
+  scale_fill_distiller(palette = 'Purples', direction  = 1) + 
   
   new_scale_fill()+
   geom_fruit(geom = geom_tile,
@@ -468,7 +420,7 @@ plt_1left <- new_tree %>%
              offset = 0.03
   ) + 
   #scale_fill_paletteer_c("ggthemes::Green-Gold")+
-  scale_fill_distiller(palette = 'GnBu', direction  = 1) + 
+  scale_fill_distiller(palette = 'Purples', direction  = 1) + 
   
   new_scale_fill()+
   geom_fruit(geom = geom_tile,
@@ -479,7 +431,7 @@ plt_1left <- new_tree %>%
              offset = 0.03
   ) + 
   #scale_fill_paletteer_c("ggthemes::Green")+
-  scale_fill_distiller(palette = 'GnBu', direction  = 1) + 
+  scale_fill_distiller(palette = 'Purples', direction  = 1) + 
   
   new_scale_fill()+
   geom_fruit(geom = geom_tile,
@@ -490,7 +442,7 @@ plt_1left <- new_tree %>%
              offset = 0.03
   ) + 
   #scale_fill_paletteer_c("ggthemes::Blue-Green Sequential")+
-  scale_fill_distiller(palette = 'GnBu', direction  = 1) + 
+  scale_fill_distiller(palette = 'Purples', direction  = 1) + 
   new_scale_fill()+
   geom_fruit(geom = geom_tile,
              mapping = aes(fill = N),
@@ -500,7 +452,7 @@ plt_1left <- new_tree %>%
              offset = 0.03
   ) + 
   #scale_fill_paletteer_c("ggthemes::Blue")+
-  scale_fill_distiller(palette = 'GnBu', direction  = 1) + 
+  scale_fill_distiller(palette = 'Purples', direction  = 1) + 
   
   new_scale_fill()+
   geom_fruit(geom = geom_tile,
@@ -511,7 +463,7 @@ plt_1left <- new_tree %>%
              offset = 0.03
   ) + 
   #scale_fill_paletteer_c("ggthemes::Purple")+
-  scale_fill_distiller(palette = 'GnBu', direction  = 1) + 
+  scale_fill_distiller(palette = 'Purples', direction  = 1) + 
   theme(legend.position = 'none' )
 
 
@@ -533,13 +485,14 @@ combineLegend <- cowplot::plot_grid(
 
 
 ###### COMBINE
-plt_1rightplots <- align_plots(plt_1a, plt_1c, plt_1d, align = 'h', axis = 'r')
+plt_1rightplots <- align_plots(plt_1a, plt_1c, plt_1d, plt_1e, align = 'h', axis = 'r')
 
 plt_1rightpanel <- plot_grid(
   plt_1rightplots[[2]],  
   plt_1rightplots[[3]], 
-  combineLegend,
-  labels = c( 'C', 'D', ''), 
+  #combineLegend,
+  plt_1rightplots[[4]], 
+  labels = c( 'C', 'D', 'E'), 
   nrow = 3,
   label_size = 10)
 
@@ -557,7 +510,7 @@ plt_1 <- plot_grid(plt_1rightplots[[1]], plt_1lower,
 
 ############################################## WRITE ###############################################
 
-ggsave('~/Downloads/figure1_new.jpeg', height = 30, width = 25, units = 'cm', dpi = 360)
+ggsave('~/Downloads/flu_plots/figure1.jpeg', height = 30, width = 25, units = 'cm', dpi = 360)
 
 
 
