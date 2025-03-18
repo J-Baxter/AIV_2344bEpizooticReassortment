@@ -1,3 +1,4 @@
+
 hpai_cases <- read_csv('~/Downloads/overview-raw-data_202502241440.csv') %>%
   mutate(region = str_to_lower(Region),
          sub_region = str_to_lower(Subregion),
@@ -29,6 +30,7 @@ woah_hpai <- read_csv('~/Downloads/Quantitative data 2025-02-24.csv') %>%
          Semester,
          `World region`,
          Country,
+         `Animal Category`,
          `Serotype/Subtype/Genotype`,
          `New outbreaks`, Susceptible, `Measuring units`, Cases) %>%
   mutate(across(!Year, ~ case_when(grepl('^-$', .x) ~ NA_character_,
@@ -55,8 +57,10 @@ woah_hpai <- read_csv('~/Downloads/Quantitative data 2025-02-24.csv') %>%
                           Country == "Reunion" ~ 'Madagascar',                                      
                           .default = Country))%>%
   left_join(ref, by = join_by(Country == name)) %>%
+  mutate(animal_category  = str_to_lower(`Animal Category`)) %>%
   mutate(across(any_of(c('New outbreaks', 'Susceptible', 'Cases')), ~as.numeric(.x))) %>%
-  summarise(n_cases = sum(Cases, na.rm = TRUE), .by = c(date_start, continent)) %>%
+  drop_na(Cases) %>%
+  summarise(n_cases = sum(Cases, na.rm = TRUE), .by = c(date_start, continent, animal_category)) %>%
   rename(collection_regionname = continent) %>%
   mutate(collection_regionname = str_to_lower(collection_regionname)) %>%
   mutate(collection_regionname = case_when(grepl('europe', collection_regionname) ~ 'europe',
@@ -124,13 +128,13 @@ plt_1b <-  ggplot() +
  # geom_line(aes(x = collection_datemonth, y = n_cases, colour = collection_regionname)) + 
  
   
-  geom_bar(data = monthly_h5nx_cases, 
-           alpha = 0.7,
-           aes(x = collection_datemonth, y = n_cases*5000, colour  = collection_regionname, fill = collection_regionname), stat = 'identity') + 
+ # geom_bar(data = monthly_h5nx_cases, 
+           #alpha = 0.7,
+           #aes(x = collection_datemonth, y = n_cases*3000, colour  = collection_regionname, fill = collection_regionname), stat = 'identity') + 
   geom_line(data = woah_hpai, 
             aes(x = ymd(date_start), y = n_cases,  colour  = collection_regionname)) + 
   scale_x_date(limits = as_date(c('2018-05-01', '2024-05-01')), breaks = '6 month', date_labels = "%Y %b", 'Date') + 
-  scale_y_continuous( expand = c(0,0), sec.axis = sec_axis(transform = ~ ./5000), 'WOAH Cases (N)') + 
+  scale_y_continuous( expand = c(0,0), sec.axis = sec_axis(transform = ~ ./3000), 'WOAH Cases (N)') + 
   
   scale_fill_manual(values = region_colours) +
   scale_colour_manual(values = region_colours) +
