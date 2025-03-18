@@ -223,7 +223,7 @@ plt_1c <-ggplot(sequences_host_month) +
         legend.justification.inside = c(0, 1),
         legend.text = element_text(size = 8),
         legend.title = element_text(size = 10),
-        legend.position.inside = c(0.01,1),
+        legend.position.inside = c(0.01,1.05),
         legend.background = element_blank())
 
 
@@ -273,7 +273,7 @@ plt_1d <- ggplot(sequences_subtype_month) +
         legend.text = element_text(size = 8),
         legend.title = element_text(size = 10),
         legend.justification.inside = c(0, 1),
-        legend.position.inside = c(0.01,1),
+        legend.position.inside = c(0.01,1.05),
         legend.background = element_blank())
 
 
@@ -302,7 +302,7 @@ drop_na(n_reassortants) %>%
         legend.justification.inside = c(0, 1),
         legend.text = element_text(size = 8),
         legend.title = element_text(size = 10),
-        legend.position.inside = c(0.01,1),
+        legend.position.inside = c(0.01,1.05),
         legend.background = element_blank())
 
 
@@ -543,7 +543,7 @@ plt_1 <- plot_grid(plt_1rightplots[[1]], plt_1lower,
                    label_size = 10,
                    nrow = 2)
 
-
+plt_1
 ############################################## WRITE ###############################################
 
 ggsave('~/Downloads/flu_plots/figure1.jpeg', height = 30, width = 25, units = 'cm', dpi = 360)
