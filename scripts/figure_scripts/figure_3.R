@@ -99,7 +99,7 @@ FormatPhyloGeo <- function(mcc_file, posterior_file){
   # Format Nodes
   nodes_sf <- tree_tbl %>%
     dplyr::select(node,height_median, location1, location2, host_simplifiedhost, label) %>%
-    mutate(height_median= as.numeric(height_median))
+    mutate(height_median= as.numeric(height_median)) %>%
     replace_na(list(height_median = 0)) %>%
     mutate(year = most_recent_date - height_median) %>%
     
@@ -172,7 +172,7 @@ PlotPhyloGeo <- function(phylogeo_list){
     geom_sf(data = polygons_sf, 
             aes(fill = year), 
             lwd = 0, 
-            alpha = 0.08) + 
+            alpha = 0.04) + 
     
     # Plot Branches
     geom_sf(data = edges_sf,
@@ -183,7 +183,8 @@ PlotPhyloGeo <- function(phylogeo_list){
             size = 1.5, 
             aes(fill = year, colour = year, shape = is.na(label)))+
     
-    scale_shape_manual(values = c(19,1)) + 
+    scale_shape_manual(values = c(19,1),
+    ) + 
     
     # Set graphical scales - must be fixed
     scale_fill_viridis_c('Year',
@@ -198,15 +199,37 @@ PlotPhyloGeo <- function(phylogeo_list){
                            direction = -1,
                            option = 'C')+
     
-    coord_sf(ylim = c(-60, 75),
-             xlim = c(-180, 180),
+    coord_sf(ylim = c(-60, 80),
+             xlim = c(-185, 185),
              expand = TRUE) +
     
     scale_x_continuous(expand = c(0,0)) + 
     scale_y_continuous(expand = c(0,0)) +
     
+    guides(colour = guide_colourbar(
+      theme = theme(
+        legend.key.height  = unit(0.75, "lines"),
+        legend.key.width = unit(10, "lines")),
+      #title.position = 'left',
+      title.vjust = 1,
+      position = 'bottom'), 
+      
+      fill = guide_colourbar(
+        theme = theme(
+          legend.key.height  = unit(0.75, "lines"),
+          legend.key.width = unit(10, "lines")),
+        title.vjust =1,
+        #title.position = 'left',
+        position = 'bottom'), 
+      
+      shape = 'none') +
+    
     theme_void() + 
-    theme(legend.position = 'none' ) 
+    theme(plot.margin=grid::unit(c(0,0,0,0), "mm"),
+          legend.text = element_text(size = 8),
+          legend.position = 'none', 
+          panel.spacing = unit(2, "lines"), 
+          strip.background = element_blank()) 
   
   return(plot)
 }
@@ -250,8 +273,8 @@ formatted_phylogeos <- mapply(FormatPhyloGeo,
                               SIMPLIFY = FALSE)
 
 test <- FormatPhyloGeo(mcc_treefiles[3], posterior_treefiles[3])
-lapply(formatted_phylogeos, PlotPhyloGeo)
-
+phylogeo <- lapply(formatted_phylogeos, PlotPhyloGeo)
+#phylogeo[[1]]
 #north_america_ha <- read.beast('./2024Aug18/region_subsampled_outputs/traits_mcc/ha_northamerica_subsampled_traits_mcc.tree')
 #mooflu_data <- as_tibble(north_america_ha) %>% 
  # select(label, height, host_simplifiedhost, location1, location2) %>%  mutate(across(c(location1, location2, height), .fns = ~as.numeric(.x)))
@@ -264,36 +287,32 @@ lapply(formatted_phylogeos, PlotPhyloGeo)
 
 # align plots vertically (so that each row corresponds to a reassortant)
 
-plot_legend <- get_plot_component(phylogeo[[4]]+theme(legend.position = 'bottom'), 'guide-box-bottom', return_all = TRUE)
+plot_legend <- get_plot_component(phylogeo[[4]] + theme(legend.position = 'bottom') , 'guide-box-bottom', return_all = TRUE)
 
 main <- cowplot::plot_grid(
-  ggplot() + theme_void(),ggplot() + theme_void(),
-  phylogeo[[5]],
-  phylogeo[[4]], 
+  ncol = 2,
+  phylogeo[[3]],
   phylogeo[[2]], 
-  phylogeo[[1]], 
   phylogeo[[6]], 
-  phylogeo[[3]], 
-  nrow = 7,
-  rel_heights = c(0.1,1,1,1,1,1,1),
-          align = 'vh',
-          axis = 'rbt',
-          labels = c('', '', 
-                     "H5N8/2019/R7",'',
-                     "H5N1/2020/R1", '', 
-                     "H5N1/2021/R1" , '',
-                     "H5N1/2021/R3",'',
-                     "H5N1/2022/R7",'',
-                     "H5N1/2022/R12" , '' ),
-          vjust = -0.2)
+  phylogeo[[4]], 
+  phylogeo[[1]], 
+  phylogeo[[5]], 
+  labels = c("H5N8/2019/R7",
+             "H5N1/2020/R1", 
+             "H5N1/2021/R1" , 
+             "H5N1/2021/R3",
+             "H5N1/2022/R7",
+             "H5N1/2022/R12"  ),
+  label_size = 8)
+
 
 cowplot::plot_grid(main,
                    plot_legend, 
                    rel_heights = c(1,0.1),
                    ncol = 1)
 
-ggsave('~/Downloads/figure2.jpeg',
-       height = 30,
+ggsave('~/Downloads/flu_plots/figure2.jpeg',
+       height = 20,
        width = 25,
        units = 'cm',
        dpi = 360
