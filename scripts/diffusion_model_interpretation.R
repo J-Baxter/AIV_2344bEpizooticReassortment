@@ -35,7 +35,7 @@ scientific_10 <- function(x) {
   }
 
 ############################################## DATA ################################################
-diffusionmodel1_fit <- readRDS('./saved_models/diffusion_model.rds')
+diffusionmodel1_fit <- readRDS('./saved_models/diffusion_model_2.rds')
 diffusion_data <- read_csv('./saved_models/diffusion_model.csv')
 
 
@@ -283,13 +283,17 @@ continent_emm <- diffusionmodel1_fit %>%
           #dpar = "mu",
           epred = TRUE)
 
+continent_prior <- emmeans(unupdate(diffusionmodel1_fit),
+                ~ collection_regionname,
+                #dpar = "mu",
+                epred = TRUE)
 
 diffusionmodel_rg <- ref_grid(diffusionmodel)
 diffusionmodel_prior_rg <- ref_grid(diffusionmodel1_priors)
 
 bayesfactor_parameters(diffusionmodel2_fit, verbose = FALSE)
 
-bayestestR::bayesfactor_parameters(pairs(continent_emm), prior = pairs(diffusionmodel1_priors))
+bayestestR::bayesfactor_parameters(pairs(continent_emm), prior = pairs(continent_prior))
 
 
 
@@ -299,6 +303,9 @@ model = unupdate(diffusionmodel1_fit)
 bayesfactor_parameters(group_diff)
 
 estimate_contrasts(diffusionmodel1_fit, 
+                   contrast = c('collection_regionname'),
+                   comparison = 'pairwise',
+                   backend = 'emmeans',
                    test = "bf")
 
 plt_5h <-diffusionmodel1_fit %>%

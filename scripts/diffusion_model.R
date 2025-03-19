@@ -22,6 +22,7 @@ memory.limit(30000000)
 library(tidyverse)
 library(magrittr)
 library(brms)
+library(rstan)
 library(broom)
 library(broom.mixed)
 library(tidybayes)
@@ -33,7 +34,7 @@ library(ggmcmc)
 library(performance)
 
 # User functions
-source('./scripts/figure_scripts/plot_settings.R')
+#source('./scripts/figure_scripts/plot_settings.R')
 
 ############################################## DATA ################################################
 combined_data <- read_csv('./2024Aug18/treedata_extractions/2024-09-20_combined_data.csv')
@@ -95,12 +96,13 @@ diffusion_data <- combined_data %>%
   select(weighted_diff_coeff, 
          median_anseriformes_wild,
          median_charadriiformes_wild,
+         cluster_profile,
          segment, 
          collection_regionname, 
          collection_year,
          collection_season) %>%
   
-  filter(weighted_diff_coeff > 0)
+  filter(weighted_diff_coeff > 0) 
 
 
 
@@ -114,16 +116,17 @@ diffusion_data <- combined_data %>%
                        #   (1|segment),
                        # hu ~ 1 + collection_regionname +  season +(1|segment ))
 
-diffusion_formula <- bf(weighted_diff_coeff|trunc(lb=0) ~ 1 + median_anseriformes_wild +  median_charadriiformes_wild + collection_regionname + (1|segment) + (collection_regionname|collection_year/collection_season))
-diffusion_formula <- bf(weighted_diff_coeff|trunc(lb=0) ~ 1 + median_anseriformes_wild +  median_charadriiformes_wild + collection_regionname + (1|segment) )
+#diffusion_formula <- bf(weighted_diff_coeff|trunc(lb=0) ~ 1 + median_anseriformes_wild +  median_charadriiformes_wild + collection_regionname + (1|segment) + (collection_regionname|collection_year/collection_season))
+diffusion_formula <- bf(weighted_diff_coeff ~ 0 + median_anseriformes_wild +  median_charadriiformes_wild + collection_regionname + collection_season +  (1|segment) + (1|cluster_profile) )
+diffusion_formula <- bf(weighted_diff_coeff ~ 0 + median_anseriformes_wild +  median_charadriiformes_wild + collection_regionname + collection_season +  (1|segment))
 
 
 # Define Priors
 diffusionmodel1_priors <- get_prior(diffusion_formula,
                                     data = diffusion_data,
-                                    family = lognormal()) 
+                                    family = Gamma(link = "log")) 
 
-diffusionmodel1_priors$prior[c(1,12)] <- "normal(0,5)"
+diffusionmodel1_priors$prior[1:8] <- "normal(0,5)"
 
 #diffusionmodel1_priors$prior[9] <- "student_t(3, 0, 3)"
 #diffusionmodel1_priors
@@ -159,13 +162,13 @@ diffusionmodel1_prior <- brm(
 
 
 # Fit model to data
-diffusionmodel1_fit <- brm(
+diffusionmodel1_fit_gamma <- brm(
   diffusion_formula,
   data = diffusion_data,
-  #prior = diffusionmodel1_priors,
-  family = lognormal(),
-  chains = 2,
-  cores = 2, 
+  prior = diffusionmodel1_priors,
+  family = Gamma(link = "log"),
+  chains = CHAINS,
+  cores = CORES, 
   threads = 2, 
   backend = "cmdstanr",
   iter = ITER,
@@ -177,8 +180,9 @@ diffusionmodel1_fit <- brm(
 # Post-fitting checks (including inspection of ESS, Rhat and posterior predictive)
 tidy_diffusionmodel1 <- tidy(diffusionmodel1_fit)
 posteriorpredictive <-pp_check(diffusionmodel1_fit, ndraws = 500)
+performance(diffusionmodel1_fit)
 
-
+loo_compare(diffusionmodel1_fit, diffusionmodel2_fit)
 # Misc evaluations
 # performance(diffusionmodel1_fit) # tibble output of model metrics including R2, ELPD, LOOIC, RMSE
 plot(diffusionmodel1_fit) # default output plot of brms showing posterior distributions of
@@ -187,7 +191,7 @@ prior_summary(diffusionmodel1_fit) #obtain dataframe of priors used in model.
 mcmc_diffusion <- ggs(diffusionmodel1_fit) # Warning message In custom.sort(D$Parameter) : NAs introduced by coercion
 
 
-saveRDS(diffusionmodel1_fit, './saved_models/diffusion_model.rds')
+saveRDS(diffusionmodel1_fit, './saved_models/diffusion_model_2.rds')
 write_csv(diffusion_data, './saved_models/diffusion_model.csv')
 ############################################## END #################################################
 ####################################################################################################
