@@ -43,6 +43,8 @@ diffusion_data <- read_csv('./saved_models/diffusion_model.csv')
 mcmc_diffusion <- ggs(diffusionmodel1_fit) # Warning message In custom.sort(D$Parameter) : NAs introduced by coercion
 posteriorpredictive <-pp_check(diffusionmodel1_fit, ndraws = 500)
 
+## DATA ##
+
 # Plot Diffusion Coefficient Distribution
 plt_5a <- diffusion_data %>%
   ggplot() +
@@ -56,8 +58,8 @@ plt_5a <- diffusion_data %>%
   scale_colour_brewer(palette = 'Accent', 'Is Zero') +
   #scale_x_continuous('Log1p Weighted Diffusion Coefficient' , expand = c(0.01,0.01)) +
   scale_x_continuous(expression(paste('Weighted Diffusion Coefficient (',Km**2~year**-1, ')' )),
-                     breaks = log1p(c(0, 10^(seq(from = 2, to = 10, by = 4)))),
-                     labels = expression(0,  1%*%10^2,  1%*%10^6, 1%*%10^10),
+                     breaks = log1p(c(0, 10^(seq(from = 1, to = 10, by = 1)))),
+                     labels = expression(0, 1%*%10^1, 1%*%10^2, 1%*%10^3, 1%*%10^4,1%*%10^5,1%*%10^6,1%*%10^7,1%*%10^8, 1%*%10^9,1%*%10^10),
                      limits = c(-0.01, log1p(10^10.5)),
                      expand = c(0.02,0.02))+
   
@@ -109,12 +111,14 @@ plt_5c  <- diffusion_data %>%
 
 ####################################################################################################
 # Conditional prediction draws  + Conditional marginal means stratified by continent
+# Conditional is fine since the random effects are not doing that much at all
+
 averages <-  diffusionmodel1_fit %>%
   emmeans(~ collection_regionname,
           var = "weighted_diff_coeff",
           at = list(collection_regionname = unique(diffusion_data$collection_regionname)),
           # epred = TRUE, 
-          dpar = "mu",
+          #dpar = "mu",
           re_formula = NA , 
           regrid = "response",
           #tran  = "log", 
@@ -232,8 +236,7 @@ plt_5g <- bind_rows(diffusionmodel1_fit %>%
                       emtrends(~ median_anseriformes_wild,
                                var = "median_anseriformes_wild",
                                at = list(median_anseriformes_wild = c(0.25 , 0.5 , 1)),
-                               epred = TRUE, 
-                               dpar = "mu") %>% 
+                               epred = TRUE) %>% 
                       gather_emmeans_draws() %>%
                       mutate(var = 'median_anseriformes_wild') %>%
                       rename(var_change = median_anseriformes_wild),
@@ -242,8 +245,7 @@ plt_5g <- bind_rows(diffusionmodel1_fit %>%
                       emtrends(~ median_charadriiformes_wild,
                                var = "median_charadriiformes_wild",
                                at = list(median_charadriiformes_wild = c(0.25 , 0.5 , 1)),
-                               epred = TRUE, 
-                               dpar = "mu") %>% 
+                               epred = TRUE) %>% 
                       gather_emmeans_draws() %>%
                       mutate(var = 'median_charadriiformes_wild') %>%
                       rename(var_change = median_charadriiformes_wild)) %>%
@@ -278,11 +280,94 @@ plt_5g <- bind_rows(diffusionmodel1_fit %>%
 
 # Marginal effect of continent on MU
 # Results are averaged over the levels of: season
+diffusionmodel1_fit %>%
+  emmeans(~ collection_season,
+          #dpar = "mu",
+          epred = TRUE) %>% 
+  contrast(method = "revpairwise") %>% 
+  gather_emmeans_draws() %>%
+  filter(grepl('breeding', contrast)) %>%
+  mutate(contrast = gsub(' - .*', '' , contrast)) %>%
+  ggplot(aes(x  = .value,
+             y = contrast,
+             slab_colour = as.factor(contrast),
+             slab_fill = as.factor(as.factor(contrast)))) +
+  geom_vline(aes(xintercept = 0), linetype = 'dashed')  +
+  stat_halfeye(slab_alpha = 0.7,
+               p_limits = c(0.01, 0.99),
+               point_interval = "median_hdi",
+               linewidth = 1.5,
+               .width =  0.95)+
+  scale_fill_manual(values = region_colours, aesthetics = 'slab_fill') +
+  scale_colour_manual(values = region_colours, aesthetics = 'slab_colour') + 
+  scale_x_continuous(expression(paste('Change in Weighted Diffusion Coefficient (',Km**2~year**-1, ')' )),
+                     breaks = seq(from = -2*10**6, to = 5*10**6, by = 1*10**6),
+                     labels = scientific_10,
+                     expand = c(0.02,0.02))+
+  scale_y_discrete('Season', 
+                   labels = function(x) str_to_title(x) %>% str_wrap(., width = 10)) + 
+  global_theme
+
+
+
+diffusionmodel1_fit %>%
+  emmeans(~ collection_season,
+          #dpar = "mu",
+          epred = TRUE) %>% 
+  contrast(method = "pairwise") 
+
+season_emm <- diffusionmodel1_fit %>%
+  emmeans(~ collection_season
+          #dpar = "mu"
+  )
+
+(continent_contrasts <- pairs(season_emm))
+rope(continent_contrasts)
+
+# Expectation of the posterior prediction
+# averaged over collection_season, for mean values of anseriformes and charadriiformes persistence
+# Exclude 
+continent_epp <- diffusionmodel1_fit %>%
+  emmeans(~ collection_regionname,
+          re_formula = NA , 
+          epred = TRUE,
+          at = list(median_anseriformes_wild = 0.6224637,
+                    median_charadriiformes_wild = 0.08553386))
+
+continent_epp
+contrast(continent_epp, method = "revpairwise")
+
+
+
+
+
+diffusionmodel1_fit %>%
+  emmeans(~ collection_regionname,
+                # epred = TRUE, 
+                  #dpar = "mu",
+                  re_formula = NA , 
+                regrid = "response",
+                tran  = "log", 
+                type = "response",
+                allow_new_levels = TRUE)
+
 continent_emm <- diffusionmodel1_fit %>%
+  emmeans(~ collection_regionname
+          #dpar = "mu"
+          )
+
+(continent_contrasts <- pairs(continent_emm))
+rope(continent_contrasts)
+
+diffusionmodel1_fit %>%
   emmeans(~ collection_regionname,
           #dpar = "mu",
-          epred = TRUE)
+          epred = TRUE) %>% 
+  contrast(method = "pairwise") 
 
+
+bayestestR::bayesfactor_parameters(pairs(cbpp.rg), prior = pairs(cbpp_prior.rg))
+summary(pairs(continent_emm), type = "response", delta = log(2))
 continent_prior <- emmeans(unupdate(diffusionmodel1_fit),
                 ~ collection_regionname,
                 #dpar = "mu",
@@ -297,15 +382,28 @@ bayestestR::bayesfactor_parameters(pairs(continent_emm), prior = pairs(continent
 
 
 
+diffusionmodel1_prior <- update(diffusionmodel1_priors, prior_PD = TRUE)
+diffusionmodel1_rg <- ref_grid(diffusionmodel1_fit)
+diffusionmodel1_prior_rg <- ref_grid(diffusionmodel1_prior)
+
+bayestestR::p_rope(pairs(cbpp.rg), range = c(-0.25, 0.25))
+continent_emm <- diffusionmodel1_fit %>%
+  emmeans(~ collection_regionname,
+          #dpar = "mu",
+          epred = TRUE)
+
+
+bayesfactor_parameters(diffusionmodel1_fit)
 group_diff <- emmeans(diffusionmodel1_fit, pairwise ~ collection_regionname, data = diffusion_data)
+bayesfactor_parameters(group_diff, prior = unupdate(diffusionmodel1_fit))
+
 model = unupdate(diffusionmodel1_fit)
 # pass the original model via prior
 bayesfactor_parameters(group_diff)
 
-estimate_contrasts(diffusionmodel1_fit, 
+library(estimate_contrasts(diffusionmodel1_fit, 
                    contrast = c('collection_regionname'),
                    comparison = 'pairwise',
-                   backend = 'emmeans',
                    test = "bf")
 
 plt_5h <-diffusionmodel1_fit %>%
@@ -322,7 +420,7 @@ plt_5h <-diffusionmodel1_fit %>%
              slab_fill = as.factor(as.factor(contrast)))) +
   geom_vline(aes(xintercept = 0), linetype = 'dashed')  +
   stat_halfeye(slab_alpha = 0.7,
-               p_limits = c(0.001, 0.999),
+               p_limits = c(0.01, 0.99),
                point_interval = "median_hdi",
                linewidth = 1.5,
                .width =  0.95)+
