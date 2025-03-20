@@ -102,7 +102,7 @@ diffusion_data <- combined_data %>%
          collection_year,
          collection_season) %>%
   
-  filter(weighted_diff_coeff > 0) 
+  filter(weighted_diff_coeff > 0)
 
 
 
@@ -117,8 +117,8 @@ diffusion_data <- combined_data %>%
                        # hu ~ 1 + collection_regionname +  season +(1|segment ))
 
 #diffusion_formula <- bf(weighted_diff_coeff|trunc(lb=0) ~ 1 + median_anseriformes_wild +  median_charadriiformes_wild + collection_regionname + (1|segment) + (collection_regionname|collection_year/collection_season))
-diffusion_formula <- bf(weighted_diff_coeff ~ 0 + median_anseriformes_wild +  median_charadriiformes_wild + collection_regionname + collection_season +  (1|segment) + (1|cluster_profile) )
-diffusion_formula <- bf(weighted_diff_coeff ~ 0 + median_anseriformes_wild +  median_charadriiformes_wild + collection_regionname + collection_season +  (1|segment))
+diffusion_formula <- bf(weighted_diff_coeff ~ 0 + median_anseriformes_wild +  median_charadriiformes_wild + collection_regionname + collection_season +  (1|segment) + (1|cluster_profile))
+#diffusion_formula <- bf(weighted_diff_coeff ~ 0 + median_anseriformes_wild +  median_charadriiformes_wild + collection_regionname + collection_season +  (1|segment))
 
 
 # Define Priors
@@ -127,6 +127,7 @@ diffusionmodel1_priors <- get_prior(diffusion_formula,
                                     family = Gamma(link = "log")) 
 
 diffusionmodel1_priors$prior[1:8] <- "normal(0,5)"
+
 
 #diffusionmodel1_priors$prior[9] <- "student_t(3, 0, 3)"
 #diffusionmodel1_priors

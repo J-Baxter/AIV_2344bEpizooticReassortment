@@ -393,7 +393,7 @@ continent_emm <- diffusionmodel1_fit %>%
           epred = TRUE)
 
 
-bayesfactor_parameters(diffusionmodel1_fit)
+bayesfactor_parameters(diffusionmodel1_fit_gamma)
 group_diff <- emmeans(diffusionmodel1_fit, pairwise ~ collection_regionname, data = diffusion_data)
 bayesfactor_parameters(group_diff, prior = unupdate(diffusionmodel1_fit))
 
