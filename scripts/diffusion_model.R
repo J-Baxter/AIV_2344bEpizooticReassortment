@@ -29,7 +29,6 @@ library(tidybayes)
 library(bayesplot)
 library(emmeans)
 library(marginaleffects)
-library(magrittr)
 library(ggmcmc)
 library(performance)
 

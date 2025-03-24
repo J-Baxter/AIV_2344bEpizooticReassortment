@@ -377,7 +377,7 @@ ggplot(clusterings, aes(k, tot.withinss)) +
 ####################################### PHYLO + SUMMARY DATA PERMUTATIONS #######################################
 # data points used for clustering and cluster_profiles
 labelled_phylo <- assignments %>%
-  filter(k == 4) %>%
+  filter(k == 3) %>%
   select(-c( kclust,
             tidied,
             glanced,
