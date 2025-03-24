@@ -48,7 +48,7 @@ summary_data <- read_csv('./2024Aug18/treedata_extractions/summary_reassortant_m
 diffusion_data <- combined_data %>%
   
   # select variables of interes
-  select(
+  dplyr::select(
     segment,
     cluster_profile,
     TMRCA,
@@ -79,7 +79,7 @@ diffusion_data <- combined_data %>%
   filter(!grepl('\\+', host_simplifiedhost)) %>%
   
   # join host richness
-  left_join(summary_data %>% select(c(cluster_profile, 
+  left_join(summary_data %>% dplyr::select(c(cluster_profile, 
                                       host_richness)),
             by = join_by(cluster_profile)) %>%
   
@@ -92,14 +92,24 @@ diffusion_data <- combined_data %>%
                             collection_month %in% c(9,10,11)  ~ 'migrating_autumn' # Rename to autumn migration
          )) %>%
   
-  select(weighted_diff_coeff, 
+  # format persistence times
+  
+  # binary
+  mutate(in_charadriiformes = ifelse(median_charadriiformes_wild >0, '1', '0'),
+         in_anseriformes = ifelse(median_anseriformes_wild >0, '1', '0'),
+         median_anseriformes_wild = log1p(median_anseriformes_wild),
+         median_charadriiformes_wild = log1p(median_charadriiformes_wild)) %>%
+  
+  dplyr::select(weighted_diff_coeff, 
+                in_charadriiformes,in_anseriformes,
          median_anseriformes_wild,
          median_charadriiformes_wild,
          cluster_profile,
          segment, 
          collection_regionname, 
          collection_year,
-         collection_season) %>%
+         collection_season,
+         group2) %>%
   
   filter(weighted_diff_coeff > 0)
 
@@ -116,7 +126,8 @@ diffusion_data <- combined_data %>%
                        # hu ~ 1 + collection_regionname +  season +(1|segment ))
 
 #diffusion_formula <- bf(weighted_diff_coeff|trunc(lb=0) ~ 1 + median_anseriformes_wild +  median_charadriiformes_wild + collection_regionname + (1|segment) + (collection_regionname|collection_year/collection_season))
-diffusion_formula <- bf(weighted_diff_coeff ~ 0 + median_anseriformes_wild +  median_charadriiformes_wild + collection_regionname + collection_season +  (1|segment) + (1|cluster_profile))
+diffusion_formula <- bf(weighted_diff_coeff ~ 0 +collection_regionname + median_anseriformes_wild +in_anseriformes+  in_charadriiformes+median_charadriiformes_wild +  collection_season + (1|segment) ,
+                        shape ~ 0 +  collection_regionname + (1 | segment))
 #diffusion_formula <- bf(weighted_diff_coeff ~ 0 + median_anseriformes_wild +  median_charadriiformes_wild + collection_regionname + collection_season +  (1|segment))
 
 
@@ -125,7 +136,8 @@ diffusionmodel1_priors <- get_prior(diffusion_formula,
                                     data = diffusion_data,
                                     family = Gamma(link = "log")) 
 
-diffusionmodel1_priors$prior[1:8] <- "normal(0,5)"
+diffusionmodel1_priors$prior[1:10] <- "normal(0,5)"
+diffusionmodel1_priors$prior[14:18] <- "normal(0,5)"
 
 
 #diffusionmodel1_priors$prior[9] <- "student_t(3, 0, 3)"
@@ -162,7 +174,7 @@ diffusionmodel1_prior <- brm(
 
 
 # Fit model to data
-diffusionmodel1_fit_gamma <- brm(
+diffusionmodel1_fit_gamma_6<- brm(
   diffusion_formula,
   data = diffusion_data,
   prior = diffusionmodel1_priors,
