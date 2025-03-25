@@ -35,428 +35,62 @@ scientific_10 <- function(x) {
   }
 
 ############################################## DATA ################################################
-diffusionmodel1_fit <- readRDS('./saved_models/diffusion_model_2.rds')
+diffusionmodel_fit <- readRDS('./saved_models/diffusion_model_2.rds')
 diffusion_data <- read_csv('./saved_models/diffusion_model.csv')
 
 
 ############################################## MAIN ################################################
-mcmc_diffusion <- ggs(diffusionmodel1_fit) # Warning message In custom.sort(D$Parameter) : NAs introduced by coercion
-posteriorpredictive <-pp_check(diffusionmodel1_fit, ndraws = 500)
-
-## DATA ##
-
-# Plot Diffusion Coefficient Distribution
-plt_5a <- diffusion_data %>%
-  ggplot() +
-  geom_histogram(aes(x = log1p(weighted_diff_coeff), 
-                     fill = weighted_diff_coeff>0,
-                     colour = weighted_diff_coeff>0,
-                     y = after_stat(density)), 
-                 binwidth = 0.4,
-                 alpha = 0.7) +
-  scale_fill_brewer(palette = 'Accent', 'Is Zero') +
-  scale_colour_brewer(palette = 'Accent', 'Is Zero') +
-  #scale_x_continuous('Log1p Weighted Diffusion Coefficient' , expand = c(0.01,0.01)) +
-  scale_x_continuous(expression(paste('Weighted Diffusion Coefficient (',Km**2~year**-1, ')' )),
-                     breaks = log1p(c(0, 10^(seq(from = 1, to = 10, by = 1)))),
-                     labels = expression(0, 1%*%10^1, 1%*%10^2, 1%*%10^3, 1%*%10^4,1%*%10^5,1%*%10^6,1%*%10^7,1%*%10^8, 1%*%10^9,1%*%10^10),
-                     limits = c(-0.01, log1p(10^10.5)),
-                     expand = c(0.02,0.02))+
-  
-  scale_y_continuous('Probability Density',expand = c(0,0)) + 
-  global_theme + 
-  theme(legend.position = 'none')
-
-scale_x_continuous(expression(paste('Predicted Weighted Diffusion Coefficient (',Km**2~year**-1, ')' )),
-                   breaks = log1p(c(0, 10^(seq(from = 2, to = 10, by = 4)))),
-                   labels = expression(0,  1%*%10^2,  1%*%10^6, 1%*%10^10),
-                   #limits = c(-0.01, log1p(10^9)),
-                   expand = c(0.02,0.02))
-
-# Plot Persistence distribuions
-plt_5b <- diffusion_data %>%
-  ggplot() +
-  geom_histogram(aes(x = median_anseriformes_wild,
-                     y = after_stat(density)), 
-                 binwidth = 0.2,
-                 fill = host_colours['anseriformes-wild'],
-                 colour = host_colours['anseriformes-wild'],
-                 alpha = 0.7) +
-  scale_x_continuous('Persistence in wild Anseriformes', 
-                     expand = c(0.02,0.02), 
-                     breaks = seq(from = 0, to = 10, by = 2)) +
-  scale_y_continuous('Probability Density',expand = c(0,0)) + 
-  coord_cartesian(xlim = c(0, 10))  +
-  global_theme + 
-  theme(legend.position = 'none')
-
-plt_5c  <- diffusion_data %>%
-  ggplot() +
-  geom_histogram(aes(x = median_charadriiformes_wild,
-                     y = after_stat(density)),
-                 binwidth = 0.2,
-                 fill = host_colours['charadriiformes-wild'],
-                 colour = host_colours['charadriiformes-wild'],
-                 alpha = 0.7) +
-  scale_x_continuous('Persistence in wild Charadriiformes', 
-                     expand = c(0.02,0.02), 
-                     breaks = seq(from = 0, to = 6, by = 2)) +
-  scale_y_continuous('Probability Density',expand = c(0,0)) + 
-  coord_cartesian(xlim = c(0, 6))  +
-  global_theme + 
-  theme(legend.position = 'none')
-
-
-
-
-####################################################################################################
-# Conditional prediction draws  + Conditional marginal means stratified by continent
-# Conditional is fine since the random effects are not doing that much at all
-
-averages <-  diffusionmodel1_fit %>%
-  emmeans(~ collection_regionname,
-          var = "weighted_diff_coeff",
-          at = list(collection_regionname = unique(diffusion_data$collection_regionname)),
-          # epred = TRUE, 
-          #dpar = "mu",
-          re_formula = NA , 
-          regrid = "response",
-          #tran  = "log", 
-          type = "response",
-          allow_new_levels = TRUE) %>%
-  as_tibble() %>%
-  mutate(label = round(expm1(emmean)))
-
-plt_5d  <- diffusionmodel1_fit %>%
-  predicted_draws(newdata = expand_grid(collection_regionname = unique(as.character(diffusion_data$collection_regionname)),
-                                        collection_season = unique(diffusion_data$collection_season)) %>%
-                    drop_na() %>%
-                    
-                    mutate(median_anseriformes_wild = median(diffusion_data$median_anseriformes_wild),
-                           median_charadriiformes_wild = median(diffusion_data$median_charadriiformes_wild)),
-                  re_formula = NA) %>%
-  drop_na(collection_regionname) %>%
-  ggplot() + 
-  geom_histogram(aes(x = log1p(.prediction), y = after_stat(density), colour = collection_regionname, fill = collection_regionname), 
-                 alpha = 0.7) + 
-  scale_colour_manual(values = region_colours)+
-  scale_fill_manual(values = region_colours) + 
-  scale_x_continuous(expression(paste('Predicted Weighted Diffusion Coefficient (',Km**2~year**-1, ')' )),
-                     breaks = log1p(c(0, 10^(seq(from = 2, to = 10, by = 4)))),
-                     labels = expression(0,  1%*%10^2,  1%*%10^6, 1%*%10^10),
-                     #limits = c(-0.01, log1p(10^9)),
-                     expand = c(0.02,0.02))+
-  scale_y_continuous('Probability Density' ,
-                     expand = c(0,0))+
-  facet_grid(
-    cols = vars(collection_regionname),
-    labeller =  labeller(collection_regionname=str_to_title)) +
-  geom_vline(aes(xintercept = emmean, colour = collection_regionname), data = averages, linetype = 'dashed') +
-  geom_text(aes(label =  paste0("E*'('*X*'|'*X*'>'*0*') = '*", label, "~km^2"), 
-                colour = collection_regionname),
-            parse = T,
-            x = 17.5, 
-            y = 0.1,
-            size = 2.5,
-            data = averages) + 
-  global_theme + 
-  theme(strip.placement  = 'inside')
-
-####################################################################################################
-
-
-
-# Posterior Prediction HU ~ Season
-#predict_hu_season <- diffusionmodel1_fit %>%
-  #emmeans(~ season,
-          #var = "weighted_diff_coeff",
-          #at = list(continent = unique(diffusion_data$season)),
-          #epred = TRUE, 
-         # dpar = "hu",
-          #re_formula = NA, 
-         # regrid = "response",
-         # allow_new_levels = TRUE)
-
-#plt_5e <- predict_hu_season %>%
-  #gather_emmeans_draws() %>%
- # ggplot(aes(x  = 1-.value,
-       #      y = season,
-           #  slab_colour = season,
-           #  slab_fill = season)) +
- # stat_halfeye(slab_alpha = 0.7,
-         #      p_limits = c(0.001, 0.999),
-         #      point_interval = "median_hdi",
-         #      linewidth = 1.5,
-         #      .width =  0.95) +
- # scale_colour_manual(values = c('#E8E1E9FF', '#C0A5AAFF', '#4D3944FF', '#7083A4FF'), aesthetics = 'slab_colour') +
-  #scale_fill_manual(values = c('#E8E1E9FF', '#C0A5AAFF', '#4D3944FF', '#7083A4FF'), aesthetics = 'slab_fill') +
- # scale_x_continuous('P(Weighted Diffusion Coefficient > 0)') + 
-  #scale_y_discrete('Season',
-              #     labels = c('overwintering' = 'Overwintering',
-                 #             'migrating_spring' = 'Spring Migration',
-                 #             'migrating_autumn' = 'Autumn Migration',
-                 #             'breeding' = 'Breeding')) + 
-  #global_theme 
-
-
-# Posterior Prediction/Average HU ~ Region
-#regional_average <- diffusionmodel1_fit %>%
-  #emmeans(~ 1 + collection_regionname,
-         # var = "weighted_diff_coeff",
-         # at = list(continent = unique(diffusion_data$collection_regionname)),
-          # epred = TRUE, 
-          #dpar = "mu",
-          #re_formula = ~ 1|collection_regionname ,  regrid = "response",
-         # tran = "log", 
-         # type = "response",
-          #allow_new_levels = TRUE)
-
-#plt_5f <-regional_average %>%
- # gather_emmeans_draws() %>%
- # ggplot(aes(x  = 1-.value,
-   #          y = collection_regionname, 
-   #          slab_colour = collection_regionname,
-   #          slab_fill = collection_regionname)) +
-  #stat_halfeye(slab_alpha = 0.7,
-    #           p_limits = c(0.001, 0.999),
-     #          point_interval = "median_hdi",
-     #          linewidth = 1.5,
-     #          .width =  0.95) +
-  #scale_fill_manual(values = region_colours, aesthetics = 'slab_fill') +
-  #scale_colour_manual(values = region_colours, aesthetics = 'slab_colour') + 
-  #scale_x_continuous('P(Weighted Diffusion Coefficient > 0)') + 
-  #scale_y_discrete('Continent', 
-   #                labels = function(x) str_to_title(x) %>% str_wrap(., width = 10)) + 
-  #global_theme + 
-  #theme(legend.position = 'none')
-
-
-# average marginal effect of anseriformes/ charadriiformes
-plt_5g <- bind_rows(diffusionmodel1_fit %>%
-                      emtrends(~ median_anseriformes_wild,
-                               var = "median_anseriformes_wild",
-                               at = list(median_anseriformes_wild = c(0.25 , 0.5 , 1)),
-                               epred = TRUE) %>% 
-                      gather_emmeans_draws() %>%
-                      mutate(var = 'median_anseriformes_wild') %>%
-                      rename(var_change = median_anseriformes_wild),
-                    
-                    diffusionmodel1_fit %>%
-                      emtrends(~ median_charadriiformes_wild,
-                               var = "median_charadriiformes_wild",
-                               at = list(median_charadriiformes_wild = c(0.25 , 0.5 , 1)),
-                               epred = TRUE) %>% 
-                      gather_emmeans_draws() %>%
-                      mutate(var = 'median_charadriiformes_wild') %>%
-                      rename(var_change = median_charadriiformes_wild)) %>%
-  
-  mutate(var = gsub('median_', '', var) %>%
-           gsub('_', '-', .)) %>%
-  
-  ggplot(aes(x  = .value,
-             y = as.factor(var_change),
-             slab_colour = var,
-             slab_fill = var)) +
-  stat_halfeye(slab_alpha = 0.7 ,
-               p_limits = c(0.001, 0.999),
-               point_interval = "median_hdi",
-               linewidth = 1.5,
-               .width =  0.95)  +
-  geom_vline(aes(xintercept = 0), linetype = 'dashed')  +
-  scale_x_continuous(expression(paste('Change in Weighted Diffusion Coefficient (',Km**2~year**-1, ')' )),
-                     breaks = seq(from = -1*10**6, to = 5*10**6, by = 2*10**6),
-                     labels = scientific_10,
-                     limits = c(-1*10**6, 5*10**6),
-                     expand = c(0.02,0.02))+
-  scale_fill_manual(values = host_colours, aesthetics = 'slab_fill') +
-  scale_colour_manual(values = host_colours, aesthetics = 'slab_colour') + 
-  scale_y_discrete('Persistence in Host (Years)', 
-                   labels = function(x) str_to_title(x) %>% str_wrap(., width = 10)) +
-  global_theme + 
-  theme(legend.position = 'none')
-
-
-
-
-# Marginal effect of continent on MU
-# Results are averaged over the levels of: season
-diffusionmodel1_fit %>%
-  emmeans(~ collection_season,
-          #dpar = "mu",
-          epred = TRUE) %>% 
-  contrast(method = "revpairwise") %>% 
-  gather_emmeans_draws() %>%
-  filter(grepl('breeding', contrast)) %>%
-  mutate(contrast = gsub(' - .*', '' , contrast)) %>%
-  ggplot(aes(x  = .value,
-             y = contrast,
-             slab_colour = as.factor(contrast),
-             slab_fill = as.factor(as.factor(contrast)))) +
-  geom_vline(aes(xintercept = 0), linetype = 'dashed')  +
-  stat_halfeye(slab_alpha = 0.7,
-               p_limits = c(0.01, 0.99),
-               point_interval = "median_hdi",
-               linewidth = 1.5,
-               .width =  0.95)+
-  scale_fill_manual(values = region_colours, aesthetics = 'slab_fill') +
-  scale_colour_manual(values = region_colours, aesthetics = 'slab_colour') + 
-  scale_x_continuous(expression(paste('Change in Weighted Diffusion Coefficient (',Km**2~year**-1, ')' )),
-                     breaks = seq(from = -2*10**6, to = 5*10**6, by = 1*10**6),
-                     labels = scientific_10,
-                     expand = c(0.02,0.02))+
-  scale_y_discrete('Season', 
-                   labels = function(x) str_to_title(x) %>% str_wrap(., width = 10)) + 
-  global_theme
-
-
-
-diffusionmodel1_fit %>%
-  emmeans(~ collection_season,
-          #dpar = "mu",
-          epred = TRUE) %>% 
-  contrast(method = "pairwise") 
-
-season_emm <- diffusionmodel1_fit %>%
-  emmeans(~ collection_season
-          #dpar = "mu"
-  )
-
-(continent_contrasts <- pairs(season_emm))
-rope(continent_contrasts)
-
-# Expectation of the posterior prediction
-# averaged over collection_season, for mean values of anseriformes and charadriiformes persistence
-# Exclude 
-continent_epp <- diffusionmodel1_fit %>%
-  emmeans(~ collection_regionname,
-          re_formula = NA , 
-          epred = TRUE,
-          at = list(median_anseriformes_wild = 0.6224637,
-                    median_charadriiformes_wild = 0.08553386))
-
-continent_epp
-contrast(continent_epp, method = "revpairwise")
-
-
-
-
-
-diffusionmodel1_fit %>%
-  emmeans(~ collection_regionname,
-                # epred = TRUE, 
-                  #dpar = "mu",
-                  re_formula = NA , 
-                regrid = "response",
-                tran  = "log", 
-                type = "response",
-                allow_new_levels = TRUE)
-
-continent_emm <- diffusionmodel1_fit %>%
-  emmeans(~ collection_regionname
-          #dpar = "mu"
-          )
-
-(continent_contrasts <- pairs(continent_emm))
-rope(continent_contrasts)
-
-diffusionmodel1_fit %>%
-  emmeans(~ collection_regionname,
-          #dpar = "mu",
-          epred = TRUE) %>% 
-  contrast(method = "pairwise") 
-
-
-bayestestR::bayesfactor_parameters(pairs(cbpp.rg), prior = pairs(cbpp_prior.rg))
-summary(pairs(continent_emm), type = "response", delta = log(2))
-continent_prior <- emmeans(unupdate(diffusionmodel1_fit),
-                ~ collection_regionname,
-                #dpar = "mu",
-                epred = TRUE)
-
-diffusionmodel_rg <- ref_grid(diffusionmodel)
-diffusionmodel_prior_rg <- ref_grid(diffusionmodel1_priors)
-
-bayesfactor_parameters(diffusionmodel2_fit, verbose = FALSE)
-
-bayestestR::bayesfactor_parameters(pairs(continent_emm), prior = pairs(continent_prior))
-
-
-
-diffusionmodel1_prior <- update(diffusionmodel1_priors, prior_PD = TRUE)
-diffusionmodel1_rg <- ref_grid(diffusionmodel1_fit)
-diffusionmodel1_prior_rg <- ref_grid(diffusionmodel1_prior)
-
-bayestestR::p_rope(pairs(cbpp.rg), range = c(-0.25, 0.25))
-continent_emm <- diffusionmodel1_fit %>%
-  emmeans(~ collection_regionname,
-          #dpar = "mu",
-          epred = TRUE)
-
-
-bayesfactor_parameters(diffusionmodel1_fit_gamma)
-group_diff <- emmeans(diffusionmodel1_fit, pairwise ~ collection_regionname, data = diffusion_data)
-bayesfactor_parameters(group_diff, prior = unupdate(diffusionmodel1_fit))
-
-model = unupdate(diffusionmodel1_fit)
-# pass the original model via prior
-bayesfactor_parameters(group_diff)
-
-library(estimate_contrasts(diffusionmodel1_fit, 
-                   contrast = c('collection_regionname'),
-                   comparison = 'pairwise',
-                   test = "bf")
-
-plt_5h <-diffusionmodel1_fit %>%
-  emmeans(~ collection_regionname,
-          #dpar = "mu",
-          epred = TRUE) %>% 
-  contrast(method = "revpairwise") %>% 
-  gather_emmeans_draws() %>%
-  filter(grepl('asia', contrast)) %>%
-  mutate(contrast = gsub(' - .*', '' , contrast)) %>%
-  ggplot(aes(x  = .value,
-             y = contrast,
-             slab_colour = as.factor(contrast),
-             slab_fill = as.factor(as.factor(contrast)))) +
-  geom_vline(aes(xintercept = 0), linetype = 'dashed')  +
-  stat_halfeye(slab_alpha = 0.7,
-               p_limits = c(0.01, 0.99),
-               point_interval = "median_hdi",
-               linewidth = 1.5,
-               .width =  0.95)+
-  scale_fill_manual(values = region_colours, aesthetics = 'slab_fill') +
-  scale_colour_manual(values = region_colours, aesthetics = 'slab_colour') + 
-  scale_x_continuous(expression(paste('Change in Weighted Diffusion Coefficient (',Km**2~year**-1, ')' )),
-                     breaks = seq(from = -2*10**6, to = 5*10**6, by = 1*10**6),
-                     labels = scientific_10,
-                     expand = c(0.02,0.02))+
-  scale_y_discrete('Continent', 
-                   labels = function(x) str_to_title(x) %>% str_wrap(., width = 10)) + 
-  global_theme + 
-  theme(legend.position = 'none')
-
-
-
-
-# Combine plots together
-#plt5_lh <- align_plots(plt_5a, plt_5d, plt_5e, plt_5g,align = 'v', axis = 'l')
-plt5_lh <- align_plots(plt_5a, plt_5d, plt_5g,align = 'v', axis = 'l')
-
-
-plt5_top <- plot_grid(plt5_lh[[1]], plt_5b, plt_5c, align = 'h', nrow = 1, axis = 'tb', labels = 'AUTO')
-#plt5_bottom <- plot_grid(plt5_lh[[3]], plt_5f, plt5_lh[[4]], plt_5h, align = 'hv', ncol = 2, nrow = 2, axis = 'tblr', labels = c('E', 'F', 'G', 'H'))
-plt5_bottom <- plot_grid( plt5_lh[[3]], plt_5h, align = 'hv', ncol = 2, axis = 'tblr', labels = c('E', 'F'))
-
-
-plt5 <- plot_grid(plt5_top, plt5_lh[[2]], plt5_bottom, labels = c('', 'D', ''), nrow = 3, rel_heights = c(1,1,2))
-plt5
-
-ggsave('~/Downloads/flu_plots/figure5.jpeg', height = 40, width = 35, units = 'cm', dpi = 360)
-
-
-##### Plot Posterior Predictive Check #####
+# 1. PP Check
+#pp_check(diffusionmodel1_fit_gamma_12, ndraws = 100,type = 'stat_grouped', group = 'collection_regionname', stat= 'mean')
+posteriorpredictive <-pp_check(diffusionmodel1_fit_gamma_16, ndraws = 100, type = 'dens_overlay_grouped', group = 'collection_regionname' )
+
+# average posterior predictions 
+avg_predictions(diffusionmodel1_fit_gamma_16)
+avg_predictions(diffusionmodel1_fit_gamma_17, by = 'collection_regionname')
+avg_predictions(diffusionmodel1_fit_gamma_17, by = 'collection_regionname', newdata = 'balanced')
+
+# contrasts for continent, all else equal
+avg_comparisons(diffusionmodel1_fit_gamma_17, variables = list("collection_regionname" = 'pairwise'))
+
+
+# the number of species 
+# 2a. average posterior predictions
+avg_predictions(diffusionmodel1_fit_gamma_17, variables = list('count_cross_species' = c(0,2,4,6,8,10)))
+
+# 2b. average marginal effect
+avg_slopes(diffusionmodel1_fit_gamma_14, variables = 'count_cross_species')
+
+# 2c. by continent
+avg_slopes(diffusionmodel1_fit_gamma_14, variables = 'count_cross_species', by = 'collection_regionname')
+
+
+# median_charadriiformes_wild
+# 3a. average posterior predictions
+avg_predictions(diffusionmodel1_fit_gamma_17, variables = list('median_charadriiformes_wild' = c(0.08, 0.25, 0.5, 1, 1.5)))
+
+# 3b. average marginal effect
+avg_slopes(diffusionmodel1_fit_gamma_14, variables = 'median_charadriiformes_wild')
+
+# 3c. by continent
+avg_slopes(diffusionmodel1_fit_gamma_14, variables = 'median_charadriiformes_wild', by = 'collection_regionname')
+
+
+
+# median_anseriformes_wild
+# 3a. average posterior predictions
+avg_predictions(diffusionmodel1_fit_gamma_17, variables = list('median_anseriformes_wild' = c(0.25, 0.5, 1, 1.5,2)))
+
+# 3b. average marginal effect
+avg_slopes(diffusionmodel1_fit_gamma_14, variables = 'median_anseriformes_wild')
+
+# 3c. by continent
+avg_slopes(diffusionmodel1_fit_gamma_14, variables = 'median_anseriformes_wild', by = 'collection_regionname')
+
+
+############################################## WRITE ###############################################
 posteriorpredictive$data  %>%
   mutate(value = log1p(value)) %>%
+  #filter(!is_y) %>%
   ggplot() + 
   geom_density(aes(x = value, 
                    group= rep_id, 
@@ -476,231 +110,13 @@ posteriorpredictive$data  %>%
                                   expression(italic('y')))) + 
   
   guides(alpha= 'none', 
-         colour=guide_legend()) + 
+         colour=guide_legend()) + facet_wrap(~group) + 
   scale_x_continuous(expression(paste('Predicted Weighted Diffusion Coefficient (',Km**2~year**-1, ')' )),
                      breaks = log1p(c(0, 10^(seq(from = 2, to = 10, by = 4)))),
                      labels = expression(0,  1%*%10^2,  1%*%10^6, 1%*%10^10),
-                     #limits = c(-0.01, log1p(10^9)),
+                     limits = c(-0.01, log1p(10^9)),
                      expand = c(0.02,0.02))+
-  scale_y_continuous('Density',expand = c(0,0)) + 
-  global_theme+ 
-  theme(legend.position = 'inside',
-        legend.title = element_blank(),
-        legend.position.inside = c(0.8, 0.6))
-
-
-
-#### Plot MCMC chains for Key parameters #####
-plt_mcmc <- mcmc_diffusion %>% 
-  filter(Iteration > 400) %>%
-  mutate(Parameter = factor(Parameter,
-                            levels = c("b_Intercept", "b_hu_Intercept", "b_median_anseriformes_wild",
-                                       "b_median_charadriiformes_wild", "b_hu_seasonmigrating_spring", "b_hu_seasonmigrating_autumn",
-                                       "b_hu_seasonoverwintering", "sd_collection_regionname__Intercept",
-                                       "sd_segment__Intercept", "sd_collection_regionname__hu_Intercept", 
-                                       "sd_segment__hu_Intercept", "sigma"),
-                            labels = c(expression(paste(beta[0])),
-                                       expression(paste(beta['hu'])),
-                                       expression(paste(beta['anseriformes'])),
-                                       expression(paste(beta['charadriiformes'])),
-                                       expression(paste(beta['hu_seasonmigrating_spring'])),
-                                       expression(paste(beta['hu_seasonmigrating_autumn'])),
-                                       expression(paste(beta['hu_seasonoverwinterin'])),
-                                       expression(paste(sigma['collection_regionname'])),
-                                       expression(paste(sigma[mu])),
-                                       expression(paste(sigma['hu_collection_regionname'])),
-                                       expression(paste(sigma['hu_segment'])),
-                                       expression(paste(sigma[epsilon]))
-                            )
-  ))  %>% drop_na(Parameter) %>%
-  ggplot(aes(x = Iteration,
-             y = value, 
-             col = as.factor(Chain)))+
-  geom_line(alpha = 0.8)+
-  facet_wrap(~ Parameter,
-             ncol = 2,
-             scale  = 'free_y',
-             switch = 'y',
-             labeller = label_parsed)+
-  scale_colour_brewer(palette = 'GnBu', 'Chains') +
-  theme_minimal(base_size = 8) + 
-  theme(legend.position = 'bottom')
-
-
-#### Plot Prior & posterior distributions of key parameters ####
-posterior_beta_draws <- as.data.frame(diffusionmodel1_fit) %>%
-  as_tibble() %>%
-  pivot_longer(., cols = everything(),
-               names_to = 'parameter',
-               values_to = 'estimate') %>% filter(!grepl('lp__|lprior', parameter)) %>%
-  #filter(grepl('b_', parameter)) %>%
-  mutate(draw = 'posterior') %>%
-  filter(parameter %in% c('Intercept_hu', 'sd_segment__hu_Intercept', 'sd_segment__Intercept', 'sigma'))
-
-
-priors <- expand_grid(parameter = unique(posterior_beta_draws$parameter),
-                      mu = NA_real_,
-                      sigma = NA_real_,
-                      df = NA_real_) %>%
-  mutate(mean = case_when(grepl('^b', parameter) ~ 0,
-                          grepl('^sd_(segment|collection)|^sigma$', parameter) ~ 0,
-                          grepl('Intercept_hu', parameter) ~ 0,
-                          grepl('Intercept$', parameter) ~ 5),
-         sd = case_when(grepl('^b', parameter) ~ 10,
-                        grepl('^sd_(segment|collection)|^sigma$', parameter) ~ 11.7,
-                        grepl('Intercept_hu', parameter) ~ 1),
-         df = case_when(grepl('^sd_(segment|collection)|^sigma$', parameter) ~ 3),
-         dist = case_when(grepl('^b', parameter) ~ 'norm',
-                          grepl('^sd_(segment|collection)|^sigma$', parameter) ~ 'student_t',
-                          grepl('Intercept_hu', parameter) ~ 'logistic')) %>%
-  drop_na(mean) 
-
-
-plt_params <- ggplot() + 
-  geom_histogram(data = posterior_beta_draws %>% 
-                   filter(parameter %in% priors$parameter) %>%
-                   filter(!grepl('^sd|^sigma$', parameter)), 
-                 aes(x = estimate,
-                     y = after_stat(density)),
-                 inherit.aes = F, 
-                 binwidth = 0.1, 
-                 fill = '#1b9e77') + 
-  
-  stat_function(fun = dlogis,
-                data = tibble(parameter = "Intercept_hu" ),
-                args = list(location = 0, scale = 1),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
-  
-  stat_function(fun = dnorm,
-                data = tibble(parameter = "b_hu_Intercept" ),
-                args = list(mean = 0, sd = 5),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
-  
-  
-  stat_function(fun = dstudent_t,
-                data = tibble(parameter = "Intercept"),
-                args = list(mu = 3, sigma = 5.6, df = 11.7),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
-  
-  stat_function(fun = dnorm,
-                data = tibble(parameter = "b_Intercept" ),
-                args = list(mean = 0, sd = 5),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
-
-  
-  stat_function(fun = dnorm,
-                data = tibble(parameter = "b_median_anseriformes_wild"),
-                args = list(mean = 0, sd = 5),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
-  
-  stat_function(fun = dnorm,
-                data = tibble(parameter = "b_median_charadriiformes_wild"),
-                args = list(mean = 0, sd = 5),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
-  
-  stat_function(fun = dnorm,
-                data = tibble(parameter = "b_collection_regionnamecentral&northernamerica"),
-                args = list(mean = 0, sd = 5),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
-  
-  stat_function(fun = dnorm,
-                data = tibble(parameter = "b_collection_regionnameeurope"),
-                args = list(mean = 0, sd = 5),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
-  
-  stat_function(fun = dnorm,
-                data = tibble(parameter = "b_collection_regionnameafrica"),
-                args = list(mean = 0, sd = 5),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
-  
-  stat_function(fun = dnorm,
-                data = tibble(parameter = "b_hu_collection_regionnamecentral&northernamerica"),
-                args = list(mean = 0, sd = 5),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
-  
-  stat_function(fun = dnorm,
-                data = tibble(parameter = "b_hu_collection_regionnameeurope"),
-                args = list(mean = 0, sd = 5),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
-  
-  stat_function(fun = dnorm,
-                data = tibble(parameter = "b_hu_collection_regionnameafrica"),
-                args = list(mean = 0, sd = 5),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
-  
-  stat_function(fun = dnorm,
-                data = tibble(parameter = "b_hu_seasonmigrating_spring"),
-                args = list(mean = 0, sd = 5),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
-  
-  stat_function(fun = dnorm,
-                data = tibble(parameter = "b_hu_seasonmigrating_autumn"),
-                args = list(mean = 0, sd = 5),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
-  
-  stat_function(fun = dnorm,
-                data = tibble(parameter = "b_hu_seasonoverwintering"),
-                args = list(mean = 0, sd = 5),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
-
-  
-  #stat_function(fun = dstudent_t,
-              #  data = tibble(parameter = "sd_segment__Intercept"),
-               # args = list(mu = 3, sigma = 0, df = 11.7),
-               # fill = '#d95f02',
-              #  geom = 'area',
-               # alpha = 0.5) +
-  
-  #stat_function(fun = dstudent_t,
-               # data = tibble(parameter = "sd_segment__hu_Intercept"),
-               # args = list(mu = 3, sigma = 0, df = 11.7),
-               # fill = '#d95f02',
-               # geom = 'area',
-              #  alpha = 0.5) +
-  
-  #stat_function(fun = dstudent_t,
-               # data = tibble(parameter = "sigma"),
-               # args = list(mu = 3, sigma = 0, df = 11.7),
-               # fill = '#d95f02',
-               # geom = 'area',
-                #alpha = 0.5) +
-  
-  xlim(c(-15,15)) + 
-  facet_wrap(~parameter, scales = 'free_y',  ncol = 3) +
-  theme_minimal()
-
-
-############################################## WRITE ###############################################
+  scale_y_continuous('Density',expand = c(0,0)) 
 
 
 
