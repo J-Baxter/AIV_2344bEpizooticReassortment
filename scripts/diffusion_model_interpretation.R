@@ -91,10 +91,10 @@ avg_comparisons(diffusionmodel1_fit_gamma_17, variables = list("collection_regio
 avg_predictions(diffusionmodel1_fit_gamma_17, variables = list('count_cross_species' = c(0,2,4,6,8,10)))
 
 # 2b. average marginal effect at the mean
-avg_slopes(diffusionmodel1_fit_gamma_14, variables = 'count_cross_species', newdata = 'balanced')
+avg_slopes(diffusionmodel1_fit_gamma_17, variables = 'count_cross_species', newdata = 'balanced')
 
 # 2c. by continent
-avg_slopes(diffusionmodel1_fit_gamma_14, variables = 'count_cross_species', by = 'collection_regionname', newdata = 'balanced')
+avg_slopes(diffusionmodel1_fit_gamma_17, variables = 'count_cross_species', by = 'collection_regionname', newdata = 'balanced')
 
 
 # 3. binary charadriiformes
@@ -105,10 +105,10 @@ avg_slopes(diffusionmodel1_fit_gamma_14, variables = 'count_cross_species', by =
 avg_predictions(diffusionmodel1_fit_gamma_17, variables = list('median_charadriiformes_wild' = c(0.08, 0.25, 0.5, 1, 1.5)))
 
 # 4b. average marginal effect at the mean
-avg_slopes(diffusionmodel1_fit_gamma_14, variables = 'median_charadriiformes_wild', newdata = 'balanced')
+avg_slopes(diffusionmodel1_fit_gamma_17, variables = 'median_charadriiformes_wild', newdata = 'balanced')
 
 # 4c. by continent
-avg_slopes(diffusionmodel1_fit_gamma_14, variables = 'median_charadriiformes_wild', by = 'collection_regionname', newdata = 'balanced')
+avg_slopes(diffusionmodel1_fit_gamma_17, variables = 'median_charadriiformes_wild', by = 'collection_regionname', newdata = 'balanced')
 
 
 # 5 binary anseriformes
@@ -119,10 +119,10 @@ avg_slopes(diffusionmodel1_fit_gamma_14, variables = 'median_charadriiformes_wil
 avg_predictions(diffusionmodel1_fit_gamma_17, variables = list('median_anseriformes_wild' = c(0.25, 0.5, 1, 1.5,2)))
 
 # 6b. average marginal effect
-avg_slopes(diffusionmodel1_fit_gamma_14, variables = 'median_anseriformes_wild', newdata = 'balanced')
+avg_slopes(diffusionmodel1_fit_gamma_17, variables = 'median_anseriformes_wild', newdata = 'balanced')
 
 # 6c. by continent
-avg_slopes(diffusionmodel1_fit_gamma_14, variables = 'median_anseriformes_wild', by = 'collection_regionname', newdata = 'balanced')
+avg_slopes(diffusionmodel1_fit_gamma_17, variables = 'median_anseriformes_wild', by = 'collection_regionname', newdata = 'balanced')
 
 
 ############################################## WRITE ###############################################
@@ -205,12 +205,132 @@ plt_5d  <- diffusion_data %>%
 
 
 # E - Posterior predictive draws
+plt_5e  <- diffusionmodel1_fit_gamma_17 %>%
+  #  back-transformed linear predictive draws, equivalent to add_linpred (and in this case equviv to epred)
+  # this uses the empirical data distribution by default
+  avg_predictions(by = 'collection_regionname',  type = 'response') %>% 
+  get_draws() %>%
+  as_tibble() %>%
+  ggplot() + 
+  geom_histogram(aes(x = log1p(draw), y = after_stat(density), colour = collection_regionname, fill = collection_regionname), 
+                 binwidth = 0.1,
+                 alpha = 0.7) + 
+  scale_colour_manual(values = region_colours)+
+  scale_fill_manual(values = region_colours) + 
+  scale_x_continuous(expression(paste('Predicted Weighted Diffusion Coefficient (',Km**2~year**-1, ')' )),
+                     breaks =log(10^seq(5, 6.5, b = 0.5)),
+                     labels = expression(1%*%10^5, 1%*%10^5.5,  1%*%10^6, 1%*%10^6.5),
+                     limits = c(11.5, 15),
+                     expand = c(0.02,0.02)
+                     )+
+  scale_y_continuous('Probability Density' ,
+                     expand = c(0,0))+
+  facet_grid(
+    cols = vars(collection_regionname),
+    labeller =  labeller(collection_regionname=str_to_title)) +
+  #geom_vline(aes(xintercept = emmean, colour = collection_regionname), data = averages, linetype = 'dashed') +
+  #geom_text(aes(label =  paste0("E*'('*X*'|'*X*'>'*0*') = '*", label, "~km^2"), 
+          #      colour = collection_regionname),
+         #   parse = T,
+           # x = 17.5, 
+          #  y = 0.6,
+           # size = 2.5,
+           # data = averages) + 
+  global_theme + 
+  theme(strip.placement  = 'inside',
+        strip.text = element_text(face = 'bold', size = 10),
+        strip.background = element_blank(),
+        axis.text = element_text(size = 8),
+        axis.title = element_text(size = 10),
+        legend.text = element_text(size = 8))
 
 
 # F - Persistence Effect
 
+diffusionmodel1_fit_gamma_17 %>%
+            #  back-transformed linear predictive draws, equivalent to add_linpred (and in this case equviv to epred)
+            # this uses the empirical data distribution by default
+            avg_slopes(variables = c('median_charadriiformes_wild','median_anseriformes_wild'), by = 'collection_regionname', newdata = 'balanced') %>%
+            get_draws() %>%
+            as_tibble()
+
+diffusionmodel1_fit_gamma_17 %>%
+  #  back-transformed linear predictive draws, equivalent to add_linpred (and in this case equviv to epred)
+  # this uses the empirical data distribution by default
+  #avg_predictions(variables = list('median_charadriiformes_wild' = c(0.08, 0.25, 0.5, 1, 1.5)), by = c('collection_regionname', 'median_charadriiformes_wild'))  %>%
+  avg_predictions(diffusionmodel1_fit_gamma_17, variables = list('count_cross_species' = c(0,2,4,6,8,10)), by = c('collection_regionname', 'count_cross_species')) %>%
+
+  get_draws() %>%
+  as_tibble() %>%
+  ggplot(aes(y = draw,
+             x = count_cross_species,
+             colour = collection_regionname)) + 
+  geom_point(alpha = 0.2) + 
+  stat_smooth(method = 'glm') + 
+  facet_grid(
+    cols = vars(collection_regionname),
+    labeller =  labeller(collection_regionname=str_to_title))
+
+
+  
+  ggplot(aes(x  = draw,
+           y = as.factor(term),
+           slab_colour = var,
+           slab_fill = var)) +
+  stat_halfeye(slab_alpha = 0.7 ,
+               p_limits = c(0.001, 0.999),
+               point_interval = "median_hdi",
+               linewidth = 1.5,
+               .width =  0.95)  +
+  geom_vline(aes(xintercept = 0), linetype = 'dashed')  +
+  scale_x_continuous(expression(paste('Change in Weighted Diffusion Coefficient (',Km**2~year**-1, ')' )),
+                     breaks = seq(from = -1*10**6, to = 5*10**6, by = 2*10**6),
+                     labels = scientific_10,
+                     limits = c(-1*10**6, 5*10**6),
+                     expand = c(0.02,0.02))+
+  scale_fill_manual(values = host_colours, aesthetics = 'slab_fill') +
+  scale_colour_manual(values = host_colours, aesthetics = 'slab_colour') + 
+  scale_y_discrete('Persistence in Host (Years)', 
+                   labels = function(x) str_to_title(x) %>% str_wrap(., width = 10)) +
+  global_theme + 
+  theme(legend.position = 'none')
+
+  ggplot() + 
+  geom_histogram(aes(x = log1p(draw), y = after_stat(density), colour = collection_regionname, fill = collection_regionname), 
+                 binwidth = 0.1,
+                 alpha = 0.7) + 
+  scale_colour_manual(values = region_colours)+
+  scale_fill_manual(values = region_colours) + 
+  scale_x_continuous(expression(paste('Predicted Weighted Diffusion Coefficient (',Km**2~year**-1, ')' )),
+                     breaks =log(10^seq(5, 6.5, b = 0.5)),
+                     labels = expression(1%*%10^5, 1%*%10^5.5,  1%*%10^6, 1%*%10^6.5),
+                     limits = c(11.5, 15),
+                     expand = c(0.02,0.02)
+  )+
+  scale_y_continuous('Probability Density' ,
+                     expand = c(0,0))+
+  facet_grid(
+    cols = vars(collection_regionname),
+    labeller =  labeller(collection_regionname=str_to_title)) +
+  #geom_vline(aes(xintercept = emmean, colour = collection_regionname), data = averages, linetype = 'dashed') +
+  #geom_text(aes(label =  paste0("E*'('*X*'|'*X*'>'*0*') = '*", label, "~km^2"), 
+  #      colour = collection_regionname),
+  #   parse = T,
+  # x = 17.5, 
+  #  y = 0.6,
+  # size = 2.5,
+  # data = averages) + 
+  global_theme + 
+  theme(strip.placement  = 'inside',
+        strip.text = element_text(face = 'bold', size = 10),
+        strip.background = element_blank(),
+        axis.text = element_text(size = 8),
+        axis.title = element_text(size = 10),
+        legend.text = element_text(size = 8))
+
 
 # G - Host Jump Effect
+
 
 # H - Marginal 
 
