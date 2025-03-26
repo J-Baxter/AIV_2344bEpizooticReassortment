@@ -140,7 +140,9 @@ diffusion_formula <- bf(weighted_diff_coeff ~ 0 +collection_regionname + median_
 int_step <- function(x){
   ifelse(x >0, 1,0)
 }
-diffusion_formula <- bf(weighted_diff_coeff ~ 0 + collection_regionname + int_step(median_anseriformes_wild) + median_anseriformes_wild + int_step(median_charadriiformes_wild) + median_charadriiformes_wild + int_step(count_cross_species) + log1p(count_cross_species) + (1|segment) ,
+diffusion_formula <- bf(weighted_diff_coeff ~ 0 + collection_regionname + int_step(median_anseriformes_wild) + median_anseriformes_wild + int_step(median_charadriiformes_wild) + median_charadriiformes_wild + int_step(count_cross_species) + log1p(count_cross_species) + 
+                          collection_regionname:median_anseriformes_wild + 
+                          collection_regionname:median_charadriiformes_wild + (1|segment) ,
                         shape ~  0 + collection_regionname + (1 | collection_regionname))
 
 
@@ -150,10 +152,13 @@ diffusionmodel1_priors <- get_prior(diffusion_formula,
                                     data = diffusion_data,
                                     family = Gamma(link = "log")) 
 
-diffusionmodel1_priors$prior[2:5] <- "normal(0,5)"
-diffusionmodel1_priors$prior[6:11] <- "normal(0,1)"
+#diffusionmodel1_priors$prior[2:5] <- "normal(0,5)"
+#diffusionmodel1_priors$prior[6:11] <- "normal(0,1)"
+#diffusionmodel1_priors$prior[16:19] <- "normal(0,5)"
 
-diffusionmodel1_priors$prior[16:19] <- "normal(0,5)"
+diffusionmodel1_priors$prior[2:5] <- "normal(0,5)"
+diffusionmodel1_priors$prior[6:17] <- "normal(0,1)"
+diffusionmodel1_priors$prior[21:25] <- "normal(0,5)"
 
 
 #diffusionmodel1_priors$prior[1:14] <- "normal(0,5)"
@@ -194,7 +199,7 @@ diffusionmodel1_prior <- brm(
 
 
 # Fit model to data
-diffusionmodel1_fit_gamma_17<- brm(
+diffusionmodel1_fit_gamma_18<- brm(
   diffusion_formula,
   data = diffusion_data,
   prior = diffusionmodel1_priors,
