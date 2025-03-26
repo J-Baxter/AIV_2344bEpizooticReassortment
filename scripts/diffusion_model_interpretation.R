@@ -38,14 +38,47 @@ scientific_10 <- function(x) {
 diffusionmodel_fit <- readRDS('./saved_models/diffusion_model_2.rds')
 diffusion_data <- read_csv('./saved_models/diffusion_model.csv')
 
+host_colours <- c(
+  'anseriformes-domestic' = '#a6cee3',
+  'anseriformes-wild' = '#1f78b4',
+  'galliformes-domestic' = '#b2df8a',
+  'galliformes-wild' = '#33a02c',
+  'mammal' = '#fb9a99',
+  'human' = '#e31a1c',
+  'charadriiformes-wild' = '#fdbf6f',
+  'other-bird' = '#ff7f00',
+  'unknown' = '#cab2d6',
+  'environment' = '#6a3d9a')
+
+
+region_colours <- c('europe' = '#1b9e77',
+                    'asia' ='#d95f02',
+                    'africa' ='#7570b3',
+                    'australasia' = '#e7298a',
+                    'central & northern america' ='#66a61e',
+                    'south america' ='#e6ab02')
+
+
+global_theme <- theme_classic()+
+  theme(
+    #text = element_text(size=10),
+    axis.title.x = element_text(margin = margin(t = 10, r = 0, b = 0, l = 0), size = 10),
+    axis.title.y = element_text(margin = margin(t = 0, r = 10, b = 0, l = 0), size = 10),
+    axis.text = element_text(margin = margin(t = 10, r = 0, b = 0, l = 0), size = 8),
+    legend.text = element_text(size = 8),
+    legend.position = 'none', 
+    panel.spacing = unit(2, "lines"), 
+    strip.background = element_blank()
+  )
+
 
 ############################################## MAIN ################################################
 # 1. PP Check
 #pp_check(diffusionmodel1_fit_gamma_12, ndraws = 100,type = 'stat_grouped', group = 'collection_regionname', stat= 'mean')
-posteriorpredictive <-pp_check(diffusionmodel1_fit_gamma_16, ndraws = 100, type = 'dens_overlay_grouped', group = 'collection_regionname' )
+posteriorpredictive <-pp_check(diffusionmodel1_fit_gamma_17, ndraws = 100, type = 'dens_overlay_grouped', group = 'collection_regionname' )
 
 # average posterior predictions 
-avg_predictions(diffusionmodel1_fit_gamma_16)
+avg_predictions(diffusionmodel1_fit_gamma_17)
 avg_predictions(diffusionmodel1_fit_gamma_17, by = 'collection_regionname')
 avg_predictions(diffusionmodel1_fit_gamma_17, by = 'collection_regionname', newdata = 'balanced')
 
@@ -53,42 +86,138 @@ avg_predictions(diffusionmodel1_fit_gamma_17, by = 'collection_regionname', newd
 avg_comparisons(diffusionmodel1_fit_gamma_17, variables = list("collection_regionname" = 'pairwise'))
 
 
-# the number of species 
-# 2a. average posterior predictions
+# 2 the number of species 
+# 2a. average posterior predictions marginalised across empirical distribution of predictors
 avg_predictions(diffusionmodel1_fit_gamma_17, variables = list('count_cross_species' = c(0,2,4,6,8,10)))
 
-# 2b. average marginal effect
-avg_slopes(diffusionmodel1_fit_gamma_14, variables = 'count_cross_species')
+# 2b. average marginal effect at the mean
+avg_slopes(diffusionmodel1_fit_gamma_14, variables = 'count_cross_species', newdata = 'balanced')
 
 # 2c. by continent
-avg_slopes(diffusionmodel1_fit_gamma_14, variables = 'count_cross_species', by = 'collection_regionname')
+avg_slopes(diffusionmodel1_fit_gamma_14, variables = 'count_cross_species', by = 'collection_regionname', newdata = 'balanced')
 
 
-# median_charadriiformes_wild
-# 3a. average posterior predictions
+# 3. binary charadriiformes
+# 3a.
+
+# 4 median_charadriiformes_wild
+# 4a. average posterior predictions marginalised across empirical distribution of predictors
 avg_predictions(diffusionmodel1_fit_gamma_17, variables = list('median_charadriiformes_wild' = c(0.08, 0.25, 0.5, 1, 1.5)))
 
-# 3b. average marginal effect
-avg_slopes(diffusionmodel1_fit_gamma_14, variables = 'median_charadriiformes_wild')
+# 4b. average marginal effect at the mean
+avg_slopes(diffusionmodel1_fit_gamma_14, variables = 'median_charadriiformes_wild', newdata = 'balanced')
 
-# 3c. by continent
-avg_slopes(diffusionmodel1_fit_gamma_14, variables = 'median_charadriiformes_wild', by = 'collection_regionname')
+# 4c. by continent
+avg_slopes(diffusionmodel1_fit_gamma_14, variables = 'median_charadriiformes_wild', by = 'collection_regionname', newdata = 'balanced')
 
 
+# 5 binary anseriformes
+# 5a.
 
-# median_anseriformes_wild
-# 3a. average posterior predictions
+# median_anseriformes_wild 
+# 6a. average posterior predictions
 avg_predictions(diffusionmodel1_fit_gamma_17, variables = list('median_anseriformes_wild' = c(0.25, 0.5, 1, 1.5,2)))
 
-# 3b. average marginal effect
-avg_slopes(diffusionmodel1_fit_gamma_14, variables = 'median_anseriformes_wild')
+# 6b. average marginal effect
+avg_slopes(diffusionmodel1_fit_gamma_14, variables = 'median_anseriformes_wild', newdata = 'balanced')
 
-# 3c. by continent
-avg_slopes(diffusionmodel1_fit_gamma_14, variables = 'median_anseriformes_wild', by = 'collection_regionname')
+# 6c. by continent
+avg_slopes(diffusionmodel1_fit_gamma_14, variables = 'median_anseriformes_wild', by = 'collection_regionname', newdata = 'balanced')
 
 
 ############################################## WRITE ###############################################
-posteriorpredictive$data  %>%
+
+# A
+plt_5a <- diffusion_data %>%
+  ggplot() +
+  geom_histogram(aes(x = log1p(weighted_diff_coeff), 
+                     fill = weighted_diff_coeff>0,
+                     colour = weighted_diff_coeff>0,
+                     y = after_stat(density)), 
+                 binwidth = 0.5,
+                 alpha = 0.7) +
+  scale_fill_brewer(palette = 'Accent', 'Is Zero') +
+  scale_colour_brewer(palette = 'Accent', 'Is Zero') +
+  #scale_x_continuous('Log1p Weighted Diffusion Coefficient' , expand = c(0.01,0.01)) +
+  scale_x_continuous(expression(paste('Weighted Diffusion Coefficient (',Km**2~year**-1, ')' )),
+                     breaks = log1p(c(0, 10^(seq(from = 1, to = 7, by = 2)))),
+                     labels = expression(0,  1%*%10^1,  1%*%10^3, 1%*%10^5,  1%*%10^7),
+                     expand = c(0.02,0.02))+
+  
+  scale_y_continuous('Probability Density',expand = c(0,0)) + 
+  global_theme + 
+  theme(legend.position = 'none')
+
+# B - anseriformes persistence
+plt_5b <- diffusion_data %>%
+  ggplot() +
+  geom_histogram(aes(x = median_anseriformes_wild,
+                     y = after_stat(density)), 
+                 binwidth = 0.2,
+                 fill = host_colours['anseriformes-wild'],
+                 colour = host_colours['anseriformes-wild'],
+                 alpha = 0.7) +
+  scale_x_continuous('Persistence in wild Anseriformes', 
+                     expand = c(0.02,0.02), 
+                     breaks = seq(from = 0, to = 10, by = 2)) +
+  scale_y_continuous('Probability Density',expand = c(0,0)) + 
+  coord_cartesian(xlim = c(0, 10))  +
+  global_theme + 
+  theme(legend.position = 'none')
+
+
+# C - charadriiformes persistence
+plt_5c  <- diffusion_data %>%
+  ggplot() +
+  geom_histogram(aes(x = median_charadriiformes_wild,
+                     y = after_stat(density)),
+                 binwidth = 0.2,
+                 fill = host_colours['charadriiformes-wild'],
+                 colour = host_colours['charadriiformes-wild'],
+                 alpha = 0.7) +
+  scale_x_continuous('Persistence in wild Charadriiformes', 
+                     expand = c(0.01,0.01), 
+                     breaks = seq(from = 0, to = 4, by = 1),
+                     limits = c(-0.1,4.5)) +
+  scale_y_continuous('Probability Density',expand = c(0,0)) + 
+  #coord_cartesian(xlim = c(0, 6))  +
+  global_theme + 
+  theme(legend.position = 'none')
+
+
+# D - Host switches
+plt_5d  <- diffusion_data %>%
+  ggplot() +
+  geom_histogram(aes(x = log1p(count_cross_species),
+                     y = after_stat(density)),
+                 binwidth = 0.5,
+                 fill = '#beaed4',
+                 colour = '#beaed4',
+
+                 alpha = 0.7) +
+  scale_x_continuous('Independent Host Jumps (Ln)', 
+                     expand = c(0.01,0.01), 
+                     breaks = seq(from = 0, to = 6, by = 1)) +
+  scale_y_continuous('Probability Density',expand = c(0,0)) + 
+  #coord_cartesian(xlim = c(0, 6))  +
+  global_theme + 
+  theme(legend.position = 'none')
+
+
+# E - Posterior predictive draws
+
+
+# F - Persistence Effect
+
+
+# G - Host Jump Effect
+
+# H - Marginal 
+
+
+
+# Supplementary plots
+ppc_plot <- posteriorpredictive$data  %>%
   mutate(value = log1p(value)) %>%
   #filter(!is_y) %>%
   ggplot() + 
@@ -100,26 +229,33 @@ posteriorpredictive$data  %>%
                key_glyph = draw_key_path) + 
   scale_alpha_manual(values = c('FALSE' = 0.00001, 
                                 'TRUE' = 1)) + 
-  scale_linewidth_manual(values = c('FALSE' = 0.1, 
+  scale_linewidth_manual('Data', values = c('FALSE' = 0.1, 
                                     'TRUE' = 1),
                          labels  = c(expression(italic('y')['rep']),
                                      expression(italic('y'))))+ 
-  scale_colour_manual(values = c('FALSE' = '#cbc9e2', 
+  scale_colour_manual('Data',values = c('FALSE' = '#cbc9e2', 
                                  'TRUE' = '#54278f'),
                       labels  = c(expression(italic('y')['rep']),
                                   expression(italic('y')))) + 
   
   guides(alpha= 'none', 
-         colour=guide_legend()) + facet_wrap(~group) + 
-  scale_x_continuous(expression(paste('Predicted Weighted Diffusion Coefficient (',Km**2~year**-1, ')' )),
-                     breaks = log1p(c(0, 10^(seq(from = 2, to = 10, by = 4)))),
-                     labels = expression(0,  1%*%10^2,  1%*%10^6, 1%*%10^10),
-                     limits = c(-0.01, log1p(10^9)),
+         colour=guide_legend()) + facet_wrap(~group, labeller  = as_labeller(str_to_title)) + 
+  scale_x_continuous(expression(paste('Predicted Weighted Diffusion Coefficient (',Km^{2}, ' ', year^{-1}, ')' )),
+                     breaks = log1p(c(0, 10^(seq(from = 2, to = 8, by = 2)))),
+                     labels = expression(0,  1%*%10^{2},  1%*%10^{4},1%*%10^{6},1%*%10^{8}),
+                     limits = c(-0.01, log1p(10^8.5)),
                      expand = c(0.02,0.02))+
-  scale_y_continuous('Density',expand = c(0,0)) 
+  scale_y_continuous('Density',expand = c(0,0)) +
+  theme_classic() + 
+  theme(strip.text = element_text(face = 'bold', size = 10),
+        strip.background = element_blank(),
+        legend.title = element_blank(),
+        legend.position = 'bottom',
+        axis.text = element_text(size = 8),
+        axis.title = element_text(size = 10),
+        legend.text = element_text(size = 8))
 
-
-
+ggsave('~/Downloads/flu_plots/figure_diffusion_ppc.png', ppc_plot, device = 'png' , height = 17, width = 20, units = 'cm')
 
 ############################################## END #################################################
 ####################################################################################################
