@@ -31,7 +31,7 @@ library(emmeans)
 library(marginaleffects)
 library(ggmcmc)
 library(performance)
-
+library(DHARMa)
 # User functions
 #source('./scripts/figure_scripts/plot_settings.R')
 
@@ -95,28 +95,17 @@ diffusion_data <- combined_data %>%
   # format persistence times
   
   # binary
-  mutate(in_charadriiformes = ifelse(median_charadriiformes_wild >0, '1', '0'),
-         in_anseriformes = ifelse(median_anseriformes_wild >0, '1', '0'),
-         median_anseriformes_wild_log = log1p(median_anseriformes_wild),
-         median_charadriiformes_wild_log = log1p(median_charadriiformes_wild)) %>%
-  
-  group_by(cluster_profile) %>%
-  mutate(wdc_sd = sd(weighted_diff_coeff) ) %>%
-  ungroup() %>%
+  mutate(across(c('median_anseriformes_wild', 
+                  'median_charadriiformes_wild', 
+                  'count_cross_species'), .fns= ~ log1p(.x), .names = '{.col}_log1p'))  %>%
   
   dplyr::select(weighted_diff_coeff, 
-                wdc_sd,
-                in_charadriiformes,in_anseriformes,
-         median_anseriformes_wild,
-         median_charadriiformes_wild,
-         cluster_profile,
-         count_cross_species,
-         host_simplifiedhost,
-         segment, 
-         collection_regionname, 
-         collection_year,
-         collection_season,
-         group2) %>%
+                median_anseriformes_wild_log1p,
+                median_charadriiformes_wild_log1p,
+                count_cross_species_log1p,
+                host_simplifiedhost,
+                segment, 
+                collection_regionname) %>%
   
   filter(weighted_diff_coeff > 0)
 
@@ -140,9 +129,9 @@ diffusion_formula <- bf(weighted_diff_coeff ~ 0 +collection_regionname + median_
 int_step <- function(x){
   ifelse(x >0, 1,0)
 }
-diffusion_formula <- bf(weighted_diff_coeff ~ 0 + collection_regionname + int_step(median_anseriformes_wild) + median_anseriformes_wild + int_step(median_charadriiformes_wild) + median_charadriiformes_wild + int_step(count_cross_species) + log1p(count_cross_species) + 
-                          collection_regionname:median_anseriformes_wild + 
-                          collection_regionname:median_charadriiformes_wild + (1|segment) ,
+diffusion_formula <- bf(weighted_diff_coeff ~ 0 + collection_regionname + int_step(median_anseriformes_wild_log1p) + median_anseriformes_wild_log1p + int_step(median_charadriiformes_wild_log1p) + median_charadriiformes_wild_log1p + int_step(count_cross_species_log1p) + count_cross_species_log1p + 
+                          collection_regionname:median_anseriformes_wild_log1p + 
+                          collection_regionname:median_charadriiformes_wild_log1p + (1|segment) ,
                         shape ~  0 + collection_regionname + (1 | collection_regionname))
 
 
@@ -199,7 +188,7 @@ diffusionmodel1_prior <- brm(
 
 
 # Fit model to data
-diffusionmodel1_fit_gamma_18<- brm(
+diffusionmodel1_fit_gamma_19<- brm(
   diffusion_formula,
   data = diffusion_data,
   prior = diffusionmodel1_priors,
@@ -224,6 +213,23 @@ loo_compare(diffusionmodel1_fit, diffusionmodel2_fit)
 # performance(diffusionmodel1_fit) # tibble output of model metrics including R2, ELPD, LOOIC, RMSE
 plot(diffusionmodel1_fit) # default output plot of brms showing posterior distributions of
 prior_summary(diffusionmodel1_fit) #obtain dataframe of priors used in model.
+
+
+# sample from the Posterior Predictive Distribution
+preds <- posterior_predict(diffusionmodel1_fit_gamma_19, nsamples = 250, summary = FALSE)
+preds <- t(preds)
+
+# Inspect residuals using DHARMA
+res <- createDHARMa(
+  simulatedResponse = t(posterior_predict(diffusionmodel1_fit_gamma_18)),
+  observedResponse = diffusion_data$weighted_diff_coeff,
+  fittedPredictedResponse = apply(t(posterior_epred(diffusionmodel1_fit_gamma_18)), 1, mean),
+  integerResponse = TRUE)
+
+
+plot(res, quantreg = FALSE)
+
+
 
 mcmc_diffusion <- ggs(diffusionmodel1_fit) # Warning message In custom.sort(D$Parameter) : NAs introduced by coercion
 
