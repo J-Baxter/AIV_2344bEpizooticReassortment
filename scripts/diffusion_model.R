@@ -204,34 +204,57 @@ diffusionmodel1_fit_gamma_19<- brm(
 
 
 # Post-fitting checks (including inspection of ESS, Rhat and posterior predictive)
-tidy_diffusionmodel1 <- tidy(diffusionmodel1_fit)
-posteriorpredictive <-pp_check(diffusionmodel1_fit, ndraws = 500)
 performance(diffusionmodel1_fit_gamma_14)
 
-loo_compare(diffusionmodel1_fit, diffusionmodel2_fit)
+
 # Misc evaluations
 # performance(diffusionmodel1_fit) # tibble output of model metrics including R2, ELPD, LOOIC, RMSE
 plot(diffusionmodel1_fit) # default output plot of brms showing posterior distributions of
-prior_summary(diffusionmodel1_fit) #obtain dataframe of priors used in model.
 
 
+#### Check Residuals using DHARMA ####
 # sample from the Posterior Predictive Distribution
 preds <- posterior_predict(diffusionmodel1_fit_gamma_19, nsamples = 250, summary = FALSE)
 preds <- t(preds)
 
-# Inspect residuals using DHARMA
 res <- createDHARMa(
   simulatedResponse = t(posterior_predict(diffusionmodel1_fit_gamma_18)),
   observedResponse = diffusion_data$weighted_diff_coeff,
   fittedPredictedResponse = apply(t(posterior_epred(diffusionmodel1_fit_gamma_18)), 1, mean),
-  integerResponse = TRUE)
-
+  integerResponse = FALSE)
 
 plot(res, quantreg = FALSE)
 
 
+#### Check Ratio of Effective Population Size to Total Sample Size #### 
+# values <0.1 should raise concerns about autocorrelation
 
-mcmc_diffusion <- ggs(diffusionmodel1_fit) # Warning message In custom.sort(D$Parameter) : NAs introduced by coercion
+neff_ratio(diffusionmodel1_fit_gamma_19) %>% as_tibble(rownames = 'param') %>%
+  mutate(param = fct_reorder(param, desc(value))) %>%
+  ggplot() + 
+  geom_segment(aes(yend = value,
+                   xend=param, 
+                   y=0,
+                   x = param,
+                   colour = value > 0.1)) +
+  geom_point(aes(y = value,
+                 x = param,
+                 colour = value > 0.1)) + 
+  geom_hline(aes(yintercept = 0.1), linetype = 'dashed') + 
+  geom_hline(aes(yintercept = 0.5), linetype = 'dashed') + 
+  scale_colour_manual(values = c( '#0047AB',  'red')) + 
+  scale_y_continuous(limits = c(0, 1), expand = c(0,0),
+                     expression(N["eff"]/N)) + 
+  scale_x_discrete(expand= c(0.1,0), 'Fitted Parameter') + 
+  theme_classic() + 
+  coord_flip()  + 
+  theme(axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        legend.position = 'none') 
+ 
+  
+
+
 
 
 saveRDS(diffusionmodel1_fit, './saved_models/diffusion_model_2.rds')
