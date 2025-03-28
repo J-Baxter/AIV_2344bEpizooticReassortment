@@ -253,7 +253,47 @@ neff_ratio(diffusionmodel1_fit_gamma_19) %>% as_tibble(rownames = 'param') %>%
         legend.position = 'none') 
  
   
+trank <- as_draws_df(diffusionmodel1_fit_gamma_19)  %>%  
+  mcmc_rank_overlay(regex_pars = '^b_') 
 
+trank$data %>%
+  rename(.variable = parameter) %>%
+  mutate(label = case_when(.variable == 'b_collection_regionnameasia'~ "beta['asia']",
+                           .variable == 'b_collection_regionnameafrica'~ "beta['africa']",
+                           .variable == 'b_collection_regionnameeurope'~ "beta['europe']",
+                           .variable == "b_collection_regionnamecentral&northernamerica"~ "beta['americas']",
+                           
+                           .variable == 'b_int_stepmedian_anseriformes_wild_log1p'~ "beta['step_anseriformes']",
+                           .variable == 'b_median_anseriformes_wild_log1p'~ "beta['persist_anseriformes']",
+                           .variable == 'b_int_stepmedian_charadriiformes_wild_log1p'~ "beta['step_charadriiformes']",
+                           .variable == 'b_median_charadriiformes_wild_log1p'~ "beta['persist_charadriiformes']",
+                           .variable == 'b_int_stepcount_cross_species_log1p'~ "beta['step_hostjump']",
+                           .variable == 'b_count_cross_species_log1p'~ "beta['num_hostjump']",
+                           
+                           .variable == 'b_collection_regionnameafrica:median_anseriformes_wild_log1p'~ "beta['africa-anser']",
+                           .variable == 'b_collection_regionnameeurope:median_anseriformes_wild_log1p'~ "beta['europe-anser']",
+                           .variable == 'b_collection_regionnamecentral&northernamerica:median_anseriformes_wild_log1p'~ "beta['americas-anser']",
+                           
+                           .variable == 'b_collection_regionnameafrica:median_charadriiformes_wild_log1p'~ "beta['africa-charad']",
+                           .variable == 'b_collection_regionnameeurope:median_charadriiformes_wild_log1p'~ "beta['europe-charad']",
+                           .variable == 'b_collection_regionnamecentral&northernamerica:median_charadriiformes_wild_log1p'~ "beta['americas-charad']",
+                           
+                           .variable == 'b_shape_collection_regionnameasia'~ "alpha['asia']",
+                           .variable == 'b_shape_collection_regionnameafrica'~ "alpha['africa']",
+                           .variable == 'b_shape_collection_regionnameeurope'~ "alpha['europe']",
+                           .variable == 'b_shape_collection_regionnamecentral&northernamerica'~ "alpha['americas']")) %>%
+  ggplot() + 
+  geom_step(aes(x = bin_start, 
+                y = n,
+                colour = chain),
+            linewidth = 0.8) + 
+  scale_y_continuous(expand = c(0,0), limits = c(150, 225)) +
+  scale_x_continuous(expand = c(0,0)) + 
+  facet_wrap(~label,  ncol = 3, labeller = label_parsed) +
+  scale_colour_brewer(palette = 'GnBu', 'Chains') +
+  theme_minimal() + 
+  theme(legend.position = 'bottom',
+        axis.title = element_blank())
 
 
 
