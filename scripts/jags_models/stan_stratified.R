@@ -14,9 +14,9 @@ parameters {
 
 model {
   // Priors
-  lambda ~ normal(3, 1);
+  lambda ~ normal(3, 1.5);
   theta ~ beta(2, 5); // Example prior
-  p ~ beta(2, 5); // Example prior
+  p ~ beta(2, 2); // Example prior
   
   // Loop over number of observations
   for (i in 1:N) {
@@ -74,11 +74,16 @@ for (i in 1:N) {
 
 # Print the simulated data
 data_list <- list(N = N, K = K, C = C, y = y, continent = continent)
+real_data <- list(N = nrow(data_processed),
+                  K = data_processed %>% pull(n_reassortants) %>% max(),
+                  C = data_processed %>% pull(collection_regionname) %>% n_distinct(),
+                  y = data_processed %>% pull(n_reassortants),
+                  continent = data_processed %>% pull(collection_regionname) %>% as.factor() %>% as.numeric())
 
 
 # Run the model
-fit <- mod$sample(
-  data = data_list,
+test_fit <- mod$sample(
+  data = real_data,
   seed = 42,
   chains = 4,
   parallel_chains = 4,
@@ -86,11 +91,11 @@ fit <- mod$sample(
   iter_sampling = 2000
 )
 
-print(fit$summary())
+print(test_fit$summary())
 
-t <- get_variables(fit)
+t <- get_variables(test_fit)
 
-fit %>%
+test_fit %>%
   gather_draws(., !!!syms(t)) %>%
   mutate(type = 'posterior') %>%
   filter(grepl('^lambda', .variable)) %>%
@@ -102,16 +107,16 @@ fit %>%
                  fill = '#1b9e77') +
   
   stat_function(fun = dnorm,
-                args = list(mean = 3, sd = 1),
+                args = list(mean = 3, sd = 1.5),
                 fill = '#d95f02',
                 geom = 'area',
                 alpha = 0.5) +
   
-  facet_wrap(~`.variable`)
+  facet_grid(rows = vars(`.variable`))
 
 
 
-fit %>%
+test_fit %>%
   gather_draws(., !!!syms(t)) %>%
   mutate(type = 'posterior') %>%
   filter(grepl('^p', .variable)) %>%
@@ -123,7 +128,7 @@ fit %>%
                  fill = '#1b9e77') +
   
   stat_function(fun = dbeta,
-                args = list(shape1 = 2, shape2 = 5),
+                args = list(shape1 = 2, shape2 = 2),
                 fill = '#d95f02',
                 geom = 'area',
                 alpha = 0.5) +
