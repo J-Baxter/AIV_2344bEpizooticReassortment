@@ -151,7 +151,7 @@ model_performance(model_zi_pois)
 
 
 model_zi_pois_full <- brm(
-  bf(n_reassortants ~ 0 + collection_regionname) ,
+  bf(n_reassortants ~ 0 + collection_regionname + (collection_regionname|collection_year/collection_season)) ,
   data = data_processed,
   family = zero_inflated_poisson(),
   chains = 4, 
@@ -164,6 +164,17 @@ model_zi_pois_full <- brm(
 
 pp_check(model_zi_pois_full, ndraws = 100, type = 'bars')
 model_performance(model_zi_pois_full)
+
+preds <- posterior_predict(model_zi_pois_full, nsamples = 250, summary = FALSE)
+preds <- t(preds)
+
+res <- createDHARMa(
+  simulatedResponse = t(posterior_predict(model_zi_pois_full)),
+  observedResponse = data_processed$n_reassortants,
+  fittedPredictedResponse = apply(t(posterior_epred(model_zi_pois_full)), 1, mean),
+  integerResponse = FALSE)
+
+plot(res)
 ###################################################
 
 # Define Priors
