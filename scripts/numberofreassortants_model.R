@@ -151,8 +151,7 @@ model_performance(model_zi_pois)
 
 
 model_zi_pois_full <- brm(
-  bf(n_reassortants ~ 0 + collection_regionname + (collection_regionname|collection_year/collection_season) ,
-     zi ~ 1  + (collection_regionname|collection_year/collection_season)),
+  bf(n_reassortants ~ 0 + collection_regionname) ,
   data = data_processed,
   family = zero_inflated_poisson(),
   chains = 4, 
