@@ -379,6 +379,42 @@ ggsave('~/Downloads/flu_plots/figure_diffusion_ppc.png', ppc_plot, device = 'png
 
 
 
+#Autocorrelation plot
+diffusionmodel1_fit_gamma_19 %>% 
+  mcmc_acf() %>% 
+  .$data %>%
+  as_tibble() %>%
+  mutate(Parameter = case_when(Parameter == 'b_collection_regionnameasia'~ "beta['asia']",
+                               Parameter == 'b_collection_regionnameafrica'~ "beta['africa']",
+                               Parameter == 'b_collection_regionnameeurope'~ "beta['europe']",
+                               Parameter == "b_collection_regionnamecentral&northernamerica"~ "beta['americas']",
+                                             
+                               Parameter == 'b_int_stepmedian_anseriformes_wild_log1p'~ "beta['step_anseriformes']",
+                               Parameter == 'b_median_anseriformes_wild_log1p'~ "beta['persist_anseriformes']",
+                               Parameter == 'b_int_stepmedian_charadriiformes_wild_log1p'~ "beta['step_charadriiformes']",
+                               Parameter == 'b_median_charadriiformes_wild_log1p'~ "beta['persist_charadriiformes']",
+                               Parameter == 'b_int_stepcount_cross_species_log1p'~ "beta['step_hostjump']",
+                               Parameter == 'b_count_cross_species_log1p'~ "beta['num_hostjump']",
+                                             
+                               Parameter == 'b_collection_regionnameafrica:median_anseriformes_wild_log1p'~ "beta['africa-anser']",
+                               Parameter == 'b_collection_regionnameeurope:median_anseriformes_wild_log1p'~ "beta['europe-anser']",
+                               Parameter == 'b_collection_regionnamecentral&northernamerica:median_anseriformes_wild_log1p'~ "beta['americas-anser']",
+                                             
+                               Parameter == 'b_collection_regionnameafrica:median_charadriiformes_wild_log1p'~ "beta['africa-charad']",
+                               Parameter == 'b_collection_regionnameeurope:median_charadriiformes_wild_log1p'~ "beta['europe-charad']",
+                               Parameter == 'b_collection_regionnamecentral&northernamerica:median_charadriiformes_wild_log1p'~ "beta['americas-charad']",
+                                             
+                               Parameter == 'b_shape_collection_regionnameasia'~ "alpha['asia']",
+                               Parameter == 'b_shape_collection_regionnameafrica'~ "alpha['africa']",
+                               Parameter == 'b_shape_collection_regionnameeurope'~ "alpha['europe']",
+                               Parameter == 'b_shape_collection_regionnamecentral&northernamerica'~ "alpha['americas']")) %>%
+  drop_na(Parameter) %>%
+  ggplot(aes(y = AC, x = Lag, colour = as.factor(Chain))) + 
+  geom_path() + 
+  facet_wrap(~Parameter, labeller = label_parsed) + 
+  theme_minimal()  + 
+  scale_colour_brewer()
+
 # MCMC Chains
 mcmc_diffusion <- ggs(diffusionmodel1_fit_gamma_19) # Warning message In custom.sort(D$Parameter) : NAs introduced by coercion
 
