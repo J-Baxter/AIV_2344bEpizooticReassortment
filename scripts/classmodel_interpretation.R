@@ -180,6 +180,18 @@ neff_ratio(basic_model) %>% as_tibble(rownames = 'param') %>%
         legend.position = 'none') 
 
 
+# Autocorrelation plot
+basic_model %>% 
+  mcmc_acf() %>% 
+  .$data %>%
+  as_tibble() %>%
+  ggplot(aes(y = AC, x = Lag, colour = as.factor(Chain))) + 
+  geom_path() + 
+  facet_wrap(~Parameter) + 
+  theme_classic() 
+
+
+
 # Compare prior & posterior parameter distributions
 t_class<- get_variables(basic_model)
 
