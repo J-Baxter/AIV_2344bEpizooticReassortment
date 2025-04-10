@@ -121,8 +121,15 @@ test_fit %>%
   mutate(type = 'posterior') %>%
   filter(grepl('^p', .variable)) %>%
   ggplot() + 
-  geom_histogram(aes(x = .value,
-                     y = after_stat(density)),
+ # geom_histogram(aes(x = .value,
+                  #   y = after_stat(density)),
+               #  inherit.aes = F, 
+                 #binwidth = 0.1, 
+                 #fill = '#1b9e77') +
+  
+  geom_density(aes(x = .value#,
+                     #y = after_stat(density)
+                   ),
                  inherit.aes = F, 
                  binwidth = 0.1, 
                  fill = '#1b9e77') +
@@ -139,4 +146,14 @@ test_fit %>%
 ppc_dens_overlay(y = fit$y,
                  yrep = posterior_predict(fit, draws = 50))  
 
+stan_acf <- posterior::as_draws_array(test_fit, nchains = 4) %>% 
+  mcmc_acf()
 
+stan_acf$data %>% 
+  ggplot(aes(y = AC, 
+             x = Lag,
+             colour = as.factor(Chain))) +
+  geom_path() + 
+  facet_wrap(~Parameter) + 
+  theme_classic() + 
+  scale_color_brewer()
