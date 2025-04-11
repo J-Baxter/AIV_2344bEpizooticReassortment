@@ -24,11 +24,9 @@ data_list <- list(
 
 # Initial values
 init_list <- list(
-  list(lambda = 1.0, pi = 0.2, p = 0.5),
-  list(lambda = 1.5, pi = 0.3, p = 0.6),
-  list(lambda = 2.0, pi = 0.4, p = 0.7),
-  list(lambda = 2.5, pi = 0.5, p = 0.8)
-)
+  list(lambda = 1.0), 
+  list(pi = 0.2),
+  list(p = 0.5))
 
 # Fit the model
 fit <- stan(
@@ -47,12 +45,12 @@ model {
 
   // Priors
   lambda ~ normal(1, 2);
-  pi ~ beta(1.5, 1.5);
-  p ~ beta(1.5, 1.5);
+  pi ~ beta(1, 1);
+  p ~ beta(1, 1);
   
   for (i in 1:N) {
     real lp_y_i = log(pi * (y[i] == 0)); // Contribution from zero inflation
-    for (n in y[i]:min(100, y[i]+10)) { // Choose an upper bound for practical computation
+    for (n in y[i]:100) { // Choose an upper bound for practical computation
       lp_y_i = log_sum_exp(lp_y_i,
                 log(1 - pi) +
                 poisson_lpmf(n | lambda) +
@@ -62,7 +60,7 @@ model {
   }
 }',
   data = data_list,
-  init = init_list,
+  #init = init_list,
   chains = 4,
   iter = 2000,
   warmup = 1000,
@@ -70,4 +68,82 @@ model {
 )
 
 # Print results
+
+mod <- cmdstan_model(file)
+fit <- mode$sample(data = data_list,
+                   init = init_list,
+                   chains = 2,
+                   iter = 2000,
+                   warmup = 1000,
+                   seed = 42)
 print(fit)
+
+y <-
+  structure(c(0L, 3L, 1L, 1L, 1L, 0L, 1L, 1L, 0L, 0L, 0L, 0L, 1L, 
+              0L, 1L, 0L, 1L, 1L, 1L, 0L, 1L, 0L, 0L, 1L, 1L, 0L, 1L, 0L, 1L, 
+              1L, 0L, 1L, 3L, 2L, 0L, 2L, 0L, 1L, 0L, 0L, 1L, 1L, 3L, 0L, 3L, 
+              0L, 1L, 0L, 0L, 0L, 1L, 0L, 1L, 1L, 0L, 4L, 0L, 1L, 2L, 1L, 1L, 
+              0L, 5L, 2L, 0L, 1L, 0L, 0L, 1L, 1L, 1L, 1L, 0L, 0L, 1L, 4L, 1L, 
+              2L, 1L, 0L, 1L, 2L, 0L, 1L, 2L, 0L, 0L, 2L, 1L, 0L, 0L, 1L, 0L, 
+              0L, 1L, 2L, 1L, 1L, 0L, 0L, 2L, 1L, 2L, 0L, 2L, 2L, 2L, 0L, 1L, 
+              0L, 3L, 1L, 2L, 0L, 0L, 1L, 1L, 1L, 2L, 1L, 1L, 2L, 2L, 3L, 2L, 
+              1L, 0L, 0L, 1L, 1L, 2L, 1L, 4L, 0L, 0L, 2L, 3L, 0L, 0L, 1L, 1L, 
+              2L, 1L, 1L, 0L, 2L, 0L, 2L, 2L, 0L, 0L, 2L, 0L, 0L, 1L, 2L, 1L, 
+              0L, 1L, 0L, 0L, 1L, 0L, 0L, 1L, 2L, 3L, 4L, 2L, 0L, 1L, 0L, 1L, 
+              0L, 4L, 0L, 0L, 1L, 0L, 1L, 0L, 0L, 0L, 1L, 1L, 0L, 1L, 1L, 1L, 
+              0L, 0L, 3L, 1L, 0L, 0L, 1L, 1L, 5L, 1L, 1L, 0L, 0L, 2L, 0L, 1L, 
+              0L, 1L, 1L, 0L, 0L, 0L, 2L, 1L, 1L, 0L, 2L, 0L, 1L, 1L, 0L, 0L, 
+              1L, 0L, 1L, 1L, 0L, 1L, 0L, 1L, 2L, 0L, 1L, 0L, 1L, 1L, 4L, 3L, 
+              2L, 1L, 0L, 1L, 2L, 3L, 1L, 2L, 0L, 1L, 0L, 1L, 1L, 1L, 1L, 2L, 
+              0L, 2L, 3L, 2L, 2L, 0L, 1L, 2L, 2L, 3L, 1L, 0L, 0L, 1L, 2L, 0L, 
+              1L, 0L, 2L, 0L, 0L, 1L, 3L, 2L, 1L, 0L, 1L, 1L, 2L, 0L, 0L, 3L, 
+              0L, 0L, 1L, 1L, 0L, 1L, 0L, 0L, 0L, 1L, 1L, 0L, 1L, 0L, 0L, 0L, 
+              1L, 1L, 3L, 2L, 1L, 2L, 1L, 0L, 1L, 2L, 0L, 1L, 0L, 0L, 1L, 1L, 
+              1L, 1L, 2L, 1L, 0L, 2L, 3L, 1L, 1L, 2L, 1L, 2L, 1L, 2L, 1L, 2L, 
+              0L, 0L, 2L, 1L, 1L, 3L, 1L, 0L, 1L, 1L, 2L, 0L, 1L, 2L, 2L, 1L, 
+              0L, 1L, 0L, 0L, 0L, 1L, 2L, 2L, 0L, 2L, 0L, 1L, 2L, 0L, 0L, 1L, 
+              1L, 2L, 3L, 0L, 1L, 2L, 0L, 0L, 3L, 2L, 0L, 1L, 0L, 0L, 2L, 1L, 
+              1L, 0L, 0L, 1L, 1L, 2L, 0L, 3L, 1L, 0L, 1L, 2L, 0L, 1L, 0L, 1L, 
+              4L, 0L, 0L, 0L, 2L, 1L, 0L, 0L, 0L, 0L, 1L, 0L, 0L, 1L, 2L, 0L, 
+              0L, 1L, 0L, 2L, 0L, 0L, 0L, 0L, 2L, 0L, 2L, 1L, 0L, 0L, 0L, 1L, 
+              2L, 1L, 3L, 0L, 1L, 1L, 2L, 1L, 2L, 1L, 0L, 0L, 1L, 3L, 1L, 0L, 
+              0L, 0L, 0L, 0L, 2L, 0L, 0L, 1L, 0L, 2L, 4L, 2L, 1L, 1L, 2L, 2L, 
+              0L, 5L, 1L, 1L, 0L, 1L, 0L, 1L, 3L, 1L, 2L, 2L, 0L, 0L, 3L, 1L, 
+              2L, 0L, 2L, 1L, 2L, 0L, 0L, 1L, 0L, 0L, 1L, 1L, 0L, 2L, 0L, 0L, 
+              0L, 1L, 1L, 2L, 0L, 1L, 1L, 2L, 2L, 1L, 3L, 2L, 2L, 4L, 1L, 0L, 
+              2L, 2L, 0L, 3L, 0L, 0L, 0L, 0L, 1L, 2L, 2L, 1L, 0L, 2L, 2L, 1L, 
+              1L, 2L, 1L, 1L, 1L, 1L, 0L, 2L, 0L, 0L, 1L, 2L, 1L, 2L, 2L, 1L, 
+              3L, 1L, 2L, 0L, 0L, 1L, 2L, 0L, 0L, 1L, 1L, 0L, 0L, 0L, 1L, 0L, 
+              0L, 1L, 1L, 1L, 1L, 0L, 0L, 1L, 1L, 3L, 3L, 0L, 0L, 1L, 1L, 0L, 
+              0L, 3L, 1L, 0L, 0L, 0L, 1L, 1L, 1L, 0L, 1L, 2L, 0L, 0L, 1L, 1L, 
+              1L, 1L, 2L, 1L, 0L, 1L, 1L, 1L, 3L, 0L, 1L), .Dim = c(200L, 3L
+              ))
+R <-
+  200L
+T <-
+  3L
+K <-
+  100L
+## Parameters monitored
+params <- c("lambda", "p")
+
+## MCMC settings
+ni <- 1000
+nt <- 1
+nb <- 500
+nc <- 4
+
+## Initial values
+inits <- lapply(1:nc, function(i)
+  list(p = runif(1, 0, 1),
+       lambda = runif(1, 0, 1)))
+
+out <- stan("~/Downloads/binmix.stan",
+            data = list(y = y, # Data
+                        R = R, # Number of sites
+                        T = T, # Temporal replications
+                        K = 100), # Upper bound of population size (for marginalisation)
+            init = inits, pars = params,
+            chains = nc, iter = ni, warmup = nb, thin = nt,
+            seed = 1,
+            open_progress = FALSE)
