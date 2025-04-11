@@ -24,8 +24,8 @@ model {
     int c = continent[i]; // Current continent
     
     // Linear predictors - requires updating
-    real lambda = exp(alpha_abundance + X_abundance[j] * beta_abundance);
-    real p = inv_logit(alpha_detection + X_detection[j] * beta_detection);
+    real lambda = exp(alpha_abundance + X_abundance[i] * beta_abundance); // n_reassortants ~ 0 + collection_regionname/woah_susceptibles,
+    real p = inv_logit(alpha_detection + X_detection[i] * beta_detection); // reassortants_observed ~  0 + collection_regionname:n_sequences + 0  + collection_regionname:n_reassortants  +  0  + collection_regionname
 
     // Loop over plausible values of K to marginalize out discrete latent variables
     for (j in 1:K) {
