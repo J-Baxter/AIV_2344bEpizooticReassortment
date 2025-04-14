@@ -34,28 +34,35 @@ model {
     vector[K] lp;
     int c = continent[i]; // Current continent
     
-    // Linear predictors - requires updating
+    // Linear predictors 
     real lambda = exp(continent_specific_abundance[c] + beta_cases * cases[i]);
     real p = inv_logit(continent_specific_detection[c] + beta_sequences * sequences[i]);
 
-
-    // Loop over plausible values of K to marginalize out discrete latent variables
+    // Loop over plausible values of K to marginalise out discrete latent variables
     for (j in 1:K) {
+    
       int current_population = y[i] + j - 1;
       
       // Likelihood for y[i] = 0
-      if (y[i] == 0)
-        lp[j] = log_sum_exp(to_vector({
-          bernoulli_lpmf(1 | theta), 
-          bernoulli_lpmf(0 | theta) + poisson_lpmf(current_population | lambda),
-          bernoulli_lpmf(0 | theta) + poisson_lpmf(current_population | lambda) + binomial_lpmf(y[i] | current_population, p)
-        }));
+      if (y[i] == 0){
+      
+      vector[2] components;
+      components[1] = bernoulli_lpmf(1 | theta);
+      components[2] = bernoulli_lpmf(0 | theta) +
+                      poisson_lpmf(current_population | lambda) +
+                      binomial_lpmf(0 | current_population, p); //CHECK THIS LOGIC - YOU HAVE REMOVED SOMETHING
+                      
+      lp[j] = log_sum_exp(components);
       
       // Likelihood for y[i] > 0
-      else
-        lp[j] = bernoulli_lpmf(0 | theta) + poisson_lpmf(current_population | lambda) + binomial_lpmf(y[i] | current_population, p);
-    }
+      } else {
+      
+      lp[j] = bernoulli_lpmf(0 | theta) +
+              poisson_lpmf(current_population | lambda) +
+              binomial_lpmf(y[i] | current_population, p);
+      }
     
-    target += log_sum_exp(lp); // Aggregate the probabilities correctly
+     // Aggregate the probabilities 
+    target += log_sum_exp(lp);
   }
 }'
