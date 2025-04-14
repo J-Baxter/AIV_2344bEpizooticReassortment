@@ -22,6 +22,7 @@ library(bayesplot)
 library(scales)
 library(DHARMa)
 library(ggdist)
+library(ggmcmc)
 
 
 # User functions
@@ -33,7 +34,6 @@ diffusion_data <-
 ###################################### MCMC Diagnostics #############################################
 
 #MCMC chain convergence (Visual Inspection)
-
 # Plot Chains
 ggs(diffusionmodel1_fit_gamma_19) %>% 
   from_ggmcmc_names() %>%
@@ -225,6 +225,7 @@ model_resolution %>%
   scale_y_continuous(expand = c(0,0), 'Effective Sample Size')
 
 
+# NB - technically a convergence check
 model_resolution %>% 
   ggplot(aes(x = term, y = rhat)) + 
   geom_bar(stat = 'identity') + 
