@@ -61,3 +61,27 @@ model {
   }
 }
 
+
+// Replications for the posterior predictive distribution
+generated quantities {
+  array[N] int y_rep; 
+
+  for (i in 1:N) {
+    int c = continent[i]; // Current continent
+
+    // Draw a latent count from the zero-inflated Poisson
+    int current_population;
+    if (bernoulli_rng(theta) == 1) {
+      // Zero inflation: y_rep[i] = 0
+      y_rep[i] = 0;
+    } else {
+      // Simulate from Poisson
+      current_population = poisson_rng(lambda[c]);
+      
+      // Simulate observed count from a binomial
+      y_rep[i] = binomial_rng(current_population, p[c]);
+    }
+  }
+}
+
+
