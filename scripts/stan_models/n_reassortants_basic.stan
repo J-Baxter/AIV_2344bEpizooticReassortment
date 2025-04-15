@@ -55,11 +55,9 @@ model {
         } else {
           lp[j] = bernoulli_lpmf(0 | theta) + poisson_lpmf(current_population | lambda[c]) + binomial_lpmf(y[i] | current_population, p[c]);
       }
-      
-      // Aggregate the probabilities 
-
-    target += log_sum_exp(lp); 
     }
+    // Aggregate the probabilities 
+    target += log_sum_exp(lp); 
   }
 }
 
