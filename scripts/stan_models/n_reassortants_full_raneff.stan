@@ -25,8 +25,8 @@ parameters {
   real<lower=0, upper=1> theta; // Zero-inflation probability
   array[C] real<lower=0> continent_specific_abundance; // Poisson rate stratified by continent
   array[C] real<lower=0, upper=1> continent_specific_detection; // Detection probability stratified by continent
-  array[C] real continent_specific_cases; //Interaction term between continent and cases
-  array[C] real continent_specific_sequences; // Interaction term between continent and sequences
+
+
   real beta_cases; // Coefficient for additional cases data
   real beta_sequences; // Coefficient for additional sequences data
 }
@@ -38,12 +38,12 @@ model {
   // Abundance Model
   continent_specific_abundance ~ normal(3, 1.5);
   beta_cases ~ normal(0, 1);
-  continent_specific_cases ~ normal(0, 2);
+ 
   
   // Detection model
   continent_specific_detection ~ beta(2, 2);
   beta_sequences ~ normal(0, 1);
-  continent_specific_sequences ~ normal(0, 2);
+  
 
   // Zero Inflation Model
   theta ~ beta(2, 5); 
@@ -54,8 +54,8 @@ model {
     int c = continent[i]; // Current continent
     
     // Linear predictors 
-    real lambda = exp(continent_specific_abundance[c] + beta_cases * cases[i]  + continent_specific_cases[c] * cases[i]); 
-    real p = inv_logit(continent_specific_detection[c] + beta_sequences * sequences[i] + continent_specific_sequences[c] * sequences[i]); 
+    real lambda = exp(continent_specific_abundance[c] + beta_cases * cases[i]  ); 
+    real p = inv_logit(continent_specific_detection[c] + beta_sequences * sequences[i] ); 
 
     // Loop over plausible values of K to marginalise out discrete latent variables
     for (j in 1:K) {
@@ -78,9 +78,9 @@ model {
       lp[j] = bernoulli_lpmf(0 | theta) + poisson_lpmf(current_population | lambda) + binomial_lpmf(y[i] | current_population, p);
       }
     }
-    
     // Aggregate the probabilities 
     target += log_sum_exp(lp);
   }
 }
+
 
