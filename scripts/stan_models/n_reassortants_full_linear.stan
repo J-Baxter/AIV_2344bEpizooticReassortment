@@ -67,17 +67,15 @@ model {
       
       vector[3] components;
       components[1] = bernoulli_lpmf(1 | theta);
-      components[2] =  bernoulli_lpmf(0 | theta) + poisson_lpmf(current_population | lambda);
-      components[3] =  bernoulli_lpmf(0 | theta) + poisson_lpmf(current_population | lambda) + binomial_lpmf(0 | current_population, p);
+      components[2] = bernoulli_lpmf(0 | theta) + poisson_lpmf(current_population | lambda);
+      components[3] = bernoulli_lpmf(0 | theta) + poisson_lpmf(current_population | lambda) + binomial_lpmf(0 | current_population, p);
                       
       lp[j] = log_sum_exp(components);
       
       // Likelihood for y[i] > 0
       } else {
       
-      lp[j] = bernoulli_lpmf(0 | theta) +
-              poisson_lpmf(current_population | lambda) +
-              binomial_lpmf(y[i] | current_population, p);
+      lp[j] = bernoulli_lpmf(0 | theta) + poisson_lpmf(current_population | lambda) + binomial_lpmf(y[i] | current_population, p);
       }
     
      // Aggregate the probabilities 

@@ -46,8 +46,8 @@ model {
       if (y[i] == 0){
         vector[3] components;
         components[1] = bernoulli_lpmf(1 | theta);
-        components[2] =  bernoulli_lpmf(0 | theta) + poisson_lpmf(current_population | lambda[c]);
-        components[3] =  bernoulli_lpmf(0 | theta) + poisson_lpmf(current_population | lambda[c]) + binomial_lpmf(0 | current_population, p[c]);
+        components[2] = bernoulli_lpmf(0 | theta) + poisson_lpmf(current_population | lambda[c]);
+        components[3] = bernoulli_lpmf(0 | theta) + poisson_lpmf(current_population | lambda[c]) + binomial_lpmf(0 | current_population, p[c]);
         
         lp[j] = log_sum_exp(components);
         
