@@ -39,7 +39,7 @@ model {
  
   
   // Detection model
-  continent_specific_detection ~ beta(2, 2);
+  continent_specific_detection ~ beta(1.5, 1.5);
   beta_sequences ~ normal(0, 1);
   
 
@@ -52,7 +52,7 @@ model {
     int c = continent[i]; // Current continent
     
     // Linear predictors 
-    real lambda = exp(continent_specific_abundance[c] + beta_cases * cases[i]  ); 
+    real lambda = exp(continent_specific_abundance[c] + beta_cases * cases[i] ); 
     real p = inv_logit(continent_specific_detection[c] + beta_sequences * sequences[i] ); 
 
     // Loop over plausible values of K to marginalise out discrete latent variables
@@ -78,6 +78,29 @@ model {
     }
     // Aggregate the probabilities 
     target += log_sum_exp(lp);
+  }
+}
+
+
+// Replications for the posterior predictive distribution
+generated quantities {
+  array[N] int y_rep; 
+
+  for (i in 1:N) {
+    int c = continent[i]; // Current continent
+    
+    // Draw a latent count from the zero-inflated Poisson
+    int current_population;
+    if (bernoulli_rng(theta) == 1) {
+      // Zero inflation: y_rep[i] = 0
+      y_rep[i] = 0;
+    } else {
+      // Simulate from Poisson
+      current_population = poisson_rng(exp(continent_specific_abundance[c] + beta_cases * cases[i] ));
+      
+      // Simulate observed count from a binomial
+      y_rep[i] = binomial_rng(current_population, inv_logit(continent_specific_detection[c] + beta_sequences * sequences[i] ));
+    }
   }
 }
 
