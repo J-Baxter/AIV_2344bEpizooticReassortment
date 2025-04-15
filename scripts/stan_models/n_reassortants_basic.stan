@@ -59,5 +59,7 @@ model {
       // Aggregate the probabilities 
 
     target += log_sum_exp(lp); 
+    }
   }
 }
+
