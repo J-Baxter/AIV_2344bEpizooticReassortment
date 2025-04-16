@@ -22,7 +22,8 @@ data {
 
 // Declared parameters
 parameters {
-  real<lower=0, upper=1> theta; // Zero-inflation probability
+  //real<lower=0, upper=1> theta; // Zero-inflation probability
+  array[C] real<lower=0, upper=1> continent_specific_theta; // Zero-inflation probability stratified by continent
   array[C] real<lower=0> continent_specific_abundance; // Poisson rate stratified by continent
   array[C] real<lower=0, upper=1> continent_specific_detection; // Detection probability stratified by continent
   real beta_cases; // Coefficient for additional cases data
@@ -39,12 +40,12 @@ model {
  
   
   // Detection model
-  continent_specific_detection ~ beta(1.5, 1.5);
+  continent_specific_detection ~ uniform(0,1);//beta(1.5, 1.5);
   beta_sequences ~ normal(0, 1);
   
 
   // Zero Inflation Model
-  theta ~ beta(2, 5); 
+  continent_specific_theta ~ beta(2, 5); 
   
   // Loop over number of observations
   for (i in 1:N) {
@@ -64,16 +65,16 @@ model {
       if (y[i] == 0){
       
       vector[3] components;
-      components[1] = bernoulli_lpmf(1 | theta);
-      components[2] = bernoulli_lpmf(0 | theta) + poisson_lpmf(current_population | lambda);
-      components[3] = bernoulli_lpmf(0 | theta) + poisson_lpmf(current_population | lambda) + binomial_lpmf(0 | current_population, p);
+      components[1] = bernoulli_lpmf(1 | continent_specific_theta[c]);
+      components[2] = bernoulli_lpmf(0 | continent_specific_theta[c]) + poisson_lpmf(current_population | lambda);
+      components[3] = bernoulli_lpmf(0 | continent_specific_theta[c]) + poisson_lpmf(current_population | lambda) + binomial_lpmf(0 | current_population, p);
                       
       lp[j] = log_sum_exp(components);
       
       // Likelihood for y[i] > 0
       } else {
       
-      lp[j] = bernoulli_lpmf(0 | theta) + poisson_lpmf(current_population | lambda) + binomial_lpmf(y[i] | current_population, p);
+      lp[j] = bernoulli_lpmf(0 | continent_specific_theta[c]) + poisson_lpmf(current_population | lambda) + binomial_lpmf(y[i] | current_population, p);
       }
     }
     // Aggregate the probabilities 
@@ -91,7 +92,7 @@ generated quantities {
     
     // Draw a latent count from the zero-inflated Poisson
     int current_population;
-    if (bernoulli_rng(theta) == 1) {
+    if (bernoulli_rng(continent_specific_theta[c]) == 1) {
       // Zero inflation: y_rep[i] = 0
       y_rep[i] = 0;
     } else {
