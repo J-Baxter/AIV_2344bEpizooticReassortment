@@ -1,0 +1,120 @@
+//
+// This Stan program defines a simple model, with a
+// vector of values 'y' modeled as normally distributed
+// with mean 'mu' and standard deviation 'sigma'.
+//
+// Learn more about model development with Stan at:
+//
+//    http://mc-stan.org/users/interfaces/rstan.html
+//    https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started
+//
+
+// The input data is a vector 'y' of length 'N'.
+data {
+  int<lower=0> N;
+  vector[N] y;
+}
+
+// The parameters accepted by the model. Our model
+// accepts two parameters 'mu' and 'sigma'.
+parameters {
+  real mu;
+  real<lower=0> sigma;
+}
+
+// The model to be estimated. We model the output
+// 'y' to be normally distributed with mean 'mu'
+// and standard deviation 'sigma'.
+model {
+  y ~ normal(mu, sigma);
+}
+
+
+// This Stan program defines a simple model, with a
+// vector of values 'y' modeled as normally distributed
+// with mean 'mu' and standard deviation 'sigma'.
+//
+// Learn more about model development with Stan at:
+//
+//    http://mc-stan.org/users/interfaces/rstan.html
+//    https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started
+//
+
+// The input data 
+data {
+  int<lower=0> N; // Number of observations
+  array[N] int<lower=0> y; // Observed counts
+  int<lower=0> K; // Upper bound of reassortants
+  int<lower=1> C; // Number of continents
+  array[N] int<lower=1, upper=C> continent; // Continent index for each observation
+  array[N] real cases; // Additional data for cases
+  array[N] real sequences; // Additional data for sequences
+}
+
+// Declared parameters
+parameters {
+  //real<lower=0, upper=1> theta; // Zero-inflation probability
+  array[C] real<lower=0> continent_specific_abundance; // Poisson rate stratified by continent
+  array[C] real<lower=0, upper=1> continent_specific_detection; // Detection probability stratified by continent
+  real beta_cases; // Coefficient for additional cases data
+  real beta_sequences; // Coefficient for additional sequences data
+}
+
+
+// The model to be estimated
+model {
+  // Priors
+  // Abundance Model
+  continent_specific_abundance ~ normal(3, 1.5);
+  beta_cases ~ normal(0, 1);
+ 
+  
+  // Detection model
+  continent_specific_detection ~ beta(1.5, 1.5);
+  beta_sequences ~ normal(0, 1);
+  
+
+  // Zero Inflation Model
+  //theta ~ beta(2, 5); 
+  
+  // Loop over number of observations
+  for (i in 1:N) {
+    vector[K] lp;
+    int c = continent[i]; // Current continent
+    
+    // Linear predictors 
+    real lambda = exp(continent_specific_abundance[c] + beta_cases * cases[i] ); 
+    real p = inv_logit(continent_specific_detection[c] + beta_sequences * sequences[i] ); 
+
+    // Loop over plausible values of K to marginalise out discrete latent variables
+    for (j in 1:K) {
+    
+      int current_population = y[i] + j - 1;
+      
+       lp[j] = bernoulli_lpmf(0 | theta) + poisson_lpmf(current_population | lambda) + binomial_lpmf(y[i] | current_population, p
+      
+    }
+    // Aggregate the probabilities 
+    target += log_sum_exp(lp);
+  }
+}
+
+
+// Replications for the posterior predictive distribution
+generated quantities {
+  array[N] int y_rep; 
+
+  for (i in 1:N) {
+    int c = continent[i]; // Current continent
+    
+    // Draw a latent count from the zero-inflated Poisson
+    int current_population;
+    // Simulate from Poisson
+    current_population = poisson_rng(exp(continent_specific_abundance[c] + beta_cases * cases[i] ));
+    
+    // Simulate observed count from a binomial
+    y_rep[i] = binomial_rng(current_population, inv_logit(continent_specific_detection[c] + beta_sequences * sequences[i] ));
+  }
+}
+
+
