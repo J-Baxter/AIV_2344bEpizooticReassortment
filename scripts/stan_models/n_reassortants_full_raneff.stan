@@ -22,6 +22,7 @@ data {
   array[N] real sequences; // Additional data for sequences
 }
 
+
 // Declared parameters
 parameters {
   array[C] real<lower=0, upper=1> continent_specific_theta; // Zero-inflation probability stratified by continent
@@ -94,7 +95,7 @@ model {
     
     // Linear predictors 
     real lambda = exp(continent_specific_abundance[c] + beta_cases * cases[i] + abundance_re[c, yr] ); 
-    real p = inv_logit(continent_specific_detection[c] + beta_sequences * sequences[i] + detection_re[c, yr] ); 
+    real p = inv_logit(continent_specific_detection[c] + beta_sequences * sequences[i]); 
 
     // Loop over plausible values of K to marginalise out discrete latent variables
     for (j in 1:K) {
