@@ -71,7 +71,7 @@ model {
  
   
   // Detection model
-  continent_specific_detection ~ uniform(0,1);//beta(1.5, 1.5);
+  continent_specific_detection ~ beta(1,1);//beta(1.5, 1.5);
   beta_sequences ~ normal(0, 1);
   L_Omega_detection ~ lkj_corr_cholesky(1);
   sigma_detection ~ normal(0, 1);
