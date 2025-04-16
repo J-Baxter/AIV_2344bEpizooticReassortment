@@ -63,7 +63,7 @@ combined_data <- read_csv('./2024Aug18/treedata_extractions/2024-09-20_combined_
 ############################################## MAIN ################################################
 # Data pre-processing
 # Data pre-processing
-data_processed <- data %>%
+data_processed_2 <- data %>%
   
   # remove reassortant classes
   select(-c(ends_with('class'), time_since_last_dominant)) %>%
@@ -81,9 +81,10 @@ data_processed <- data %>%
                   minor = 0,
                   major = 0,
                   dominant = 0)) %>%
+  mutate(across(starts_with('woah'), ~.x/6, .names = "{.col}_monthly")) %>%
   
-  mutate(across(starts_with('woah'), ~log1p(.x), .names = "{.col}_log1p")) %>%
-  mutate(n_sequences = log1p(n_sequences)) %>%
+  mutate(across(ends_with('_monthly'), ~log1p(.x), .names = "{.col}_log1p")) %>%
+  mutate(n_sequences_log1p = log1p(n_sequences)) %>%
   #rename_with(~gsub('_', '-' ,.x)) %>%
   
   filter(collection_regionname != 'south america')
@@ -151,7 +152,7 @@ model_performance(model_zi_pois)
 
 
 model_zi_pois_full <- brm(
-  bf(n_reassortants ~ 0 + collection_regionname + (collection_regionname|collection_year/collection_season)) ,
+  bf(n_reassortants ~ 0 + collection_regionname + (collection_regionname|collection_year)) ,
   data = data_processed,
   family = zero_inflated_poisson(),
   chains = 4, 
