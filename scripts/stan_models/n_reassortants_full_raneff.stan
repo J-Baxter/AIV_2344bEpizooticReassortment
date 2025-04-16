@@ -33,15 +33,15 @@ parameters {
   real beta_sequences; // Coefficient for additional sequences data
   
   // 'random' effects
-  matrix[2, Y] z_abundance; // Standard normal for abundance random effects
-  matrix[2, Y] z_detection; // Standard normal for detection random effects
+  matrix[C, Y] z_abundance; // Standard normal for abundance random effects
+  matrix[C, Y] z_detection; // Standard normal for detection random effects
   //matrix[2, Y] z_theta; // Standard normal for theta random effects
 
-  cholesky_factor_corr[2] L_Omega_abundance;
-  vector<lower=0>[2] sigma_abundance;
+  cholesky_factor_corr[C] L_Omega_abundance;
+  vector<lower=0>[C] sigma_abundance;
 
-  cholesky_factor_corr[2] L_Omega_detection;
-  vector<lower=0>[2] sigma_detection;
+  cholesky_factor_corr[C] L_Omega_detection;
+  vector<lower=0>[C] sigma_detection;
 
   //cholesky_factor_corr[2] L_Omega_theta;
  // vector<lower=0>[2] sigma_theta;
@@ -53,8 +53,8 @@ transformed parameters {
   matrix[C, Y] detection_re;
   //matrix[C, Y] theta_re;
 
-  abundance_re = (diag_pre_multiply(sigma_abundance, L_Omega_abundance) * z_abundance)';
-  detection_re = (diag_pre_multiply(sigma_detection, L_Omega_detection) * z_detection)';
+  abundance_re = diag_pre_multiply(sigma_abundance, L_Omega_abundance) * z_abundance;
+  detection_re = diag_pre_multiply(sigma_detection, L_Omega_detection) * z_detection;
   //theta_re = (diag_pre_multiply(sigma_theta, L_Omega_theta) * z_theta)';
 }
 
