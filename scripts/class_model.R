@@ -102,7 +102,7 @@ ggplot(class_data, aes(x = time_since_previous)) + geom_histogram() +
 
 
 # Formula
-class_formula_priors <- get_prior(class ~  previous_class:collection_regionname,
+class_formula_priors <- get_prior(class ~  previous_class:collection_regionname + ,
                                   data = class_data,
                                   family = categorical(link ='logit')) 
 

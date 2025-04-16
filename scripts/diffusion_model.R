@@ -122,8 +122,8 @@ diffusion_data <- combined_data %>%
                        # hu ~ 1 + collection_regionname +  season +(1|segment ))
 
 #diffusion_formula <- bf(weighted_diff_coeff|trunc(lb=0) ~ 1 + median_anseriformes_wild +  median_charadriiformes_wild + collection_regionname + (1|segment) + (collection_regionname|collection_year/collection_season))
-diffusion_formula <- bf(weighted_diff_coeff ~ 0 +collection_regionname + median_anseriformes_wild + median_charadriiformes_wild +  collection_season + (1|segment),
-                        shape ~ 0 +  collection_regionname + (1 | segment))
+#diffusion_formula <- bf(weighted_diff_coeff ~ 0 +collection_regionname + median_anseriformes_wild + median_charadriiformes_wild +  collection_season + (1|segment),
+                     #   shape ~ 0 +  collection_regionname + (1 | segment))
 #diffusion_formula <- bf(weighted_diff_coeff ~ 0 + median_anseriformes_wild +  median_charadriiformes_wild + collection_regionname + collection_season +  (1|segment))
 
 int_step <- function(x){

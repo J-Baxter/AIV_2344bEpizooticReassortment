@@ -178,8 +178,8 @@ test_fit_linear <- linear_mod$sample(
   seed = 42,
   chains = 4,
   parallel_chains = 4,
-  iter_warmup = 500,
-  iter_sampling = 2000
+  iter_warmup = 1000,
+  iter_sampling = 5000
 )
 
 print(test_fit_linear$summary())
@@ -276,11 +276,17 @@ test_fit_linear %>%
   inherit.aes = F, 
   fill = '#1b9e77') +
   
-  stat_function(fun = dbeta,
-                args = list(shape1 = 1.5, shape2 =1.5),
+  #stat_function(fun = dbeta,
+                #args = list(shape1 = 1.5, shape2 =1.5),
+                #fill = '#d95f02',
+                #geom = 'area',
+                #alpha = 0.5) +
+  stat_function(fun = dunif,
+                args = list(min = 0, max= 1),
                 fill = '#d95f02',
                 geom = 'area',
                 alpha = 0.5) +
+  
   
   facet_wrap(~`.variable`)
 
@@ -305,10 +311,80 @@ test_fit_linear %>%
                 alpha = 0.5) +
 
   facet_wrap(~`.variable`)
-############################################## WRITE ###############################################
+
+
+test_fit_linear %>%
+  gather_draws(., !!!syms(t)) %>%
+  mutate(type = 'posterior') %>%
+  filter(grepl('^continent_specific_theta', .variable)) %>%
+  ggplot() + 
+  
+  geom_density(aes(x = .value#,
+                   #y = after_stat(density)
+  ),
+  inherit.aes = F, 
+  fill = '#1b9e77') +
+  
+  stat_function(fun = dbeta,
+  args = list(shape1 = 2, shape2 =5),
+  fill = '#d95f02',
+  geom = 'area',
+  alpha = 0.5) +
+
+  
+  facet_wrap(~`.variable`)
+
+################################### Test full linear + R Eff model #########################################
+# Compile the model
+raneff_mod <- cmdstan_model('./scripts/stan_models/n_reassortants_full_raneff.')
+
+raneff_data <- list(N = nrow(data_processed),
+                    y = data_processed %>% pull(n_reassortants),
+                    K = data_processed %>% pull(n_reassortants) %>% max(),
+                    C = data_processed %>% pull(collection_regionname) %>% n_distinct(),
+                    Y = data_processed %>% pull(collection_year) %>% n_distinct(),
+                    continent_index = data_processed %>% pull(collection_regionname) %>% as.factor() %>% as.numeric(),
+                    year_index = data_processed %>% pull(collection_year) %>% as.factor() %>% as.numeric(),
+                    cases =  data_processed %>% pull(woah_susceptibles_log1p),
+                    sequences =  data_processed %>% pull(n_sequences))
+
+
+# Run the model
+test_fit_raneff <- raneff_mod$sample(
+  data = raneff_data,
+  seed = 42,
+  chains = 4,
+  parallel_chains = 4,
+  iter_warmup = 500,
+  iter_sampling = 2000
+)
+
+raneff_parms <- test_fit_raneff$summary()
+
+# posterior predictive check
+y_rep_matrix <- test_fit_raneff$draws('y_rep') %>%
+  posterior::as_draws_matrix()
+
+ppc_bars(y =  data_processed %>% pull(n_reassortants), yrep = y_rep_matrix[sample(500:8000, 100),])
 
 
 
+simulated_residuals <- createDHARMa(
+  simulatedResponse = t(y_rep_matrix[sample(500:8000, 100),]),
+  observedResponse = data_processed %>% pull(n_reassortants)
+)
+
+
+
+# QQ plot
+qq_data <- data.frame(
+  sample = sort(simulated_residuals$scaledResiduals),
+  theoretical = sort(ppoints(length(simulated_residuals$scaledResiduals)))
+)
+
+ggplot(qq_data, aes(sample = sample)) +
+  stat_qq(distribution = stats::qunif) +
+  stat_qq_line(distribution = stats::qunif) 
 
 ############################################## END #################################################
 ####################################################################################################

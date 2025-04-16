@@ -73,9 +73,9 @@ global_theme <- theme_classic()+
 
 
 ############################################## MAIN ################################################
-# 1. PP Check
+# 1. PP Check - deprecated to evaluation script
 #pp_check(diffusionmodel1_fit_gamma_12, ndraws = 100,type = 'stat_grouped', group = 'collection_regionname', stat= 'mean')
-posteriorpredictive <-pp_check(diffusionmodel1_fit_gamma_19, ndraws = 100, type = 'dens_overlay_grouped', group = 'collection_regionname' )
+#posteriorpredictive <-pp_check(diffusionmodel1_fit_gamma_19, ndraws = 100, type = 'dens_overlay_grouped', group = 'collection_regionname' )
 
 # average posterior predictions 
 avg_predictions(diffusionmodel1_fit_gamma_17)
