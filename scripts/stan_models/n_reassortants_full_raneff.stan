@@ -16,7 +16,7 @@ data {
   int<lower=0> K; // Upper bound of reassortants
   int<lower=1> C; // Number of continents
   int<lower=1> Y; // Number of years
-  array[N] int<lower=1, upper=C> continent; // Continent index for each observation
+  array[N] int<lower=1, upper=C> continent_index; // Continent index for each observation
   array[N] int<lower=1, upper=Y> year_index; // Year index for each observation
   array[N] real cases; // Additional data for cases
   array[N] real sequences; // Additional data for sequences
@@ -24,7 +24,6 @@ data {
 
 // Declared parameters
 parameters {
-  //real<lower=0, upper=1> theta; // Zero-inflation probability
   array[C] real<lower=0, upper=1> continent_specific_theta; // Zero-inflation probability stratified by continent
   array[C] real<lower=0> continent_specific_abundance; // Poisson rate stratified by continent
   array[C] real<lower=0, upper=1> continent_specific_detection; // Detection probability stratified by continent
@@ -36,7 +35,7 @@ parameters {
   // 'random' effects
   matrix[2, Y] z_abundance; // Standard normal for abundance random effects
   matrix[2, Y] z_detection; // Standard normal for detection random effects
-  matrix[2, Y] z_theta; // Standard normal for theta random effects
+  //matrix[2, Y] z_theta; // Standard normal for theta random effects
 
   cholesky_factor_corr[2] L_Omega_abundance;
   vector<lower=0>[2] sigma_abundance;
@@ -44,19 +43,19 @@ parameters {
   cholesky_factor_corr[2] L_Omega_detection;
   vector<lower=0>[2] sigma_detection;
 
-  cholesky_factor_corr[2] L_Omega_theta;
-  vector<lower=0>[2] sigma_theta;
+  //cholesky_factor_corr[2] L_Omega_theta;
+ // vector<lower=0>[2] sigma_theta;
 }
 
 
 transformed parameters {
   matrix[C, Y] abundance_re;
   matrix[C, Y] detection_re;
-  matrix[C, Y] theta_re;
+  //matrix[C, Y] theta_re;
 
   abundance_re = (diag_pre_multiply(sigma_abundance, L_Omega_abundance) * z_abundance)';
   detection_re = (diag_pre_multiply(sigma_detection, L_Omega_detection) * z_detection)';
-  theta_re = (diag_pre_multiply(sigma_theta, L_Omega_theta) * z_theta)';
+  //theta_re = (diag_pre_multiply(sigma_theta, L_Omega_theta) * z_theta)';
 }
 
 
@@ -81,15 +80,15 @@ model {
 
   // Zero Inflation Model
   continent_specific_theta ~ beta(2, 5); 
-  L_Omega_theta ~ lkj_corr_cholesky(1);
-  sigma_theta ~ normal(0, 1);
-  to_vector(z_theta) ~ normal(0, 1);
+  //L_Omega_theta ~ lkj_corr_cholesky(1);
+  //sigma_theta ~ normal(0, 1);
+  //to_vector(z_theta) ~ normal(0, 1);
   
 
   // Loop over number of observations
   for (i in 1:N) {
     vector[K] lp;
-    int c = continent[i]; // Current continent
+    int c = continent_index[i]; // Current continent
     int yr = year_index[i]; //Current year
 
     
@@ -129,7 +128,8 @@ generated quantities {
   array[N] int y_rep; 
 
   for (i in 1:N) {
-    int c = continent[i]; // Current continent
+    int c = continent_index[i]; // Current continent
+    int yr = year_index[i]; //Current year
     
     // Draw a latent count from the zero-inflated Poisson
     int current_population;
@@ -138,10 +138,10 @@ generated quantities {
       y_rep[i] = 0;
     } else {
       // Simulate from Poisson
-      current_population = poisson_rng(exp(continent_specific_abundance[c] + beta_cases * cases[i] + abundance_re[c, yr]));
+      current_population = poisson_rng(exp(continent_specific_abundance[c] + beta_cases * cases[i] + abundance_re[c, yr] ));
       
       // Simulate observed count from a binomial
-      y_rep[i] = binomial_rng(current_population, inv_logit(continent_specific_detection[c] + beta_sequences * sequences[i] + detection_re[c, yr]  ));
+      y_rep[i] = binomial_rng(current_population, inv_logit(continent_specific_detection[c] + beta_sequences * sequences[i] + detection_re[c, yr] ));
     }
   }
 }
