@@ -35,8 +35,8 @@ scientific_10 <- function(x) {
   }
 
 ############################################## DATA ################################################
-diffusionmodel_fit <- readRDS('./saved_models/diffusion_model_2.rds')
-diffusion_data <- read_csv('./saved_models/diffusion_model.csv')
+#diffusionmodel_fit <- readRDS('./saved_models/diffusion_model_2.rds')sw 
+#diffusion_data <- read_csv('./saved_models/diffusion_model.csv')
 
 host_colours <- c(
   'anseriformes-domestic' = '#a6cee3',
