@@ -114,7 +114,7 @@ generated quantities {
     int c = continent_index[i]; // Current continent
     int yr = year_index[i]; //Current year
     
-    // Draw a latent count from the zero-inflated Poisson
+    // Draw latent abundance from zero-inflated Poisson
     int current_population;
     if (bernoulli_rng(continent_specific_theta[c]) == 1) {
       // Zero inflation: y_rep[i] = 0
@@ -123,7 +123,7 @@ generated quantities {
       // Simulate from Poisson
       current_population = poisson_rng(exp(continent_specific_abundance[c] + beta_cases * cases[i] + year[yr] ));
       
-      // Simulate observed count from a binomial
+      // Simulate observed count from binomial
       y_rep[i] = binomial_rng(current_population, inv_logit(continent_specific_detection[c] + beta_sequences * sequences[i] ));
     }
   }
