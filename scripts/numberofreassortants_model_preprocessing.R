@@ -60,7 +60,7 @@ summary_data <- read_csv('./2024Aug18/treedata_extractions/summary_reassortant_m
             clade)) 
 
 meta <- read_csv('./2024-09-09_meta.csv') 
-woah_hpai <- read_csv('~/Downloads/Quantitative data 2025-02-25.csv')
+woah_hpai <- read_csv('~/Downloads/Quantitative data 2025-04-16.csv')
 
 ############################################## MAIN ################################################
 # Data pre-processing
@@ -97,6 +97,10 @@ sequences_month <- meta %>%
 
 
 # Format WOAH data and estimate the minimum number of cases
+ref <- ne_countries() %>% 
+  as_tibble() %>%
+  dplyr::select(name, continent)
+  
 woah_minimuminferredcases <- woah_hpai %>%
   select(Year,
          Semester,
@@ -137,7 +141,7 @@ woah_minimuminferredcases <- woah_hpai %>%
                              Country == "Czech Republic" ~ "Czechia",                               
                              Country == "Faeroe Islands" ~ "Denmark",                              
                              Country == "Reunion" ~ 'Madagascar',                                      
-                             .default = Country))%>%
+                             .default = Country)) %>%
   # Group by continent
   left_join(ref, by = join_by(Country == name)) %>%
   mutate(animal_category  = str_to_lower(`Animal Category`)) %>%   
@@ -316,4 +320,4 @@ count_data <- woah_minimuminferredcases_monthly %>%
 
 # currently missing lpai diversity
 
-write_csv(count_data, './2025Feb26/countmodeldata_2025Mar11.csv')
+write_csv(count_data, './countmodeldata_2025Mar11.csv')
