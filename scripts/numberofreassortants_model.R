@@ -20,7 +20,8 @@ memory.limit(30000000)
 # Packages
 library(tidyverse)
 library(magrittr)
-library(brms)
+library(cmdstanr)
+library(posterior)
 library(broom)
 library(broom.mixed)
 library(tidybayes)
@@ -91,7 +92,7 @@ data_processed_2 <- data %>%
 
 
 # Compile Stan Model
-raneff_mod <- cmdstan_model('./scripts/stan_models/n_reassortants_final.stan')
+numbers_mod <- cmdstan_model('./scripts/stan_models/n_reassortants_single_raneff.stan')
 
 numbers_data <- list(N = nrow(data_processed_2),
                     y = data_processed_2 %>% pull(n_reassortants),
@@ -111,27 +112,16 @@ ITER <- 4000
 BURNIN <- ITER/10 # Discard 10% burn in from each chain
 SEED <- 4472
 
-numbers_model <- raneff_mod$sample(
+numbers_model <- numbers_mod$sample(
   data = numbers_data,
   seed = SEED,
   chains = CHAINS,
   parallel_chains = CORES,
   iter_warmup = BURNIN,
-  iter_sampling = ITER,
-  adapt_delta = 0.95,
-  max_treedepth = 10)
+  iter_sampling = ITER)
     
 
 numbers_parms <- numbers_model$summary()
-
-
-
-
-
-############################################## WRITE ###############################################
-saveRDS(countmodel_mv_fit, file = './saved_models/count_model.rds')
-write_csv(count_data, './saved_models/count_data.csv')
-
 
 ############################################## END #################################################
 ####################################################################################################
