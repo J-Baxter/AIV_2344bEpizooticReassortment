@@ -61,204 +61,182 @@ global_theme <- theme_classic()+
 
 
 ############################################## MAIN ################################################
-mcmc_class <- ggs(basic_model) # Warning message In custom.sort(D$Parameter) : NAs introduced by coercion
 
-mcmc_class %>% 
-  from_ggmcmc_names() %>%
-  filter(.iteration > 400) %>%
-  mutate(label = case_when(.variable == 'b_muminor_Intercept'~ "beta[{'minor'[0]}]",
-                           .variable == 'b_mumoderate_Intercept'~ "beta[{'moderate'[0]}]",
-                           
-                           .variable == "b_muminor_previous_classmajor:collection_regionnameasia" ~ "beta[{'minor'[mj-asia]}]",
-                           .variable == "b_muminor_previous_classminor:collection_regionnameasia" ~ "beta[{'minor'[mn-asia]}]",
-                           .variable == "b_muminor_previous_classmoderate:collection_regionnameasia"~ "beta[{'minor'[md-asia]}]",
-                           
-                           .variable == "b_muminor_previous_classmajor:collection_regionnameeurope" ~ "beta[{'minor'[mj-europe]}]",
-                           .variable == "b_muminor_previous_classminor:collection_regionnameeurope" ~ "beta[{'minor'[mn-europe]}]",
-                           .variable == "b_muminor_previous_classmoderate:collection_regionnameeurope"~ "beta[{'minor'[md-europe]}]",
-                           
-                           .variable == "b_muminor_previous_classmajor:collection_regionnamecentral&northernamerica" ~ "beta[{'minor'[mj-americas]}]",
-                           .variable == "b_muminor_previous_classminor:collection_regionnamecentral&northernamerica" ~ "beta[{'minor'[mn-americas]}]",
-                           .variable == "b_muminor_previous_classmoderate:collection_regionnamecentral&northernamerica"~ "beta[{'minor'[md-americas]}]",
-                           
-                           .variable == "b_mumoderate_previous_classmajor:collection_regionnameasia" ~ "beta[{'moderate'[mj-asia]}]",
-                           .variable == "b_mumoderate_previous_classminor:collection_regionnameasia" ~ "beta[{'moderate'[mn-asia]}]",
-                           .variable == "b_mumoderate_previous_classmoderate:collection_regionnameasia"~ "beta[{'moderate'[md-asia]}]",
-                           
-                           .variable == "b_mumoderate_previous_classmajor:collection_regionnameeurope" ~ "beta[{'moderate'[mj-europe]}]",
-                           .variable == "b_mumoderate_previous_classminor:collection_regionnameeurope" ~ "beta[{'moderate'[mn-europe]}]",
-                           .variable == "b_mumoderate_previous_classmoderate:collection_regionnameeurope"~ "beta[{'moderate'[md-europe]}]",
-                           
-                           .variable == "b_mumoderate_previous_classmajor:collection_regionnamecentral&northernamerica" ~ "beta[{'moderate'[mj-americas]}]",
-                           .variable == "b_mumoderate_previous_classminor:collection_regionnamecentral&northernamerica" ~ "beta[{'moderate'[mn-americas]}]",
-                           .variable == "b_mumoderate_previous_classmoderate:collection_regionnamecentral&northernamerica"~ "beta[{'moderate'[md-americas]}]")) %>%
-  drop_na(label) %>%
-  ggplot(aes(x = .iteration,
-             y = .value, 
-             col = as.factor(.chain)))+
-  geom_line(alpha = 0.8)+
-  facet_wrap(~ label,
-             ncol = 2,
-             scale  = 'free_y',
-             strip.position = 'left',
-             labeller = label_parsed)+
-  scale_colour_brewer(palette = 'GnBu', 'Chains') +
-  theme_minimal(base_size = 8) + 
-  theme(legend.position = 'bottom')
-
-
-### Ranked Traces ###
-trank <- as_draws_df(basic_model)  %>%  
-  mcmc_rank_overlay(regex_pars = '^b_') 
-
-trank$data %>%
-  rename(.variable = parameter) %>%
-  mutate(label = case_when(.variable == 'b_muminor_Intercept'~ "beta[{'minor'[0]}]",
-                           .variable == 'b_mumoderate_Intercept'~ "beta[{'moderate'[0]}]",
-                           
-                           .variable == "b_muminor_previous_classmajor:collection_regionnameasia" ~ "beta[{'minor'[mj-asia]}]",
-                           .variable == "b_muminor_previous_classminor:collection_regionnameasia" ~ "beta[{'minor'[mn-asia]}]",
-                           .variable == "b_muminor_previous_classmoderate:collection_regionnameasia"~ "beta[{'minor'[md-asia]}]",
-                           
-                           .variable == "b_muminor_previous_classmajor:collection_regionnameeurope" ~ "beta[{'minor'[mj-europe]}]",
-                           .variable == "b_muminor_previous_classminor:collection_regionnameeurope" ~ "beta[{'minor'[mn-europe]}]",
-                           .variable == "b_muminor_previous_classmoderate:collection_regionnameeurope"~ "beta[{'minor'[md-europe]}]",
-                           
-                           .variable == "b_muminor_previous_classmajor:collection_regionnamecentral&northernamerica" ~ "beta[{'minor'[mj-americas]}]",
-                           .variable == "b_muminor_previous_classminor:collection_regionnamecentral&northernamerica" ~ "beta[{'minor'[mn-americas]}]",
-                           .variable == "b_muminor_previous_classmoderate:collection_regionnamecentral&northernamerica"~ "beta[{'minor'[md-americas]}]",
-                           
-                           .variable == "b_mumoderate_previous_classmajor:collection_regionnameasia" ~ "beta[{'moderate'[mj-asia]}]",
-                           .variable == "b_mumoderate_previous_classminor:collection_regionnameasia" ~ "beta[{'moderate'[mn-asia]}]",
-                           .variable == "b_mumoderate_previous_classmoderate:collection_regionnameasia"~ "beta[{'moderate'[md-asia]}]",
-                           
-                           .variable == "b_mumoderate_previous_classmajor:collection_regionnameeurope" ~ "beta[{'moderate'[mj-europe]}]",
-                           .variable == "b_mumoderate_previous_classminor:collection_regionnameeurope" ~ "beta[{'moderate'[mn-europe]}]",
-                           .variable == "b_mumoderate_previous_classmoderate:collection_regionnameeurope"~ "beta[{'moderate'[md-europe]}]",
-                           
-                           .variable == "b_mumoderate_previous_classmajor:collection_regionnamecentral&northernamerica" ~ "beta[{'moderate'[mj-americas]}]",
-                           .variable == "b_mumoderate_previous_classminor:collection_regionnamecentral&northernamerica" ~ "beta[{'moderate'[mn-americas]}]",
-                           .variable == "b_mumoderate_previous_classmoderate:collection_regionnamecentral&northernamerica"~ "beta[{'moderate'[md-americas]}]")) %>%
-  drop_na(label) %>%
-  ggplot() + 
-  geom_step(aes(x = bin_start, 
-                y = n,
-                colour = chain),
-            linewidth = 0.8) + 
-  #scale_y_continuous(expand = c(0,0), limits = c(150, 225)) +
-  scale_x_continuous(expand = c(0,0)) + 
-  facet_wrap(~label,  ncol = 3, labeller = label_parsed) +
-  scale_colour_brewer(palette = 'GnBu', 'Chains') +
-  theme_minimal() + 
-  theme(legend.position = 'bottom',
-        axis.title = element_blank())
-
-
-#### Check Ratio of Effective Population Size to Total Sample Size #### 
-# values <0.1 should raise concerns about autocorrelation
-neff_ratio(basic_model) %>% as_tibble(rownames = 'param') %>%
-  mutate(param = fct_reorder(param, desc(value))) %>%
-  ggplot() + 
-  geom_segment(aes(yend = value,
-                   xend=param, 
-                   y=0,
-                   x = param,
-                   colour = value > 0.1)) +
-  geom_point(aes(y = value,
-                 x = param,
-                 colour = value > 0.1)) + 
-  geom_hline(aes(yintercept = 0.1), linetype = 'dashed') + 
-  geom_hline(aes(yintercept = 0.5), linetype = 'dashed') + 
-  scale_colour_manual(values = c( '#0047AB',  'red')) + 
-  scale_y_continuous(limits = c(0, 1), expand = c(0,0),
-                     expression(N["eff"]/N)) + 
-  scale_x_discrete(expand= c(0.1,0), 'Fitted Parameter') + 
-  theme_classic() + 
-  coord_flip()  + 
-  theme(axis.text.y = element_blank(),
-        axis.ticks.y = element_blank(),
-        legend.position = 'none') 
-
-
-# Autocorrelation plot
-basic_model %>% 
-  mcmc_acf() %>% 
-  .$data %>%
-  as_tibble() %>%
-  ggplot(aes(y = AC, x = Lag, colour = as.factor(Chain))) + 
-  geom_path() + 
-  facet_wrap(~Parameter) + 
-  theme_classic() 
+# Data to simulate from
+# expectation of the posterior
+class_model %>%
+  epred_draws(newdata = new_data) %>%
+  #filter(.epred >0.01) %>%
+  ggplot(aes(x  = .epred, y = collection_regionname,
+             slab_colour = collection_regionname,
+             slab_fill = collection_regionname)) +
+  stat_halfeye(p_limits = c(0.001, 0.999),
+               point_interval = "median_hdci",
+               # expand = T,
+               #density = 'histogram',
+               .width =  0.95,
+               normalize = "xy"
+  ) +
+  facet_grid(cols = vars(.category)) 
 
 
 
-# Compare prior & posterior parameter distributions
-t_class<- get_variables(basic_model)
+###### Proportions (full posterior draw) ############
+class_model %>%
+  predicted_draws(newdata = new_data %>% filter(previous_class == 'minor')) %>%
+  count(predicted_class = .prediction) %>%
+  mutate(prop = n / sum(n)) %>%
+  ggplot(aes(x = factor(predicted_class), y = n / sum(n))) +
+  geom_col() + 
+  facet_grid(cols = vars(collection_regionname))
 
-beta_draws <- basic_model %>%
-  gather_draws(., !!!syms(t_class)) %>%
-  mutate(type = 'posterior') %>%
-  filter(grepl('^b_', .variable)) %>%
+
+
+###### Expectation of the posterior (linear predictors) ############
+# collection_regionname ~ previous class, at the median time between reassortants
+#
+new_data = class_data %>% 
+  dplyr::select(collection_regionname, previous_class) %>% 
+  filter(previous_class != 'none') %>%
+  distinct() %>% 
+  mutate(time_since_previous = mean(class_data$time_since_previous))
+
+epreds <- class_model %>%
+  epred_draws(newdata = new_data) %>%
+  median_hdci() %>%
+  mutate(across(c(.epred, .lower, .upper), ~ ifelse(.epred < 0.005, NA_real_, .x))) %>%
+  mutate(label =  case_when(!is.na(.epred) ~ paste0(round(.epred, digits = 3), 
+                                                    ' (', round(.lower, digits = 3),
+                                                    '-', round(.upper, digits = 3), ')'))) %>%
+  mutate(across(c(.category, previous_class), .fns = ~ str_to_title(.x)))
+
+
+
+graph <- epreds %>%
+  rename(from = previous_class, 
+         to = .category) %>% 
+  drop_na(.epred) %>%
+  relocate(from, to) %>%
+  mutate(across(c(from, to), .fns = ~paste0(.x, "_", collection_regionname))) %>%  # Create unique node IDs for each region
+  as_tbl_graph(directed = TRUE) %>% 
+  activate(nodes) %>%
   
-  mutate(label = case_when(.variable == 'b_muminor_Intercept'~ "beta[{'minor'[0]}]",
-                           .variable == 'b_mumoderate_Intercept'~ "beta[{'moderate'[0]}]",
-                           
-                           .variable == "b_muminor_previous_classmajor:collection_regionnameasia" ~ "beta[{'minor'[mj-asia]}]",
-                           .variable == "b_muminor_previous_classminor:collection_regionnameasia" ~ "beta[{'minor'[mn-asia]}]",
-                           .variable == "b_muminor_previous_classmoderate:collection_regionnameasia"~ "beta[{'minor'[md-asia]}]",
-                           
-                           .variable == "b_muminor_previous_classmajor:collection_regionnameeurope" ~ "beta[{'minor'[mj-europe]}]",
-                           .variable == "b_muminor_previous_classminor:collection_regionnameeurope" ~ "beta[{'minor'[mn-europe]}]",
-                           .variable == "b_muminor_previous_classmoderate:collection_regionnameeurope"~ "beta[{'minor'[md-europe]}]",
-                           
-                           .variable == "b_muminor_previous_classmajor:collection_regionnamecentral&northernamerica" ~ "beta[{'minor'[mj-americas]}]",
-                           .variable == "b_muminor_previous_classminor:collection_regionnamecentral&northernamerica" ~ "beta[{'minor'[mn-americas]}]",
-                           .variable == "b_muminor_previous_classmoderate:collection_regionnamecentral&northernamerica"~ "beta[{'minor'[md-americas]}]",
-                           
-                           .variable == "b_mumoderate_previous_classmajor:collection_regionnameasia" ~ "beta[{'moderate'[mj-asia]}]",
-                           .variable == "b_mumoderate_previous_classminor:collection_regionnameasia" ~ "beta[{'moderate'[mn-asia]}]",
-                           .variable == "b_mumoderate_previous_classmoderate:collection_regionnameasia"~ "beta[{'moderate'[md-asia]}]",
-                           
-                           .variable == "b_mumoderate_previous_classmajor:collection_regionnameeurope" ~ "beta[{'moderate'[mj-europe]}]",
-                           .variable == "b_mumoderate_previous_classminor:collection_regionnameeurope" ~ "beta[{'moderate'[mn-europe]}]",
-                           .variable == "b_mumoderate_previous_classmoderate:collection_regionnameeurope"~ "beta[{'moderate'[md-europe]}]",
-                           
-                           .variable == "b_mumoderate_previous_classmajor:collection_regionnamecentral&northernamerica" ~ "beta[{'moderate'[mj-americas]}]",
-                           .variable == "b_mumoderate_previous_classminor:collection_regionnamecentral&northernamerica" ~ "beta[{'moderate'[mn-americas]}]",
-                           .variable == "b_mumoderate_previous_classmoderate:collection_regionnamecentral&northernamerica"~ "beta[{'moderate'[md-americas]}]"))
+  mutate(collection_regionname = gsub('.*_', '', name),
+         name = gsub('_.*', '', name))   %>%
+  
+  mutate(lab = case_when(name == 'Major'~ 'Mj',
+                         name == 'Moderate' ~ "Md",
+                         name == 'Minor' ~ 'Mn'))
 
- beta_draws %>% 
-  drop_na(label) %>%
-  ggplot() + 
-  geom_histogram(aes(x = .value,
-                     y = after_stat(density)),
-                 inherit.aes = F, 
-                 binwidth = 0.1, 
-                 fill = '#1b9e77') + 
+
+layout <- create_layout(graph, layout = "kk") %>%
+  mutate(x = case_when(name == 'Minor' ~ 1,
+                       name == 'Moderate' ~ 2,
+                       name == 'Major'  ~ 3),
+         y = case_when(name == 'Minor' ~ 1.5,
+                       name == 'Moderate' ~ 2, 
+                       name == 'Major'  ~ 1))
+
+nodes <- layout %>% 
+  dplyr::select(x,y,name) %>%
+  pivot_longer(cols = c(x,y), values_to = 'coord', names_to = 'axis') %>% 
+  pull(name)
+
+self_moderate_span <- ifelse(nodes == "Minor", 90, -90)
+self_moderate_direction <- ifelse(nodes == "Moderate", 45, 270)
+
+
+layout %>%
+  # activate(nodes) %>%
+  # left_join(layout, by = "name") %>%
+  ggraph() + 
+  geom_edge_bend(arrow = arrow(length = unit(4, 'mm')), 
+                 strength = 0.3, 
+                 start_cap = circle(12, 'mm'),
+                 end_cap = circle(12, 'mm'),
+                 angle_calc = 'along',
+                 label_dodge	= unit(3, 'mm'),
+                 aes(label = label,
+                     edge_width = .epred ),
+                 label_size = 3) +
+  geom_edge_loop(arrow = arrow(length = unit(4, 'mm')), 
+                 end_cap = circle(12, 'mm'),
+                 start_cap =  circle(12, 'mm'),
+                 vjust	= 2,
+                 aes(span = self_moderate_span,
+                     direction = self_moderate_direction,
+                     strength = 1,
+                     label = label,
+                     edge_width = .epred),
+                 label_size = 3) +
+  geom_node_circle(aes(x0 = x, y0 = y, r = 0.16, fill = collection_regionname, colour = collection_regionname, alpha = name)) +
   
-  stat_function(fun = dnorm,
-                args = list(mean = 0, sd = 5),
-                fill = '#d95f02',
-                geom = 'area',
-                alpha = 0.5) +
+  #geom_node_point(size = 15, aes(colour = collection_regionname, alpha = name)) +
+  geom_node_text(aes(label = lab),
+                 colour = 'white',
+                 size = 6,
+                 fontface = 'bold') +
+  facet_grid(cols = vars(collection_regionname),
+             labeller = labeller(collection_regionname= str_to_title)) + 
+  scale_colour_manual(values = region_colours) + 
+  scale_fill_manual(values = region_colours) + 
   
-  xlim(c(-15,15)) + 
-  facet_wrap(~label, scales = 'free_y',  ncol = 3, labeller = label_parsed) +
-  theme_minimal()
+  scale_alpha_manual( values = c('Major' = 1, 'Moderate' = 0.7, 'Minor' = 0.5),
+                      labels = str_to_title) + 
+  scale_edge_width_continuous(range = c(0.1, 1.5)) + 
+  theme_void() + 
+  theme(legend.position = 'none', 
+        strip.background = element_blank(),
+        strip.text = element_text(size = 10, face = 'bold')) +
+  scale_x_continuous(expand = c(0,0), limits = c(0,3.5)) + 
+  scale_y_continuous(expand = c(0,0), limits = c(0.5,2.5))
+
+
+
+###### Conditional effect of Continent on the probability of a 'major' reassortant' ############
+group_effects <- class_model %>%
+  avg_comparisons(newdata =  ungroup(new_data),
+                  variables = list('collection_regionname' = 'pairwise') , type = 'response') %>%
+  get_draws() %>%
+  as_tibble()
+
+
+group_effects_hdci <- group_effects %>%
+  group_by(term, group, contrast) %>%
+  median_hdci(draw, .exclude = c('drawid')) %>%
+  rename(median = draw) %>%
+  as_tibble()
+
+
+
+group_effects %>% 
+  filter(contrast == 'europe - central & northern america') %>%
+  mutate(group = fct_relevel(group, c('Minor', 'Moderate', 'Major'))) %>%
+  left_join(group_effects_hdci) %>%
+  ggplot(aes(x = draw,
+             y = str_to_title(group),
+             slab_colour = median,
+             slab_fill = median)) +
+  stat_halfeye(slab_alpha = 0.7,
+               p_limits = c(0.05, 0.95),
+               point_interval = "median_hdci",
+               linewidth = 1.5,
+               .width =  0.95) +
+  geom_vline(xintercept = 0, linetype = 'dashed') + 
+  scale_x_continuous(expand = c(0,0),
+                     limits = c(-0.6, 0.6),
+                     'Percentage Point Change') + 
+  scale_y_discrete('Reassortant Class') + 
+  scale_fill_distiller(palette = 'RdYlBu', aesthetics = 'slab_fill') +
+  scale_colour_distiller(palette = 'RdYlBu', aesthetics = 'slab_colour') +
+  theme_classic()
+
+
+
+
  
 
-#### Check Residuals using DHARMA #### # currently not working
-# sample from the Posterior Predictive Distribution
-preds <- posterior_predict(basic_model, nsamples = 250, summary = FALSE)
-preds <- t(preds)
 
-res <- createDHARMa(
-  simulatedResponse = t(posterior_predict(basic_model)),
-  observedResponse = class_data$class,
-  fittedPredictedResponse = apply(t(posterior_epred(basic_model)), 1, mean),
-  integerResponse = FALSE)
-
-plot(res, quantreg = FALSE)
 ############################################## WRITE ###############################################
 
 
