@@ -59,14 +59,14 @@ FormatContinent <- function(dataframe){
 ############################################## DATA ################################################
 combined_data <- read_csv('./2024Aug18/treedata_extractions/2024-09-20_combined_data.csv')
 
+data <- read_csv('countmodeldata_2025Mar11.csv')
 
 ############################################## MAIN ################################################
-# Data pre-processing
 # Data pre-processing
 data_processed_2 <- data %>%
   
   # remove reassortant classes
-  select(-c(ends_with('class'), time_since_last_dominant)) %>%
+  dplyr::select(-c(ends_with('class'), time_since_last_dominant)) %>%
   
   # scaling
   mutate(across(c(collection_dec, collection_year), .fns = ~ subtract(.x, 2015))) %>%
@@ -90,164 +90,39 @@ data_processed_2 <- data %>%
   filter(collection_regionname != 'south america')
 
 
+# Compile Stan Model
+raneff_mod <- cmdstan_model('./scripts/stan_models/n_reassortants_final.stan')
 
-# Model: hierachical count/detection model. 
-# 1) count  -> the 'true' reassortant process, predicted by ecological variables
-# 2) detection -> the probability that of true reassortants are observed
-
-# First try with poisson
-model_poisson <- brm(
-  bf(n_reassortants ~  collection_regionname + woah_susceptibles_log1p +  collection_season ),
-  data = data_processed,
-  family = poisson(),
-  chains = 4, iter = 4000, 
-  backend = "cmdstanr", 
-  refresh = 0
-)
+numbers_data <- list(N = nrow(data_processed_2),
+                    y = data_processed_2 %>% pull(n_reassortants),
+                    K = data_processed_2 %>% pull(n_reassortants) %>% max(),
+                    C = data_processed_2 %>% pull(collection_regionname) %>% n_distinct(),
+                    Y = data_processed_2 %>% pull(collection_year) %>% n_distinct(),
+                    continent_index = data_processed_2 %>% pull(collection_regionname) %>% as.factor() %>% as.numeric(),
+                    year_index = data_processed_2 %>% pull(collection_year) %>% as.factor() %>% as.numeric(),
+                    cases =  data_processed_2 %>% pull(woah_susceptibles_monthly_log1p),
+                    sequences =  data_processed_2 %>% pull(n_sequences_log1p))
 
 
-model_negbinom <- brm(
-  bf(n_reassortants ~ collection_regionname + woah_susceptibles_log1p +  collection_season ),
-  data = data_processed,
-  family = negbinomial(),
-  chains = 4, 
-  iter = 4000, 
-  backend = "cmdstanr",
-  refresh = 0
-)
-
-model_zi_pois <- brm(
-  bf(n_reassortants ~  collection_regionname + woah_susceptibles_log1p +  collection_season ),
-  data = data_processed,
-  family = zero_inflated_poisson(),
-  chains = 4, 
-  cores = 4,
-  iter = 4000, 
-  backend = "cmdstanr",
-  refresh = 0
-)
-
-model_zi_negbinom <- brm(
-  bf(n_reassortants ~  collection_regionname + woah_susceptibles_log1p +  collection_season  ),
-  data = data_processed,
-  family = zero_inflated_negbinomial(),
-  chains = 4, 
-  cores = 4,
-  iter = 4000, 
-  backend = "cmdstanr",
-  refresh = 0
-)
-
-pp_check(model_poisson, ndraws = 100, type = 'bars')
-model_performance(model_poisson)
-
-pp_check(model_negbinom, ndraws = 100, type = 'bars')
-model_performance(model_negbinom)
-
-pp_check(model_zi_pois, ndraws = 100, type = 'bars')
-model_performance(model_zi_pois)
-
-pp_check(model_zi_negbinom, ndraws = 100, type = 'bars')
-model_performance(model_zi_pois)
-
-
-model_zi_pois_full <- brm(
-  bf(n_reassortants ~ 0 + collection_regionname + (collection_regionname|collection_year)) ,
-  data = data_processed,
-  family = zero_inflated_poisson(),
-  chains = 4, 
-  cores = 4,
-  iter = 4000, 
-  backend = "cmdstanr",
-  refresh = 0
-)
-
-
-pp_check(model_zi_pois_full, ndraws = 100, type = 'bars')
-model_performance(model_zi_pois_full)
-
-preds <- posterior_predict(model_zi_pois_full, nsamples = 250, summary = FALSE)
-preds <- t(preds)
-
-res <- createDHARMa(
-  simulatedResponse = t(posterior_predict(model_zi_pois_full)),
-  observedResponse = data_processed$n_reassortants,
-  fittedPredictedResponse = apply(t(posterior_epred(model_zi_pois_full)), 1, mean),
-  integerResponse = FALSE)
-
-plot(res)
-
-
-###################################################
-
-# Define Priors
-mv <- mvbf(bf1, bf2)
-
-countmodel_mv_priors <- get_prior(mv, count_data)
-
-#countmodel_mv_priors[c(1, 4:15,25:29, 38:44, 53:59, 69:74),1] <- "normal(0,5)"
-countmodel_mv_priors
-countmodel_mv_priors[c(1, 4:15, 25:29, 38:44, 53:59, 69:74),1] <- "normal(0,5)"
-
-
-# Set MCMC Options
+# Run the model
 CHAINS <- 4
 CORES <- 4
-ITER <- 16000
+ITER <- 4000
 BURNIN <- ITER/10 # Discard 10% burn in from each chain
 SEED <- 4472
-THREADS <- 2
 
-
-# Prior Predictive Checks 
-# Note that due to weakly informative priors, the prior predictive checks reveal little about the 
-# ability of our priors to describe the data. 
-countmodel_priorpredictive <- brm(
-  mv,
-  data = count_data,           
-  prior = countmodel_mv_priors,
-  chains = CHAINS,
-  threads = THREADS, 
-  cores = CORES, 
-  iter = 16000,
-  warmup = 1600,
+numbers_model <- raneff_mod$sample(
+  data = numbers_data,
   seed = SEED,
-  backend = "cmdstanr",
-  sample_prior = "only",
-  control = list(adapt_delta = 0.95)
-)
-
-
-# Fit model to data
-countmodel_mv_fit <- brm(
-  mv,
-  data = count_data,           
-  prior = countmodel_mv_priors,
   chains = CHAINS,
-  threads = THREADS, 
-  cores = CORES, 
-  iter = 16000,
-  warmup = 1600,
-  seed = SEED,
-  backend = "cmdstanr",
-  control = list(adapt_delta = 0.97))
+  parallel_chains = CORES,
+  iter_warmup = BURNIN,
+  iter_sampling = ITER,
+  adapt_delta = 0.95,
+  max_treedepth = 10)
+    
 
-
-# Post-fitting diagnostics (including inspection of ESS, Rhat and posterior predictive)
-tidy_countmodel_fit <- tidy(countmodel_mv_fit)
-#posteriorpredictive <-pp_check(countmodel_fit, ndraws = 500)
-
-
-# Misc evaluations
-#print(prior_summary(countmodel_fit), show_df = FALSE)
-performance(countmodel_mv_fit) # tibble output of model metrics including R2, ELPD, LOOIC, RMSE
-plot(countmodel_mv_fit) # default output plot of brms showing posterior distributions of
-prior_summary(countmodel_mv_fit) #obtain dataframe of priors used in model.
-
-mcmc_countmodel_fit <- ggs(countmodel_mv_fit) # Warning message In custom.sort(D$Parameter) : NAs introduced by coercion
-
-posteriorpredictive_group <-pp_check(countmodel_mv_fit, ndraws = 500, resp = 'reassortantclass')
-posteriorpredictive_nreassortants <-pp_check(countmodel_mv_fit, ndraws = 500, resp = 'nreassortants')
+numbers_parms <- numbers_model$summary()
 
 
 
