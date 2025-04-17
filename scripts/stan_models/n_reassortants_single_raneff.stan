@@ -9,7 +9,7 @@
 //    https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started
 //
 
-// The input data 
+// Input data 
 data {
   int<lower=0> N; // Number of observations
   array[N] int<lower=0> y; // Observed counts
@@ -33,11 +33,11 @@ parameters {
   real beta_sequences; // Coefficient for additional sequences data
   
   // 'random' effects
-  real<lower=0> sigma_year_abundance;    // Standard deviation of year intercepts
-  array[Y] real year_abundance;      // Random intercepts for each year
+  real<lower=0> sigma_year;    // Standard deviation of year intercepts
+  array[Y] real year;      // Random intercepts for each year
   //real<lower=0> sigma_abundance;         // Residual standard deviation
-  real<lower=0> sigma_year_detection;    // Standard deviation of year intercepts
-  array[Y] real year_detection;      // Random intercepts for each year
+  //real<lower=0> sigma_year_detection;    // Standard deviation of year intercepts
+ // array[Y] real year_detection;      // Random intercepts for each year
   //real<lower=0> sigma_detection;         // Residual standard deviation
 
 
@@ -46,20 +46,20 @@ parameters {
 }
 
 
-// The model to be estimated
+// Model
 model {
   // Priors
   // Abundance Model
   continent_specific_abundance ~ normal(3, 1.5);
   beta_cases ~ normal(0, 1);
-  year_abundance ~ normal(0, sigma_year_abundance);  // Prior for year random intercepts
-  sigma_year_abundance ~ cauchy(0, 2.5);     // Prior for year intercept std deviation
+  year ~ normal(0, sigma_year);  // Prior for year random intercepts
+  sigma_year ~ cauchy(0, 2.5);     // Prior for year intercept std deviation
   
   // Detection model
   continent_specific_detection ~ beta(1,1);//beta(1.5, 1.5);
   beta_sequences ~ normal(0, 1);
-  year_detection ~ normal(0, sigma_year_detection);  // Prior for year random intercepts
-  sigma_year_detection ~ cauchy(0, 2.5);     // Prior for year intercept std deviation
+  //year_detection ~ normal(0, sigma_year_detection);  // Prior for year random intercepts
+  //sigma_year_detection ~ cauchy(0, 2.5);     // Prior for year intercept std deviation
 
   // Zero Inflation Model
   continent_specific_theta ~ beta(2, 5); 
@@ -75,8 +75,8 @@ model {
     int yr = year_index[i]; //Current year
 
     
-    // Linear predictors year_intercept[year[n]]
-    real lambda = exp(continent_specific_abundance[c] + beta_cases * cases[i] + year_abundance[yr] ); 
+    // Linear predictors 
+    real lambda = exp(continent_specific_abundance[c] + beta_cases * cases[i] + year[yr] ); 
     real p = inv_logit(continent_specific_detection[c] + beta_sequences * sequences[i]); 
 
     // Loop over plausible values of K to marginalise out discrete latent variables
@@ -121,7 +121,7 @@ generated quantities {
       y_rep[i] = 0;
     } else {
       // Simulate from Poisson
-      current_population = poisson_rng(exp(continent_specific_abundance[c] + beta_cases * cases[i] + year_abundance[yr] ));
+      current_population = poisson_rng(exp(continent_specific_abundance[c] + beta_cases * cases[i] + year[yr] ));
       
       // Simulate observed count from a binomial
       y_rep[i] = binomial_rng(current_population, inv_logit(continent_specific_detection[c] + beta_sequences * sequences[i] ));
