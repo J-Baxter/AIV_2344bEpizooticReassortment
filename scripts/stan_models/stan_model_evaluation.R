@@ -336,20 +336,20 @@ test_fit_linear %>%
 
 ################################### Test full linear + R Eff model #########################################
 # Compile the model
-raneff_mod <- cmdstan_model('./scripts/stan_models/n_reassortants_full_raneff.')
+raneff_mod <- cmdstan_model('./scripts/stan_models/n_reassortants_single_raneff.stan')
 
-raneff_data <- list(N = nrow(data_processed),
-                    y = data_processed %>% pull(n_reassortants),
-                    K = data_processed %>% pull(n_reassortants) %>% max(),
-                    C = data_processed %>% pull(collection_regionname) %>% n_distinct(),
-                    Y = data_processed %>% pull(collection_year) %>% n_distinct(),
-                    continent_index = data_processed %>% pull(collection_regionname) %>% as.factor() %>% as.numeric(),
-                    year_index = data_processed %>% pull(collection_year) %>% as.factor() %>% as.numeric(),
-                    cases =  data_processed %>% pull(woah_susceptibles_log1p),
-                    sequences =  data_processed %>% pull(n_sequences))
+raneff_data <- list(N = nrow(data_processed_2),
+                    y = data_processed_2 %>% pull(n_reassortants),
+                    K = data_processed_2 %>% pull(n_reassortants) %>% max(),
+                    C = data_processed_2 %>% pull(collection_regionname) %>% n_distinct(),
+                    Y = data_processed_2 %>% pull(collection_year) %>% n_distinct(),
+                    continent_index = data_processed_2 %>% pull(collection_regionname) %>% as.factor() %>% as.numeric(),
+                    year_index = data_processed_2 %>% pull(collection_year) %>% as.factor() %>% as.numeric(),
+                    cases =  data_processed_2 %>% pull(woah_susceptibles_monthly_log1p),
+                    sequences =  data_processed_2 %>% pull(n_sequences_log1p))
 
 
-# Run the model
+# Run the model (00:24)
 test_fit_raneff <- raneff_mod$sample(
   data = raneff_data,
   seed = 42,
@@ -365,13 +365,13 @@ raneff_parms <- test_fit_raneff$summary()
 y_rep_matrix <- test_fit_raneff$draws('y_rep') %>%
   posterior::as_draws_matrix()
 
-ppc_bars(y =  data_processed %>% pull(n_reassortants), yrep = y_rep_matrix[sample(500:8000, 100),])
+ppc_bars(y =  data_processed_2 %>% pull(n_reassortants), yrep = y_rep_matrix[sample(500:8000, 100),])
 
 
 
 simulated_residuals <- createDHARMa(
   simulatedResponse = t(y_rep_matrix[sample(500:8000, 100),]),
-  observedResponse = data_processed %>% pull(n_reassortants)
+  observedResponse = data_processed_2 %>% pull(n_reassortants)
 )
 
 
