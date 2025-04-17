@@ -16,6 +16,8 @@ memory.limit(30000000)
 # Packages
 library(tidyverse)
 library(magrittr)
+library(ggraph)
+library(tidygraph)
 
 
 # User functions
