@@ -137,9 +137,6 @@ class_model <- brm(
 )
 
 
-# Posterior Predictive
-pp_check(class_model, ndraws = 100, type = 'bars') 
-
 
 ############################################## WRITE ###############################################
 
