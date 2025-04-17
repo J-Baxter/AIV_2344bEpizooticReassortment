@@ -103,8 +103,8 @@ ggs(diffusionmodel1_fit_gamma_19) %>%
 
 ggsave('~/Downloads/flu_plots/diffusion_trace.jpeg',
        dpi = 360,
-       height = 38,
-       width = 20,
+       height = 29,
+       width = 21,
        units = 'cm')
 
 # Plot ranked traces
@@ -295,7 +295,7 @@ diffusionmodel1_fit_gamma_19 %>%
   drop_na(Parameter) %>%
   ggplot(aes(y = AC, x = Lag, colour = as.factor(Chain))) + 
   geom_path() + 
-  facet_wrap(~Parameter, labeller = label_parsed) + 
+  facet_wrap(~Parameter, labeller = label_parsed, ncol = 4) + 
   theme_minimal()  + 
   scale_colour_brewer('Chain') +
   theme(legend.position = 'bottom',
@@ -305,8 +305,8 @@ diffusionmodel1_fit_gamma_19 %>%
 
 ggsave('~/Downloads/flu_plots/diffusion_autocorrelation.jpeg',
        dpi = 360,
-       height = 30,
-       width = 30,
+       height = 29,
+       width = 21,
        units = 'cm')
 
 
@@ -592,14 +592,19 @@ beta_draws <- diffusionmodel1_fit_gamma_19 %>%
                 fill = '#d95f02',
                 geom = 'area',
                 alpha = 0.5) +
-  xlim(c(-15,15)) + 
+   scale_y_continuous('Probability Density') + 
+   scale_x_continuous('Parameter Value', limits = c(-15,15)) + 
   facet_wrap(~label, scales = 'free_y',  ncol = 3, labeller = label_parsed) +
   theme_minimal() +
    theme(axis.text = element_text(size = 8),
          axis.title = element_text(size = 10),
          legend.text = element_text(size = 8))
  
-
+ ggsave('~/Downloads/flu_plots/diffusion_identifiability.jpeg',
+        dpi = 360,
+        height = 29,
+        width = 20,
+        units = 'cm')
  
 
 
