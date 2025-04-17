@@ -78,23 +78,23 @@ global_theme <- theme_classic()+
 #posteriorpredictive <-pp_check(diffusionmodel1_fit_gamma_19, ndraws = 100, type = 'dens_overlay_grouped', group = 'collection_regionname' )
 
 # average posterior predictions 
-avg_predictions(diffusionmodel1_fit_gamma_17)
-avg_predictions(diffusionmodel1_fit_gamma_17, by = 'collection_regionname')
-avg_predictions(diffusionmodel1_fit_gamma_17, by = 'collection_regionname', newdata = 'balanced')
+avg_predictions(diffusionmodel1_fit_gamma_19)
+avg_predictions(diffusionmodel1_fit_gamma_19, by = 'collection_regionname')
+avg_predictions(diffusionmodel1_fit_gamma_19, by = 'collection_regionname', newdata = 'balanced')
 
 # contrasts for continent, all else equal
-avg_comparisons(diffusionmodel1_fit_gamma_17, variables = list("collection_regionname" = 'pairwise'))
+avg_comparisons(diffusionmodel1_fit_gamma_19, variables = list("collection_regionname" = 'pairwise'))
 
 
 # 2 the number of species 
 # 2a. average posterior predictions marginalised across empirical distribution of predictors
-avg_predictions(diffusionmodel1_fit_gamma_17, variables = list('count_cross_species' = c(0,2,4,6,8,10)))
+avg_predictions(diffusionmodel1_fit_gamma_19, variables = list('count_cross_species' = c(0,2,4,6,8,10)))
 
 # 2b. average marginal effect at the mean
-avg_slopes(diffusionmodel1_fit_gamma_17, variables = 'count_cross_species', newdata = 'balanced')
+avg_slopes(diffusionmodel1_fit_gamma_19, variables = 'count_cross_species', newdata = 'balanced')
 
 # 2c. by continent
-avg_slopes(diffusionmodel1_fit_gamma_17, variables = 'count_cross_species', by = 'collection_regionname', newdata = 'balanced')
+avg_slopes(diffusionmodel1_fit_gamma_19, variables = 'count_cross_species', by = 'collection_regionname', newdata = 'balanced')
 
 
 # 3. binary charadriiformes
@@ -102,13 +102,13 @@ avg_slopes(diffusionmodel1_fit_gamma_17, variables = 'count_cross_species', by =
 
 # 4 median_charadriiformes_wild
 # 4a. average posterior predictions marginalised across empirical distribution of predictors
-avg_predictions(diffusionmodel1_fit_gamma_17, variables = list('median_charadriiformes_wild' = c(0.08, 0.25, 0.5, 1, 1.5)))
+avg_predictions(diffusionmodel1_fit_gamma_19, variables = list('median_charadriiformes_wild' = c(0.08, 0.25, 0.5, 1, 1.5)))
 
 # 4b. average marginal effect at the mean
-avg_slopes(diffusionmodel1_fit_gamma_17, variables = 'median_charadriiformes_wild', newdata = 'balanced')
+avg_slopes(diffusionmodel1_fit_gamma_19, variables = 'median_charadriiformes_wild', newdata = 'balanced')
 
 # 4c. by continent
-avg_slopes(diffusionmodel1_fit_gamma_17, variables = 'median_charadriiformes_wild', by = 'collection_regionname', newdata = 'balanced')
+avg_slopes(diffusionmodel1_fit_gamma_19, variables = 'median_charadriiformes_wild', by = 'collection_regionname', newdata = 'balanced')
 
 
 # 5 binary anseriformes
@@ -116,13 +116,13 @@ avg_slopes(diffusionmodel1_fit_gamma_17, variables = 'median_charadriiformes_wil
 
 # median_anseriformes_wild 
 # 6a. average posterior predictions
-avg_predictions(diffusionmodel1_fit_gamma_17, variables = list('median_anseriformes_wild' = c(0.25, 0.5, 1, 1.5,2)))
+avg_predictions(diffusionmodel1_fit_gamma_19, variables = list('median_anseriformes_wild' = c(0.25, 0.5, 1, 1.5,2)))
 
 # 6b. average marginal effect
-avg_slopes(diffusionmodel1_fit_gamma_17, variables = 'median_anseriformes_wild', newdata = 'balanced')
+avg_slopes(diffusionmodel1_fit_gamma_19, variables = 'median_anseriformes_wild', newdata = 'balanced')
 
 # 6c. by continent
-avg_slopes(diffusionmodel1_fit_gamma_17, variables = 'median_anseriformes_wild', by = 'collection_regionname', newdata = 'balanced')
+avg_slopes(diffusionmodel1_fit_gamma_19, variables = 'median_anseriformes_wild', by = 'collection_regionname', newdata = 'balanced')
 
 
 ############################################## WRITE ###############################################
@@ -205,7 +205,7 @@ plt_5d  <- diffusion_data %>%
 
 
 # E - Posterior predictive draws
-plt_5e  <- diffusionmodel1_fit_gamma_17 %>%
+plt_5e  <- diffusionmodel1_fit_gamma_19 %>%
   #  back-transformed linear predictive draws, equivalent to add_linpred (and in this case equviv to epred)
   # this uses the empirical data distribution by default
   avg_predictions(by = 'collection_regionname',  type = 'response') %>% 
@@ -247,18 +247,18 @@ plt_5e  <- diffusionmodel1_fit_gamma_17 %>%
 
 # F - Persistence Effect
 
-diffusionmodel1_fit_gamma_17 %>%
+diffusionmodel1_fit_gamma_19 %>%
             #  back-transformed linear predictive draws, equivalent to add_linpred (and in this case equviv to epred)
             # this uses the empirical data distribution by default
             avg_slopes(variables = c('median_charadriiformes_wild','median_anseriformes_wild'), by = 'collection_regionname', newdata = 'balanced') %>%
             get_draws() %>%
             as_tibble()
 
-diffusionmodel1_fit_gamma_17 %>%
+diffusionmodel1_fit_gamma_19 %>%
   #  back-transformed linear predictive draws, equivalent to add_linpred (and in this case equviv to epred)
   # this uses the empirical data distribution by default
   #avg_predictions(variables = list('median_charadriiformes_wild' = c(0.08, 0.25, 0.5, 1, 1.5)), by = c('collection_regionname', 'median_charadriiformes_wild'))  %>%
-  avg_predictions(diffusionmodel1_fit_gamma_17, variables = list('count_cross_species' = c(0,2,4,6,8,10)), by = c('collection_regionname', 'count_cross_species')) %>%
+  avg_predictions(diffusionmodel1_fit_gamma_19, variables = list('count_cross_species' = c(0,2,4,6,8,10)), by = c('collection_regionname', 'count_cross_species')) %>%
 
   get_draws() %>%
   as_tibble() %>%
