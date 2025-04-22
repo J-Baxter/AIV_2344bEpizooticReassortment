@@ -109,8 +109,8 @@ ggs(class_model) %>%
   drop_na(label) %>%
   ggplot(aes(x = .iteration,
              y = .value, 
-             col = as.factor(.chain)))+
-  geom_line(alpha = 0.8)+
+             col = as.factor(.chain))) +
+  geom_line(alpha = 0.8) +
   facet_wrap(~label,  ncol = 2, labeller = label_parsed, scales = 'free_y') +
   scale_colour_brewer(palette = 'GnBu', 'Chains') +
   scale_x_continuous('Iteration') + 

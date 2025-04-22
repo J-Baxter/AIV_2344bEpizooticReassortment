@@ -6,29 +6,94 @@ t <- get_variables(numbers_model)
 numbers_model %>%
   gather_draws(., !!!syms(t)) %>%
   filter(grepl('^continent|^beta|^theta|^lp', .variable)) %>%
+  
+  mutate(label = case_when(.variable == 'continent_specific_theta[1]'~ "theta['africa']",
+                           .variable == 'continent_specific_theta[2]'~ "theta['asia']",
+                           .variable == 'continent_specific_theta[3]'~ "theta['americas']",
+                           .variable == "continent_specific_theta[4]"~ "theta['europe']",
+                           
+                           .variable == 'continent_specific_abundance[1]'~ "lambda['africa']",
+                           .variable == 'continent_specific_abundance[2]'~ "lambda['asia']",
+                           .variable == 'continent_specific_abundance[3]'~ "lambda['americas']",
+                           .variable == "continent_specific_abundance[4]"~ "lambda['europe']",
+                           
+                           .variable == 'continent_specific_detection[1]'~ "p['africa']",
+                           .variable == 'continent_specific_detection[2]'~ "p['asia']",
+                           .variable == 'continent_specific_detection[3]'~ "p['americas']",
+                           .variable == "continent_specific_detection[4]"~ "p['europe']",
+                           
+                           .variable == "beta_cases"~ "beta['cases']",
+                           .variable == "beta_sequences"~ "beta['sequences']",
+                           .variable == "sigma_year"~ "sigma['year']",
+                           
+                           .variable == 'lp__' ~ 'log~probability')) %>%
+  drop_na(label) %>%
   ggplot(aes(x = .iteration,
              y = .value, 
              col = as.factor(.chain)))+
   geom_line(alpha = 0.8) + 
-  facet_wrap(~ .variable,
-             ncol = 2,
-             scale  = 'free_y',
-             strip.position = 'left')+
-  scale_colour_brewer(palette = 'GnBu', 'Chains') +
-  theme_minimal(base_size = 8) + 
-  theme(legend.position = 'bottom')
+
+
+facet_wrap(~label, labeller = label_parsed, ncol = 2, scale  = 'free_y',
+           strip.position = 'left') + 
+  theme_minimal()  + 
+  scale_colour_brewer('Chain', palette = 'GnBu', 'Chains') +
+  theme(legend.position = 'bottom',
+        axis.text = element_text(size = 8),
+        axis.title = element_text(size = 10),
+        legend.text = element_text(size = 8))
+
+
+ggsave('~/Downloads/flu_plots/number_traces.jpeg',
+       dpi = 360,
+       height = 29,
+       width = 21,
+       units = 'cm')
+
 
 # Autocorrelation
 stan_acf <- posterior::as_draws_array(numbers_model, nchains = 4) %>% 
   mcmc_acf()
 
 stan_acf$data %>% 
-  filter(!grepl('y_rep', Parameter)) %>%
+  filter(!grepl('y_rep', Parameter)) %>% 
+  
+  mutate(label = case_when(Parameter == 'continent_specific_theta[1]'~ "theta['africa']",
+                           Parameter == 'continent_specific_theta[2]'~ "theta['asia']",
+                           Parameter == 'continent_specific_theta[3]'~ "theta['americas']",
+                           Parameter == "continent_specific_theta[4]"~ "theta['europe']",
+                           
+                           Parameter == 'continent_specific_abundance[1]'~ "lambda['africa']",
+                           Parameter == 'continent_specific_abundance[2]'~ "lambda['asia']",
+                           Parameter == 'continent_specific_abundance[3]'~ "lambda['americas']",
+                           Parameter == "continent_specific_abundance[4]"~ "lambda['europe']",
+                           
+                           Parameter == 'continent_specific_detection[1]'~ "p['africa']",
+                           Parameter == 'continent_specific_detection[2]'~ "p['asia']",
+                           Parameter == 'continent_specific_detection[3]'~ "p['americas']",
+                           Parameter == "continent_specific_detection[4]"~ "p['europe']",
+                           
+                           Parameter == "beta_cases"~ "beta['cases']",
+                           Parameter == "beta_sequences"~ "beta['sequences']",
+                           Parameter == "sigma_year"~ "sigma['year']",
+                           
+                           Parameter == 'lp__' ~ 'log~probability',
+                           
+                           
+                           Parameter == 'year[1]' ~ 'alpha[2019]',
+                           Parameter == 'year[2]' ~ 'alpha[2020]',
+                           Parameter == 'year[3]' ~ 'alpha[2021]',
+                           Parameter == 'year[4]' ~ 'alpha[2022]',
+                           Parameter == 'year[5]' ~ 'alpha[2023]',
+                           Parameter == 'year[6]' ~ 'alpha[2024]'
+                           )) %>% 
+  
+  drop_na(label) %>%
   ggplot(aes(y = AC, 
              x = Lag,
              colour = as.factor(Chain))) +
   geom_path() + 
-  facet_wrap(~Parameter, labeller = label_parsed, ncol = 4) + 
+  facet_wrap(~label, labeller = label_parsed, ncol = 4) + 
   theme_minimal()  + 
   scale_colour_brewer('Chain') +
   theme(legend.position = 'bottom',
@@ -36,13 +101,36 @@ stan_acf$data %>%
         axis.title = element_text(size = 10),
         legend.text = element_text(size = 8))
 
-ggsave('~/Downloads/flu_plots/class_autocorrelation.jpeg',
+ggsave('~/Downloads/flu_plots/number_autocorrelation.jpeg',
        dpi = 360,
        height = 29,
        width = 21,
        units = 'cm')
 
  # Might be worth checking if any of the params are at the 'worry about' threshold neff/n
+neff_ratio(numbers_model) %>% 
+  as_tibble(rownames = 'param') %>%
+  mutate(param = fct_reorder(param, desc(value))) %>%
+  ggplot() + 
+  geom_segment(aes(yend = value,
+                   xend=param, 
+                   y=0,
+                   x = param,
+                   colour = value > 0.1)) +
+  geom_point(aes(y = value,
+                 x = param,
+                 colour = value > 0.1)) + 
+  geom_hline(aes(yintercept = 0.1), linetype = 'dashed') + 
+  geom_hline(aes(yintercept = 0.5), linetype = 'dashed') + 
+  scale_colour_manual(values = c( '#0047AB',  'red')) + 
+  scale_y_continuous(expand = c(0,0),
+                     expression(N["eff"]/N)) + 
+  scale_x_discrete('Fitted Parameter') + 
+  theme_classic() + 
+  coord_flip()  + 
+  theme(axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        legend.position = 'none') 
 
 
 
@@ -65,7 +153,18 @@ ppc_bars(y =  data_processed_2 %>% pull(n_reassortants),
                          y=m,
                          ymin = l,
                          ymax = h), orientation = 'x',
-                     colour = '#54278f')
+                     colour = '#54278f') +
+  scale_x_continuous('Reassortants per Month')+
+  scale_y_continuous('Count', expand = c(0,0)) +
+  theme_classic() + 
+  theme(strip.text = element_text(face = 'bold', size = 10),
+        strip.background = element_blank(),
+        legend.title = element_blank(),
+        legend.position = 'bottom',
+        axis.text = element_text(size = 8),
+        axis.title = element_text(size = 10),
+        legend.text = element_text(size = 8))
+
 
 # Grouped by Continent
 ppc_bars_grouped(y =  data_processed_2 %>% pull(n_reassortants), 
@@ -92,7 +191,7 @@ ppc_bars_grouped(y =  data_processed_2 %>% pull(n_reassortants),
   
   facet_wrap(~group, labeller  = as_labeller(str_to_title)) + 
   scale_x_discrete('Reassortants per Month')+
-  scale_y_continuous('Count', expand = c(0,0)) +
+  scale_y_continuous('Count') +
   theme_classic() + 
   theme(strip.text = element_text(face = 'bold', size = 10),
         strip.background = element_blank(),
@@ -103,19 +202,172 @@ ppc_bars_grouped(y =  data_processed_2 %>% pull(n_reassortants),
         legend.text = element_text(size = 8))
 
 
-ggsave('~/Downloads/flu_plots/class_ppc.jpeg',
+ggsave('~/Downloads/flu_plots/numbers_ppc.jpeg',
        dpi = 360,
        device = 'jpeg' ,
        height = 12,
-       width = 17, 
+       width = 12, 
        units = 'cm')
 
 
 # Identifiability (Prior and Posterior Plots)
-test_fit_linear %>%
+t <- get_variables(numbers_model_twin) 
+
+numbers_params <- numbers_model_twin %>%
   gather_draws(., !!!syms(t)) %>%
   mutate(type = 'posterior') %>%
-  filter(grepl('^continent_specific_theta', .variable)) %>%
+  filter(grepl('^continent|beta|sigma|year', .variable)) %>%
+  
+  mutate(label = case_when(.variable == 'continent_specific_theta[1]'~ "theta['africa']",
+                           .variable == 'continent_specific_theta[2]'~ "theta['asia']",
+                           .variable == 'continent_specific_theta[3]'~ "theta['americas']",
+                           .variable == "continent_specific_theta[4]"~ "theta['europe']",
+                           
+                           .variable == 'continent_specific_abundance[1]'~ "lambda['africa']",
+                           .variable == 'continent_specific_abundance[2]'~ "lambda['asia']",
+                           .variable == 'continent_specific_abundance[3]'~ "lambda['americas']",
+                           .variable == "continent_specific_abundance[4]"~ "lambda['europe']",
+                           
+                           .variable == 'continent_specific_detection[1]'~ "p['africa']",
+                           .variable == 'continent_specific_detection[2]'~ "p['asia']",
+                           .variable == 'continent_specific_detection[3]'~ "p['americas']",
+                           .variable == "continent_specific_detection[4]"~ "p['europe']",
+                           
+                           .variable == "beta_cases"~ "beta['cases']",
+                           .variable == "beta_sequences"~ "beta['sequences']",
+                           .variable == "sigma_year"~ "sigma['year']",
+                        
+                           .variable == 'lp__' ~ 'log~probability'))
+
+numbers_params %>%
+  drop_na(label) %>%
+  ggplot() + 
+  geom_histogram(aes(x = .value,
+                     y = after_stat(density)),
+                 inherit.aes = F, 
+                 bins = 40, 
+                 fill = '#1b9e77')+
+  
+    # thetas
+  stat_function(fun = dbeta,
+                data = tibble(label = "theta['africa']"),
+                args = list(shape1 = 2, shape2 =5),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
+    
+    stat_function(fun = dbeta,
+                  data = tibble(label = "theta['asia']"),
+                  args = list(shape1 = 2, shape2 =5),
+                  fill = '#d95f02',
+                  geom = 'area',
+                  alpha = 0.5) +
+    
+    stat_function(fun = dbeta,
+                  data = tibble(label = "theta['americas']"),
+                  args = list(shape1 = 2, shape2 =5),
+                  fill = '#d95f02',
+                  geom = 'area',
+                  alpha = 0.5) +
+    
+    stat_function(fun = dbeta,
+                  data = tibble(label = "theta['europe']"),
+                  args = list(shape1 = 2, shape2 =5),
+                  fill = '#d95f02',
+                  geom = 'area',
+                  alpha = 0.5) +
+    
+    # lambdas
+    stat_function(fun = dnorm,
+                  args = list(mean = 3, sd = 1.5),
+                  data = tibble(label = "lambda['africa']"),
+                  fill = '#d95f02',
+                  geom = 'area',
+                  alpha = 0.5) +
+    
+    stat_function(fun = dnorm,
+                  args = list(mean = 3, sd = 1.5),
+                  data = tibble(label = "lambda['asia']"),
+                  fill = '#d95f02',
+                  geom = 'area',
+                  alpha = 0.5) +
+    
+    stat_function(fun = dnorm,
+                  args = list(mean = 3, sd = 1.5),
+                  data = tibble(label = "lambda['americas']"),
+                  fill = '#d95f02',
+                  geom = 'area',
+                  alpha = 0.5) +
+    
+    stat_function(fun = dnorm,
+                  args = list(mean = 3, sd = 1.5),
+                  data = tibble(label = "lambda['europe']"),
+                  fill = '#d95f02',
+                  geom = 'area',
+                  alpha = 0.5) +
+    
+    # p
+    stat_function(fun = dbeta,
+                  args = list(shape1 = 1.5, shape2 = 2),
+                  data = tibble(label = "p['africa']"),
+                  fill = '#d95f02',
+                  geom = 'area',
+                  alpha = 0.5) +
+    
+    stat_function(fun = dbeta,
+                  args = list(shape1 = 1.5, shape2 = 2),
+                  data = tibble(label = "p['asia']"),
+                  fill = '#d95f02',
+                  geom = 'area',
+                  alpha = 0.5) +
+    
+    stat_function(fun = dbeta,
+                  args = list(shape1 = 1.5, shape2 = 2),
+                  data = tibble(label = "p['americas']"),
+                  fill = '#d95f02',
+                  geom = 'area',
+                  alpha = 0.5) +
+    
+    stat_function(fun = dbeta,
+                  args = list(shape1 = 1.5, shape2 = 2),
+                  data = tibble(label = "p['europe']"),
+                  fill = '#d95f02',
+                  geom = 'area',
+                  alpha = 0.5) +
+    
+    stat_function(fun = dnorm,
+                  args = list(mean = 0, sd = 1),
+                  data = tibble(label = "beta['cases']"),
+                  fill = '#d95f02',
+                  geom = 'area',
+                  alpha = 0.5) +
+    
+    stat_function(fun = dnorm,
+                  args = list(mean = 0, sd = 1),
+                  data = tibble(label = "beta['sequences']"),
+                  fill = '#d95f02',
+                  geom = 'area',
+                  alpha = 0.5) +
+    
+    stat_function(fun = dnorm,
+                  args = list(mean = 0, sd = 1),
+                  data = tibble(label = "sigma['year']"),
+                  fill = '#d95f02',
+                  geom = 'area',
+                  alpha = 0.5) +
+  facet_wrap(~label, scales = 'free',  ncol = 3, labeller = label_parsed) +
+  theme_minimal() +
+  theme(axis.text = element_text(size = 8),
+        axis.title = element_text(size = 10),
+        legend.text = element_text(size = 8))
+
+  
+  
+  
+numbers_model %>%
+  gather_draws(., !!!syms(t)) %>%
+  mutate(type = 'posterior') %>%
+  filter(grepl('^continent_specific_abundance', .variable)) %>%
   ggplot() + 
   
   geom_density(aes(x = .value#,
@@ -124,13 +376,11 @@ test_fit_linear %>%
   inherit.aes = F, 
   fill = '#1b9e77') +
   
-  stat_function(fun = dbeta,
-                args = list(shape1 = 2, shape2 =5),
+  stat_function(fun = dnorm,
+                args = list(mean = 3, sd = 1.5),
                 fill = '#d95f02',
                 geom = 'area',
                 alpha = 0.5) +
-  
-  
   facet_wrap(~`.variable`)
 
 
