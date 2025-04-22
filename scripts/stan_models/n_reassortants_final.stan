@@ -34,11 +34,11 @@ parameters {
   real beta_continentcases; // Coefficient for interaction between continent and cases
 
   // 'random' effects
-  real<lower=0> sigma_year;    // Standard deviation of year intercepts
-  array[Y] real year;      // Random intercepts for each year
+  real<lower=0> sigma_year_abundance;    // Standard deviation of year intercepts
+  array[Y] real year_abundance;      // Random intercepts for each year
   //real<lower=0> sigma_abundance;         // Residual standard deviation
-  //real<lower=0> sigma_year_detection;    // Standard deviation of year intercepts
- // array[Y] real year_detection;      // Random intercepts for each year
+  real<lower=0> sigma_year_detection;    // Standard deviation of year intercepts
+  array[Y] real year_detection;      // Random intercepts for each year
   //real<lower=0> sigma_detection;         // Residual standard deviation
 
 
@@ -53,15 +53,14 @@ model {
   // Abundance Model
   continent_specific_abundance ~ normal(3, 1.5);
   beta_cases ~ normal(0, 1);
-  year ~ normal(0, sigma_year);  // Prior for year random intercepts
-  sigma_year ~ cauchy(0, 2.5);     // Prior for year intercept std deviation
-  beta_continentcases ~ normal(0,1);
-  
+  year_abundance ~ normal(0, sigma_year_abundance);  // Prior for year random intercepts
+  sigma_year_abundance ~ cauchy(0, 2.5);     // Prior for year intercept std deviation
+
   // Detection model
-  continent_specific_detection ~ beta(1,1);//beta(1.5, 1.5);
+  continent_specific_detection ~ beta(1.5,2);//beta(1.5, 1.5);
   beta_sequences ~ normal(0, 1);
-  //year_detection ~ normal(0, sigma_year_detection);  // Prior for year random intercepts
-  //sigma_year_detection ~ cauchy(0, 2.5);     // Prior for year intercept std deviation
+  year_detection ~ normal(0, sigma_year_detection);  // Prior for year random intercepts
+  sigma_year_detection ~ cauchy(0, 2.5);     // Prior for year intercept std deviation
 
   // Zero Inflation Model
   continent_specific_theta ~ beta(2, 5); 
@@ -78,8 +77,8 @@ model {
 
     
     // Linear predictors 
-    real lambda = exp(continent_specific_abundance[c] + beta_cases * cases[i] + beta_continentcases * continent_index[i] * cases[i] + year[yr] ); 
-    real p = inv_logit(continent_specific_detection[c] + beta_sequences * sequences[i]); 
+    real lambda = exp(continent_specific_abundance[c] + beta_cases * cases[i] + year_abundance[yr] ); 
+    real p = inv_logit(continent_specific_detection[c] + beta_sequences * sequences[i] + year_detection[yr]); 
 
     // Loop over plausible values of K to marginalise out discrete latent variables
     for (j in 1:K) {
@@ -123,10 +122,10 @@ generated quantities {
       y_rep[i] = 0;
     } else {
       // Simulate from Poisson
-      current_population = poisson_rng(exp(continent_specific_abundance[c] + beta_cases * cases[i] + beta_continentcases * c * cases[i] + year[yr] ));
+      current_population = poisson_rng(exp(continent_specific_abundance[c] + beta_cases * cases[i] + year_abundance[yr] ));
       
       // Simulate observed count from binomial
-      y_rep[i] = binomial_rng(current_population, inv_logit(continent_specific_detection[c] + beta_sequences * sequences[i] ));
+      y_rep[i] = binomial_rng(current_population, inv_logit(continent_specific_detection[c] + beta_sequences * sequences[i]  + year_detection[yr]));
     }
   }
 }
