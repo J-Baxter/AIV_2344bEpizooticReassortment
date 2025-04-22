@@ -56,7 +56,7 @@ model {
   sigma_year ~ cauchy(0, 2.5);     // Prior for year intercept std deviation
   
   // Detection model
-  continent_specific_detection ~ beta(1,1);//beta(1.5, 1.5);
+  continent_specific_detection ~ beta(1.5,2);//beta(1.5, 1.5);
   beta_sequences ~ normal(0, 1);
   //year_detection ~ normal(0, sigma_year_detection);  // Prior for year random intercepts
   //sigma_year_detection ~ cauchy(0, 2.5);     // Prior for year intercept std deviation
