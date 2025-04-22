@@ -99,7 +99,8 @@ diffusion_data <- combined_data %>%
                   'median_charadriiformes_wild', 
                   'count_cross_species'), .fns= ~ log1p(.x), .names = '{.col}_log1p'))  %>%
   
-  dplyr::select(weighted_diff_coeff, 
+  dplyr::select(cluster_profile,
+                weighted_diff_coeff, 
                 median_anseriformes_wild_log1p,
                 median_charadriiformes_wild_log1p,
                 count_cross_species_log1p,
@@ -131,8 +132,8 @@ int_step <- function(x){
 }
 diffusion_formula <- bf(weighted_diff_coeff ~ 0 + collection_regionname + int_step(median_anseriformes_wild_log1p) + median_anseriformes_wild_log1p + int_step(median_charadriiformes_wild_log1p) + median_charadriiformes_wild_log1p + int_step(count_cross_species_log1p) + count_cross_species_log1p + 
                           collection_regionname:median_anseriformes_wild_log1p + 
-                          collection_regionname:median_charadriiformes_wild_log1p + (1|segment) ,
-                        shape ~  0 + collection_regionname + (1 | collection_regionname))
+                          collection_regionname:median_charadriiformes_wild_log1p + (1|segment) +(1|cluster_profile),
+                        shape ~  0 + collection_regionname )
 
 
 
@@ -147,7 +148,7 @@ diffusionmodel1_priors <- get_prior(diffusion_formula,
 
 diffusionmodel1_priors$prior[2:5] <- "normal(0,5)"
 diffusionmodel1_priors$prior[6:17] <- "normal(0,1)"
-diffusionmodel1_priors$prior[21:25] <- "normal(0,5)"
+diffusionmodel1_priors$prior[23:27] <- "normal(0,5)"
 
 
 #diffusionmodel1_priors$prior[1:14] <- "normal(0,5)"
