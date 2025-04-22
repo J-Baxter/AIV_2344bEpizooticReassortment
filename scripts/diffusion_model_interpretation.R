@@ -102,13 +102,13 @@ avg_slopes(diffusionmodel1_fit_gamma_19, variables = 'count_cross_species', by =
 
 # 4 median_charadriiformes_wild
 # 4a. average posterior predictions marginalised across empirical distribution of predictors
-avg_predictions(diffusionmodel1_fit_gamma_19, variables = list('median_charadriiformes_wild' = c(0.08, 0.25, 0.5, 1, 1.5)))
+avg_predictions(diffusionmodel1_fit_gamma_19, variables = list(list('median_charadriiformes_wild_log1p' = log1p(c(0.08, 0.25, 0.5, 1, 1.5)))))
 
 # 4b. average marginal effect at the mean
-avg_slopes(diffusionmodel1_fit_gamma_19, variables = 'median_charadriiformes_wild', newdata = 'balanced')
+avg_slopes(diffusionmodel1_fit_gamma_19, variables = 'median_charadriiformes_wild_log1p', newdata = 'balanced')
 
 # 4c. by continent
-avg_slopes(diffusionmodel1_fit_gamma_19, variables = 'median_charadriiformes_wild', by = 'collection_regionname', newdata = 'balanced')
+avg_slopes(diffusionmodel1_fit_gamma_19, variables = 'median_charadriiformes_wild_log1p', by = 'collection_regionname', newdata = 'balanced')
 
 
 # 5 binary anseriformes
@@ -122,7 +122,11 @@ avg_predictions(diffusionmodel1_fit_gamma_19, variables = list('median_anserifor
 avg_slopes(diffusionmodel1_fit_gamma_19, variables = 'median_anseriformes_wild', newdata = 'balanced')
 
 # 6c. by continent
-avg_slopes(diffusionmodel1_fit_gamma_19, variables = 'median_anseriformes_wild', by = 'collection_regionname', newdata = 'balanced')
+avg_slopes(diffusionmodel1_fit_gamma_19, variables = 'median_anseriformes_wild_log1p', by = 'collection_regionname', newdata = 'balanced')
+
+slopes(diffusionmodel1_fit_gamma_19, newdata = datagrid(median_anseriformes_wild_log1p = log1p(c(0.08, 0.25, 0.5, 1, 1.5)), grid_type = 'counterfactual'), variables = 'median_anseriformes_wild_log1p', by =c('median_anseriformes_wild_log1p', 'collection_regionname'))
+slopes(diffusionmodel1_fit_gamma_19, newdata = datagrid(median_charadriiformes_wild_log1p = log1p(c(0.08, 0.25, 0.5, 1, 1.5)), grid_type = 'counterfactual'), variables = 'median_charadriiformes_wild_log1p', by =c('median_charadriiformes_wild_log1p', 'collection_regionname'))
+slopes(diffusionmodel1_fit_gamma_19, newdata = datagrid(count_cross_species_log1p = log1p(c(1, 10, 25, 50)), grid_type = 'counterfactual'), variables = 'count_cross_species_log1p', by =c('count_cross_species_log1p'), eps = 0.001)
 
 
 ############################################## WRITE ###############################################
