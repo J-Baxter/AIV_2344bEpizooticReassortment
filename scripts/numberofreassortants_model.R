@@ -60,7 +60,7 @@ FormatContinent <- function(dataframe){
 ############################################## DATA ################################################
 combined_data <- read_csv('./2024Aug18/treedata_extractions/2024-09-20_combined_data.csv')
 
-data <- read_csv('countmodeldata_2025Mar11.csv')
+data <- read_csv('countmodeldata_2025Apr23.csv')
 
 ############################################## MAIN ################################################
 # Data pre-processing
@@ -92,7 +92,7 @@ data_processed_2 <- data %>%
 
 
 # Compile Stan Model
-numbers_mod <- cmdstan_model('./scripts/stan_models/n_reassortants_final.stan')
+numbers_mod <- cmdstan_model('./scripts/stan_models/n_reassortants_single_raneff.stan')
 
 numbers_data <- list(N = nrow(data_processed_2),
                     y = data_processed_2 %>% pull(n_reassortants),
@@ -112,7 +112,7 @@ ITER <- 4000
 BURNIN <- ITER/10 # Discard 10% burn in from each chain
 SEED <- 4472
 
-numbers_model_twin <- numbers_mod$sample(
+numbers_model_2 <- numbers_mod$sample(
   data = numbers_data,
   seed = SEED,
   chains = CHAINS,

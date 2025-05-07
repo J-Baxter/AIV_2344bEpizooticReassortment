@@ -56,7 +56,15 @@ countmodel_posteriorpredictive <- bind_rows(posteriorpredictive_nreassortants$da
                                              
 
 ############################################## MAIN ################################################
+# Expected values with tidybayes
 
+#avg_prediction
+diffusionmodel1_fit_gamma_19 %>% 
+  epred_draws(newdata = diffusion_data) %>%  
+  group_by(.draw, collection_regionname) %>% 
+  summarise(avg_epred = mean(.epred), .groups = "drop") %>% 
+  group_by(collection_regionname) %>%
+  median_hdci(avg_epred)
 
 
 

@@ -26,7 +26,9 @@ library(emmeans)
 library(marginaleffects)
 library(magrittr)
 library(ggmcmc)
-
+library(sf)
+library(rnaturalearth)
+library(rnaturalearthdata)
 
 # User functions
 
@@ -60,7 +62,7 @@ summary_data <- read_csv('./2024Aug18/treedata_extractions/summary_reassortant_m
             clade)) 
 
 meta <- read_csv('./2024-09-09_meta.csv') 
-woah_hpai <- read_csv('~/Downloads/Quantitative data 2025-04-16.csv')
+woah_hpai <- read_csv('~/Downloads/Quantitative data 2025-04-23.csv')
 
 ############################################## MAIN ################################################
 # Data pre-processing
@@ -320,4 +322,4 @@ count_data <- woah_minimuminferredcases_monthly %>%
 
 # currently missing lpai diversity
 
-write_csv(count_data, './countmodeldata_2025Mar11.csv')
+write_csv(count_data, './countmodeldata_2025Apr23.csv')

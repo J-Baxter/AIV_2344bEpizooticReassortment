@@ -404,20 +404,23 @@ beta_draws <- diffusionmodel1_fit_gamma_19 %>%
                            .variable == 'b_collection_regionnameeurope'~ "beta['europe']",
                            .variable == "b_collection_regionnamecentral&northernamerica"~ "beta['americas']",
                            
-                           .variable == 'b_int_stepmedian_anseriformes_wild_log1p'~ "beta['step_anseriformes']",
-                           .variable == 'b_median_anseriformes_wild_log1p'~ "beta['persist_anseriformes']",
-                           .variable == 'b_int_stepmedian_charadriiformes_wild_log1p'~ "beta['step_charadriiformes']",
-                           .variable == 'b_median_charadriiformes_wild_log1p'~ "beta['persist_charadriiformes']",
-                           .variable == 'b_int_stepcount_cross_species_log1p'~ "beta['step_hostjump']",
-                           .variable == 'b_count_cross_species_log1p'~ "beta['num_hostjump']",
+                           .variable == "b_median_anseriformes_wild_prop" ~ "beta['anseriformes']",
+                           .variable == 'b_median_charadriiformes_wild_prop'~ "beta['charadriiformes']",
+                           .variable == 'b_persist.time_log1p'~ "beta['persistence']",
+                           .variable == 'b_count_cross_species_log1p'~ "beta['host-richness']",
                            
-                           .variable == 'b_collection_regionnameafrica:median_anseriformes_wild_log1p'~ "beta['africa-anser']",
-                           .variable == 'b_collection_regionnameeurope:median_anseriformes_wild_log1p'~ "beta['europe-anser']",
-                           .variable == 'b_collection_regionnamecentral&northernamerica:median_anseriformes_wild_log1p'~ "beta['americas-anser']",
+                           .variable == 'b_collection_regionnameafrica:median_anseriformes_wild_prop'~ "beta['africa-anser']",
+                           .variable == 'b_collection_regionnameeurope:median_anseriformes_wild_prop'~ "beta['europe-anser']",
+                           .variable == 'b_collection_regionnamecentral&northernamerica:median_anseriformes_wild_prop'~ "beta['americas-anser']",
                            
-                           .variable == 'b_collection_regionnameafrica:median_charadriiformes_wild_log1p'~ "beta['africa-charad']",
-                           .variable == 'b_collection_regionnameeurope:median_charadriiformes_wild_log1p'~ "beta['europe-charad']",
-                           .variable == 'b_collection_regionnamecentral&northernamerica:median_charadriiformes_wild_log1p'~ "beta['americas-charad']",
+                           .variable == 'b_collection_regionnameafrica:median_charadriiformes_wild_prop'~ "beta['africa-charad']",
+                           .variable == 'b_collection_regionnameeurope:median_charadriiformes_wild_prop'~ "beta['europe-charad']",
+                           .variable == 'b_collection_regionnamecentral&northernamerica:median_charadriiformes_wild_prop'~ "beta['americas-charad']",
+                           
+                           .variable == 'b_collection_regionnameafrica:persist.time_log1p'~ "beta['africa-persistence']",
+                           .variable == 'b_collection_regionnameeurope:persist.time_log1p'~ "beta['europe-persistence']",
+                           .variable == 'b_collection_regionnamecentral&northernamerica:persist.time_log1p'~ "beta['americas-persistence']",
+                          
                            
                            .variable == 'b_shape_collection_regionnameasia'~ "alpha['asia']",
                            .variable == 'b_shape_collection_regionnameafrica'~ "alpha['africa']",
@@ -425,21 +428,21 @@ beta_draws <- diffusionmodel1_fit_gamma_19 %>%
                            .variable == 'b_shape_collection_regionnamecentral&northernamerica'~ "alpha['americas']",
                            
                            
-                           .variable == 'sd_segment__Intercept'~ "sigma[gamma]",
-                           .variable == 'sd_collection_regionname__shape_Intercept'~ "sigma[zeta]",
+                           .variable == 'sd_segment__Intercept'~ "sigma[segment]",
+                           .variable == 'sd_cluster_profile__Intercept'~ "sigma[cluster]",
                            
-                           .variable == 'r_segment[ha,Intercept] '~ "gamma['ha']",
-                           .variable == "r_segment[mp,Intercept]"~ "gamma['mp']",
-                           .variable == "r_segment[np,Intercept]"~ "gamma['np']",
-                           .variable == "r_segment[ns,Intercept]"~ "gamma['ns']",
-                           .variable == "r_segment[nx,Intercept]"~ "gamma['nx']",
-                           .variable == "r_segment[pa,Intercept]"~ "gamma['pa']",
-                           .variable == "r_segment[pb1,Intercept]"~ "gamma['pb1']",
-                           .variable == "r_segment[pb2,Intercept]"~ "gamma['pb2']",
-                           .variable == 'r_collection_regionname__shape[asia,Intercept]'~ "zeta['asia']",
-                           .variable == 'r_collection_regionname__shape[africa,Intercept]'~ "zeta['africa']",
-                           .variable == 'r_collection_regionname__shape[central.&.northern.america,Intercept]'~ "zeta['europe']",
-                           .variable == 'collection_regionname__shape_central.&.northern.america'~ "zeta['central&northernamerica']",
+                           #.variable == 'r_segment[ha,Intercept] '~ "gamma['ha']",
+                           #.variable == "r_segment[mp,Intercept]"~ "gamma['mp']",
+                           #.variable == "r_segment[np,Intercept]"~ "gamma['np']",
+                          # .variable == "r_segment[ns,Intercept]"~ "gamma['ns']",
+                          #.variable == "r_segment[nx,Intercept]"~ "gamma['nx']",
+                           #.variable == "r_segment[pa,Intercept]"~ "gamma['pa']",
+                           #.variable == "r_segment[pb1,Intercept]"~ "gamma['pb1']",
+                           #.variable == "r_segment[pb2,Intercept]"~ "gamma['pb2']",
+                           #.variable == 'r_collection_regionname__shape[asia,Intercept]'~ "zeta['asia']",
+                           #.variable == 'r_collection_regionname__shape[africa,Intercept]'~ "zeta['africa']",
+                           #.variable == 'r_collection_regionname__shape[central.&.northern.america,Intercept]'~ "zeta['europe']",
+                           #.variable == 'collection_regionname__shape_central.&.northern.america'~ "zeta['central&northernamerica']",
                            
                            .variable == 'lprior' ~ 'prior',
                            .variable == 'lp__' ~ 'log~probability'))
@@ -447,7 +450,7 @@ beta_draws <- diffusionmodel1_fit_gamma_19 %>%
 
 
  ggplot() + 
-  geom_histogram(data = beta_draws, 
+  geom_histogram(data = beta_draws %>% drop_na(label), 
                  aes(x = .value,
                      y = after_stat(density)),
                  inherit.aes = F, 

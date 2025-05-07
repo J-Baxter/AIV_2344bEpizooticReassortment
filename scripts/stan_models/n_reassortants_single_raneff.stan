@@ -109,6 +109,7 @@ model {
 // Replications for the posterior predictive distribution
 generated quantities {
   array[N] int y_rep; 
+  array[N] int N_rep;
 
   for (i in 1:N) {
     int c = continent_index[i]; // Current continent
@@ -119,9 +120,13 @@ generated quantities {
     if (bernoulli_rng(continent_specific_theta[c]) == 1) {
       // Zero inflation: y_rep[i] = 0
       y_rep[i] = 0;
+      N_rep[i] = 0;
+      fixed_seq[i] = 0;
+      
     } else {
       // Simulate from Poisson
       current_population = poisson_rng(exp(continent_specific_abundance[c] + beta_cases * cases[i] + year[yr] ));
+      N_rep[i] = current_population;
       
       // Simulate observed count from binomial
       y_rep[i] = binomial_rng(current_population, inv_logit(continent_specific_detection[c] + beta_sequences * sequences[i] ));

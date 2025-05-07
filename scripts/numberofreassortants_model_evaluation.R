@@ -211,9 +211,9 @@ ggsave('~/Downloads/flu_plots/numbers_ppc.jpeg',
 
 
 # Identifiability (Prior and Posterior Plots)
-t <- get_variables(numbers_model_twin) 
+t <- get_variables(numbers_model) 
 
-numbers_params <- numbers_model_twin %>%
+numbers_params <- numbers_model %>%
   gather_draws(., !!!syms(t)) %>%
   mutate(type = 'posterior') %>%
   filter(grepl('^continent|beta|sigma|year', .variable)) %>%

@@ -92,23 +92,27 @@ diffusion_data <- combined_data %>%
                             collection_month %in% c(9,10,11)  ~ 'migrating_autumn' # Rename to autumn migration
          )) %>%
   
-  # format persistence times
+  # persistence time proportions
+  mutate(across(c('median_anseriformes_wild', 
+                  'median_charadriiformes_wild'), .fns= ~ ifelse(.x/persist.time > 1, 1, .x/persist.time ), .names = '{.col}_prop')) %>%
+  
   
   # binary
-  mutate(across(c('median_anseriformes_wild', 
-                  'median_charadriiformes_wild', 
+  mutate(across(c('persist.time', 
                   'count_cross_species'), .fns= ~ log1p(.x), .names = '{.col}_log1p'))  %>%
   
   dplyr::select(cluster_profile,
                 weighted_diff_coeff, 
-                median_anseriformes_wild_log1p,
-                median_charadriiformes_wild_log1p,
+                persist.time_log1p,
                 count_cross_species_log1p,
+                median_anseriformes_wild_prop,
+                median_charadriiformes_wild_prop,
                 host_simplifiedhost,
                 segment, 
                 collection_regionname) %>%
   
-  filter(weighted_diff_coeff > 0)
+  filter(weighted_diff_coeff > 0)  %>% filter(segment %in% c('ha', 'pb1'))
+  
 
 
 
@@ -127,12 +131,18 @@ diffusion_data <- combined_data %>%
                      #   shape ~ 0 +  collection_regionname + (1 | segment))
 #diffusion_formula <- bf(weighted_diff_coeff ~ 0 + median_anseriformes_wild +  median_charadriiformes_wild + collection_regionname + collection_season +  (1|segment))
 
-int_step <- function(x){
-  ifelse(x >0, 1,0)
-}
-diffusion_formula <- bf(weighted_diff_coeff ~ 0 + collection_regionname + int_step(median_anseriformes_wild_log1p) + median_anseriformes_wild_log1p + int_step(median_charadriiformes_wild_log1p) + median_charadriiformes_wild_log1p + int_step(count_cross_species_log1p) + count_cross_species_log1p + 
-                          collection_regionname:median_anseriformes_wild_log1p + 
-                          collection_regionname:median_charadriiformes_wild_log1p + (1|segment) +(1|cluster_profile),
+
+
+diffusion_formula <- bf(weighted_diff_coeff ~ 0 + collection_regionname + 
+                          count_cross_species_log1p + 
+                          median_anseriformes_wild_prop +
+                          median_charadriiformes_wild_prop +
+                          
+                          collection_regionname:median_anseriformes_wild_prop + 
+                          collection_regionname:median_charadriiformes_wild_prop +
+                          collection_regionname:persist.time_log1p +
+                          (1|segment) +
+                          (1|cluster_profile),
                         shape ~  0 + collection_regionname )
 
 
@@ -146,9 +156,9 @@ diffusionmodel1_priors <- get_prior(diffusion_formula,
 #diffusionmodel1_priors$prior[6:11] <- "normal(0,1)"
 #diffusionmodel1_priors$prior[16:19] <- "normal(0,5)"
 
-diffusionmodel1_priors$prior[2:5] <- "normal(0,5)"
-diffusionmodel1_priors$prior[6:17] <- "normal(0,1)"
-diffusionmodel1_priors$prior[23:27] <- "normal(0,5)"
+diffusionmodel1_priors$prior[1:4] <- "normal(0,5)"
+diffusionmodel1_priors$prior[5:18] <- "normal(0,1)"
+diffusionmodel1_priors$prior[24:28] <- "normal(0,5)"
 
 
 #diffusionmodel1_priors$prior[1:14] <- "normal(0,5)"
@@ -201,7 +211,7 @@ diffusionmodel1_fit_gamma_19<- brm(
   iter = ITER,
   warmup = BURNIN,
   seed = SEED,
-  control = list(adapt_delta = 0.95))
+  control = list(adapt_delta = 0.97))
 
 
 # Post-fitting checks (including inspection of ESS, Rhat and posterior predictive)

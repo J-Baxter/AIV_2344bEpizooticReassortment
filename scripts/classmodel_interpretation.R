@@ -93,7 +93,31 @@ class_model %>%
   facet_grid(cols = vars(collection_regionname))
 
 
+avg_predictions(class_model, by = 'collection_regionname')
+avg_predictions(class_model, by = 'collection_regionname', newdata = 'balanced')
 
+avg_predictions(class_model,
+                variables = list("time_since_previous" = 0.08),
+                by = "time_since_previous",
+                newdata = datagrid(time_since_previous = c(0.08, 0.25),
+                                   grid_type = 'counterfactual'))
+
+avg_predictions(class_model, by = 'collection_regionname', newdata = 'balanced')
+
+
+
+
+class_model |> 
+  avg_comparisons(variables = list("time_since_previous" = 0.08), by = "time_since_previous",
+                  newdata = datagrid(time_since_previous = c(0.08, 0.25), grid_type = 'counterfactual'),  type = 'response')
+
+
+avg_predictions(class_model, by = 'previous_class', newdata = datagrid(time_since_previous = 0.08, 
+                                                                   previous_class=unique(class_data$previous_class),
+                                                                   grid_type = 'counterfactual'))
+
+
+plot_predictions(class_model, condition = c("time_since_previous", "collection_regionname")) + facet_wrap(.~group)
 ###### Expectation of the posterior (linear predictors) ############
 # collection_regionname ~ previous class, at the median time between reassortants
 #
