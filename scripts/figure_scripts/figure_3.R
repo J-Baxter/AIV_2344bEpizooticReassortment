@@ -257,11 +257,13 @@ dominant_reassortants <- read_csv('./2024Aug18/treedata_extractions/summary_reas
   gsub('_', '', .) %>%
   as.double()
 
-mcc_treefiles <-  c(mcc_treefiles[sapply(dominant_reassortants, function(x) which(grepl(x, mcc_treefiles)))][-1],
-                    '~/Downloads/ha_43112113_subsampled_traits_mcc(1).tree')
+mcc_treefiles <-  c(mcc_treefiles[sapply(dominant_reassortants, function(x) which(grepl(x, mcc_treefiles)))][-c(1,3)],
+                    '~/Downloads/ha_43112113_subsampled_traits_mcc(1).tree',
+                    './2024Aug18/reassortant_subsampled_beasttraits/h5n8_rerun/ha_32313212_subsampled_traits_mcc.tree')
 
-posterior_treefiles <- c( treefiles[sapply(dominant_reassortants, function(x) which(grepl(x, treefiles)))][-1],
-                          '~/Downloads/ha_43112113_subsampled_traits_1000.trees')
+posterior_treefiles <- c( treefiles[sapply(dominant_reassortants, function(x) which(grepl(x, treefiles)))][-c(1,3)],
+                          '~/Downloads/ha_43112113_subsampled_traits_1000.trees',
+                          './2024Aug18/reassortant_subsampled_beasttraits/h5n8_rerun/ha_32313212_subsampled_traits_1000.trees')
 
 
 ############################################## MAIN ################################################
@@ -272,7 +274,7 @@ formatted_phylogeos <- mapply(FormatPhyloGeo,
                               posterior_treefiles,
                               SIMPLIFY = FALSE)
 
-test <- FormatPhyloGeo(mcc_treefiles[3], posterior_treefiles[3])
+#test <- FormatPhyloGeo(mcc_treefiles[3], posterior_treefiles[3])
 phylogeo <- lapply(formatted_phylogeos, PlotPhyloGeo)
 #phylogeo[[1]]
 #north_america_ha <- read.beast('./2024Aug18/region_subsampled_outputs/traits_mcc/ha_northamerica_subsampled_traits_mcc.tree')
@@ -289,21 +291,61 @@ phylogeo <- lapply(formatted_phylogeos, PlotPhyloGeo)
 
 plot_legend <- get_plot_component(phylogeo[[4]] + theme(legend.position = 'bottom') , 'guide-box-bottom', return_all = TRUE)
 
+#main <- cowplot::plot_grid(
+  #ncol = 2,
+  #phylogeo[[3]],
+  #phylogeo[[2]], 
+  #phylogeo[[6]], 
+  #phylogeo[[4]], 
+  #phylogeo[[1]], 
+  #phylogeo[[5]], 
+  #labels = c("H5N8/2019/R7",
+             #"H5N1/2020/R1", 
+             #"H5N1/2021/R1" , 
+             #"H5N1/2021/R3",
+             #"H5N1/2022/R7",
+            # "H5N1/2022/R12"  ),
+  #label_size #= 8)
+
+cowplot::plot_grid(
+  ncol = 2,
+  phylogeo[[1]],
+  phylogeo[[2]], 
+  phylogeo[[3]], 
+  phylogeo[[4]], 
+  phylogeo[[5]], 
+  phylogeo[[6]], 
+  labels = c("H5N1/2020/R1",
+             
+             "H5N1/2021/R3" , 
+             "H5N1/2022/R12",
+             "H5N1/2021/R1",
+             "H5N1/2022/R7" ,
+             "H5N8/2019/R7"),
+  label_size = 8)
+
+# Chronological order
 main <- cowplot::plot_grid(
   ncol = 2,
-  phylogeo[[3]],
-  phylogeo[[2]], 
-  phylogeo[[6]], 
+  phylogeo[[6]],
+  phylogeo[[1]],
   phylogeo[[4]], 
-  phylogeo[[1]], 
+  phylogeo[[2]],
   phylogeo[[5]], 
-  labels = c("H5N8/2019/R7",
-             "H5N1/2020/R1", 
-             "H5N1/2021/R1" , 
-             "H5N1/2021/R3",
-             "H5N1/2022/R7",
-             "H5N1/2022/R12"  ),
-  label_size = 8)
+  phylogeo[[3]], 
+
+  labels = c( "H5N8/2019/R7",
+              "H5N1/2020/R1 (AIV07, C)",
+              "H5N1/2021/R1 (AIV09, AB)",
+             "H5N1/2021/R3" , 
+             "H5N1/2022/R7 (B3.2)" ,
+             "H5N1/2022/R12 (AIV48, BB)"
+            ),
+  label_x = 0, hjust = 0,
+  label_size = 8) 
+  
+
+
 
 
 cowplot::plot_grid(main,
@@ -311,9 +353,9 @@ cowplot::plot_grid(main,
                    rel_heights = c(1,0.1),
                    ncol = 1)
 
-ggsave('~/Downloads/flu_plots/figure2.jpeg',
-       height = 20,
-       width = 25,
+ggsave('~/Downloads/flu_plots/figure3.jpeg',
+       height = 15,
+       width = 20,
        units = 'cm',
        dpi = 360
        )
