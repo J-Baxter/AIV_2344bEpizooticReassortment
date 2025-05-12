@@ -30,6 +30,7 @@ summary_data <- read_csv('./2024Aug18/treedata_extractions/summary_reassortant_m
   select(-c(cluster_label,
             clade)) 
 
+meta <- read_csv('./2024-09-09_meta.csv')
 # import colour schemes
 host_colour <- read_csv('./colour_schemes/hostType_cols.csv')
 region_colour <- read_csv('./colour_schemes/regionType_cols.csv')
@@ -75,43 +76,33 @@ kclust_nophylo_data <- summary_data %>%
 
 kclust_updated_data <- combined_data %>%
   
-  # select variables of interes
+  # select variables of interest
+  # must include persistence time, diffusion coefficient, evolutionary rate, species jumps
   select(
     segment,
     cluster_profile,
     weighted_diff_coeff,
     evoRate,
     persist.time,
-    collection_regionname,
-    host_simplifiedhost,
     count_cross_species,
-    `median_galliformes-domestic`,
-    `median_anseriformes-wild`,
-    `median_charadriiformes-wild`
-    ) %>%
+    count_to_mammal
+  ) %>%
   
   
   # Substitute NA values in diffusion coefficient with 0
   mutate(across(where(is.double), .fns = ~ replace_na(.x, 0))) %>%
   rename_with(~gsub('-', '_', .x)) %>%
   
-  mutate(collection_regionname = case_when(grepl('europe', collection_regionname) ~ 'europe',
-                                           grepl('africa', collection_regionname) ~ 'africa',
-                                           grepl('asia', collection_regionname) ~ 'asia',
-                                           grepl('(central|northern) america', collection_regionname) ~ 'central & northern america',
-                                           .default = collection_regionname
-  )) %>%
-  filter(!grepl('\\+', host_simplifiedhost)) %>%
   
   # Model pre-processing
   group_by(segment, cluster_profile) %>%
   slice_sample(n=1) %>%
-  ungroup() %>%
-  filter(segment =='ha') %>%
+  ungroup() %>% 
+  filter(segment %in% c('ha', 'pb2', 'nx')) %>%
   
   # pivot wider so one row/reassortant
   pivot_wider(names_from = segment,
-              values_from = c(where(is.double), collection_regionname, host_simplifiedhost)) %>%
+              values_from = where(is.double)) %>%
   
   # start tidymodels
   recipe(~ .) %>% 
@@ -124,19 +115,20 @@ kclust_updated_data <- combined_data %>%
   step_normalize(all_numeric()) %>% 
   
   # create dummy variables for categorical predictors
-  step_dummy(starts_with('collection_regionname'), one_hot = TRUE) %>%
-  step_dummy(starts_with('host_simplifiedhost'), one_hot = TRUE) %>%
+  #step_dummy(starts_with('collection_regionname'), one_hot = TRUE) %>%
+  #step_dummy(starts_with('host_simplifiedhost'), one_hot = TRUE) %>%
   
   # run tidymodels recipe
   prep() %>%
   bake(NULL) %>%
   
-
+  
   
   # exclude columns not to be used
   left_join(kclust_nophylo_data %>% select(-starts_with('group')), by = join_by(cluster_profile)) %>%
-  select(-c(starts_with('host_simplifiedhost'),
-            starts_with('collection_regionname'))) 
+  select(-c(starts_with('host_simplifiedhost'), 
+            starts_with(c('collection_regionname'))))
+
 
 
 ####################################### SUMMARY DATA KCLUST ########################################
@@ -305,14 +297,17 @@ plt_1b <- assignments_nophylo %>%
                                                   'H5N1/2021/R3_Europe', 
                                                   'H5N1/2022/R12_Europe',
                                                   'H5N1/2021/R1_Europe',
-                                                  'H5N1/2023/R29_NAmerica'), cluster_label,""), 
-                colour = .cluster), hjust = 0, nudge_x = 0.08, nudge_y = -0.1, size = 2) +
+                                                  'H5N1/2023/R29_NAmerica'), gsub('_.*', '', cluster_label),""), 
+                colour = .cluster), hjust = 0, nudge_x = 0.15, nudge_y = -0.1, size = 2) +
 
   scale_colour_brewer('K-Means Clusters',
                       palette = 'Set1')+
   scale_alpha_manual(values = c('1' = 1, '0' = 0.3)) + 
-  theme_minimal(base_size = 8) + 
-  theme(legend.position = 'none')
+  theme_minimal() + 
+  theme(legend.position = 'none',
+        axis.text = element_text(size = 8),
+        axis.title = element_text(size = 10),
+        legend.text = element_text(size = 8))
         
 
 
@@ -332,17 +327,20 @@ plt_1c <- ggplot(ari_summary) +
   scale_y_continuous(
     'Variable Importance') +
   coord_cartesian(ylim = c(0,1)) +
-  theme_minimal(base_size = 8) +
-  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1, size = 8),
+        axis.text.y = element_text(size = 8),
+        axis.title = element_text(size = 10),
+        legend.text = element_text(size = 8))
 
 
-plt_1 <- cowplot::plot_grid( plt_1b, plt_1c, ncol = 1, align = 'hv', axis = 'tb')
+plt_1 <- cowplot::plot_grid( plt_1b, plt_1c, ncol = 1, align = 'hv', axis = 'tb', labels = 'AUTO', label_size = 10)
 
 ggsave(
        '~/Downloads/flu_plots/summarydata_clustering.jpeg', 
        plt_1,
-       height = 24,
-       width = 12,
+       height = 20,
+       width = 15,
        units =  "cm",
        dpi = 360)
 
@@ -477,7 +475,8 @@ plt_2a <- ggplot(clusterings, aes(k, tot.withinss)) +
   geom_vline(xintercept = 3, colour= 'darkgreen', linetype = 'dashed')
 
 
-plt_2b <- assignments %>%
+plt_2b <-  
+  assignments %>%
   filter(k == 3) %>%
   select(-c(kclust, tidied, glanced)) %>%
   recipe(~ .) %>%
@@ -485,7 +484,6 @@ plt_2b <- assignments %>%
   prep() %>%
   bake(NULL)%>%
   left_join(meta %>% select(cluster_profile, cluster_label) %>% distinct() %>% drop_na()) %>%
-  
   ggplot(., aes(x = PC1, y = PC2)) +
   geom_point(aes(colour = .cluster, alpha = ifelse(cluster_label %in% c('H5N1/2022/R7_NAmerica', 
                                                                         'H5N1/2020/R1_Europe', 
@@ -500,14 +498,17 @@ plt_2b <- assignments %>%
                                                   'H5N1/2021/R3_Europe', 
                                                   'H5N1/2022/R12_Europe',
                                                   'H5N1/2021/R1_Europe',
-                                                  'H5N1/2023/R29_NAmerica'), cluster_label,""), 
-                colour = .cluster), hjust = 0, nudge_x = -1.8, nudge_y = -0.15, size = 2) +
+                                                  'H5N1/2023/R29_NAmerica'), gsub('_.*', '', cluster_label),""), 
+                colour = .cluster), hjust = 1.1, nudge_y = -0.1, size = 2) +
   
   scale_colour_brewer('K-Means Clusters',
                       palette = 'Set1')+
   scale_alpha_manual(values = c('1' = 1, '0' = 0.3)) + 
-  theme_minimal(base_size = 8) + 
-  theme(legend.position = 'none')
+  theme_minimal() + 
+  theme(legend.position = 'none',
+        axis.text = element_text(size = 8),
+        axis.title = element_text(size = 10),
+        legend.text = element_text(size = 8))
 
 
 cluster.stats(d = NULL, clustering, al.clustering = NULL)
@@ -523,28 +524,38 @@ plt_2c <- ari_phylo_summary %>%
   scale_x_discrete('Variable',
                    labels = c('persist.time_ha' = 'HA Persistence Time' ,
                               'persist.time_pb2' = 'PB2 Persistence Time' ,
+                              'persist.time_nx' = 'Nx Persistence Time',
                               'weighted_diff_coeff_ha' = 'HA diffusion coefficient',
                               'weighted_diff_coeff_pb2' = 'PB2 diffusion coefficient',
+                              'weighted_diff_coeff_nx' = 'Nx diffusion coefficient',
                               'evoRate_pb2' = 'PB2 evo rate',
                               'evoRate_ha' = 'HA evo rate',
+                              'evoRate_nx' = 'Nx evo rate',
                               'count_cross_species_pb2' = 'PB2 species jumps',
-                              'count_cross_species_ha' = 'HA species jumps') %>%
+                              'count_cross_species_ha' = 'HA species jumps',
+                              'count_cross_species_nx' = 'Nx species jumps',
+                              'count_to_mammal_pb2' = 'PB2 mammal jumps',
+                              'count_to_mammal_ha' = 'HA mammal jumps',
+                              'count_to_mammal_nx' = 'Nx mammal jumps') %>%
                      str_wrap(., width = 15)
   ) +
   scale_y_continuous(
     'Variable Importance') +
   coord_cartesian(ylim = c(0,1)) +
   theme_minimal(base_size = 8) +
-  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1, size = 8),
+        axis.text.y = element_text(size = 8),
+        axis.title = element_text(size = 10),
+        legend.text = element_text(size = 8))
 
 
-plt_2 <- cowplot::plot_grid( plt_2b, plt_2c, ncol = 1, align = 'hv', axis = 'tb')
+plt_2 <- cowplot::plot_grid( plt_2b, plt_2c, ncol = 1, align = 'hv', axis = 'tb', labels = 'AUTO', label_size = 10)
 
 ggsave(
   '~/Downloads/flu_plots/phylodata_clustering.jpeg', 
   plt_2,
-  height = 21,
-  width = 10,
+  height = 20,
+  width = 15,
   units =  "cm",
   dpi = 360)
 
