@@ -55,14 +55,6 @@ anc_state <- apply(anc_lik,
   mutate(node = as.integer(node))
 
 
-old_str <- "1_2_3_4_5"
-new_str <- "1_2_0_4_6"
-# Split into vectors
-old_vec <- as.integer(unlist(strsplit(old_str, "_")))
-new_vec <- as.integer(unlist(strsplit(new_str, "_")))
-
-# Count differences
-num_changed <- sum(old_vec != new_vec, na.rm = TRUE)
 
 test <- as_tibble(new_tree) %>%
   
@@ -73,7 +65,9 @@ test <- as_tibble(new_tree) %>%
   rows_update(anc_state) %>%
   
   # inner join to get parental identities
-  left_join(select(., parent_profile = cluster_profile, parent_height_median = height_median, node), by = c("parent" = "node")) %>%
+  left_join(select(., parent_profile = cluster_profile,
+                   parent_height_median = height_median, node),
+            by = c("parent" = "node")) %>%
   
   # filter 'change' nodes (ie, nodes that differ in value to their reassortant)
   filter(cluster_profile != parent_profile) %>%
@@ -86,7 +80,7 @@ test <- as_tibble(new_tree) %>%
   # In some cases (major profiles), reassortants are not monophyletic due to incomplete sampling.
   # we therefore assume the oldest included sequence represents the 'true' root.
   group_by(cluster_profile) %>%
-  slice_min(height_median, n =1) %>%
+  slice_max(height_median, n =1) %>%
   ungroup() %>%
   
   # select key cols
