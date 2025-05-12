@@ -121,7 +121,6 @@ generated quantities {
       // Zero inflation: y_rep[i] = 0
       y_rep[i] = 0;
       N_rep[i] = 0;
-      fixed_seq[i] = 0;
       
     } else {
       // Simulate from Poisson
