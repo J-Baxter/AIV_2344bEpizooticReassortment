@@ -123,7 +123,8 @@ region_colours <- c('europe' = '#1b9e77',
 
 
 # Plot
-plt_1a <- data %>%
+plt_1a <- count_data %>%
+  drop_na(collection_regionname) %>%
   as_tibble() %>%  
   filter(collection_datemonth > as_date('2018-06-01'))  %>%
   mutate(across(where(is.numeric), .fns = ~replace_na(.x, 0))) %>%
@@ -132,7 +133,7 @@ plt_1a <- data %>%
   
   geom_bar(data = sequences_month, 
            aes(x = collection_datemonth, 
-               y = n_sequences*20000, 
+               y = n_sequences*5000, 
                colour = collection_regionname,
                fill = collection_regionname), 
            alpha = 0.7, 
@@ -140,7 +141,7 @@ plt_1a <- data %>%
            position = 'stack') +
   
   geom_line(aes(x = collection_datemonth, 
-                y = woah_susceptibles, 
+                y = woah_susceptibles/6, 
                 colour= collection_regionname),
             linetype = 'dashed') +
   
@@ -148,8 +149,8 @@ plt_1a <- data %>%
   scale_colour_manual(values = region_colours) +
   theme_classic() + 
   scale_y_continuous(expand = c(0.01, 0),
-                     'WOAH Susceptibles (n)',
-                     sec.axis = sec_axis(transform = ~ ./20000, 
+                     'H5 HPAIV (n/month)',
+                     sec.axis = sec_axis(transform = ~ ./5000, 
                                          'GISAID Whole Genomes (n)')) + 
   scale_x_date(limits = as_date(c('2019-01-01', '2024-05-01')),
                breaks = '2 year', 
@@ -159,7 +160,7 @@ plt_1a <- data %>%
   facet_wrap(~collection_regionname,  
              ncol = 6) + 
   
-  geom_text(data = cbind.data.frame(collection_regionname = unique(all_casedata_monthly$collection_regionname)), 
+  geom_text(data = count_data %>% select(collection_regionname) %>% drop_na() %>% distinct(), 
             aes(label = str_wrap(str_to_title(collection_regionname), width = 20)),
             y = Inf, 
             x = as_date('2019-01-01'), 
@@ -200,7 +201,7 @@ sequences_host_month <- meta %>%
   drop_na(host_simplifiedhost,collection_datemonth)
 
 
-plt_1c <-ggplot(sequences_host_month) + 
+plt_1c <- ggplot(sequences_host_month) + 
   geom_stream(aes(x = collection_datemonth, 
                   y = n_sequences, 
                   colour = host_simplifiedhost,
@@ -277,18 +278,34 @@ plt_1d <- ggplot(sequences_subtype_month) +
         legend.background = element_blank())
 
 
-plt_1e <- data %>%
-drop_na(n_reassortants) %>%
-  ggplot() + 
-  geom_histogram(aes(x = collection_datemonth, 
-                     fill = collection_regionname, 
-                     colour = collection_regionname),
-                 bins = 45,
-                 alpha = 0.7)  +
-  scale_x_date(limits = as_date(c('2016-01-01', '2024-05-01')),
-               breaks = '1 year', 
-               date_labels = "%Y", 'Date',
-               expand = c(0,0)) + 
+plot_data <- count_data %>%
+  #drop_na(n_reassortants) %>%
+  mutate(collection_year_quarter = quarter(collection_datemonth, type = 'year.quarter' )) %>%
+  replace_na(list(n_reassortants = 0 )) %>%
+  drop_na(n_reassortants) %>%
+  summarise(n_reassortants = sum(n_reassortants), .by = c(collection_year_quarter, collection_regionname)) 
+
+years <- 2016:2024
+quarters <- c(0.1, 0.2, 0.3, 0.4)
+
+plot_data <- expand_grid(collection_year_quarter =  as.vector(outer(years, quarters, `+`)),
+                         collection_regionname = unique(plot_data$collection_regionname)) %>%
+  left_join(plot_data) %>%
+  drop_na(collection_regionname) %>%
+  mutate(collection_year_quarter = as.factor(collection_year_quarter))
+  
+plt_1e <- plot_data %>%
+  ggplot(aes(x = collection_year_quarter, 
+             y = n_reassortants,
+             fill = collection_regionname, 
+             colour = collection_regionname)) + 
+  geom_bar(position = 'stack',
+           stat = 'identity',
+           alpha = 0.7)  +
+  scale_x_discrete(breaks = levels(plot_data$collection_year_quarter)[c(T, rep(F, 3))],
+                   labels =  gsub('\\.\\d+$', '', levels(plot_data$collection_year_quarter)[c(T, rep(F, 3))] ),
+                   expand = c(0,0),
+                   'Date') + 
   
   scale_y_continuous('Count',expand = c(0,0)) +
   scale_fill_manual('Continent' ,values = region_colours,
@@ -313,36 +330,36 @@ traits <- new_tree@phylo$tip.label %>%
 
 new_tree@phylo$edge.length <- ifelse(new_tree@phylo$edge.length < 0, 0, new_tree@phylo$edge.length)
 
-ace_test <- ace(traits,
-                new_tree@phylo,
-                type = 'discrete',
-                method = 'ML',
-                model = 'ARD')
+#ace_test <- ace(traits,
+               # new_tree@phylo,
+                #type = 'discrete',
+                #method = 'ML',
+                #model = 'ARD')
 
-ace_test$lik.anc
+#ace_test$lik.anc
 
 
 # extract likelihood for each state and each node
-anc_lik <- ace_test$lik.anc
+#anc_lik <- ace_test$lik.anc
 
 # infer most likely state at each node and 
-anc_state <- apply(anc_lik,
-                   1,
-                   function(x) names(x)[which.max(x)]) %>%
+#anc_state <- apply(anc_lik,
+                  # 1,
+                   #function(x) names(x)[which.max(x)]) %>%
   #format output
-  enframe(., 
-          name = 'node', 
-          value = 'cluster_profile') %>%
-  mutate(node = as.integer(node))
+  #enframe(., 
+          #name = 'node', 
+          #value = 'cluster_profile') %>%
+  #mutate(node = as.integer(node))
 
 
-mrca_nodes <- anc_state %>%
-  left_join(as_tibble(new_tree) %>% dplyr::select(node, height_median)) %>%
-  group_by(cluster_profile) %>%
-  slice_max(height_median, n =1, with_ties = FALSE) %>%
-  ungroup() %>%
-  mutate(tmrca_node = '1') %>%
-  dplyr::select(-height_median)
+#mrca_nodes <- anc_state %>%
+ # left_join(as_tibble(new_tree) %>% dplyr::select(node, height_median)) %>%
+ # group_by(cluster_profile) %>%
+ # slice_max(height_median, n =1, with_ties = FALSE) %>%
+  #ungroup() %>%
+  #mutate(tmrca_node = '1') %>%
+  #dplyr::select(-height_median)
 
 
 
@@ -374,7 +391,7 @@ plt_1left <- new_tree %>%
  # mutate(date = str_extract(label, "\\d{4}-.*")) %>%
   left_join(reassortant_profiles) %>%
   left_join(continent) %>%
-  left_join(mrca_nodes) %>%
+  #left_join(mrca_nodes) %>%
   
   ggtree(mrsd = "2024-03-18") + 
   theme_tree2(#base_family = "LM Sans 10",
