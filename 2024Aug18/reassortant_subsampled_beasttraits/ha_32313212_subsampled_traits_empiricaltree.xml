@@ -1042,21 +1042,21 @@
 		<taxon id="H5N8|2344b|EPI_ISL_5865682|anseriformes|united_states|3_2_3_1_3_2_1_2|2020-10-02">
 			<date direction="forwards" units="years" value="2020.7513661202186" />
 			<attr name="collection_regionname">
-				northern america
+				western asia
 			</attr>
 			<attr name="host_simplifiedhost">
 				anseriformes-wild
 			</attr>
 			<attr name="lat">
-				32.6403385373358
+				42.18147
 			</attr>
 			<attr name="long">
-				-83.4405725551842
+				43.53633
 			</attr>
 
 			
 			<attr name="location">
-				32.6403385373358 -83.4405725551842
+				42.18147 43.53633
 			</attr>
 
 			
@@ -2054,21 +2054,21 @@
 		<taxon id="H5N8|2344b|EPI_ISL_5863359|anseriformes|united_states|3_2_3_1_3_2_1_2|2020-10-27">
 			<date direction="forwards" units="years" value="2020.8196721311476" />
 			<attr name="collection_regionname">
-				northern america
+				western asia
 			</attr>
 			<attr name="host_simplifiedhost">
 				anseriformes-wild
 			</attr>
 			<attr name="lat">
-				32.6403385373358
+				42.18147
 			</attr>
 			<attr name="long">
-				-83.4405725551842
+				43.53633
 			</attr>
 
 			
 			<attr name="location">
-				32.6403385373358 -83.4405725551842
+				42.18147 43.53633
 			</attr>
 
 			
@@ -2077,21 +2077,21 @@
 		<taxon id="H5N8|2344b|EPI_ISL_5863497|anseriformes|united_states|3_2_3_1_3_2_1_2|2020-10-27">
 			<date direction="forwards" units="years" value="2020.8196721311476" />
 			<attr name="collection_regionname">
-				northern america
+				western asia
 			</attr>
 			<attr name="host_simplifiedhost">
 				anseriformes-wild
 			</attr>
 			<attr name="lat">
-				32.6403385373358
+				42.18147
 			</attr>
 			<attr name="long">
-				-83.4405725551842
+				43.53633
 			</attr>
 
 			
 			<attr name="location">
-				32.6403385373358 -83.4405725551842
+				42.18147 43.53633
 			</attr>
 
 			
@@ -2100,21 +2100,21 @@
 		<taxon id="H5N8|2344b|EPI_ISL_5863567|anseriformes|united_states|3_2_3_1_3_2_1_2|2020-10-06">
 			<date direction="forwards" units="years" value="2020.7622950819673" />
 			<attr name="collection_regionname">
-				northern america
+				western asia
 			</attr>
 			<attr name="host_simplifiedhost">
 				anseriformes-wild
 			</attr>
 			<attr name="lat">
-				32.6403385373358
+				42.18147
 			</attr>
 			<attr name="long">
-				-83.4405725551842
+				43.53633
 			</attr>
 
 			
 			<attr name="location">
-				32.6403385373358 -83.4405725551842
+				42.18147 43.53633
 			</attr>
 
 			
@@ -2123,21 +2123,21 @@
 		<taxon id="H5N8|2344b|EPI_ISL_5863650|anseriformes|united_states|3_2_3_1_3_2_1_2|2020-12-29">
 			<date direction="forwards" units="years" value="2020.9918032786886" />
 			<attr name="collection_regionname">
-				northern america
+				western asia
 			</attr>
 			<attr name="host_simplifiedhost">
 				anseriformes-wild
 			</attr>
 			<attr name="lat">
-				32.6403385373358
+				42.18147
 			</attr>
 			<attr name="long">
-				-83.4405725551842
+				43.53633
 			</attr>
 
 			
 			<attr name="location">
-				32.6403385373358 -83.4405725551842
+				42.18147 43.53633
 			</attr>
 
 			
@@ -2468,21 +2468,21 @@
 		<taxon id="H5N8|2344b|EPI_ISL_5865417|anseriformes|united_states|3_2_3_1_3_2_1_2|2020-10-02">
 			<date direction="forwards" units="years" value="2020.7513661202186" />
 			<attr name="collection_regionname">
-				northern america
+				western asia
 			</attr>
 			<attr name="host_simplifiedhost">
 				anseriformes-domestic
 			</attr>
 			<attr name="lat">
-				32.6403385373358
+				42.18147
 			</attr>
 			<attr name="long">
-				-83.4405725551842
+				43.53633
 			</attr>
 
 			
 			<attr name="location">
-				32.6403385373358 -83.4405725551842
+				42.18147 43.53633
 			</attr>
 
 			
@@ -11241,7 +11241,7 @@
 		<state code="eastern asia" />
 		<state code="eastern europe" />
 		<state code="northern africa" />
-		<state code="northern america" />
+		<state code="western asia" />
 		<state code="northern europe" />
 		<state code="southern europe" />
 		<state code="western africa" />
