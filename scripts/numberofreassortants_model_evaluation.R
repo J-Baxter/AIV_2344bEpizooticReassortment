@@ -1,9 +1,9 @@
 
 
 ###################################### MCMC Diagnostics #############################################
-t <- get_variables(numbers_model)
+t <- get_variables(numbers_model_2)
 # Trace plot
-numbers_model %>%
+numbers_model_2 %>%
   gather_draws(., !!!syms(t)) %>%
   filter(grepl('^continent|^beta|^theta|^lp', .variable)) %>%
   
@@ -46,13 +46,13 @@ facet_wrap(~label, labeller = label_parsed, ncol = 2, scale  = 'free_y',
 
 ggsave('~/Downloads/flu_plots/number_traces.jpeg',
        dpi = 360,
-       height = 29,
-       width = 21,
+       height = 20,
+       width = 17,
        units = 'cm')
 
 
 # Autocorrelation
-stan_acf <- posterior::as_draws_array(numbers_model, nchains = 4) %>% 
+stan_acf <- posterior::as_draws_array(numbers_model_2, nchains = 4) %>% 
   mcmc_acf()
 
 stan_acf$data %>% 
@@ -103,8 +103,8 @@ stan_acf$data %>%
 
 ggsave('~/Downloads/flu_plots/number_autocorrelation.jpeg',
        dpi = 360,
-       height = 29,
-       width = 21,
+       height = 20,
+       width = 16,
        units = 'cm')
 
  # Might be worth checking if any of the params are at the 'worry about' threshold neff/n
@@ -135,7 +135,7 @@ neff_ratio(numbers_model) %>%
 
 
 ###################################### Posterior Checks ############################################
-y_rep_matrix <- numbers_model$draws('y_rep') %>%
+y_rep_matrix <- numbers_model_2$draws('y_rep') %>%
   posterior::as_draws_matrix()
 
 # Global
@@ -211,9 +211,9 @@ ggsave('~/Downloads/flu_plots/numbers_ppc.jpeg',
 
 
 # Identifiability (Prior and Posterior Plots)
-t <- get_variables(numbers_model) 
+t <- get_variables(numbers_model_2) 
 
-numbers_params <- numbers_model %>%
+numbers_params <- numbers_model_2 %>%
   gather_draws(., !!!syms(t)) %>%
   mutate(type = 'posterior') %>%
   filter(grepl('^continent|beta|sigma|year', .variable)) %>%
@@ -361,6 +361,12 @@ numbers_params %>%
         axis.title = element_text(size = 10),
         legend.text = element_text(size = 8))
 
+ggsave('~/Downloads/flu_plots/numbers_identifiability.jpeg',
+       dpi = 360,
+       height = 29,
+       width = 20,
+       units = 'cm')
+
   
   
   
@@ -411,6 +417,6 @@ ggplot(qq_data, aes(sample = sample)) +
 
 ggsave('~/Downloads/flu_plots/numbers_qq.jpeg',
        dpi = 360,
-       height = 15,
-       width = 15,
+       height = 12,
+       width = 12,
        units = 'cm')

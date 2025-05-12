@@ -121,7 +121,7 @@ numbers_model_2 <- numbers_mod$sample(
   iter_sampling = ITER)
     
 
-numbers_parms <- numbers_model$summary()
+numbers_parms <- numbers_model_2$summary()
 
 ############################################## END #################################################
 ####################################################################################################
