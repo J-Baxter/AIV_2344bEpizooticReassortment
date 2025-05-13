@@ -153,10 +153,10 @@ ordinal_model <- brm(cluster_class~1 + parent_class + cluster_region + s(time_si
             warmup = BURNIN,
             seed = SEED)
 
-marginal_effects(temp, "parent_class", categorical = TRUE) #Graph
-marginal_effects(temp, "time_since_last_major", categorical = TRUE)
-marginal_effects(temp, "cluster_region", categorical = TRUE)
-marginal_effects(temp, "region_changed_from_previous", categorical = TRUE) # no difference
+#marginal_effects(temp, "parent_class", categorical = TRUE) #Graph
+#marginal_effects(temp, "time_since_last_major", categorical = TRUE)
+#marginal_effects(temp, "cluster_region", categorical = TRUE)
+#marginal_effects(temp, "region_changed_from_previous", categorical = TRUE) # no difference
 
 ############################################## WRITE ###############################################
 
