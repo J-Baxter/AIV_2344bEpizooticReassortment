@@ -147,7 +147,6 @@ diffusion_formula <- bf(weighted_diff_coeff ~ 0 + collection_regionname +
                           count_cross_species_log1p + 
                           median_anseriformes_wild_prop +
                           median_charadriiformes_wild_prop +
-                          cluster_class +
                           
                           collection_regionname:median_anseriformes_wild_prop + 
                           collection_regionname:median_charadriiformes_wild_prop +
@@ -163,13 +162,16 @@ diffusion_formula <- bf(weighted_diff_coeff ~ 0 + collection_regionname +
            family = Gamma(link = "log")) 
 
 
-diffusionmodel1_priors <- c(set_prior("normal(0, 1)", class = 'b'),
-                            set_prior('normal(0,5)', class = 'b', coef = 'collection_regionnameafrica'),
-                            set_prior('normal(0,5)', class = 'b', coef = 'collection_regionnameafrica:median_anseriformes_wild_prop'),
-                            set_prior('normal(0,5)', class = 'b', coef = 'collection_regionnameafrica:median_charadriiformes_wild_prop'),
-                            set_prior('normal(0,5)', class = 'b', coef = 'collection_regionnameafrica:persist.time_log1p'),
+diffusionmodel1_priors <- c(set_prior("normal(0, 5)", class = 'b'),
+                            set_prior('normal(13,2)', class = 'b', coef = 'collection_regionnameafrica'),
+                            set_prior('normal(13,1.5)', class = 'b', coef = 'collection_regionnameasia'),
+                            set_prior('normal(13,1.5)', class = 'b', coef = 'collection_regionnamecentral&northernamerica'),
+                            set_prior('normal(12,1.5)', class = 'b', coef = 'collection_regionnameeurope'),
+                            set_prior('normal(0,2)', class = 'b', coef = 'collection_regionnameafrica:median_anseriformes_wild_prop'),
+                            set_prior('normal(0,2)', class = 'b', coef = 'collection_regionnameafrica:median_charadriiformes_wild_prop'),
+                            set_prior('normal(0,2)', class = 'b', coef = 'collection_regionnameafrica:persist.time_log1p'),
                             set_prior('normal(0,5)',  dpar = 'shape'),
-                            set_prior('exponential(0.05)', class = 'sd'))
+                            set_prior('exponential(0.5)', class = 'sd'))
 
 
 # Set MCMC Options
@@ -205,7 +207,7 @@ diffusionmodel1_prior <- brm(
 diffusionmodel1_fit_gamma_19<- brm(
   diffusion_formula,
   data = diffusion_data,
-  #prior = diffusionmodel1_priors,
+  prior = diffusionmodel1_priors,
   family = Gamma(link = "log"),
   chains = CHAINS,
   cores = CORES, 
@@ -218,7 +220,7 @@ diffusionmodel1_fit_gamma_19<- brm(
 
 
 # Post-fitting checks (including inspection of ESS, Rhat and posterior predictive)
-performance(diffusionmodel1_fit_gamma_14)
+performance(diffusionmodel1_fit_gamma_19)
 
 
 saveRDS(diffusionmodel1_fit, './saved_models/diffusion_model_2.rds')
