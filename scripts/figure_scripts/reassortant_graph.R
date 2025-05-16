@@ -52,7 +52,7 @@ ggraph(my_graph %>%
   geom_node_point(aes(color = cluster_class, size=10 )) +
   geom_node_label(aes(label = ifelse(cluster_class == 'major', name, '')), repel = TRUE) +
   scale_colour_brewer(palette = 'Set1') +
-  theme_void()
+  theme_void() + facet_wrap(~cluster_region)
 
 
 ############################################## WRITE ###############################################
