@@ -388,8 +388,7 @@ beta_draws <- diffusionmodel1_fit_gamma_19 %>%
                            .variable == 'b_median_charadriiformes_wild_prop'~ "beta['charadriiformes']",
                            #.variable == 'b_int_stepcount_cross_species_log1p'~ "beta['step_hostjump']",
                            .variable == 'b_count_cross_species_log1p'~ "beta['hostjump']",
-                           
-                           
+
                            .variable == 'b_collection_regionnameafrica:median_anseriformes_wild_prop'~ "gamma['africa-anser']",
                            .variable == 'b_collection_regionnameeurope:median_anseriformes_wild_prop'~ "gamma['europe-anser']",
                            .variable == 'b_collection_regionnamecentral&northernamerica:median_anseriformes_wild_prop'~ "gamma['americas-anser']",
@@ -404,14 +403,13 @@ beta_draws <- diffusionmodel1_fit_gamma_19 %>%
                            .variable == 'b_collection_regionnamecentral&northernamerica:persist.time_log1p'~ "gamma['americas-persist']",
                            
                            
-                           .variable == 'b_shape_collection_regionnameasia'~ "theta['asia']",
-                           .variable == 'b_shape_collection_regionnameafrica'~ "theta['africa']",
-                           .variable == 'b_shape_collection_regionnameeurope'~ "theta['europe']",
-                           .variable == 'b_shape_collection_regionnamecentral&northernamerica'~ "theta['americas']",
+                           .variable == 'b_shape_collection_regionnameasia'~ "rho['asia']",
+                           .variable == 'b_shape_collection_regionnameafrica'~ "rho['africa']",
+                           .variable == 'b_shape_collection_regionnameeurope'~ "rho['europe']",
+                           .variable == 'b_shape_collection_regionnamecentral&northernamerica'~ "rho['americas']",
                            
                            
-                           .variable == 'sd_segment__Intercept'~ "sigma[segment]",
-                           .variable == 'sd_cluster_profile__Intercept'~ "sigma[reassortant]"))
+                           .variable == 'sd_collection_year__Intercept'~ "sigma[year]"))
 
 
 
@@ -425,51 +423,49 @@ beta_draws <- diffusionmodel1_fit_gamma_19 %>%
   
   stat_function(fun = dnorm,
                 data = tibble(label = "alpha['asia']"),
-                args = list(mean = 0, sd = 1),
+                args = list(mean = 13.5, sd = 1.5),
                 fill = '#d95f02',
                 geom = 'area',
                 alpha = 0.5) +
   
   stat_function(fun = dnorm,
                 data = tibble(label = "alpha['africa']"),
-                args = list(mean = 0, sd = 5),
+                args = list(mean = 13.5, sd = 2),
                 fill = '#d95f02',
                 geom = 'area',
                 alpha = 0.5) +
   
   stat_function(fun = dnorm,
                 data =tibble(label = "alpha['europe']"),
-                args = list(mean = 0, sd = 1),
+                args = list(mean = 12.5, sd = 1.5),
                 fill = '#d95f02',
                 geom = 'area',
                 alpha = 0.5) +
   
   stat_function(fun = dnorm,
                 data = tibble(label = "alpha['americas']"),
-                args = list(mean = 0, sd = 1),
+                args = list(mean = 13.5, sd = 1.5),
                 fill = '#d95f02',
                 geom = 'area',
-                alpha = 0.5) +
-  
+                alpha = 0.5) +   
   
   stat_function(fun = dnorm,
                 data = tibble(label = "beta['anseriformes']"),
-                args = list(mean = 0, sd = 1),
+                args = list(mean = 0, sd = 2),
                 fill = '#d95f02',
                 geom = 'area',
                 alpha = 0.5) +
   
   stat_function(fun = dnorm,
                 data = tibble(label = "beta['charadriiformes']"),
-                args = list(mean = 0, sd = 1),
+                args = list(mean = 0, sd = 2),
                 fill = '#d95f02',
                 geom = 'area',
                 alpha = 0.5) +
   
-  
   stat_function(fun = dnorm,
                 data = tibble(label = "beta['hostjump']"),
-                args = list(mean = 0, sd = 1),
+                args = list(mean = 0, sd = 2),
                 fill = '#d95f02',
                 geom = 'area',
                 alpha = 0.5) +
@@ -477,42 +473,42 @@ beta_draws <- diffusionmodel1_fit_gamma_19 %>%
   
   stat_function(fun = dnorm,
                 data = tibble(label = "gamma['africa-anser']"),
-                args = list(mean = 0, sd = 5),
+                args = list(mean = 0, sd = 2),
                 fill = '#d95f02',
                 geom = 'area',
                 alpha = 0.5) +
    
    stat_function(fun = dnorm,
                  data = tibble(label = "gamma['africa-charad']"),
-                 args = list(mean = 0, sd = 5),
+                 args = list(mean = 0, sd = 2),
                  fill = '#d95f02',
                  geom = 'area',
                  alpha = 0.5) +
    
    stat_function(fun = dnorm,
                  data = tibble(label = "gamma['africa-persist']"),
-                 args = list(mean = 0, sd = 5),
+                 args = list(mean = 0, sd = 2),
                  fill = '#d95f02',
                  geom = 'area',
                  alpha = 0.5) +
    
    stat_function(fun = dnorm,
                  data = tibble(label = "gamma['europe-anser']"),
-                 args = list(mean = 0, sd = 1),
+                 args = list(mean = 0, sd = 2),
                  fill = '#d95f02',
                  geom = 'area',
                  alpha = 0.5) +
    
    stat_function(fun = dnorm,
                  data = tibble(label = "gamma['europe-charad']"),
-                 args = list(mean = 0, sd = 1),
+                 args = list(mean = 0, sd = 2),
                  fill = '#d95f02',
                  geom = 'area',
                  alpha = 0.5) +
    
    stat_function(fun = dnorm,
                  data = tibble(label = "gamma['europe-persist']"),
-                 args = list(mean = 0, sd = 1),
+                 args = list(mean = 0, sd = 2),
                  fill = '#d95f02',
                  geom = 'area',
                  alpha = 0.5) +
@@ -527,71 +523,71 @@ beta_draws <- diffusionmodel1_fit_gamma_19 %>%
    
    stat_function(fun = dnorm,
                  data = tibble(label = "gamma['americas-charad']"),
-                 args = list(mean = 0, sd = 1),
+                 args = list(mean = 0, sd = 2),
                  fill = '#d95f02',
                  geom = 'area',
                  alpha = 0.5) +
    
    stat_function(fun = dnorm,
                  data = tibble(label = "gamma['americas-persist']"),
-                 args = list(mean = 0, sd = 1),
+                 args = list(mean = 0, sd = 2),
                  fill = '#d95f02',
                  geom = 'area',
                  alpha = 0.5) +
    
    stat_function(fun = dnorm,
                  data = tibble(label = "gamma['asia-persist']"),
-                 args = list(mean = 0, sd = 1),
+                 args = list(mean = 0, sd = 2),
                  fill = '#d95f02',
                  geom = 'area',
                  alpha = 0.5) +
    
    
    stat_function(fun = dnorm,
-                 data = tibble(label = "theta['asia']"),
-                 args = list(mean = 0, sd = 1),
+                 data = tibble(label = "rho['asia']"),
+                 args = list(mean = 0, sd = 2),
                  fill = '#d95f02',
                  geom = 'area',
                  alpha = 0.5) +
    
    stat_function(fun = dnorm,
-                 data = tibble(label = "theta['africa']"),
-                 args = list(mean = 0, sd = 5),
+                 data = tibble(label = "rho['africa']"),
+                 args = list(mean = 0, sd = 2),
                  fill = '#d95f02',
                  geom = 'area',
                  alpha = 0.5) +
    
    stat_function(fun = dnorm,
-                 data =tibble(label = "theta['europe']"),
-                 args = list(mean = 0, sd = 1),
+                 data =tibble(label = "rho['europe']"),
+                 args = list(mean = 0, sd = 2),
                  fill = '#d95f02',
                  geom = 'area',
                  alpha = 0.5) +
    
    stat_function(fun = dnorm,
-                 data = tibble(label = "theta['americas']"),
-                 args = list(mean = 0, sd = 1),
+                 data = tibble(label = "rho['americas']"),
+                 args = list(mean = 0, sd = 2),
                  fill = '#d95f02',
                  geom = 'area',
                  alpha = 0.5) +
    
-   stat_function(fun = dstudent_t,
-                 data = tibble(label = "sigma[segment]"),
-                 args = list(df = 3, mu= 0, sigma =0.25),
+   stat_function(fun = dexp,
+                 data = tibble(label = "sigma[year]"),
+                 args = list(rate = 0.5),
                  fill = '#d95f02',
                  geom = 'area',
                  alpha = 0.5) +
    
-   stat_function(fun = dstudent_t,
-                 data = tibble(label = "sigma[reassortant]"),
-                 args = list(df = 3, mu= 0, sigma =0.25),
-                 fill = '#d95f02',
-                 geom = 'area',
-                 alpha = 0.5) +
+  # stat_function(fun = dstudent_t,
+                 #data = tibble(label = "rho[reassortant]"),
+                # args = list(df = 3, mu= 0, sigma =0.25),
+                 #fill = '#d95f02',
+                 #geom = 'area',
+                 #alpha = 0.5) +
    
    scale_y_continuous('Probability Density') + 
-   scale_x_continuous('Parameter Value', limits = c(-15,15)) + 
-  facet_wrap(~label, scales = 'free_y',  ncol = 3, labeller = label_parsed) +
+   scale_x_continuous('Parameter Value') + 
+  facet_wrap(~label, scales = 'free',  ncol = 3, labeller = label_parsed) +
   theme_minimal() +
    theme(axis.text = element_text(size = 8),
          axis.title = element_text(size = 10),

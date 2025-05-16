@@ -162,7 +162,7 @@ diffusion_formula <- bf(weighted_diff_coeff ~ 0 + collection_regionname +
            family = Gamma(link = "log")) 
 
 
-diffusionmodel1_priors <- c(set_prior("normal(0, 5)", class = 'b'),
+diffusionmodel1_priors <- c(set_prior("normal(0, 2)", class = 'b'),
                             set_prior('normal(13,2)', class = 'b', coef = 'collection_regionnameafrica'),
                             set_prior('normal(13,1.5)', class = 'b', coef = 'collection_regionnameasia'),
                             set_prior('normal(13,1.5)', class = 'b', coef = 'collection_regionnamecentral&northernamerica'),
@@ -170,7 +170,7 @@ diffusionmodel1_priors <- c(set_prior("normal(0, 5)", class = 'b'),
                             set_prior('normal(0,2)', class = 'b', coef = 'collection_regionnameafrica:median_anseriformes_wild_prop'),
                             set_prior('normal(0,2)', class = 'b', coef = 'collection_regionnameafrica:median_charadriiformes_wild_prop'),
                             set_prior('normal(0,2)', class = 'b', coef = 'collection_regionnameafrica:persist.time_log1p'),
-                            set_prior('normal(0,5)',  dpar = 'shape'),
+                            set_prior('normal(0,2)',  dpar = 'shape'),
                             set_prior('exponential(0.5)', class = 'sd'))
 
 
