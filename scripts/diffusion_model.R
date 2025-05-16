@@ -40,6 +40,7 @@ combined_data <- read_csv('./2024Aug18/treedata_extractions/2024-09-20_combined_
 summary_data <- read_csv('./2024Aug18/treedata_extractions/summary_reassortant_metadata_20240904.csv') %>%
   select(-c(cluster_label,
             clade)) 
+reassortant_ancestral_changes <- read_csv('./reassortant_ancestral_changes.csv')
 
 
 ############################################## MAIN ################################################
@@ -85,7 +86,7 @@ diffusion_data <- combined_data %>%
   
   # season (breeding, migrating_spring, migrating_autumn, overwintering)
   mutate(collection_month = date_decimal(TMRCA) %>% format(., "%m") %>% as.integer(),
-         collection_year = date_decimal(TMRCA) %>% format(., "%Y") %>% as.integer(),
+         collection_year = date_decimal(TMRCA) %>% format(., "%Y") %>% as.integer() %>% factor(levels = c(2017,2018,2019,2020,2021,2022,2023)),
          collection_season = case_when(collection_month %in% c(12,1,2) ~ 'overwintering', 
                             collection_month %in% c(3,4,5)  ~ 'migrating_spring', # Rename to spring migration
                             collection_month %in% c(6,7,8)  ~ 'breeding', 
@@ -101,17 +102,26 @@ diffusion_data <- combined_data %>%
   mutate(across(c('persist.time', 
                   'count_cross_species'), .fns= ~ log1p(.x), .names = '{.col}_log1p'))  %>%
   
+  # Ancestral (WRT HA) Changes
+  left_join(reassortant_ancestral_changes %>% select(cluster_profile, segments_changed,cluster_class)) %>%
+  replace_na(list(segments_changed = 0)) %>%
+  
   dplyr::select(cluster_profile,
                 weighted_diff_coeff, 
                 persist.time_log1p,
+                collection_year,
                 count_cross_species_log1p,
                 median_anseriformes_wild_prop,
                 median_charadriiformes_wild_prop,
                 host_simplifiedhost,
-                segment, 
+                segments_changed,
+                segment,
+                cluster_class,
                 collection_regionname) %>%
-  
-  filter(weighted_diff_coeff > 0)  %>% filter(segment %in% c('ha', 'pb1'))
+
+  filter(weighted_diff_coeff > 0) %>%
+  filter(segment == 'ha') %>%
+  drop_na()
   
 
 
@@ -137,36 +147,29 @@ diffusion_formula <- bf(weighted_diff_coeff ~ 0 + collection_regionname +
                           count_cross_species_log1p + 
                           median_anseriformes_wild_prop +
                           median_charadriiformes_wild_prop +
+                          cluster_class +
                           
                           collection_regionname:median_anseriformes_wild_prop + 
                           collection_regionname:median_charadriiformes_wild_prop +
                           collection_regionname:persist.time_log1p +
-                          (1|segment) +
-                          (1|cluster_profile),
+                          (1|collection_year),
                         shape ~  0 + collection_regionname )
 
 
 
 # Define Priors
-diffusionmodel1_priors <- get_prior(diffusion_formula,
-                                    data = diffusion_data,
-                                    family = Gamma(link = "log")) 
-
-#diffusionmodel1_priors$prior[2:5] <- "normal(0,5)"
-#diffusionmodel1_priors$prior[6:11] <- "normal(0,1)"
-#diffusionmodel1_priors$prior[16:19] <- "normal(0,5)"
-
-diffusionmodel1_priors$prior[1:4] <- "normal(0,5)"
-diffusionmodel1_priors$prior[5:18] <- "normal(0,1)"
-diffusionmodel1_priors$prior[24:28] <- "normal(0,5)"
+ get_prior(diffusion_formula,
+           data = diffusion_data,
+           family = Gamma(link = "log")) 
 
 
-#diffusionmodel1_priors$prior[1:14] <- "normal(0,5)"
-#diffusionmodel1_priors$prior[18:22] <- "normal(0,5)"
-diffusionmodel1_priors
-
-#diffusionmodel1_priors$prior[9] <- "student_t(3, 0, 3)"
-#diffusionmodel1_priors
+diffusionmodel1_priors <- c(set_prior("normal(0, 1)", class = 'b'),
+                            set_prior('normal(0,5)', class = 'b', coef = 'collection_regionnameafrica'),
+                            set_prior('normal(0,5)', class = 'b', coef = 'collection_regionnameafrica:median_anseriformes_wild_prop'),
+                            set_prior('normal(0,5)', class = 'b', coef = 'collection_regionnameafrica:median_charadriiformes_wild_prop'),
+                            set_prior('normal(0,5)', class = 'b', coef = 'collection_regionnameafrica:persist.time_log1p'),
+                            set_prior('normal(0,5)',  dpar = 'shape'),
+                            set_prior('exponential(0.05)', class = 'sd'))
 
 
 # Set MCMC Options
@@ -202,7 +205,7 @@ diffusionmodel1_prior <- brm(
 diffusionmodel1_fit_gamma_19<- brm(
   diffusion_formula,
   data = diffusion_data,
-  prior = diffusionmodel1_priors,
+  #prior = diffusionmodel1_priors,
   family = Gamma(link = "log"),
   chains = CHAINS,
   cores = CORES, 
@@ -211,7 +214,7 @@ diffusionmodel1_fit_gamma_19<- brm(
   iter = ITER,
   warmup = BURNIN,
   seed = SEED,
-  control = list(adapt_delta = 0.97))
+  control = list(adapt_delta = 0.95))
 
 
 # Post-fitting checks (including inspection of ESS, Rhat and posterior predictive)
