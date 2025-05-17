@@ -48,7 +48,6 @@ ggs(diffusionmodel1_fit_gamma_19) %>%
                            #.variable == 'b_int_stepcount_cross_species_log1p'~ "beta['step_hostjump']",
                            .variable == 'b_count_cross_species_log1p'~ "beta['hostjump']",
                            
-                           
                            .variable == 'b_collection_regionnameafrica:median_anseriformes_wild_prop'~ "gamma['africa-anser']",
                            .variable == 'b_collection_regionnameeurope:median_anseriformes_wild_prop'~ "gamma['europe-anser']",
                            .variable == 'b_collection_regionnamecentral&northernamerica:median_anseriformes_wild_prop'~ "gamma['americas-anser']",
@@ -63,17 +62,13 @@ ggs(diffusionmodel1_fit_gamma_19) %>%
                            .variable == 'b_collection_regionnamecentral&northernamerica:persist.time_log1p'~ "gamma['americas-persist']",
                            
                            
-                           .variable == 'b_shape_collection_regionnameasia'~ "theta['asia']",
-                           .variable == 'b_shape_collection_regionnameafrica'~ "theta['africa']",
-                           .variable == 'b_shape_collection_regionnameeurope'~ "theta['europe']",
-                           .variable == 'b_shape_collection_regionnamecentral&northernamerica'~ "theta['americas']",
+                           .variable == 'b_shape_collection_regionnameasia'~ "rho['asia']",
+                           .variable == 'b_shape_collection_regionnameafrica'~ "rho['africa']",
+                           .variable == 'b_shape_collection_regionnameeurope'~ "rho['europe']",
+                           .variable == 'b_shape_collection_regionnamecentral&northernamerica'~ "rho['americas']",
                            
                            
-                           .variable == 'sd_segment__Intercept'~ "sigma[segment]",
-                           .variable == 'sd_cluster_profile__Intercept'~ "sigma[reassortant]",
-                               
-                               .variable == 'r_segment[ha,Intercept]'~ "b['ha']",
-                               .variable == "r_segment[pb1,Intercept]"~ "b['pb1']",
+                           .variable == 'sd_collection_year__Intercept'~ "sigma[year]",
 
                                .variable == 'lprior' ~ 'prior',
                                .variable == 'lp__' ~ 'log~probability')) %>%
@@ -243,7 +238,6 @@ diffusionmodel1_fit_gamma_19 %>%
                                #Parameter == 'b_int_stepcount_cross_species_log1p'~ "beta['step_hostjump']",
                                Parameter == 'b_count_cross_species_log1p'~ "beta['hostjump']",
                                
-                               
                                Parameter == 'b_collection_regionnameafrica:median_anseriformes_wild_prop'~ "gamma['africa-anser']",
                                Parameter == 'b_collection_regionnameeurope:median_anseriformes_wild_prop'~ "gamma['europe-anser']",
                                Parameter == 'b_collection_regionnamecentral&northernamerica:median_anseriformes_wild_prop'~ "gamma['americas-anser']",
@@ -258,17 +252,13 @@ diffusionmodel1_fit_gamma_19 %>%
                                Parameter == 'b_collection_regionnamecentral&northernamerica:persist.time_log1p'~ "gamma['americas-persist']",
                                
                                
-                               Parameter == 'b_shape_collection_regionnameasia'~ "theta['asia']",
-                               Parameter == 'b_shape_collection_regionnameafrica'~ "theta['africa']",
-                               Parameter == 'b_shape_collection_regionnameeurope'~ "theta['europe']",
-                               Parameter == 'b_shape_collection_regionnamecentral&northernamerica'~ "theta['americas']",
+                               Parameter == 'b_shape_collection_regionnameasia'~ "rho['asia']",
+                               Parameter == 'b_shape_collection_regionnameafrica'~ "rho['africa']",
+                               Parameter == 'b_shape_collection_regionnameeurope'~ "rho['europe']",
+                               Parameter == 'b_shape_collection_regionnamecentral&northernamerica'~ "rho['americas']",
                                
                                
-                               Parameter == 'sd_segment__Intercept'~ "sigma[segment]",
-                               Parameter == 'sd_cluster_profile__Intercept'~ "sigma[reassortant]",
-                               
-                               Parameter == 'r_segment[ha,Intercept]'~ "b['ha']",
-                               Parameter == "r_segment[pb1,Intercept]"~ "b['pb1']",
+                               Parameter == 'sd_collection_year__Intercept'~ "sigma[year]",
                                
                                Parameter == 'lprior' ~ 'prior',
                                Parameter == 'lp__' ~ 'log~probability')) %>%
@@ -632,8 +622,8 @@ ggplot(qq_data, aes(sample = sample)) +
 
 ggsave('~/Downloads/flu_plots/diffusion_qq.jpeg',
        dpi = 360,
-       height = 15,
-       width = 15,
+       height = 12,
+       width = 12,
        units = 'cm')
 
 
