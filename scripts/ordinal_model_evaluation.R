@@ -87,122 +87,6 @@ ggsave('~/Downloads/flu_plots/ordinal_trace.jpeg',
        width = 17,
        units = 'cm')
 
-# Plot ranked traces
-# If chains are exploring the same space efficiently, the traces should be similar to one another 
-# and largely overlapping.
-as_draws_df(ordinal_model) %>% 
-  
-  # Selecting only beta coefficients
-  mcmc_rank_overlay() %>%
-  
-  # Extract data
-  .$data %>%
-  rename(.variable = parameter) %>%
-  mutate(label = case_when(.variable == 'b_Intercept[1]'~ "tau['minor']",
-                           .variable == 'b_Intercept[2]'~ "tau['moderate']", 
-                           
-                           .variable == 'b_parent_classminor'~ "beta['minor']",
-                           .variable == "b_parent_classmoderate"~ "beta['moderate']",
-                           
-                           .variable == 'b_cluster_regionasia'~ "beta['asia']",
-                           .variable == 'b_cluster_regioncentral&northernamerica'~ "beta['americas']",
-                           .variable == 'b_cluster_regioneurope'~ "beta['europe']",
-                           .variable == 'b_segments_changed'~ "beta['segments-changed']",
-                           .variable == 'bs_stime_since_last_major_1'~ "beta['smooth']",
-                           .variable == 's_stime_since_last_major_1[1]'~"gamma['1']",
-                           .variable == 's_stime_since_last_major_1[2]'~"gamma['2']",
-                           .variable == 's_stime_since_last_major_1[3]'~"gamma['3']",
-                           .variable == 's_stime_since_last_major_1[4]'~"gamma['4']",
-                           .variable == 's_stime_since_last_major_1[5]'~"gamma['5']",
-                           .variable == 's_stime_since_last_major_1[6]'~"gamma['6']",
-                           .variable == 's_stime_since_last_major_1[7]'~"gamma['7']",
-                           .variable == 's_stime_since_last_major_1[8]'~"gamma['8']",
-                           .variable == 'sds_stime_since_last_major_1'~ "sigma['europe-anser']",
-                           
-                           .variable == 'sd_collection_year__Intercept'~ "sigma[year]",
-                           
-                           .variable == 'lprior' ~ 'prior')) %>%
-  drop_na() %>%
-  
-  # Plot 
-  ggplot() + 
-  geom_step(aes(x = bin_start, 
-                y = n,
-                colour = chain),
-            linewidth = 0.8) + 
-  #scale_y_continuous(expand = c(0,0), limits = c(150, 225)) +
-  scale_x_continuous(expand = c(0,0)) + 
-  facet_wrap(~label,  ncol = 3, labeller = label_parsed) +
-  scale_colour_brewer(palette = 'GnBu', 'Chains') +
-  theme_minimal() + 
-  theme(legend.position = 'bottom',
-        axis.title = element_blank())
-
-
-#MCMC chain resolution (ESS)
-model_resolution <- list(tidy(ordinal_model, ess = T, rhat = T, effects = 'ran_vals') %>%
-                           dplyr::select( ess, rhat, group, level) %>%
-                           unite(term, group, level, sep = '_'),
-                         tidy(ordinal_model, ess = T, rhat = T) %>%  dplyr::select(term, ess, rhat,term) ) %>%
-  bind_rows() %>%
-  
-  mutate(term = case_when(term == 'collection_regionnameasia'~ "beta['asia']",
-                          term == 'collection_regionnameafrica'~ "beta['africa']",
-                          term == 'collection_regionnameeurope'~ "beta['europe']",
-                          term == "collection_regionnamecentral&northernamerica"~ "beta['americas']",
-                          
-                          term == 'int_stepmedian_anseriformes_wild_log1p'~ "beta['step_anseriformes']",
-                          term == 'median_anseriformes_wild_log1p'~ "beta['persist_anseriformes']",
-                          term == 'int_stepmedian_charadriiformes_wild_log1p'~ "beta['step_charadriiformes']",
-                          term == 'median_charadriiformes_wild_log1p'~ "beta['persist_charadriiformes']",
-                          term == 'int_stepcount_cross_species_log1p'~ "beta['step_hostjump']",
-                          term == 'count_cross_species_log1p'~ "beta['num_hostjump']",
-                          
-                          term == 'collection_regionnameafrica:median_anseriformes_wild_log1p'~ "beta['africa-anser']",
-                          term == 'collection_regionnameeurope:median_anseriformes_wild_log1p'~ "beta['europe-anser']",
-                          term == 'collection_regionnamecentral&northernamerica:median_anseriformes_wild_log1p'~ "beta['americas-anser']",
-                          
-                          term == 'collection_regionnameafrica:median_charadriiformes_wild_log1p'~ "beta['africa-charad']",
-                          term == 'collection_regionnameeurope:median_charadriiformes_wild_log1p'~ "beta['europe-charad']",
-                          term == 'collection_regionnamecentral&northernamerica:median_charadriiformes_wild_log1p'~ "beta['americas-charad']",
-                          
-                          term == 'shape_collection_regionnameasia'~ "alpha['asia']",
-                          term == 'shape_collection_regionnameafrica'~ "alpha['africa']",
-                          term == 'shape_collection_regionnameeurope'~ "alpha['europe']",
-                          term == 'shape_collection_regionnamecentral&northernamerica'~ "alpha['americas']",
-                          
-                          term == 'sd__(Intercept)'~ "sigma[gamma]",
-                          term == 'sd__shape_(Intercept)'~ "sigma[zeta]",
-                          
-                          term == 'segment_ha'~ "gamma['ha']",
-                          term == 'segment_mp'~ "gamma['mp']",
-                          term == 'segment_np'~ "gamma['np']",
-                          term == 'segment_ns'~ "gamma['ns']",
-                          term == 'segment_nx'~ "gamma['nx']",
-                          term == 'segment_pa'~ "gamma['pa']",
-                          term == 'segment_pb1'~ "gamma['pb1']",
-                          term == 'segment_pb2'~ "gamma['pb2']",
-                          term == 'collection_regionname__shape_asia'~ "zeta['asia']",
-                          term == 'collection_regionname__shape_africa'~ "zeta['africa']",
-                          term == 'collection_regionname__shape_europe'~ "zeta['europe']",
-                          term == 'collection_regionname__shape_central.&.northern.america'~ "zeta['central&northernamerica']")) 
-
-
-
-model_resolution %>% 
-  ggplot(aes(x = term, y = ess)) + 
-  geom_bar(stat = 'identity') + 
-  scale_x_discrete(labels= label_parse(), 'Parameter', expand = c(0.05, 0)) + 
-  scale_y_continuous(expand = c(0,0), 'Effective Sample Size')
-
-
-# NB - technically a convergence check
-model_resolution %>% 
-  ggplot(aes(x = term, y = rhat)) + 
-  geom_bar(stat = 'identity') + 
-  scale_x_discrete(labels= label_parse(), 'Parameter', expand = c(0.05, 0)) + 
-  scale_y_continuous(expand = c(0,0), expression(paste("Potential Reduction in Scale Factor (", hat(R), ')')))
-
 
 #MCMC Autocorrelation
 ordinal_model %>% 
@@ -251,31 +135,6 @@ ggsave('~/Downloads/flu_plots/ordinal_autocorrelation.jpeg',
        units = 'cm')
 
 
-# Check Ratio of Effective Population Size to Total Sample Size 
-# values <0.1 should raise concerns about autocorrelation
-neff_ratio(ordinal_model) %>% 
-  as_tibble(rownames = 'param') %>%
-  mutate(param = fct_reorder(param, desc(value))) %>%
-  ggplot() + 
-  geom_segment(aes(yend = value,
-                   xend=param, 
-                   y=0,
-                   x = param,
-                   colour = value > 0.1)) +
-  geom_point(aes(y = value,
-                 x = param,
-                 colour = value > 0.1)) + 
-  geom_hline(aes(yintercept = 0.1), linetype = 'dashed') + 
-  geom_hline(aes(yintercept = 0.5), linetype = 'dashed') + 
-  scale_colour_manual(values = c( '#0047AB',  'red')) + 
-  scale_y_continuous(limits = c(0, 1), expand = c(0,0),
-                     expression(N["eff"]/N)) + 
-  scale_x_discrete(expand= c(0.1,0), 'Fitted Parameter') + 
-  theme_classic() + 
-  coord_flip()  + 
-  theme(axis.text.y = element_blank(),
-        axis.ticks.y = element_blank(),
-        legend.position = 'none') 
 
 
 
@@ -314,8 +173,6 @@ scale_x_discrete('Reassortants Class', labels = str_to_title)+
         axis.text = element_text(size = 8),
         axis.title = element_text(size = 9),
         legend.text = element_text(size = 8))
-
-
 
 ggsave('~/Downloads/flu_plots/ordinal_ppc.jpeg',
        dpi = 360,
