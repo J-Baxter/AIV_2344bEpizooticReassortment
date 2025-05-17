@@ -132,13 +132,14 @@ ordinal_formula_priors <- get_prior(cluster_class~1 + parent_class + cluster_reg
 
 
 # Priors
-ordinal_formula_priors$prior[c(1:8)] <- "normal(0,5)"
+ordinal_formula_priors <- c(set_prior("normal(0, 2)", class = 'b'),
+                            set_prior('exponential(0.5)', class = c('sds')))
 
 
 CHAINS <- 4
 CORES <- 4
 ITER <- 2000
-BURNIN <- ITER/10 # Discard 10% burn in from each chain
+BURNIN <- ITER/10 # Discard0% burn in from each chain
 SEED <- 4472
 
 ordinal_model <- brm(cluster_class~1 + parent_class + cluster_region + s(time_since_last_major) + segments_changed,
@@ -154,7 +155,7 @@ ordinal_model <- brm(cluster_class~1 + parent_class + cluster_region + s(time_si
             seed = SEED)
 
 #marginal_effects(temp, "parent_class", categorical = TRUE) #Graph
-#marginal_effects(temp, "time_since_last_major", categorical = TRUE)
+#marginal_effects(ordinal_model, "time_since_last_major", categorical = TRUE)
 #marginal_effects(temp, "cluster_region", categorical = TRUE)
 #marginal_effects(temp, "region_changed_from_previous", categorical = TRUE) # no difference
 
