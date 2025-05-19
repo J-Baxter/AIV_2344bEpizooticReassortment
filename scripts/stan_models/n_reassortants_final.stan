@@ -33,19 +33,33 @@ parameters {
   real beta_sequences; // Coefficient for additional sequences data
   real beta_continentcases; // Coefficient for interaction between continent and cases
 
-  // 'random' effects
-  real<lower=0> sigma_year_abundance;    // Standard deviation of year intercepts
-  array[Y] real year_abundance;      // Random intercepts for each year
+  // 'random' effects (standardised)
+  //real<lower=0> sigma_year_abundance;    
+ // array[Y] real year_abundance;      // Random intercepts for each year
   //real<lower=0> sigma_abundance;         // Residual standard deviation
-  real<lower=0> sigma_year_detection;    // Standard deviation of year intercepts
-  array[Y] real year_detection;      // Random intercepts for each year
+  //real<lower=0> sigma_year_detection;    // Standard deviation of year intercepts
+  //array[Y] real year_detection;      // Random intercepts for each year
   //real<lower=0> sigma_detection;         // Residual standard deviation
+  
+  real<lower=0> sigma_year_abundance; // Standard deviation of year intercepts
+  array[Y] real z_year_abundance;
+  real<lower=0> sigma_year_detection; // Standard deviation of year intercepts
+  array[Y] real z_year_detection;
 
 
   //cholesky_factor_corr[2] L_Omega_theta;
  // vector<lower=0>[2] sigma_theta;
 }
 
+transformed parameters {
+  array[Y] real year_abundance;
+  array[Y] real year_detection;
+
+  for (j in 1:Y) {
+    year_abundance[j] = sigma_year_abundance * z_year_abundance[j];
+    year_detection[j] = sigma_year_detection * z_year_detection[j];
+  }
+}
 
 // Model
 model {
@@ -53,14 +67,17 @@ model {
   // Abundance Model
   continent_specific_abundance ~ normal(3, 1.5);
   beta_cases ~ normal(0, 1);
-  year_abundance ~ normal(0, sigma_year_abundance);  // Prior for year random intercepts
-  sigma_year_abundance ~ cauchy(0, 2.5);     // Prior for year intercept std deviation
+  z_year_abundance ~ normal(0, 1);
+  //year_abundance ~ normal(0, sigma_year_abundance);  // Prior for year random intercepts
+  sigma_year_abundance ~ exponential(0.5);     // Prior for year intercept std deviation
 
   // Detection model
   continent_specific_detection ~ beta(1.5,2);//beta(1.5, 1.5);
   beta_sequences ~ normal(0, 1);
-  year_detection ~ normal(0, sigma_year_detection);  // Prior for year random intercepts
-  sigma_year_detection ~ cauchy(0, 2.5);     // Prior for year intercept std deviation
+  z_year_detection ~ normal(0, 1);
+  //year_detection ~ normal(0, sigma_year_detection);  // Prior for year random intercepts
+  sigma_year_detection ~ exponential(0.5);     // Prior for year intercept std deviation
+  
 
   // Zero Inflation Model
   continent_specific_theta ~ beta(2, 5); 
