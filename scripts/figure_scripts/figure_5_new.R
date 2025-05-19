@@ -39,11 +39,17 @@ region_colours <- c('europe' = '#1b9e77',
 ############################################## MAIN ################################################
 
 # A - Posterior distribution observed counts 
-test_pred %>%
-  group_by(.draw, collection_regionname) %>% 
-  summarise(avg_epred = mean(.epred), .groups = "drop") %>% 
-  group_by(collection_regionname, .epred) %>%
-  median_hdci(avg_epred)
+test_pred <- as_draws_df(numbers_model_2$draws('y_rep') ) %>%
+  pivot_longer(cols = starts_with("y_rep["), names_to = "row", values_to = ".epred") %>%
+  mutate(row = as.integer(str_extract(row, "\\d+"))) %>%
+  left_join(data_processed_2 %>% rowid_to_column('row'),
+            by = 'row')
+
+#test_pred %>%
+ # group_by(.draw, collection_regionname) %>% 
+  #summarise(avg_epred = mean(.epred), .groups = "drop") %>% 
+  #group_by(collection_regionname, .epred) %>%
+  #median_hdci(avg_epred)
 
 plt_5a <- test_pred %>%
   ggplot() +
