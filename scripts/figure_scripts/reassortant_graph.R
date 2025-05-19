@@ -42,8 +42,8 @@ my_graph <- reassortant_ancestral_changes %>%
   
   # Add node data
   activate(nodes) %>%
-  left_join(updated_2 %>% 
-              select(name = cluster_label, cluster_class, cluster_region)) 
+  left_join(reassortant_ancestral_changes %>% 
+              select(name = cluster_label, cluster_class)) 
 
 ggraph(my_graph %>%
          mutate(component = group_components()) %>%
