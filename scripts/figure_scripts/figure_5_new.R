@@ -16,18 +16,20 @@ memory.limit(30000000)
 # Packages
 library(tidyverse)
 library(magrittr)
+library(ggdist)
+library(tidygraph)
+library(ggraph)
+library(tidybayes)
+library(cowplot)
 
 ############################################## DATA ################################################
 
 reassortant_ancestral_changes <- read_csv('./reassortant_ancestral_changes.csv')
 
-
-#e41a1c
-#377eb8
-#4daf4a
 class_colours <- c('major' = '#e41a1c',
                    'moderate' = '#377eb8',
                      'minor' = '#4daf4a')
+
 region_colours <- c('europe' = '#1b9e77',
                     'asia' ='#d95f02',
                     'africa' ='#7570b3',
@@ -38,9 +40,9 @@ region_colours <- c('europe' = '#1b9e77',
 
 ############################################## MAIN ################################################
 
-# A - Posterior distribution observed counts 
-test_pred <- as_draws_df(numbers_model_2$draws('y_rep') ) %>%
-  pivot_longer(cols = starts_with("y_rep["), names_to = "row", values_to = ".epred") %>%
+# A - Posterior distribution of latent counts 
+test_pred <- as_draws_df(numbers_model_2$draws('N_rep') ) %>%
+  pivot_longer(cols = starts_with("N_rep["), names_to = "row", values_to = ".epred") %>%
   mutate(row = as.integer(str_extract(row, "\\d+"))) %>%
   left_join(data_processed_2 %>% rowid_to_column('row'),
             by = 'row')
@@ -66,10 +68,11 @@ plt_5a <- test_pred %>%
   scale_y_continuous('Probability Density' ,
                      breaks = seq(0,1,by=0.25),
                      labels = seq(0,1,by=0.25),
+                     limits = c(0,1),
                      expand = c(0,0)) +
   scale_x_continuous('Reassortants (N)', expand= c(0,0) ,limits = c(0, 10),   breaks = seq(0,10,by=2),
                      labels = seq(0,10,by=2)) + 
-
+  global_theme + 
   theme(strip.placement  = 'inside',
         strip.text = element_text(face = 'bold', size = 10),
         strip.background = element_blank(),
@@ -77,11 +80,115 @@ plt_5a <- test_pred %>%
         axis.title = element_text(size = 9),
         legend.text = element_text(size = 8))
 
+
 # B - Posterior distribution latent counts
+thetas <- c('continent_specific_theta[1]',
+             'continent_specific_theta[2]',
+             'continent_specific_theta[3]',
+             'continent_specific_theta[4]')
+
+plt_5b <- numbers_model_2 %>%
+  gather_draws(., !!!syms(thetas)) %>%
+  mutate(.variable = case_when(.variable == 'continent_specific_theta[1]' ~ 'africa',
+                               .variable == 'continent_specific_theta[2]' ~ 'asia',
+                               .variable == 'continent_specific_theta[3]' ~ 'central & northern america',
+                               .variable == 'continent_specific_theta[4]' ~ 'europe')) %>%
+  ggplot(aes(x= .value, 
+             y = .variable,
+             slab_colour = .variable, 
+             slab_fill = .variable)) +
+  stat_slabinterval(point_interval = "median_hdci",
+                    slab_alpha = 0.7 ,
+                    p_limits = c(0.025, 0.975),
+                   # normalize = 'xy',
+                    scale = 0.85,
+                    .width = 0.95) + 
+  
+  scale_colour_manual(values = region_colours, aesthetics = 'slab_colour') + 
+  scale_fill_manual(values = region_colours, aesthetics = 'slab_fill') + 
+  
+  scale_x_continuous('Zero-Inflation Probability',
+                     breaks = seq(0,1,by=0.25),
+                     labels = seq(0,1,by=0.25),
+                     expand = c(0,0)) +
+  
+  scale_y_discrete('Continent',  labels = str_to_title) + 
+  global_theme + 
+  theme(strip.placement  = 'inside',
+        strip.text = element_text(face = 'bold', size = 10),
+        strip.background = element_blank(),
+        axis.text = element_text(size = 8),
+        axis.title = element_text(size = 9),
+        legend.text = element_text(size = 8))
+
 
 
 # C - observed ~ number of sequences
+# Extract relevant parameters
+inv_logit <- function(x){
+  return(exp(x)/(1+exp(x)))
+}
+
+continent_specific_detection_samples <- numbers_model_2 %>%
+  gather_draws(., continent_specific_detection[i]) 
+
+beta_sequences_samples <-  numbers_model_2 %>%
+  gather_draws(., beta_sequences) %>%
+  ungroup() %>% 
+  select(.draw,
+         .chain, 
+         .iteration, 
+         beta_sequences = .value)
+
+year_detection_samples <- numbers_model_2 %>%
+  gather_draws(., year_detection[i]) %>% 
+  select(.draw,
+         .chain,
+         .iteration,
+         year_detection = .value)
+
+
+detection_probabilities <- continent_specific_detection_samples %>%
+  rename(continent_specific_detection = .value) %>%
+  inner_join(beta_sequences_samples ,
+             by = c(".draw", ".chain", ".iteration")) %>%
+  inner_join(year_detection_samples, 
+             by = c(".draw", ".chain", ".iteration"), 
+             relationship = "many-to-many") %>%
+  mutate(sequences = list(log1p(1:75))) %>%
+  unnest(sequences) %>%
+  mutate(
+    probability = inv_logit(continent_specific_detection + beta_sequences * sequences + year_detection)
+  )
+
+
+#summary_results <- detection_probabilities %>%
+  #group_by(sequences) %>% 
+  #median_hdci(probability, .width = 0.95)
+
+plt_5c <- detection_probabilities %>%
+  ggplot(aes(x = expm1(sequences), y = probability)) +
+  stat_lineribbon(point_interval = "median_hdci", 
+                  alpha = 0.7) + 
   
+  scale_y_continuous('P(Detection)',
+                breaks = seq(0.2, 1, by = 0.2),
+                labels = seq(0.2, 1, by = 0.2),
+                expand = c(0,0))+ 
+  scale_x_continuous('Sequences (n)',
+                     expand = c(0,0),
+                     breaks = seq(0,75,by=25)) +
+  scale_fill_brewer() + 
+  global_theme+ 
+  theme(strip.placement  = 'inside',
+        strip.text = element_text(face = 'bold', size = 10),
+        strip.background = element_blank(),
+        axis.text = element_text(size = 8),
+        axis.title = element_text(size = 9),
+        legend.text = element_text(size = 8))
+
+
+
 
 ####### Reassortant Class Plots #########
 ### D 
@@ -117,7 +224,8 @@ plt_5d <- ggraph(my_graph %>%
         legend.position = 'inside',
         legend.position.inside = c(0.1,0.9))
 
-colour = .cluster
+
+
 ### E (Class probabilities)
 plt_5e <-avg_predictions(ordinal_model, by = 'cluster_region') %>%
   get_draws(shape = "rvar") |>
@@ -197,8 +305,9 @@ plt_5g <-avg_predictions(ordinal_model, variables = list('time_since_last_major'
         axis.title = element_text(size = 9),
         legend.text = element_text(size = 8))
 
-
-plot_grid(plt_5d, plt_5e, plt_5f, plt_5g, ncol = 2, align = 'hv')
+plt_5_lh <- align_plots(plt_5a, plt_5b, plt_5d, plt_5f, align = 'v', axis = 'l')
+plt_5_bttm <- plot_grid( plt_5_lh[[2]], plt_5c, plt_5_lh[[3]], plt_5e, plt_5_lh[[4]], plt_5g, ncol = 2, align = 'hv', labels = c('B', 'C', 'D', 'E', 'F', 'G'), label_size = 9)
+plot_grid( plt_5_lh[[1]], plt_5_bttm,  nrow = 2, align = 'hv', labels = c('A', ''), label_size = 9, rel_heights = c(0.25,0.75))
 ############################################## WRITE ###############################################
 
 
