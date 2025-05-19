@@ -112,7 +112,7 @@ plt_5b <- numbers_model_2 %>%
                      labels = seq(0,1,by=0.25),
                      expand = c(0,0)) +
   
-  scale_y_discrete('Continent',  labels = str_to_title) + 
+  scale_y_discrete('Continent',  labels = ~str_to_title(str_wrap(.x, width = 15))) + 
   global_theme + 
   theme(strip.placement  = 'inside',
         strip.text = element_text(face = 'bold', size = 10),
@@ -306,8 +306,8 @@ plt_5g <-avg_predictions(ordinal_model, variables = list('time_since_last_major'
         legend.text = element_text(size = 8))
 
 plt_5_lh <- align_plots(plt_5a, plt_5b, plt_5d, plt_5f, align = 'v', axis = 'l')
-plt_5_bttm <- plot_grid( plt_5_lh[[2]], plt_5c, plt_5_lh[[3]], plt_5e, plt_5_lh[[4]], plt_5g, ncol = 2, align = 'hv', labels = c('B', 'C', 'D', 'E', 'F', 'G'), label_size = 9)
-plot_grid( plt_5_lh[[1]], plt_5_bttm,  nrow = 2, align = 'hv', labels = c('A', ''), label_size = 9, rel_heights = c(0.25,0.75))
+plt_5_bttm <- plot_grid( plt_5_lh[[2]], plt_5c, plt_5_lh[[3]], plt_5e, plt_5_lh[[4]], plt_5g, ncol = 2, align = 'vh', axis = 'tbrl', labels = c('B', 'C', 'D', 'E', 'F', 'G'), label_size = 9)
+plot_grid( plt_5_lh[[1]], plt_5_bttm,  nrow = 2, align = 'v', axis = 'r', labels = c('A', ''), label_size = 9, rel_heights = c(0.25,0.75))
 ############################################## WRITE ###############################################
 
 
