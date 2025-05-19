@@ -92,7 +92,7 @@ data_processed_2 <- data %>%
 
 
 # Compile Stan Model
-numbers_mod <- cmdstan_model('./scripts/stan_models/n_reassortants_single_raneff.stan')
+numbers_mod <- cmdstan_model('./scripts/stan_models/n_reassortants_final.stan')
 
 numbers_data <- list(N = nrow(data_processed_2),
                     y = data_processed_2 %>% pull(n_reassortants),
