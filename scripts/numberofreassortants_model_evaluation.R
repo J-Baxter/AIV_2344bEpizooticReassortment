@@ -5,7 +5,7 @@ t <- get_variables(numbers_model_2)
 # Trace plot
 numbers_model_2 %>%
   gather_draws(., !!!syms(t)) %>%
-  filter(grepl('^continent|^beta|^theta|^lp', .variable)) %>%
+  filter(grepl('^continent|^beta|^theta|^lp|^sigma', .variable)) %>%
   
   mutate(label = case_when(.variable == 'continent_specific_theta[1]'~ "theta['africa']",
                            .variable == 'continent_specific_theta[2]'~ "theta['asia']",
@@ -24,8 +24,8 @@ numbers_model_2 %>%
                            
                            .variable == "beta_cases"~ "beta['cases']",
                            .variable == "beta_sequences"~ "beta['sequences']",
-                           .variable == "sigma_year"~ "sigma['year']",
-                           
+                           .variable == "sigma_year_abundance"~ "sigma['year-abundance']",
+                           .variable == "sigma_year_detection"~ "sigma['year-detection']",
                            .variable == 'lp__' ~ 'log~probability')) %>%
   drop_na(label) %>%
   ggplot(aes(x = .iteration,
@@ -75,17 +75,18 @@ stan_acf$data %>%
                            
                            Parameter == "beta_cases"~ "beta['cases']",
                            Parameter == "beta_sequences"~ "beta['sequences']",
-                           Parameter == "sigma_year"~ "sigma['year']",
+                           Parameter == "sigma_year_abundance"~ "sigma['year-abundance']",
+                           Parameter == "sigma_year_detection"~ "sigma['year-detection']",
                            
                            Parameter == 'lp__' ~ 'log~probability',
                            
                            
-                           Parameter == 'year[1]' ~ 'alpha[2019]',
-                           Parameter == 'year[2]' ~ 'alpha[2020]',
-                           Parameter == 'year[3]' ~ 'alpha[2021]',
-                           Parameter == 'year[4]' ~ 'alpha[2022]',
-                           Parameter == 'year[5]' ~ 'alpha[2023]',
-                           Parameter == 'year[6]' ~ 'alpha[2024]'
+                           #Parameter == 'year[1]' ~ 'alpha[2019]',
+                          # Parameter == 'year[2]' ~ 'alpha[2020]',
+                          # Parameter == 'year[3]' ~ 'alpha[2021]',
+                          # Parameter == 'year[4]' ~ 'alpha[2022]',
+                          # Parameter == 'year[5]' ~ 'alpha[2023]',
+                          # Parameter == 'year[6]' ~ 'alpha[2024]'
                            )) %>% 
   
   drop_na(label) %>%
@@ -235,7 +236,8 @@ numbers_params <- numbers_model_2 %>%
                            
                            .variable == "beta_cases"~ "beta['cases']",
                            .variable == "beta_sequences"~ "beta['sequences']",
-                           .variable == "sigma_year"~ "sigma['year']",
+                           .variable == "sigma_year_abundance"~ "sigma['year-abundance']",
+                           .variable == "sigma_year_detection"~ "sigma['year-detection']",
                         
                            .variable == 'lp__' ~ 'log~probability'))
 
@@ -245,7 +247,7 @@ numbers_params %>%
   geom_histogram(aes(x = .value,
                      y = after_stat(density)),
                  inherit.aes = F, 
-                 bins = 40, 
+                 bins = 70, 
                  fill = '#1b9e77')+
   
     # thetas
@@ -349,12 +351,19 @@ numbers_params %>%
                   geom = 'area',
                   alpha = 0.5) +
     
-    stat_function(fun = dnorm,
-                  args = list(mean = 0, sd = 1),
-                  data = tibble(label = "sigma['year']"),
+    stat_function(fun = dexp,
+                  args = list(rate = 0.5),
+                  data = tibble(label = "sigma['year-abundance']"),
                   fill = '#d95f02',
                   geom = 'area',
                   alpha = 0.5) +
+  
+  stat_function(fun = dexp,
+                args = list(rate = 0.5),
+                data = tibble(label = "sigma['year-detection']"),
+                fill = '#d95f02',
+                geom = 'area',
+                alpha = 0.5) +
   facet_wrap(~label, scales = 'free',  ncol = 3, labeller = label_parsed) +
   theme_minimal() +
   theme(axis.text = element_text(size = 8),
