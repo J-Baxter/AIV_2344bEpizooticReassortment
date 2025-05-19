@@ -37,16 +37,18 @@ region_colours <- c('europe' = '#1b9e77',
 
 
 ############################################## MAIN ################################################
+
+# A - Posterior distribution observed counts 
 test_pred %>%
   group_by(.draw, collection_regionname) %>% 
   summarise(avg_epred = mean(.epred), .groups = "drop") %>% 
   group_by(collection_regionname, .epred) %>%
   median_hdci(avg_epred)
 
-test_pred %>%
+plt_5a <- test_pred %>%
   ggplot() +
-  geom_histogram(aes(x = .epred, fill = collection_regionname, colour = collection_regionname),
-                 binwidth = 0.2,
+  geom_histogram(aes(x = .epred, fill = collection_regionname, colour = collection_regionname, y = after_stat(density)),
+                 binwidth = 1, center = 0.5,
                  alpha = 0.7) + 
   scale_colour_manual(values = region_colours)+
   scale_fill_manual(values = region_colours) + 
@@ -56,18 +58,12 @@ test_pred %>%
     labeller =  labeller(collection_regionname=str_to_title),
     scales = 'free_y') +
   scale_y_continuous('Probability Density' ,
-                     breaks = seq(0,1.5,by=0.5),
-                     labels = seq(0,1.5,by=0.5),
+                     breaks = seq(0,1,by=0.25),
+                     labels = seq(0,1,by=0.25),
                      expand = c(0,0)) +
-  #geom_vline(aes(xintercept = emmean, colour = collection_regionname), data = averages, linetype = 'dashed') +
-  #geom_text(aes(label =  paste0("E*'('*X*'|'*X*'>'*0*') = '*", label, "~km^2"), 
-  #      colour = collection_regionname),
-  #   parse = T,
-  # x = 17.5, 
-  #  y = 0.6,
-  # size = 2.5,
-  # data = averages) + 
-  global_theme + 
+  scale_x_continuous('Reassortants (N)', expand= c(0,0) ,limits = c(0, 10),   breaks = seq(0,10,by=2),
+                     labels = seq(0,10,by=2)) + 
+
   theme(strip.placement  = 'inside',
         strip.text = element_text(face = 'bold', size = 10),
         strip.background = element_blank(),
@@ -75,7 +71,11 @@ test_pred %>%
         axis.title = element_text(size = 9),
         legend.text = element_text(size = 8))
 
+# B - Posterior distribution latent counts
 
+
+# C - observed ~ number of sequences
+  
 
 ####### Reassortant Class Plots #########
 ### D 
@@ -100,10 +100,12 @@ plt_5d <- ggraph(my_graph %>%
          mutate(component = group_components()) %>%
          filter(component == which.max(as.numeric(table(component)))),  layout = "fr", weights = segments_changed) +
   geom_edge_link() +
-  geom_node_point(aes(color = cluster_class, size=10 )) +
+  geom_node_point(aes(color = cluster_class, size=10, fill = cluster_class ), shape = 21, alpha = 0.8) +
   geom_node_label(aes(label = ifelse(cluster_class == 'major', gsub('_.*', '', name), '')), repel = TRUE) +
   scale_size(guide = NULL) + 
-  scale_colour_brewer(palette = 'Set1', 'Cluster Class') + 
+  scale_colour_manual(values = class_colours, 'Cluster Class') + 
+  scale_fill_manual(values = class_colours, 'Cluster Class') + 
+  
   theme_void() + 
   theme(legend.text = element_text(size = 8),
         legend.position = 'inside',
@@ -138,7 +140,7 @@ plt_5e <-avg_predictions(ordinal_model, by = 'cluster_region') %>%
 
 
 ### F (Segment)
-plt_5f <-avg_predictions(ordinal_model, by = 'segments_changed', newdata = 'balanced') %>%
+plt_5f <-avg_predictions(ordinal_model,  variables = list('segments_changed' = 1:7)) %>%
   as_tibble() %>%
   ggplot(aes(ymin = conf.low, ymax = conf.high, y = estimate, x = segments_changed, fill = group,
              colour = group)) + 
@@ -154,7 +156,7 @@ plt_5f <-avg_predictions(ordinal_model, by = 'segments_changed', newdata = 'bala
                      labels = seq(0,1,by=0.25),
                      expand = c(0,0)) +
   
-  scale_x_continuous('Segments Changed (N)', expand = c(0,0)) + 
+  scale_x_continuous('Segments changed from previous(N)', expand = c(0,0)) + 
   global_theme + 
   theme(strip.placement  = 'inside',
         strip.text = element_text(face = 'bold', size = 10),
@@ -165,7 +167,7 @@ plt_5f <-avg_predictions(ordinal_model, by = 'segments_changed', newdata = 'bala
 
 
 ### G (Time)
-plt_5g <-avg_predictions(ordinal_model, by = 'time_since_last_major', newdata = 'balanced') %>%
+plt_5g <-avg_predictions(ordinal_model, variables = list('time_since_last_major' = seq(0, 5, by  = 0.5))) %>%
   as_tibble() %>%
   ggplot(aes(ymin = conf.low, ymax = conf.high, y = estimate, x = time_since_last_major, fill = group,
              colour = group)) + 
@@ -180,7 +182,7 @@ plt_5g <-avg_predictions(ordinal_model, by = 'time_since_last_major', newdata = 
                      labels = seq(0,1,by=0.25),
                      expand = c(0,0)) +
   
-  scale_x_continuous('Interval since last Major', expand = c(0,0)) + 
+  scale_x_continuous('Interval since last major reassortant', expand = c(0,0)) + 
   global_theme + 
   theme(strip.placement  = 'inside',
         strip.text = element_text(face = 'bold', size = 10),
