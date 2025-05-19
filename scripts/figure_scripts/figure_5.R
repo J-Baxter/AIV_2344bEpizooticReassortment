@@ -249,10 +249,11 @@ plt5_lh <- align_plots(plt_5a, plt_5d, plt_5e, plt_5g,align = 'v', axis = 'l')
 
 
 plt5_top <- plot_grid(plt5_lh[[1]], plt_5b, plt_5c, align = 'h', nrow = 1, axis = 'tb', labels = 'AUTO')
-plt5_bottom <- plot_grid(plt5_lh[[3]], plt_5f, plt5_lh[[4]], plt_5h, align = 'hv', ncol = 2, nrow = 2, axis = 'tblr', labels = c('E', 'F', 'G', 'H'))
+plt5_bottom <- plot_grid(plt5_lh[[3]], plt_5f, plt5_lh[[4]], plt_5h, align = 'hv', 
+                         ncol = 2, nrow = 2, axis = 'tblr', labels = c('E', 'F', 'G', 'H'))
 
 
 plt5 <- plot_grid(plt5_top, plt5_lh[[2]], plt5_bottom, labels = c('', 'D', ''), nrow = 3, rel_heights = c(1,1,2))
 plt5
 
-ggsave('~/Downloads/figure5.jpeg', height = 40, width = 35, units = 'cm', dpi = 360)
+ggsave('~/Downloads/figure6.jpeg', height = 40, width = 35, units = 'cm', dpi = 360)
