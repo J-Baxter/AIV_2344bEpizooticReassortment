@@ -8,7 +8,7 @@ diffusionmodel1_fit_gamma_19 %>%
 
 
 #1) continent stratified estimates of the observed number of reassortants per month
-test_pred <- as_draws_df(numbers_model$draws('y_rep') ) %>%
+test_pred <- as_draws_df(numbers_model_2$draws('y_rep') ) %>%
   pivot_longer(cols = starts_with("y_rep["), names_to = "row", values_to = ".epred") %>%
   mutate(row = as.integer(str_extract(row, "\\d+"))) %>%
   left_join(data_processed_2 %>% rowid_to_column('row'),
@@ -38,9 +38,9 @@ test_pred_2 %>%
 rpois(100, exp(1.77 + -0.06697910 * 0.000000 + -0.03163115 ))
 
 #2) ZI 
-t <- get_variables(numbers_model)
+t <- get_variables(numbers_model_2)
 # Trace plot
-numbers_model %>%
+numbers_model_2 %>%
   gather_draws(., !!!syms(t)) %>%
   filter(grepl('theta', .variable)) %>%
   
@@ -63,7 +63,7 @@ numbers_model %>%
 
 
 
-draws <- as_draws_df(numbers_model$draws())
+draws <- as_draws_df(numbers_model_2$draws())
 newdata <- tibble(x = seq(-2, 2, length.out = 50))
 
 # Add fitted draws
