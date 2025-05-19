@@ -17,7 +17,7 @@ memory.limit(30000000)
 # Packages
 library(tidyverse)
 library(magrittr)
-library(geomtextpath)
+#library(geomtextpath)
 
 # User functions
 
@@ -84,10 +84,10 @@ plt_2a <- expand_grid(tmrca_date = seq(ymd('2019-01-01'),ymd('2024-05-01'),by='d
         legend.position.inside = c(0,1),
         legend.justification.inside = c(0,1),
         legend.background = element_blank(),
-        legend.text = element_text(size = 8),
-        legend.title = element_text(size = 10),
+        legend.title = element_text(size = 9),
         axis.text = element_text(size = 8),
-        axis.title = element_text(size = 10))
+        axis.title = element_text(size = 9),
+        legend.text = element_text(size = 8))
 
 
 # 'Diversity' -  the exponent of Shannon entropy 
@@ -119,17 +119,18 @@ plt_2b <- h5_diversity_sliding_window %>%
   theme_classic()+ 
   theme(legend.position = 'none',
         axis.text = element_text(size = 8),
-        axis.title = element_text(size = 10))
+        axis.title = element_text(size = 9),
+        legend.text = element_text(size = 8))
 
 
 # Genetic distance between reassortants
 
 # Combine
 
-plt_2 <- cowplot::plot_grid(plt_2a, plt_2b, nrow = 1, labels = 'AUTO', align = 'v', axis = 'tb')
+plt_2 <- cowplot::plot_grid(plt_2a, plt_2b, nrow = 1, labels = 'AUTO', align = 'v', axis = 'tb', label_size = 9)
 plt_2
 ############################################## WRITE ###############################################
-ggsave('~/Downloads/flu_plots/figure2.jpeg', height = 12.5, width = 25, units = 'cm', dpi = 360)
+ggsave('~/Downloads/flu_plots/figure2.jpeg', height = 10, width = 16, units = 'cm', dpi = 360)
 
 
 
