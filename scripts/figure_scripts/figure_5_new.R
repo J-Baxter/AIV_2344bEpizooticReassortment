@@ -213,16 +213,20 @@ plt_5d <- ggraph(my_graph %>%
          mutate(component = group_components()) %>%
          filter(component == which.max(as.numeric(table(component)))),  layout = "fr", weights = segments_changed) +
   geom_edge_link() +
-  geom_node_point(aes(color = cluster_class, size=10, fill = cluster_class ), shape = 21, alpha = 0.8) +
-  geom_node_label(aes(label = ifelse(cluster_class == 'major', gsub('_.*', '', name), '')), repel = TRUE) +
+  geom_node_point(aes(color = cluster_class), size=2) +
+  #geom_node_label(aes(label = ifelse(cluster_class == 'major', gsub('_.*', '', name), '')), repel = TRUE) +
   scale_size(guide = NULL) + 
   scale_colour_manual(values = class_colours, 'Cluster Class') + 
   scale_fill_manual(values = class_colours, 'Cluster Class') + 
   
   theme_void() + 
-  theme(legend.text = element_text(size = 8),
-        legend.position = 'inside',
-        legend.position.inside = c(0.1,0.9))
+  theme(strip.placement  = 'inside',
+        strip.text = element_text(face = 'bold', size = 10),
+        strip.background = element_blank(),
+        legend.title = element_text(size = 9),
+      
+        legend.text = element_text(size = 8),
+        legend.position = 'bottom')
 
 
 
@@ -310,6 +314,7 @@ plt_5_bttm <- plot_grid( plt_5_lh[[2]], plt_5c, plt_5_lh[[3]], plt_5e, plt_5_lh[
 plot_grid( plt_5_lh[[1]], plt_5_bttm,  nrow = 2, align = 'v', axis = 'r', labels = c('A', ''), label_size = 9, rel_heights = c(0.25,0.75))
 ############################################## WRITE ###############################################
 
+ggsave('~/Downloads/flu_plots/figure5.jpeg', height = 30, width = 25, units = 'cm', dpi = 360)
 
 ############################################## END #################################################
 ####################################################################################################
