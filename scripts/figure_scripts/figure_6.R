@@ -116,7 +116,7 @@ plt_5d <- avg_predictions(diffusionmodel1_fit_gamma_19,
                 by = c('collection_regionname', 'median_anseriformes_wild_prop')) %>%
   get_draws(shape = 'rvar') %>%
   ggplot(aes(x = median_anseriformes_wild_prop, ydist = rvar, fill = collection_regionname)) +
-  stat_lineribbon(point_interval = "median_hdci",
+  stat_lineribbon(point_interval = "median_hdci", 
                   alpha = 0.5) +
   facet_wrap(~collection_regionname, ncol = 4,
              labeller =  labeller(collection_regionname=str_to_title)) +
