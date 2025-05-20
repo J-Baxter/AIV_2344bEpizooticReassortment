@@ -43,7 +43,10 @@ my_graph <- reassortant_ancestral_changes %>%
   # Add node data
   activate(nodes) %>%
   left_join(reassortant_ancestral_changes %>% 
-              select(name = cluster_label, cluster_class)) 
+              select(name = cluster_label, cluster_class)) %>% mutate(importance = centrality_degree())
+
+as_tibble(my_graph) %>% 
+  summarise(as_tibble_row(quantile(importance)), .by = cluster_class)
 
 ggraph(my_graph %>%
          mutate(component = group_components()) %>%
@@ -54,7 +57,7 @@ ggraph(my_graph %>%
   scale_colour_brewer(palette = 'Set1') +
   theme_void() + facet_wrap(~cluster_region)
 
-
+degree(d= my_graph, mode = 'out', loops = F)
 ############################################## WRITE ###############################################
 
 
