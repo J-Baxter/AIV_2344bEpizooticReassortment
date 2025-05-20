@@ -54,7 +54,45 @@ numbers_model_2 %>%
 
 
 #3) Effect of number of sequences on p(detect)
+inv_logit <- function(x){
+  return(exp(x)/(1+exp(x)))
+}
 
+continent_specific_detection_samples <- numbers_model_2 %>%
+  gather_draws(., continent_specific_detection[i]) 
+
+beta_sequences_samples <-  numbers_model_2 %>%
+  gather_draws(., beta_sequences) %>%
+  ungroup() %>% 
+  select(.draw,
+         .chain, 
+         .iteration, 
+         beta_sequences = .value)
+
+year_detection_samples <- numbers_model_2 %>%
+  gather_draws(., year_detection[i]) %>% 
+  select(.draw,
+         .chain,
+         .iteration,
+         year_detection = .value)
+
+
+detection_probabilities <- continent_specific_detection_samples %>%
+  rename(continent_specific_detection = .value) %>%
+  inner_join(beta_sequences_samples ,
+             by = c(".draw", ".chain", ".iteration")) %>%
+  inner_join(year_detection_samples, 
+             by = c(".draw", ".chain", ".iteration"), 
+             relationship = "many-to-many") %>%
+  mutate(sequences = list(log1p(c(3, 12, 21, 30)))) %>%
+  unnest(sequences) %>%
+  mutate(
+    probability = inv_logit(continent_specific_detection + beta_sequences * sequences + year_detection)
+  )
+
+detection_probabilities %>%
+  group_by(sequences) %>% 
+  median_hdci(probability, .width = 0.95)
 
 #4) Effect of number of cases on N
 
