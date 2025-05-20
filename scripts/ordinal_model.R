@@ -21,7 +21,7 @@ library(broom)
 library(broom.mixed)
 library(brms)
 library(cmdstanr)
-
+library(igraph)
 
 # User functions
 
@@ -29,9 +29,14 @@ library(cmdstanr)
 ############################################## DATA ################################################
 
 reassortant_ancestral_changes <- read_csv('./reassortant_ancestral_changes.csv')
+combined_data <- read_csv('./2024Aug18/treedata_extractions/2024-09-20_combined_data.csv')
+summary_data <- read_csv('./2024Aug18/treedata_extractions/summary_reassortant_metadata_20240904.csv') %>%
+  select(-c(cluster_label,
+            clade)) 
+meta <- read_csv('./2024-09-09_meta.csv')
 
 # Obtain 'nearest major reassortant'
-library(igraph)
+
 my_edgelist<- reassortant_ancestral_changes %>% 
   select(ends_with('label'), cluster_class) %>%
   drop_na() %>%
