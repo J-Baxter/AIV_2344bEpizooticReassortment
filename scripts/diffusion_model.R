@@ -141,18 +141,18 @@ diffusion_data <- combined_data %>%
                      #   shape ~ 0 +  collection_regionname + (1 | segment))
 #diffusion_formula <- bf(weighted_diff_coeff ~ 0 + median_anseriformes_wild +  median_charadriiformes_wild + collection_regionname + collection_season +  (1|segment))
 
-#weighted_diff_coeff ~ 0 + collection_regionname + count_cross_species_log1p + persist.time_log1p + median_anseriformes_wild_prop + I(median_anseriformes_wild_prop == 0) + median_charadriiformes_wild_prop + I(median_charadriiformes_wild_prop == 0) + (median_anseriformes_wild_prop + I(median_anseriformes_wild_prop == 0) + median_charadriiformes_wild_prop + I(median_charadriiformes_wild_prop == 0) + persist.time_log1p | collection_regionname) + (1 | collection_year) 
+#
 #shape ~ 0 + collection_regionname
 
-diffusion_formula <- bf(weighted_diff_coeff ~ 0 + collection_regionname + 
+diffusion_formula <- bf(weighted_diff_coeff ~ 0 + collection_regionname +
                           count_cross_species_log1p + 
-                          median_anseriformes_wild_prop +
-                          median_charadriiformes_wild_prop +
-                          
-                          collection_regionname:median_anseriformes_wild_prop + 
-                          collection_regionname:median_charadriiformes_wild_prop +
-                          collection_regionname:persist.time_log1p +
-                          (1|collection_year),
+                          persist.time_log1p + 
+                          median_anseriformes_wild_prop + I(median_anseriformes_wild_prop == 0) + 
+                          median_charadriiformes_wild_prop + I(median_charadriiformes_wild_prop == 0) + 
+                          (median_anseriformes_wild_prop + I(median_anseriformes_wild_prop == 0) + 
+                             median_charadriiformes_wild_prop + I(median_charadriiformes_wild_prop == 0) + 
+                             persist.time_log1p | collection_regionname) + 
+                          (1 | collection_year) ,
                         shape ~  0 + collection_regionname )
 
 
@@ -168,9 +168,9 @@ diffusionmodel1_priors <- c(set_prior("normal(0, 2)", class = 'b'),
                             set_prior('normal(13,1.5)', class = 'b', coef = 'collection_regionnameasia'),
                             set_prior('normal(13,1.5)', class = 'b', coef = 'collection_regionnamecentral&northernamerica'),
                             set_prior('normal(12,1.5)', class = 'b', coef = 'collection_regionnameeurope'),
-                            set_prior('normal(0,2)', class = 'b', coef = 'collection_regionnameafrica:median_anseriformes_wild_prop'),
-                            set_prior('normal(0,2)', class = 'b', coef = 'collection_regionnameafrica:median_charadriiformes_wild_prop'),
-                            set_prior('normal(0,2)', class = 'b', coef = 'collection_regionnameafrica:persist.time_log1p'),
+                            #set_prior('normal(0,2)', class = 'b', coef = 'collection_regionnameafrica:median_anseriformes_wild_prop'),
+                            #set_prior('normal(0,2)', class = 'b', coef = 'collection_regionnameafrica:median_charadriiformes_wild_prop'),
+                            #set_prior('normal(0,2)', class = 'b', coef = 'collection_regionnameafrica:persist.time_log1p'),
                             set_prior('normal(0,2)',  dpar = 'shape'),
                             set_prior('exponential(0.5)', class = 'sd'))
 
