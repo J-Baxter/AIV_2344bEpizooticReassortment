@@ -156,14 +156,17 @@ WriteBEAST2Dat <- function(aln, filename, metadata){
 
 
 ############################################## DATA ################################################
-aln <- read.dna('./2024Aug18/reassortant_subsampled_alignments/ha_21111111_subsampled.fasta',
-                format = 'fasta',
-                as.matrix = T)
+aln_files <- list.files('./2024Aug18/reassortant_subsampled_alignments/', pattern = 'ha.*fasta', full.names = T)
+
+aln_list <- lapply(aln_files, read.dna,
+              format = 'fasta',
+              as.matrix = T)
+
+aln_names <- list.files('./2024Aug18/reassortant_subsampled_alignments/', pattern = 'ha.*fasta') %>%
+  gsub('_subsampled.*', '', .)
 
 #metadata <- read_csv('./data/USUV_metadata_all_2025May22.csv')
 ############################################## MAIN ################################################
-
-
 lat_data <- meta %>% 
   select(tipnames, collection_countrylat) %>% 
   rename(Taxon = tipnames,
@@ -173,21 +176,34 @@ long_data <- meta %>%
   select(tipnames, collection_countrylong) %>% 
   rename(Taxon = tipnames,
          Longitude = collection_countrylong)
+
 ############################################# WRITE ################################################
 # Write NEXUS containing alignment, variable tip date precision and codon partitions
-WriteBEAST2Nexus(aln,
-                 './ha_21111111_test.nexus',
-                 metadata = meta)
 
+mapply(function(x,y) WriteBEAST2Nexus(x,y,metadata = meta),
+       aln_list,
+       paste0('./2025Jun10/',aln_names, '.nexus') %>% as.list())
+
+#WriteBEAST2Nexus(aln,
+                 #'./ha_21111111_test.nexus',
+                # metadata = meta)
 
 # Write .Dat containing sub-populations for MASCOT analysis. 
-WriteBEAST2Dat(aln,
-               './ha_21111111_lat.dat',
-               lat_data)
+mapply(function(x,y) WriteBEAST2Dat(x,y,metadata = lat_data),
+       aln_list,
+       paste0('./2025Jun10/',aln_names, '_lat.dat') %>% as.list())
 
-WriteBEAST2Dat(aln,
-               './ha_21111111_long.dat',
-               long_data)
+mapply(function(x,y) WriteBEAST2Dat(x,y,metadata = long_data),
+       aln_list,
+       paste0('./2025Jun10/',aln_names, '_long.dat') %>% as.list())
+
+#WriteBEAST2Dat(aln,
+               #'./ha_21111111_lat.dat',
+               #lat_data)
+
+#WriteBEAST2Dat(aln,
+               #'./ha_21111111_long.dat',
+               #long_data)
 
 ############################################## END #################################################
 ####################################################################################################
