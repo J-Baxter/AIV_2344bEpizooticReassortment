@@ -167,12 +167,24 @@ aln_names <- list.files('./2024Aug18/reassortant_subsampled_alignments/', patter
 
 #metadata <- read_csv('./data/USUV_metadata_all_2025May22.csv')
 ############################################## MAIN ################################################
-lat_data <- meta %>% 
+georgia <- meta %>% 
+  filter(collection_countryname == 'georgia') %>% 
+  select(starts_with('collection')) %>%
+  select(-c(contains('date'), 'collection_original')) %>% 
+  distinct() %>%
+  mutate(correct  = 1)
+
+meta_corrected <- meta %>% 
+  mutate(correct = case_when(collection_countryname == 'united states' & grepl('Asia', collection_original) ~ 1, 
+                             .default =  0)) %>%
+  rows_update(georgia, by = 'correct')
+
+lat_data <- meta_corrected %>% 
   select(tipnames, collection_countrylat) %>% 
   rename(Taxon = tipnames,
          Latitude = collection_countrylat)
 
-long_data <- meta %>% 
+long_data <- meta_corrected %>% 
   select(tipnames, collection_countrylong) %>% 
   rename(Taxon = tipnames,
          Longitude = collection_countrylong)
