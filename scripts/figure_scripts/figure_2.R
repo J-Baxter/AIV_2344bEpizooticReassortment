@@ -23,7 +23,9 @@ library(magrittr)
 
 
 ############################################## DATA ################################################
-h5_diversity_sliding_window <- read_csv('./h5_diversity_sliding_window.csv')
+h5_diversity_sliding_window <- read_csv('./profile_diversity/02h5_diversity_sliding_window/20250605_h5_diversity_sliding_window.csv')
+h5_diversity_similarity_sliding_window <- read_csv('./profile_diversity/01h5_diversity_sim_sliding_window/20250605_h5_diversity_similarity_sliding_window.csv')
+
 combined_data <- read_csv('./2024Aug18/treedata_extractions/2024-09-20_combined_data.csv')
 
 ############################################## MAIN ################################################
@@ -123,11 +125,43 @@ plt_2b <- h5_diversity_sliding_window %>%
         legend.text = element_text(size = 8))
 
 
+
+plt_2c <- h5_diversity_similarity_sliding_window %>%
+  filter(! continent %in%  c('South America', 'Antarctica')) %>%
+  mutate(continent = str_to_lower(continent) %>%
+           case_when(grepl('north america', .) ~ 'central & northern america',
+                     .default = .)) %>%
+  mutate(midpoint = (start_point + end_point)/2) %>%
+  mutate(midpoint_date = date_decimal(midpoint)) %>%
+  ggplot(aes(y = diversity, x = midpoint_date, colour = continent, fill = continent,label = str_to_title(continent))) +
+  #geom_point() + 
+  geom_smooth(method = 'gam' , formula = y ~ s(x, bs = 'cs'), se = TRUE, alpha = 0.1)  +
+  #geom_labelsmooth(text_smoothing = 30, 
+  # fill = "white",
+  #formula = y ~ s(x, bs = 'cs'), 
+  #method = "gam",
+  #size = 4, 
+  #linewidth = 0.1,
+  #boxlinewidth = 0.3) +
+  scale_fill_manual('Continent', values = region_colours, labels = str_to_title) + 
+  scale_colour_manual('Continent', values = region_colours, labels = str_to_title) +
+  scale_y_continuous('Diversity-Similarity', expand = c(0.01, 0)) + 
+  scale_x_datetime(limits = as_datetime(c('2020-0-01', '2024-02-01')),
+                   breaks = '1 year', 
+                   date_labels = "%Y", 'Date (Years)',
+                   expand = c(0,0)) + 
+  
+  theme_classic()+ 
+  theme(legend.position = 'none',
+        axis.text = element_text(size = 8),
+        axis.title = element_text(size = 9),
+        legend.text = element_text(size = 8))
+
 # Genetic distance between reassortants
 
 # Combine
 
-plt_2 <- cowplot::plot_grid(plt_2a, plt_2b, nrow = 1, labels = 'AUTO', align = 'v', axis = 'tb', label_size = 9)
+plt_2 <- cowplot::plot_grid(plt_2a, plt_2b, plt_2c, nrow = 1, labels = 'AUTO', align = 'v', axis = 'tb', label_size = 9)
 plt_2
 ############################################## WRITE ###############################################
 ggsave('~/Downloads/flu_plots/figure2.jpeg', height = 10, width = 16, units = 'cm', dpi = 360)
