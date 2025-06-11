@@ -324,6 +324,12 @@ plt_2 <- cowplot::plot_grid( plt_2b,
                              labels = 'AUTO', 
                              label_size = 10)
 
+
+write_csv( assignments %>%
+             filter(k == 3) %>%
+             select(c(starts_with('cluster'),
+                      .cluster)),
+           './2025Jun10/2025Jun10_reasssortantclusters.csv')
 #################################### END #######################################
 ################################################################################
 
