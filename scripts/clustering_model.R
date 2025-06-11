@@ -31,6 +31,19 @@ summary_data <- read_csv('./2024Aug18/treedata_extractions/summary_reassortant_m
             clade)) 
 
 meta <- read_csv('./2024-09-09_meta.csv')
+
+key <- meta %>%
+  dplyr::select(cluster_profile,
+                cluster_label) %>%
+  distinct() %>%
+  drop_na()
+
+reassortant_offspring <- read_csv('./reassortant_offspring.csv') %>% 
+  dplyr::select(-cluster_class) %>%
+  rename(cluster_label = name,
+         offspring = importance) %>%
+  left_join(key)
+
 # import colour schemes
 host_colour <- read_csv('./colour_schemes/hostType_cols.csv')
 region_colour <- read_csv('./colour_schemes/regionType_cols.csv')
@@ -76,6 +89,9 @@ kclust_nophylo_data <- summary_data %>%
 
 kclust_updated_data <- combined_data %>%
   
+  left_join(reassortant_offspring ,
+            by = join_by(cluster_profile)) %>%
+  
   # select variables of interest
   # must include persistence time, diffusion coefficient, evolutionary rate, species jumps
   select(
@@ -85,7 +101,8 @@ kclust_updated_data <- combined_data %>%
     evoRate,
     persist.time,
     count_cross_species,
-    count_to_mammal
+    count_to_mammal,
+    offspring
   ) %>%
   
   
@@ -98,7 +115,7 @@ kclust_updated_data <- combined_data %>%
   group_by(segment, cluster_profile) %>%
   slice_sample(n=1) %>%
   ungroup() %>% 
-  filter(segment %in% c('ha', 'pb2', 'nx')) %>%
+  filter(segment %in% c('ha', 'pb2')) %>%
   
   # pivot wider so one row/reassortant
   pivot_wider(names_from = segment,
@@ -125,10 +142,9 @@ kclust_updated_data <- combined_data %>%
   
   
   # exclude columns not to be used
-  left_join(kclust_nophylo_data %>% select(-starts_with('group')), by = join_by(cluster_profile)) %>%
+  left_join(kclust_nophylo_data %>% select(-c(starts_with('group'), Length_Between_First_Last_Sample, number_Conti)), by = join_by(cluster_profile)) %>%
   select(-c(starts_with('host_simplifiedhost'), 
             starts_with(c('collection_regionname'))))
-
 
 
 ####################################### SUMMARY DATA KCLUST ########################################
@@ -261,8 +277,8 @@ ari_summary <- ari %>%
 
 ####################################### SUMMARY DATA PLOTS ########################################
 riskgroup_colour <- read_csv('./colour_schemes/riskgroup_cols.csv') %>%
-  mutate(kclust = c(1,2, 3),
-         group2 = c('minor', 'major', 'dominant'))
+  mutate(kclust = c(3,1, 2),
+         group2 = c('minor', 'moderate', 'major'))
 
 
 # Elbow Plot for summary data 
@@ -300,8 +316,10 @@ plt_1b <- assignments_nophylo %>%
                                                   'H5N1/2023/R29_NAmerica'), gsub('_.*', '', cluster_label),""), 
                 colour = .cluster), hjust = 0, nudge_x = 0.15, nudge_y = -0.1, size = 2) +
 
-  scale_colour_brewer('K-Means Clusters',
-                      palette = 'Set1')+
+  scale_colour_manual('K-Means Clusters',
+                      values = c('3' = '#FF0000',
+                      '2' = '#2ca02c',
+                      '1' = '#1f77b4')) +
   scale_alpha_manual(values = c('1' = 1, '0' = 0.3)) + 
   theme_minimal() + 
   theme(legend.position = 'none',
@@ -475,6 +493,11 @@ plt_2a <- ggplot(clusterings, aes(k, tot.withinss)) +
   geom_vline(xintercept = 3, colour= 'darkgreen', linetype = 'dashed')
 
 
+marked_clusters <- reassortant_offspring %>% 
+  filter(offspring >= 5) %>%
+  pull(cluster_label)
+
+marked_clusters_2 <- reassortant_ancestral_changes %>% filter(cluster_class == 'major') %>% pull(cluster_label)
 plt_2b <-  
   assignments %>%
   filter(k == 3) %>%
@@ -482,23 +505,11 @@ plt_2b <-
   recipe(~ .) %>%
   step_pca(all_numeric(), -k, num_comp = 2) %>%  # Perform PCA (e.g., 2 components)
   prep() %>%
-  bake(NULL)%>%
+  bake(NULL) %>%
   left_join(meta %>% select(cluster_profile, cluster_label) %>% distinct() %>% drop_na()) %>%
   ggplot(., aes(x = PC1, y = PC2)) +
-  geom_point(aes(colour = .cluster, alpha = ifelse(cluster_label %in% c('H5N1/2022/R7_NAmerica', 
-                                                                        'H5N1/2020/R1_Europe', 
-                                                                        'H5N8/2019/R7_Africa', 
-                                                                        'H5N1/2021/R3_Europe', 
-                                                                        'H5N1/2022/R12_Europe',
-                                                                        'H5N1/2021/R1_Europe',
-                                                                        'H5N1/2023/R29_NAmerica'), '1', '0')), size = 2) + 
-  geom_text(aes(label=ifelse(cluster_label %in% c('H5N1/2022/R7_NAmerica', 
-                                                  'H5N1/2020/R1_Europe', 
-                                                  'H5N8/2019/R7_Africa', 
-                                                  'H5N1/2021/R3_Europe', 
-                                                  'H5N1/2022/R12_Europe',
-                                                  'H5N1/2021/R1_Europe',
-                                                  'H5N1/2023/R29_NAmerica'), gsub('_.*', '', cluster_label),""), 
+  geom_point(aes(colour = .cluster, alpha = ifelse(cluster_label %in% marked_clusters_2, '1', '0')), size = 2) + 
+  geom_text(aes(label=ifelse(cluster_label %in% marked_clusters_2, gsub('_.*', '', cluster_label),""), 
                 colour = .cluster), hjust = 1.1, nudge_y = -0.1, size = 2) +
   
   scale_colour_brewer('K-Means Clusters',
