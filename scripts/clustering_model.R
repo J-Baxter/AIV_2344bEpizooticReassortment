@@ -22,7 +22,8 @@ library(broom.mixed)
 library(recipes)
 library(rsample)
 library(mclust)
-
+library(purrr)
+library(fpc)
 
 ################################### DATA #######################################
 # Read and inspect data
@@ -119,12 +120,12 @@ kclust_data <- phylodynamic_data %>%
 # Run K means clustering for K \in 1-20
 kclusts <- tibble(k = 1:20) %>%
   mutate(
-    kclust = purrr::map(k, ~kmeans(kclust_updated_data %>% 
-                                     select(-cluster_profile) %>%
+    kclust = purrr::map(k, ~kmeans(kclust_data %>% 
+                                     select(-starts_with('cluster')) %>%
                                      drop_na(), .x)),
     tidied = purrr::map(kclust, tidy),
     glanced = purrr::map(kclust, glance),
-    augmented = purrr::map(kclust, augment, kclust_updated_data %>%drop_na()))
+    augmented = purrr::map(kclust, augment, kclust_data %>% drop_na()))
 
 # tidy results
 clusters <- kclusts %>%
@@ -137,6 +138,20 @@ clusterings <-  kclusts %>%
   unnest(cols = c(glanced))
 
 
+# Calculate cluster stats
+dat <- assignments %>%
+  filter(k == 3) %>%
+  select(-c( kclust,
+             tidied,
+             glanced,
+             starts_with('cluster'),
+             k)) 
+
+d <- dist(dat)
+clusters <- as.integer(assignments %>% filter(k == 3) %>% pull(.cluster))
+stats <- cluster.stats(d = d, clustering = clusters)
+#stats$median.distance
+
 # Permutation analysis - determining key variables invvled in cluster asignation
 # data points used for clustering and cluster_profiles
 labelled <- assignments %>%
@@ -144,6 +159,7 @@ labelled <- assignments %>%
   select(-c( kclust,
              tidied,
              glanced,
+             cluster_label,
              k,
              .cluster)) 
 
@@ -192,7 +208,7 @@ lookup_clusters <- assignments %>%
            .cluster)) %>%
   rename(original_cluster = .cluster)
 
-
+# Calculate adjusted rand index
 ari_phylo <- permuted_assignments %>%
   select(c(cluster_profile,
            .cluster,
@@ -249,11 +265,11 @@ plt_2b <-
   ggplot(., aes(x = PC1,
                 y = PC2)) +
   geom_point(aes(colour = .cluster,
-                 alpha = ifelse(cluster_label %in% marked_clusters_2,
+                 alpha = ifelse(cluster_label %in% marked_clusters,
                                 '1',
                                 '0')),
              size = 2) + 
-  geom_text(aes(label=ifelse(cluster_label %in% marked_clusters_2,
+  geom_text(aes(label=ifelse(cluster_label %in% marked_clusters,
                              gsub('_.*', '', cluster_label),
                              ""), 
                 colour = .cluster), 
@@ -270,8 +286,6 @@ plt_2b <-
         axis.title = element_text(size = 10),
         legend.text = element_text(size = 8))
 
-
-cluster.stats(d = NULL, clustering, al.clustering = NULL)
 
 plt_2c <- ari_phylo_summary %>%
   filter(!var %in% ari_summary$var) %>%
