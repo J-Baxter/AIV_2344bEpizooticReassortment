@@ -16,14 +16,13 @@ base_plot <- count_data %>%
                date_labels = "%Y", 'Date',
                expand = c(0,0)) + 
   
-  facet_wrap(~collection_regionname,  
-             scales = 'free_y',
-             ncol = 2) + 
+  facet_grid(rows = vars(collection_regionname),  
+             scales = 'free_y') + 
   
   geom_text(data = count_data %>% select(collection_regionname) %>% drop_na() %>% distinct(), 
             aes(label = str_wrap(str_to_title(collection_regionname), width = 20)),
             y = Inf, 
-            x = as_date('2019-01-01'), 
+            x = as_date('2019-01-10'), 
             size = 3,
             fontface = 'bold',
             vjust = 'top',
@@ -31,8 +30,9 @@ base_plot <- count_data %>%
   theme(
     strip.background = element_blank(),
     strip.text = element_blank(),
+    panel.spacing = unit(2, "lines"),
     axis.text = element_text(size = 8),
-    axis.title = element_text(size = 10))
+    axis.title = element_text(size = 9))
 
 
 base_plot + 
@@ -54,14 +54,18 @@ base_plot +
                      'H5 HPAIV',
                      sec.axis = sec_axis(transform = ~ ./3000, 
                                          'GISAID Whole Genomes (n)')) +
+  
+  scale_linetype_discrete(labels = c('woah_cases' = 'WOAH Cases',
+                                     'woah_deaths' = 'WOAH Deaths',
+                                     'woah_susceptibles' = 'WOAH Susceptibles')) + 
 
   
   guides(fill = 'none',
          colour = 'none',
          linetype=guide_legend(keywidth = 3, keyheight = 1, title = NULL)) + 
-  theme(legend.position = c(0.8, 0.1))
+  theme(legend.position = 'bottom')
 
 
-ggsave('~/Downloads/flu_plots/figureS1.jpeg', height = 17, width = 17, units = 'cm', dpi = 360)
+ggsave('~/Downloads/flu_plots/figureS1.jpeg', height = 17 , width = 19, units = 'cm', dpi = 360)
 
   
