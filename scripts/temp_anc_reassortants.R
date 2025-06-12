@@ -89,8 +89,8 @@ test <- as_tibble(new_tree) %>%
          segments_changed) %>%
   
   # map present and ancestral class
-  left_join(clusters)  %>%
-  rename(cluster_class = class) %>%
+  left_join(final_clusters)  %>%
+  rename(cluster_class = .cluster) %>%
   left_join(select(., 
                    parent_class = cluster_class,
                    parent_label = cluster_label,
