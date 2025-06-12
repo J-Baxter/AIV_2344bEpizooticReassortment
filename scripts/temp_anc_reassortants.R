@@ -24,7 +24,7 @@ summary_data <- read_csv('./2024Aug18/treedata_extractions/summary_reassortant_m
 meta <- read_csv('./2024-09-09_meta.csv') 
 
 new_tree <- read.beast('./2025Feb26/globalsubsample/ha_global_SRD06_relaxLn_constant_mcc.tree')
-final_clusters <- read_csv('./final_clusters_2025Mar21.csv')
+final_clusters <- read_csv('./2025Jun10/2025Jun10_reasssortantclusters.csv')
 
 # reassortant MRCA (will run for 10-20 mins)
 traits <- new_tree@phylo$tip.label %>%
