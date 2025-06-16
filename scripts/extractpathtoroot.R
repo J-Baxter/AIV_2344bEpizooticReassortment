@@ -199,9 +199,9 @@ HostPersistence2 <- function(treedata, region_tree = FALSE){
     group_by(cluster_number) %>%
     distinct(node, .keep_all = T) %>%
     
-    mutate(path_total = sum(branch.length)) %>%
+    mutate(path_total = sum(branch.length, na.rm = T)) %>%
     group_by(cluster_number, host_simplifiedhost) %>%
-    summarise(path_total_host = sum(branch.length),
+    summarise(path_total_host = sum(branch.length, na.rm = T),
               path_total = mean(path_total))  %>%
     rename(cluster_profile = cluster_number) %>%
     mutate(path_prop_host = path_total_host/path_total) %>%
@@ -236,8 +236,6 @@ region_trees <- list.files('./2024Aug18/region_subsampled_outputs/traits_mcc',
 
 
 ############################################## RUN ################################################
-
-
 tbl_moderateminorpersistence <- mclapply(region_trees, HostPersistence2, region_tree = TRUE, mc.cores = 12) %>%
   # Set names for each tree extraction
   set_names(list.files('./2024Aug18/region_subsampled_outputs/traits_mcc', pattern = 'ha_') %>% 
@@ -262,7 +260,8 @@ tbl_moderateminorpersistence <- mclapply(region_trees, HostPersistence2, region_
                                 "7_1_5_2_1_3_1_2",
                                 "4_3_1_1_2_1_1_3",
                                 "5_1_1_1_2_1_1_3",
-                                "5_4_9_1_2_1_1_1"))
+                                "5_4_9_1_2_1_1_1"))  tbl_moderateminorpersistence %>%
+  filter(cluster_profile != '6_4_8_1_2_1_1_1' && region != 'southamerica') %>% filter(cluster_profile == '6_4_8_1_2_1_1_1')
 
 #test4 <- tbl_moderateminorpersistence %>%
   #group_by(cluster_profile, host_simplifiedhost) %>%
@@ -295,39 +294,11 @@ tbl_interest <- tbl_combined %>%
   select(cluster_profile, 
          ends_with(c("_galliformes-domestic",
                     "_anseriformes-wild",
-                    "_charadriiformes-wild"))) %>%
-  left_join()
+                    "_charadriiformes-wild")),
+         persistence) 
   
-  
-  
-  expand_grid(cluster_profile = unique(meta$cluster_profile),
-                            host_simplified_host = c("galliformes-domestic",
-                                                     "anseriformes-wild",
-                                                     "charadriiformes-wild")) %>%
-  drop_na() %>%
-  mutate(scaled_persistence = NaN) %>%
-  rows_patch(tbl_moderateminorpersistence %>% select(cluster_profile, 
-                                                      host_simplified_host = host_simplifiedhost,
-                                                     scaled_persistence = persistence_host_median_normalised),
-              by = c('cluster_profile', 'host_simplified_host'),
-             unmatched = 'ignore') %>%
-  rows_patch(tbl_major_persistence %>% select(cluster_profile = cluster_number, 
-                                                     host_simplified_host = host_simplifiedhost,
-                                                     scaled_persistence = persistence_host_median_normalised),
-             by = c('cluster_profile', 'host_simplified_host'),
-             unmatched = 'ignore') %>%
-  replace_na(list(scaled_persistence = 0)) %>%
-  pivot_wider(names_from = host_simplified_host,
-              values_from = scaled_persistence)
 
-
-  select(-region) %>%
-  bind_rows(tbl_major_persistence %>% select(-reassortant)) %>%
-  #mutate(cluster_profile = coalesce(cluster_profile, cluster_number)) %>%
-  #dplyr::select(-cluster_number) %>%
-  mutate(across(starts_with('persistence'), .fns = ~ ifelse(.x < 0, 0, .x)))
-
-write_csv(tbl_combined, './2024Aug18/treedata_extractions/reassortant_stratifiedpersistence.csv')
+write_csv(tbl_combined, './2025Jun10/reassortant_stratifiedpersistence.csv')
 
 ############################################## END #################################################
 ####################################################################################################

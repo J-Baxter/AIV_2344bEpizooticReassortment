@@ -128,21 +128,35 @@ test_2 <- tbl_pathtoancestor %>%
   mutate(host_change = cumsum(host_simplifiedhost != lag(host_simplifiedhost, 
                                                          def = first(host_simplifiedhost)))) %>%
   # Calculate total persistence for each pathway
- # mutate(total_persistence_a = sum(branch.length, na.rm = TRUE)) %>%
-  mutate(total_persistence = max(height) - min(height)) %>%
+ mutate(total_persistence = sum(branch.length, na.rm = TRUE)) %>%
+  #mutate(total_persistence = max(height) - min(height)) %>%
 
   
   # Calculate host-stratified persistence for each pathway
   group_by(host_change, .add = TRUE) %>%
   
  # mutate(persistence_host = sum(branch.length, na.rm = TRUE)) %>%
-  summarise(#persistence_host = sum(branch.length, na.rm = TRUE),
-    persistence_host = max(height) - min(height),
+  summarise(persistence_host = sum(branch.length, na.rm = TRUE),
+    #persistence_host = max(height) - min(height),
             total_persistence = mean(total_persistence),
             cluster_number = unique(cluster_number),
             host_simplified_host = unique(host_simplifiedhost))
 
 
+test_3 <- test_2 %>%
+  ungroup() %>%
+  
+  # Calculate proportions within 'lineages'
+  rowwise() %>%
+  mutate(persistence_host_prop = persistence_host/total_persistence) %>%
+  as_tibble() %>%
+  
+  # Calculate medians from proportions
+  group_by(cluster_number, host_simplified_host) %>%
+  summarise(persistence_host_prop_median = median(persistence_host_prop)) %>%
+  select(cluster_profile = cluster_number, 
+         host_simplified_host = host_simplified_host,
+         persistence_host_prop_median = persistence_host_prop_median)
 
 
 
@@ -150,33 +164,28 @@ check <- expand_grid(cluster_profile = unique(test_2$cluster_number),
             host_simplified_host = unique(test_2$host_simplified_host)) %>%
   drop_na() %>%
   mutate(persistence_host_prop_median = NaN) %>%
-  rows_patch(
-    test_2 %>%
-      ungroup() %>%
- 
-      # Calculate proportions within 'lineages'
-      rowwise() %>%
-      mutate(persistence_host_prop = persistence_host/total_persistence) %>%
-      as_tibble() %>%
-      
-      # Calculate medians from proportions
-      group_by(cluster_number, host_simplified_host) %>%
-      summarise(persistence_host_prop_median = median(persistence_host_prop)) %>%
-      select(cluster_profile = cluster_number, 
-             host_simplified_host = host_simplified_host,
-             persistence_host_prop_median = persistence_host_prop_median),
-             by = c('cluster_profile', 'host_simplified_host'),
+  rows_patch(test_3,
+             by = c('cluster_profile', 'host_simplified_host') ,
              unmatched = 'ignore') %>%
   replace_na(list(persistence_host_prop_median = 0)) %>%
   
   # Adjust zeros
-  mutate(persistence_host_prop_median = if_else(persistence_host_prop_median == 0, 1*10**(-6), persistence_host_prop_median)) %>%
+  mutate(persistence_host_prop_median = if_else(persistence_host_prop_median <= 0, 1*10**(-6), persistence_host_prop_median)) %>%
   group_by(cluster_profile) %>%
   
   # Scale so that total sums to 1
   mutate(persistence_host_prop_median_normalised =  persistence_host_prop_median/sum(persistence_host_prop_median)) %>%
   ungroup() %>%
-  filter(host_simplified_host %in% c('anseriformes-wild', 'galliformes-domestic', 'charadriiformes-wild')) 
+  
+  # Format variables
+  filter(host_simplified_host %in% c('anseriformes-wild', 'galliformes-domestic', 'charadriiformes-wild')) %>%
+  select(-persistence_host_prop_median) %>%
+  pivot_wider(names_from = host_simplified_host, values_from = persistence_host_prop_median_normalised) %>%
+  mutate(chard_over_anser = log(`charadriiformes-wild` /`anseriformes-wild`),
+         galli_over_anser =  log(`galliformes-domestic` /`anseriformes-wild`)) %>%
+  
+  left_join(diffusion_data %>% select(cluster_profile, weighted_diff_coeff)) %>%
+  drop_na()
 
 test_3 <- test_2 %>%
   ungroup() %>%
