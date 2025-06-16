@@ -137,14 +137,23 @@ HostPersistence2 <- function(treedata, region_tree = FALSE){
         }
       }
   
-  ################################### summarise host persistence ################################### 
+  ################################### summarise persistence ################################### 
   
   cols <- c('cluster_number' = reassortants[1])
   tbl_pathtoancestor %<>% 
     add_column(!!!cols[setdiff(names(cols), names(.))])
   
-  # For each tip, include only nodes that match the given tip cluster
-  out <- tbl_pathtoancestor %>%
+  persistence <- tbl_pathtoancestor %>%
+    
+    # copy tip cluster across into column
+    mutate(cluster_number = case_when(!is.na(label) ~ cluster_profile,
+                                      .default = cluster_number)) %>%
+    
+    # If there are missing states, fill from top down
+    group_by(tip) %>%
+    fill(cluster_number, .direction = 'down') %>%
+    
+    # keep only rows that are the same cluster as the tip
     mutate(cluster_number = case_when(cluster_number == cluster_profile ~ cluster_number,
                                       .default = NA_character_)) %>%
     drop_na(cluster_number) %>%
@@ -157,78 +166,55 @@ HostPersistence2 <- function(treedata, region_tree = FALSE){
              branch.length,
              host_simplifiedhost,
              host_simplifiedhost.prob)) %>%
-    group_by(tip) %>%
-    #group_modify(~{
-      #if (nrow(.x) == 1){
-       # bind_rows(.x, tidytree::parent(.data = tbl_tree, .node = .x$node)) %>%
-      #    fill(cluster_number, .direction = 'downup')
-    #  }else{
-     #   .x
-     # }
-   # }) %>%
-    arrange(height, .by_group = TRUE) %>%
-    mutate(host_change = cumsum(host_simplifiedhost != lag(host_simplifiedhost, 
-                                                           def = first(host_simplifiedhost)))) %>%
-    group_by(host_change, .add = TRUE) %>%
-    #mutate(persistence_host = sum(branch.length, na.rm = TRUE)) %>%
-    mutate(persistence_host = max(height) - min(height)) %>%
+    group_by(cluster_number) %>%
+    summarise(persistence = max(height) - min(height)) %>%
+    rename(cluster_profile = cluster_number)
+  
+  
+  ################################### summarise host proportions ################################### 
+  # For each tip, include only nodes that match the given tip cluster
+  out <- tbl_pathtoancestor %>%
     
+    # copy tip cluster across into column
+    mutate(cluster_number = case_when(!is.na(label) ~ cluster_profile,
+                                      .default = cluster_number)) %>%
+    
+    # If there are missing states, fill from top down
+    group_by(tip) %>%
+    fill(cluster_number, .direction = 'down') %>%
+    
+    # keep only rows that are the same cluster as the tip
+    mutate(cluster_number = case_when(cluster_number == cluster_profile ~ cluster_number,
+                                      .default = NA_character_)) %>%
+    drop_na(cluster_number) %>%
+    select(c(tip, 
+             label,
+             node, 
+             cluster_number, 
+             height,
+             height_0.95_HPD,
+             branch.length,
+             host_simplifiedhost,
+             host_simplifiedhost.prob)) %>%
+    group_by(cluster_number) %>%
+    distinct(node, .keep_all = T) %>%
+    
+    mutate(path_total = sum(branch.length)) %>%
+    group_by(cluster_number, host_simplifiedhost) %>%
+    summarise(path_total_host = sum(branch.length),
+              path_total = mean(path_total))  %>%
+    rename(cluster_profile = cluster_number) %>%
+    mutate(path_prop_host = path_total_host/path_total) %>%
     ungroup() %>%
     
-    group_by(cluster_number, host_simplifiedhost) %>%
-    summarise(persistence_host_median = median(persistence_host)) %>%
-    mutate(persistence_host_median_normalised =  persistence_host_median/sum(persistence_host_median)) %>%
-    ungroup()
-    
-    
-    
-    
-   # tbl_pathtoancestor %>%
-   # group_by(tip) %>%
-    
-   # filter(cluster_profile %in% str_split_i(label, '\\|', 6)) %>% ########### need to check that tip == 
-    
-    # If only one node/tip in group, then add parent node
-   # group_modify(~ {
-    #  if (nrow(.x) == 1){
-    #    bind_rows(.x, parent(tbl_tree, .node = .x$node)) %>%
-     #     fill(cluster_profile, .direction = 'downup')
-    #  }else{
-    #    .x
-     # }
-    #}) %>%
-    #ungroup() %>%
-    
-    #select(any_of(c('tip', 
-    #                'cluster_profile',
-    #                'node',
-     #               'parent',
-     #               'height_median',
-     #               'branch.length',
-     #               'host_simplifiedhost',
-     #               'reassortant'))) %>%
-    #group_by(cluster_profile, 
-       #      tip) %>%
-    
-    #mutate(host_change = cumsum(host_simplifiedhost != lag(host_simplifiedhost, 
-    #                                                       def = first(host_simplifiedhost)))) %>%
-    #ungroup() %>%
-    
-    # sum branch lengths for contiguous periods in the same host
-    # ie. we do not combine time spent in the same host, interdispersed by a different host class
-   # summarise(persistence_host = sum(branch.length, na.rm = TRUE), 
-     #         .by = c(cluster_profile,
-       #               tip, 
-      #                host_simplifiedhost,
-        #              host_change)) %>%
-    
-    
-    # calculate total, maximum and median persistence times for each host class for each reassortant 
-   # summarise(persistence_host_median = median(persistence_host),
-    #          persistence_host_max = max(persistence_host),
-    #          persistence_host_sum = sum(persistence_host),
-     #         .by = c(cluster_profile,
-      #                host_simplifiedhost))
+    select(cluster_profile,
+           host_simplifiedhost,
+           path_prop_host) %>%
+    pivot_wider(names_from = host_simplifiedhost,
+                values_from = path_prop_host,
+                names_prefix = 'path_prop_') %>%
+    mutate(across(starts_with('path'), .fns = ~replace_na(.x, 0))) %>%
+    left_join(persistence)
   
   return(out)
   
@@ -260,7 +246,7 @@ tbl_moderateminorpersistence <- mclapply(region_trees, HostPersistence2, region_
   # concatenate to a single dataframe and separate segment and reassortant
   bind_rows(., .id = 'tree') %>%
   separate_wider_delim(tree, '_', names = c('segment', 'region'))%>% 
-  rename(cluster_profile = cluster_number) %>%
+  #rename(cluster_profile = cluster_number) %>%
   
   # remove dominant cluster profiles
   filter(!cluster_profile %in% c("3_2_3_1_3_2_1_2",
@@ -278,9 +264,9 @@ tbl_moderateminorpersistence <- mclapply(region_trees, HostPersistence2, region_
                                 "5_1_1_1_2_1_1_3",
                                 "5_4_9_1_2_1_1_1"))
 
-test4 <- tbl_moderateminorpersistence %>%
-  group_by(cluster_profile, host_simplifiedhost) %>%
-  slice_min(persistence_host_median)
+#test4 <- tbl_moderateminorpersistence %>%
+  #group_by(cluster_profile, host_simplifiedhost) %>%
+  #slice_min(persistence_host_median)
 
 tbl_major_persistence <- mclapply(reassortant_trees, HostPersistence2, mc.cores = 12
                                       ) %>%
@@ -294,11 +280,27 @@ tbl_major_persistence <- mclapply(reassortant_trees, HostPersistence2, mc.cores 
   separate_wider_delim(tree, '_', names = c('segment', 'reassortant'))
 
 
-stopCluster(cl)
+#stopCluster(cl)
 
 
 ############################################## WRITE ################################################
-tbl_combined <- expand_grid(cluster_profile = unique(meta$cluster_profile),
+tbl_combined <- bind_rows(tbl_major_persistence %>% select(-reassortant),
+                          tbl_moderateminorpersistence  %>% select(-region))  %>%
+  mutate(across(starts_with('path'), .fns = ~replace_na(.x, 0))) %>%
+  filter(cluster_profile != 'NA') %>%
+  drop_na() 
+
+
+tbl_interest <- tbl_combined %>%
+  select(cluster_profile, 
+         ends_with(c("_galliformes-domestic",
+                    "_anseriformes-wild",
+                    "_charadriiformes-wild"))) %>%
+  left_join()
+  
+  
+  
+  expand_grid(cluster_profile = unique(meta$cluster_profile),
                             host_simplified_host = c("galliformes-domestic",
                                                      "anseriformes-wild",
                                                      "charadriiformes-wild")) %>%
