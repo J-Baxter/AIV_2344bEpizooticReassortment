@@ -170,16 +170,15 @@ HostPersistence2 <- function(treedata, region_tree = FALSE){
     mutate(host_change = cumsum(host_simplifiedhost != lag(host_simplifiedhost, 
                                                            def = first(host_simplifiedhost)))) %>%
     group_by(host_change, .add = TRUE) %>%
-    mutate(persistence_host = sum(branch.length, na.rm = TRUE)) %>%
+    #mutate(persistence_host = sum(branch.length, na.rm = TRUE)) %>%
+    mutate(persistence_host = max(height) - min(height)) %>%
+    
     ungroup() %>%
     
     group_by(cluster_number, host_simplifiedhost) %>%
-    summarise(persistence_host_median = median(persistence_host),
-              persistence_host_max = max(persistence_host, na.rm= TRUE),
-              persistence_host_sum = sum(persistence_host, na.rm= TRUE)) %>%
+    summarise(persistence_host_median = median(persistence_host)) %>%
+    mutate(persistence_host_median_normalised =  persistence_host_median/sum(persistence_host_median)) %>%
     ungroup()
-  
-    
     
     
     
@@ -240,20 +239,22 @@ HostPersistence2 <- function(treedata, region_tree = FALSE){
 ############################################# DATA ################################################
 # Import MCC trees (reassortant)
 reassortant_trees <- list.files('./2024Aug18/reassortant_subsampled_outputs/traits_mcc',
+                                pattern = 'ha_',
                                 full.names = T) %>%
   lapply(., read.beast)
 
 region_trees <- list.files('./2024Aug18/region_subsampled_outputs/traits_mcc',
-                           full.names = T) %>%
+                           full.names = T,
+                           pattern = 'ha_') %>%
   lapply(., read.beast)
 
 
 ############################################## RUN ################################################
 
 
-tbl_majorminorpersistence <- mclapply(region_trees[-19], HostPersistence2, region_tree = TRUE,mc.cores = 12) %>%
+tbl_moderateminorpersistence <- mclapply(region_trees, HostPersistence2, region_tree = TRUE, mc.cores = 12) %>%
   # Set names for each tree extraction
-  set_names(list.files('./2024Aug18/region_subsampled_outputs/traits_mcc')[-19] %>% 
+  set_names(list.files('./2024Aug18/region_subsampled_outputs/traits_mcc', pattern = 'ha_') %>% 
               gsub('_subsampled.*', '', .)) %>%
   
   # concatenate to a single dataframe and separate segment and reassortant
@@ -277,14 +278,15 @@ tbl_majorminorpersistence <- mclapply(region_trees[-19], HostPersistence2, regio
                                 "5_1_1_1_2_1_1_3",
                                 "5_4_9_1_2_1_1_1"))
 
-test4 <- tbl_majorminorpersistence %>%
+test4 <- tbl_moderateminorpersistence %>%
   group_by(cluster_profile, host_simplifiedhost) %>%
   slice_min(persistence_host_median)
 
-tbl_dominant_persistence <- mclapply(reassortant_trees, HostPersistence2, mc.cores = 12
+tbl_major_persistence <- mclapply(reassortant_trees, HostPersistence2, mc.cores = 12
                                       ) %>%
   # Set names for each tree extraction
-  set_names(list.files('./2024Aug18/reassortant_subsampled_outputs/traits_mcc') %>% 
+  set_names(list.files('./2024Aug18/reassortant_subsampled_outputs/traits_mcc',
+                       , pattern = 'ha_') %>% 
               gsub('_subsampled.*', '', .)) %>%
   
   # concatenate to a single dataframe and separate segment and reassortant
@@ -296,11 +298,31 @@ stopCluster(cl)
 
 
 ############################################## WRITE ################################################
-tbl_combined <- tbl_majorminorpersistence %>%
+tbl_combined <- expand_grid(cluster_profile = unique(meta$cluster_profile),
+                            host_simplified_host = c("galliformes-domestic",
+                                                     "anseriformes-wild",
+                                                     "charadriiformes-wild")) %>%
+  drop_na() %>%
+  mutate(scaled_persistence = NaN) %>%
+  rows_patch(tbl_moderateminorpersistence %>% select(cluster_profile, 
+                                                      host_simplified_host = host_simplifiedhost,
+                                                     scaled_persistence = persistence_host_median_normalised),
+              by = c('cluster_profile', 'host_simplified_host'),
+             unmatched = 'ignore') %>%
+  rows_patch(tbl_major_persistence %>% select(cluster_profile = cluster_number, 
+                                                     host_simplified_host = host_simplifiedhost,
+                                                     scaled_persistence = persistence_host_median_normalised),
+             by = c('cluster_profile', 'host_simplified_host'),
+             unmatched = 'ignore') %>%
+  replace_na(list(scaled_persistence = 0)) %>%
+  pivot_wider(names_from = host_simplified_host,
+              values_from = scaled_persistence)
+
+
   select(-region) %>%
-  bind_rows(tbl_dominant_persistence %>% select(-reassortant)) %>%
-  mutate(cluster_profile = coalesce(cluster_profile, cluster_number)) %>%
-  dplyr::select(-cluster_number) %>%
+  bind_rows(tbl_major_persistence %>% select(-reassortant)) %>%
+  #mutate(cluster_profile = coalesce(cluster_profile, cluster_number)) %>%
+  #dplyr::select(-cluster_number) %>%
   mutate(across(starts_with('persistence'), .fns = ~ ifelse(.x < 0, 0, .x)))
 
 write_csv(tbl_combined, './2024Aug18/treedata_extractions/reassortant_stratifiedpersistence.csv')
