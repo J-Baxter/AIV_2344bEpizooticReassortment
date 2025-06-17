@@ -97,12 +97,13 @@ kclust_data <- phylodynamic_data %>%
   # Substitute NA values in diffusion coefficient with 0
   mutate(across(where(is.double), .fns = ~ replace_na(.x, 0))) %>%
   rename_with(~gsub('-', '_', .x)) %>%
+  relocate(starts_with('cluster')) %>%
   
   # start tidymodels
   recipe(~ .) %>% 
   
   #drop na
-  step_naomit(everything()) %>%
+  step_naomit(-starts_with('cluster')) %>%
   
   # normalise numeric vectors
   step_zv(everything()) %>%
@@ -121,11 +122,10 @@ kclust_data <- phylodynamic_data %>%
 kclusts <- tibble(k = 1:20) %>%
   mutate(
     kclust = purrr::map(k, ~kmeans(kclust_data %>% 
-                                     select(-starts_with('cluster')) %>%
-                                     drop_na(), .x)),
+                                     select(-starts_with('cluster')), .x)),
     tidied = purrr::map(kclust, tidy),
     glanced = purrr::map(kclust, glance),
-    augmented = purrr::map(kclust, augment, kclust_data %>% drop_na()))
+    augmented = purrr::map(kclust, augment, kclust_data))
 
 # tidy results
 clusters <- kclusts %>%
@@ -239,7 +239,11 @@ plt_2a <- ggplot(clusterings, aes(k, tot.withinss)) +
   theme_minimal(base_size = 8) +
   scale_y_continuous('Total within-cluster sum of squares') +
   scale_x_continuous('K', breaks = seq(0,20, by = 5)) + 
-  geom_vline(xintercept = 3, colour= 'darkgreen', linetype = 'dashed')
+  geom_vline(xintercept = 3, colour= 'darkgreen', linetype = 'dashed')  + 
+  theme(legend.position = 'none',
+        axis.text = element_text(size = 8),
+        axis.title = element_text(size = 9),
+        legend.text = element_text(size = 8))
 
 
 marked_clusters <- c('H5N1/2022/R7_NAmerica', 
@@ -277,33 +281,42 @@ plt_2b <-
             nudge_y = -0.1,
             size = 2) +
   
-  scale_colour_brewer('K-Means Clusters',
-                      palette = 'Set1')+
+ # scale_colour_brewer('K-Means Clusters',
+                     # palette = 'Set1')+
+  
+  scale_colour_manual(values = c('#A21817', '#FA9F42', '#2B4162')) + 
+  
+  
   scale_alpha_manual(values = c('1' = 1, '0' = 0.3)) + 
   theme_minimal() + 
   theme(legend.position = 'none',
         axis.text = element_text(size = 8),
-        axis.title = element_text(size = 10),
+        axis.title = element_text(size = 9),
         legend.text = element_text(size = 8))
 
 
 plt_2c <- ari_phylo_summary %>%
-  filter(!var %in% ari_summary$var) %>%
+  mutate(var = reorder(var, -mean_importance)) %>%
   ggplot()+
   geom_point(aes(x = var, y = mean_importance)) +
   geom_linerange(aes(x = var, ymin = lower_ci, ymax = upper_ci)) + 
   
   scale_x_discrete('Variable',
-                   labels = c('persist.time_ha' = 'HA Persistence Time' ,
-                              'persist.time_pb2' = 'PB2 Persistence Time' ,
-                              'weighted_diff_coeff_ha' = 'HA diffusion coefficient',
-                              'weighted_diff_coeff_pb2' = 'PB2 diffusion coefficient',
-                              'evoRate_pb2' = 'PB2 evo rate',
-                              'evoRate_ha' = 'HA evo rate',
+                   labels = c("Num_Sequence" = 'Number of sequences',
                               'count_cross_species_pb2' = 'PB2 species jumps',
                               'count_cross_species_ha' = 'HA species jumps',
                               'count_to_mammal_pb2' = 'PB2 mammal jumps',
-                              'count_to_mammal_ha' = 'HA mammal jumps') %>%
+                              'count_to_mammal_ha' = 'HA mammal jumps',
+                              'evoRate_pb2' = 'PB2 evolutionary rate',
+                              'evoRate_ha' = 'HA evolutionary rate',
+                              'host_richness' = 'Number of host states',
+                              'if_mammal' = 'Mammal infection',
+                              "max_distance_km" = 'Maximum distance between sequences',
+                              "offspring" = 'Number of offspring reassortants',
+                              'persist.time_ha' = 'HA Persistence Time' ,
+                              'persist.time_pb2' = 'PB2 Persistence Time' ,
+                              'weighted_diff_coeff_ha' = 'HA diffusion coefficient',
+                              'weighted_diff_coeff_pb2' = 'PB2 diffusion coefficient') %>%
                      str_wrap(., width = 15)
   ) +
   scale_y_continuous(
@@ -312,17 +325,20 @@ plt_2c <- ari_phylo_summary %>%
   theme_minimal(base_size = 8) +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1, size = 8),
         axis.text.y = element_text(size = 8),
-        axis.title = element_text(size = 10),
+        axis.title = element_text(size = 9),
         legend.text = element_text(size = 8))
 
 
-plt_2 <- cowplot::plot_grid( plt_2b, 
+plt_2 <- cowplot::plot_grid( plt_2a,
+                             plt_2b, 
                              plt_2c, 
                              ncol = 1,
                              align = 'hv',
                              axis = 'tb', 
                              labels = 'AUTO', 
                              label_size = 10)
+
+ggsave('~/Downloads/flu_plots/figure_clustering.jpeg', height = 25 , width = 20, units = 'cm', dpi = 360)
 
 
 write_csv( assignments %>%
@@ -332,7 +348,3 @@ write_csv( assignments %>%
            './2025Jun10/2025Jun10_reasssortantclusters.csv')
 #################################### END #######################################
 ################################################################################
-
-
-####################################################################################################
-####################################################################################################
