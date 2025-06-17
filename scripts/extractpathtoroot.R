@@ -260,8 +260,10 @@ tbl_moderateminorpersistence <- mclapply(region_trees, HostPersistence2, region_
                                 "7_1_5_2_1_3_1_2",
                                 "4_3_1_1_2_1_1_3",
                                 "5_1_1_1_2_1_1_3",
-                                "5_4_9_1_2_1_1_1"))  tbl_moderateminorpersistence %>%
-  filter(cluster_profile != '6_4_8_1_2_1_1_1' && region != 'southamerica') %>% filter(cluster_profile == '6_4_8_1_2_1_1_1')
+                                "5_4_9_1_2_1_1_1")) %>%
+  
+  # one sequence in south america (or fewer)
+  filter(!(cluster_profile == '6_4_8_1_2_1_1_1' & region == 'southamerica')) 
 
 #test4 <- tbl_moderateminorpersistence %>%
   #group_by(cluster_profile, host_simplifiedhost) %>%
