@@ -24,7 +24,10 @@ library(ggraph)
 
 ############################################## DATA ################################################
 
-reassortant_ancestral_changes <- read_csv('./reassortant_ancestral_changes.csv')
+reassortant_ancestral_changes <- read_csv('./reassortant_ancestral_changes.csv') %>%
+  mutate(across(ends_with('class'), .fns = ~ case_when(.x == 1 ~ 'moderate',
+                                                       .x == 3 ~ 'minor',
+                                                       .x == 2 ~ 'major')))
 
 
 ############################################## MAIN ################################################
@@ -52,14 +55,17 @@ ggraph(my_graph %>%
          mutate(component = group_components()) %>%
          filter(component == which.max(as.numeric(table(component)))),  layout = "fr", weights = segments_changed) +
   geom_edge_link() +
-  geom_node_point(aes(color = cluster_class, size=10 )) +
-  geom_node_label(aes(label = ifelse(cluster_class == 'major', name, '')), repel = TRUE) +
-  scale_colour_brewer(palette = 'Set1') +
-  theme_void() + facet_wrap(~cluster_region)
+  geom_node_point(aes(color = cluster_class, size= importance )) +
+  #geom_node_label(aes(label = ifelse(cluster_class == 'major', name, '')), repel = TRUE) +
+  #scale_colour_brewer(palette = 'Set1') +
+  scale_colour_manual(values = class_colours) +
+  theme_void() +
+  theme(legend.position = 'none')#+ facet_wrap(~cluster_region)
 
-degree(d= my_graph, mode = 'out', loops = F)
+
+ggsave('~/Downloads/reassortant_network.jpeg', dpi = 360,height = 7, width = 10)
 ############################################## WRITE ###############################################
-
+write_csv(as_tibble(my_graph), './reassortant_offspring.csv')
 
 
 
