@@ -27,6 +27,7 @@ library(ggnewscale)
 library(rnaturalearth)
 library(rnaturalearthdata)
 library(ggstream)
+source('./scripts/figure_scripts/global_theme.R')
 # User functions
 
 
@@ -48,80 +49,6 @@ ref <- ne_countries() %>%
   select(name, continent)
 
 ############################################## MAIN ################################################
-global_theme <- theme_classic()+
-  theme(
-    #text = element_text(size=10),
-    axis.title.x = element_text(margin = margin(t = 10, r = 0, b = 0, l = 0), size = 10),
-    axis.title.y = element_text(margin = margin(t = 0, r = 10, b = 0, l = 0), size = 10),
-    axis.text = element_text(margin = margin(t = 10, r = 0, b = 0, l = 0), size = 8),
-    legend.text = element_text(size = 8),
-    legend.position = 'none', 
-    panel.spacing = unit(2, "lines"), 
-    strip.background = element_blank()
-  )
-
-
-# Host Palette
-host_colours <- c(
- 'anseriformes-domestic' = '#a6cee3',
- 'anseriformes-wild' = '#1f78b4',
- 'galliformes-domestic' = '#b2df8a',
- 'galliformes' = '#33a02c',
- 'mammal' = '#fb9a99',
- 'human' = '#e31a1c',
- 'charadriiformes-wild' = '#fdbf6f',
- 'other-bird' = '#ff7f00',
- 'unknown' = '#cab2d6',
- 'environment' = '#6a3d9a')
-
-
-#E8E1E9FF #C0A5AAFF #4D3944FF #7083A4FF #B3A2B4FF #C9CCEAFF #3B3960FF  
-
-#host_colours <- c(
- # 'anseriformes-domestic' = '#E8E1E9FF',
- # 'anseriformes-wild' = '#C0A5AAFF',
- # 'galliformes-domestic' = '#4D3944FF',
- # 'galliformes-wild' = '#7083A4FF',
- # 'mammal' = '#B3A2B4FF',
- # 'human' = '#C9CCEAFF',
- # 'charadriiformes-wild' = '#3B3960FF',
- # 'other-bird' = '#1E2142FF',
- # 'unknown' = '#586085FF',
- # 'environment' = '#F6E0D2FF')
-
-
-# Region Palette
-region_colours <- c('europe' = '#1b9e77',
-            'asia' ='#d95f02',
-            'africa' ='#7570b3',
-            'australasia' = '#e7298a',
-            'central & northern america' ='#66a61e',
-            'south america' ='#e6ab02')
-
-
-#region_colours <- c('europe' = '#EFCBCBFF',
-#                      'asia' ='#B47880FF',
-#                      'africa' ='#824B51FF',
-#                      'australasia' = '#635761FF',
-#                      'central & northern america' ='#AD616CFF',
-#                      'south america' ='#D1A391FF')
-
-
-#F6E0D2FF #DFA398FF #9C6755FF #659794FF #EA967CFF #F5C98EFF #D65B5AFF #586085FF 
-
-
-# Format WOAH data and estimate the minimum number of cases
-
-  # set groupings
-  #group_by(collection_regionname, interval) %>%
- # mutate(scale_factor = woah_cases/sum(fao_cases)) %>%
- # ungroup() %>%
- # rowwise() %>%
- # mutate(scaled_estimate = fao_cases*scale_factor) %>%
- # filter(!grepl('australasia', collection_regionname)) %>%
- # filter(collection_datemonth >= as_date('2019-01-01'))
-
-
 # Plot
 plt_1a <- new_tree %>%
   mutate(isolate_id = str_extract(label, "EPI_ISL_(china_){0,1}\\d+[^.|]*")) %>%

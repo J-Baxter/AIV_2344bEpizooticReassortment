@@ -21,21 +21,20 @@ library(tidygraph)
 library(ggraph)
 library(tidybayes)
 library(cowplot)
+source('./scripts/figure_scripts/global_theme.R')
 
 ############################################## DATA ################################################
 
 reassortant_ancestral_changes <- read_csv('./reassortant_ancestral_changes.csv')
 
-class_colours <- c('major' = '#e41a1c',
-                   'moderate' = '#377eb8',
-                     'minor' = '#4daf4a')
+class_colours <- c('major' = '#e7298a',
+                   'moderate' = '#e6ab02',
+                     'minor' = '#17becf') #e6ab02
+c('major' = '#e41a1c',
+  'moderate' = '#377eb8',
+  'minor' = '#4daf4a')
 
-region_colours <- c('europe' = '#1b9e77',
-                    'asia' ='#d95f02',
-                    'africa' ='#7570b3',
-                    'australasia' = '#e7298a',
-                    'central & northern america' ='#66a61e',
-                    'south america' ='#e6ab02')
+
 
 
 ############################################## MAIN ################################################
@@ -308,6 +307,8 @@ plt_5g <-avg_predictions(ordinal_model, variables = list('time_since_last_major'
         axis.text = element_text(size = 8),
         axis.title = element_text(size = 9),
         legend.text = element_text(size = 8))
+
+
 
 plt_5_lh <- align_plots(plt_5a, plt_5b, plt_5d, plt_5f, align = 'v', axis = 'l')
 plt_5_bttm <- plot_grid( plt_5_lh[[2]], plt_5c, plt_5_lh[[3]], plt_5e, plt_5_lh[[4]], plt_5g, ncol = 2, align = 'vh', axis = 'tbrl', labels = c('B', 'C', 'D', 'E', 'F', 'G'), label_size = 9)
