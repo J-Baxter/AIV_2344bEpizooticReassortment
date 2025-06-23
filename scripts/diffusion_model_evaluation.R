@@ -44,39 +44,75 @@ ggs(diffusionmodel1_fit_gamma_19) %>%
                            .variable == "b_collection_regionnamecentral&northernamerica"~ "alpha['americas']",
                            
                            .variable == 'b_median_anseriformes_wild_prop'~ "beta['anseriformes']",
+                           .variable == 'b_Imedian_anseriformes_wild_propEQEQ0TRUE'~ "beta['step-anseriformes']",
+                           
                            .variable == 'b_median_charadriiformes_wild_prop'~ "beta['charadriiformes']",
+                           .variable == 'b_Imedian_charadriiformes_wild_propEQEQ0TRUE'~ "beta['step-charadriiformes']",
+                           
                            #.variable == 'b_int_stepcount_cross_species_log1p'~ "beta['step_hostjump']",
                            .variable == 'b_count_cross_species_log1p'~ "beta['hostjump']",
+                           .variable == 'b_persist.time_log1p'~ "beta['persistence']",
                            
-                           .variable == 'b_collection_regionnameafrica:median_anseriformes_wild_prop'~ "gamma['africa-anser']",
-                           .variable == 'b_collection_regionnameeurope:median_anseriformes_wild_prop'~ "gamma['europe-anser']",
-                           .variable == 'b_collection_regionnamecentral&northernamerica:median_anseriformes_wild_prop'~ "gamma['americas-anser']",
+                          # .variable == 'b_collection_regionnameafrica:median_anseriformes_wild_prop'~ "gamma['africa-anser']",
+                           #.variable == 'b_collection_regionnameeurope:median_anseriformes_wild_prop'~ "gamma['europe-anser']",
+                           #.variable == 'b_collection_regionnamecentral&northernamerica:median_anseriformes_wild_prop'~ "gamma['americas-anser']",
                            
-                           .variable == 'b_collection_regionnameafrica:median_charadriiformes_wild_prop'~ "gamma['africa-charad']",
-                           .variable == 'b_collection_regionnameeurope:median_charadriiformes_wild_prop'~ "gamma['europe-charad']",
-                           .variable == 'b_collection_regionnamecentral&northernamerica:median_charadriiformes_wild_prop'~ "gamma['americas-charad']",
+                           #.variable == 'b_collection_regionnameafrica:median_charadriiformes_wild_prop'~ "gamma['africa-charad']",
+                          # .variable == 'b_collection_regionnameeurope:median_charadriiformes_wild_prop'~ "gamma['europe-charad']",
+                           #.variable == 'b_collection_regionnamecentral&northernamerica:median_charadriiformes_wild_prop'~ "gamma['americas-charad']",
                            
-                           .variable == 'b_collection_regionnameafrica:persist.time_log1p'~ "gamma['africa-persist']",
-                           .variable == 'b_collection_regionnameasia:persist.time_log1p'~ "gamma['asia-persist']",
-                           .variable == 'b_collection_regionnameeurope:persist.time_log1p'~ "gamma['europe-persist']",
-                           .variable == 'b_collection_regionnamecentral&northernamerica:persist.time_log1p'~ "gamma['americas-persist']",
+                           #.variable == 'b_collection_regionnameafrica:persist.time_log1p'~ "gamma['africa-persist']",
+                          # .variable == 'b_collection_regionnameasia:persist.time_log1p'~ "gamma['asia-persist']",
+                           #.variable == 'b_collection_regionnameeurope:persist.time_log1p'~ "gamma['europe-persist']",
+                           #.variable == 'b_collection_regionnamecentral&northernamerica:persist.time_log1p'~ "gamma['americas-persist']",
+                          
+                          .variable == "sd_collection_regionname__Intercept" ~ "sigma[continent]",                                                                           
+                          .variable == "sd_collection_year__Intercept" ~ "sigma[year]",  
+                          
+                          #.variable ==  "r_collection_regionname[asia,Intercept]"~ "gamma[asia]",                                                                         
+                          #.variable ==  "r_collection_regionname[africa,Intercept]"~ "gamma[africa]",                                                                       
+                          #.variable ==  "r_collection_regionname[europe,Intercept]"~ "gamma[europe]",                                                                       
+                          #.variable ==  "r_collection_regionname[central.&.northern.america,Intercept]"~ "gamma[americas]",                                                   
+                          #.variable ==  "r_collection_regionname[asia,median_anseriformes_wild_prop]"~ "gamma[asia-anseriformes]",                                                     
+                          #.variable ==  "r_collection_regionname[africa,median_anseriformes_wild_prop]"~ "gamma[africa-anseriformes]",                                                   
+                          #.variable ==  "r_collection_regionname[europe,median_anseriformes_wild_prop]"~ "gamma[europe-anseriformes]",                                                   
+                          #.variable ==  "r_collection_regionname[central.&.northern.america,median_anseriformes_wild_prop]"~ "gamma[americas-anseriformes]",                               
+                          #.variable ==  "r_collection_regionname[asia,Imedian_anseriformes_wild_propEQEQ0TRUE]"~ "gamma[asia-step-anseriformes]",                                           
+                          #.variable ==  "r_collection_regionname[africa,Imedian_anseriformes_wild_propEQEQ0TRUE]"~ "gamma[africa-step-anseriformes]",                                         
+                          #.variable ==  "r_collection_regionname[europe,Imedian_anseriformes_wild_propEQEQ0TRUE]"~ "gamma[europe-step-anseriformes]",                                         
+                          #.variable ==  "r_collection_regionname[central.&.northern.america,Imedian_anseriformes_wild_propEQEQ0TRUE]"~ "gamma[americas-step-anseriformes]",                     
+                          #.variable ==  "r_collection_regionname[asia,median_charadriiformes_wild_prop]"~ "gamma[asia-charadriiformes]",                                                  
+                          #.variable ==  "r_collection_regionname[africa,median_charadriiformes_wild_prop]"~ "gamma[africa-charadriiformes]",                                                
+                          #.variable ==  "r_collection_regionname[europe,median_charadriiformes_wild_prop]"~ "gamma[europe-charadriiformes]",                                                
+                          #.variable ==  "r_collection_regionname[central.&.northern.america,median_charadriiformes_wild_prop]"~ "gamma[americas-charadriiformes]",                            
+                          #.variable ==  "r_collection_regionname[asia,Imedian_charadriiformes_wild_propEQEQ0TRUE]" ~ "gamma[asia-step-charadriiformes]",                                       
+                          #.variable ==  "r_collection_regionname[africa,Imedian_charadriiformes_wild_propEQEQ0TRUE]"~ "gamma[africa-step-charadriiformes]",                                      
+                          #.variable ==  "r_collection_regionname[europe,Imedian_charadriiformes_wild_propEQEQ0TRUE]"~ "gamma[europe-step-charadriiformes]",                                      
+                          #.variable ==  "r_collection_regionname[central.&.northern.america,Imedian_charadriiformes_wild_propEQEQ0TRUE]"~  "gamma[americas-step-charadriiformes]",                  
+                          #.variable ==  "r_collection_regionname[asia,persist.time_log1p]" ~ "gamma[asia-persist]",                                                               
+                          #.variable ==  "r_collection_regionname[africa,persist.time_log1p]"~ "gamma[africa-persist]",                                                              
+                          #.variable ==  "r_collection_regionname[europe,persist.time_log1p]"~ "gamma[europe-persiste]",                                                              
+                          #.variable ==  "r_collection_regionname[central.&.northern.america,persist.time_log1p]" ~ "gamma[americas-persist]",                                         
+                          #.variable ==  "r_collection_year[2017,Intercept]" ~ "delta[2017]",                                                                              
+                          #.variable ==  "r_collection_year[2018,Intercept]"~ "delta[2018]",                                                                               
+                          #.variable ==  "r_collection_year[2019,Intercept]"~ "delta[2019]",                                                                               
+                          #.variable ==  "r_collection_year[2020,Intercept]"~ "delta[2020]",                                                                               
+                          #.variable ==  "r_collection_year[2021,Intercept]"~ "delta[2021]",                                                                               
+                          #.variable ==  "r_collection_year[2022,Intercept]"~ "delta[2022]",                                                                               
+                          #.variable ==  "r_collection_year[2023,Intercept]"~ "delta[2023]",      
                            
                            
                            .variable == 'b_shape_collection_regionnameasia'~ "rho['asia']",
                            .variable == 'b_shape_collection_regionnameafrica'~ "rho['africa']",
                            .variable == 'b_shape_collection_regionnameeurope'~ "rho['europe']",
                            .variable == 'b_shape_collection_regionnamecentral&northernamerica'~ "rho['americas']",
-                           
-                           
-                           .variable == 'sd_collection_year__Intercept'~ "sigma[year]",
-
-                               .variable == 'lprior' ~ 'prior',
-                               .variable == 'lp__' ~ 'log~probability')) %>%
+                          .variable == 'lprior' ~ 'prior',
+                          .variable == 'lp__' ~ 'log~probability')) %>%
   drop_na(label) %>%
   ggplot(aes(x = .iteration,
              y = .value, 
              col = as.factor(.chain)))+
-  geom_line(alpha = 0.8)+
+  geom_line(alpha = 0.5)+
   facet_wrap(~ label,
              ncol = 2,
              scale  = 'free_y',
@@ -108,38 +144,74 @@ as_draws_df(diffusionmodel1_fit_gamma_19) %>%
   # Extract data
   .$data %>%
   rename(.variable = parameter) %>%
-  mutate(label = case_when(.variable == 'b_collection_regionnameasia'~ "beta['asia']",
-                           .variable == 'b_collection_regionnameafrica'~ "beta['africa']",
-                           .variable == 'b_collection_regionnameeurope'~ "beta['europe']",
-                           .variable == "b_collection_regionnamecentral&northernamerica"~ "beta['americas']",
+  mutate(label = case_when(.variable == 'b_collection_regionnameasia'~ "alpha['asia']",
+                           .variable == 'b_collection_regionnameafrica'~ "alpha['africa']",
+                           .variable == 'b_collection_regionnameeurope'~ "alpha['europe']",
+                           .variable == "b_collection_regionnamecentral&northernamerica"~ "alpha['americas']",
                            
-                           .variable == 'b_int_stepmedian_anseriformes_wild_log1p'~ "beta['step_anseriformes']",
-                           .variable == 'b_median_anseriformes_wild_log1p'~ "beta['persist_anseriformes']",
-                           .variable == 'b_int_stepmedian_charadriiformes_wild_log1p'~ "beta['step_charadriiformes']",
-                           .variable == 'b_median_charadriiformes_wild_log1p'~ "beta['persist_charadriiformes']",
-                           .variable == 'b_int_stepcount_cross_species_log1p'~ "beta['step_hostjump']",
-                           .variable == 'b_count_cross_species_log1p'~ "beta['num_hostjump']",
+                           .variable == 'b_median_anseriformes_wild_prop'~ "beta['anseriformes']",
+                           .variable == 'b_Imedian_anseriformes_wild_propEQEQ0TRUE'~ "beta['step-anseriformes']",
                            
-                           .variable == 'b_collection_regionnameafrica:median_anseriformes_wild_log1p'~ "gamma['africa-anser']",
-                           .variable == 'b_collection_regionnameeurope:median_anseriformes_wild_log1p'~ "gamma['europe-anser']",
-                           .variable == 'b_collection_regionnamecentral&northernamerica:median_anseriformes_wild_log1p'~ "gamma['americas-anser']",
+                           .variable == 'b_median_charadriiformes_wild_prop'~ "beta['charadriiformes']",
+                           .variable == 'b_Imedian_charadriiformes_wild_propEQEQ0TRUE'~ "beta['step-charadriiformes']",
                            
-                           .variable == 'b_collection_regionnameafrica:median_charadriiformes_wild_log1p'~ "gamma['africa-charad']",
-                           .variable == 'b_collection_regionnameeurope:median_charadriiformes_wild_log1p'~ "gamma['europe-charad']",
-                           .variable == 'b_collection_regionnamecentral&northernamerica:median_charadriiformes_wild_log1p'~ "gamma['americas-charad']",
+                           #.variable == 'b_int_stepcount_cross_species_log1p'~ "beta['step_hostjump']",
+                           .variable == 'b_count_cross_species_log1p'~ "beta['hostjump']",
+                           .variable == 'b_persist.time_log1p'~ "beta['persistence']",
                            
-                           .variable == 'b_shape_collection_regionnameasia'~ "theta['asia']",
-                           .variable == 'b_shape_collection_regionnameafrica'~ "theta['africa']",
-                           .variable == 'b_shape_collection_regionnameeurope'~ "theta['europe']",
-                           .variable == 'b_shape_collection_regionnamecentral&northernamerica'~ "theta['americas']",
+                           # .variable == 'b_collection_regionnameafrica:median_anseriformes_wild_prop'~ "gamma['africa-anser']",
+                           #.variable == 'b_collection_regionnameeurope:median_anseriformes_wild_prop'~ "gamma['europe-anser']",
+                           #.variable == 'b_collection_regionnamecentral&northernamerica:median_anseriformes_wild_prop'~ "gamma['americas-anser']",
+                           
+                           #.variable == 'b_collection_regionnameafrica:median_charadriiformes_wild_prop'~ "gamma['africa-charad']",
+                           # .variable == 'b_collection_regionnameeurope:median_charadriiformes_wild_prop'~ "gamma['europe-charad']",
+                           #.variable == 'b_collection_regionnamecentral&northernamerica:median_charadriiformes_wild_prop'~ "gamma['americas-charad']",
+                           
+                           #.variable == 'b_collection_regionnameafrica:persist.time_log1p'~ "gamma['africa-persist']",
+                           # .variable == 'b_collection_regionnameasia:persist.time_log1p'~ "gamma['asia-persist']",
+                           #.variable == 'b_collection_regionnameeurope:persist.time_log1p'~ "gamma['europe-persist']",
+                           #.variable == 'b_collection_regionnamecentral&northernamerica:persist.time_log1p'~ "gamma['americas-persist']",
+                           
+                           .variable == "sd_collection_regionname__Intercept" ~ "sigma[continent]",                                                                           
+                           .variable == "sd_collection_year__Intercept" ~ "sigma[year]",  
+                           
+                           #.variable ==  "r_collection_regionname[asia,Intercept]"~ "gamma[asia]",                                                                         
+                           #.variable ==  "r_collection_regionname[africa,Intercept]"~ "gamma[africa]",                                                                       
+                           #.variable ==  "r_collection_regionname[europe,Intercept]"~ "gamma[europe]",                                                                       
+                           #.variable ==  "r_collection_regionname[central.&.northern.america,Intercept]"~ "gamma[americas]",                                                   
+                           #.variable ==  "r_collection_regionname[asia,median_anseriformes_wild_prop]"~ "gamma[asia-anseriformes]",                                                     
+                           #.variable ==  "r_collection_regionname[africa,median_anseriformes_wild_prop]"~ "gamma[africa-anseriformes]",                                                   
+                           #.variable ==  "r_collection_regionname[europe,median_anseriformes_wild_prop]"~ "gamma[europe-anseriformes]",                                                   
+                           #.variable ==  "r_collection_regionname[central.&.northern.america,median_anseriformes_wild_prop]"~ "gamma[americas-anseriformes]",                               
+                           #.variable ==  "r_collection_regionname[asia,Imedian_anseriformes_wild_propEQEQ0TRUE]"~ "gamma[asia-step-anseriformes]",                                           
+                           #.variable ==  "r_collection_regionname[africa,Imedian_anseriformes_wild_propEQEQ0TRUE]"~ "gamma[africa-step-anseriformes]",                                         
+                           #.variable ==  "r_collection_regionname[europe,Imedian_anseriformes_wild_propEQEQ0TRUE]"~ "gamma[europe-step-anseriformes]",                                         
+                           #.variable ==  "r_collection_regionname[central.&.northern.america,Imedian_anseriformes_wild_propEQEQ0TRUE]"~ "gamma[americas-step-anseriformes]",                     
+                           #.variable ==  "r_collection_regionname[asia,median_charadriiformes_wild_prop]"~ "gamma[asia-charadriiformes]",                                                  
+                           #.variable ==  "r_collection_regionname[africa,median_charadriiformes_wild_prop]"~ "gamma[africa-charadriiformes]",                                                
+                           #.variable ==  "r_collection_regionname[europe,median_charadriiformes_wild_prop]"~ "gamma[europe-charadriiformes]",                                                
+                           #.variable ==  "r_collection_regionname[central.&.northern.america,median_charadriiformes_wild_prop]"~ "gamma[americas-charadriiformes]",                            
+                           #.variable ==  "r_collection_regionname[asia,Imedian_charadriiformes_wild_propEQEQ0TRUE]" ~ "gamma[asia-step-charadriiformes]",                                       
+                           #.variable ==  "r_collection_regionname[africa,Imedian_charadriiformes_wild_propEQEQ0TRUE]"~ "gamma[africa-step-charadriiformes]",                                      
+                           #.variable ==  "r_collection_regionname[europe,Imedian_charadriiformes_wild_propEQEQ0TRUE]"~ "gamma[europe-step-charadriiformes]",                                      
+                           #.variable ==  "r_collection_regionname[central.&.northern.america,Imedian_charadriiformes_wild_propEQEQ0TRUE]"~  "gamma[americas-step-charadriiformes]",                  
+                           #.variable ==  "r_collection_regionname[asia,persist.time_log1p]" ~ "gamma[asia-persist]",                                                               
+                           #.variable ==  "r_collection_regionname[africa,persist.time_log1p]"~ "gamma[africa-persist]",                                                              
+                           #.variable ==  "r_collection_regionname[europe,persist.time_log1p]"~ "gamma[europe-persiste]",                                                              
+                           #.variable ==  "r_collection_regionname[central.&.northern.america,persist.time_log1p]" ~ "gamma[americas-persist]",                                         
+                           #.variable ==  "r_collection_year[2017,Intercept]" ~ "delta[2017]",                                                                              
+                           #.variable ==  "r_collection_year[2018,Intercept]"~ "delta[2018]",                                                                               
+                           #.variable ==  "r_collection_year[2019,Intercept]"~ "delta[2019]",                                                                               
+                           #.variable ==  "r_collection_year[2020,Intercept]"~ "delta[2020]",                                                                               
+                           #.variable ==  "r_collection_year[2021,Intercept]"~ "delta[2021]",                                                                               
+                           #.variable ==  "r_collection_year[2022,Intercept]"~ "delta[2022]",                                                                               
+                           #.variable ==  "r_collection_year[2023,Intercept]"~ "delta[2023]",      
                            
                            
-                           .variable == 'sd_segment__Intercept'~ "sigma[segment]",
-                           .variable == 'sd_cluster_profile__Intercept'~ "sigma[reassortant]",
-                           
-                           .variable == 'r_segment[ha,Intercept]'~ "b['ha']",
-                           .variable == "r_segment[pb1,Intercept]"~ "b['pb1']",
-                           
+                           .variable == 'b_shape_collection_regionnameasia'~ "rho['asia']",
+                           .variable == 'b_shape_collection_regionnameafrica'~ "rho['africa']",
+                           .variable == 'b_shape_collection_regionnameeurope'~ "rho['europe']",
+                           .variable == 'b_shape_collection_regionnamecentral&northernamerica'~ "rho['americas']",
                            .variable == 'lprior' ~ 'prior',
                            .variable == 'lp__' ~ 'log~probability')) %>%
   
@@ -234,32 +306,68 @@ diffusionmodel1_fit_gamma_19 %>%
                                Parameter == "b_collection_regionnamecentral&northernamerica"~ "alpha['americas']",
                                
                                Parameter == 'b_median_anseriformes_wild_prop'~ "beta['anseriformes']",
+                               Parameter == 'b_Imedian_anseriformes_wild_propEQEQ0TRUE'~ "beta['step-anseriformes']",
+                               
                                Parameter == 'b_median_charadriiformes_wild_prop'~ "beta['charadriiformes']",
+                               Parameter == 'b_Imedian_charadriiformes_wild_propEQEQ0TRUE'~ "beta['step-charadriiformes']",
+                               
                                #Parameter == 'b_int_stepcount_cross_species_log1p'~ "beta['step_hostjump']",
                                Parameter == 'b_count_cross_species_log1p'~ "beta['hostjump']",
+                               Parameter == 'b_persist.time_log1p'~ "beta['persistence']",
                                
-                               Parameter == 'b_collection_regionnameafrica:median_anseriformes_wild_prop'~ "gamma['africa-anser']",
-                               Parameter == 'b_collection_regionnameeurope:median_anseriformes_wild_prop'~ "gamma['europe-anser']",
-                               Parameter == 'b_collection_regionnamecentral&northernamerica:median_anseriformes_wild_prop'~ "gamma['americas-anser']",
+                               # Parameter == 'b_collection_regionnameafrica:median_anseriformes_wild_prop'~ "gamma['africa-anser']",
+                               #Parameter == 'b_collection_regionnameeurope:median_anseriformes_wild_prop'~ "gamma['europe-anser']",
+                               #Parameter == 'b_collection_regionnamecentral&northernamerica:median_anseriformes_wild_prop'~ "gamma['americas-anser']",
                                
-                               Parameter == 'b_collection_regionnameafrica:median_charadriiformes_wild_prop'~ "gamma['africa-charad']",
-                               Parameter == 'b_collection_regionnameeurope:median_charadriiformes_wild_prop'~ "gamma['europe-charad']",
-                               Parameter == 'b_collection_regionnamecentral&northernamerica:median_charadriiformes_wild_prop'~ "gamma['americas-charad']",
+                               #Parameter == 'b_collection_regionnameafrica:median_charadriiformes_wild_prop'~ "gamma['africa-charad']",
+                               # Parameter == 'b_collection_regionnameeurope:median_charadriiformes_wild_prop'~ "gamma['europe-charad']",
+                               #Parameter == 'b_collection_regionnamecentral&northernamerica:median_charadriiformes_wild_prop'~ "gamma['americas-charad']",
                                
-                               Parameter == 'b_collection_regionnameafrica:persist.time_log1p'~ "gamma['africa-persist']",
-                               Parameter == 'b_collection_regionnameasia:persist.time_log1p'~ "gamma['asia-persist']",
-                               Parameter == 'b_collection_regionnameeurope:persist.time_log1p'~ "gamma['europe-persist']",
-                               Parameter == 'b_collection_regionnamecentral&northernamerica:persist.time_log1p'~ "gamma['americas-persist']",
+                               #Parameter == 'b_collection_regionnameafrica:persist.time_log1p'~ "gamma['africa-persist']",
+                               # Parameter == 'b_collection_regionnameasia:persist.time_log1p'~ "gamma['asia-persist']",
+                               #Parameter == 'b_collection_regionnameeurope:persist.time_log1p'~ "gamma['europe-persist']",
+                               #Parameter == 'b_collection_regionnamecentral&northernamerica:persist.time_log1p'~ "gamma['americas-persist']",
+                               
+                               Parameter == "sd_collection_regionname__Intercept" ~ "sigma[continent]",                                                                           
+                               Parameter == "sd_collection_year__Intercept" ~ "sigma[year]",  
+                               
+                               #Parameter ==  "r_collection_regionname[asia,Intercept]"~ "gamma[asia]",                                                                         
+                               #Parameter ==  "r_collection_regionname[africa,Intercept]"~ "gamma[africa]",                                                                       
+                               #Parameter ==  "r_collection_regionname[europe,Intercept]"~ "gamma[europe]",                                                                       
+                               #Parameter ==  "r_collection_regionname[central.&.northern.america,Intercept]"~ "gamma[americas]",                                                   
+                               #Parameter ==  "r_collection_regionname[asia,median_anseriformes_wild_prop]"~ "gamma[asia-anseriformes]",                                                     
+                               #Parameter ==  "r_collection_regionname[africa,median_anseriformes_wild_prop]"~ "gamma[africa-anseriformes]",                                                   
+                               #Parameter ==  "r_collection_regionname[europe,median_anseriformes_wild_prop]"~ "gamma[europe-anseriformes]",                                                   
+                               #Parameter ==  "r_collection_regionname[central.&.northern.america,median_anseriformes_wild_prop]"~ "gamma[americas-anseriformes]",                               
+                               #Parameter ==  "r_collection_regionname[asia,Imedian_anseriformes_wild_propEQEQ0TRUE]"~ "gamma[asia-step-anseriformes]",                                           
+                               #Parameter ==  "r_collection_regionname[africa,Imedian_anseriformes_wild_propEQEQ0TRUE]"~ "gamma[africa-step-anseriformes]",                                         
+                               #Parameter ==  "r_collection_regionname[europe,Imedian_anseriformes_wild_propEQEQ0TRUE]"~ "gamma[europe-step-anseriformes]",                                         
+                               #Parameter ==  "r_collection_regionname[central.&.northern.america,Imedian_anseriformes_wild_propEQEQ0TRUE]"~ "gamma[americas-step-anseriformes]",                     
+                               #Parameter ==  "r_collection_regionname[asia,median_charadriiformes_wild_prop]"~ "gamma[asia-charadriiformes]",                                                  
+                               #Parameter ==  "r_collection_regionname[africa,median_charadriiformes_wild_prop]"~ "gamma[africa-charadriiformes]",                                                
+                               #Parameter ==  "r_collection_regionname[europe,median_charadriiformes_wild_prop]"~ "gamma[europe-charadriiformes]",                                                
+                               #Parameter ==  "r_collection_regionname[central.&.northern.america,median_charadriiformes_wild_prop]"~ "gamma[americas-charadriiformes]",                            
+                               #Parameter ==  "r_collection_regionname[asia,Imedian_charadriiformes_wild_propEQEQ0TRUE]" ~ "gamma[asia-step-charadriiformes]",                                       
+                               #Parameter ==  "r_collection_regionname[africa,Imedian_charadriiformes_wild_propEQEQ0TRUE]"~ "gamma[africa-step-charadriiformes]",                                      
+                               #Parameter ==  "r_collection_regionname[europe,Imedian_charadriiformes_wild_propEQEQ0TRUE]"~ "gamma[europe-step-charadriiformes]",                                      
+                               #Parameter ==  "r_collection_regionname[central.&.northern.america,Imedian_charadriiformes_wild_propEQEQ0TRUE]"~  "gamma[americas-step-charadriiformes]",                  
+                               #Parameter ==  "r_collection_regionname[asia,persist.time_log1p]" ~ "gamma[asia-persist]",                                                               
+                               #Parameter ==  "r_collection_regionname[africa,persist.time_log1p]"~ "gamma[africa-persist]",                                                              
+                               #Parameter ==  "r_collection_regionname[europe,persist.time_log1p]"~ "gamma[europe-persiste]",                                                              
+                               #Parameter ==  "r_collection_regionname[central.&.northern.america,persist.time_log1p]" ~ "gamma[americas-persist]",                                         
+                               #Parameter ==  "r_collection_year[2017,Intercept]" ~ "delta[2017]",                                                                              
+                               #Parameter ==  "r_collection_year[2018,Intercept]"~ "delta[2018]",                                                                               
+                               #Parameter ==  "r_collection_year[2019,Intercept]"~ "delta[2019]",                                                                               
+                               #Parameter ==  "r_collection_year[2020,Intercept]"~ "delta[2020]",                                                                               
+                               #Parameter ==  "r_collection_year[2021,Intercept]"~ "delta[2021]",                                                                               
+                               #Parameter ==  "r_collection_year[2022,Intercept]"~ "delta[2022]",                                                                               
+                               #Parameter ==  "r_collection_year[2023,Intercept]"~ "delta[2023]",      
                                
                                
                                Parameter == 'b_shape_collection_regionnameasia'~ "rho['asia']",
                                Parameter == 'b_shape_collection_regionnameafrica'~ "rho['africa']",
                                Parameter == 'b_shape_collection_regionnameeurope'~ "rho['europe']",
                                Parameter == 'b_shape_collection_regionnamecentral&northernamerica'~ "rho['americas']",
-                               
-                               
-                               Parameter == 'sd_collection_year__Intercept'~ "sigma[year]",
-                               
                                Parameter == 'lprior' ~ 'prior',
                                Parameter == 'lp__' ~ 'log~probability')) %>%
   drop_na(Parameter) %>%
@@ -375,31 +483,68 @@ beta_draws <- diffusionmodel1_fit_gamma_19 %>%
                            .variable == "b_collection_regionnamecentral&northernamerica"~ "alpha['americas']",
                            
                            .variable == 'b_median_anseriformes_wild_prop'~ "beta['anseriformes']",
+                           .variable == 'b_Imedian_anseriformes_wild_propEQEQ0TRUE'~ "beta['step-anseriformes']",
+                           
                            .variable == 'b_median_charadriiformes_wild_prop'~ "beta['charadriiformes']",
+                           .variable == 'b_Imedian_charadriiformes_wild_propEQEQ0TRUE'~ "beta['step-charadriiformes']",
+                           
                            #.variable == 'b_int_stepcount_cross_species_log1p'~ "beta['step_hostjump']",
                            .variable == 'b_count_cross_species_log1p'~ "beta['hostjump']",
-
-                           .variable == 'b_collection_regionnameafrica:median_anseriformes_wild_prop'~ "gamma['africa-anser']",
-                           .variable == 'b_collection_regionnameeurope:median_anseriformes_wild_prop'~ "gamma['europe-anser']",
-                           .variable == 'b_collection_regionnamecentral&northernamerica:median_anseriformes_wild_prop'~ "gamma['americas-anser']",
+                           .variable == 'b_persist.time_log1p'~ "beta['persistence']",
                            
-                           .variable == 'b_collection_regionnameafrica:median_charadriiformes_wild_prop'~ "gamma['africa-charad']",
-                           .variable == 'b_collection_regionnameeurope:median_charadriiformes_wild_prop'~ "gamma['europe-charad']",
-                           .variable == 'b_collection_regionnamecentral&northernamerica:median_charadriiformes_wild_prop'~ "gamma['americas-charad']",
+                           # .variable == 'b_collection_regionnameafrica:median_anseriformes_wild_prop'~ "gamma['africa-anser']",
+                           #.variable == 'b_collection_regionnameeurope:median_anseriformes_wild_prop'~ "gamma['europe-anser']",
+                           #.variable == 'b_collection_regionnamecentral&northernamerica:median_anseriformes_wild_prop'~ "gamma['americas-anser']",
                            
-                           .variable == 'b_collection_regionnameafrica:persist.time_log1p'~ "gamma['africa-persist']",
-                           .variable == 'b_collection_regionnameasia:persist.time_log1p'~ "gamma['asia-persist']",
-                           .variable == 'b_collection_regionnameeurope:persist.time_log1p'~ "gamma['europe-persist']",
-                           .variable == 'b_collection_regionnamecentral&northernamerica:persist.time_log1p'~ "gamma['americas-persist']",
+                           #.variable == 'b_collection_regionnameafrica:median_charadriiformes_wild_prop'~ "gamma['africa-charad']",
+                           # .variable == 'b_collection_regionnameeurope:median_charadriiformes_wild_prop'~ "gamma['europe-charad']",
+                           #.variable == 'b_collection_regionnamecentral&northernamerica:median_charadriiformes_wild_prop'~ "gamma['americas-charad']",
+                           
+                           #.variable == 'b_collection_regionnameafrica:persist.time_log1p'~ "gamma['africa-persist']",
+                           # .variable == 'b_collection_regionnameasia:persist.time_log1p'~ "gamma['asia-persist']",
+                           #.variable == 'b_collection_regionnameeurope:persist.time_log1p'~ "gamma['europe-persist']",
+                           #.variable == 'b_collection_regionnamecentral&northernamerica:persist.time_log1p'~ "gamma['americas-persist']",
+                           
+                           .variable == "sd_collection_regionname__Intercept" ~ "sigma[continent]",                                                                           
+                           .variable == "sd_collection_year__Intercept" ~ "sigma[year]",  
+                           
+                           #.variable ==  "r_collection_regionname[asia,Intercept]"~ "gamma[asia]",                                                                         
+                           #.variable ==  "r_collection_regionname[africa,Intercept]"~ "gamma[africa]",                                                                       
+                           #.variable ==  "r_collection_regionname[europe,Intercept]"~ "gamma[europe]",                                                                       
+                           #.variable ==  "r_collection_regionname[central.&.northern.america,Intercept]"~ "gamma[americas]",                                                   
+                           #.variable ==  "r_collection_regionname[asia,median_anseriformes_wild_prop]"~ "gamma[asia-anseriformes]",                                                     
+                           #.variable ==  "r_collection_regionname[africa,median_anseriformes_wild_prop]"~ "gamma[africa-anseriformes]",                                                   
+                           #.variable ==  "r_collection_regionname[europe,median_anseriformes_wild_prop]"~ "gamma[europe-anseriformes]",                                                   
+                           #.variable ==  "r_collection_regionname[central.&.northern.america,median_anseriformes_wild_prop]"~ "gamma[americas-anseriformes]",                               
+                           #.variable ==  "r_collection_regionname[asia,Imedian_anseriformes_wild_propEQEQ0TRUE]"~ "gamma[asia-step-anseriformes]",                                           
+                           #.variable ==  "r_collection_regionname[africa,Imedian_anseriformes_wild_propEQEQ0TRUE]"~ "gamma[africa-step-anseriformes]",                                         
+                           #.variable ==  "r_collection_regionname[europe,Imedian_anseriformes_wild_propEQEQ0TRUE]"~ "gamma[europe-step-anseriformes]",                                         
+                           #.variable ==  "r_collection_regionname[central.&.northern.america,Imedian_anseriformes_wild_propEQEQ0TRUE]"~ "gamma[americas-step-anseriformes]",                     
+                           #.variable ==  "r_collection_regionname[asia,median_charadriiformes_wild_prop]"~ "gamma[asia-charadriiformes]",                                                  
+                           #.variable ==  "r_collection_regionname[africa,median_charadriiformes_wild_prop]"~ "gamma[africa-charadriiformes]",                                                
+                           #.variable ==  "r_collection_regionname[europe,median_charadriiformes_wild_prop]"~ "gamma[europe-charadriiformes]",                                                
+                           #.variable ==  "r_collection_regionname[central.&.northern.america,median_charadriiformes_wild_prop]"~ "gamma[americas-charadriiformes]",                            
+                           #.variable ==  "r_collection_regionname[asia,Imedian_charadriiformes_wild_propEQEQ0TRUE]" ~ "gamma[asia-step-charadriiformes]",                                       
+                           #.variable ==  "r_collection_regionname[africa,Imedian_charadriiformes_wild_propEQEQ0TRUE]"~ "gamma[africa-step-charadriiformes]",                                      
+                           #.variable ==  "r_collection_regionname[europe,Imedian_charadriiformes_wild_propEQEQ0TRUE]"~ "gamma[europe-step-charadriiformes]",                                      
+                           #.variable ==  "r_collection_regionname[central.&.northern.america,Imedian_charadriiformes_wild_propEQEQ0TRUE]"~  "gamma[americas-step-charadriiformes]",                  
+                           #.variable ==  "r_collection_regionname[asia,persist.time_log1p]" ~ "gamma[asia-persist]",                                                               
+                           #.variable ==  "r_collection_regionname[africa,persist.time_log1p]"~ "gamma[africa-persist]",                                                              
+                           #.variable ==  "r_collection_regionname[europe,persist.time_log1p]"~ "gamma[europe-persiste]",                                                              
+                           #.variable ==  "r_collection_regionname[central.&.northern.america,persist.time_log1p]" ~ "gamma[americas-persist]",                                         
+                           #.variable ==  "r_collection_year[2017,Intercept]" ~ "delta[2017]",                                                                              
+                           #.variable ==  "r_collection_year[2018,Intercept]"~ "delta[2018]",                                                                               
+                           #.variable ==  "r_collection_year[2019,Intercept]"~ "delta[2019]",                                                                               
+                           #.variable ==  "r_collection_year[2020,Intercept]"~ "delta[2020]",                                                                               
+                           #.variable ==  "r_collection_year[2021,Intercept]"~ "delta[2021]",                                                                               
+                           #.variable ==  "r_collection_year[2022,Intercept]"~ "delta[2022]",                                                                               
+                           #.variable ==  "r_collection_year[2023,Intercept]"~ "delta[2023]",      
                            
                            
                            .variable == 'b_shape_collection_regionnameasia'~ "rho['asia']",
                            .variable == 'b_shape_collection_regionnameafrica'~ "rho['africa']",
                            .variable == 'b_shape_collection_regionnameeurope'~ "rho['europe']",
-                           .variable == 'b_shape_collection_regionnamecentral&northernamerica'~ "rho['americas']",
-                           
-                           
-                           .variable == 'sd_collection_year__Intercept'~ "sigma[year]"))
+                           .variable == 'b_shape_collection_regionnamecentral&northernamerica'~ "rho['americas']"))
 
 
 
@@ -462,76 +607,25 @@ beta_draws <- diffusionmodel1_fit_gamma_19 %>%
   
   
   stat_function(fun = dnorm,
-                data = tibble(label = "gamma['africa-anser']"),
+                data = tibble(label = "beta['step-anseriformes']"),
                 args = list(mean = 0, sd = 2),
                 fill = '#d95f02',
                 geom = 'area',
                 alpha = 0.5) +
    
    stat_function(fun = dnorm,
-                 data = tibble(label = "gamma['africa-charad']"),
+                 data = tibble(label = "beta['persistence']"),
                  args = list(mean = 0, sd = 2),
                  fill = '#d95f02',
                  geom = 'area',
                  alpha = 0.5) +
    
    stat_function(fun = dnorm,
-                 data = tibble(label = "gamma['africa-persist']"),
+                 data = tibble(label = "beta['step-charadriiformes']"),
                  args = list(mean = 0, sd = 2),
                  fill = '#d95f02',
                  geom = 'area',
                  alpha = 0.5) +
-   
-   stat_function(fun = dnorm,
-                 data = tibble(label = "gamma['europe-anser']"),
-                 args = list(mean = 0, sd = 2),
-                 fill = '#d95f02',
-                 geom = 'area',
-                 alpha = 0.5) +
-   
-   stat_function(fun = dnorm,
-                 data = tibble(label = "gamma['europe-charad']"),
-                 args = list(mean = 0, sd = 2),
-                 fill = '#d95f02',
-                 geom = 'area',
-                 alpha = 0.5) +
-   
-   stat_function(fun = dnorm,
-                 data = tibble(label = "gamma['europe-persist']"),
-                 args = list(mean = 0, sd = 2),
-                 fill = '#d95f02',
-                 geom = 'area',
-                 alpha = 0.5) +
-   
-   
-   stat_function(fun = dnorm,
-                 data = tibble(label = "gamma['americas-anser']"),
-                 args = list(mean = 0, sd = 1),
-                 fill = '#d95f02',
-                 geom = 'area',
-                 alpha = 0.5) +
-   
-   stat_function(fun = dnorm,
-                 data = tibble(label = "gamma['americas-charad']"),
-                 args = list(mean = 0, sd = 2),
-                 fill = '#d95f02',
-                 geom = 'area',
-                 alpha = 0.5) +
-   
-   stat_function(fun = dnorm,
-                 data = tibble(label = "gamma['americas-persist']"),
-                 args = list(mean = 0, sd = 2),
-                 fill = '#d95f02',
-                 geom = 'area',
-                 alpha = 0.5) +
-   
-   stat_function(fun = dnorm,
-                 data = tibble(label = "gamma['asia-persist']"),
-                 args = list(mean = 0, sd = 2),
-                 fill = '#d95f02',
-                 geom = 'area',
-                 alpha = 0.5) +
-   
    
    stat_function(fun = dnorm,
                  data = tibble(label = "rho['asia']"),
@@ -567,6 +661,14 @@ beta_draws <- diffusionmodel1_fit_gamma_19 %>%
                  fill = '#d95f02',
                  geom = 'area',
                  alpha = 0.5) +
+     
+     stat_function(fun = dexp,
+                   data = tibble(label = "sigma[continent]"),
+                   args = list(rate = 0.5),
+                   fill = '#d95f02',
+                   geom = 'area',
+                   alpha = 0.5) +
+     
    
   # stat_function(fun = dstudent_t,
                  #data = tibble(label = "rho[reassortant]"),
