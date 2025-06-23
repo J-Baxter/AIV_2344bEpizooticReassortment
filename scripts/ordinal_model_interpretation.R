@@ -10,8 +10,8 @@
 ########################################## SYSTEM OPTIONS ##########################################
 options(scipen = 6, digits = 7) 
 memory.limit(30000000) 
+options('marginaleffects_posterior_interval' = 'hdi')
 
-  
 ########################################## DEPENDENCIES ############################################
 # Packages
 library(tidyverse)
@@ -63,13 +63,14 @@ avg_predictions(ordinal_model, variables = list('segments_changed' = c(1,2,4)))
 # effect of eac hadditional segment
 ordinal_model %>%
 avg_comparisons(variables = list('segments_changed' = 1), 
-                by = "segments_changed",
+                #by = "segments_changed",
                 type = 'response')
 
 
 # contrasts for continent, all else equal
 avg_comparisons(ordinal_model, variables = list("cluster_region" = 'pairwise'), newdata = 'balanced')
 
+avg_predictions(ordinal_model, by = 'parent_class') 
 ############################################## MAIN ################################################
 
 ############################################## WRITE ###############################################
