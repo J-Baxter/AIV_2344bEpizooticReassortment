@@ -28,7 +28,11 @@ library(igraph)
 
 ############################################## DATA ################################################
 
-reassortant_ancestral_changes <- read_csv('./reassortant_ancestral_changes.csv')
+reassortant_ancestral_changes <- read_csv('./reassortant_ancestral_changes.csv')%>%
+  mutate(across(ends_with('class'), .fns = ~ case_when(.x == 1 ~ 'moderate',
+                                                       .x == 2 ~ 'minor',
+                                                       .x == 3 ~ 'major')))
+
 combined_data <- read_csv('./2024Aug18/treedata_extractions/2024-09-20_combined_data.csv')
 summary_data <- read_csv('./2024Aug18/treedata_extractions/summary_reassortant_metadata_20240904.csv') %>%
   select(-c(cluster_label,
@@ -43,6 +47,8 @@ my_edgelist<- reassortant_ancestral_changes %>%
   relocate(parent_label, cluster_label) %>% 
   graph_from_data_frame(.)
 plot(my_edgelist, vertex.size = 7)
+
+
 most_recent_major <- distances(my_edgelist,
                                weights = reassortant_ancestral_changes %>%  select(ends_with('label'), segments_changed) %>% drop_na() %>% pull(segments_changed),
                                mode = 'in',
@@ -100,10 +106,21 @@ updated <- reassortant_ancestral_changes %>%
   
   mutate(across(ends_with('tmrca'), .fns = ~subtract(2024.21, .x))) %>%
   
-  # calculate time to most recent reassortant
+  # calculate time to most recent major reassortant
   rowwise() %>%
   mutate(time_since_last_major =  cluster_tmrca-last_major_tmrca) %>%
   as_tibble() %>% 
+  
+  # Count the number of segments changed since last major reassortant
+  rowwise() %>%
+  mutate(segments_changed_last_major = sum(as.integer(str_split_fixed(cluster_profile, '_', 8)) != as.integer(str_split_fixed(last_major_profile, '_', 8)), na.rm = TRUE)) %>%
+  as_tibble() %>%
+  
+  # Has RNP changed since last major?
+  rowwise() %>%
+  mutate(rnp_changed = if_else(all(!str_split_fixed(cluster_profile, '_', 8)[c(1,2,3)] %in% str_split_fixed(last_major_profile, '_', 8)[c(1,2,3)]), '1', '0')) %>%
+  as_tibble() %>%
+  
   
   # group continents
   mutate(across(ends_with('region'),
@@ -116,6 +133,8 @@ updated <- reassortant_ancestral_changes %>%
   # Does reassortant coincide with region change
   mutate(region_changed_from_previous = if_else(parent_region != cluster_region, '1', '0')) 
 
+updated %<>%
+  mutate(cluster_region = case_when(cluster_label == 'H5N1/2020/R1_Europe' ~ 'europe', .default = cluster_region))
 
 class_data <- updated %>%
   select(cluster_class,
@@ -124,7 +143,8 @@ class_data <- updated %>%
          segments_changed,
          region_changed_from_previous,
          time_since_last_major,
-         time_since_parent) %>%
+         time_since_parent,
+         rnp_changed) %>%
   
   mutate(cluster_class = ordered(cluster_class, levels = c('minor', 'moderate', 'major')))
 
