@@ -41,7 +41,7 @@ summary_data <- read_csv('./2024Aug18/treedata_extractions/summary_reassortant_m
   select(-c(cluster_label,
             clade)) 
 reassortant_ancestral_changes <- read_csv('./reassortant_ancestral_changes.csv')
-
+reassortant_stratifiedpersistence <- read_csv('./2025Jun10/reassortant_stratifiedpersistence.csv')
 
 ############################################## MAIN ################################################
 
@@ -57,12 +57,10 @@ diffusion_data <- combined_data %>%
     weighted_diff_coeff,
     original_diff_coeff,
     evoRate,
-    persist.time,
+    #persist.time,
     collection_regionname,
     host_simplifiedhost,
-    count_cross_species,
-    starts_with('median'),
-    starts_with('max')) %>%
+    count_cross_species) %>%
   
   # Substitute NA values in diffusion coefficient with 0
   mutate(across(where(is.double), .fns = ~ replace_na(.x, 0))) %>%
@@ -84,6 +82,11 @@ diffusion_data <- combined_data %>%
                                       host_richness)),
             by = join_by(cluster_profile)) %>%
   
+  # join persistence proportions
+  left_join(reassortant_stratifiedpersistence,
+            by = c('segment', 'cluster_profile')) %>%
+  rename_with(~gsub('-', '_', .x))%>%
+  
   # season (breeding, migrating_spring, migrating_autumn, overwintering)
   mutate(collection_month = date_decimal(TMRCA) %>% format(., "%m") %>% as.integer(),
          collection_year = date_decimal(TMRCA) %>% format(., "%Y") %>% as.integer() %>% factor(levels = c(2017,2018,2019,2020,2021,2022,2023)),
@@ -94,13 +97,14 @@ diffusion_data <- combined_data %>%
          )) %>%
   
   # persistence time proportions
-  mutate(across(c('median_anseriformes_wild', 
-                  'median_charadriiformes_wild'), .fns= ~ ifelse(.x/persist.time > 1, 1, .x/persist.time ), .names = '{.col}_prop')) %>%
+  #mutate(across(c('median_anseriformes_wild', 
+                 # 'median_charadriiformes_wild',
+                 # 'median_galliformes_domestic'), .fns= ~ ifelse(.x/persist.time > 1, 1, .x/persist.time ), .names = '{.col}_prop')) %>%
   
   
   # binary
-  mutate(across(c('persist.time', 
-                  'count_cross_species'), .fns= ~ log1p(.x), .names = '{.col}_log1p'))  %>%
+  mutate(across(c('count_cross_species'), .fns= ~ log1p(.x), .names = '{.col}_log1p'))  %>%
+  mutate(persistence = if_else(persistence < 5.5, persistence, 5.5)) %>%
   
   # Ancestral (WRT HA) Changes
   left_join(reassortant_ancestral_changes %>% select(cluster_profile, segments_changed,cluster_class)) %>%
@@ -108,11 +112,12 @@ diffusion_data <- combined_data %>%
   
   dplyr::select(cluster_profile,
                 weighted_diff_coeff, 
-                persist.time_log1p,
+                persistence,
                 collection_year,
                 count_cross_species_log1p,
-                median_anseriformes_wild_prop,
-                median_charadriiformes_wild_prop,
+                path_prop_anseriformes_wild,
+                path_prop_charadriiformes_wild,
+                path_prop_galliformes_domestic,
                 host_simplifiedhost,
                 segments_changed,
                 segment,
@@ -123,7 +128,8 @@ diffusion_data <- combined_data %>%
   filter(segment == 'ha') %>%
   drop_na()
   
-
+diffusion_data %<>%
+  mutate(collection_regionname = case_when(cluster_profile == '2_1_1_1_1_1_1_1' ~ 'europe', .default = collection_regionname))
 
 
 # Model Formula
@@ -146,12 +152,13 @@ diffusion_data <- combined_data %>%
 
 diffusion_formula <- bf(weighted_diff_coeff ~ 0 + collection_regionname +
                           count_cross_species_log1p + 
-                          persist.time_log1p + 
-                          median_anseriformes_wild_prop + I(median_anseriformes_wild_prop == 0) + 
-                          median_charadriiformes_wild_prop + I(median_charadriiformes_wild_prop == 0) + 
-                          (median_anseriformes_wild_prop + I(median_anseriformes_wild_prop == 0) + 
-                             median_charadriiformes_wild_prop + I(median_charadriiformes_wild_prop == 0) + 
-                             persist.time_log1p | collection_regionname) + 
+                          persistence + 
+                          
+                          path_prop_anseriformes_wild + 
+                          path_prop_charadriiformes_wild + 
+                          path_prop_galliformes_domestic + 
+
+                          ( path_prop_anseriformes_wild + persistence| collection_regionname) + 
                           (1 | collection_year) ,
                         shape ~  0 + collection_regionname )
 
