@@ -11,7 +11,7 @@
 ########################################## SYSTEM OPTIONS ##########################################
 options(scipen = 6, digits = 7) 
 memory.limit(30000000) 
-
+options('marginaleffects_posterior_interval' = 'hdi')
   
 ########################################## DEPENDENCIES ############################################
 # Packages
@@ -77,129 +77,62 @@ global_theme <- theme_classic()+
 #pp_check(diffusionmodel1_fit_gamma_12, ndraws = 100,type = 'stat_grouped', group = 'collection_regionname', stat= 'mean')
 #posteriorpredictive <-pp_check(diffusionmodel1_fit_gamma_19, ndraws = 100, type = 'dens_overlay_grouped', group = 'collection_regionname' )
 
-# average posterior predictions 
+# P2
 avg_predictions(diffusionmodel1_fit_gamma_19)
 avg_predictions(diffusionmodel1_fit_gamma_19, by = 'collection_regionname')
-avg_predictions(diffusionmodel1_fit_gamma_19, by = 'collection_regionname', newdata = 'balanced')
 
-# contrasts for continent, all else equal
-avg_comparisons(diffusionmodel1_fit_gamma_19, variables = list("collection_regionname" = 'pairwise'))
-
-
-# 2 the number of species 
-# 2a. average posterior predictions marginalised across empirical distribution of predictors
-avg_predictions(diffusionmodel1_fit_gamma_19, variables = list('count_cross_species' = c(0,2,4,6,8,10)))
-
-# 2b. average marginal effect at the mean
-avg_slopes(diffusionmodel1_fit_gamma_19, variables = 'count_cross_species', newdata = 'balanced')
-
-# 2c. by continent
-avg_slopes(diffusionmodel1_fit_gamma_19, variables = 'count_cross_species', by = 'collection_regionname', newdata = 'balanced')
+#P3
+avg_predictions(diffusionmodel1_fit_gamma_19, 
+                variables = list('count_cross_species_log1p' = log1p(0:10)))
 
 
-# 3. binary charadriiformes
-# 3a.
-
-# 4 median_charadriiformes_wild
-# 4a. average posterior predictions marginalised across empirical distribution of predictors
-avg_predictions(diffusionmodel1_fit_gamma_19, variables = list(list('median_charadriiformes_wild_log1p' = log1p(c(0.08, 0.25, 0.5, 1, 1.5)))))
-
-# 4b. average marginal effect at the mean
-avg_slopes(diffusionmodel1_fit_gamma_19, variables = 'median_charadriiformes_wild_log1p', newdata = 'balanced')
-
-# 4c. by continent
-avg_slopes(diffusionmodel1_fit_gamma_19, variables = 'median_charadriiformes_wild_log1p', by = 'collection_regionname', newdata = 'balanced')
-
-
-# 5 binary anseriformes
-# 5a.
-
-# median_anseriformes_wild 
-# 6a. average posterior predictions
-avg_predictions(diffusionmodel1_fit_gamma_19, variables = list('median_anseriformes_wild' = c(0.25, 0.5, 1, 1.5,2)))
-
-# 6b. average marginal effect
-avg_slopes(diffusionmodel1_fit_gamma_19, variables = 'median_anseriformes_wild', newdata = 'balanced')
-
-# 6c. by continent
-avg_slopes(diffusionmodel1_fit_gamma_19, variables = 'median_anseriformes_wild_log1p', by = 'collection_regionname', newdata = 'balanced')
-
-slopes(diffusionmodel1_fit_gamma_19, newdata = datagrid(median_anseriformes_wild_log1p = log1p(c(0.08, 0.25, 0.5, 1, 1.5)), grid_type = 'counterfactual'), variables = 'median_anseriformes_wild_log1p', by =c('median_anseriformes_wild_log1p', 'collection_regionname'))
-slopes(diffusionmodel1_fit_gamma_19, newdata = datagrid(median_charadriiformes_wild_log1p = log1p(c(0.08, 0.25, 0.5, 1, 1.5)), grid_type = 'counterfactual'), variables = 'median_charadriiformes_wild_log1p', by =c('median_charadriiformes_wild_log1p', 'collection_regionname'))
-slopes(diffusionmodel1_fit_gamma_19, newdata = datagrid(count_cross_species_log1p = log1p(c(1, 10, 25, 50)), grid_type = 'counterfactual'), variables = 'count_cross_species_log1p', by =c('count_cross_species_log1p'), eps = 0.001)
-
-diffusionmodel1_fit_gamma_19 |> 
-  avg_comparisons(variables = list("median_charadriiformes_wild_prop" = 0.05), 
-                  by = "collection_regionname",
-                  newdata =datagrid(collection_regionname = unique(diffusion_data$collection_regionname), grid_type = 'counterfactual'), 
-                  type = 'response')
-
-diffusionmodel1_fit_gamma_19 |> 
-  avg_comparisons(variables = list("median_anseriformes_wild_prop" = 0.05), 
-                  by = "collection_regionname",
-                  newdata =datagrid(collection_regionname = unique(diffusion_data$collection_regionname), grid_type = 'counterfactual'), 
-                  type = 'response')
-
-diffusionmodel1_fit_gamma_19 |> 
-  avg_comparisons(variables = list("persist.time_log1p" = log1p(0.1)), 
-                  by = "persist.time_log1p",
-                  newdata =datagrid(persist.time_log1p =  log1p(c(0.25,0.5,1,2)),
-                                    grid_type = 'counterfactual'), 
-                  type = 'response')
-
-
-
-class_model |> 
-  avg_comparisons(variables = list("time_since_previous" = 0.08), # a 1 month increase
-                  by = "time_since_previous", 
-                  newdata = datagrid(time_since_previous = c(0.08, 0.25), 
-                                     grid_type = 'counterfactual'), 
-                  type = 'response')
-
-diffusionmodel1_fit_gamma_19 %>% plot_predictions(condition = c("median_anseriformes_wild_prop"))
-diffusionmodel1_fit_gamma_19 %>% plot_predictions(condition = c("median_charadriiformes_wild_prop" ))
-diffusionmodel1_fit_gamma_19 %>% plot_predictions(condition = c("persist.time_log1p", 'collection_regionname')) + geom_point(data = diffusion_data, aes(x = persist.time_log1p, y = weighted_diff_coeff), inherit.aes = F) + scale_y_continuous(trans = 'log10')
-diffusionmodel1_fit_gamma_19 %>% plot_predictions(condition = c("count_cross_species_log1p"))
-
-
-diffusionmodel1_fit_gamma_19 |> 
+diffusionmodel1_fit_gamma_19 %>%
   avg_comparisons(variables = list("count_cross_species_log1p" = log1p(1)), # a 1 month increase
                   newdata = datagrid(count_cross_species_log1p = log1p(c(0,1,2,3,4,5,6,7,8,9,10)), persist.time_log1p = log1p(1),
                                      grid_type = 'counterfactual'), 
                   type = 'response')
 
+avg_predictions(diffusionmodel1_fit_gamma_19, by = 'collection_year')
 
-avg_predictions(diffusionmodel1_fit_gamma_19)
 
-plot_predictions(class_model, condition = c("time_since_previous", "collection_regionname")) + facet_wrap(.~group)
+# P4
+avg_predictions(diffusionmodel1_fit_gamma_19, 
+                variables = list('path_prop_charadriiformes_wild' = seq(0,1,by = 0.1),
+                                 'persistence' = 1),
+                by = c('path_prop_charadriiformes_wild')) %>%
+  as_tibble()
 
-# a 1% increase in the time in X leads the following change in diffusion coefficient at a fixed persistence time
-diffusionmodel1_fit_gamma_19 |> 
-  avg_comparisons(variables = list("median_anseriformes_wild_prop" = 0.05), # a 1 month increase
-                  newdata = datagrid(median_anseriformes_wild_prop = c(0,0.25,0.5,1), persist.time_log1p = log1p(1), collection_regionname = diffusion_data %>% pull(collection_regionname) %>% unique(), 
-                                     grid_type = 'counterfactual'), by = c('collection_regionname', 'median_anseriformes_wild_prop'),
+avg_predictions(diffusionmodel1_fit_gamma_19, 
+                variables = list('path_prop_anseriformes_wild' = seq(0, 1, by = 0.1), 'persistence' = 1),
+                by = c('path_prop_anseriformes_wild'))%>%
+  as_tibble()
+
+avg_predictions(diffusionmodel1_fit_gamma_19, 
+                variables = list('path_prop_galliformes_domestic' = seq(0, 1, by = 0.1), 'persistence' = 1),
+                by = c('path_prop_galliformes_domestic'))%>%
+  as_tibble()
+
+
+#P5
+diffusionmodel1_fit_gamma_19 %>%
+  avg_comparisons(variables = list("path_prop_anseriformes_wild" = 0.05), 
+                  by = "collection_regionname",
+                  newdata =datagrid(collection_regionname = unique(diffusion_data$collection_regionname,
+                                                                   persist.time_log1p = log1p(1)),
+                                    grid_type = 'counterfactual'), 
                   type = 'response')
 
-avg_predictions(diffusionmodel1_fit_gamma_19, by = "count_cross_species_log1p")
+diffusionmodel1_fit_gamma_19 |> 
+  avg_comparisons(variables = list("path_prop_anseriformes_wild" = 0.05), 
+                  by = "collection_regionname",
+                  newdata =datagrid(collection_regionname = unique(diffusion_data$collection_regionname), grid_type = 'counterfactual'), 
+                  type = 'response')
 
-
-diffusionmodel1_fit_gamma_20 %>%
-  emtrends(~ median_charadriiformes_wild_prop + persist.time_log1p + collection_regionname,
-           var = "median_charadriiformes_wild_prop",
-         at = list(median_charadriiformes_wild_prop = c(0,0.25,0.5,1), 
-                   persist.time_log1p = log1p(0.5),
-                   collection_regionname = diffusion_data %>% pull(collection_regionname) %>% unique() %>% droplevels()),
-         regrid = "response", delta.var = 0.01) 
-
-
-plot_slopes(diffusionmodel1_fit_gamma_20, # model
-       newdata = datagrid(median_anseriformes_wild_prop = c(0,0.25,0.5,1), 
-                          persist.time_log1p = log1p( 0.5),
-                          grid_type = 'counterfactual'), 
-       variables = 'median_anseriformes_wild_prop',
-       by =c('median_anseriformes_wild_prop', 'collection_regionname'))
 ############################################## WRITE ###############################################
-
+diffusionmodel1_fit_gamma_19 %>%
+  avg_comparisons(variables = list('path_prop_anseriformes_wild' = 0.1), 
+                #by = "segments_changed",
+                type = 'response')
 ############################################## END #################################################
 ####################################################################################################
 ####################################################################################################
