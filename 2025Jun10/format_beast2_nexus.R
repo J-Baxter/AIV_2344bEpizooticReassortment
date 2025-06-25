@@ -169,8 +169,8 @@ aln_names <- list.files('./2024Aug18/reassortant_subsampled_alignments/', patter
 ############################################## MAIN ################################################
 georgia <- meta %>% 
   filter(collection_countryname == 'georgia') %>% 
-  select(starts_with('collection')) %>%
-  select(-c(contains('date'), 'collection_original')) %>% 
+  dplyr::select(starts_with('collection')) %>%
+  dplyr::select(-c(contains('date'), 'collection_original')) %>% 
   distinct() %>%
   mutate(correct  = 1)
 
