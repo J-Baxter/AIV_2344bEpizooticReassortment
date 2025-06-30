@@ -34,7 +34,7 @@ source('./scripts/figure_scripts/global_theme.R')
 ############################################## DATA ################################################
 combined_data <- read_csv('./2024Aug18/treedata_extractions/2024-09-20_combined_data.csv')
 summary_data <- read_csv('./2024Aug18/treedata_extractions/summary_reassortant_metadata_20240904.csv') %>%
-  select(-c(cluster_label,
+  dplyr::select(-c(cluster_label,
             clade)) 
 
 meta <- read_csv('./2024-09-09_meta.csv') 
@@ -46,7 +46,7 @@ woah_hpai <- read_csv('~/Downloads/Quantitative data 2025-02-25.csv')
 
 ref <- ne_countries() %>%
   as_tibble()  %>% 
-  select(name, continent)
+  dplyr::select(name, continent)
 
 ############################################## MAIN ################################################
 # Plot
@@ -60,20 +60,21 @@ plt_1a <- new_tree %>%
   ggtree(mrsd = "2024-03-18") + 
   theme_tree2(#base_family = "LM Sans 10",
     #plot.margin = unit(c(1,1,1,1), units = "cm"),
-    axis.text.x = element_text(size = 8),
-    axis.title.x = element_text(size = 10)
+    axis.text.x = element_text(size = 7),
+    axis.title.x = element_text(size = 8)
   ) +
   
   #theme_classic() + 
+  scale_x_ggtree() +
   
-  scale_x_continuous(
+  #scale_x_continuous(
     # limits = c(2014.9, Inf),
-    'Time (Years)',
-    breaks = seq(2014, 2024, 1)) +
+   # 'Time (Years)',
+   # breaks = seq(2014, 2024, 1)) +
   
   # scale_y_reverse() + 
   
-  scale_y_continuous(expand = c(0.01,0.01))  +
+  scale_y_continuous(expand = c(0.01,0.01), limits = c(0, 1000))  +
   scale_fill_manual('Continent' ,values = region_colours,
                     labels = str_to_title) +
   
@@ -97,6 +98,7 @@ plt_1a <- new_tree %>%
   
   geom_fruit(geom = geom_tile,
              mapping = aes(fill = PB2),
+             axis.params = list(text = 'PB2', text.size = 2.5, text.angle = 45, axis = 'x')
              #width = 4,
              #colour = "white",
              #pwidth = 1.2,
@@ -110,7 +112,8 @@ plt_1a <- new_tree %>%
              #width = 4,
              #colour = "white",
              #pwidth = 1.2,
-             offset = 0.03
+             offset = 0.03,
+             axis.params = list(text = 'PB1', text.size = 2.5,  text.angle = 45, axis = 'x')
   ) + 
   #scale_fill_paletteer_c("ggthemes::Orange")+
   scale_fill_distiller(palette = 'Purples', direction  = 1, limits = c(1, 30)) + 
@@ -123,7 +126,8 @@ plt_1a <- new_tree %>%
              #width = 4,
              # colour = "white",
              #pwidth = 1.2,
-             offset = 0.03
+             offset = 0.03,
+             axis.params = list(text = 'PA', text.size = 2.5, text.angle = 45, axis = 'x', vjust = 10)
   ) + 
   #scale_fill_paletteer_c("ggthemes::Orange-Gold")+
   scale_fill_distiller(palette = 'Purples', direction  = 1, limits = c(1, 30)) + 
@@ -134,7 +138,8 @@ plt_1a <- new_tree %>%
              #width = 4,
              # colour = "white",
              #pwidth = 1.2,
-             offset = 0.03
+             offset = 0.03,
+             axis.params = list(text = 'HA', text.size = 2.5, text.angle = 45, axis = 'x')
   ) + 
   #scale_fill_paletteer_c("ggthemes::Green-Gold")+
   scale_fill_distiller(palette = 'Purples', direction  = 1, limits = c(1, 30)) + 
@@ -146,7 +151,8 @@ plt_1a <- new_tree %>%
              #width = 4,
              #colour = "white",
              #pwidth = 1.2,
-             offset = 0.03
+             offset = 0.03,
+             axis.params = list(text = 'N', text.size = 2.5,  text.angle = 45, axis = 'x')
   ) + 
   #scale_fill_paletteer_c("ggthemes::Green")+
   scale_fill_distiller(palette = 'Purples', direction  = 1, limits = c(1, 30)) + 
@@ -157,17 +163,19 @@ plt_1a <- new_tree %>%
              #width = 4,
              # colour = "white",
              #pwidth = 1.2,
-             offset = 0.03
+             offset = 0.03,
+             axis.params = list(text = 'NP', text.size = 2.5, text.angle = 45, axis = 'x')
   ) + 
   #scale_fill_paletteer_c("ggthemes::Blue-Green Sequential")+
   scale_fill_distiller(palette = 'Purples', direction  = 1, limits = c(1, 30)) + 
   new_scale_fill()+
   geom_fruit(geom = geom_tile,
-             mapping = aes(fill = N),
+             mapping = aes(fill = M),
              #width = 4,
              # colour = "white",
              #pwidth = 1.2,
-             offset = 0.03
+             offset = 0.03,
+             axis.params = list(text = 'M', text.size = 2.5, text.angle = 45, axis = 'x')
   ) + 
   #scale_fill_paletteer_c("ggthemes::Blue")+
   scale_fill_distiller(palette = 'Purples', direction  = 1, limits = c(1, 30)) + 
@@ -178,14 +186,15 @@ plt_1a <- new_tree %>%
              #width = 4,
              # colour = "white",
              #pwidth = 1.2,
-             offset = 0.03
+             offset = 0.03,
+             axis.params = list(text = 'NS', text.size = 2.5, text.angle = 45, axis = 'x')
   ) + 
   #scale_fill_paletteer_c("ggthemes::Purple")+
   scale_fill_distiller(palette = 'Purples', direction  = 1, limits = c(1, 30)) + 
   
   theme(legend.position = 'none',
-        axis.text = element_text(size = 8),
-        axis.title = element_text(size = 9))
+        axis.text = element_text(size = 7),
+        axis.title = element_text(size = 8))
 
 
 plt_1b <- combined_data %>%
@@ -216,10 +225,21 @@ plt_1b <- combined_data %>%
     legend.position = 'none',
     strip.background = element_blank(),
     strip.text = element_blank(),
-    axis.text = element_text(size = 8),
-    axis.title = element_text(size = 9),
+    axis.text = element_text(size = 7),
+    axis.title = element_text(size = 8),
   )
 
+plt1d_colours <- c(
+  'anseriformes-domestic' = '#a6cee3',
+  'anser. wild' = '#1f78b4',
+  'galliformes-domestic' = '#b2df8a',
+  'gall.' = '#33a02c',
+  'mammal' = '#fb9a99',
+  'human' = '#e31a1c',
+  'charad. wild' = '#fdbf6f',
+  'other-bird' = '#ff7f00',
+  'unknown' = '#cab2d6',
+  'environment' = '#6a3d9a')
 
 plt_1c <- combined_data %>% 
   filter(segment == 'ha') %>%
@@ -227,19 +247,16 @@ plt_1c <- combined_data %>%
                                          host_simplifiedhost == 'anseriformes-wild+other-bird' ~ 'unknown',
                                          host_simplifiedhost == 'other-bird' ~ 'unknown',
                                          host_simplifiedhost == 'environment' ~ 'unknown',
-                                         grepl('galliformes', host_simplifiedhost) ~ 'galliformes')) %>%
+                                         host_simplifiedhost == 'anseriformes-wild' ~ 'anser. wild',
+                                         host_simplifiedhost == 'charadriiformes-wild' ~ 'charad. wild',
+                                         grepl('galliformes', host_simplifiedhost) ~ 'gall.')) %>%
   summarise(n = n(), .by = host_simplifiedhost) %>%
   mutate(host_simplifiedhost = reorder(host_simplifiedhost, n)) %>%
   ggplot() +
   geom_bar(aes(x = host_simplifiedhost,y = n, fill = host_simplifiedhost), colour= 'black', stat = 'identity') + 
-  scale_fill_manual(values = host_colours) +
+  scale_fill_manual(values = plt1d_colours) +
   scale_y_continuous(expand = c(0,0), 'Reassortants (N)') + 
-  scale_x_discrete(expand = c(0.2,0), labels = c('unknown' = 'Unknown',
-                                                 'anseriformes-wild' = 'Anser. Wild' ,
-                                                 'charadriiformes-wild' = 'Charad. Wild',
-                                                 'galliformes' = 'Gall.',
-                                                 'mammal' = 'Mammal' ) %>% 
-                     str_wrap(., width = 10), '') + 
+  scale_x_discrete(expand = c(0.2,0), labels = function(x) str_to_title(x) %>% str_wrap(., width = 10), '') + 
   
   theme_classic() + 
   theme(
@@ -248,10 +265,9 @@ plt_1c <- combined_data %>%
     legend.position = 'none',
     strip.background = element_blank(),
     strip.text = element_blank(),
-    axis.text = element_text(size = 8),
-    axis.title = element_text(size = 9),
+    axis.text = element_text(size = 7),
+    axis.title = element_text(size = 8),
   )
-
 
 
 plt_1d <- combined_data %>% 
@@ -278,8 +294,8 @@ plt_1d <- combined_data %>%
     legend.position = 'none',
     strip.background = element_blank(),
     strip.text = element_blank(),
-    axis.text = element_text(size = 8),
-    axis.title = element_text(size = 9),
+    axis.text = element_text(size = 7),
+    axis.title = element_text(size = 8),
   )
 
 
@@ -339,17 +355,44 @@ inset_count <- plot_data %>%
         
         legend.position = 'inside',
         legend.justification.inside = c(0.1, 1),
-        legend.text = element_text(size = 8),
-        legend.title = element_text(size = 9),
+        legend.text = element_text(size = 7),
+        legend.title = element_text(size = 8),
         legend.position.inside = c(0.1,0.95),
         legend.background = element_rect(fill = "transparent", colour = NA)
   )
 
 
+inset_seqs <-  ggplot(data = sequences_month, 
+                      aes(x = collection_datemonth, 
+                          y = n_sequences,
+                          coloru = collection_regionname,
+                          fill = collection_regionname)) +
+  geom_area(position = 'stack') + 
+  scale_y_continuous('Count',expand = c(0,0)) +
+  xlab('Sampling Date') + 
+  scale_colour_manual('Continent' , values = region_colours,
+                    labels = str_to_title) +
+  scale_fill_manual('Continent' , values = region_colours,
+                      labels = str_to_title) +
+  theme_classic()+
+  theme(axis.text = element_text(size = 7),
+        axis.title = element_text(size = 8),
+        panel.background = element_rect(fill = "transparent", colour = NA), 
+        plot.background = element_rect(fill = "transparent", colour = NA),
+        
+        legend.position = 'inside',
+        legend.justification.inside = c(0.1, 1),
+        legend.text = element_text(size = 7),
+        legend.title = element_text(size = 8),
+        legend.position.inside = c(0.1,0.99),
+        legend.background = element_rect(fill = "transparent", colour = NA)
+  )
 
-plot_1a_with_inset <-ggdraw() +
+  
+  
+plot_1a_with_inset <- ggdraw() +
   draw_plot(plt_1a) +
-  draw_plot(inset_count, x = 0.01, y = .7, width = .5, height = .3) 
+  draw_plot(inset_seqs, x = 0.01, y = .7, width = .5, height = .3) 
 
 plt_lower <- cowplot::plot_grid(plt_1b,
                                 plt_1c, 
@@ -360,7 +403,7 @@ plt_lower <- cowplot::plot_grid(plt_1b,
                                 labels = c('B', 'C', 'D'), 
                                 label_size = 9)
 
-cowplot::plot_grid(plot_a_with_inset, 
+cowplot::plot_grid(plot_1a_with_inset, 
                    plt_lower, 
                    align = 'h', 
                    axis = 'lr',
@@ -371,8 +414,8 @@ cowplot::plot_grid(plot_a_with_inset,
 
 
 ############################################## WRITE ###############################################
-
-ggsave('~/Downloads/flu_plots/figure1_new.jpeg', height = 30, width = 25, units = 'cm', dpi = 360)
+#210x297 ()
+ggsave('~/Downloads/flu_plots/figure1_new.pdf', height = 257, width = 206, units = 'mm', dpi = 360)
 
 
 
