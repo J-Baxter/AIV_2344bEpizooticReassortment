@@ -51,6 +51,7 @@ ref <- ne_countries() %>%
 ############################################## MAIN ################################################
 # Plot
 plt_1a <- new_tree %>%
+  p <- new_tree %>%
   mutate(isolate_id = str_extract(label, "EPI_ISL_(china_){0,1}\\d+[^.|]*")) %>%
   # mutate(date = str_extract(label, "\\d{4}-.*")) %>%
   left_join(reassortant_profiles) %>%
@@ -65,16 +66,15 @@ plt_1a <- new_tree %>%
   ) +
   
   #theme_classic() + 
-  scale_x_ggtree() +
   
   #scale_x_continuous(
-    # limits = c(2014.9, Inf),
-   # 'Time (Years)',
-   # breaks = seq(2014, 2024, 1)) +
+  # limits = c(2014.9, Inf),
+  # 'Time (Years)',
+  # breaks = seq(2014, 2024, 1)) +
   
   # scale_y_reverse() + 
   
-  scale_y_continuous(expand = c(0.01,0.01), limits = c(0, 1000))  +
+  
   scale_fill_manual('Continent' ,values = region_colours,
                     labels = str_to_title) +
   
@@ -91,107 +91,25 @@ plt_1a <- new_tree %>%
   scale_fill_manual(values = region_colours) +
   scale_colour_manual(values = region_colours) +
   
-  
   new_scale_fill()+
-  new_scale_colour()+
-  
-  
-  geom_fruit(geom = geom_tile,
-             mapping = aes(fill = PB2),
-             axis.params = list(text = 'PB2', text.size = 2.5, text.angle = 45, axis = 'x')
-             #width = 4,
-             #colour = "white",
-             #pwidth = 1.2,
-             #offset = 0.03
-  ) + 
-  scale_fill_distiller(palette = 'Purples', direction  = 1, limits = c(1, 30)) + 
-  
-  new_scale_fill()+
-  geom_fruit(geom = geom_tile,
-             mapping = aes(fill = PB1),
-             #width = 4,
-             #colour = "white",
-             #pwidth = 1.2,
-             offset = 0.03,
-             axis.params = list(text = 'PB1', text.size = 2.5,  text.angle = 45, axis = 'x')
-  ) + 
-  #scale_fill_paletteer_c("ggthemes::Orange")+
-  scale_fill_distiller(palette = 'Purples', direction  = 1, limits = c(1, 30)) + 
-  
-  
-  
-  new_scale_fill()+
-  geom_fruit(geom = geom_tile,
-             mapping = aes(fill = PA),
-             #width = 4,
-             # colour = "white",
-             #pwidth = 1.2,
-             offset = 0.03,
-             axis.params = list(text = 'PA', text.size = 2.5, text.angle = 45, axis = 'x', vjust = 10)
-  ) + 
-  #scale_fill_paletteer_c("ggthemes::Orange-Gold")+
-  scale_fill_distiller(palette = 'Purples', direction  = 1, limits = c(1, 30)) + 
-  
-  new_scale_fill()+
-  geom_fruit(geom = geom_tile,
-             mapping = aes(fill = HA),
-             #width = 4,
-             # colour = "white",
-             #pwidth = 1.2,
-             offset = 0.03,
-             axis.params = list(text = 'HA', text.size = 2.5, text.angle = 45, axis = 'x')
-  ) + 
-  #scale_fill_paletteer_c("ggthemes::Green-Gold")+
-  scale_fill_distiller(palette = 'Purples', direction  = 1, limits = c(1, 30)) + 
-  
-  
-  new_scale_fill()+
-  geom_fruit(geom = geom_tile,
-             mapping = aes(fill = N),
-             #width = 4,
-             #colour = "white",
-             #pwidth = 1.2,
-             offset = 0.03,
-             axis.params = list(text = 'N', text.size = 2.5,  text.angle = 45, axis = 'x')
-  ) + 
-  #scale_fill_paletteer_c("ggthemes::Green")+
-  scale_fill_distiller(palette = 'Purples', direction  = 1, limits = c(1, 30)) + 
-  
-  new_scale_fill()+
-  geom_fruit(geom = geom_tile,
-             mapping = aes(fill = NP),
-             #width = 4,
-             # colour = "white",
-             #pwidth = 1.2,
-             offset = 0.03,
-             axis.params = list(text = 'NP', text.size = 2.5, text.angle = 45, axis = 'x')
-  ) + 
-  #scale_fill_paletteer_c("ggthemes::Blue-Green Sequential")+
-  scale_fill_distiller(palette = 'Purples', direction  = 1, limits = c(1, 30)) + 
-  new_scale_fill()+
-  geom_fruit(geom = geom_tile,
-             mapping = aes(fill = M),
-             #width = 4,
-             # colour = "white",
-             #pwidth = 1.2,
-             offset = 0.03,
-             axis.params = list(text = 'M', text.size = 2.5, text.angle = 45, axis = 'x')
-  ) + 
-  #scale_fill_paletteer_c("ggthemes::Blue")+
-  scale_fill_distiller(palette = 'Purples', direction  = 1, limits = c(1, 30)) + 
-  
-  new_scale_fill()+
-  geom_fruit(geom = geom_tile,
-             mapping = aes(fill = NS),
-             #width = 4,
-             # colour = "white",
-             #pwidth = 1.2,
-             offset = 0.03,
-             axis.params = list(text = 'NS', text.size = 2.5, text.angle = 45, axis = 'x')
-  ) + 
-  #scale_fill_paletteer_c("ggthemes::Purple")+
-  scale_fill_distiller(palette = 'Purples', direction  = 1, limits = c(1, 30)) + 
-  
+  theme(legend.position = 'none',
+        axis.text = element_text(size = 7),
+        axis.title = element_text(size = 8))
+
+
+p_data <- reassortant_profiles %>% left_join(meta %>% dplyr::select(isolate_id, tipnames)) %>% dplyr::select(-isolate_id)  %>% as.data.frame()
+rownames(p_data) <- p_data$tipnames
+
+all_colors <- brewer.pal(9, "Purples")
+color_subset <- colorRampPalette(all_colors)(100)[30:100]  # middle 50%
+
+plt_1a <- gheatmap(p, p_data %>% dplyr::select(-tipnames),  width=0.4, offset = 0.1,
+                   color = NA,
+         colnames=FALSE, legend_title="genotype") +
+  scale_x_ggtree() +
+  #scale_fill_gradientn(colours = color_subset, na.value = 'white') + 
+  scale_fill_distiller(palette = 'Purples', direction  = 1, na.value = 'white', transform = 'log2') + 
+  scale_y_continuous(expand = c(0.01,0.01), limits = c(0, 1000))  +
   theme(legend.position = 'none',
         axis.text = element_text(size = 7),
         axis.title = element_text(size = 8))
@@ -381,10 +299,11 @@ inset_seqs <-  ggplot(data = sequences_month,
         plot.background = element_rect(fill = "transparent", colour = NA),
         
         legend.position = 'inside',
-        legend.justification.inside = c(0.1, 1),
+        legend.justification.inside = c(0, 1),
         legend.text = element_text(size = 7),
         legend.title = element_text(size = 8),
-        legend.position.inside = c(0.1,0.99),
+        legend.position.inside = c(0,0.99),
+        legend.key.size = unit(0.75,"line"),
         legend.background = element_rect(fill = "transparent", colour = NA)
   )
 
@@ -392,7 +311,7 @@ inset_seqs <-  ggplot(data = sequences_month,
   
 plot_1a_with_inset <- ggdraw() +
   draw_plot(plt_1a) +
-  draw_plot(inset_seqs, x = 0.01, y = .7, width = .5, height = .3) 
+  draw_plot(inset_seqs, x = 0, y = .75, width = .45, height = .25) 
 
 plt_lower <- cowplot::plot_grid(plt_1b,
                                 plt_1c, 

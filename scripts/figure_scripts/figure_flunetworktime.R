@@ -22,7 +22,9 @@ my_graph <- reassortant_ancestral_changes %>%
   activate(nodes) %>%
   left_join(reassortant_ancestral_changes %>% 
               dplyr::select(name = cluster_label, cluster_class)) %>% mutate(importance = centrality_degree()) %>%
-  left_join(updated %>% dplyr::select(name = cluster_label, cluster_region, cluster_tmrca)) 
+  left_join(updated %>% dplyr::select(name = cluster_label, cluster_region, cluster_tmrca)) %>%
+  
+  mutate(is_key = if_else(importance > 5, name, NA_character_))
 
 my_graph %>%
   as_tibble() %>% filter(importance >0)%>%
@@ -44,15 +46,19 @@ cdfcomp(list(out_deg.ln, out_deg.ll, out_deg_pareto, out_deg.exp), xlogscale = T
         ylogscale = TRUE, legendtext = c("lognormal", "loglogistic", "Pareto", 'Exp'))
 
 
-plt_3a <-ggraph(my_graph %>%
+plt_3a <- ggraph(my_graph %>%
                   mutate(component = group_components()) %>%
-                  filter(component == which.max(as.numeric(table(component)))),  layout = "kk") +
+                  filter(component == which.max(as.numeric(table(component)))),  layout = 'kk') +
   geom_edge_link() +
-  geom_node_point(aes(color = cluster_tmrca, size= importance )) +
+  geom_node_point(aes(size= importance )) +
+  #scale_colour_manual() + 
+  coord_flip() +
+  scale_x_reverse() +
+  scale_y_reverse() +
   #geom_node_label(aes(label = ifelse(cluster_class == 'major', name, '')), repel = TRUE) +
   #scale_colour_brewer(palette = 'Set1') +
   #scale_colour_manual(values = class_colours, 'Cluster Class',  labels = str_to_title,) +
-  scale_colour_distiller(palette = 'Greens', direction = -1) + 
+  #scale_colour_distiller(palette = 'Greens', direction = -1) + 
   #scale_colour_gradientn(colours = graph_palette )+
   scale_size_continuous('Offspring') + 
   theme_void() +
@@ -254,4 +260,4 @@ updated %>%
 
 cowplot::plot_grid(plt_3a,plt_supb, nrow = 2)
 
-ggsave('~/Downloads/flu_plots/figure_network_time.jpeg', height = 20, width = 20, units = 'cm', dpi = 360)
+ggsave('~/Downloads/flu_plots/figure_network_time.jpeg', height = 30, width = 25, units = 'cm', dpi = 360)

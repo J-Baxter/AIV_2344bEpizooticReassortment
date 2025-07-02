@@ -134,14 +134,14 @@ continent_specific_detection_samples <- numbers_model_2 %>%
 beta_sequences_samples <-  numbers_model_2 %>%
   gather_draws(., beta_sequences) %>%
   ungroup() %>% 
-  select(.draw,
+  dplyr::select(.draw,
          .chain, 
          .iteration, 
          beta_sequences = .value)
 
 year_detection_samples <- numbers_model_2 %>%
   gather_draws(., year_detection[i]) %>% 
-  select(.draw,
+  dplyr:: select(.draw,
          .chain,
          .iteration,
          year_detection = .value)
