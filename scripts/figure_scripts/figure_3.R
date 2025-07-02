@@ -60,8 +60,8 @@ FormatPhyloGeo <- function(mcc_file, posterior_file){
                    quiet = T)
   
   
-  localTreesDirectory = "./temp_tree_dir/"
-  do.call(file.remove, list(list.files("./temp_tree_dir/", full.names = TRUE)))
+  localTreesDirectory = "./2025Jun10/temp_tree_dir/"
+  do.call(file.remove, list(list.files("./2025Jun10/temp_tree_dir/", full.names = TRUE)))
   
   burnIn <- 0
   randomSampling <- TRUE

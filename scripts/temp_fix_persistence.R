@@ -1,12 +1,12 @@
-test <- HostPersistence2(region_trees[[3]], region_tree = TRUE)
+test <- HostPersistence2(reassortant_trees[[10]], region_tree = F)
 
 
 test %>% pivot_wider(names_from = host_simplifiedhost, values_from = starts_with('persistence'))
 
 
 
-tbl_tree <- as_tibble(region_trees[[3]])
-tree <- region_trees[[3]]@phylo
+tbl_tree <- as_tibble(reassortant_trees[[10]])
+tree <- reassortant_trees[[10]]@phylo
 reassortants <- str_split_i(tree$tip.label, '\\|', 6) 
 
 tbl_tree %<>%
@@ -32,7 +32,7 @@ reassortant_mrca <- tbl_tree %>%
   mutate(cluster_profile = str_extract(label, "(\\d+_)+[^.|]*") ) %>%
   
   # Get ancestral estimates for intermediate nodes
-  rows_update(anc_state) %>%
+ # rows_update(anc_state) %>%
   
   # inner join to get parental identities
   left_join(select(., parent_profile = cluster_profile,
@@ -128,7 +128,7 @@ test_2 <- tbl_pathtoancestor %>%
   mutate(host_change = cumsum(host_simplifiedhost != lag(host_simplifiedhost, 
                                                          def = first(host_simplifiedhost)))) %>%
   # Calculate total persistence for each pathway
- mutate(total_persistence = sum(branch.length, na.rm = TRUE)) %>%
+ mutate(persistence_total = sum(branch.length, na.rm = TRUE)) %>%
   #mutate(total_persistence = max(height) - min(height)) %>%
 
   
@@ -138,7 +138,7 @@ test_2 <- tbl_pathtoancestor %>%
  # mutate(persistence_host = sum(branch.length, na.rm = TRUE)) %>%
   summarise(persistence_host = sum(branch.length, na.rm = TRUE),
     #persistence_host = max(height) - min(height),
-            total_persistence = mean(total_persistence),
+            persistence_total = mean(persistence_total),
             cluster_number = unique(cluster_number),
             host_simplified_host = unique(host_simplifiedhost))
 
@@ -148,22 +148,25 @@ test_3 <- test_2 %>%
   
   # Calculate proportions within 'lineages'
   rowwise() %>%
-  mutate(persistence_host_prop = persistence_host/total_persistence) %>%
+  mutate(persistence_host_prop = persistence_host/persistence_total) %>%
   as_tibble() %>%
+  
+  group_by(cluster_number) %>%
+  mutate(persistence_total = mean(persistence_total)) %>%
   
   # Calculate medians from proportions
   group_by(cluster_number, host_simplified_host) %>%
-  summarise(persistence_host_prop_median = median(persistence_host_prop)) %>%
-  select(cluster_profile = cluster_number, 
-         host_simplified_host = host_simplified_host,
-         persistence_host_prop_median = persistence_host_prop_median)
+  summarise(across(starts_with('persistence'), .fns = ~ median(.x), .names = '{.col}_median')) %>%
+  rename(cluster_profile = cluster_number)
+
 
 
 
 check <- expand_grid(cluster_profile = unique(test_2$cluster_number),
             host_simplified_host = unique(test_2$host_simplified_host)) %>%
   drop_na() %>%
-  mutate(persistence_host_prop_median = NaN) %>%
+  mutate(persistence_host_prop_median = NaN,
+         persistence_host_median = NaN) %>%
   rows_patch(test_3,
              by = c('cluster_profile', 'host_simplified_host') ,
              unmatched = 'ignore') %>%
@@ -180,12 +183,10 @@ check <- expand_grid(cluster_profile = unique(test_2$cluster_number),
   # Format variables
   filter(host_simplified_host %in% c('anseriformes-wild', 'galliformes-domestic', 'charadriiformes-wild')) %>%
   select(-persistence_host_prop_median) %>%
-  pivot_wider(names_from = host_simplified_host, values_from = persistence_host_prop_median_normalised) %>%
-  mutate(chard_over_anser = log(`charadriiformes-wild` /`anseriformes-wild`),
-         galli_over_anser =  log(`galliformes-domestic` /`anseriformes-wild`)) %>%
-  
-  left_join(diffusion_data %>% select(cluster_profile, weighted_diff_coeff)) %>%
-  drop_na()
+  pivot_wider(names_from = host_simplified_host, 
+              values_from = persistence_host_prop_median_normalised,
+              names_prefix = 'scaledpersistence_') 
+
 
 test_3 <- test_2 %>%
   ungroup() %>%
