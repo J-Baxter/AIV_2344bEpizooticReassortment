@@ -22,9 +22,25 @@ test <-  function(x) {
   if_else(x == .data[[parent_col]], "0", "1")
 }
 
+
 # Function to compute Jaccard between 2 columns
 jaccard <- function(x, y) {
   sum(x & y) / sum(x | y)
+}
+
+
+# Permutation test
+permute_jaccards_long <- function(df, segments, n_perm = 1000) {
+  combs <- expand.grid(seg1 = segments, seg2 = segments) %>% 
+    filter(seg1 != seg2)
+  
+  replicate(n_perm, {
+    df_perm <- df %>% mutate(across(all_of(segments), ~ sample(.x)))
+    combs %>%
+      rowwise() %>%
+      mutate(jaccard = jaccard(df_perm[[seg1]], df_perm[[seg2]])) %>%
+      pull(jaccard)
+  }) %>% t()  # matrix: rows = permutations, cols = segment pairs
 }
 
 
@@ -60,12 +76,12 @@ segments_change <- updated %>%
          M_switch_mj = if_else(cluster_M == last_major_M, '0', '1'),
          NS_switch_mj = if_else(cluster_NS == last_major_NS, '0', '1')) %>%
   
-  select(-ends_with(c('PB2', 'PB1', 'PA', 'HA', 'NP',  'NA','M', 'NS')))
+  dplyr::select(-ends_with(c('PB2', 'PB1', 'PA', 'HA', 'NP',  'NA','M', 'NS')))
 
 
 # total number of changes
 segments_change %>%
-  select(ends_with('switch')) %>%
+  dplyr::select(ends_with('switch')) %>%
   pivot_longer(everything(), values_to = 'switch', names_to = 'segment') %>%
   mutate(segment = gsub('_switch', '', segment),
          switch = as.numeric(switch)) %>%
@@ -76,13 +92,13 @@ segments_change %>%
 
 # Linkage between reassortments (ie which seg)
 tmp <- segments_change %>%
-  select(ends_with('switch')) %>%
+  dplyr::select(ends_with('switch')) %>%
   mutate(across(everything(), .fns = ~as.numeric(.x))) %>%
   
   mutate(row_id = row_number()) %>%                              # Add row ID
   pivot_longer(-row_id, names_to = "segment", values_to = "selected") %>%
   mutate(segment = gsub('_switch', '', segment)) %>%
-  filter(selected == 1) %>%                                     # Keep only selected = 1
+  filter(selected == 1) %>%                                     # Keep only dplyr::selected = 1
   inner_join(., ., by = "row_id") %>%                           # Self-join on row_id
   filter(segment.x < segment.y) %>%                                     # Avoid duplicates and self-pairs
   count(segment.x, segment.y, name = "n") %>%                           # Count co-occurrences
@@ -90,7 +106,7 @@ tmp <- segments_change %>%
               values_fill = 0)
 
 totals <- segments_change %>%
-  select(ends_with('switch')) %>%
+  dplyr::select(ends_with('switch')) %>%
   mutate(across(everything(), .fns = ~as.numeric(.x))) %>%
   summarise(across(everything(), sum)) %>%
   pivot_longer(everything(), names_to = "segment",  values_to = "selected_count") %>%
@@ -99,7 +115,7 @@ totals <- segments_change %>%
 
 ## Calculate Jaccard
 df <- segments_change %>%
-select(ends_with('switch')) %>%
+dplyr::select(ends_with('switch')) %>%
   mutate(across(everything(), .fns = ~as.numeric(.x))) 
 
 segments <- colnames(df) 
@@ -110,20 +126,6 @@ observed_jaccards <- expand.grid(seg1 = segments, seg2 = segments) %>%
   ungroup() %>%
   mutate(jaccard = if_else(jaccard == 1, NaN, jaccard),
          across(starts_with('seg'), ~ gsub('_switch', '', .x)))
-
-# Permutation test
-permute_jaccards_long <- function(df, segments, n_perm = 1000) {
-  combs <- expand.grid(seg1 = segments, seg2 = segments) %>% 
-    filter(seg1 != seg2)
-  
-  replicate(n_perm, {
-    df_perm <- df %>% mutate(across(all_of(segments), ~ sample(.x)))
-    combs %>%
-      rowwise() %>%
-      mutate(jaccard = jaccard(df_perm[[seg1]], df_perm[[seg2]])) %>%
-      pull(jaccard)
-  }) %>% t()  # matrix: rows = permutations, cols = segment pairs
-}
 
 perm_matrix <- permute_jaccards_long(df, segments, n_perm = 1000)
 
@@ -174,21 +176,28 @@ binom.test(observed_rdrp, n, expected_rdrp, alternative = "greater")
 ################################### OUTPUT #####################################
 # Save output files, plots, or results
 plt_a <- segments_change %>%
-  select(ends_with('switch')) %>%
+  dplyr::select(ends_with('switch')) %>%
   pivot_longer(everything(), values_to = 'switch', names_to = 'segment') %>%
   mutate(segment = gsub('_switch', '', segment),
          switch = as.numeric(switch)) %>%
   summarise(switch = sum(switch), .by = segment) %>%
-  ggplot(aes(x = segment, y = switch, fill = switch)) +
+  mutate(segment = reorder(segment, switch)) %>%
+  ggplot() +
   scale_x_discrete('Segment' ,expand = c(0,0)) + 
-  scale_y_continuous('Reassortants (n)', expand = c(0,0)) + 
+  scale_y_continuous('Reassortants (n)', expand = c(0,0), limits = c(0,115)) + 
   scale_fill_distiller(palette = 'YlOrRd', na.value = NA, direction = 1) +
-  geom_bar(stat = 'identity', colour = 'black') + 
+  geom_bar(aes(x = segment, y = switch, fill = switch), stat = 'identity', colour = 'black') + 
+  geom_bracket(
+    xmin = "NP", xmax = "PB2", y.position = 110,
+    label = "vRNP Complex", tip.length = c(0.02, 0.02)
+  ) + 
   theme_classic() + 
   theme(axis.text = element_text(size = 8),
         axis.title = element_text(size = 9),
         legend.text = element_text(size = 8),
-        legend.title = element_text(size = 9))
+        legend.title = element_text(size = 9),
+        legend.position = 'none')
+
 
 
 plt_b <- observed_jaccards %>%
