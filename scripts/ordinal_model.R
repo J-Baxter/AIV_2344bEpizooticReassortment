@@ -35,14 +35,14 @@ reassortant_ancestral_changes <- read_csv('./reassortant_ancestral_changes.csv')
 
 combined_data <- read_csv('./2024Aug18/treedata_extractions/2024-09-20_combined_data.csv')
 summary_data <- read_csv('./2024Aug18/treedata_extractions/summary_reassortant_metadata_20240904.csv') %>%
-  select(-c(cluster_label,
+  dplyr::select(-c(cluster_label,
             clade)) 
 meta <- read_csv('./2024-09-09_meta.csv')
 
 # Obtain 'nearest major reassortant'
 
 my_edgelist<- reassortant_ancestral_changes %>% 
-  select(ends_with('label'), cluster_class) %>%
+  dplyr::select(ends_with('label'), cluster_class) %>%
   drop_na() %>%
   relocate(parent_label, cluster_label) %>% 
   graph_from_data_frame(.)
@@ -50,7 +50,7 @@ plot(my_edgelist, vertex.size = 7)
 
 
 most_recent_major <- distances(my_edgelist,
-                               weights = reassortant_ancestral_changes %>%  select(ends_with('label'), segments_changed) %>% drop_na() %>% pull(segments_changed),
+                               weights = reassortant_ancestral_changes %>%  dplyr::select(ends_with('label'), segments_changed) %>% drop_na() %>% pull(segments_changed),
                                mode = 'in',
                                to =  c( "H5N8/2019/R7_Africa",
                                         "H5N1/2020/R1_Europe",
@@ -68,8 +68,8 @@ most_recent_major <- distances(my_edgelist,
   mutate(most_recent_major = paste(most_recent_major, collapse = '')) %>%
   mutate(last_major_label = na_if(most_recent_major, '')) %>%
   as_tibble() %>%
-  select(cluster_label, last_major_label) %>% 
-  left_join(meta %>% select(last_major_profile = cluster_profile, last_major_label = cluster_label) %>% distinct())
+  dplyr::select(cluster_label, last_major_label) %>% 
+  left_join(meta %>% dplyr::select(last_major_profile = cluster_profile, last_major_label = cluster_label) %>% distinct())
 
 
 
@@ -79,7 +79,7 @@ updated <- reassortant_ancestral_changes %>%
   
   # Add  origin continent of current reassortant
   left_join(combined_data %>% filter(segment == 'ha') %>% 
-              select(cluster_profile,
+              dplyr::select(cluster_profile,
                      cluster_region = collection_regionname) %>% 
               group_by(cluster_profile) %>% 
               #slice_min(cluster_tmrca, n = 1) %>% 
@@ -88,7 +88,7 @@ updated <- reassortant_ancestral_changes %>%
   # Add tmrca and origin continent of 'parent' reassortant (with respect to HA)
   left_join(combined_data %>% 
               filter(segment == 'ha') %>% 
-              select(cluster_profile, 
+              dplyr::select(cluster_profile, 
                      parent_region = collection_regionname) %>% 
               group_by(cluster_profile) %>% 
               distinct(),
@@ -100,7 +100,7 @@ updated <- reassortant_ancestral_changes %>%
   
   # Add 'last' (with respect to HA) major reassortant
   left_join(most_recent_major) %>%
-  left_join(., select(., last_major_profile = cluster_profile, 
+  left_join(., dplyr::select(., last_major_profile = cluster_profile, 
                       last_major_region = cluster_region, 
                       last_major_tmrca = cluster_tmrca)) %>%
   
@@ -137,7 +137,7 @@ updated %<>%
   mutate(cluster_region = case_when(cluster_label == 'H5N1/2020/R1_Europe' ~ 'europe', .default = cluster_region))
 
 class_data <- updated %>%
-  select(cluster_class,
+  dplyr::select(cluster_class,
          parent_class,
          cluster_region, 
          segments_changed,
