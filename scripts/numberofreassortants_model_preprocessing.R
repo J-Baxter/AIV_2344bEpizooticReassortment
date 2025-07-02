@@ -58,7 +58,7 @@ FormatContinent <- function(dataframe){
 ############################################## DATA ################################################
 combined_data <- read_csv('./2024Aug18/treedata_extractions/2024-09-20_combined_data.csv')
 summary_data <- read_csv('./2024Aug18/treedata_extractions/summary_reassortant_metadata_20240904.csv') %>%
-  select(-c(cluster_label,
+  dplyr::select(-c(cluster_label,
             clade)) 
 
 meta <- read_csv('./2024-09-09_meta.csv') 
@@ -82,7 +82,7 @@ all <- meta %>%
 # Sequences
 sequences_month <- meta %>%  
   drop_na(cluster_profile) %>%
-  select(starts_with('collection_date'),
+  dplyr::select(starts_with('collection_date'),
          collection_regionname) %>%
   mutate(collection_regionname = case_when(grepl('europe', collection_regionname) ~ 'europe',
                                            grepl('africa', collection_regionname) ~ 'africa',
@@ -104,7 +104,7 @@ ref <- ne_countries() %>%
   dplyr::select(name, continent)
   
 woah_minimuminferredcases <- woah_hpai %>%
-  select(Year,
+  dplyr::select(Year,
          Semester,
          `World region`,
          Country,
@@ -184,7 +184,7 @@ woah_minimuminferredcases_monthly <- woah_minimuminferredcases %>%
   mutate(across(starts_with('date'), ~ymd(.x))) %>%
   #mutate(interval = interval(date_start, date_end),
         # collection_datemonth = date_start) %>%
- # select(-c(date_start, date_end)) %>%
+ # dplyr::select(-c(date_start, date_end)) %>%
   
   rename(woah_cases = sum_IMC,
          woah_deaths = sum_deaths,
@@ -206,10 +206,10 @@ woah_minimuminferredcases_monthly <- woah_minimuminferredcases %>%
   #%>%
   #interval_left_join(fao_hpai_monthly, by = c('date_start', 'date_end')) %>%
   #filter(collection_regionname.x == collection_regionname.y) %>%
-  #select(-ends_with('y')) %>%
+  #dplyr::select(-ends_with('y')) %>%
   #rename_with(~gsub('\\.x', '', .x)) %>%
   #filter(collection_datemonth >= as_date('2019-01-01')) %>%
-  #select(-starts_with('date')) %>%
+  #dplyr::select(-starts_with('date')) %>%
   #mutate()
 
 
@@ -230,7 +230,7 @@ reassortant_counts <- combined_data %>%
            as_date()) %>%
   
   filter(!is.na(collection_regionname)) %>%
-  select(collection_regionname,
+  dplyr::select(collection_regionname,
          collection_datemonth, 
          cluster_profile,
          group2) %>% # include all month-years over collection period to generate zer countr
@@ -297,9 +297,9 @@ count_data <- woah_minimuminferredcases_monthly %>%
                                        collection_month %in% c(9,10,11)  ~ 'migrating_autumn' # Rename to autumn migration
   )) %>%
   
-  # select variables
+  # dplyr::select variables
   ungroup(collection_regionname) %>%
-  select(collection_regionname,
+  dplyr::select(collection_regionname,
          collection_year,
          collection_month,
          collection_season, 
