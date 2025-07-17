@@ -27,14 +27,22 @@ plt_a <- my_graph %>%
   geom_edge_elbow(edge_width = 0.5) +
   geom_node_point(aes(size= importance, colour = is_key)) +
   scale_size('Node Degree', guide = "legend", range = c(1, 6)) + 
-  scale_colour_discrete('Nodes with Degree > 5', guide = "legend")+ 
+  scale_colour_manual('Nodes with Degree > 5', 
+                      guide = "legend",
+                      values = c("H5N1/2020/R1" = "#774762FF", 
+                                 "H5N1/2021/R1" = "#F2DD78FF", 
+                                 "H5N1/2021/R4" = "#205F4BFF", 
+                                 "H5N1/2022/R2" = "#913914FF", 
+                                 "H5N1/2022/R32" = "#F0A430FF", 
+                                 "H5N1/2022/R7" = "#768048FF", 
+                                 "H5N8/2019/R3" = "#800000FF",
+                                 "H5N8/2019/R7" = "#1B3A54FF"))+ 
   guides(col = guide_legend(nrow = 2, theme = theme(legend.byrow = TRUE)),
          size = guide_legend(nrow = 1, theme = theme(legend.byrow = TRUE ))) +
   annotate("rect", 
            ymin = c(0,2,4,6,8,10,12,14,16,18), 
            ymax =  c(1,3,5,7,9,11,13,15,17,19), 
            xmin = -Inf, xmax = Inf, alpha = 0.2, fill = "grey") +
-  #scale_colour_brewer(palette = 'Set1') + 
   coord_flip() +
   scale_x_reverse() +
   scale_y_reverse() + 
@@ -46,7 +54,7 @@ plt_a <- my_graph %>%
         legend.text = element_text(size = 9),
         legend.title = element_text(size = 10, face = 'bold'))
 
-
+c("#774762FF", "#BA6E1DFF", "#D6BB3BFF", "#755028FF", "#F2DD78FF", "#205F4BFF", "#913914FF", "#585854FF", "#F0A430FF", "#768048FF", "#800000FF", "#1B3A54FF")
 #all_colors <- brewer.pal(9, "Greys")
 #color_subset <- colorRampPalette(all_colors)(100)[0:70]  # middle 50%
 
@@ -79,6 +87,14 @@ plt_b <-updated %>%
              #shape = 1,
              alpha = 0.5,
              size = 1.5) +
+  scale_colour_manual(values = c("H5N1/2020/R1_Europe" = "#774762FF", 
+                                 "H5N1/2021/R1_Europe" = "#F2DD78FF", 
+                                 "H5N1/2021/R4_Asia" = "#205F4BFF", 
+                                 "H5N1/2022/R2_NAmerica" = "#913914FF", 
+                                 "H5N1/2022/R32_Asia" = "#F0A430FF", 
+                                 "H5N1/2022/R7_NAmerica" = "#768048FF", 
+                                 "H5N8/2019/R3_Europe" = "#800000FF",
+                                 "H5N8/2019/R7_Africa" = "#1B3A54FF")) +
   
   scale_x_continuous('Inter-reassortant Interval', limits = c(0, 2), expand= c(0,0)) + 
   scale_y_discrete(labels = function(x) str_to_upper(x) %>% gsub('_.*', '', .)) + 
@@ -93,7 +109,7 @@ plt_b <-updated %>%
         plot.margin = unit(c(5.5, 5.5, 5.5, 5.5), "points"),
         legend.position = 'none') 
 
-cowplot::plot_grid(plt_a,plt_b, nrow = 2, rel_heights = c(0.6, 0.4), labels = 'AUTO', label_size = 9)
+cowplot::plot_grid(plt_a,plt_b, nrow = 2, rel_heights = c(0.6, 0.4), labels = 'AUTO')
 
 
 
@@ -141,10 +157,10 @@ plt_d <- observed_jaccards %>%
 
 # Combine
 ggdraw() +
-  draw_plot(plt_a, x = 0, y = 0.5, width = 1, height = .5) +
-  draw_plot(plt_b, x = 0, y = 0.25, width = 1, height = .25) +
-  draw_plot(plt_c, x = 0, y = 0, width = 0.5, height = 0.25) +
-  draw_plot(plt_d, x = 0.5, y = 0, width = 0.5, height = 0.25) +
+  draw_plot(plt_a, x = 0, y = 0.5, width = 1, height = .49) +
+  draw_plot(plt_b, x = 0, y = 0.25, width = 1, height = .24) +
+  draw_plot(plt_c, x = 0, y = 0, width = 0.5, height = 0.24) +
+  draw_plot(plt_d, x = 0.5, y = 0, width = 0.5, height = 0.24) +
   draw_plot_label(label = c("A", "B", "C", 'D'), size = 12,
                   x = c(0, 0, 0, 0.5), y = c(1, 0.5, 0.25, 0.25))
-ggsave( '~/Downloads/flu_plots/figure_network_time.jpeg', height = 15, width = 20, units = 'cm')
+ggsave( '~/Downloads/flu_plots/figure_network_time.pdf', height = 15, width = 20, units = 'cm')
