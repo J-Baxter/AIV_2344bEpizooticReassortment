@@ -1,259 +1,222 @@
-scientific_10 <- function(x) {   parse(text=gsub("e\\+*", " %*% 10^", scales::scientific_format()(x)))}
+global_theme <- theme_classic()+
+  theme(
+    #text = element_text(size=10),
+    #axis.title.x = element_text(margin = margin(t = 10, r = 0, b = 0, l = 0), size = 10),
+    #axis.title.y = element_text(margin = margin(t = 0, r = 10, b = 0, l = 0), size = 10),
+    #axis.text = element_text(margin = margin(t = 10, r = 0, b = 0, l = 0), size = 8),
+    legend.text = element_text(size = 8),
+    legend.position = 'none', 
+    panel.spacing = unit(2, "lines"), 
+    strip.background = element_blank()
+  )
 
 
-# Plot Diffusion Coefficient Distribution
-plt_5a <- diffusion_data %>%
-  ggplot() +
-  geom_histogram(aes(x = log1p(weighted_diff_coeff), 
-                     fill = weighted_diff_coeff>0,
-                     colour = weighted_diff_coeff>0,
-                     y = after_stat(density)), 
-                 binwidth = 0.5,
-                 alpha = 0.7) +
-  scale_fill_brewer(palette = 'Accent', 'Is Zero') +
-  scale_colour_brewer(palette = 'Accent', 'Is Zero') +
-  #scale_x_continuous('Log1p Weighted Diffusion Coefficient' , expand = c(0.01,0.01)) +
-  scale_x_continuous(expression(paste('Weighted Diffusion Coefficient (',Km**2~year**-1, ')' )),
-                     breaks = log1p(c(0, 10^(seq(from = 1, to = 7, by = 2)))),
-                     labels = expression(0,  1%*%10^1,  1%*%10^3, 1%*%10^5,  1%*%10^7),
-                     expand = c(0.02,0.02))+
-
-  scale_y_continuous('Probability Density',expand = c(0,0)) + 
-  global_theme + 
-  theme(legend.position = 'none')
-
-
-
-# Plot Persistence distribuions
-plt_5b <- diffusion_data %>%
-  ggplot() +
-  geom_histogram(aes(x = median_anseriformes_wild,
-                     y = after_stat(density)), 
-                 binwidth = 0.2,
-                 fill = host_colours['anseriformes-wild'],
-                 colour = host_colours['anseriformes-wild'],
-                 alpha = 0.7) +
-  scale_x_continuous('Persistence in wild Anseriformes', 
-                     expand = c(0.02,0.02), 
-                     breaks = seq(from = 0, to = 10, by = 2)) +
-  scale_y_continuous('Probability Density',expand = c(0,0)) + 
-  coord_cartesian(xlim = c(0, 10))  +
-  global_theme + 
-  theme(legend.position = 'none')
-
-plt_5c  <- diffusion_data %>%
-  ggplot() +
-  geom_histogram(aes(x = median_charadriiformes_wild,
-                     y = after_stat(density)),
-                 binwidth = 0.2,
-                 fill = host_colours['charadriiformes-wild'],
-                 colour = host_colours['charadriiformes-wild'],
-                 alpha = 0.7) +
-  scale_x_continuous('Persistence in wild Charadriiformes', 
-                     expand = c(0.02,0.02), 
-                     breaks = seq(from = 0, to = 6, by = 2)) +
-  scale_y_continuous('Probability Density',expand = c(0,0)) + 
-  coord_cartesian(xlim = c(0, 6))  +
-  global_theme + 
-  theme(legend.position = 'none')
-
-
-
-
-####################################################################################################
-# Conditional prediction draws  + Conditional marginal means stratified by continent
-averages <-  diffusionmodel1_fit %>%
-  emmeans(~ collection_regionname,
-          var = "weighted_diff_coeff",
-          at = list(collection_regionname = unique(diffusion_data$collection_regionname)),
-          # epred = TRUE, 
-          dpar = "mu",
-          re_formula = NA , 
-          regrid = "response",
-          #tran = "log", 
-          type = "response",
-          allow_new_levels = TRUE) %>%
+plt_5a  <- diffusionmodel1_fit_gamma_19 %>%
+  #  back-transformed linear predictive draws, equivalent to add_linpred (and in this case equviv to epred)
+  # this uses the empirical data distribution by default
+  avg_predictions(by = 'collection_regionname',  type = 'response') %>% 
+  get_draws() %>%
   as_tibble() %>%
-  mutate(label = round(expm1(emmean)))
-
-plt_5d  <- diffusionmodel1_fit %>%
-  predicted_draws(newdata = expand_grid(collection_regionname = unique(as.character(diffusion_data$collection_regionname)),
-                                   season = unique(diffusion_data$season)) %>%
-                    drop_na() %>%
-      
-                    mutate(median_anseriformes_wild = median(diffusion_data$median_anseriformes_wild),
-                           median_charadriiformes_wild = median(diffusion_data$median_charadriiformes_wild)),
-                  re_formula = NA) %>%
-  drop_na(collection_regionname) %>%
   ggplot() + 
-  geom_histogram(aes(x = log1p(.prediction), y = after_stat(density), colour = collection_regionname, fill = collection_regionname), 
+  geom_histogram(aes(x = log1p(draw), y = after_stat(density), colour = collection_regionname, fill = collection_regionname), 
+                 binwidth = 0.2,
                  alpha = 0.7) + 
   scale_colour_manual(values = region_colours)+
   scale_fill_manual(values = region_colours) + 
   scale_x_continuous(expression(paste('Predicted Weighted Diffusion Coefficient (',Km**2~year**-1, ')' )),
-                     breaks = log1p(c(0, 10^(seq(from = 2, to = 10, by = 4)))),
-                     labels = expression(0,  1%*%10^2,  1%*%10^6, 1%*%10^10),
-                     #limits = c(-0.01, log1p(10^9)),
-                     expand = c(0.02,0.02))+
-  scale_y_continuous('Probability Density' ,
-                     expand = c(0,0))+
+                     breaks =log(10^seq(5, 8, b = 1)),
+                     labels = expression(1%*%10^5, 1%*%10^6,  1%*%10^7, 1%*%10^8),
+                     limits = c(11.5, 19),
+                     expand = c(0,0)
+  )+
+ 
   facet_grid(
     cols = vars(collection_regionname),
-    labeller =  labeller(collection_regionname=str_to_title)) +
-  geom_vline(aes(xintercept = emmean, colour = collection_regionname), data = averages, linetype = 'dashed') +
-  geom_text(aes(label =  paste0("E*'('*X*'|'*X*'>'*0*') = '*", label, "~km^2"), 
-                colour = collection_regionname),
-            parse = T,
-            x = 17.5, 
-            y = 0.6,
-            size = 2.5,
-            data = averages) + 
+    labeller =  labeller(collection_regionname=str_to_title),
+    scales = 'free_y') +
+  scale_y_continuous('Probability Density' ,
+                     breaks = seq(0,1.5,by=0.5),
+                     labels = seq(0,1.5,by=0.5),
+                     expand = c(0,0)) +
+  #geom_vline(aes(xintercept = emmean, colour = collection_regionname), data = averages, linetype = 'dashed') +
+  #geom_text(aes(label =  paste0("E*'('*X*'|'*X*'>'*0*') = '*", label, "~km^2"), 
+  #      colour = collection_regionname),
+  #   parse = T,
+  # x = 17.5, 
+  #  y = 0.6,
+  # size = 2.5,
+  # data = averages) + 
   global_theme + 
-  theme(strip.placement  = 'inside')
-
-####################################################################################################
-
-
-
-# Posterior Prediction HU ~ Season
-plt_5e <- predict_hu_season %>%
-  gather_emmeans_draws() %>%
-  ggplot(aes(x  = 1-.value,
-             y = season,
-             slab_colour = season,
-             slab_fill = season)) +
-  stat_halfeye(slab_alpha = 0.7,
-               p_limits = c(0.001, 0.999),
-               point_interval = "median_hdi",
-               linewidth = 1.5,
-               .width =  0.95) +
-  scale_colour_manual(values = c('#E8E1E9FF', '#C0A5AAFF', '#4D3944FF', '#7083A4FF'), aesthetics = 'slab_colour') +
-  scale_fill_manual(values = c('#E8E1E9FF', '#C0A5AAFF', '#4D3944FF', '#7083A4FF'), aesthetics = 'slab_fill') +
-  scale_x_continuous('P(Weighted Diffusion Coefficient > 0)') + 
-  scale_y_discrete('Season',
-                   labels = c('overwintering' = 'Overwintering',
-                              'migrating_spring' = 'Spring Migration',
-                              'migrating_autumn' = 'Autumn Migration',
-                              'breeding' = 'Breeding')) + 
-  global_theme 
+  theme(strip.placement  = 'inside',
+        strip.text = element_text(face = 'bold', size = 10),
+        strip.background = element_blank(),
+        axis.text = element_text(size = 8),
+        axis.title = element_text(size = 9),
+        legend.text = element_text(size = 8))
 
 
-# Posterior Prediction/Average HU ~ Region
-plt_5f <-regional_average %>%
-  gather_emmeans_draws() %>%
-  ggplot(aes(x  = 1-.value,
-             y = collection_regionname, 
-             slab_colour = collection_regionname,
-             slab_fill = collection_regionname)) +
-  stat_halfeye(slab_alpha = 0.7,
-               p_limits = c(0.001, 0.999),
-               point_interval = "median_hdi",
-               linewidth = 1.5,
-               .width =  0.95) +
-  scale_fill_manual(values = region_colours, aesthetics = 'slab_fill') +
-  scale_colour_manual(values = region_colours, aesthetics = 'slab_colour') + 
-  scale_x_continuous('P(Weighted Diffusion Coefficient > 0)') + 
-  scale_y_discrete('Continent', 
-                   labels = function(x) str_to_title(x) %>% str_wrap(., width = 10)) + 
-  global_theme + 
-  theme(legend.position = 'none')
+# count_cross_species_log1p (single plot)
+plt_5b <- avg_predictions(diffusionmodel1_fit_gamma_19, 
+                variables = list('count_cross_species_log1p' = log1p(0:10)))%>%
+  get_draws(shape = 'rvar') %>%
+  ggplot(aes(x = expm1(count_cross_species_log1p), ydist = rvar)) +
+  stat_lineribbon(point_interval = "median_hdci",
+                  alpha = 0.7 ,
+                  #p_limits = c(0.025, 0.975),
+                  #normalize = 'xy'
+                  ) +
+  scale_y_log10(expression(paste('Predicted Diffusion Coefficient (',Km**2~year**-1, ')' )),
+                breaks = 10^seq(5.5, 6.5, by =0.5),
+                labels = expression(5%*%10^5, 1%*%10^6, 1%*%10^6.5),
+                expand = c(0,0))+ 
+  scale_x_continuous('Host Jumps',
+                     expand = c(0,0),
+                     breaks = seq(0,10,by=2)) +
+  scale_fill_brewer() + 
+  global_theme+ 
+  theme(strip.placement  = 'inside',
+        strip.text = element_text(face = 'bold', size = 10),
+        strip.background = element_blank(),
+        axis.text = element_text(size = 8),
+        axis.title = element_text(size = 9),
+        legend.text = element_text(size = 8))
 
 
-# average marginal effect of anseriformes/ charadriiformes
-plt_5g <- bind_rows(diffusionmodel1_fit %>%
-  emtrends(~ median_anseriformes_wild,
-           var = "median_anseriformes_wild",
-           at = list(median_anseriformes_wild = c(0.25 , 0.5 , 1)),
-            epred = TRUE, 
-           dpar = "mu") %>% 
-  gather_emmeans_draws() %>%
-  mutate(var = 'median_anseriformes_wild') %>%
-  rename(var_change = median_anseriformes_wild),
+
+# collection_year (single plot)
+plt_5c <- avg_predictions(diffusionmodel1_fit_gamma_19, by = 'collection_year') %>%
+get_draws(shape = 'rvar') %>%
+ggplot(aes(x = collection_year, ydist = rvar, slab_colour = NULL,
+           slab_fill = estimate)) +
+  stat_slabinterval(point_interval = "median_hdci",
+                    slab_alpha = 0.7 ,
+                    p_limits = c(0.025, 0.975),
+                    normalize = 'xy',
+                    scale = 0.85,
+                    side = 'both',
+                    .width = 0.95) +
+  scale_y_log10(expression(paste('Predicted Diffusion Coefficient (',Km**2~year**-1, ')' )),
+                breaks = 10^seq(4, 8, b = 1),
+                labels = expression(1%*%10^4, 1%*%10^5, 1%*%10^6,  1%*%10^7, 1%*%10^8),
+                expand = c(0,0))+ 
+  scale_x_discrete('Year of Reassortant MRCA') +
+  scale_fill_distiller(palette = 'Greens', aesthetics = 'slab_fill', direction = 1) + 
+  scale_colour_distiller(palette = 'Greens', aesthetics = 'slab_colour', direction = 1) + 
+  global_theme+ 
+  theme(strip.placement  = 'inside',
+        strip.text = element_text(face = 'bold', size = 10),
+        strip.background = element_blank(),
+        axis.text = element_text(size = 8),
+        axis.title = element_text(size = 9),
+        legend.text = element_text(size = 8))
+
+
+# median_anseriformes_wild_prop (strat by region)
+plt_5d <- avg_predictions(diffusionmodel1_fit_gamma_19, 
+                variables = list('path_prop_anseriformes_wild' = seq(0,1,by = 0.1)),
+                by = c('collection_regionname', 'path_prop_anseriformes_wild')) %>%
+  get_draws(shape = 'rvar') %>%
+  ggplot(aes(x = path_prop_anseriformes_wild, ydist = rvar, fill = collection_regionname)) +
+  stat_lineribbon(point_interval = "median_hdci", 
+                  alpha = 0.5) +
+ # geom_point(data = diffusion_data, aes(x = path_prop_anseriformes_wild, y = weighted_diff_coeff), inherit.aes = F) +
   
-  diffusionmodel1_fit %>%
-    emtrends(~ median_charadriiformes_wild,
-             var = "median_charadriiformes_wild",
-             at = list(median_charadriiformes_wild = c(0.25 , 0.5 , 1)),
-             epred = TRUE, 
-             dpar = "mu") %>% 
-    gather_emmeans_draws() %>%
-    mutate(var = 'median_charadriiformes_wild') %>%
-    rename(var_change = median_charadriiformes_wild)) %>%
+  facet_wrap(~collection_regionname, ncol = 4,
+             labeller =  labeller(collection_regionname=str_to_title)) +
+  scale_y_log10(expression(paste('Predicted Diffusion Coefficient (',Km**2~year**-1, ')' )),
+                breaks = 10^seq(5, 8, by =1),
+                labels = expression(1%*%10^5, 1%*%10^6, 1%*%10^7, 1%*%10^8),
+                expand = c(0,0))+ 
+  scale_x_continuous('Proportion of Circulation in Anseriformes',
+                     expand = c(0,0),
+                     breaks = seq(0,1,by=0.25)) +
+  scale_fill_manual(values = region_colours)+
+  global_theme+ 
+  theme(strip.placement  = 'inside',
+        strip.text = element_text(face = 'bold', size = 10),
+        strip.background = element_blank(),
+        axis.text = element_text(size = 8),
+        axis.title = element_text(size = 9),
+        legend.text = element_text(size = 8))
   
-  mutate(var = gsub('median_', '', var) %>%
-           gsub('_', '-', .)) %>%
 
-  ggplot(aes(x  = .value,
-             y = as.factor(var_change),
-             slab_colour = var,
-             slab_fill = var)) +
-  stat_halfeye(slab_alpha = 0.7 ,
-               p_limits = c(0.001, 0.999),
-               point_interval = "median_hdi",
-               linewidth = 1.5,
-               .width =  0.95)  +
-  geom_vline(aes(xintercept = 0), linetype = 'dashed')  +
-  scale_x_continuous(expression(paste('Change in Weighted Diffusion Coefficient (',Km**2~year**-1, ')' )),
-                     breaks = seq(from = -1*10**6, to = 5*10**6, by = 2*10**6),
-                     labels = scientific_10,
-                     limits = c(-1*10**6, 5*10**6),
-                     expand = c(0.02,0.02))+
-  scale_fill_manual(values = host_colours, aesthetics = 'slab_fill') +
-  scale_colour_manual(values = host_colours, aesthetics = 'slab_colour') + 
-  scale_y_discrete('Persistence in Host (Years)', 
-                   labels = function(x) str_to_title(x) %>% str_wrap(., width = 10)) +
-  global_theme + 
-  theme(legend.position = 'none')
+# median_charadriiformes_wild_prop (strat by region)
+plt_5e <- avg_predictions(diffusionmodel1_fit_gamma_19, 
+                variables = list('path_prop_charadriiformes_wild' = seq(0,1,by = 0.1)),
+                by = c('collection_regionname','path_prop_charadriiformes_wild')) %>%
+  get_draws(shape = 'rvar') %>%
+  ggplot(aes(x = path_prop_charadriiformes_wild, ydist = rvar, fill = collection_regionname)) +
+  stat_lineribbon(point_interval = "median_hdci",
+                  alpha = 0.5) +
+ # geom_point(data = diffusion_data, aes(x = path_prop_charadriiformes_wild, y = weighted_diff_coeff), inherit.aes = F) +
+  facet_wrap(~collection_regionname, ncol = 4,
+             labeller =  labeller(collection_regionname=str_to_title)) +
+  scale_y_log10(expression(paste('Predicted Diffusion Coefficient (',Km**2~year**-1, ')' )),
+                breaks = 10^seq(5, 8, by =1),
+                labels = expression(1%*%10^5, 1%*%10^6, 1%*%10^7, 1%*%10^8),
+                expand = c(0,0))+ 
+  scale_x_continuous('Proportion of Circulation in Charadriiformes',
+                     expand = c(0,0),
+                     breaks = seq(0,1,by=0.25)) +
+  scale_fill_manual(values = region_colours)+
+  coord_cartesian(ylim =c(10^4.5, 10^8.5)) +
+  global_theme+ 
+  theme(strip.placement  = 'inside',
+        strip.text = element_text(face = 'bold', size = 10),
+        strip.background = element_blank(),
+        axis.text = element_text(size = 8),
+        axis.title = element_text(size = 9),
+        legend.text = element_text(size = 8))
 
-
+plt_5f <-avg_predictions(diffusionmodel1_fit_gamma_19, 
+                variables = list('path_prop_galliformes_domestic' = seq(0,1,by = 0.1)),
+                by = c('collection_regionname', 'path_prop_galliformes_domestic')) %>%
+  get_draws(shape = 'rvar') %>%
+  ggplot(aes(x = path_prop_galliformes_domestic, ydist = rvar, fill = collection_regionname)) +
+  stat_lineribbon(point_interval = "median_hdci",
+                  alpha = 0.5) +
   
-  
-# Marginal effect of continent on MU
-# Results are averaged over the levels of: season
+ # geom_point(data = diffusion_data, aes(x = path_prop_galliformes_domestic, y = weighted_diff_coeff), inherit.aes = F) +
+  facet_wrap(~collection_regionname, ncol = 4,
+             labeller =  labeller(collection_regionname=str_to_title)) +
+  scale_y_log10(expression(paste('Predicted Diffusion Coefficient (',Km**2~year**-1, ')' )),
+                breaks = 10^seq(5, 8, by =1),
+                labels = expression(1%*%10^5, 1%*%10^6, 1%*%10^7, 1%*%10^8),
+                expand = c(0,0))+ 
+  scale_x_continuous('Proportion of Circulation in Galliformes',
+                     expand = c(0,0),
+                     breaks = seq(0,1,by=0.25)) +
+  scale_fill_manual(values = region_colours)+
+  coord_cartesian(ylim =c(10^4.5, 10^8.5)) +
+  global_theme+ 
+  theme(strip.placement  = 'inside',
+        strip.text = element_text(face = 'bold', size = 10),
+        strip.background = element_blank(),
+        axis.text = element_text(size = 8),
+        axis.title = element_text(size = 9),
+        legend.text = element_text(size = 8))
+
+plt5_lh <- align_plots(plt_5a, plt_5b, plt_5d, plt_5e, align = 'v', axis = 'l')
+plt_5mid <- plot_grid(plt5_lh[[2]], plt_5c, ncol = 2, align='h', labels = c('B', 'C'), label_size = 9)
 
 
-plt_5h <-diffusionmodel1_fit %>%
-  emmeans(~ collection_regionname,
-          dpar = "mu",
-          epred = TRUE) %>% 
-  contrast(method = "revpairwise") %>% 
-  gather_emmeans_draws() %>%
-  filter(grepl('asia', contrast)) %>%
-  mutate(contrast = gsub(' - .*', '' , contrast)) %>%
-  ggplot(aes(x  = .value,
-             y = contrast,
-             slab_colour = as.factor(contrast),
-             slab_fill = as.factor(as.factor(contrast)))) +
-  geom_vline(aes(xintercept = 0), linetype = 'dashed')  +
-  stat_halfeye(slab_alpha = 0.7,
-               p_limits = c(0.001, 0.999),
-               point_interval = "median_hdi",
-               linewidth = 1.5,
-               .width =  0.95)+
-  scale_fill_manual(values = region_colours, aesthetics = 'slab_fill') +
-  scale_colour_manual(values = region_colours, aesthetics = 'slab_colour') + 
-  scale_x_continuous(expression(paste('Change in Weighted Diffusion Coefficient (',Km**2~year**-1, ')' )),
-                     breaks = seq(from = -2*10**6, to = 5*10**6, by = 1*10**6),
-                     labels = scientific_10,
-                     expand = c(0.02,0.02))+
-  scale_y_discrete('Continent', 
-                   labels = function(x) str_to_title(x) %>% str_wrap(., width = 10)) + 
-  global_theme + 
-  theme(legend.position = 'none')
-             
-  
-  
-  
-# Combine plots together
-plt5_lh <- align_plots(plt_5a, plt_5d, plt_5e, plt_5g,align = 'v', axis = 'l')
+plot_grid(plt_5d, plt_5e, plt_5f, nrow = 3, labels = 'AUTO' ,label_size = 10)
 
 
-plt5_top <- plot_grid(plt5_lh[[1]], plt_5b, plt_5c, align = 'h', nrow = 1, axis = 'tb', labels = 'AUTO')
-plt5_bottom <- plot_grid(plt5_lh[[3]], plt_5f, plt5_lh[[4]], plt_5h, align = 'hv', 
-                         ncol = 2, nrow = 2, axis = 'tblr', labels = c('E', 'F', 'G', 'H'))
+
+ggdraw() +
+  draw_plot(plt_5a, x = 0, y = .5, width = 1, height = .5) +
+  draw_plot(plt_5b, x = 0, y = 0, width = .5, height = .5) +
+  draw_plot(plt_5c, x = 0.5, y = 0, width = 0.5, height = 0.5) +
+  draw_plot_label(label = c("A", "B", "C"), size = 10,
+                  x = c(0, 0, 0.5), y = c(1, 0.5, 0.5))
 
 
-plt5 <- plot_grid(plt5_top, plt5_lh[[2]], plt5_bottom, labels = c('', 'D', ''), nrow = 3, rel_heights = c(1,1,2))
-plt5
 
-ggsave('~/Downloads/figure6.jpeg', height = 40, width = 35, units = 'cm', dpi = 360)
+ggsave('~/Downloads/flu_plots/figure6.jpeg', height = 20, width = 25, units = 'cm', dpi = 360)
+
+
+
+plot_grid(plt_5d, plt_5e, plt_5f, nrow = 3, labels = 'AUTO' ,label_size = 10)
+ggsave('~/Downloads/flu_plots/diffusion_hosteffects.jpeg', height = 25, width = 25, units = 'cm', dpi = 360)
+
