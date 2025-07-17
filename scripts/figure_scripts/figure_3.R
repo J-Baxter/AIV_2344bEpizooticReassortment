@@ -328,8 +328,8 @@ cowplot::plot_grid(
   phylogeo[[5]],
   alt_plot,
   phylogeo[[4]], 
-  phylogeo[[3]],
-  phylogeo[[1]], 
+  phylogeo[[1]],
+  phylogeo[[3]], 
   plot_legend,
 
   labels = c( "H5N8/2019/R7",
@@ -350,12 +350,7 @@ cowplot::plot_grid(main,
                    rel_heights = c(1,0.1),
                    ncol = 1)
 
-ggsave('~/Downloads/flu_plots/phylogeo.jpeg',
-       height = 15,
-       width = 20,
-       units = 'cm',
-       dpi = 360
-       )
+s
 
 ############################################## WRITE ###############################################
 
