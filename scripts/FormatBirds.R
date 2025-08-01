@@ -1,24 +1,52 @@
-# 
-isBird <- function(x){
+################################################################################
+## Script Name:        <INSERT_SCRIPT_NAME_HERE>
+## Purpose:            Regex functions to format host (avian)
+## Author:             James Baxter
+## Date Created:
+################################################################################
+
+############################### SYSTEM OPTIONS #################################
+options(
+  scipen = 6, # Avoid scientific notation
+  digits = 7 # Set precision for numerical display
+)
+memory.limit(30000000)
+
+############################### DEPENDENCIES ###################################
+# Load required libraries
+library(tidyverse)
+library(magrittr)
+
+
+################################### DATA #######################################
+# Read and inspect data
+
+################################### MAIN #######################################
+# Main analysis or transformation steps
+isBird <- function(x) {
   bird_orders <- c(
-    "passeriformes", "charadriiformes", "suliformes", "pelecaniformes","accipitriformes", 
-    "falconiformes", "galliformes", "piciformes", "anseriformes", "coraciiformes", "strigiformes", 
-    "columbiformes", "gruiformes","procellariiformes", "ciconiiformes", "podicipediformes", 
-    "apodiformes", "caprimulgiformes", "psittaciformes", "sphenisciformes", "casuariiformes",
-    "phoenicopteriformes", "cuculiformes", "coraciformes", "trogoniformes", "gaviiformes", 
-    "pteroclidiformes", "anseranseriformes", "phaethontiformes","opisthocomiformes", "caprimulgiformes")
-  
-  if(any(x %in% bird_orders)){
+    "passeriformes", "charadriiformes", "suliformes", "pelecaniformes",
+    "accipitriformes", "falconiformes", "galliformes", "piciformes",
+    "anseriformes", "coraciiformes", "strigiformes",
+    "columbiformes", "gruiformes", "procellariiformes", "ciconiiformes",
+    "podicipediformes", "apodiformes", "caprimulgiformes", "psittaciformes",
+    "sphenisciformes", "casuariiformes", "phoenicopteriformes", "cuculiformes",
+    "coraciformes", "trogoniformes", "gaviiformes", "pteroclidiformes",
+    "anseranseriformes", "phaethontiformes", "opisthocomiformes",
+    "caprimulgiformes"
+  )
+
+  if (any(x %in% bird_orders)) {
     x <- TRUE
-  }else{
+  } else {
     x <- FALSE
   }
-  
+
   return(x)
 }
 
 
-FormatAnseriformes <- function(x){
+FormatAnseriformes <- function(x) {
   anseriformes <- c(
     "whooper swan" = "cygnus cygnus|whooper swan",
     "mute swan" = "c[yi]gnus olor|m(ute){0,1}[ -]{0,1}swan",
@@ -72,33 +100,32 @@ FormatAnseriformes <- function(x){
     "coscoroba swan" = "coscoroba coscoroba|coscoroba swan",
     "trumpeter swan" = "cygnus buccinator|trumpeter swan",
     "cackling goose" = "branta hutchinsii|cackling goose",
-    'brant' = '^br[ea]nt( goose){0,1}$|branta bernicla',
-    'aythya sp.' = 'aythya sp\\.|por{0,1}chard$',
-    'indian spot-billed duck' = 'indian spot[- ]billed duck|anas poecilor{0,1}hyncha|spotbill duck',
-    'common goldeneye' = 'common golden {0,1}eye|bucephala clangula',
-    'common eider' = "common eider|somateria mollissima|(st\\. cuthbert's|cuddy's) duck",
-    'redhead' = 'redhead( duck){0,1}|aythya americana',
-    'surf scoter' = 'surf sco{1,2}ter|melanitta perspicillata',
-    'steamer-duck sp.'= "tachyeres sp\\.|steamer[- ]duck",
-    'common shelduck' =	'tadorna tadorna|common shelduck',
-    'ring-necked duck' = 'aythya collaris|ring[- ]necked duck',
-    'black-necked swan' = 'black[- ]necked swan|cygnus melancoryphus',
-    'spur-winged goose' = 'spur[- ]winged goose|plectropterus gambensis',
+    "brant" = "^br[ea]nt( goose){0,1}$|branta bernicla",
+    "aythya sp." = "aythya sp\\.|por{0,1}chard$",
+    "indian spot-billed duck" = "indian spot[- ]billed duck|anas poecilor{0,1}hyncha|spotbill duck",
+    "common goldeneye" = "common golden {0,1}eye|bucephala clangula",
+    "common eider" = "common eider|somateria mollissima|(st\\. cuthbert's|cuddy's) duck",
+    "redhead" = "redhead( duck){0,1}|aythya americana",
+    "surf scoter" = "surf sco{1,2}ter|melanitta perspicillata",
+    "steamer-duck sp." = "tachyeres sp\\.|steamer[- ]duck",
+    "common shelduck" = "tadorna tadorna|common shelduck",
+    "ring-necked duck" = "aythya collaris|ring[- ]necked duck",
+    "black-necked swan" = "black[- ]necked swan|cygnus melancoryphus",
+    "spur-winged goose" = "spur[- ]winged goose|plectropterus gambensis",
     "barrow's goldeneye" = "barrow[' ]s goldeneye|bucephala islandica"
-    
-    )
+  )
 
-  for (i in 1:length(anseriformes)){
-    if(any(grepl(anseriformes[[i]], x))){
+  for (i in 1:length(anseriformes)) {
+    if (any(grepl(anseriformes[[i]], x))) {
       x <- names(anseriformes)[[i]]
     }
   }
-  
+
   return(x)
 }
 
 
-FormatCharadriiformes <- function(x){
+FormatCharadriiformes <- function(x) {
   charadriiformes <- c(
     "eurasian curlew" = "numenius arquata|eurasian curlew",
     "black-headed gull" = "(chroicocephalus|larus) ridibundus|blac[kh][- ]headea{0,1}d (sea){0,1}gull|bl h gull",
@@ -139,34 +166,33 @@ FormatCharadriiformes <- function(x){
     "western gull" = "larus occidentalis|western gull",
     "far eastern curlew" = "numenius madagascariensis|*eastern curlew",
     "common murre" = "uria aalge|(common|foolish) guillemot|common murre",
-    'great black-backed gull' = 'gr bk bd gull|(great[ -])black[ -]backed[ -]gull|larus marinus',
+    "great black-backed gull" = "gr bk bd gull|(great[ -])black[ -]backed[ -]gull|larus marinus",
     "belcher's gull" = "larus belcheri|belcher'{0,1}s{0,1} gull",
-    'lesser black-backed gull' = "lesser black[- ]backed gull|l[ -]bl[ -]ba[ -]gull",
-    'razorbill' = "ra[zx]orbill|lesser auk|alca torda",
-    'large alcid sp.' = '^guillemot$',
-    'black-bellied plover' = 	"pluvialis squatarola|(black[- ]belli(ed){0,1}|gr[ea]y) plover",
-    'gull-billed tern' = 'gull[- ]billed tern|gelochelidon nilotica',
-    'yellow-legged gull' = 'yellow[- ]legged gull|larus michahellis',
-    'ring-billed gull' = 'ring[- ]billed gull|larus delawarensis',
-    'scolopacidae sp.' = 'sandpiper',
-    'shorebird sp.' = 	'^shorebird$|charadriiformes sp\\.|^seabird$',
-    'royal tern' = 'royal tern|thalasseus maximus',
-    'black-legged kittiwake' = 'black[- ]legged kittiwake|rissa tridactyla' ,
+    "lesser black-backed gull" = "lesser black[- ]backed gull|l[ -]bl[ -]ba[ -]gull",
+    "razorbill" = "ra[zx]orbill|lesser auk|alca torda",
+    "large alcid sp." = "^guillemot$",
+    "black-bellied plover" = "pluvialis squatarola|(black[- ]belli(ed){0,1}|gr[ea]y) plover",
+    "gull-billed tern" = "gull[- ]billed tern|gelochelidon nilotica",
+    "yellow-legged gull" = "yellow[- ]legged gull|larus michahellis",
+    "ring-billed gull" = "ring[- ]billed gull|larus delawarensis",
+    "scolopacidae sp." = "sandpiper",
+    "shorebird sp." = "^shorebird$|charadriiformes sp\\.|^seabird$",
+    "royal tern" = "royal tern|thalasseus maximus",
+    "black-legged kittiwake" = "black[- ]legged kittiwake|rissa tridactyla",
     "pallas's gull" = "pallas['’]s gull|ichthyaetus ichthyaetus"
-    
   )
-  
-  for (i in 1:length(charadriiformes)){
-    if(any(grepl(charadriiformes[[i]], x))){
+
+  for (i in 1:length(charadriiformes)) {
+    if (any(grepl(charadriiformes[[i]], x))) {
       x <- names(charadriiformes)[[i]]
     }
   }
-  
+
   return(x)
 }
 
 
-FormatAccipitriformes <- function(x){
+FormatAccipitriformes <- function(x) {
   accipitriformes <- c(
     "hawk sp." = "accipitridae sp.|hawk sp.|^hawk$|^est$",
     "common buzzard" = "buteo buteo|common buzzard|^buzzard$",
@@ -179,30 +205,30 @@ FormatAccipitriformes <- function(x){
     "eurasian sparrowhawk" = "accipiter nisus|eurasian sparrowhawk|^sparrowhawk$",
     "cooper's hawk" = "accipiter cooperii|cooper {0,1}s'{0,1} {0,1}s{0,1} hawk",
     "swainson's hawk" = "buteo swainsoni|swainson {0,1}s'{0,1} {0,1}s{0,1} hawk",
-    'sharp-shinned hawk' = 'sharp[- ]{0,1}shinned hawk|accipiter striatus',
+    "sharp-shinned hawk" = "sharp[- ]{0,1}shinned hawk|accipiter striatus",
     "bald eagle" = "haliaeetus leucocephalus|bald eagle",
     "red-tailed hawk" = "buteo jamaicensis|(red[- ]{0,1}tailed|rt)[- ]hawk",
     "african fish-eagle" = "haliaeetus vocifer|african fish[- ]eagle|^fish[- ]eagle$",
-    #"old world vulture sp." = "accipitridae \\(old world vulture sp\\.\\)|old world vulture sp.",
+    # "old world vulture sp." = "accipitridae \\(old world vulture sp\\.\\)|old world vulture sp.",
     "variable hawk" = "buteo polyosoma|(variable|red[- ]backed)[- ]hawk",
     "bearded vulture" = "gypaetus barbatus|bearded vulture",
     "red-shouldered hawk" = "buteo lineatus|red-shouldered hawk",
     "osprey" = "pandion haliaetus|osprey",
-    "harris's hawk" = "parabuteo unicinctus|harris[' ]{0,1}s{0,1} hawk", 
+    "harris's hawk" = "parabuteo unicinctus|harris[' ]{0,1}s{0,1} hawk",
     "rough-legged hawk" = "buteo lagopus|rough[- ]legged (hawk|buzzard)"
   )
-  
-  for (i in 1:length(accipitriformes)){
-    if(any(grepl(accipitriformes[[i]], x))){
+
+  for (i in 1:length(accipitriformes)) {
+    if (any(grepl(accipitriformes[[i]], x))) {
       x <- names(accipitriformes)[[i]]
     }
   }
-  
+
   return(x)
 }
 
 
-FormatPelecaniformes <- function(x){
+FormatPelecaniformes <- function(x) {
   pelecaniformes <- c(
     "great egret" = "ardea alba|great egret",
     "grey heron" = "ardea cinerea|gr[ea]y heron",
@@ -220,48 +246,48 @@ FormatPelecaniformes <- function(x){
     "great blue heron" = "ardea herodias|great blue heron",
     "brown pelican" = "pelecanus occidentalis|brown pelican",
     "snowy egret" = "egretta thula|snowy egret",
-    'black-crowned night heron'	= 'nycticorax nycticorax|black[- ]crown(ed){0,1} night heron'
+    "black-crowned night heron" = "nycticorax nycticorax|black[- ]crown(ed){0,1} night heron"
   )
-  
-  for (i in 1:length(pelecaniformes)){
-    if(any(grepl(pelecaniformes[[i]], x))){
+
+  for (i in 1:length(pelecaniformes)) {
+    if (any(grepl(pelecaniformes[[i]], x))) {
       x <- names(pelecaniformes)[[i]]
     }
   }
-  
+
   return(x)
 }
 
 
-FormatGalliformes <- function(x){
-  galliformes <-  c(
+FormatGalliformes <- function(x) {
+  galliformes <- c(
     "red junglefowl (domestic type)" = "gallus gallus|red junglefow|c[hk]i[ck][hk]{0,1}en|(lay(er|ing)|breeding) hen|broiler|poultry|^hens{0,1}$|^rooster$|^layer$|^ch$|backyard bird",
     "wild turkey (domestic type)" = "meleagris gallopavo|wild turkey|turkey|^pavo$|domestic turkey",
     "helmeted guineafowl (domestic type)" = "numida meleagris|helmeted guineafowl \\(domestic type\\)",
     "pheasant sp." = "phasianidae|pheasant sp\\.|^pheasant$|^partridge$",
     "indian peafowl (domestic type)" = "pavo cristatus|indian peafowl|pea(fowl|cock)",
-    #"old world quail sp." = "phasianidae (quail sp\\.\\)|old world quail sp.",
-    #"new world quail sp." = "odontophoridae (quail sp\\.\\)|new world quail sp.",
+    # "old world quail sp." = "phasianidae (quail sp\\.\\)|old world quail sp.",
+    # "new world quail sp." = "odontophoridae (quail sp\\.\\)|new world quail sp.",
     "lady amherst's pheasant" = "chrysolophus amherstiae|lady amherst'{0,1}s pheasant",
-    "ring-necked pheasant" = "phasianus colchicus|(ring[- ]{0,1}neck(ed){0,1}|common) pheasant", 
+    "ring-necked pheasant" = "phasianus colchicus|(ring[- ]{0,1}neck(ed){0,1}|common) pheasant",
     "crested guineafowl sp." = "guttera pucherani|crested guineafowl sp\\."
   )
-  
-  for (i in 1:length(galliformes)){
-    if(any(grepl(galliformes[[i]], x))){
+
+  for (i in 1:length(galliformes)) {
+    if (any(grepl(galliformes[[i]], x))) {
       x <- names(galliformes)[[i]]
     }
   }
-  
+
   return(x)
 }
 
-FormatStrigiformes <- function(x){
+FormatStrigiformes <- function(x) {
   strigiformes <- c(
     "owl sp." = "strigiformes \\(owl sp\\.\\)|owl sp\\.|^owl$",
     "short-eared owl" = "asio flammeus|short[- ]ear(ed){0,1} owl",
-    "eurasian eagle-owl" = "bubo bubo|^(eurasian ){0,1}eagle[- ]owl$", 
-    "spotted eagle-owl" = "bubo africanus|^spotted eagle[- ]owl$", 
+    "eurasian eagle-owl" = "bubo bubo|^(eurasian ){0,1}eagle[- ]owl$",
+    "spotted eagle-owl" = "bubo africanus|^spotted eagle[- ]owl$",
     "tawny owl" = "strix aluco|tawny owl|towny owel",
     "long-eared owl" = "asio otus|long[- ]ear(ed){0,1} owl",
     "little owl" = "athene noctua|little owl",
@@ -272,23 +298,23 @@ FormatStrigiformes <- function(x){
     "snowy owl" = "bubo scandiacus|snowy owl",
     "western screech-owl" = "megascops kennicottii|western screech[- ]owl"
   )
-  
-  for (i in 1:length(strigiformes)){
-    if(any(grepl(strigiformes[[i]], x))){
+
+  for (i in 1:length(strigiformes)) {
+    if (any(grepl(strigiformes[[i]], x))) {
       x <- names(strigiformes)[[i]]
     }
   }
-  
+
   return(x)
 }
 
 
-FormatPasseriformes <- function(x){
-  passeriformes <-  c(
+FormatPasseriformes <- function(x) {
+  passeriformes <- c(
     "eurasian jackdaw" = "corvus monedula|eurasian jackdaw|western jackdaw",
     "eurasian jay" = "garrulus glandarius|eurasian jay",
     "eurasian magpie" = "pica pica|eurasian magpie", # magpies divided by region
-    'blackbird sp.' = 'blackbird|icteridae sp.',
+    "blackbird sp." = "blackbird|icteridae sp.",
     "house sparrow" = "passer domesticus|house sparrow",
     "crow/raven sp." = "corvidae \\(crow/raven sp\\.\\)|crow/raven sp\\.|jungle crow|^crow$|^raven$|american raven",
     "large-billed crow" = "corvus macrorhynchos|large[- ]bill(ed){0,1} crow",
@@ -298,21 +324,21 @@ FormatPasseriformes <- function(x){
     "acrocephalus sp." = "acrocephalus \\(acrocephalus sp\\.\\)|acrocephalus sp\\.|^reed warbler$",
     "crow sp." = "corvus \\(crow sp\\.\\)|crow sp\\.|corvus corvus",
     "great-tailed grackle" = "quiscalus mexicanus|great[- ]tail(ed){0,1} grackle",
-    "pycnonotidae sp." = 'bul {0,1}bul',
-    'passerine sp.' = "crested jay"
+    "pycnonotidae sp." = "bul {0,1}bul",
+    "passerine sp." = "crested jay"
   )
-  
-  for (i in 1:length(passeriformes)){
-    if(any(grepl(passeriformes[[i]], x))){
+
+  for (i in 1:length(passeriformes)) {
+    if (any(grepl(passeriformes[[i]], x))) {
       x <- names(passeriformes)[[i]]
     }
   }
-  
+
   return(x)
 }
 
 
-FormatSuliformes <- function(x){
+FormatSuliformes <- function(x) {
   suliformes <- c(
     "cormorant sp." = "phalacrocoracidae \\(cormorant sp\\.\\)|cormorant sp\\.|^cormorants{0,1}$",
     "great cormorant" = "phalacrocorax carbo|(great[- ]|white[- ]breast(ed){0,1}[- ])cormorant",
@@ -325,23 +351,23 @@ FormatSuliformes <- function(x){
     "neotropic cormorant" = "phalacrocorax brasilianus|neotropic cormorant",
     "double-crested cormorant" = "phalacrocorax auritus|double[- ]crest(ed){0,1} cormorant",
     "brown booby" = "sula leucogaster|brown booby",
-    'magnificent frigatebird' = 'magnificent frigatebird|fregata[ -]magnificens',
-    'frigatebird sp.' = '^frigatebird',
-    'european shag' = '^shag$|gulosus aristotelis'
+    "magnificent frigatebird" = "magnificent frigatebird|fregata[ -]magnificens",
+    "frigatebird sp." = "^frigatebird",
+    "european shag" = "^shag$|gulosus aristotelis"
   )
-  
-  for (i in 1:length(suliformes)){
-    if(any(grepl(suliformes[[i]], x))){
+
+  for (i in 1:length(suliformes)) {
+    if (any(grepl(suliformes[[i]], x))) {
       x <- names(suliformes)[[i]]
     }
   }
-  
+
   return(x)
 }
 
 
-FormatGruiformes <- function(x){
-  gruiformes <-  c(
+FormatGruiformes <- function(x) {
+  gruiformes <- c(
     "crane sp." = "grus sp\\.|crane sp\\.|^crane$|black-throated crane|^crowned crane",
     "great egret" = "ardea alba|great egret",
     "hooded crane" = "grus monacha|hooded crane",
@@ -350,212 +376,216 @@ FormatGruiformes <- function(x){
     "rail/crake sp." = "rallidae sp\\.|rail/crake sp\\.|^moorhen$",
     "red-crowned crane" = "grus japonensis|red[- ]crown(ed){0,1}[- ]crane",
     "white-naped crane" = "grus vipio|white[- ]nap(ed){0,1}[- ]crane",
-    'eurasian coot' = '(common|eurai{0,1}si{0,1}an|australian) coot|fulica atra'
-    )
+    "eurasian coot" = "(common|eurai{0,1}si{0,1}an|australian) coot|fulica atra"
+  )
 
-  
-  for (i in 1:length(gruiformes)){
-    if(any(grepl(gruiformes[[i]], x))){
+
+  for (i in 1:length(gruiformes)) {
+    if (any(grepl(gruiformes[[i]], x))) {
       x <- names(gruiformes)[[i]]
     }
   }
-  
+
   return(x)
 }
 
 
-FormatPodicipediformes <- function(x){
-  podicipediformes <- c("grebe sp." = "podicipedidae sp\\.|grebe sp\\.|^grebe$",
-                        "great crested grebe" = "podiceps cristatus|((great ){0,1}crested|(g c)) grebe",
-                        "little grebe" = "tachybaptus ruficollis|little grebe",
-                        "eared grebe" = "podiceps nigricollis|eared grebe|black[ -]necked grebe")
-  
-  for (i in 1:length(podicipediformes)){
-    if(any(grepl(podicipediformes[[i]], x))){
+FormatPodicipediformes <- function(x) {
+  podicipediformes <- c(
+    "grebe sp." = "podicipedidae sp\\.|grebe sp\\.|^grebe$",
+    "great crested grebe" = "podiceps cristatus|((great ){0,1}crested|(g c)) grebe",
+    "little grebe" = "tachybaptus ruficollis|little grebe",
+    "eared grebe" = "podiceps nigricollis|eared grebe|black[ -]necked grebe"
+  )
+
+  for (i in 1:length(podicipediformes)) {
+    if (any(grepl(podicipediformes[[i]], x))) {
       x <- names(podicipediformes)[[i]]
     }
   }
-  
+
   return(x)
 }
 
 
-FormatFalconiformes <- function(x){
-  falconiformes <- c("peregrine falcon" = "falco peregrinus|(peregrine|pilgrim) falcon",
-                     "falcon sp." = "falco sp\\.|falcon sp\\.|^falcon$",
-                     'eurasian kestrel' = '(common|european|eurasian|old[- ]world) kestr{0,1}el|falco tinnunculus',
-                     'american kestrel' = 'american kestrel|falco sparverius',
-                     "eurasian hobby" = 'falco subbuteo|hobby falcon'
-                     )
-  
-  
-  for (i in 1:length(falconiformes)){
-    if(any(grepl(falconiformes[[i]], x))){
+FormatFalconiformes <- function(x) {
+  falconiformes <- c(
+    "peregrine falcon" = "falco peregrinus|(peregrine|pilgrim) falcon",
+    "falcon sp." = "falco sp\\.|falcon sp\\.|^falcon$",
+    "eurasian kestrel" = "(common|european|eurasian|old[- ]world) kestr{0,1}el|falco tinnunculus",
+    "american kestrel" = "american kestrel|falco sparverius",
+    "eurasian hobby" = "falco subbuteo|hobby falcon"
+  )
+
+
+  for (i in 1:length(falconiformes)) {
+    if (any(grepl(falconiformes[[i]], x))) {
       x <- names(falconiformes)[[i]]
     }
   }
-  
+
   return(x)
 }
 
 
-FormatCiconiiformes <- function(x){
+FormatCiconiiformes <- function(x) {
   ciconiiformes <- c(
     "white stork" = "ciconia ciconia|european white stork",
     "stork sp." = "ciconia sp\\.|stork sp\\.|^stork$"
   )
-  
-  for (i in 1:length(ciconiiformes)){
-    if(any(grepl(ciconiiformes[[i]], x))){
+
+  for (i in 1:length(ciconiiformes)) {
+    if (any(grepl(ciconiiformes[[i]], x))) {
       x <- names(ciconiiformes)[[i]]
     }
   }
-  
+
   return(x)
 }
 
 
-FormatRheiformes <- function(x){
+FormatRheiformes <- function(x) {
   rheiformes <- c(
     "greater rhea" = "rhea americana|greater rhea|^rhea$"
   )
-  
-  for (i in 1:length(rheiformes)){
-    if(any(grepl(rheiformes[[i]], x))){
+
+  for (i in 1:length(rheiformes)) {
+    if (any(grepl(rheiformes[[i]], x))) {
       x <- names(rheiformes)[[i]]
     }
   }
-  
+
   return(x)
 }
 
 
-FormatColumbiformes <- function(x){
+FormatColumbiformes <- function(x) {
   columbiformes <- c(
     "common wood-pigeon" = "columba palumbus|common wood-pigeon",
     "pigeon/dove sp." = "columbidae sp\\.|pigeon/dove sp\\.|^pigeon$|^dove$"
   )
-  
-  for (i in 1:length(columbiformes)){
-    if(any(grepl(columbiformes[[i]], x))){
+
+  for (i in 1:length(columbiformes)) {
+    if (any(grepl(columbiformes[[i]], x))) {
       x <- names(columbiformes)[[i]]
     }
   }
-  
+
   return(x)
 }
 
 
-FormatPsittaciformes <- function(x){
-  psittaciformes <-  c(
+FormatPsittaciformes <- function(x) {
+  psittaciformes <- c(
     "amazona sp." = "amazona sp\\.|amazona sp\\.|amazon parrot",
     "large macaw sp." = "large macaw sp\\.|large macaw sp\\.|catalina macaw",
-    "parrot sp." =	"psittaciformes sp\\.|parrot sp\\.|^parrot$|ornamental bird"
+    "parrot sp." = "psittaciformes sp\\.|parrot sp\\.|^parrot$|ornamental bird"
   )
-  
-  for (i in 1:length(psittaciformes)){
-    if(any(grepl(psittaciformes[[i]], x))){
+
+  for (i in 1:length(psittaciformes)) {
+    if (any(grepl(psittaciformes[[i]], x))) {
       x <- names(psittaciformes)[[i]]
     }
   }
-  
+
   return(x)
 }
 
 
-FormatCathartiformes <- function(x){
-  cathartiformes <-c(
+FormatCathartiformes <- function(x) {
+  cathartiformes <- c(
     "black vulture" = "coragyps atratus|black vulture"
-
   )
-  
-  for (i in 1:length(cathartiformes)){
-    if(any(grepl(cathartiformes[[i]], x))){
+
+  for (i in 1:length(cathartiformes)) {
+    if (any(grepl(cathartiformes[[i]], x))) {
       x <- names(cathartiformes)[[i]]
     }
   }
-  
+
   return(x)
 }
 
 
-FormatProcellariiformes <- function(x){
+FormatProcellariiformes <- function(x) {
   procellariiformes <- c(
     "northern giant-petrel" = "macronectes halli|northern giant[- ]petrel"
   )
-  
-  for (i in 1:length(procellariiformes)){
-    if(any(grepl(procellariiformes[[i]], x))){
+
+  for (i in 1:length(procellariiformes)) {
+    if (any(grepl(procellariiformes[[i]], x))) {
       x <- names(procellariiformes)[[i]]
     }
   }
-  
+
   return(x)
 }
 
 
-FormatSphenisciformes <- function(x){
-  sphenisciformes <- c("african penguin" = "spheniscus demersus|african penguin",
-                       "humboldt penguin" = "spheniscus humboldti|humboldt penguin")
-  
-  for (i in 1:length(sphenisciformes)){
-    if(any(grepl(sphenisciformes[[i]], x))){
+FormatSphenisciformes <- function(x) {
+  sphenisciformes <- c(
+    "african penguin" = "spheniscus demersus|african penguin",
+    "humboldt penguin" = "spheniscus humboldti|humboldt penguin"
+  )
+
+  for (i in 1:length(sphenisciformes)) {
+    if (any(grepl(sphenisciformes[[i]], x))) {
       x <- names(sphenisciformes)[[i]]
     }
   }
-  
+
   return(x)
 }
 
 
-FormatCasuariiformes <- function(x){
-  casuariiformes <- c( "emu" = "dromaius novaehollandiae|^emu$")
-  
-  for (i in 1:length(casuariiformes)){
-    if(any(grepl(casuariiformes[[i]], x))){
+FormatCasuariiformes <- function(x) {
+  casuariiformes <- c("emu" = "dromaius novaehollandiae|^emu$")
+
+  for (i in 1:length(casuariiformes)) {
+    if (any(grepl(casuariiformes[[i]], x))) {
       x <- names(casuariiformes)[[i]]
     }
   }
-  
+
   return(x)
 }
 
 
-FormatStruthioniformes <- function(x){
+FormatStruthioniformes <- function(x) {
   struthioniformes <- c("common ostrich" = "struthio camelus|^(common ){0,1}ostrich$")
-  
-  for (i in 1:length(struthioniformes)){
-    if(any(grepl(struthioniformes[[i]], x))){
+
+  for (i in 1:length(struthioniformes)) {
+    if (any(grepl(struthioniformes[[i]], x))) {
       x <- names(struthioniformes)[[i]]
     }
   }
-  
+
   return(x)
 }
 
 
-FormatPhoenicopteriformes <- function(x){
+FormatPhoenicopteriformes <- function(x) {
   phoenicopteriformes <- c("flamingo sp." = "phoenicopterus sp\\.|flamingo sp\\.|^flamingo$")
-  
-  for (i in 1:length(phoenicopteriformes)){
-    if(any(grepl(phoenicopteriformes[[i]], x))){
+
+  for (i in 1:length(phoenicopteriformes)) {
+    if (any(grepl(phoenicopteriformes[[i]], x))) {
       x <- names(phoenicopteriformes)[[i]]
     }
   }
-  
+
   return(x)
 }
 
 
-FormatCaprimulgiformes<- function(x){
+FormatCaprimulgiformes <- function(x) {
   caprimulgiformes <- c("square-tailed nightjar" = "squared{0,1}[ -]tailed nightjar|caprimulgus fossii")
-  
-  for (i in 1:length(caprimulgiformes)){
-    if(any(grepl(caprimulgiformes[[i]], x))){
+
+  for (i in 1:length(caprimulgiformes)) {
+    if (any(grepl(caprimulgiformes[[i]], x))) {
       x <- names(caprimulgiformes)[[i]]
     }
   }
-  
+
   return(x)
 }
 
@@ -563,51 +593,55 @@ FormatCaprimulgiformes<- function(x){
 ###################################################################################################
 
 
-FormatBirds<- function(x){
-  x  <- FormatAccipitriformes(x) 
-  x  <- FormatAnseriformes(x)
-  x  <- FormatCasuariiformes(x) 
-  x  <- FormatCathartiformes(x) 
-  x  <- FormatCharadriiformes(x) 
-  x  <- FormatCiconiiformes(x) 
-  x  <- FormatColumbiformes (x) 
-  x  <- FormatFalconiformes(x) 
-  x  <- FormatGalliformes(x) 
-  x  <- FormatGruiformes(x) 
-  x  <- FormatPelecaniformes(x) 
-  x  <- FormatPasseriformes(x) 
-  x  <-  FormatPhoenicopteriformes(x)
-  x  <- FormatPodicipediformes(x) 
-  x  <- FormatProcellariiformes(x) 
-  x  <- FormatPsittaciformes(x) 
-  x  <- FormatRheiformes(x) 
-  x  <- FormatSphenisciformes(x) 
-  x  <- FormatStrigiformes(x) 
-  x  <- FormatStruthioniformes(x) 
-  x  <- FormatSuliformes(x) 
+FormatBirds <- function(x) {
+  x <- FormatAccipitriformes(x)
+  x <- FormatAnseriformes(x)
+  x <- FormatCasuariiformes(x)
+  x <- FormatCathartiformes(x)
+  x <- FormatCharadriiformes(x)
+  x <- FormatCiconiiformes(x)
+  x <- FormatColumbiformes(x)
+  x <- FormatFalconiformes(x)
+  x <- FormatGalliformes(x)
+  x <- FormatGruiformes(x)
+  x <- FormatPelecaniformes(x)
+  x <- FormatPasseriformes(x)
+  x <- FormatPhoenicopteriformes(x)
+  x <- FormatPodicipediformes(x)
+  x <- FormatProcellariiformes(x)
+  x <- FormatPsittaciformes(x)
+  x <- FormatRheiformes(x)
+  x <- FormatSphenisciformes(x)
+  x <- FormatStrigiformes(x)
+  x <- FormatStruthioniformes(x)
+  x <- FormatSuliformes(x)
   x <- FormatCaprimulgiformes(x)
-  x <- gsub('^birds{0,1}$|avian|.*wild {0,1}birds{0,1}.*|ac{0,1}quatic birds{0,1}|wild {0,1}bird|avian|wild {0,1}bird', 'aves', x)
-  x <- gsub("^env{0,1}(iron{0,1}ment{0,1}){0,1}.*|^water$", 'environment', x)
+  x <- gsub("^birds{0,1}$|avian|.*wild {0,1}birds{0,1}.*|ac{0,1}quatic birds{0,1}|wild {0,1}bird|avian|wild {0,1}bird", "aves", x)
+  x <- gsub("^env{0,1}(iron{0,1}ment{0,1}){0,1}.*|^water$", "environment", x)
 
-  return(x)  
+  return(x)
 }
 
 
-###################################################################################################
 # Unused bird orders
 
-#FormatCoraciformes
-#FormatBucerotiformes
-#FormatTrogoniformes
-#FormatLeptosomiformes
-#FormatColilformes
-#FormatOpisthocomiformes
-#FormatGaviiformes
-#FormatPterocliformes
-#FormatCucliformes
-#FormatOtidiformes
-#FormatMusophagiformes
-#FormatApodiformes
-#FormatCaprimulgiformes
-#FormatApterygiformes
-#FormatTinamiformes
+# FormatCoraciformes
+# FormatBucerotiformes
+# FormatTrogoniformes
+# FormatLeptosomiformes
+# FormatColilformes
+# FormatOpisthocomiformes
+# FormatGaviiformes
+# FormatPterocliformes
+# FormatCucliformes
+# FormatOtidiformes
+# FormatMusophagiformes
+# FormatApodiformes
+# FormatCaprimulgiformes
+# FormatApterygiformes
+# FormatTinamiformes
+################################### OUTPUT #####################################
+# Save output files, plots, or results
+
+#################################### END #######################################
+################################################################################
