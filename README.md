@@ -15,14 +15,14 @@ across continents and to understand the drivers of reassortant spatial diffusion
 All models are located within the [statistical_models](scripts/statistical_models/) 
 sub directory.\\
 
-Briefly, the `number of reassortants model' is a mixture model comprising a 
-zero-inflated Poisson process and a binomial 'filter' process; the `reassortant class model'
-is an ordinal model, assuming a cumulative distribution; and the `diffusion model' 
+Briefly, the 'number of reassortants model' is a mixture model comprising a 
+zero-inflated Poisson process and a binomial 'filter' process; the 'reassortant class model'
+is an ordinal model, assuming a cumulative distribution; and the 'diffusion model' 
 is a log-gamma regression. The
-`number of reassortants model' was fitted using Stan via rStan, and the remainder were
+'number of reassortants model' was fitted using Stan via rStan, and the remainder were
 fitted using BRMS. Each model has three associated scripts: one 
 fitting the model, one to run model evaluations and one for interpretation. The
-`number of reassortants model' has additional scripts to describe the model in Stan 
+'number of reassortants model' has additional scripts to describe the model in Stan 
 (located in [scripts/statistical_models/stan_models](scripts/statistical_models/stan_models))
 and for pre-processing.
 
