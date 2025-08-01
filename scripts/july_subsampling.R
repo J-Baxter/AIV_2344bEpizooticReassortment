@@ -5,6 +5,8 @@ library(phangorn)
 
 # Calculates pairwise hamming distance, then groups at a threshold difference
 GroupSequences <- function(aln, snp_threshold = 0){
+  
+  require(phangorn)
   require(igraph)
   
   # Ensure alignment is correctly formatted
@@ -15,38 +17,31 @@ GroupSequences <- function(aln, snp_threshold = 0){
   }
   
   # Calculate hamming distance
-  hd_normalised <- dist.hamming(aln) %>%
+  hd_normalised <- dist.hamming(aln_formatted) %>%
     as.matrix()
   hd_raw <- hd_normalised * ncol(aln)
   
   # Obtain groups of sequences for which HD < SNP threshold
   
-  if( any(hd_raw[lower.tri(hd_raw, diag = FALSE)] <= snp_threshold)){
-    groups <- which(hd_raw <= snp_threshold, 
-                    arr.ind = TRUE) %>%
-      dplyr::as_tibble(rownames = 'tipnames') %>% 
-      filter(row !=col) %>%
-      dplyr::select(-tipnames) %>%
-      
-      # Infer network from HDs
-      igraph::graph_from_data_frame(.,
-                                    directed = F) %>%
-      
-      components() %>%
-      getElement('membership') %>%
-      stack() %>%
-      as_tibble() %>%
-      mutate(ind = as.numeric(as.character(ind))) %>%
-      mutate(tipnames = map_chr(ind, ~ rownames(aln)[.x])) %>%
-      dplyr::select(c(tipnames, values)) %>%
-      dplyr::distinct() %>%
-      dplyr::rename(sequence_group = values)
-  }else{
-    print('all sequences above threshold.')
-    groups <- tibble(tipnames = rownames(aln)) %>%
-      rowid_to_column(., var = 'sequence_group')
-  }
-  
+  groups <- which(hd_raw <= snp_threshold, 
+                  arr.ind = TRUE) %>%
+    dplyr::as_tibble(rownames = 'tipnames') %>% 
+    filter(row != col) %>%
+    dplyr::select(-tipnames) %>%
+    
+    # Infer network from HDs
+    igraph::graph_from_data_frame(.,
+                                  directed = F) %>%
+    
+    components() %>%
+    getElement('membership') %>%
+    stack() %>%
+    as_tibble() %>%
+    mutate(ind = as.numeric(as.character(ind))) %>%
+    mutate(tipnames = map_chr(ind, ~ rownames(aln)[.x])) %>%
+    dplyr::select(c(tipnames, values)) %>%
+    dplyr::distinct() %>%
+    dplyr::rename(sequence_group = values)
   
   out <- tibble(tipnames = rownames(aln)) %>%
     left_join(groups) %>%
