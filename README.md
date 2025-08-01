@@ -10,4 +10,4 @@ persistence and drivers of unique reassortants worldwide, up to May 2024.
 ## Statistical Models
 We fitted three statistical models to quantify patterns of reassortant emergence
 across continents and to understand the drivers of reassortant spatial diffusion. 
-All models are located within /scripts/statistical_models.
+All models are located within /scripts/statistical_models#.
