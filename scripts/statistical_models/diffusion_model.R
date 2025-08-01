@@ -1,24 +1,23 @@
-####################################################################################################
-####################################################################################################
-## Script name: Diffusion Coefficient Model
-##
-## Purpose of script: A Bayesian mixed model to determine associations between variables obtained 
-## from our phylogenetic analysis and difusion coefficient for each reassortant. Variables of interest
-## include: 1. evolutionary rates, 2. persistence time, 3. region of origin, 4. persistence time in 
-## wild birds, and 6. total number of species jumps
-##
-## This script implements a workflow for a zero-inflated lognormal model. 
-##
-## Date created: 2024-xx-xx
-##
-##
-########################################## SYSTEM OPTIONS ##########################################
-#options(scipen = 6, digits = 7) 
-memory.limit(30000000) 
+################################################################################
+## Script Name:        Diffusion Coefficient Model
+## Purpose:           A Bayesian mixed model to determine associations between 
+##                    the diffusion coefficient obtained from our phylogenetic 
+##                    analysis and for each reassortant and 1. region of origin, 
+##                    2. proportion of evolutionary time in wild birds, 
+##                    3. persistence time and 4. total number of  species jumps
+## Author:             James Baxter
+## Date Created:       2024-XX-XX
+################################################################################
 
+############################### SYSTEM OPTIONS #################################
+options(
+  scipen = 6,     # Avoid scientific notation
+  digits = 7      # Set precision for numerical display
+)
+memory.limit(30000000)
 
-########################################## DEPENDENCIES ############################################
-# Packages
+############################### DEPENDENCIES ###################################
+# Load required libraries
 library(tidyverse)
 library(magrittr)
 library(brms)
@@ -31,20 +30,16 @@ library(emmeans)
 library(marginaleffects)
 library(ggmcmc)
 library(performance)
-library(DHARMa)
-# User functions
-#source('./scripts/figure_scripts/plot_settings.R')
 
-############################################## DATA ################################################
+
+################################### DATA #######################################
+# Read and inspect data
 combined_data <- read_csv('./2024Aug18/treedata_extractions/2024-09-20_combined_data.csv')
-summary_data <- read_csv('./2024Aug18/treedata_extractions/summary_reassortant_metadata_20240904.csv') %>%
-  select(-c(cluster_label,
-            clade)) 
 reassortant_ancestral_changes <- read_csv('./reassortant_ancestral_changes.csv')
 reassortant_stratifiedpersistence <- read_csv('./2025Jun10/reassortant_stratifiedpersistence.csv')
 
-############################################## MAIN ################################################
-
+################################### MAIN #######################################
+# Main analysis or transformation steps
 # Data preprocessing
 diffusion_data <- combined_data %>%
   
@@ -79,7 +74,7 @@ diffusion_data <- combined_data %>%
   
   # join host richness
   left_join(summary_data %>% dplyr::select(c(cluster_profile, 
-                                      host_richness)),
+                                             host_richness)),
             by = join_by(cluster_profile)) %>%
   
   # join persistence proportions
@@ -91,15 +86,15 @@ diffusion_data <- combined_data %>%
   mutate(collection_month = date_decimal(TMRCA) %>% format(., "%m") %>% as.integer(),
          collection_year = date_decimal(TMRCA) %>% format(., "%Y") %>% as.integer() %>% factor(levels = c(2017,2018,2019,2020,2021,2022,2023)),
          collection_season = case_when(collection_month %in% c(12,1,2) ~ 'overwintering', 
-                            collection_month %in% c(3,4,5)  ~ 'migrating_spring', # Rename to spring migration
-                            collection_month %in% c(6,7,8)  ~ 'breeding', 
-                            collection_month %in% c(9,10,11)  ~ 'migrating_autumn' # Rename to autumn migration
+                                       collection_month %in% c(3,4,5)  ~ 'migrating_spring', # Rename to spring migration
+                                       collection_month %in% c(6,7,8)  ~ 'breeding', 
+                                       collection_month %in% c(9,10,11)  ~ 'migrating_autumn' # Rename to autumn migration
          )) %>%
   
   # persistence time proportions
   #mutate(across(c('median_anseriformes_wild', 
-                 # 'median_charadriiformes_wild',
-                 # 'median_galliformes_domestic'), .fns= ~ ifelse(.x/persist.time > 1, 1, .x/persist.time ), .names = '{.col}_prop')) %>%
+  # 'median_charadriiformes_wild',
+  # 'median_galliformes_domestic'), .fns= ~ ifelse(.x/persist.time > 1, 1, .x/persist.time ), .names = '{.col}_prop')) %>%
   
   
   # binary
@@ -123,33 +118,16 @@ diffusion_data <- combined_data %>%
                 segment,
                 cluster_class,
                 collection_regionname) %>%
-
+  
   filter(weighted_diff_coeff > 0) %>%
   filter(segment == 'ha') %>%
   drop_na()
-  
+
 diffusion_data %<>%
   mutate(collection_regionname = case_when(cluster_profile == '2_1_1_1_1_1_1_1' ~ 'europe', .default = collection_regionname))
 
 
 # Model Formula
-# We assume a hurdle lognormal model, in which the hurdle process is determined the season in which 
-# the TMRCA is estimated to be, and the lognormal component is determined by persistence
-# in anseriformes and charadriiformes. Both model components are conditional on segment from which 
-# the measurement is taken and region of origin
-
-#diffusion_formula <- bf(weighted_diff_coeff ~ 1 + median_anseriformes_wild +  median_charadriiformes_wild + collection_regionname + 
-                       #   (1|segment),
-                       # hu ~ 1 + collection_regionname +  season +(1|segment ))
-
-#diffusion_formula <- bf(weighted_diff_coeff|trunc(lb=0) ~ 1 + median_anseriformes_wild +  median_charadriiformes_wild + collection_regionname + (1|segment) + (collection_regionname|collection_year/collection_season))
-#diffusion_formula <- bf(weighted_diff_coeff ~ 0 +collection_regionname + median_anseriformes_wild + median_charadriiformes_wild +  collection_season + (1|segment),
-                     #   shape ~ 0 +  collection_regionname + (1 | segment))
-#diffusion_formula <- bf(weighted_diff_coeff ~ 0 + median_anseriformes_wild +  median_charadriiformes_wild + collection_regionname + collection_season +  (1|segment))
-
-#
-#shape ~ 0 + collection_regionname
-
 diffusion_formula <- bf(weighted_diff_coeff ~ 0 + collection_regionname +
                           count_cross_species_log1p + 
                           persistence + 
@@ -157,19 +135,13 @@ diffusion_formula <- bf(weighted_diff_coeff ~ 0 + collection_regionname +
                           path_prop_anseriformes_wild + 
                           path_prop_charadriiformes_wild + 
                           path_prop_galliformes_domestic + 
-
+                          
                           ( path_prop_anseriformes_wild + persistence| collection_regionname) + 
                           (1 | collection_year) ,
                         shape ~  0 + collection_regionname )
 
 
-
-# Define Priors
- get_prior(diffusion_formula,
-           data = diffusion_data,
-           family = Gamma(link = "log")) 
-
-
+# Set Priors
 diffusionmodel1_priors <- c(set_prior("normal(0, 2)", class = 'b'),
                             set_prior('normal(13,2)', class = 'b', coef = 'collection_regionnameafrica'),
                             set_prior('normal(13,1.5)', class = 'b', coef = 'collection_regionnameasia'),
@@ -190,29 +162,8 @@ BURNIN <- ITER/10 # Discard 10% burn in from each chain
 SEED <- 4472
 
 
-
-# Prior Predictive Checks 
-# Note that due to weakly informative priors, the prior predictive checks reveal little about the 
-# ability of our priors to describe the data. 
-
-diffusionmodel1_prior <- brm(
-  diffusion_formula,
-  data = diffusion_data,
-  family = Gamma(link = "log"),
-  prior = diffusionmodel1_priors,
-  sample_prior = "only",
-  chains = 2,
-  threads = 2, 
-  cores = 2, 
-  iter = ITER,
-  warmup = BURNIN,
-  seed = SEED,
-  control = list(adapt_delta = 0.95)
-)
-
-
 # Fit model to data
-diffusionmodel1_fit_gamma_19<- brm(
+diffusion_model<- brm(
   diffusion_formula,
   data = diffusion_data,
   prior = diffusionmodel1_priors,
@@ -228,11 +179,11 @@ diffusionmodel1_fit_gamma_19<- brm(
 
 
 # Post-fitting checks (including inspection of ESS, Rhat and posterior predictive)
-performance(diffusionmodel1_fit_gamma_19)
+performance(diffusion_model)
 
 
-saveRDS(diffusionmodel1_fit, './saved_models/diffusion_model_2.rds')
-write_csv(diffusion_data, './saved_models/diffusion_model.csv')
-############################################## END #################################################
-####################################################################################################
-####################################################################################################
+################################### OUTPUT #####################################
+# Save output files, plots, or results
+
+#################################### END #######################################
+################################################################################
