@@ -9,8 +9,9 @@ This repository is structured as follows:
 -   [Data Curation](#Data-Curation)
 -   [Statistical Models](#Statistical-Models)
 -   [Licence](#Licence)
-
-## **Downloading this Repository into R** {#downloading-this-repository-into-r}
+<br /> 
+<br /> 
+## **Downloading this Repository into R**
 
 There are a few ways to download this repository and work with it in **R**.
 
@@ -44,7 +45,8 @@ If you don’t want to use Git:
 2.  Extract the folder to your computer.
 
 3.  Open RStudio → *File* → *Open Project* → choose the `.Rproj` file inside the folder.
-
+<br /> 
+<br /> 
 ## **Dependencies** 
 
 These statistical analyses were fitted in R version 4.5.1. The 'number of reassortants model' was fitted using Stan v2.36 via cmdstanr v0.9.0, and the remainder were fitted using BRMS v2.22.0. We summarised model outputs and caculated average marginal effects using tidybayes v3.0.7 and marginaleffects v0.25.1. All models have been tested on:
@@ -93,7 +95,8 @@ Third, we consider that ecological or epidemiological conditions may not always 
 ```math
 z_{ij} \sim \mathrm{Bernoulli}(\theta_{\text{continent}[j]})
 ```
-
+<br /> 
+<br /> 
 ### 2. Reassortant Class Model
 
 We estimated the probability that a novel reassortant, is assigned to one of the following classes: minor, moderate, major. We assumed that the probability a reassortant is assigned a given class follows a cumulative distribution, with classes increasing from minor to moderate to major. We modelled each class as the discretisation of a latent (unobserved) continuous variable, via threshold parameters which partition the distribution.
@@ -105,12 +108,15 @@ We estimated the probability that a novel reassortant, is assigned to one of the
 \end{cases}
 
 ```
+<br /> 
+<br /> 
 ### 3. Diffusion Model
 
 We fitted a mixed model to predict the weighted diffusion coefficients calculated from our phylogeographic analysis for each novel reassortant. We restricted our analysis to reassortants with a clade size greater than 1, since we cannot confidently distinguish between reassortants that truly exist at a single locus and reassortants with limited (but non-zero) circulation and incomplete sampling. For all reassortants with non-zero, we assumed a gamma distribution parametrised such that,
 ```math
 y_{i} \sim \mathrm{Gamma}(\kappa_{i},\theta_{i})
 ```
-
+<br /> 
+<br /> 
 ## **Licence** 
 This code is shared under the **GPL-3.0 licence**.
