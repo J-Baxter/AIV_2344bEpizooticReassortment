@@ -92,9 +92,9 @@ z_{ij} \sim \mathrm{Bernoulli}(\theta_{\text{continent}[j]})
 We estimated the probability that a novel reassortant, is assigned to one of the following classes: minor, moderate, major. We assumed that the probability a reassortant is assigned a given class follows a cumulative distribution, with classes increasing from minor to moderate to major. We modelled each class as the discretisation of a latent (unobserved) continuous variable, via threshold parameters which partition the distribution.
 ```math
  y_{i}=\begin{cases}
-\text{minor}\hphantom{ode}\qquad\text{if}\;\tau_{\text{minor}-1}<\tilde y_i\leq\tau_{\text{minor}},\\
+\text{minor   }\qquad\text{if}\;\tau_{\text{minor}-1}<\tilde y_i\leq\tau_{\text{minor}},\\
   \text{moderate}\qquad\text{if}\;\tau_{\text{minor}}<\tilde y_i\leq\tau_{\text{moderate}},\\
-  \text{major}\hphantom{ode}\qquad\text{if}\;\tau_{\text{moderate}}<\tilde y_i<\tau_{\text{moderate}+1}.
+  \text{major   }\qquad\text{if}\;\tau_{\text{moderate}}<\tilde y_i<\tau_{\text{moderate}+1}.
 
 ```
 ### 3. Diffusion Model
