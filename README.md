@@ -11,6 +11,7 @@ This repository is structured as follows:
 -   [Licence](#Licence)
 <br /> 
 <br /> 
+
 ## **Downloading this Repository into R**
 
 There are a few ways to download this repository and work with it in **R**.
