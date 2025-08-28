@@ -69,17 +69,17 @@ A mixture model comprised of three components, inspired by previously developed 
 
 First, we consider that only a proportion, $`p_{ij}\in(0,1)`$, of true (latent) reassortants, $`N_{ij}\in\mathbb{Z}_{\geq y_{ji}}`$, are ultimately observed:
 
-$$`y_{ij}|N_{ij} \sim \mathrm{Binomial}(N_{ij},p_{ij})`$$\
+$`y_{ij}|N_{ij} \sim \mathrm{Binomial}(N_{ij},p_{ij})`$\
 
 Second, we model the true number of reassortants, $`N_{ij}\in\mathbb{Z}_{\geq y_{ji}}`$, as a discrete latent variable that follows a Poisson distribution:\
 
-$$`N_{ij} \sim \mathrm{Poisson}(\lambda_{ij}) `$$ \
+$`N_{ij} \sim \mathrm{Poisson}(\lambda_{ij}) `$ \
 
 where $`\lambda_{ij}`$ is the expected number of reassortants per observation on the log scale.
 
 Third, we consider that ecological or epidemiological conditions may not always be conducive for reassortment/reassortant emergence. We assume this process is fundamentally distinct from a structural absence of reassortment (i.e situations where reassortment/reassortant emergence is feasible but does not occur). We model a Bernoulli zero-inflation component, $`z_{ij}\in\{0,1\}`$, parametrised by a continent-specific probability that a conditions are not permissive for reassortment/reassortant emergence, $`\theta_{i}`$:\
 
-$$`z_{ij} \sim \mathrm{Bernoulli}(\theta_{\text{continent}[j]})`$$
+$`z_{ij} \sim \mathrm{Bernoulli}(\theta_{\text{continent}[j]})`$
 
 ### 2. Reassortant Class Model
 
