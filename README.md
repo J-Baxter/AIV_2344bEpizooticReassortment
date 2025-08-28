@@ -66,29 +66,30 @@ We fitted three statistical models to quantify patterns of reassortant emergence
 ### 1. Number of Reassortants Model
 
 A mixture model comprised of three components, inspired by previously developed ecological models. For each year-month observation, $`i\in\{1,2,...,I\}`$, taken in continent, $`j\in\{\text{africa}, \text{asia}, \text{americas}, \text{europe}\}`$, let $`y_{ij}\in\mathbb{Z}_{\geq0}`$ be the observed number of reassortants. We assume $y_{ij}$ can be modelled as a mixture of three components: a detection model, an abundance model, and a zero-inflation model.\
-First, we consider that only a proportion, $p_{ij}\in(0,1)$, of true (latent) reassortants, $`N_{ij}\in\mathbb{Z}_{\geq y_{ji}}`$, are ultimately observed:
 
-$$\begin{align*}
+First, we consider that only a proportion, $`p_{ij}\in(0,1)`$, of true (latent) reassortants, $`N_{ij}\in\mathbb{Z}_{\geq y_{ji}}`$, are ultimately observed:
+
+$$`\begin{align*}
 y_{ij}|N_{ij} &\sim \mathrm{Binomial}(N_{ij},p_{ij}) \\
 \log \left( \frac{p_{ij}}{1-p_{ij}} \right) &= \alpha_{\text{continent}[j]}^{\text{detect}} +
 \beta_2 x_{\text{genomes}_{ij}} + \gamma_{\text{year}[ij]}^{\text{detect}}
-\end{align*}$$
+\end{align*}`$$\
+where $`\alpha^{\text{detect}}_{\text{continent}[j]}`$, is the continent-stratified proportion of reassortants detected and $`x_{\text{genomes}_{ij}}`$, is the log-scale quantity of HPAIV full genomes present on GISAID. We assume that the interval between sequence collection and the most recent common ancestor of each reassortant is of sufficiently short duration that no lag is required to be accounted for.\
 
-where $\alpha^{\text{detect}}_{\text{continent}[j]}$, is the continent-stratified proportion of reassortants detected and $x_{\text{genomes}_{ij}}$, is the log-scale quantity of HPAIV full genomes present on GISAID. We assume that the interval between sequence collection and the most recent common ancestor of each reassortant is of sufficiently short duration that no lag is required to be accounted for.\
-
-Second, we model the true number of reassortants, $N_{ij}\in\mathbb{Z}_{\geq y_{ji}}$, as a discrete latent variable that follows a Poisson distribution:\
-\begin{align*}
+Second, we model the true number of reassortants, $`N_{ij}\in\mathbb{Z}_{\geq y_{ji}}`$, as a discrete latent variable that follows a Poisson distribution:\
+$$`\begin{align*}
 N_{ij} &\sim \mathrm{Poisson}(\lambda_{ij}) \\
 \log(\lambda_{ij}) &= \alpha_{\text{continent}[j]}^{\text{abund}} +
 \beta_1 x_{\text{incidence}_{ij}} +
 \gamma_{\text{year}[ij]}^{\text{abund}}
-\end{align*} where $\lambda_{ij}$ is the expected number of reassortants per observation on the log scale, $\alpha^{\text{abund}}_{\text{continent}[j]}$, is the continent-stratified baseline abundance, $x_{\text{incidence}_{ij}}$, is the log-scale HPAIV incidence estimate, and $\gamma_{\text{year}[ij]}^{\text{abund}}$ and $\sigma^{\text{abund}}_{\text{year}}$ are the zero-centred random intercepts and standard deviation of calendar year.\
+\end{align*}`$$ \
+where $`\lambda_{ij}`$ is the expected number of reassortants per observation on the log scale, $`\alpha^{\text{abund}}_{\text{continent}[j]}`$, is the continent-stratified baseline abundance, $`x_{\text{incidence}_{ij}}`$, is the log-scale HPAIV incidence estimate, and $`\gamma_{\text{year}[ij]}^{\text{abund}}`$ and $`\sigma^{\text{abund}}_{\text{year}}`$ are the zero-centred random intercepts and standard deviation of calendar year.\
 
-Third, we consider that ecological or epidemiological conditions may not always be conducive for reassortment/reassortant emergence. We assume this process is fundamentally distinct from a structural absence of reassortment (i.e situations where reassortment/reassortant emergence is feasible but does not occur). We model a Bernoulli zero-inflation component, $z_{ij}\in\{0,1\}$, parametrised by a continent-specific probability that a conditions are not permissive for reassortment/reassortant emergence, $\theta_{i}$:\
+Third, we consider that ecological or epidemiological conditions may not always be conducive for reassortment/reassortant emergence. We assume this process is fundamentally distinct from a structural absence of reassortment (i.e situations where reassortment/reassortant emergence is feasible but does not occur). We model a Bernoulli zero-inflation component, $`z_{ij}\in\{0,1\}`$, parametrised by a continent-specific probability that a conditions are not permissive for reassortment/reassortant emergence, $`\theta_{i}`$:\
 
-\begin{align*}
+$$`\begin{align*}
 z_{ij} &\sim \mathrm{Bernoulli}(\theta_{\text{continent}[j]}),
-\end{align*}
+\end{align*}`$$
 
 ### 2. Reassortant Class Model
 
