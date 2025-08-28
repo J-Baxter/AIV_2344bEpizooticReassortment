@@ -5,13 +5,12 @@ This repository contains code used for the data handling and statistical analysi
 This repository is structured as follows:
 
 -   [Downloading this repository](#Downloading-this-Repository-into-R)
--   [Dependencies](#Dependencies) 
--   [Data Curation](#Data-Curation) 
--   [Statistical Models](#Statistical-Models) 
--   [Licence](#Licence) 
+-   [Dependencies](#Dependencies)
+-   [Data Curation](#Data-Curation)
+-   [Statistical Models](#Statistical-Models)
+-   [Licence](#Licence)
 
-
-## **Downloading this Repository into R**
+## **Downloading this Repository into R** {#downloading-this-repository-into-r}
 
 There are a few ways to download this repository and work with it in **R**.
 
@@ -46,8 +45,7 @@ If you don’t want to use Git:
 
 3.  Open RStudio → *File* → *Open Project* → choose the `.Rproj` file inside the folder.
 
-## **Dependencies** 
-
+## **Dependencies** {#dependencies}
 
 These statistical analyses were fitted in R version 4.5.1. The 'number of reassortants model' was fitted using Stan v2.36 via cmdstanr v0.9.0, and the remainder were fitted using BRMS v2.22.0. We summarised model outputs and caculated average marginal effects using tidybayes v3.0.7 and marginaleffects v0.25.1. All models have been tested on:
 
@@ -57,55 +55,38 @@ These statistical analyses were fitted in R version 4.5.1. The 'number of reasso
 
 In each case, the runtime for any model was less than 10 minutes.
 
-
-## **Data Curation** 
+## **Data Curation** {#data-curation}
 
 Scripts used to assist in the curation of sequence and location data are included within the [data_curation](scripts/data_curation/) sub directory. Required helper functions are sourced from [funcs](scripts/funcs/).
 
-## **Statistical Models** 
+## **Statistical Models** {#statistical-models}
 
 We fitted three statistical models to quantify patterns of reassortant emergence across continents and to understand the drivers of reassortant spatial diffusion. All models are contained within the [statistical_models](scripts/statistical_models/) sub directory:
 
 ### 1. Number of Reassortants Model
 
-A mixture model comprised of three components, inspired by previously developed ecological models.
-For each year-month observation, $i\in\{1,2,...,I\}$, taken in continent,
-$j\in\{\text{africa}, \text{asia}, \text{americas}, \text{europe}\}$, 
-let $y_{ij}\in\mathbb{Z}_{\geq0}$ be the observed number of reassortants. We assume $y_{ij}$ can be 
-modelled as a mixture of three components: a detection model, an abundance model, and a zero-inflation model.\
-First, we consider that only a proportion, $p_{ij}\in(0,1)$, of true (latent) reassortants,
-$N_{ij}\in\mathbb{Z}_{\geq y_{ji}}$, are ultimately observed:\
+A mixture model comprised of three components, inspired by previously developed ecological models. For each year-month observation, $i\in\{1,2,...,I\}$, taken in continent, $j\in\{\text{africa}, \text{asia}, \text{americas}, \text{europe}\}$, let $y_{ij}\in\mathbb{Z}_{\geq0}$ be the observed number of reassortants. We assume $y_{ij}$ can be modelled as a mixture of three components: a detection model, an abundance model, and a zero-inflation model.\
+First, we consider that only a proportion, $p_{ij}\in(0,1)$, of true (latent) reassortants, $N_{ij}\in\mathbb{Z}_{\geq y_{ji}}$, are ultimately observed:
+
+$$
 \begin{align*}
 y_{ij}|N_{ij} &\sim \mathrm{Binomial}(N_{ij},p_{ij}) \\
 \log \left( \frac{p_{ij}}{1-p_{ij}} \right) &= \alpha_{\text{continent}[j]}^{\text{detect}} +
 \beta_2 x_{\text{genomes}_{ij}} + \gamma_{\text{year}[ij]}^{\text{detect}}
 \end{align*}
-where $\alpha^{\text{detect}}_{\text{continent}[j]}$, is the continent-stratified proportion of
-reassortants detected and $x_{\text{genomes}_{ij}}$, is the log-scale quantity of HPAIV full genomes 
-present on GISAID. We assume that the interval between sequence collection and the most recent 
-common ancestor of each reassortant is of sufficiently short duration that no lag is required to be
-accounted for.\
+$$
 
-Second, we model the true number of reassortants, $N_{ij}\in\mathbb{Z}_{\geq y_{ji}}$, as a 
-discrete latent variable that follows a Poisson distribution:\
+where $\alpha^{\text{detect}}_{\text{continent}[j]}$, is the continent-stratified proportion of reassortants detected and $x_{\text{genomes}_{ij}}$, is the log-scale quantity of HPAIV full genomes present on GISAID. We assume that the interval between sequence collection and the most recent common ancestor of each reassortant is of sufficiently short duration that no lag is required to be accounted for.\
+
+Second, we model the true number of reassortants, $N_{ij}\in\mathbb{Z}_{\geq y_{ji}}$, as a discrete latent variable that follows a Poisson distribution:\
 \begin{align*}
 N_{ij} &\sim \mathrm{Poisson}(\lambda_{ij}) \\
 \log(\lambda_{ij}) &= \alpha_{\text{continent}[j]}^{\text{abund}} +
 \beta_1 x_{\text{incidence}_{ij}} +
 \gamma_{\text{year}[ij]}^{\text{abund}}
-\end{align*}
-where $\lambda_{ij}$ is the expected number of reassortants per observation on the log scale, 
-$\alpha^{\text{abund}}_{\text{continent}[j]}$, is the continent-stratified baseline abundance,
-$x_{\text{incidence}_{ij}}$, is the log-scale HPAIV incidence estimate, and
-$\gamma_{\text{year}[ij]}^{\text{abund}}$ and $\sigma^{\text{abund}}_{\text{year}}$ are the 
-zero-centred random intercepts and standard deviation of calendar year. \
+\end{align*} where $\lambda_{ij}$ is the expected number of reassortants per observation on the log scale, $\alpha^{\text{abund}}_{\text{continent}[j]}$, is the continent-stratified baseline abundance, $x_{\text{incidence}_{ij}}$, is the log-scale HPAIV incidence estimate, and $\gamma_{\text{year}[ij]}^{\text{abund}}$ and $\sigma^{\text{abund}}_{\text{year}}$ are the zero-centred random intercepts and standard deviation of calendar year.\
 
-Third, we consider that ecological or epidemiological conditions may not always be conducive for 
-reassortment/reassortant emergence. We assume this process is fundamentally distinct from a 
-structural absence of reassortment (i.e situations where reassortment/reassortant emergence is 
-feasible but does not occur). We model a Bernoulli zero-inflation component, $z_{ij}\in\{0,1\}$, 
-parametrised by a continent-specific probability that a conditions are not permissive for 
-reassortment/reassortant emergence, $\theta_{i}$:\
+Third, we consider that ecological or epidemiological conditions may not always be conducive for reassortment/reassortant emergence. We assume this process is fundamentally distinct from a structural absence of reassortment (i.e situations where reassortment/reassortant emergence is feasible but does not occur). We model a Bernoulli zero-inflation component, $z_{ij}\in\{0,1\}$, parametrised by a continent-specific probability that a conditions are not permissive for reassortment/reassortant emergence, $\theta_{i}$:\
 
 \begin{align*}
 z_{ij} &\sim \mathrm{Bernoulli}(\theta_{\text{continent}[j]}),
@@ -123,6 +104,6 @@ Briefly, the 'number of reassortants model' is a mixture model comprising a zero
 
 Evaluation and interpretation plots are produced in \*\_model_evaluation and \*model_interpretation scripts, however these may differ from the final published plots (located in [scripts/figure_scripts](scripts/figure_scripts))
 
-## **Licence** 
+## **Licence** {#licence}
 
 This code is shared under the **GPL-3.0 licence**.
