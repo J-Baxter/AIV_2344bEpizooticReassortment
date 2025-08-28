@@ -1,5 +1,6 @@
 # The Winners Take It All? Evolutionary Success of H5Nx Reassortants in the 2020–2024 Panzootic
 
+## **Table of Contents**
 -   [Overview](#Overview)
 -   [Downloading this repository](#Downloading-this-Repository-into-R)
 -   [Dependencies](#Dependencies)
@@ -7,7 +8,6 @@
 -   [Statistical Models](#Statistical-Models)
 -   [Licence](#Licence)
 <br /> 
-<br />
 
 ## **Overview**
 
