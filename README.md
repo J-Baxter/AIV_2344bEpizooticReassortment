@@ -101,7 +101,7 @@ We estimated the probability that a novel reassortant, is assigned to one of the
 
 We fitted a mixed model to predict the weighted diffusion coefficients calculated from our phylogeographic analysis for each novel reassortant. We restricted our analysis to reassortants with a clade size greater than 1, since we cannot confidently distinguish between reassortants that truly exist at a single locus and reassortants with limited (but non-zero) circulation and incomplete sampling. For all reassortants with non-zero, we assumed a gamma distribution parametrised such that,
 ```math
-y_{i} &\sim \mathrm{Gamma}(\kappa_{i},\theta_{i})
+y_{i} \sim \mathrm{Gamma}(\kappa_{i},\theta_{i})
 ```
 Briefly, the 'number of reassortants model' is a mixture model comprising a zero-inflated Poisson process and a Binomial 'filter' process; the 'reassortant class model' is an ordinal model, assuming a cumulative distribution; and the 'diffusion model' is a log-gamma regression. The 'number of reassortants model' was fitted using Stan via rStan, and the remainder were fitted using BRMS. Each model has three associated scripts: one fitting the model, one to run model evaluations and one for interpretation. The 'number of reassortants model' has additional scripts to describe the model in Stan (located in [scripts/statistical_models/stan_models](scripts/statistical_models/stan_models)) and for pre-processing.
 
