@@ -45,7 +45,7 @@ If you don’t want to use Git:
 
 3.  Open RStudio → *File* → *Open Project* → choose the `.Rproj` file inside the folder.
 
-## **Dependencies** {#dependencies}
+## **Dependencies** 
 
 These statistical analyses were fitted in R version 4.5.1. The 'number of reassortants model' was fitted using Stan v2.36 via cmdstanr v0.9.0, and the remainder were fitted using BRMS v2.22.0. We summarised model outputs and caculated average marginal effects using tidybayes v3.0.7 and marginaleffects v0.25.1. All models have been tested on:
 
@@ -59,9 +59,13 @@ In each case, the runtime for any model was less than 10 minutes.
 
 Scripts used to assist in the curation of sequence and location data are included within the [data_curation](scripts/data_curation/) sub directory. Required helper functions are sourced from [funcs](scripts/funcs/).
 
-## **Statistical Models** {#statistical-models}
+## **Statistical Models** 
 
-We fitted three statistical models to quantify patterns of reassortant emergence across continents and to understand the drivers of reassortant spatial diffusion. All models are contained within the [statistical_models](scripts/statistical_models/) sub directory:
+We fitted three statistical models to quantify patterns of reassortant emergence across continents and to understand the drivers of reassortant spatial diffusion. Each model has three associated scripts:
+one fitting the model, one to run model evaluations and one for interpretation. All models are contained within the [statistical_models](scripts/statistical_models/) sub directory. Evaluation and
+interpretation plots are produced in \*\_model_evaluation and \*model_interpretation scripts, however these may differ slightly from the final published plots (located in [scripts/figure_scripts](scripts/figure_scripts)).\
+
+The 'number of reassortants model' has additional scripts to describe the model in Stan (located in [scripts/statistical_models/stan_models](scripts/statistical_models/stan_models)) and for pre-processing.\
 
 ### 1. Number of Reassortants Model
 
@@ -104,10 +108,6 @@ We fitted a mixed model to predict the weighted diffusion coefficients calculate
 ```math
 y_{i} \sim \mathrm{Gamma}(\kappa_{i},\theta_{i})
 ```
-Briefly, the 'number of reassortants model' is a mixture model comprising a zero-inflated Poisson process and a Binomial 'filter' process; the 'reassortant class model' is an ordinal model, assuming a cumulative distribution; and the 'diffusion model' is a log-gamma regression. The 'number of reassortants model' was fitted using Stan via rStan, and the remainder were fitted using BRMS. Each model has three associated scripts: one fitting the model, one to run model evaluations and one for interpretation. The 'number of reassortants model' has additional scripts to describe the model in Stan (located in [scripts/statistical_models/stan_models](scripts/statistical_models/stan_models)) and for pre-processing.
 
-Evaluation and interpretation plots are produced in \*\_model_evaluation and \*model_interpretation scripts, however these may differ from the final published plots (located in [scripts/figure_scripts](scripts/figure_scripts))
-
-## **Licence** {#licence}
-
+## **Licence** 
 This code is shared under the **GPL-3.0 licence**.
