@@ -1,23 +1,134 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
 # The Winners Take It All? Evolutionary Success of H5Nx Reassortants in the 2020–2024 Panzootic
 
 This repository contains code used for the data handling and statistical
 analysis of Clade 2.3.4.4b High Pathogenicity Avian Influenza Virus
 (HPAIV) circulating during the 2020-2024 Panzootic. Specifically, we
 analysed the emergence, persistence and drivers of unique reassortants
-worldwide, up to May 2024. Methods are described in detail at https://www.biorxiv.org/content/10.1101/2025.07.19.665680v1.
+worldwide, up to May 2024. Methods are described in detail at
+<https://www.biorxiv.org/content/10.1101/2025.07.19.665680v1>.
 
-## Data Curation
+-   [Downloading this repository](#Downloading-this-Repository-into-R)
+
+-   [Dependencies](#Dependencies)
+
+-   [Data Curation](#Data-Curation)
+
+-   [Statistical Models](#Statistical-Models)
+
+-   [Licence](#Licence)
+
+## **Downloading this Repository into R**
+
+------------------------------------------------------------------------
+
+There are a few ways to download this repository and work with it in
+**R**.
+
+### Option 1: Using `usethis::create_from_github()`
+
+If you use the **usethis** package, you can pull the repository directly
+into RStudio:
+
+``` r
+# Install usethis if you don’t have it yet
+install.packages("usethis")
+
+# Replace 'username/repo' with the GitHub repo name
+usethis::create_from_github("J-Baxter/AIV_2344bEpizooticReassortment")
+```
+
+### Option 2: Using `git clone` + RStudio
+
+1.  Open a terminal (or Git Bash).\
+2.  Run:
+
+``` bash
+git clone https://github.com/J-Baxter/AIV_2344bEpizooticReassortment.git
+```
+
+### Option 3: Download as ZIP
+
+If you don’t want to use Git:
+
+1.  On the GitHub repo page, click the green **Code** button → *Download
+    ZIP*.\
+
+2.  Extract the folder to your computer.\
+
+3.  Open RStudio → *File* → *Open Project* → choose the `.Rproj` file
+    inside the folder.
+
+## **Dependencies**
+
+------------------------------------------------------------------------
+
+These statistical analyses were fitted in R version 4.5.1. The 'number
+of reassortants model' was fitted using Stan v2.36 via cmdstanr v0.9.0,
+and the remainder were fitted using BRMS v2.22.0. We summarised model
+outputs and caculated average marginal effects using tidybayes v3.0.7
+and marginaleffects v0.25.1. All models have been tested on:
+
+1.  Apple M4 Max 16-core CPU with 48 Gb RAM
+
+2.  AMD Ryzen 9 7950X 16 Core CPU with 96 Gb RAM.\
+
+In both cases, the runtime for each model was less than 10 minutes.
+
+## **Data Curation**
+
+------------------------------------------------------------------------
 
 Scripts used to assist in the curation of sequence and location data are
-included within the [data_curation](scripts/data_curation/) sub directory. Required
-helper functions are sourced from [funcs](scripts/funcs/). 
+included within the [data_curation](scripts/data_curation/) sub
+directory. Required helper functions are sourced from
+[funcs](scripts/funcs/).
 
-## Statistical Models
+## **Statistical Models**
+
+------------------------------------------------------------------------
 
 We fitted three statistical models to quantify patterns of reassortant
 emergence across continents and to understand the drivers of reassortant
-spatial diffusion. All models are located within the
-[statistical_models](scripts/statistical_models/) sub directory.
+spatial diffusion. All models are contained within the
+[statistical_models](scripts/statistical_models/) sub directory:
+
+### 1. Number of Reassortants Model
+
+A mixture model comprised of three components, inspired by previously
+developed ecological models. First, we hypothesised that reassortants
+could only emerge at a fraction of time points, perhaps due to
+epidemiological or ecological suitability. We assumed conditions at each
+time point were either permissible or not for reassortment, with a
+continent-specific probability. Next, we assumed that only a proportion
+of reassortants are ever observed due to incomplete sampling. Finally,
+we assumed that a ‘true’ latent number of reassortants per month per
+continent follows a Poisson distribution with continent-stratified rate.
+
+### 2. Reassortant Class Model
+
+We estimated the probability that a novel reassortant, is assigned to
+one of the following classes: minor, moderate, major. We assumed that
+the probability a reassortant is assigned a given class follows a
+cumulative distribution, with classes increasing from minor to moderate
+to major. We modelled each class as the discretisation of a latent
+(unobserved) continuous variable, via threshold parameters which
+partition the distribution.
+
+### 3. Diffusion Model
+
+We fitted a mixed model to predict the weighted diffusion coefficients
+calculated from our phylogeographic analysis for each novel reassortant.
+We restricted our analysis to reassortants with a clade size greater
+than 1, since we cannot confidently distinguish between reassortants
+that truly exist at a single locus and reassortants with limited (but
+non-zero) circulation and incomplete sampling. For all reassortants with
+non-zero, we assumed a gamma distribution parametrised such that,
 
 Briefly, the 'number of reassortants model' is a mixture model
 comprising a zero-inflated Poisson process and a Binomial 'filter'
@@ -36,5 +147,6 @@ and \*model_interpretation scripts, however these may differ from the
 final published plots (located in
 [scripts/figure_scripts](scripts/figure_scripts))
 
-All models have been tested on i) Apple M4 Max 16-core CPU with 48 Gb
-RAM and ii) AMD Ryzen 9 7950X 16 Core CPU with 96 Gb RAM.
+
+### **Licence**
+This code is shared under the **GPL-3.0 licence**.
