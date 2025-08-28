@@ -54,11 +54,13 @@ These statistical analyses were fitted in R version 4.5.1. The 'number of reasso
 2.  AMD Ryzen 9 7950X 16 Core CPU with 96 Gb RAM.
 
 In each case, the runtime for any model was less than 10 minutes.
-
+<br /> 
+<br /> 
 ## **Data Curation**
 
 Scripts used to assist in the curation of sequence and location data are included within the [data_curation](scripts/data_curation/) sub directory. Required helper functions are sourced from [funcs](scripts/funcs/).
-
+<br /> 
+<br /> 
 ## **Statistical Models** 
 
 We fitted three statistical models to quantify patterns of reassortant emergence across continents and to understand the drivers of reassortant spatial diffusion. Each model has three associated scripts:
@@ -66,7 +68,8 @@ one fitting the model, one to run model evaluations and one for interpretation. 
 interpretation plots are produced in \*\_model_evaluation and \*model_interpretation scripts, however these may differ slightly from the final published plots (located in [scripts/figure_scripts](scripts/figure_scripts)).
 
 The 'number of reassortants model' has additional scripts to describe the model in Stan (located in [scripts/statistical_models/stan_models](scripts/statistical_models/stan_models)) and for pre-processing.
-
+<br /> 
+<br /> 
 ### 1. Number of Reassortants Model
 
 A mixture model comprised of three components, inspired by previously developed ecological models. For each year-month observation, $`i\in\{1,2,...,I\}`$, taken in continent, $`j\in\{\text{africa}, \text{asia}, \text{americas}, \text{europe}\}`$, let $`y_{ij}\in\mathbb{Z}_{\geq0}`$ be the observed number of reassortants. We assume $y_{ij}$ can be modelled as a mixture of three components: a detection model, an abundance model, and a zero-inflation model.\
