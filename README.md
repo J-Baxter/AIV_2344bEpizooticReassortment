@@ -2,16 +2,16 @@
 
 This repository contains code used for the data handling and statistical analysis of Clade 2.3.4.4b High Pathogenicity Avian Influenza Virus (HPAIV) circulating during the 2020-2024 Panzootic. Specifically, we analysed the emergence, persistence and drivers of unique reassortants worldwide, up to May 2024. Methods are described in detail at <https://www.biorxiv.org/content/10.1101/2025.07.19.665680v1>.\
 
-This repository is structured as follows:\
+This repository is structured as follows: \
 
--   [Downloading this repository](#Downloading-this-Repository-into-R)\
--   [Dependencies](#Dependencies)\
--   [Data Curation](#Data-Curation)\
--   [Statistical Models](#Statistical-Models)\
--   [Licence](#Licence)\
+-   [Downloading this repository](#Downloading-this-Repository-into-R) \
+-   [Dependencies](#Dependencies) \
+-   [Data Curation](#Data-Curation) \
+-   [Statistical Models](#Statistical-Models) \
+-   [Licence](#Licence) \
 
 
-## **Downloading this Repository into R** {#downloading-this-repository-into-r}
+## **Downloading this Repository into R**
 
 There are a few ways to download this repository and work with it in **R**.
 
