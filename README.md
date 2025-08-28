@@ -94,7 +94,8 @@ We estimated the probability that a novel reassortant, is assigned to one of the
  y_{i}=\begin{cases}
 \text{minor   }\qquad\text{if}\;\tau_{\text{minor}-1}<\tilde y_i\leq\tau_{\text{minor}},\\
   \text{moderate}\qquad\text{if}\;\tau_{\text{minor}}<\tilde y_i\leq\tau_{\text{moderate}},\\
-  \text{major   }\qquad\text{if}\;\tau_{\text{moderate}}<\tilde y_i<\tau_{\text{moderate}+1}.
+  \text{major   }\qquad\text{if}\;\tau_{\text{moderate}}<\tilde y_i<\tau_{\text{moderate}+1},
+\end{cases}
 
 ```
 ### 3. Diffusion Model
