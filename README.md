@@ -65,16 +65,14 @@ We fitted three statistical models to quantify patterns of reassortant emergence
 
 ### 1. Number of Reassortants Model
 
-A mixture model comprised of three components, inspired by previously developed ecological models. For each year-month observation, $i\in\{1,2,...,I\}$, taken in continent, $j\in\{\text{africa}, \text{asia}, \text{americas}, \text{europe}\}$, let $y_{ij}\in\mathbb{Z}_{\geq0}$ be the observed number of reassortants. We assume $y_{ij}$ can be modelled as a mixture of three components: a detection model, an abundance model, and a zero-inflation model.\
-First, we consider that only a proportion, $p_{ij}\in(0,1)$, of true (latent) reassortants, $N_{ij}\in\mathbb{Z}_{\geq y_{ji}}$, are ultimately observed:
+A mixture model comprised of three components, inspired by previously developed ecological models. For each year-month observation, $`i\in\{1,2,...,I\}`$, taken in continent, $`j\in\{\text{africa}, \text{asia}, \text{americas}, \text{europe}\}`$, let $`y_{ij}\in\mathbb{Z}_{\geq0}`$ be the observed number of reassortants. We assume $y_{ij}$ can be modelled as a mixture of three components: a detection model, an abundance model, and a zero-inflation model.\
+First, we consider that only a proportion, $p_{ij}\in(0,1)$, of true (latent) reassortants, $`N_{ij}\in\mathbb{Z}_{\geq y_{ji}}`$, are ultimately observed:
 
-$$
-\begin{align*}
+$$\begin{align*}
 y_{ij}|N_{ij} &\sim \mathrm{Binomial}(N_{ij},p_{ij}) \\
 \log \left( \frac{p_{ij}}{1-p_{ij}} \right) &= \alpha_{\text{continent}[j]}^{\text{detect}} +
 \beta_2 x_{\text{genomes}_{ij}} + \gamma_{\text{year}[ij]}^{\text{detect}}
-\end{align*}
-$$
+\end{align*}$$
 
 where $\alpha^{\text{detect}}_{\text{continent}[j]}$, is the continent-stratified proportion of reassortants detected and $x_{\text{genomes}_{ij}}$, is the log-scale quantity of HPAIV full genomes present on GISAID. We assume that the interval between sequence collection and the most recent common ancestor of each reassortant is of sufficiently short duration that no lag is required to be accounted for.\
 
