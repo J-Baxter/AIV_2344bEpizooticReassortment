@@ -39,9 +39,9 @@ git clone https://github.com/J-Baxter/AIV_2344bEpizooticReassortment.git
 
 If you don’t want to use Git:
 
-1.  On the GitHub repo page, click the green **Code** button → *Download ZIP*.\
+1.  On the GitHub repo page, click the green **Code** button → *Download ZIP*.
 
-2.  Extract the folder to your computer.\
+2.  Extract the folder to your computer.
 
 3.  Open RStudio → *File* → *Open Project* → choose the `.Rproj` file inside the folder.
 
@@ -51,11 +51,11 @@ These statistical analyses were fitted in R version 4.5.1. The 'number of reasso
 
 1.  Apple M4 Max 16-core CPU with 48 Gb RAM
 
-2.  AMD Ryzen 9 7950X 16 Core CPU with 96 Gb RAM.\
+2.  AMD Ryzen 9 7950X 16 Core CPU with 96 Gb RAM.
 
 In each case, the runtime for any model was less than 10 minutes.
 
-## **Data Curation** {#data-curation}
+## **Data Curation**
 
 Scripts used to assist in the curation of sequence and location data are included within the [data_curation](scripts/data_curation/) sub directory. Required helper functions are sourced from [funcs](scripts/funcs/).
 
@@ -63,9 +63,9 @@ Scripts used to assist in the curation of sequence and location data are include
 
 We fitted three statistical models to quantify patterns of reassortant emergence across continents and to understand the drivers of reassortant spatial diffusion. Each model has three associated scripts:
 one fitting the model, one to run model evaluations and one for interpretation. All models are contained within the [statistical_models](scripts/statistical_models/) sub directory. Evaluation and
-interpretation plots are produced in \*\_model_evaluation and \*model_interpretation scripts, however these may differ slightly from the final published plots (located in [scripts/figure_scripts](scripts/figure_scripts)).\
+interpretation plots are produced in \*\_model_evaluation and \*model_interpretation scripts, however these may differ slightly from the final published plots (located in [scripts/figure_scripts](scripts/figure_scripts)).
 
-The 'number of reassortants model' has additional scripts to describe the model in Stan (located in [scripts/statistical_models/stan_models](scripts/statistical_models/stan_models)) and for pre-processing.\
+The 'number of reassortants model' has additional scripts to describe the model in Stan (located in [scripts/statistical_models/stan_models](scripts/statistical_models/stan_models)) and for pre-processing.
 
 ### 1. Number of Reassortants Model
 
@@ -77,7 +77,7 @@ First, we consider that only a proportion, $`p_{ij}\in(0,1)`$, of true (latent) 
 y_{ij}|N_{ij} \sim \mathrm{Binomial}(N_{ij},p_{ij})
 ```
 
-Second, we model the true number of reassortants, $`N_{ij}\in\mathbb{Z}_{\geq y_{ji}}`$, as a discrete latent variable that follows a Poisson distribution:\
+Second, we model the true number of reassortants, $`N_{ij}\in\mathbb{Z}_{\geq y_{ji}}`$, as a discrete latent variable that follows a Poisson distribution:
 
 ```math
 N_{ij} \sim \mathrm{Poisson}(\lambda_{ij})
