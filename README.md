@@ -1,12 +1,15 @@
 # The Winners Take It All? Evolutionary Success of H5Nx Reassortants in the 2020–2024 Panzootic
 
-This repository contains code used for the data handling and statistical analysis of Clade 2.3.4.4b High Pathogenicity Avian Influenza Virus (HPAIV) circulating during the 2020-2024 Panzootic. Specifically, we analysed the emergence, persistence and drivers of unique reassortants worldwide, up to May 2024. Methods are described in detail at <https://www.biorxiv.org/content/10.1101/2025.07.19.665680v1>.
+This repository contains code used for the data handling and statistical analysis of Clade 2.3.4.4b High Pathogenicity Avian Influenza Virus (HPAIV) circulating during the 2020-2024 Panzootic. Specifically, we analysed the emergence, persistence and drivers of unique reassortants worldwide, up to May 2024. Methods are described in detail at <https://www.biorxiv.org/content/10.1101/2025.07.19.665680v1>.\
 
--   [Downloading this repository](#Downloading-this-Repository-into-R)
--   [Dependencies](#Dependencies)
--   [Data Curation](#Data-Curation)
--   [Statistical Models](#Statistical-Models)
--   [Licence](#Licence)
+This repository is structured as follows:\
+
+-   [Downloading this repository](#Downloading-this-Repository-into-R)\
+-   [Dependencies](#Dependencies)\
+-   [Data Curation](#Data-Curation)\
+-   [Statistical Models](#Statistical-Models)\
+-   [Licence](#Licence)\
+
 
 ## **Downloading this Repository into R** {#downloading-this-repository-into-r}
 
@@ -43,7 +46,7 @@ If you don’t want to use Git:
 
 3.  Open RStudio → *File* → *Open Project* → choose the `.Rproj` file inside the folder.
 
-## **Dependencies** {#dependencies}
+## **Dependencies** 
 
 
 These statistical analyses were fitted in R version 4.5.1. The 'number of reassortants model' was fitted using Stan v2.36 via cmdstanr v0.9.0, and the remainder were fitted using BRMS v2.22.0. We summarised model outputs and caculated average marginal effects using tidybayes v3.0.7 and marginaleffects v0.25.1. All models have been tested on:
@@ -54,12 +57,12 @@ These statistical analyses were fitted in R version 4.5.1. The 'number of reasso
 
 In both cases, the runtime for each model was less than 10 minutes.
 
-## **Data Curation** {#data-curation}
+## **Data Curation** 
 
 
 Scripts used to assist in the curation of sequence and location data are included within the [data_curation](scripts/data_curation/) sub directory. Required helper functions are sourced from [funcs](scripts/funcs/).
 
-## **Statistical Models** {#statistical-models}
+## **Statistical Models** 
 
 We fitted three statistical models to quantify patterns of reassortant emergence across continents and to understand the drivers of reassortant spatial diffusion. All models are contained within the [statistical_models](scripts/statistical_models/) sub directory:
 
@@ -79,6 +82,6 @@ Briefly, the 'number of reassortants model' is a mixture model comprising a zero
 
 Evaluation and interpretation plots are produced in \*\_model_evaluation and \*model_interpretation scripts, however these may differ from the final published plots (located in [scripts/figure_scripts](scripts/figure_scripts))
 
-### **Licence** {#licence}
+## **Licence** 
 
 This code is shared under the **GPL-3.0 licence**.
