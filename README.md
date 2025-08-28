@@ -90,11 +90,19 @@ z_{ij} \sim \mathrm{Bernoulli}(\theta_{\text{continent}[j]})
 ### 2. Reassortant Class Model
 
 We estimated the probability that a novel reassortant, is assigned to one of the following classes: minor, moderate, major. We assumed that the probability a reassortant is assigned a given class follows a cumulative distribution, with classes increasing from minor to moderate to major. We modelled each class as the discretisation of a latent (unobserved) continuous variable, via threshold parameters which partition the distribution.
+```math
+ y_{i}=\begin{cases}
+\text{minor}\hphantom{ode}\qquad\text{if}\;\tau_{\text{minor}-1}<\tilde y_i\leq\tau_{\text{minor}},\\
+  \text{moderate}\qquad\text{if}\;\tau_{\text{minor}}<\tilde y_i\leq\tau_{\text{moderate}},\\
+  \text{major}\hphantom{ode}\qquad\text{if}\;\tau_{\text{moderate}}<\tilde y_i<\tau_{\text{moderate}+1}.
 
+```
 ### 3. Diffusion Model
 
 We fitted a mixed model to predict the weighted diffusion coefficients calculated from our phylogeographic analysis for each novel reassortant. We restricted our analysis to reassortants with a clade size greater than 1, since we cannot confidently distinguish between reassortants that truly exist at a single locus and reassortants with limited (but non-zero) circulation and incomplete sampling. For all reassortants with non-zero, we assumed a gamma distribution parametrised such that,
-
+```math
+y_{i} &\sim \mathrm{Gamma}(\kappa_{i},\theta_{i})
+```
 Briefly, the 'number of reassortants model' is a mixture model comprising a zero-inflated Poisson process and a Binomial 'filter' process; the 'reassortant class model' is an ordinal model, assuming a cumulative distribution; and the 'diffusion model' is a log-gamma regression. The 'number of reassortants model' was fitted using Stan via rStan, and the remainder were fitted using BRMS. Each model has three associated scripts: one fitting the model, one to run model evaluations and one for interpretation. The 'number of reassortants model' has additional scripts to describe the model in Stan (located in [scripts/statistical_models/stan_models](scripts/statistical_models/stan_models)) and for pre-processing.
 
 Evaluation and interpretation plots are produced in \*\_model_evaluation and \*model_interpretation scripts, however these may differ from the final published plots (located in [scripts/figure_scripts](scripts/figure_scripts))
