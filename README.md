@@ -1,9 +1,3 @@
----
-editor_options: 
-  markdown: 
-    wrap: 72
----
-
 # The Winners Take It All? Evolutionary Success of H5Nx Reassortants in the 2020–2024 Panzootic
 
 This repository contains code used for the data handling and statistical
